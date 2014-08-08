@@ -18,3 +18,20 @@ p, div {
 .table > tbody > tr.tr-conifer {
      background-color: #FFF9C9 !important;
 }
+
+.table > tbody > tr.tr-fern {
+     background-color: #C9FFD1 !important;
+}
+
+.table > tbody > tr.tr-grass {
+     background-color: #DFFFC9 !important;
+}
+
+.well {
+	padding-top: 0px;
+}
+
+
+.img-rounded {
+	border-radius: 5px;
+}
