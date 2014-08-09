@@ -7,7 +7,9 @@ p, div {
 	font-family: 'Oxygen', sans-serif;
 }
 
-
+body {
+	min-width: 800px;
+}
 
 
 
@@ -27,6 +29,32 @@ p, div {
      background-color: #DFFFC9 !important;
 }
 
+
+
+.table > tbody > tr.tr-climber:hover {
+     background-color: #FFEDDE !important;
+}
+
+.table > tbody > tr.tr-conifer:hover {
+     background-color: #FFFBD9 !important;
+}
+
+.table > tbody > tr.tr-fern:hover {
+     background-color: #DBFFE1 !important;
+}
+
+.table > tbody > tr.tr-grass:hover {
+     background-color: #EAFCDE !important;
+}
+
+
+
+.table > tbody > tr.tr-climber:hover, .table > tbody > tr.tr-conifer:hover, .table > tbody > tr.tr-fern:hover, .table > tbody > tr.tr-grass:hover {
+	cursor: pointer;
+}
+
+
+
 .well {
 	padding-top: 0px;
 }
@@ -40,4 +68,35 @@ p, div {
 	overflow-y: scroll;
 }
 
+th {
+	position: sticky;
+}
 
+
+.container {
+	min-width: 1200px;
+}
+
+
+.navbar-inverse {
+	background: black;
+	border-radius: 0px;
+}
+
+
+body {
+	height: 100%;
+}
+
+footer {
+	background: #F5F5F5;
+	padding: 20px 5px;
+	height: 80px;
+	/* A sneaky way to ensure that the footer always goes to the bottom of the page. Haha. */
+	box-shadow: 0px 500px 0px 500px #F5F5F5;
+
+}
+
+footer p, a {
+	color: #8A8A8A;
+}
