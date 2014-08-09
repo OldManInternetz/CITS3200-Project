@@ -7,9 +7,7 @@ p, div {
 	font-family: 'Oxygen', sans-serif;
 }
 
-body {
-	min-width: 800px;
-}
+
 
 
 
@@ -78,8 +76,11 @@ th {
 
 
 .container {
-	min-width: 1200px;
+	min-width: 1000px;
+	width: 1000px;
 }
+
+
 
 
 .navbar-inverse {
@@ -110,25 +111,3 @@ footer p, a {
 
 
 
-
-
-
-.bg {
-  height: 500px;
-  width: 500px;
-  -webkit-animation: change-bg 10s ease infinite;
-  animation: change-bg 10s ease infinite;
-
-}
-
-@-webkit-keyframes change-bg{
-  0%  { background-image: url(http://lorempixel.com/500/500); }
-  50% { background-image:  url(http://lorempixel.com/501/501);  }
-  100% { background-image: url(http://lorempixel.com/503/503); }
-}
-
-@keyframes change-bg {
-  0%  { background-image: url(http://lorempixel.com/500/500); }
-  50% { background-image:  url(http://lorempixel.com/501/501);  }
-  100% { background-image: url(http://lorempixel.com/503/503); }
-}
