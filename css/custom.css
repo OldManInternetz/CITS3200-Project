@@ -63,6 +63,10 @@ body {
 	border-radius: 5px;
 }
 
+.img-padded {
+	margin: 5px 0px;
+}
+
 
 .scrollbar-area {
 	overflow-y: scroll;
@@ -99,4 +103,32 @@ footer {
 
 footer p, a {
 	color: #8A8A8A;
+}
+
+
+
+
+
+
+
+
+
+.bg {
+  height: 500px;
+  width: 500px;
+  -webkit-animation: change-bg 10s ease infinite;
+  animation: change-bg 10s ease infinite;
+
+}
+
+@-webkit-keyframes change-bg{
+  0%  { background-image: url(http://lorempixel.com/500/500); }
+  50% { background-image:  url(http://lorempixel.com/501/501);  }
+  100% { background-image: url(http://lorempixel.com/503/503); }
+}
+
+@keyframes change-bg {
+  0%  { background-image: url(http://lorempixel.com/500/500); }
+  50% { background-image:  url(http://lorempixel.com/501/501);  }
+  100% { background-image: url(http://lorempixel.com/503/503); }
 }
