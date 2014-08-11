@@ -7,52 +7,6 @@ p, div {
 	font-family: 'Oxygen', sans-serif;
 }
 
-
-
-
-
-.table > tbody > tr.tr-climber {
-     background-color: #FFE2C9 !important;
-}
-
-.table > tbody > tr.tr-conifer {
-     background-color: #FFF9C9 !important;
-}
-
-.table > tbody > tr.tr-fern {
-     background-color: #C9FFD1 !important;
-}
-
-.table > tbody > tr.tr-grass {
-     background-color: #DFFFC9 !important;
-}
-
-
-
-.table > tbody > tr.tr-climber:hover {
-     background-color: #FFEDDE !important;
-}
-
-.table > tbody > tr.tr-conifer:hover {
-     background-color: #FFFBD9 !important;
-}
-
-.table > tbody > tr.tr-fern:hover {
-     background-color: #DBFFE1 !important;
-}
-
-.table > tbody > tr.tr-grass:hover {
-     background-color: #EAFCDE !important;
-}
-
-
-
-.table > tbody > tr.tr-climber:hover, .table > tbody > tr.tr-conifer:hover, .table > tbody > tr.tr-fern:hover, .table > tbody > tr.tr-grass:hover {
-	cursor: pointer;
-}
-
-
-
 .well {
 	padding-top: 0px;
 }
@@ -75,12 +29,6 @@ th {
 }
 
 
-.container {
-	min-width: 1000px;
-	width: 1000px;
-}
-
-
 
 
 .navbar-inverse {
@@ -94,6 +42,7 @@ body {
 }
 
 footer {
+	border-top: 5px solid gray;
 	background: #F5F5F5;
 	padding: 20px 5px;
 	height: 80px;
@@ -103,7 +52,7 @@ footer {
 }
 
 footer p, a {
-	color: #8A8A8A;
+	color: #474747;
 	
 }
 
@@ -142,9 +91,13 @@ footer p, a {
 }
 
 
-.bottom-nav-control p, h3 {
+.bottom-nav-control p {
 	color: white;
 	opacity: 0.7;
+}
+
+.bottom-nav-control h3 {
+	color: white;
 }
 
 
@@ -152,7 +105,9 @@ footer p, a {
 	opacity: 0.7;
 }
 
-.img-trans:hover {
+.img-trans:hover, .bottom-nav-control p:hover {
 	opacity: 1;
-	transition: opacity 0.5s;
+	transition: opacity 0.2s;
 }
+
+

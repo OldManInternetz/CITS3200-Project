@@ -20,4 +20,4 @@ $.fn.followTo = function (pos) {
     });
 };
 
-$('#bottom-nav').followTo(110);
+$('#bottom-nav').followTo(115);
