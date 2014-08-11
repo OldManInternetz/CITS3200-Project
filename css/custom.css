@@ -1,9 +1,9 @@
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, th {
 	font-family: 'Montserrat', sans-serif;
 }
 
 
-p, div {
+p, div, td {
 	font-family: 'Oxygen', sans-serif;
 }
 
@@ -58,37 +58,6 @@ footer p, a {
 
 
 
-#bottom-nav {
-	background-color: black;
-	width: 100%;
-	position: fixed;
-	bottom: 0px;
-	height: 80px;
-	padding: 10px 10px;
-}
-
-.bottom-nav-control {
-	height: 60px;
-	width: 200px;
-	
-
-}
-
-.bottom-nav-control-left {
-	float: left;
-	cursor: pointer;
-}
-
-.bottom-nav-control-right {
-	float: right;
-	cursor: pointer;
-}
-
-.bottom-nav-control-centre {
-	margin-left: auto;
-	margin-right: auto;
-	width: 300px;
-}
 
 
 .bottom-nav-control p {

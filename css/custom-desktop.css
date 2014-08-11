@@ -40,3 +40,37 @@
 .table > tbody > tr.tr-climber:hover, .table > tbody > tr.tr-conifer:hover, .table > tbody > tr.tr-fern:hover, .table > tbody > tr.tr-grass:hover {
 	cursor: pointer;
 }
+
+
+
+#bottom-nav {
+	background-color: black;
+	width: 100%;
+	position: fixed;
+	bottom: 0px;
+	height: 80px;
+	padding: 10px 10px;
+}
+
+.bottom-nav-control {
+	height: 60px;
+	width: 200px;
+	
+
+}
+
+.bottom-nav-control-left {
+	float: left;
+	cursor: pointer;
+}
+
+.bottom-nav-control-right {
+	float: right;
+	cursor: pointer;
+}
+
+.bottom-nav-control-centre {
+	margin-left: auto;
+	margin-right: auto;
+	width: 300px;
+}
