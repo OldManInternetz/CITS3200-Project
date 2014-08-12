@@ -7,7 +7,7 @@
     <title>Plant Database Template</title>
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 	
 	<!-- Custom CSS -->
 	<link href="css/custom.css" rel="stylesheet">
@@ -25,7 +25,12 @@
     <![endif]-->
   </head>
   <body>
-	<nav class="navbar navbar-inverse" role="navigation">
+  
+  <div id="scrollbox" style="height: 100%; width: 100%; overflow-y: scroll; margin-bottom: 0px; margin-top: -22px;">
+  
+	<div style="height: 22px"></div>
+  
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 	  <div class="container-fluid">
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
@@ -52,13 +57,11 @@
 
 		</div><!-- /.navbar-collapse -->
 	  </div><!-- /.container-fluid -->
-	</nav>
-
-
-	
-	<table class="table table-bordered" style="margin-top: -20px;">
+	  
+	  
+	  	<table class="table table-bordered" style="margin-bottom: -1px" >
 			<thead>
-			<tr>
+			<tr style="background: white">
 				<th width="10%"></th>
 				<th width="57.5%">Common Name</th>
 				<th width="22.5%">Type</th>
@@ -66,137 +69,143 @@
 			</tr>
 		</thead>
 	</table>
+	  
+	</nav>
+
 	
-	<div id="scrollbox" style="height: 50%; overflow-y: scroll; margin-bottom: 0px; margin-top: -22px;">
 	
-	<table class="table table-bordered" style="margin-bottom: 0px;">
+
+	
+	
+	
+	<table class="table table-bordered" style="margin-top: 88px; margin-bottom: 0px;">
 
 		<tbody>
 			<tr class="tr-climber">
-				<td width="10%" style="padding: 3px"><img src="images/plants/rose_1.jpg" alt="Rose" class="img-circle"></img></td>
+				<td width="10%" style="padding: 3px"><img src="images/plants/rose_1_small.jpg" alt="Rose" class="img-circle"></img></td>
 				<td width="60%">Testing</td>
 				<td width="20%">Climber</td>
 				<td width="10%"><span class="glyphicon glyphicon-chevron-right"></span></td>				
 			</tr>
 			<tr class="tr-climber">
-				<td style="padding: 3px"><img src="images/plants/rose_1.jpg" alt="Rose" class="img-circle"></img></td>
+				<td style="padding: 3px"><img src="images/plants/rose_1_small.jpg" alt="Rose" class="img-circle"></img></td>
 				<td>Testing</td>
 				<td>Climber</td>
 				<td width="10%"><span class="glyphicon glyphicon-chevron-right"></span></td>			
 			</tr>
 			<tr class="tr-climber">
-				<td style="padding: 3px"><img src="images/plants/rose_1.jpg" alt="Rose" class="img-circle"></img></td>
+				<td style="padding: 3px"><img src="images/plants/birds_nest_fern_small.jpg" alt="Fern"  class="img-circle"></img></td>
 				<td>Testing</td>	
 				<td>Climber</td>
 				<td width="10%"><span class="glyphicon glyphicon-chevron-right"></span></td>		
 			</tr>	
 			<tr class="tr-climber">
-				<td style="padding: 3px"><img src="images/plants/rose_1.jpg" alt="Rose" class="img-circle"></img></td>
+				<td style="padding: 3px"><img src="images/plants/rose_1_small.jpg" alt="Rose" class="img-circle"></img></td>
 				<td>Testing</td>	
 				<td>Climber</td>			
 				<td width="10%"><span class="glyphicon glyphicon-chevron-right"></span></td>
 			</tr>	
 			<tr class="tr-climber">
-				<td style="padding: 3px"><img src="images/plants/rose_1.jpg" alt="Rose" class="img-circle"></img></td>
+				<td style="padding: 3px"><img src="images/plants/rose_1_small.jpg" alt="Rose" class="img-circle"></img></td>
 				<td>Testing</td>	
 				<td>Climber</td>
 				<td width="10%"><span class="glyphicon glyphicon-chevron-right"></span></td>			
 			</tr>				
 			<tr class="tr-climber">
-				<td style="padding: 3px"><img src="images/plants/old_mans_beard.jpg" alt="Beard" class="img-circle"></img></td>
+				<td style="padding: 3px"><img src="images/plants/old_mans_beard_small.jpg" alt="Beard" class="img-circle"></img></td>
 				<td>Old man's beard</td>
 				<td>Climber</td>
 				<td width="10%"><span class="glyphicon glyphicon-chevron-right"></span></td>				
 			</tr>
 			<tr class="tr-climber">
-				<td style="padding: 3px"><img src="images/plants/old_mans_beard.jpg" alt="Beard" class="img-circle"></img></td>
+				<td style="padding: 3px"><img src="images/plants/birds_nest_fern_small.jpg" alt="Fern" class="img-circle"></img></td>
 				<td>Old man's beard</td>
 				<td>Climber</td>
 				<td width="10%"><span class="glyphicon glyphicon-chevron-right"></span></td>				
 			</tr>
 			<tr class="tr-conifer">
-				<td style="padding: 3px"><img src="images/plants/old_mans_beard.jpg" alt="Beard" class="img-circle"></img></td>
+				<td style="padding: 3px"><img src="images/plants/old_mans_beard_small.jpg" alt="Beard" class="img-circle"></img></td>
 				<td>Rottnest cypress</td>
 				<td>Conifer</td>
 				<td width="10%"><span class="glyphicon glyphicon-chevron-right"></span></td>				
 			</tr>
 			<tr class="tr-conifer">
-				<td style="padding: 3px"><img src="images/plants/old_mans_beard.jpg" alt="Beard" class="img-circle"></img></td>
+				<td style="padding: 3px"><img src="images/plants/old_mans_beard_small.jpg" alt="Beard" class="img-circle"></img></td>
 				<td>Rottnest cypress</td>
 				<td>Conifer</td>
 				<td width="10%"><span class="glyphicon glyphicon-chevron-right"></span></td>			
 			</tr>
 			<tr class="tr-conifer">
-				<td style="padding: 3px"><img src="images/plants/old_mans_beard.jpg" alt="Beard" class="img-circle"></img></td>
+				<td style="padding: 3px"><img src="images/plants/birds_nest_fern_small.jpg" alt="Fern"  class="img-circle"></img></td>
 				<td>Rottnest cypress</td>	
 				<td>Conifer</td>	
 				<td width="10%"><span class="glyphicon glyphicon-chevron-right"></span></td>		
 			</tr>
 			<tr class="tr-conifer">
-				<td style="padding: 3px"><img src="images/plants/rose_2.jpg" alt="Rose" class="img-circle"></img></td>
+				<td style="padding: 3px"><img src="images/plants/rose_2_small.jpg" alt="Rose" class="img-circle"></img></td>
 				<td>Rottnest cypress</td>	
 				<td>Conifer</td>
 				<td width="10%"><span class="glyphicon glyphicon-chevron-right"></span></td>			
 			</tr>
 			<tr class="tr-conifer">
-				<td style="padding: 3px"><img src="images/plants/rose_3.jpg" alt="Rose" class="img-circle"></img></td>
+				<td style="padding: 3px"><img src="images/plants/rose_3_small.jpg" alt="Rose" class="img-circle"></img></td>
 				<td>Rottnest cypress</td>	
 				<td>Conifer</td>
 				<td width="10%"><span class="glyphicon glyphicon-chevron-right"></span></td>			
 			</tr>
 			<tr class="tr-fern">
-				<td style="padding: 3px"><img src="images/plants/rose_2.jpg" alt="Rose" class="img-circle"></img></td>
+				<td style="padding: 3px"><img src="images/plants/rose_2_small.jpg" alt="Rose" class="img-circle"></img></td>
 				<td>Bird's nest fern</td>	
 				<td>Fern</td>	
 				<td width="10%"><span class="glyphicon glyphicon-chevron-right"></span></td>		
 			</tr>
 			<tr class="tr-fern">
-				<td style="padding: 3px"><img src="images/plants/rose_1.jpg" alt="Rose" class="img-circle"></img></td>
+				<td style="padding: 3px"><img src="images/plants/rose_1_small.jpg" alt="Rose" class="img-circle"></img></td>
 				<td>Lacy tree fern</td>	
 				<td>Fern</td>	
 				<td width="10%"><span class="glyphicon glyphicon-chevron-right"></span></td>			
 			</tr>
 			<tr class="tr-fern">
-				<td style="padding: 3px"><img src="images/plants/rose_2.jpg" alt="Rose" class="img-circle"></img></td>
+				<td style="padding: 3px"><img src="images/plants/rose_2_small.jpg" alt="Rose" class="img-circle"></img></td>
 				<td>Lacy tree fern</td>	
 				<td>Fern</td>	
 				<td width="10%"><span class="glyphicon glyphicon-chevron-right"></span></td>			
 			</tr>
 			<tr class="tr-fern">
-				<td style="padding: 3px"><img src="images/plants/rose_3.jpg" alt="Rose" class="img-circle"></img></td>
+				<td style="padding: 3px"><img src="images/plants/rose_3_small.jpg" alt="Rose" class="img-circle"></img></td>
 				<td>Lacy tree fern</td>	
 				<td>Fern</td>	
 				<td width="10%"><span class="glyphicon glyphicon-chevron-right"></span></td>			
 			</tr>
 			<tr class="tr-fern">
-				<td style="padding: 3px"><img src="images/plants/rose_2.jpg" alt="Rose" class="img-circle"></img></td>
+				<td style="padding: 3px"><img src="images/plants/rose_2_small.jpg" alt="Rose" class="img-circle"></img></td>
 				<td>Lacy tree fern</td>	
 				<td>Fern</td>
 				<td width="10%"><span class="glyphicon glyphicon-chevron-right"></span></td>				
 			</tr>
 			<tr class="tr-grass">
-				<td style="padding: 3px"><img src="images/plants/rose_1.jpg" alt="Rose" class="img-circle"></img></td>
+				<td style="padding: 3px"><img src="images/plants/rose_1_small.jpg" alt="Rose" class="img-circle"></img></td>
 				<td>Couch</td>		
 				<td>Grass</td>	
 				<td width="10%"><span class="glyphicon glyphicon-chevron-right"></span></td>		
 			</tr>
 			<tr class="tr-grass">
-				<td style="padding: 3px"><img src="images/plants/old_mans_beard.jpg" alt="Beard" class="img-circle"></img></td>
+				<td style="padding: 3px"><img src="images/plants/old_mans_beard_small.jpg" alt="Beard" class="img-circle"></img></td>
 				<td>Couch</td>	
 				<td>Grass</td>	
 				<td width="10%"><span class="glyphicon glyphicon-chevron-right"></span></td>		
 			</tr>
 			<tr class="tr-grass">
-				<td style="padding: 3px"><img src="images/plants/rose_3.jpg" alt="Rose" class="img-circle"></img></td>
+				<td style="padding: 3px"><img src="images/plants/rose_3_small.jpg" alt="Rose" class="img-circle"></img></td>
 				<td>Couch</td>		
 				<td>Grass</td>	
 				<td width="10%"><span class="glyphicon glyphicon-chevron-right"></span></td>	
 			</tr>
 		</tbody>	
 	</table>
-	</div>
+	
 
-	<div style="height: 60px"></div>
+	<div style="height: 38px"></div>
 
 	<div id="bottom-nav-mobile">
 		<div class="bottom-nav-box" style="float: left; border-right: 1px solid gray;" id="bottom-nav-1">
@@ -211,10 +220,12 @@
 		</div>
 	
 	</div>
+	
+	</div>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
 	<script src="js/jquery.mobile.custom.min.js"></script>		
 	
@@ -228,14 +239,14 @@
 	
 		// Button that scrolls to top of page
 		$('#bottom-nav-1').bind('tap', function () {
-			$('html, body').animate({scrollTop : 0},500);
+			$('#scrollbox').animate({scrollTop : 0},500);
 			return false;
 		});
 
 
 		// Button that scrolls to bottom of page
 		$('#bottom-nav-2').bind('tap', function () {
-			$('html, body').animate({scrollTop : $(document).height()-$(window).height()},500);
+			$('#scrollbox').animate({scrollTop : 520},500);
 			return false;
 		});
 	
