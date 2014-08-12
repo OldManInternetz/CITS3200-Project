@@ -4,8 +4,18 @@ body, html {
 	overflow: hidden;
 }
 
+p {
+	text-align: justify;
+	text-justify: inter-word;
+}
+
 table td, th {
 	border-left: 0 !important;
+	border-right: 0 !important;
+}
+
+table th .bordered {
+	border-left: 1px solid gray !important;
 	border-right: 0 !important;
 }
 
@@ -18,6 +28,9 @@ table td img {
 	width: 32px;
 }
 
+table th img {
+	width: 24px;
+}
 
 
 .table > tbody > tr.tr-climber {	
