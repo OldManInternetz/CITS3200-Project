@@ -11,7 +11,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140819070318) do
+ActiveRecord::Schema.define(version: 20140819092419) do
+
+  create_table "current_plants", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "species"
+    t.string   "common_name"
+    t.string   "scientific_name"
+    t.string   "synonym"
+    t.string   "subspecies"
+    t.string   "description"
+    t.string   "location_name"
+    t.string   "characteristics"
+    t.string   "additional_info"
+    t.string   "identification"
+    t.string   "physical"
+    t.string   "general_info"
+    t.string   "environment"
+    t.string   "horticulture"
+    t.string   "architectural_uses"
+    t.string   "culture"
+    t.string   "conservation"
+    t.string   "wildlife"
+    t.string   "architectural_info"
+    t.string   "discovered_by"
+    t.string   "named_by"
+    t.boolean  "approved"
+    t.integer  "version"
+  end
 
   create_table "users", force: true do |t|
     t.string   "username"
