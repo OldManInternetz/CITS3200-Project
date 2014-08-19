@@ -8,5 +8,11 @@ class CurrentPlant < ActiveRecord::Base
 	has_many :current_genus, dependent: :destroy
 	has_many :current_origins, dependent: :destroy
 	has_many :current_types, dependent: :destroy
-	has_many :current_climates, dependent: :destroy
+	#has_many :current_climates, dependent: :destroy
+
+
+	has_many :current_linking_climates
+  has_many :current_climates, through: :current_linking_climates
+
+
 end

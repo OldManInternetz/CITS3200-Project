@@ -16,17 +16,21 @@
       ],
       "/home/michael/rails_projects/CITS3200-Project/plantsuwa/app/models/current_climate.rb": [
         1,
-        1,
-        1,
+        null,
         1,
         1,
         null,
         1,
-        4,
-        4,
-        1,
-        1,
-        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         null,
         null,
         null
@@ -47,6 +51,12 @@
         null
       ],
       "/home/michael/rails_projects/CITS3200-Project/plantsuwa/app/models/current_leaf_colour.rb": [
+        1,
+        1,
+        null
+      ],
+      "/home/michael/rails_projects/CITS3200-Project/plantsuwa/app/models/linking tables/current_linking_climate.rb": [
+        1,
         1,
         1,
         null
@@ -72,7 +82,13 @@
         1,
         1,
         1,
+        null,
+        null,
+        null,
         1,
+        1,
+        null,
+        null,
         null
       ],
       "/home/michael/rails_projects/CITS3200-Project/plantsuwa/app/models/current_size.rb": [
@@ -135,6 +151,6 @@
         null
       ]
     },
-    "timestamp": 1408452372
+    "timestamp": 1408461926
   }
 }

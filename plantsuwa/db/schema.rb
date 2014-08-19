@@ -11,11 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140819120817) do
+ActiveRecord::Schema.define(version: 20140819145441) do
 
   create_table "current_climates", force: true do |t|
     t.string   "name"
-    t.integer  "current_plant_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -46,6 +45,11 @@ ActiveRecord::Schema.define(version: 20140819120817) do
     t.integer  "current_plant_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "current_linking_climates", force: true do |t|
+    t.integer "current_plant_id"
+    t.integer "current_climate_id"
   end
 
   create_table "current_origins", force: true do |t|

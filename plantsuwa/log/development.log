@@ -7308,3 +7308,701 @@ Migrating to AddRemainingFieldsToCurrentPlant (20140819120817)
   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819120817"]]
   [1m[35m (147.4ms)[0m  commit transaction
   [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CurrentPlantsClimates (20140819140213)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819140213"]]
+  [1m[35m (128.8ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (104.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (113.5ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20140819070318)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "email" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.2ms)[0m  CREATE UNIQUE INDEX "index_users_on_username" ON "users" ("username")
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "users" ADD "password_digest" varchar(255)[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "users" ADD "remember_token" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mCREATE INDEX "index_users_on_remember_token" ON "users" ("remember_token")[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD "admin" boolean DEFAULT 'f'
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819070318"]]
+  [1m[35m (119.0ms)[0m  commit transaction
+Migrating to CreateCurrentPlants (20140819091734)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "current_plants" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819091734"]]
+  [1m[35m (140.3ms)[0m  commit transaction
+Migrating to AddFieldsToCurrentPlant (20140819092419)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "current_plants" ADD "species" varchar(255)
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "current_plants" ADD "common_name" varchar(255)[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "current_plants" ADD "scientific_name" varchar(255)
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "current_plants" ADD "synonym" varchar(255)[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "current_plants" ADD "subspecies" varchar(255)
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "current_plants" ADD "description" varchar(255)[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "current_plants" ADD "location_name" varchar(255)
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "current_plants" ADD "characteristics" varchar(255)[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "current_plants" ADD "additional_info" varchar(255)
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "current_plants" ADD "identification" varchar(255)[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "current_plants" ADD "physical" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "current_plants" ADD "general_info" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "current_plants" ADD "environment" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "current_plants" ADD "horticulture" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "current_plants" ADD "architectural_uses" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "current_plants" ADD "culture" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "current_plants" ADD "conservation" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "current_plants" ADD "wildlife" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "current_plants" ADD "architectural_info" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "current_plants" ADD "discovered_by" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "current_plants" ADD "named_by" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "current_plants" ADD "approved" boolean[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "current_plants" ADD "version" integer
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819092419"]]
+  [1m[35m (145.2ms)[0m  commit transaction
+Migrating to CreateCurrentSizes (20140819115200)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "current_sizes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115200"]]
+  [1m[35m (121.2ms)[0m  commit transaction
+Migrating to CreateCurrentSoilTypes (20140819115340)
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "current_soil_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115340"]]
+  [1m[35m (118.4ms)[0m  commit transaction
+Migrating to CreateCurrentLeafColours (20140819115354)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "current_leaf_colours" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115354"]]
+  [1m[35m (119.0ms)[0m  commit transaction
+Migrating to CreateCurrentFlowerColours (20140819115406)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "current_flower_colours" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115406"]]
+  [1m[35m (129.8ms)[0m  commit transaction
+Migrating to CreateCurrentPhotos (20140819115428)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "current_photos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115428"]]
+  [1m[35m (149.9ms)[0m  commit transaction
+Migrating to CreateCurrentFamilies (20140819115542)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "current_families" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115542"]]
+  [1m[35m (141.3ms)[0m  commit transaction
+Migrating to CreateCurrentGenus (20140819115549)
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "current_genus" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115549"]]
+  [1m[35m (119.5ms)[0m  commit transaction
+Migrating to CreateCurrentOrigins (20140819115556)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "current_origins" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115556"]]
+  [1m[35m (139.4ms)[0m  commit transaction
+Migrating to CreateCurrentTypes (20140819115606)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "current_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115606"]]
+  [1m[35m (149.4ms)[0m  commit transaction
+Migrating to CreateCurrentClimates (20140819115611)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "current_climates" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115611"]]
+  [1m[35m (131.0ms)[0m  commit transaction
+Migrating to AddRemainingFieldsToCurrentPlant (20140819120817)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "current_plants" ADD "plant_id" integer
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "current_plants" ADD "submitted_by" integer[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "current_plants" ADD "edited_by" integer
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819120817"]]
+  [1m[35m (117.0ms)[0m  commit transaction
+Migrating to CurrentPlantsClimates (20140819140213)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "current_plants_climates" ("current_plant_id" integer, "current_climate_id" integer) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819140213"]]
+  [1m[35m (121.4ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (133.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (134.1ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20140819070318)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "email" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.6ms)[0m  CREATE UNIQUE INDEX "index_users_on_username" ON "users" ("username")
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "users" ADD "password_digest" varchar(255)[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "users" ADD "remember_token" varchar(255)
+  [1m[36m (0.4ms)[0m  [1mCREATE INDEX "index_users_on_remember_token" ON "users" ("remember_token")[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD "admin" boolean DEFAULT 'f'
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819070318"]]
+  [1m[35m (124.0ms)[0m  commit transaction
+Migrating to CreateCurrentPlants (20140819091734)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "current_plants" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819091734"]]
+  [1m[35m (139.7ms)[0m  commit transaction
+Migrating to AddFieldsToCurrentPlant (20140819092419)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "current_plants" ADD "species" varchar(255)
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "current_plants" ADD "common_name" varchar(255)[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "current_plants" ADD "scientific_name" varchar(255)
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "current_plants" ADD "synonym" varchar(255)[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "current_plants" ADD "subspecies" varchar(255)
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "current_plants" ADD "description" varchar(255)[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "current_plants" ADD "location_name" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "current_plants" ADD "characteristics" varchar(255)[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "current_plants" ADD "additional_info" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "current_plants" ADD "identification" varchar(255)[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "current_plants" ADD "physical" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "current_plants" ADD "general_info" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "current_plants" ADD "environment" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "current_plants" ADD "horticulture" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "current_plants" ADD "architectural_uses" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "current_plants" ADD "culture" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "current_plants" ADD "conservation" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "current_plants" ADD "wildlife" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "current_plants" ADD "architectural_info" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "current_plants" ADD "discovered_by" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "current_plants" ADD "named_by" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "current_plants" ADD "approved" boolean[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "current_plants" ADD "version" integer
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819092419"]]
+  [1m[35m (170.2ms)[0m  commit transaction
+Migrating to CreateCurrentSizes (20140819115200)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "current_sizes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115200"]]
+  [1m[35m (138.8ms)[0m  commit transaction
+Migrating to CreateCurrentSoilTypes (20140819115340)
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "current_soil_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115340"]]
+  [1m[35m (128.6ms)[0m  commit transaction
+Migrating to CreateCurrentLeafColours (20140819115354)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "current_leaf_colours" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115354"]]
+  [1m[35m (153.9ms)[0m  commit transaction
+Migrating to CreateCurrentFlowerColours (20140819115406)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "current_flower_colours" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115406"]]
+  [1m[35m (149.3ms)[0m  commit transaction
+Migrating to CreateCurrentPhotos (20140819115428)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "current_photos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115428"]]
+  [1m[35m (161.4ms)[0m  commit transaction
+Migrating to CreateCurrentFamilies (20140819115542)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "current_families" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115542"]]
+  [1m[35m (128.5ms)[0m  commit transaction
+Migrating to CreateCurrentGenus (20140819115549)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "current_genus" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115549"]]
+  [1m[35m (139.6ms)[0m  commit transaction
+Migrating to CreateCurrentOrigins (20140819115556)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "current_origins" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115556"]]
+  [1m[35m (139.1ms)[0m  commit transaction
+Migrating to CreateCurrentTypes (20140819115606)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "current_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115606"]]
+  [1m[35m (149.3ms)[0m  commit transaction
+Migrating to CreateCurrentClimates (20140819115611)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "current_climates" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115611"]]
+  [1m[35m (141.1ms)[0m  commit transaction
+Migrating to AddRemainingFieldsToCurrentPlant (20140819120817)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  ALTER TABLE "current_plants" ADD "plant_id" integer
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "current_plants" ADD "submitted_by" integer[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "current_plants" ADD "edited_by" integer
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819120817"]]
+  [1m[35m (137.5ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCurrentLinkingClimate (20140819145441)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "current_linking_climates" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "current_plant_id" integer, "current_climate_id" integer) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140819145441"]]
+  [1m[36m (134.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (89.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (113.2ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20140819070318)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "email" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.2ms)[0m  CREATE UNIQUE INDEX "index_users_on_username" ON "users" ("username")
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "users" ADD "password_digest" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD "remember_token" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mCREATE INDEX "index_users_on_remember_token" ON "users" ("remember_token")[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD "admin" boolean DEFAULT 'f'
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819070318"]]
+  [1m[35m (123.8ms)[0m  commit transaction
+Migrating to CreateCurrentPlants (20140819091734)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "current_plants" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819091734"]]
+  [1m[35m (145.4ms)[0m  commit transaction
+Migrating to AddFieldsToCurrentPlant (20140819092419)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  ALTER TABLE "current_plants" ADD "species" varchar(255)
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "current_plants" ADD "common_name" varchar(255)[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "current_plants" ADD "scientific_name" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "current_plants" ADD "synonym" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "current_plants" ADD "subspecies" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "current_plants" ADD "description" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "current_plants" ADD "location_name" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "current_plants" ADD "characteristics" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "current_plants" ADD "additional_info" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "current_plants" ADD "identification" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "current_plants" ADD "physical" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "current_plants" ADD "general_info" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "current_plants" ADD "environment" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "current_plants" ADD "horticulture" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "current_plants" ADD "architectural_uses" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "current_plants" ADD "culture" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "current_plants" ADD "conservation" varchar(255)
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "current_plants" ADD "wildlife" varchar(255)[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "current_plants" ADD "architectural_info" varchar(255)
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "current_plants" ADD "discovered_by" varchar(255)[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "current_plants" ADD "named_by" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "current_plants" ADD "approved" boolean[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "current_plants" ADD "version" integer
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819092419"]]
+  [1m[35m (129.2ms)[0m  commit transaction
+Migrating to CreateCurrentSizes (20140819115200)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "current_sizes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115200"]]
+  [1m[35m (102.8ms)[0m  commit transaction
+Migrating to CreateCurrentSoilTypes (20140819115340)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "current_soil_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115340"]]
+  [1m[35m (122.5ms)[0m  commit transaction
+Migrating to CreateCurrentLeafColours (20140819115354)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "current_leaf_colours" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115354"]]
+  [1m[35m (140.1ms)[0m  commit transaction
+Migrating to CreateCurrentFlowerColours (20140819115406)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  CREATE TABLE "current_flower_colours" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115406"]]
+  [1m[35m (150.0ms)[0m  commit transaction
+Migrating to CreateCurrentPhotos (20140819115428)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "current_photos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115428"]]
+  [1m[35m (141.9ms)[0m  commit transaction
+Migrating to CreateCurrentFamilies (20140819115542)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "current_families" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115542"]]
+  [1m[35m (119.1ms)[0m  commit transaction
+Migrating to CreateCurrentGenus (20140819115549)
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "current_genus" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115549"]]
+  [1m[35m (129.2ms)[0m  commit transaction
+Migrating to CreateCurrentOrigins (20140819115556)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "current_origins" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115556"]]
+  [1m[35m (149.5ms)[0m  commit transaction
+Migrating to CreateCurrentTypes (20140819115606)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "current_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115606"]]
+  [1m[35m (160.2ms)[0m  commit transaction
+Migrating to CreateCurrentClimates (20140819115611)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "current_climates" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115611"]]
+  [1m[35m (120.6ms)[0m  commit transaction
+Migrating to AddRemainingFieldsToCurrentPlant (20140819120817)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  ALTER TABLE "current_plants" ADD "plant_id" integer
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "current_plants" ADD "submitted_by" integer[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "current_plants" ADD "edited_by" integer
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819120817"]]
+  [1m[35m (116.8ms)[0m  commit transaction
+Migrating to CreateCurrentLinkingClimate (20140819145441)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  CREATE TABLE "current_linking_climates" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "current_plant_id" integer, "current_climate_id" integer) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819145441"]]
+  [1m[35m (139.0ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+DEPRECATION WARNING: Calling #find(:all) is deprecated. Please call #all directly instead. (called from irb_binding at (irb):13)
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from irb_binding at (irb):13)
+  [1m[36mCurrentPlant Load (0.2ms)[0m  [1mSELECT "current_plants".* FROM "current_plants"[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "current_plants" ("created_at", "description", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 19 Aug 2014 23:10:35 AWST +08:00], ["description", "Great plant!"], ["updated_at", Tue, 19 Aug 2014 23:10:35 AWST +08:00]]
+  [1m[35m (129.0ms)[0m  commit transaction
+DEPRECATION WARNING: Calling #find(:all) is deprecated. Please call #all directly instead. (called from irb_binding at (irb):15)
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from irb_binding at (irb):15)
+  [1m[36mCurrentPlant Load (0.7ms)[0m  [1mSELECT "current_plants".* FROM "current_plants"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "current_climates" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 19 Aug 2014 23:11:00 AWST +08:00], ["name", "Windy"], ["updated_at", Tue, 19 Aug 2014 23:11:00 AWST +08:00]]
+  [1m[35m (141.2ms)[0m  commit transaction
+DEPRECATION WARNING: Calling #find(:all) is deprecated. Please call #all directly instead. (called from irb_binding at (irb):1)
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from irb_binding at (irb):1)
+  [1m[36mCurrentClimate Load (3.8ms)[0m  [1mSELECT "current_climates".* FROM "current_climates"[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (6.6ms)[0m  [1mINSERT INTO "current_climates" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 19 Aug 2014 23:14:54 AWST +08:00], ["name", "Cool"], ["updated_at", Tue, 19 Aug 2014 23:14:54 AWST +08:00]]
+  [1m[35m (132.2ms)[0m  commit transaction
+  [1m[36mCurrentPlant Load (0.3ms)[0m  [1mSELECT "current_plants".* FROM "current_plants" INNER JOIN "current_linking_climates" ON "current_plants"."id" = "current_linking_climates"."current_plant_id" WHERE "current_linking_climates"."current_climate_id" = ?[0m  [["current_climate_id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "current_plants" ("created_at", "description", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 19 Aug 2014 23:15:27 AWST +08:00], ["description", "A hell wicked plant"], ["updated_at", Tue, 19 Aug 2014 23:15:27 AWST +08:00]]
+  [1m[35m (125.4ms)[0m  commit transaction
+  [1m[36mCurrentClimate Load (0.6ms)[0m  [1mSELECT "current_climates".* FROM "current_climates" INNER JOIN "current_linking_climates" ON "current_climates"."id" = "current_linking_climates"."current_climate_id" WHERE "current_linking_climates"."current_plant_id" = ?[0m  [["current_plant_id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "current_linking_climates" ("current_climate_id", "current_plant_id") VALUES (?, ?)[0m  [["current_climate_id", 2], ["current_plant_id", 2]]
+  [1m[35m (119.2ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCurrentLinkingClimates (20140819151325)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE "current_linking_climates" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+SQLite3::SQLException: table "current_linking_climates" already exists: CREATE TABLE "current_linking_climates" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (108.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (145.9ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20140819070318)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "email" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.6ms)[0m  CREATE UNIQUE INDEX "index_users_on_username" ON "users" ("username")
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "users" ADD "password_digest" varchar(255)[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "users" ADD "remember_token" varchar(255)
+  [1m[36m (0.5ms)[0m  [1mCREATE INDEX "index_users_on_remember_token" ON "users" ("remember_token")[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD "admin" boolean DEFAULT 'f'
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819070318"]]
+  [1m[35m (113.2ms)[0m  commit transaction
+Migrating to CreateCurrentPlants (20140819091734)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "current_plants" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819091734"]]
+  [1m[35m (118.2ms)[0m  commit transaction
+Migrating to AddFieldsToCurrentPlant (20140819092419)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  ALTER TABLE "current_plants" ADD "species" varchar(255)
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "current_plants" ADD "common_name" varchar(255)[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "current_plants" ADD "scientific_name" varchar(255)
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "current_plants" ADD "synonym" varchar(255)[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "current_plants" ADD "subspecies" varchar(255)
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "current_plants" ADD "description" varchar(255)[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "current_plants" ADD "location_name" varchar(255)
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "current_plants" ADD "characteristics" varchar(255)[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "current_plants" ADD "additional_info" varchar(255)
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "current_plants" ADD "identification" varchar(255)[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "current_plants" ADD "physical" varchar(255)
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "current_plants" ADD "general_info" varchar(255)[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "current_plants" ADD "environment" varchar(255)
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "current_plants" ADD "horticulture" varchar(255)[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "current_plants" ADD "architectural_uses" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "current_plants" ADD "culture" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "current_plants" ADD "conservation" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "current_plants" ADD "wildlife" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "current_plants" ADD "architectural_info" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "current_plants" ADD "discovered_by" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "current_plants" ADD "named_by" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "current_plants" ADD "approved" boolean[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "current_plants" ADD "version" integer
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819092419"]]
+  [1m[35m (112.7ms)[0m  commit transaction
+Migrating to CreateCurrentSizes (20140819115200)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "current_sizes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115200"]]
+  [1m[35m (138.6ms)[0m  commit transaction
+Migrating to CreateCurrentSoilTypes (20140819115340)
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "current_soil_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115340"]]
+  [1m[35m (149.0ms)[0m  commit transaction
+Migrating to CreateCurrentLeafColours (20140819115354)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "current_leaf_colours" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115354"]]
+  [1m[35m (133.1ms)[0m  commit transaction
+Migrating to CreateCurrentFlowerColours (20140819115406)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "current_flower_colours" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115406"]]
+  [1m[35m (128.5ms)[0m  commit transaction
+Migrating to CreateCurrentPhotos (20140819115428)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "current_photos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115428"]]
+  [1m[35m (119.2ms)[0m  commit transaction
+Migrating to CreateCurrentFamilies (20140819115542)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "current_families" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115542"]]
+  [1m[35m (129.0ms)[0m  commit transaction
+Migrating to CreateCurrentGenus (20140819115549)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "current_genus" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115549"]]
+  [1m[35m (139.2ms)[0m  commit transaction
+Migrating to CreateCurrentOrigins (20140819115556)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "current_origins" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115556"]]
+  [1m[35m (149.4ms)[0m  commit transaction
+Migrating to CreateCurrentTypes (20140819115606)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "current_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115606"]]
+  [1m[35m (120.3ms)[0m  commit transaction
+Migrating to CreateCurrentClimates (20140819115611)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "current_climates" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115611"]]
+  [1m[35m (122.4ms)[0m  commit transaction
+Migrating to AddRemainingFieldsToCurrentPlant (20140819120817)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "current_plants" ADD "plant_id" integer
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "current_plants" ADD "submitted_by" integer[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "current_plants" ADD "edited_by" integer
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819120817"]]
+  [1m[35m (132.6ms)[0m  commit transaction
+Migrating to CreateCurrentLinkingClimate (20140819145441)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "current_linking_climates" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "current_plant_id" integer, "current_climate_id" integer) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819145441"]]
+  [1m[35m (139.3ms)[0m  commit transaction
+Migrating to CreateCurrentLinkingClimates (20140819151325)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "current_linking_climates" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+SQLite3::SQLException: table "current_linking_climates" already exists: CREATE TABLE "current_linking_climates" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36m (120.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (113.5ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20140819070318)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "email" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.6ms)[0m  CREATE UNIQUE INDEX "index_users_on_username" ON "users" ("username")
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "users" ADD "password_digest" varchar(255)[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "users" ADD "remember_token" varchar(255)
+  [1m[36m (0.4ms)[0m  [1mCREATE INDEX "index_users_on_remember_token" ON "users" ("remember_token")[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD "admin" boolean DEFAULT 'f'
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819070318"]]
+  [1m[35m (115.4ms)[0m  commit transaction
+Migrating to CreateCurrentPlants (20140819091734)
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "current_plants" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819091734"]]
+  [1m[35m (139.5ms)[0m  commit transaction
+Migrating to AddFieldsToCurrentPlant (20140819092419)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "current_plants" ADD "species" varchar(255)
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "current_plants" ADD "common_name" varchar(255)[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "current_plants" ADD "scientific_name" varchar(255)
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "current_plants" ADD "synonym" varchar(255)[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "current_plants" ADD "subspecies" varchar(255)
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "current_plants" ADD "description" varchar(255)[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "current_plants" ADD "location_name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "current_plants" ADD "characteristics" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "current_plants" ADD "additional_info" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "current_plants" ADD "identification" varchar(255)[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "current_plants" ADD "physical" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "current_plants" ADD "general_info" varchar(255)[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "current_plants" ADD "environment" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "current_plants" ADD "horticulture" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "current_plants" ADD "architectural_uses" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "current_plants" ADD "culture" varchar(255)[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "current_plants" ADD "conservation" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "current_plants" ADD "wildlife" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "current_plants" ADD "architectural_info" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "current_plants" ADD "discovered_by" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "current_plants" ADD "named_by" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "current_plants" ADD "approved" boolean[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "current_plants" ADD "version" integer
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819092419"]]
+  [1m[35m (140.2ms)[0m  commit transaction
+Migrating to CreateCurrentSizes (20140819115200)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "current_sizes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115200"]]
+  [1m[35m (139.2ms)[0m  commit transaction
+Migrating to CreateCurrentSoilTypes (20140819115340)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "current_soil_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115340"]]
+  [1m[35m (149.6ms)[0m  commit transaction
+Migrating to CreateCurrentLeafColours (20140819115354)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "current_leaf_colours" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115354"]]
+  [1m[35m (140.7ms)[0m  commit transaction
+Migrating to CreateCurrentFlowerColours (20140819115406)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "current_flower_colours" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115406"]]
+  [1m[35m (133.0ms)[0m  commit transaction
+Migrating to CreateCurrentPhotos (20140819115428)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "current_photos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115428"]]
+  [1m[35m (143.8ms)[0m  commit transaction
+Migrating to CreateCurrentFamilies (20140819115542)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "current_families" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115542"]]
+  [1m[35m (129.1ms)[0m  commit transaction
+Migrating to CreateCurrentGenus (20140819115549)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "current_genus" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115549"]]
+  [1m[35m (139.6ms)[0m  commit transaction
+Migrating to CreateCurrentOrigins (20140819115556)
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "current_origins" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115556"]]
+  [1m[35m (129.3ms)[0m  commit transaction
+Migrating to CreateCurrentTypes (20140819115606)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "current_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115606"]]
+  [1m[35m (141.2ms)[0m  commit transaction
+Migrating to CreateCurrentClimates (20140819115611)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "current_climates" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115611"]]
+  [1m[35m (139.3ms)[0m  commit transaction
+Migrating to AddRemainingFieldsToCurrentPlant (20140819120817)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  ALTER TABLE "current_plants" ADD "plant_id" integer
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "current_plants" ADD "submitted_by" integer[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "current_plants" ADD "edited_by" integer
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819120817"]]
+  [1m[35m (137.1ms)[0m  commit transaction
+Migrating to CreateCurrentLinkingClimates (20140819145441)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCurrentLinkingClimates (20140819145441)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "current_linking_climates" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "current_plant_id" integer, "current_climate_id" integer) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140819145441"]]
+  [1m[36m (110.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (120.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (113.5ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20140819070318)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "email" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.6ms)[0m  CREATE UNIQUE INDEX "index_users_on_username" ON "users" ("username")
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "users" ADD "password_digest" varchar(255)[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "users" ADD "remember_token" varchar(255)
+  [1m[36m (0.4ms)[0m  [1mCREATE INDEX "index_users_on_remember_token" ON "users" ("remember_token")[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD "admin" boolean DEFAULT 'f'
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819070318"]]
+  [1m[35m (136.6ms)[0m  commit transaction
+Migrating to CreateCurrentPlants (20140819091734)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "current_plants" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819091734"]]
+  [1m[35m (139.6ms)[0m  commit transaction
+Migrating to AddFieldsToCurrentPlant (20140819092419)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "current_plants" ADD "species" varchar(255)
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "current_plants" ADD "common_name" varchar(255)[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "current_plants" ADD "scientific_name" varchar(255)
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "current_plants" ADD "synonym" varchar(255)[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "current_plants" ADD "subspecies" varchar(255)
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "current_plants" ADD "description" varchar(255)[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "current_plants" ADD "location_name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "current_plants" ADD "characteristics" varchar(255)[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "current_plants" ADD "additional_info" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "current_plants" ADD "identification" varchar(255)[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "current_plants" ADD "physical" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "current_plants" ADD "general_info" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "current_plants" ADD "environment" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "current_plants" ADD "horticulture" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "current_plants" ADD "architectural_uses" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "current_plants" ADD "culture" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "current_plants" ADD "conservation" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "current_plants" ADD "wildlife" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "current_plants" ADD "architectural_info" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "current_plants" ADD "discovered_by" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "current_plants" ADD "named_by" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "current_plants" ADD "approved" boolean[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "current_plants" ADD "version" integer
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819092419"]]
+  [1m[35m (118.9ms)[0m  commit transaction
+Migrating to CreateCurrentSizes (20140819115200)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "current_sizes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115200"]]
+  [1m[35m (118.6ms)[0m  commit transaction
+Migrating to CreateCurrentSoilTypes (20140819115340)
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "current_soil_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115340"]]
+  [1m[35m (129.2ms)[0m  commit transaction
+Migrating to CreateCurrentLeafColours (20140819115354)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "current_leaf_colours" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115354"]]
+  [1m[35m (150.8ms)[0m  commit transaction
+Migrating to CreateCurrentFlowerColours (20140819115406)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "current_flower_colours" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115406"]]
+  [1m[35m (129.1ms)[0m  commit transaction
+Migrating to CreateCurrentPhotos (20140819115428)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "current_photos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115428"]]
+  [1m[35m (131.3ms)[0m  commit transaction
+Migrating to CreateCurrentFamilies (20140819115542)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "current_families" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115542"]]
+  [1m[35m (128.8ms)[0m  commit transaction
+Migrating to CreateCurrentGenus (20140819115549)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "current_genus" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115549"]]
+  [1m[35m (129.5ms)[0m  commit transaction
+Migrating to CreateCurrentOrigins (20140819115556)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "current_origins" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115556"]]
+  [1m[35m (139.5ms)[0m  commit transaction
+Migrating to CreateCurrentTypes (20140819115606)
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "current_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115606"]]
+  [1m[35m (151.7ms)[0m  commit transaction
+Migrating to CreateCurrentClimates (20140819115611)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "current_climates" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115611"]]
+  [1m[35m (120.3ms)[0m  commit transaction
+Migrating to AddRemainingFieldsToCurrentPlant (20140819120817)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  ALTER TABLE "current_plants" ADD "plant_id" integer
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "current_plants" ADD "submitted_by" integer[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "current_plants" ADD "edited_by" integer
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819120817"]]
+  [1m[35m (116.4ms)[0m  commit transaction
+Migrating to CreateCurrentLinkingClimates (20140819145441)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "current_linking_climates" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "current_plant_id" integer, "current_climate_id" integer) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819145441"]]
+  [1m[35m (129.3ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m

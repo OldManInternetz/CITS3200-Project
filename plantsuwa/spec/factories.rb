@@ -4,6 +4,5 @@ FactoryGirl.define do
   end
   factory :current_climate do
     name "Cool"
-    current_plant
   end
 end

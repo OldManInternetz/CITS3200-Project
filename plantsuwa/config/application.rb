@@ -23,5 +23,8 @@ module Plantsuwa
 		I18n.enforce_available_locales = true
 		config.time_zone = 'Australia/Perth'
 
+    # This will make it easier to organise our models. Yay!
+    config.autoload_paths += Dir[Rails.root.join('app', 'models', '{**/}')]
+
   end
 end

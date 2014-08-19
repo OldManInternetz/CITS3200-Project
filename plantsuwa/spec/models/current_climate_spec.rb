@@ -4,16 +4,17 @@ describe CurrentClimate do
 
   before do
     @current_plant = FactoryGirl.create(:current_plant)
-    @current_climate = @current_plant.current_climates.build(name: "Cool")
+    @current_climate = FactoryGirl.create(:current_climate)
+    @current_plant.current_climates << @current_climate
   end
 
   subject { @current_climate }
 
   it { should be_valid }
   it { should respond_to(:name) }
-  it { should respond_to(:current_plant_id) }
+  it { should respond_to(:current_plants) }
 
-  its(:current_plant) { should eq @current_plant }
+  its(:current_plants) { should include @current_plant }
 
   describe "when name is blank" do
     before { @current_climate.name = " " }
@@ -22,11 +23,6 @@ describe CurrentClimate do
 
   describe "when name is more than 100 characters" do
     before { @current_climate.name = "*" * 101 }
-    it { should_not be_valid }
-  end
-
-  describe "when current_plant_id is not present" do
-    before { @current_climate.current_plant_id = nil }
     it { should_not be_valid }
   end
 
