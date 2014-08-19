@@ -1,6 +1,95 @@
 {
   "RSpec": {
     "coverage": {
+      "/home/michael/rails_projects/CITS3200-Project/plantsuwa/app/controllers/current_plant_controller.rb": [
+        1,
+        1,
+        null,
+        null
+      ],
+      "/home/michael/rails_projects/CITS3200-Project/plantsuwa/app/controllers/application_controller.rb": [
+        1,
+        null,
+        null,
+        1,
+        null
+      ],
+      "/home/michael/rails_projects/CITS3200-Project/plantsuwa/app/models/current_climate.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        4,
+        4,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/home/michael/rails_projects/CITS3200-Project/plantsuwa/app/models/current_family.rb": [
+        1,
+        1,
+        null
+      ],
+      "/home/michael/rails_projects/CITS3200-Project/plantsuwa/app/models/current_flower_colour.rb": [
+        1,
+        1,
+        null
+      ],
+      "/home/michael/rails_projects/CITS3200-Project/plantsuwa/app/models/current_genus.rb": [
+        1,
+        1,
+        null
+      ],
+      "/home/michael/rails_projects/CITS3200-Project/plantsuwa/app/models/current_leaf_colour.rb": [
+        1,
+        1,
+        null
+      ],
+      "/home/michael/rails_projects/CITS3200-Project/plantsuwa/app/models/current_origin.rb": [
+        1,
+        1,
+        null
+      ],
+      "/home/michael/rails_projects/CITS3200-Project/plantsuwa/app/models/current_photo.rb": [
+        1,
+        1,
+        null
+      ],
+      "/home/michael/rails_projects/CITS3200-Project/plantsuwa/app/models/current_plant.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/home/michael/rails_projects/CITS3200-Project/plantsuwa/app/models/current_size.rb": [
+        1,
+        1,
+        null
+      ],
+      "/home/michael/rails_projects/CITS3200-Project/plantsuwa/app/models/current_soil_type.rb": [
+        1,
+        1,
+        null
+      ],
+      "/home/michael/rails_projects/CITS3200-Project/plantsuwa/app/models/current_type.rb": [
+        1,
+        1,
+        null
+      ],
       "/home/michael/rails_projects/CITS3200-Project/plantsuwa/app/models/user.rb": [
         1,
         null,
@@ -46,6 +135,6 @@
         null
       ]
     },
-    "timestamp": 1408432721
+    "timestamp": 1408452372
   }
 }

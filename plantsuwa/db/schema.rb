@@ -11,46 +11,53 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140819115611) do
+ActiveRecord::Schema.define(version: 20140819120817) do
 
   create_table "current_climates", force: true do |t|
     t.string   "name"
+    t.integer  "current_plant_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "current_families", force: true do |t|
     t.string   "name"
+    t.integer  "current_plant_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "current_flower_colours", force: true do |t|
     t.string   "name"
+    t.integer  "current_plant_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "current_genus", force: true do |t|
     t.string   "name"
+    t.integer  "current_plant_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "current_leaf_colours", force: true do |t|
     t.string   "name"
+    t.integer  "current_plant_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "current_origins", force: true do |t|
     t.string   "name"
+    t.integer  "current_plant_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "current_photos", force: true do |t|
     t.string   "description"
+    t.integer  "current_plant_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -82,22 +89,28 @@ ActiveRecord::Schema.define(version: 20140819115611) do
     t.string   "named_by"
     t.boolean  "approved"
     t.integer  "version"
+    t.integer  "plant_id"
+    t.integer  "submitted_by"
+    t.integer  "edited_by"
   end
 
   create_table "current_sizes", force: true do |t|
     t.string   "name"
+    t.integer  "current_plant_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "current_soil_types", force: true do |t|
     t.string   "name"
+    t.integer  "current_plant_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "current_types", force: true do |t|
     t.string   "name"
+    t.integer  "current_plant_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
