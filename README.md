@@ -25,6 +25,14 @@ and finally push it to the server:
     
 Then hopefully the update will be pushed to the github server and the thing will be updated.
 
+If you are working on things, and you want to make sure you have the most up-to-date version of the files, you can use the command:
+
+    $ git pull
+    
+to pull the current version of the thing to your computer.
+
+
+
 There's a lot more information here:
 
 https://help.github.com/articles/creating-and-deleting-branches-within-your-repository
