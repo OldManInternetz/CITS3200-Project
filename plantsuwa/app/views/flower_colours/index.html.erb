@@ -1,0 +1,21 @@
+<h1>Listing Flower Colours</h1>
+
+<%= link_to 'New Flower Colour', new_flower_colour_path %>
+
+<table>
+	<tr>
+		<th>ID</th>
+		<th>Name</th>
+	</tr>
+	
+	<% @flower_colours.each do |flower_colour| %>
+	<tr>
+		<td>#<%= flower_colour.id %></td>
+		<td><%= flower_colour.name %></td>
+		<td><%= link_to 'Edit', edit_flower_colour_path(flower_colour) %></td>
+		<td><%= link_to 'Delete', flower_colour_path(flower_colour), method: :delete, data: { confirm: 'WARNING: Are you sure you want to DELETE this Flower Colour? Doing so will affect all plants with this flower colour!'} %></td>
+	</tr>
+	<% end %>
+</table>
+<br>
+<strong>Total Number of Flower Colours: </strong><%= @flower_colours.count %>

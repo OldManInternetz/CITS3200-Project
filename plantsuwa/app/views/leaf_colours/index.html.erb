@@ -1,0 +1,21 @@
+<h1>Listing Leaf Colours</h1>
+
+<%= link_to 'New Leaf Colour', new_leaf_colour_path %>
+
+<table>
+	<tr>
+		<th>ID</th>
+		<th>Name</th>
+	</tr>
+	
+	<% @leaf_colours.each do |leaf_colour| %>
+	<tr>
+		<td>#<%= leaf_colour.id %></td>
+		<td><%= leaf_colour.name %></td>
+		<td><%= link_to 'Edit', edit_leaf_colour_path(leaf_colour) %></td>
+		<td><%= link_to 'Delete', leaf_colour_path(leaf_colour), method: :delete, data: { confirm: 'WARNING: Are you sure you want to DELETE this Leaf Colour? Doing so will affect all plants with this leaf colour!'} %></td>
+	</tr>
+	<% end %>
+</table>
+<br>
+<strong>Total Number of Leaf Colours: </strong><%= @leaf_colours.count %>

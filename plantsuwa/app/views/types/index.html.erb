@@ -1,0 +1,21 @@
+<h1>Listing Types</h1>
+
+<%= link_to 'New Type', new_type_path %>
+
+<table>
+	<tr>
+		<th>ID</th>
+		<th>Name</th>
+	</tr>
+	
+	<% @types.each do |type| %>
+	<tr>
+		<td>#<%= type.id %></td>
+		<td><%= type.name %></td>
+		<td><%= link_to 'Edit', edit_type_path(type) %></td>
+		<td><%= link_to 'Delete', type_path(type), method: :delete, data: { confirm: 'WARNING: Are you sure you want to DELETE this Type? Doing so will affect all plants with this type!'} %></td>
+	</tr>
+	<% end %>
+</table>
+<br>
+<strong>Total Number of Types: </strong><%= @types.count %>
