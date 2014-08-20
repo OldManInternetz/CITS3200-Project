@@ -175,7 +175,7 @@ ActiveRecord::Schema.define(version: 20140820073028) do
     t.datetime "updated_at"
     t.string   "password_digest"
     t.string   "remember_token"
-    t.boolean  "admin",           default: false
+    t.integer  "admin",           default: 0
   end
 
   add_index "users", ["remember_token"], name: "index_users_on_remember_token"

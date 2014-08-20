@@ -9,6 +9,6 @@ class CreateUsers < ActiveRecord::Migration
     add_column :users, :password_digest, :string
     add_column :users, :remember_token, :string
     add_index  :users, :remember_token
-    add_column :users, :admin, :boolean, default: false;
+    add_column :users, :admin, :integer, default: 0;
   end
 end
