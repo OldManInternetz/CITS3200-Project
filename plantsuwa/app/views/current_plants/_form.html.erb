@@ -1,0 +1,63 @@
+<%= simple_form_for(@current_plant, html: { class: 'form-horizontal' }) do |f| %>
+  <% if @current_plant.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@current_plant.errors.count, "error") %> prohibited this plant from being saved:</h2>
+    <ul>
+    <% @current_plant.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+  	<% end %>
+    </ul>
+  </div>
+  <% end %>
+  
+  <fieldset>
+	  <legend>Naming</legend>
+	  <%= f.input  :name, hint: 'The display name of the Plant' %>
+	  <%= f.input  :species %>
+  	  <%= f.input  :common_name %> 
+  	  <%= f.input  :scientific_name %> 
+  	  <%= f.input  :synonym %> 
+  	  <%= f.input  :subspecies %> 
+  </fieldset> 
+  
+  <fieldset>
+	  	<legend>Descriptions</legend>
+		<%= f.input  :description, hint: 'Describe the plant in a few lines.'%> 
+    	<%= f.input  :characteristics, hint: 'List the typical characteristics of the plant.' %> 
+    	<%= f.input  :identification, hint: 'How is this plant identified in the field?' %> 
+    	<%= f.input  :physical, hint: 'What are the physcial characteristics of the plant?'%>
+  </fieldset>
+  
+  <fieldset>
+	  <legend>Architectural</legend>
+  	  <%= f.input  :environment, hint: 'What sort of environment does this plant enjoy?' %>
+  	  <%= f.input  :horticulture %>
+  	  <%= f.input  :architectural_uses %>
+	  <%= f.input  :architectural_info %> 
+  </fieldset>
+  
+  <fieldset>
+	  <legend>Cultural</legend>
+  	  <%= f.input  :culture, hint: 'What role does this plant play in different World cultures?' %> 
+  	  <%= f.input  :conservation %> 
+  	  <%= f.input  :wildlife, hint: 'Does this plant attract any fauna?' %>
+  </fieldset>
+   
+  <fieldset>
+ 	 <legend>Other</legend>
+  	 <%= f.input  :location_name, hint: 'Where can this plant be found locally?'%> 
+  	 <%= f.input  :general_info %>
+  	 <%= f.input  :additional_info %> 
+  </fieldset>
+  
+  <fieldset>
+	  <legend>Historical</legend>
+  	  <%= f.input  :discovered_by, hint: 'Biologist credited with discovering this plant.' %>
+	  <%= f.input  :named_by, hint: 'Biologist credited with naming this plant'%>
+  </fieldset>
+	  
+ <br><br>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

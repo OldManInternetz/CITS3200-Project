@@ -1,0 +1,126 @@
+<%= form_for @current_plant do |f| %>
+  <% if @current_plant.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@current_plant.errors.count, "error") %> prohibited this plant from being saved:</h2>
+    <ul>
+    <% @current_plant.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+  	<% end %>
+    </ul>
+  </div>
+  <% end %>
+
+  <p>
+    <%= f.label :name %> 
+    <%= f.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= f.label :species %> 
+    <%= f.text_field :species %>
+  </p>
+  
+  <p>
+	  <%= f.label :common_name %> 
+	  <%= f.text_field :common_name%>
+  </p>
+  
+  <p>
+	  <%= f.label  :scientific_name %> 
+	  <%= f.text_field :scientific_name %>
+  </p>
+  
+  <p>
+	  <%= f.label  :synonym %> 
+	  <%= f.text_field :synonym %>
+  </p>
+  
+  <p>
+	  <%= f.label  :subspecies %> 
+	  <%= f.text_field :subspecies %>
+  </p>
+  
+  <p>
+	  <%= f.label  :description %> 
+	  <%= f.text_area :description %>
+  </p>
+  
+  <p>
+	  <%= f.label  :location_name%> 
+	  <%= f.text_field :location_name %>
+  </p>
+  
+  <p>
+	  <%= f.label  :characteristics %> 
+	  <%= f.text_area :characteristics %>
+  </p>
+  
+  <p>
+	  <%= f.label  :additional_info %> 
+	  <%= f.text_area :additional_info %>
+  </p>
+  
+  <p>
+	  <%= f.label  :identification %> 
+	  <%= f.text_area :identification %>
+  </p>
+  
+  <p>
+	  <%= f.label  :physical %> 
+	  <%= f.text_area :physical %>
+  </p>
+  
+  <p>
+	  <%= f.label  :general_info %> 
+	  <%= f.text_area :general_info %>
+  </p>
+  
+  <p>
+	  <%= f.label  :environment %> 
+	  <%= f.text_area :environment %>
+  </p>
+  
+  <p>
+	  <%= f.label  :horticulture %> 
+	  <%= f.text_area :horticulture %>
+  </p>
+  
+  <p>
+	  <%= f.label  :architectural_uses %> 
+	  <%= f.text_area :architectural_uses %>
+  </p>
+  
+  <p>
+	  <%= f.label  :culture %> 
+	  <%= f.text_area :culture %>
+  </p>
+  
+  <p>
+	  <%= f.label  :conservation %> 
+	  <%= f.text_area :conservation %>
+  </p>
+  
+  <p>
+	  <%= f.label  :wildlife %> 
+	  <%= f.text_area :wildlife %>
+  </p>
+  
+  <p>
+	  <%= f.label  :architectural_info %> 
+	  <%= f.text_area :architectural_info %>
+  </p>
+  
+  <p>
+	  <%= f.label  :discovered_by %> 
+	  <%= f.text_field :discovered_by %>
+  </p>
+  
+  <p>
+	  <%= f.label  :named_by %> 
+	  <%= f.text_field :named_by %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

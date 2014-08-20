@@ -1,0 +1,53 @@
+<div>
+	<h2>Naming</h2>
+	<dl class="dl-horizontal">
+		<dt>Name</dt><dd><%= @current_plant.name %></dd>
+		<dt>Species</dt><dd><%= @current_plant.species %></dd>
+		<dt>Common Name</dt><dd><%= @current_plant.common_name %></dd>
+		<dt>Scientific Name</dt><dd><%= @current_plant.scientific_name %></dd>
+		<dt>Synonym</dt><dd><%= @current_plant.synonym %></dd>
+		<dt>Subspecies</dt><dd><%= @current_plant.subspecies %></dd>
+	</dl>
+	
+	<h2>Descriptions</h2>
+	<dl class="dl-horizontal">
+		<dt>Description</dt><dd><%= @current_plant.description %></dd>
+		<dt>Characteristics</dt><dd><%= @current_plant.characteristics %></dd>
+		<dt>Identification</dt><dd><%= @current_plant.identification %></dd>
+		<dt>Physical</dt><dd><%= @current_plant.physical %></dd>
+	</dl>
+	
+	<h2>Architechural</h2>
+	<dl class="dl-horizontal">
+		<dt>Environment</dt><dd><%= @current_plant.environment %></dd>
+		<dt>Horticulture</dt><dd><%= @current_plant.horticulture %></dd>
+		<dt>Architectural Uses</dt><dd><%= @current_plant.architectural_uses %></dd>
+		<dt>Architectural Info</dt><dd><%= @current_plant.architectural_info %></dd>
+	</dl>
+	
+	<h2>Cultural</h2>
+	<dl class="dl-horizontal">
+		<dt>Culture</dt><dd><%= @current_plant.culture %></dd>
+		<dt>Conservation</dt><dd><%= @current_plant.conservation %></dd>
+		<dt>Wildlife</dt><dd><%= @current_plant.wildlife %></dd>
+	</dl>
+	
+	<h2>Other</h2>
+	<dl class="dl-horizontal">
+		<dt>Location Name</dt><dd><%= @current_plant.location_name %></dd>
+		<dt>General Info</dt><dd><%= @current_plant.general_info %></dd>
+		<dt>Additional Info</dt><dd><%= @current_plant.additional_info %></dd>
+	</dl>
+	
+	<h2>Historical</h2>
+	<dl class="dl-horizontal">
+		<dt>Discovered By</dt><dd><%= @current_plant.discovered_by %></dd>
+		<dt>Named By</dt><dd><%= @current_plant.named_by %></dd>
+	</dl>
+	
+	
+	
+	
+</div>
+
+<%= link_to 'Back', current_plants_path %>
