@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140820073028) do
+ActiveRecord::Schema.define(version: 20140820151846) do
 
   create_table "climates", force: true do |t|
     t.string   "name"
@@ -82,6 +82,18 @@ ActiveRecord::Schema.define(version: 20140820073028) do
     t.datetime "updated_at"
   end
 
+  create_table "current_photos", force: true do |t|
+    t.string   "description"
+    t.integer  "current_plant_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "has_attachment"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
   create_table "current_plants", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -140,12 +152,6 @@ ActiveRecord::Schema.define(version: 20140820073028) do
 
   create_table "origins", force: true do |t|
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "photos", force: true do |t|
-    t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
