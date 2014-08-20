@@ -1,0 +1,21 @@
+<h1>Listing Sizes</h1>
+
+<%= link_to 'New Size', new_size_path %>
+
+<table>
+	<tr>
+		<th>ID</th>
+		<th>Name</th>
+	</tr>
+	
+	<% @sizes.each do |size| %>
+	<tr>
+		<td>#<%= size.id %></td>
+		<td><%= size.name %></td>
+		<td><%= link_to 'Edit', edit_size_path(size) %></td>
+		<td><%= link_to 'Delete', size_path(size), method: :delete, data: { confirm: 'WARNING: Are you sure you want to DELETE this Size? Doing so will affect all plants with this size!'} %></td>
+	</tr>
+	<% end %>
+</table>
+<br>
+<strong>Total Number of Sizes: </strong><%= @sizes.count %>

@@ -1,0 +1,21 @@
+<h1>Listing Soil Types</h1>
+
+<%= link_to 'New Soil Type', new_soil_type_path %>
+
+<table>
+	<tr>
+		<th>ID</th>
+		<th>Name</th>
+	</tr>
+	
+	<% @soil_types.each do |soil_type| %>
+	<tr>
+		<td>#<%= soil_type.id %></td>
+		<td><%= soil_type.name %></td>
+		<td><%= link_to 'Edit', edit_soil_type_path(soil_type) %></td>
+		<td><%= link_to 'Delete', soil_type_path(soil_type), method: :delete, data: { confirm: 'WARNING: Are you sure you want to DELETE this Soil Type? Doing so will affect all plants with this soil type!'} %></td>
+	</tr>
+	<% end %>
+</table>
+<br>
+<strong>Total Number of Soil Types: </strong><%= @soil_types.count %>

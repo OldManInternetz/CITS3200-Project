@@ -1,9 +1,11 @@
 Plantsuwa::Application.routes.draw do
 
 
-  root 'current_plants#index'
+  get "welcome/index"
+  root 'welcome#index'
 
-  resources :current_plants
+  resources :current_plants, :climates, :families, :flower_colours
+  resources :genera, :leaf_colours, :origins, :sizes, :soil_types, :types
 
  
 end

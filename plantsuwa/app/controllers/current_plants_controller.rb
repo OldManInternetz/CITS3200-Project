@@ -19,6 +19,20 @@ class CurrentPlantsController < ApplicationController
     @current_plant = CurrentPlant.find(params[:id])
   end
   
+  def edit
+    @current_plant = CurrentPlant.find(params[:id])
+  end
+  
+  def update
+    @current_plant = CurrentPlant.find(params[:id])
+ 
+    if @current_plant.update(current_plant_params)
+      redirect_to @current_plant
+    else
+      render 'edit'
+    end
+  end
+  
   def destroy
     @current_plant = CurrentPlant.find(params[:id])
     @current_plant.destroy

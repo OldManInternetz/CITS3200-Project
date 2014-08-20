@@ -1,0 +1,21 @@
+<h1>Listing Climates</h1>
+
+<%= link_to 'New Climate', new_climate_path %>
+
+<table>
+	<tr>
+		<th>ID</th>
+		<th>Name</th>
+	</tr>
+	
+	<% @climates.each do |climate| %>
+	<tr>
+		<td>#<%= climate.id %></td>
+		<td><%= climate.name %></td>
+		<td><%= link_to 'Edit', edit_climate_path(climate) %></td>
+		<td><%= link_to 'Delete', climate_path(climate), method: :delete, data: { confirm: 'WARNING: Are you sure you want to DELETE this Climate? Doing so will affect all plants with this climate!'} %></td>
+	</tr>
+	<% end %>
+</table>
+<br>
+<strong>Total Number of Climates: </strong><%= @climates.count %>

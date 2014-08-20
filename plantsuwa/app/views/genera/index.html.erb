@@ -1,0 +1,21 @@
+<h1>Listing Genera</h1>
+
+<%= link_to 'New Genus', new_genus_path %>
+
+<table>
+	<tr>
+		<th>ID</th>
+		<th>Name</th>
+	</tr>
+	
+	<% @genera.each do |genus| %>
+	<tr>
+		<td>#<%= genus.id %></td>
+		<td><%= genus.name %></td>
+		<td><%= link_to 'Edit', edit_genus_path(genus) %></td>
+		<td><%= link_to 'Delete', genus_path(genus), method: :delete, data: { confirm: 'WARNING: Are you sure you want to DELETE this Genus? Doing so will affect all plants with this genus!'} %></td>
+	</tr>
+	<% end %>
+</table>
+<br>
+<strong>Total Number of Genera: </strong><%= @genera.count %>

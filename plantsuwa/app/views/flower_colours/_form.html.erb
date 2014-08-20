@@ -1,0 +1,20 @@
+<%= simple_form_for(@flower_colour, html: { class: 'form-horizontal' }) do |f| %>
+  <% if @flower_colour.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@flower_colour.errors.count, "error") %> prohibited this flower_colour from being saved:</h2>
+    <ul>
+    <% @flower_colour.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+  	<% end %>
+    </ul>
+  </div>
+  <% end %>
+  
+  <fieldset>
+	  <%= f.input  :name, hint: 'Aim to capture all possible types in about 5-10 different categories.' %>
+  </fieldset> 
+ <br>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

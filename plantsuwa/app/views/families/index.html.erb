@@ -1,0 +1,24 @@
+<h1>Listing Families</h1>
+
+<%= link_to 'New Family', new_family_path %>
+
+<table>
+	<tr>
+		<th>ID</th>
+		<th>Name</th>
+	</tr>
+	
+	<% @families.each do |family| %>
+	<tr>
+		<td>#<%= family.id %></td>
+		<td><%= family.name %></td>
+		<td><%= link_to 'Edit', edit_family_path(family) %></td>
+		<td><%= link_to 'Delete', family_path(family), method: :delete, data: { confirm: 'WARNING: Are you sure you want to DELETE this Family? Doing so will affect all plants with this family!'} %></td>
+	</tr>
+	<% end %>
+	
+</table>
+
+<br>
+
+<strong>Total Number of Families: </strong><%= @families.count %>
