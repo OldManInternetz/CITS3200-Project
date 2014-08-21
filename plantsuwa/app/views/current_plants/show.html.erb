@@ -2,11 +2,23 @@
 	<h2>Naming</h2>
 	<dl class="dl-horizontal">
 		<dt>Name</dt><dd><%= @current_plant.name %></dd>
+		<dt>Genus</dt>
+		<% if @current_plant.families[0] %>
+			<dd><%= @current_plant.genera[0].name %></dd>
+		<% end %>
+		<dt>Family</dt>
+		<% if @current_plant.families[0] %>
+			<dd><%= @current_plant.families[0].name %></dd>
+		<% end %>
 		<dt>Species</dt><dd><%= @current_plant.species %></dd>
 		<dt>Common Name</dt><dd><%= @current_plant.common_name %></dd>
 		<dt>Scientific Name</dt><dd><%= @current_plant.scientific_name %></dd>
 		<dt>Synonym</dt><dd><%= @current_plant.synonym %></dd>
 		<dt>Subspecies</dt><dd><%= @current_plant.subspecies %></dd>
+		<dt>Type</dt>
+		<% if @current_plant.types[0] %>
+			<dd><%= @current_plant.types[0].name %></dd>
+		<% end %>
 	</dl>
 	
 	<h2>Descriptions</h2>
@@ -18,9 +30,17 @@
 		<dt>Size</dt>
 		<% for @size in @current_plant.sizes %>
 			<dd> <%= @size.name %> </dd>
+		<% end %>
+		<dt>Flower Colour</dt>
+		<% for @flower_colour in @current_plant.flower_colours %>
+			<dd> <%= @flower_colour.name %> </dd>
+		<% end %>
+		<dt>Leaf Colour</dt>
+		<% for @leaf_colour in @current_plant.leaf_colours %>
+			<dd> <%= @leaf_colour.name %> </dd>
 		<% end %>		
 	</dl>
-	
+	<br>
 	<h2>Architechural</h2>
 	<dl class="dl-horizontal">
 		<dt>Climates</dt>		
@@ -31,6 +51,10 @@
 		<dt>Horticulture</dt><dd><%= @current_plant.horticulture %></dd>
 		<dt>Architectural Uses</dt><dd><%= @current_plant.architectural_uses %></dd>
 		<dt>Architectural Info</dt><dd><%= @current_plant.architectural_info %></dd>
+		<dt>Soil Types</dt>		
+		<% for @soil_type in @current_plant.soil_types %>
+			<dd> <%= @soil_type.name %></dd>
+		<% end %>
 	</dl>
 	
 	<h2>Cultural</h2>
@@ -42,6 +66,10 @@
 	
 	<h2>Other</h2>
 	<dl class="dl-horizontal">
+		<dt>Origins</dt>		
+		<% for @origin in @current_plant.origins %>
+			<dd> <%= @origin.name %></dd>
+		<% end %>
 		<dt>Location Name</dt><dd><%= @current_plant.location_name %></dd>
 		<dt>General Info</dt><dd><%= @current_plant.general_info %></dd>
 		<dt>Additional Info</dt><dd><%= @current_plant.additional_info %></dd>

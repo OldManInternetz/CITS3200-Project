@@ -42,7 +42,7 @@ class CurrentPlantsController < ApplicationController
   
   private
     def current_plant_params
-      params.require(:current_plant).permit(:name, :species, :common_name, :scientific_name, :synonym, :subspecies, :description, :location_name, :characteristics, :additional_info, :identification, :physical, :general_info, :environment, :horticulture, :architectural_uses, :culture, :conservation, :wildlife, :architectural_info, :discovered_by, :named_by, :climate_ids => [], :size_ids => [])
+      params.require(:current_plant).permit(:name, :species, :common_name, :scientific_name, :synonym, :subspecies, :description, :location_name, :characteristics, :additional_info, :identification, :physical, :general_info, :environment, :horticulture, :architectural_uses, :culture, :conservation, :wildlife, :architectural_info, :discovered_by, :named_by, :climate_ids => [], :size_ids => [], :size_ids => [], :type_ids => [], :soil_type_ids => [], :origin_ids => [], :leaf_colour_ids => [], :genus_ids => [], :flower_colour_ids => [], :family_ids => [])
     end
   
 end

@@ -1,8 +1,8 @@
 class CurrentPlant < ActiveRecord::Base
 
 
-	#has_many :current_linking_climates
-  #has_many :climates, through: :current_linking_climates
+	has_many :current_linking_climates
+  has_many :climates, through: :current_linking_climates
 
 	has_many :current_linking_families
   has_many :families, through: :current_linking_families
@@ -27,9 +27,6 @@ class CurrentPlant < ActiveRecord::Base
 
 	has_many :current_linking_types
   has_many :types, through: :current_linking_types
-
-
-  has_and_belongs_to_many :climates
 
 	has_many :current_photos, dependent: :destroy
 

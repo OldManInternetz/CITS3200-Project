@@ -39533,3 +39533,95 @@ Migrating to CreateJoinTableClimatesCurrentPlants (20140821112829)
   [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140821112829"]]
   [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
   [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateJoinTableClimatesCurrentPlants (20140821112829)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (31.3ms)[0m  DROP TABLE "climates_current_plants"
+  [1m[36mSQL (7.6ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20140821112829'[0m
+  [1m[35m (9.1ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateCurrentPlantsClimates (20140821104329)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  DROP TABLE "current_plants_climates"
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20140821104329'[0m
+  [1m[35m (2.2ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to AddAttachmentToCurrentPhotos (20140820151846)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (71.8ms)[0m  CREATE TEMPORARY TABLE "acurrent_photos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime, "has_attachment" boolean, "image_file_name" varchar(255), "image_content_type" varchar(255), "image_file_size" integer, "image_updated_at" datetime) 
+  [1m[36m (0.2ms)[0m  [1mSELECT * FROM "current_photos"[0m
+  [1m[35m (10.6ms)[0m  DROP TABLE "current_photos"
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "current_photos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime, "image_file_name" varchar(255), "image_content_type" varchar(255), "image_file_size" integer, "image_updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "acurrent_photos"
+  [1m[36m (0.4ms)[0m  [1mDROP TABLE "acurrent_photos"[0m
+  [1m[35m (0.2ms)[0m  CREATE TEMPORARY TABLE "acurrent_photos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime, "image_file_name" varchar(255), "image_content_type" varchar(255), "image_file_size" integer, "image_updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "current_photos"[0m
+  [1m[35m (0.5ms)[0m  DROP TABLE "current_photos"
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "current_photos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime, "image_content_type" varchar(255), "image_file_size" integer, "image_updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "acurrent_photos"
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "acurrent_photos"[0m
+  [1m[35m (0.2ms)[0m  CREATE TEMPORARY TABLE "acurrent_photos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime, "image_content_type" varchar(255), "image_file_size" integer, "image_updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "current_photos"[0m
+  [1m[35m (0.2ms)[0m  DROP TABLE "current_photos"
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "current_photos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime, "image_file_size" integer, "image_updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "acurrent_photos"
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "acurrent_photos"[0m
+  [1m[35m (0.3ms)[0m  CREATE TEMPORARY TABLE "acurrent_photos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime, "image_file_size" integer, "image_updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "current_photos"[0m
+  [1m[35m (0.2ms)[0m  DROP TABLE "current_photos"
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "current_photos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime, "image_updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "acurrent_photos"
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE "acurrent_photos"[0m
+  [1m[35m (0.2ms)[0m  CREATE TEMPORARY TABLE "acurrent_photos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime, "image_updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "current_photos"[0m
+  [1m[35m (0.2ms)[0m  DROP TABLE "current_photos"
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE "current_photos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "acurrent_photos"
+  [1m[36m (0.1ms)[0m  [1mDROP TABLE "acurrent_photos"[0m
+  [1m[35mSQL (25.3ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20140820151846'
+  [1m[36m (24.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddAttachmentToCurrentPhotos (20140820151846)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (29.9ms)[0m  [1mALTER TABLE "current_photos" ADD "has_attachment" boolean[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "current_photos" ADD "image_file_name" varchar(255)
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "current_photos" ADD "image_content_type" varchar(255)[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "current_photos" ADD "image_file_size" integer
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "current_photos" ADD "image_updated_at" datetime[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140820151846"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+Migrating to CreateCurrentPlantsClimates (20140821104329)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "current_plants_climates" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "current_plants_id" integer, "climates_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140821104329"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+Migrating to CreateJoinTableClimatesCurrentPlants (20140821112829)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "climates_current_plants" ("climate_id" integer NOT NULL, "current_plant_id" integer NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140821112829"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateJoinTableClimatesCurrentPlants (20140821112829)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  DROP TABLE "climates_current_plants"
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20140821112829'[0m
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateCurrentPlantsClimates (20140821104329)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  DROP TABLE "current_plants_climates"
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20140821104329'[0m
+  [1m[35m (2.5ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m

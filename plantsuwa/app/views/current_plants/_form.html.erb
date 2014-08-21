@@ -14,12 +14,15 @@
 
   <fieldset>
 	  <legend>Naming</legend>
-	  <%= f.input  :name, hint: 'The display name of the Plant' %>
-	  <%= f.input  :species %>
-  	<%= f.input  :common_name %> 
-  	<%= f.input  :scientific_name %> 
-  	<%= f.input  :synonym %> 
-  	<%= f.input  :subspecies %> 
+	  	<%= f.input  :name, hint: 'The display name of the Plant' %>
+	  	<%= f.association :genera, :as => :select %>
+		<%= f.association :families, :as => :select %>
+	  	<%= f.input  :species %>
+  		<%= f.input  :common_name %> 
+  		<%= f.input  :scientific_name %> 
+  		<%= f.input  :synonym %> 
+  		<%= f.input  :subspecies %>
+		<%= f.association :types, :as => :select %>
   </fieldset> 
   
   <hr/>
@@ -31,17 +34,20 @@
     	<%= f.input  :identification, hint: 'How is this plant identified in the field?', as: :text  %> 
     	<%= f.input  :physical, hint: 'What are the physical characteristics of the plant?', as: :text %>
 		<%= f.association :sizes, :as => :check_boxes %>
+		<%= f.association :flower_colours, :as => :check_boxes %>
+		<%= f.association :leaf_colours, :as => :check_boxes %>
   </fieldset>
   
   <hr/>
 
   <fieldset>
 	  <legend>Architectural</legend>
-  	  <%= f.association :climates, :as => :check_boxes %>
+  	  	<%= f.association :climates, :as => :check_boxes %>
 	    <%= f.input  :environment, hint: 'What sort of environment does this plant enjoy?' %>
-  	  <%= f.input  :horticulture %>
-  	  <%= f.input  :architectural_uses %>
-	    <%= f.input  :architectural_info %> 
+  	  	<%= f.input  :horticulture %>
+  	  	<%= f.input  :architectural_uses %>
+	    <%= f.input  :architectural_info %>
+		<%= f.association :soil_types, :as => :check_boxes %>
   </fieldset>
   
   <hr/>
@@ -57,6 +63,7 @@
 
   <fieldset>
  	 <legend>Other</legend>
+	 <%= f.association :origins, :as => :radio_buttons %>
   	 <%= f.input  :location_name, hint: 'Where can this plant be found locally?'%> 
   	 <%= f.input  :general_info %>
   	 <%= f.input  :additional_info %> 
