@@ -19,6 +19,34 @@ ActiveRecord::Schema.define(version: 20140820151846) do
     t.datetime "updated_at"
   end
 
+  create_table "current_families", force: true do |t|
+    t.string   "name"
+    t.integer  "current_plant_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "current_flower_colours", force: true do |t|
+    t.string   "name"
+    t.integer  "current_plant_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "current_genus", force: true do |t|
+    t.string   "name"
+    t.integer  "current_plant_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "current_leaf_colours", force: true do |t|
+    t.string   "name"
+    t.integer  "current_plant_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "current_linking_climates", force: true do |t|
     t.integer  "current_plant_id"
     t.integer  "climate_id"
@@ -82,6 +110,13 @@ ActiveRecord::Schema.define(version: 20140820151846) do
     t.datetime "updated_at"
   end
 
+  create_table "current_origins", force: true do |t|
+    t.string   "name"
+    t.integer  "current_plant_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "current_photos", force: true do |t|
     t.string   "description"
     t.integer  "current_plant_id"
@@ -140,6 +175,13 @@ ActiveRecord::Schema.define(version: 20140820151846) do
     t.datetime "updated_at"
   end
 
+  create_table "current_types", force: true do |t|
+    t.string   "name"
+    t.integer  "current_plant_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "families", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -166,6 +208,12 @@ ActiveRecord::Schema.define(version: 20140820151846) do
 
   create_table "origins", force: true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "photos", force: true do |t|
+    t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

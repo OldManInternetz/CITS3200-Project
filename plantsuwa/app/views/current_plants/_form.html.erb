@@ -42,10 +42,10 @@
 
   <fieldset>
 	  <legend>Architectural</legend>
-  	  	<%= f.association :climates, :as => :check_boxes %>
+  	  <%= f.association :climates, :as => :check_boxes %>
 	    <%= f.input  :environment, hint: 'What sort of environment does this plant enjoy?' %>
-  	  	<%= f.input  :horticulture %>
-  	  	<%= f.input  :architectural_uses %>
+  	  <%= f.input  :horticulture %>
+  	  <%= f.input  :architectural_uses %>
 	    <%= f.input  :architectural_info %>
 		<%= f.association :soil_types, :as => :check_boxes %>
   </fieldset>
