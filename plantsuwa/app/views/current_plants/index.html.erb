@@ -1,8 +1,10 @@
+<% provide(:title, 'Plants List') %>
+
 <h1>Listing Plants</h1>
 
 <%= link_to 'New Plant', new_current_plant_path %>
 
-<table>
+<table class="table table-bordered">
 	<tr>
 		<th>Name</th>
 		<th>Scientific Name</th>
@@ -22,4 +24,4 @@
 	<% end %>
 </table>
 
-<strong>Total Number of Plants: </strong><%= @current_plants.count %>
+<p><strong>Total Number of Plants: </strong><%= @current_plants.count %></p>
