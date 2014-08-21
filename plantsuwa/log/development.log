@@ -36817,6 +36817,7 @@ Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-21 17:30:09
 
 Started GET "/assets/uwacrest-small.gif" for 127.0.0.1 at 2014-08-21 17:30:09 +0800
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 Started GET "/current_plants/1" for 127.0.0.1 at 2014-08-21 17:38:35 +0800
@@ -36830,6 +36831,8 @@ Completed 200 OK in 330ms (Views: 258.6ms | ActiveRecord: 2.4ms)
 
 Started GET "/current_plants/js/jquery.mobile.custom.min.js" for 127.0.0.1 at 2014-08-21 17:38:36 +0800
 =======
+=======
+>>>>>>> FETCH_HEAD
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
   [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
 
@@ -37374,6 +37377,9 @@ Completed 200 OK in 23ms (Views: 21.8ms | ActiveRecord: 0.1ms)
 
 
 Started GET "/current_plants/js/jquery.mobile.custom.min.js" for 127.0.0.1 at 2014-08-21 17:38:37 +0800
+<<<<<<< HEAD
+>>>>>>> FETCH_HEAD
+=======
 >>>>>>> FETCH_HEAD
 
 ActionController::RoutingError (No route matches [GET] "/current_plants/js/jquery.mobile.custom.min.js"):
@@ -37397,6 +37403,7 @@ ActionController::RoutingError (No route matches [GET] "/current_plants/js/jquer
   rack (1.5.2) lib/rack/lock.rb:17:in `call'
   rack (1.5.2) lib/rack/content_length.rb:14:in `call'
   rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+<<<<<<< HEAD
 <<<<<<< HEAD
   /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
   /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
@@ -37633,6 +37640,8 @@ Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-21 17:38:43
 
 Started GET "/js/jquery.mobile.custom.min.js" for 127.0.0.1 at 2014-08-21 17:38:43 +0800
 =======
+=======
+>>>>>>> FETCH_HEAD
   /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
   /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
   /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
@@ -38158,6 +38167,9 @@ Started GET "/assets/uwacrest-small.gif" for 127.0.0.1 at 2014-08-21 17:53:26 +0
 
 
 Started GET "/js/jquery.mobile.custom.min.js" for 127.0.0.1 at 2014-08-21 17:53:26 +0800
+<<<<<<< HEAD
+>>>>>>> FETCH_HEAD
+=======
 >>>>>>> FETCH_HEAD
 
 ActionController::RoutingError (No route matches [GET] "/js/jquery.mobile.custom.min.js"):
@@ -38181,6 +38193,7 @@ ActionController::RoutingError (No route matches [GET] "/js/jquery.mobile.custom
   rack (1.5.2) lib/rack/lock.rb:17:in `call'
   rack (1.5.2) lib/rack/content_length.rb:14:in `call'
   rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+<<<<<<< HEAD
 <<<<<<< HEAD
   /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
   /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
@@ -38312,6 +38325,8 @@ Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-21 17:39:02
 
 Started GET "/current_plants/js/jquery.mobile.custom.min.js" for 127.0.0.1 at 2014-08-21 17:39:02 +0800
 =======
+=======
+>>>>>>> FETCH_HEAD
   /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
   /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
   /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
@@ -38687,6 +38702,9 @@ Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-08-21 18:02:35 +0
 
 
 Started GET "/current_plants/js/jquery.mobile.custom.min.js" for 127.0.0.1 at 2014-08-21 18:02:35 +0800
+<<<<<<< HEAD
+>>>>>>> FETCH_HEAD
+=======
 >>>>>>> FETCH_HEAD
 
 ActionController::RoutingError (No route matches [GET] "/current_plants/js/jquery.mobile.custom.min.js"):
@@ -38710,6 +38728,7 @@ ActionController::RoutingError (No route matches [GET] "/current_plants/js/jquer
   rack (1.5.2) lib/rack/lock.rb:17:in `call'
   rack (1.5.2) lib/rack/content_length.rb:14:in `call'
   rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+<<<<<<< HEAD
 <<<<<<< HEAD
   /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
   /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
@@ -38843,6 +38862,8 @@ Started GET "/js/jquery.mobile.custom.min.js" for 127.0.0.1 at 2014-08-21 17:39:
 
 ActionController::RoutingError (No route matches [GET] "/js/jquery.mobile.custom.min.js"):
 =======
+=======
+>>>>>>> FETCH_HEAD
   /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
   /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
   /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
@@ -39030,6 +39051,9 @@ Started GET "/assets/uwacrest-small.gif" for 127.0.0.1 at 2014-08-21 18:06:09 +0
 Started GET "/current_plants/js/jquery.mobile.custom.min.js" for 127.0.0.1 at 2014-08-21 18:06:09 +0800
 
 ActionController::RoutingError (No route matches [GET] "/current_plants/js/jquery.mobile.custom.min.js"):
+<<<<<<< HEAD
+>>>>>>> FETCH_HEAD
+=======
 >>>>>>> FETCH_HEAD
   actionpack (4.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
   actionpack (4.0.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
@@ -39051,6 +39075,7 @@ ActionController::RoutingError (No route matches [GET] "/current_plants/js/jquer
   rack (1.5.2) lib/rack/lock.rb:17:in `call'
   rack (1.5.2) lib/rack/content_length.rb:14:in `call'
   rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+<<<<<<< HEAD
 <<<<<<< HEAD
   /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
   /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
@@ -39184,6 +39209,8 @@ Started GET "/js/jquery.mobile.custom.min.js" for 127.0.0.1 at 2014-08-21 17:39:
 
 ActionController::RoutingError (No route matches [GET] "/js/jquery.mobile.custom.min.js"):
 =======
+=======
+>>>>>>> FETCH_HEAD
   /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
   /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
   /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
@@ -39360,6 +39387,9 @@ Started GET "/assets/uwacrest-small.gif" for 127.0.0.1 at 2014-08-21 18:06:25 +0
 Started GET "/current_plants/js/jquery.mobile.custom.min.js" for 127.0.0.1 at 2014-08-21 18:06:25 +0800
 
 ActionController::RoutingError (No route matches [GET] "/current_plants/js/jquery.mobile.custom.min.js"):
+<<<<<<< HEAD
+>>>>>>> FETCH_HEAD
+=======
 >>>>>>> FETCH_HEAD
   actionpack (4.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
   actionpack (4.0.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
@@ -39382,6 +39412,7 @@ ActionController::RoutingError (No route matches [GET] "/current_plants/js/jquer
   rack (1.5.2) lib/rack/content_length.rb:14:in `call'
   rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
 <<<<<<< HEAD
+<<<<<<< HEAD
   /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
   /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
   /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
@@ -39395,6 +39426,8 @@ ActionController::RoutingError (No route matches [GET] "/current_plants/js/jquer
 
 Started GET "/assets/uwacrest-small.gif" for 127.0.0.1 at 2014-08-21 17:39:14 +0800
 =======
+=======
+>>>>>>> FETCH_HEAD
   /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
   /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
   /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
@@ -39454,4 +39487,7 @@ ActionController::RoutingError (No route matches [GET] "/current_plants/js/jquer
   [1m[35mCurrentPlant Load (0.7ms)[0m  SELECT "current_plants".* FROM "current_plants" WHERE "current_plants"."id" = 1
   [1m[36mCurrentPlant Load (0.8ms)[0m  [1mSELECT "current_plants".* FROM "current_plants" WHERE "current_plants"."id" = 1 ORDER BY "current_plants"."id" ASC LIMIT 1[0m
   [1m[35mClimate Load (0.4ms)[0m  SELECT "climates".* FROM "climates" INNER JOIN "current_linking_climates" ON "climates"."id" = "current_linking_climates"."climate_id" WHERE "current_linking_climates"."current_plant_id" = ?  [["current_plant_id", 1]]
+<<<<<<< HEAD
+>>>>>>> FETCH_HEAD
+=======
 >>>>>>> FETCH_HEAD
