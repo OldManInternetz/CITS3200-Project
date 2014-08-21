@@ -15,10 +15,12 @@ p {
 	text-justify: inter-word;
 }
 
+
 table td, th {
 	border-left: 0 !important;
 	border-right: 0 !important;
 }
+
 
 table th .bordered {
 	border-left: 1px solid gray !important;

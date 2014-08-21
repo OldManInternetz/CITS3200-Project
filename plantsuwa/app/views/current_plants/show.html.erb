@@ -1,4 +1,33 @@
+<div style="margin-left: -10px; margin-top: -5px; margin-bottom: 45px;">
+  <div id="btn-photos" class="info-tab">
+    <p>Photos</p>
+  </div>
+  <div id="btn-naming" class="info-tab" style="width: 15%;">
+    <p>Naming</p>
+  </div>
+  <div id="btn-descriptions" class="info-tab" style="width: 12%;">
+    <p>Desc.</p>
+  </div>
+  <div id="btn-architectural" class="info-tab">
+    <p>Archi.</p>
+  </div>
+  <div id="btn-cultural" class="info-tab" style="width: 15%;">
+    <p>Cultural</p>
+  </div>
+  <div id="btn-other" class="info-tab">
+    <p>Other</p>
+  </div>
+  <div id="btn-historical" class="info-tab">
+    <p>Hist.</p>
+  </div>
+</div>
 
+
+
+</table>
+
+
+<div id="tab-naming" class="info-body">
 	<h2>Naming</h2>
 	<dl class="dl-horizontal">
 		<dt>Name</dt><dd><%= @current_plant.name %></dd>
@@ -33,7 +62,10 @@
 			<% end %>
 		<% end %>
 	</dl>
-	
+</div>
+
+
+<div id="tab-descriptions" class="info-body" style="display: none">	
 	<h2>Descriptions</h2>
 	<dl class="dl-horizontal">
     <% if not @current_plant.description.blank? %>
@@ -67,7 +99,9 @@
 			<% end %>		
 		<% end %>
 	</dl>
+</div>
 
+<div id="tab-architectural" class="info-body" style="display: none">
 	<h2>Architechural</h2>
 	<dl class="dl-horizontal">
 
@@ -101,7 +135,9 @@
 		  <% end %>
     <% end %>
 	</dl>
+</div>
 	
+<div id="tab-cultural" class="info-body" style="display: none">
 	<h2>Cultural</h2>
 	<dl class="dl-horizontal">
     <% if not @current_plant.culture.blank? %>
@@ -116,7 +152,9 @@
 		  <dt>Wildlife</dt><dd><%= @current_plant.wildlife %></dd>
     <% end %>
 	</dl>
-	
+</div>	
+
+<div id="tab-other" class="info-body" style="display: none">
 	<h2>Other</h2>
 	<dl class="dl-horizontal">
     <% if @current_plant.origins.any? %>
@@ -138,7 +176,9 @@
 		  <dt>Additional Info</dt><dd><%= @current_plant.additional_info %></dd>
     <% end %>
 	</dl>
+</div>
 	
+<div id="tab-historical" class="info-body" style="display: none">
 	<h2>Historical</h2>
 	<dl class="dl-horizontal">
     <% if not @current_plant.discovered_by.blank? %>
@@ -148,6 +188,50 @@
 		  <dt>Named By</dt><dd><%= @current_plant.named_by %></dd>
     <% end %>
 	</dl>
+</div>
+
+<div id="tab-photos" class="info-body" style="display: none">
+  <h2>Photos</h2>
+  <p>Nothing here yet, sorry!</p>
+</div>
+
+<script>
+  $('#btn-naming').on('click', function () {
+    $('.info-body').css({ display: 'none' });
+    $('#tab-naming').css({ display: '' });
+  });
+
+  $('#btn-descriptions').on('click', function () {
+    $('.info-body').css({ display: 'none' });
+    $('#tab-descriptions').css({ display: '' });
+  });
+
+  $('#btn-architectural').on('click', function () {
+    $('.info-body').css({ display: 'none' });
+    $('#tab-architectural').css({ display: '' });
+  });
+
+  $('#btn-cultural').on('click', function () {
+    $('.info-body').css({ display: 'none' });
+    $('#tab-cultural').css({ display: '' });
+  });
+
+  $('#btn-other').on('click', function () {
+    $('.info-body').css({ display: 'none' });
+    $('#tab-other').css({ display: '' });
+  });
+
+  $('#btn-historical').on('click', function () {
+    $('.info-body').css({ display: 'none' });
+    $('#tab-historical').css({ display: '' });
+  });
+
+  $('#btn-photos').on('click', function () {
+    $('.info-body').css({ display: 'none' });
+    $('#tab-photos').css({ display: '' });
+  });
+
+</script>
 
 
 <%= link_to 'Back', current_plants_path, class: 'btn-primary' %>

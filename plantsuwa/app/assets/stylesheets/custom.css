@@ -110,3 +110,17 @@ textarea {
   resize: vertical;
 }
 
+.info-tab {
+  width: 14%;
+  border-top: 2px solid #ccc;
+  border-bottom: 2px solid #ccc;
+  float: left;
+  padding: 0 5px;
+  padding-top: 7px;
+  border-right: 2px solid #ccc;
+}
+
+.info-tab p {
+	font-family: 'Montserrat', sans-serif;
+}
+
