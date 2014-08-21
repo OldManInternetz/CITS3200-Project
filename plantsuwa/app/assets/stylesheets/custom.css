@@ -1,10 +1,15 @@
 h1, h2, h3, h4, h5, h6, th {
 	font-family: 'Montserrat', sans-serif;
+	padding: 10px;
 }
 
 
 p, div, td {
 	font-family: 'Oxygen', sans-serif;
+}
+
+.main { 
+	padding: 25px;
 }
 
 .well {
@@ -28,12 +33,23 @@ th {
 	position: sticky;
 }
 
+tr {
+	height: 10px;
+	border-top: 2px;
+}
+
+td {
+	padding: 10px;
+}
+
+
 
 
 
 .navbar-inverse {
 	background: black;
 	border-radius: 0px;
+	border: 15px;
 }
 
 
@@ -79,4 +95,5 @@ footer p, a {
 	transition: opacity 0.2s;
 }
 
+table 
 
