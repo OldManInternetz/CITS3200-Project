@@ -95,7 +95,7 @@ footer p, a {
 	transition: opacity 0.2s;
 }
 
-table 
+
 
 label {
   margin-top: 15px;
@@ -111,16 +111,47 @@ textarea {
 }
 
 .info-tab {
-  width: 14%;
+  width: 14.285714286%;
   border-top: 2px solid #ccc;
   border-bottom: 2px solid #ccc;
   float: left;
   padding: 0 5px;
   padding-top: 7px;
-  border-right: 2px solid #ccc;
+  border-right: 1px solid #ccc;
+  background: #eee;
+	box-shadow: 2px 2px 8px #ccc;
+  
+}
+
+.info-tab:hover {
+  cursor: pointer;
+}
+
+.info-tab-current {
+  background: white;
+  border-bottom: 0;  
+  box-shadow: none;
+}
+
+.info-tab-current:hover {
+  cursor: auto;
+}
+
+.info-tab-disabled {
+  background: #ddd;
+}
+
+.info-tab-disabled:hover {
+  cursor: not-allowed;
 }
 
 .info-tab p {
 	font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  font-size: x-small;
+}
+
+.info-tab-disabled p {
+	color: gray;
 }
 

@@ -1,30 +1,28 @@
-<div style="margin-left: -10px; margin-top: -5px; margin-bottom: 45px;">
-  <div id="btn-photos" class="info-tab">
-    <p>Photos</p>
-  </div>
-  <div id="btn-naming" class="info-tab" style="width: 15%;">
-    <p>Naming</p>
-  </div>
-  <div id="btn-descriptions" class="info-tab" style="width: 12%;">
-    <p>Desc.</p>
-  </div>
-  <div id="btn-architectural" class="info-tab">
-    <p>Archi.</p>
-  </div>
-  <div id="btn-cultural" class="info-tab" style="width: 15%;">
-    <p>Cultural</p>
-  </div>
-  <div id="btn-other" class="info-tab">
-    <p>Other</p>
-  </div>
-  <div id="btn-historical" class="info-tab">
-    <p>Hist.</p>
-  </div>
+<div style="margin-top: 4px; margin-bottom: 55px;">
+    <div id="btn-photos" class="info-tab">
+      <p>Photos</p>
+    </div>
+    <div id="btn-naming" class="info-tab info-tab-current">
+      <p>Naming</p>
+    </div>
+    <div id="btn-descriptions" class="info-tab">
+      <p>Desc.</p>
+    </div>
+    <div id="btn-architectural" class="info-tab">
+      <p>Arch.</p>
+    </div>
+    <div id="btn-cultural" class="info-tab">
+      <p>Cultural</p>
+    </div>
+    <div id="btn-other" class="info-tab">
+      <p>Other</p>
+    </div>
+    <div id="btn-historical" class="info-tab">
+      <p>Hist.</p>
+    </div>
 </div>
 
 
-
-</table>
 
 
 <div id="tab-naming" class="info-body">
@@ -199,37 +197,75 @@
   $('#btn-naming').on('click', function () {
     $('.info-body').css({ display: 'none' });
     $('#tab-naming').css({ display: '' });
+    $('.info-tab').removeClass("info-tab-current");
+    $('#btn-naming').addClass("info-tab-current");
   });
 
-  $('#btn-descriptions').on('click', function () {
-    $('.info-body').css({ display: 'none' });
-    $('#tab-descriptions').css({ display: '' });
-  });
+  <% if has_descriptions(@current_plant) %>
+    $('#btn-descriptions').on('click', function () {
+      $('.info-body').css({ display: 'none' });
+      $('#tab-descriptions').css({ display: '' });
+      $('.info-tab').removeClass("info-tab-current");
+      $('#btn-descriptions').addClass("info-tab-current");
+    });
+  <% else %>
+    $('#btn-descriptions').addClass("info-tab-disabled");  
+  <% end %>
 
-  $('#btn-architectural').on('click', function () {
-    $('.info-body').css({ display: 'none' });
-    $('#tab-architectural').css({ display: '' });
-  });
+  <% if has_architectural(@current_plant) %>
+    $('#btn-architectural').on('click', function () {
+      $('.info-body').css({ display: 'none' });
+      $('#tab-architectural').css({ display: '' });
+      $('.info-tab').removeClass("info-tab-current");
+      $('#btn-architectural').addClass("info-tab-current");
+    });
+  <% else %>
+    $('#btn-architectural').addClass("info-tab-disabled");
+  <% end %>
 
-  $('#btn-cultural').on('click', function () {
-    $('.info-body').css({ display: 'none' });
-    $('#tab-cultural').css({ display: '' });
-  });
+  <% if has_cultural(@current_plant) %>
+    $('#btn-cultural').on('click', function () {
+      $('.info-body').css({ display: 'none' });
+      $('#tab-cultural').css({ display: '' });
+      $('.info-tab').removeClass("info-tab-current");
+      $('#btn-cultural').addClass("info-tab-current");
+    });
+  <% else %>
+    $('#btn-cultural').addClass("info-tab-disabled");
+  <% end %>
 
-  $('#btn-other').on('click', function () {
-    $('.info-body').css({ display: 'none' });
-    $('#tab-other').css({ display: '' });
-  });
+  <% if has_other(@current_plant) %>
+    $('#btn-other').on('click', function () {
+      $('.info-body').css({ display: 'none' });
+      $('#tab-other').css({ display: '' });
+      $('.info-tab').removeClass("info-tab-current");
+      $('#btn-other').addClass("info-tab-current");
+    });
+  <% else %>
+    $('#btn-other').addClass("info-tab-disabled");
+  <% end %>
 
-  $('#btn-historical').on('click', function () {
-    $('.info-body').css({ display: 'none' });
-    $('#tab-historical').css({ display: '' });
-  });
+  <% if has_historical(@current_plant) %>
+    $('#btn-historical').on('click', function () {
+      $('.info-body').css({ display: 'none' });
+      $('#tab-historical').css({ display: '' });
+      $('.info-tab').removeClass("info-tab-current");
+      $('#btn-historical').addClass("info-tab-current");
+    });
+  <% else %>
+    $('#btn-historical').addClass("info-tab-disabled");
+  <% end %>
 
-  $('#btn-photos').on('click', function () {
-    $('.info-body').css({ display: 'none' });
-    $('#tab-photos').css({ display: '' });
-  });
+  <% if has_photos(@current_plant) %>
+    $('#btn-photos').on('click', function () {
+      $('.info-body').css({ display: 'none' });
+      $('#tab-photos').css({ display: '' });
+      $('.info-tab').removeClass("info-tab-current");
+      $('#btn-photos').addClass("info-tab-current");
+    });
+  <% else %>
+    $('#btn-photos').addClass("info-tab-disabled");
+  <% end %>
 
 </script>
 
