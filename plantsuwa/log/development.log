@@ -36816,3 +36816,758 @@ Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-21 17:30:09
 
 
 Started GET "/assets/uwacrest-small.gif" for 127.0.0.1 at 2014-08-21 17:30:09 +0800
+
+
+Started GET "/current_plants/1" for 127.0.0.1 at 2014-08-21 17:38:35 +0800
+Processing by CurrentPlantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCurrentPlant Load (0.3ms)[0m  SELECT "current_plants".* FROM "current_plants" WHERE "current_plants"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered current_plants/show.html.erb within layouts/application (24.5ms)
+  Rendered layouts/_navbar.html.erb (1.3ms)
+Completed 200 OK in 330ms (Views: 258.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/current_plants/js/jquery.mobile.custom.min.js" for 127.0.0.1 at 2014-08-21 17:38:36 +0800
+
+ActionController::RoutingError (No route matches [GET] "/current_plants/js/jquery.mobile.custom.min.js"):
+  actionpack (4.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.3) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.3) lib/rails/engine.rb:511:in `call'
+  railties (4.0.3) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.0ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (88.1ms)
+
+
+Started GET "/assets/families.js?body=1" for 127.0.0.1 at 2014-08-21 17:38:37 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-21 17:38:37 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-21 17:38:37 +0800
+
+
+Started GET "/assets/current_plant.js?body=1" for 127.0.0.1 at 2014-08-21 17:38:37 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-21 17:38:37 +0800
+
+
+Started GET "/assets/climates.css?body=1" for 127.0.0.1 at 2014-08-21 17:38:37 +0800
+
+
+Started GET "/assets/current_plants.css?body=1" for 127.0.0.1 at 2014-08-21 17:38:37 +0800
+
+
+Started GET "/assets/custom-mobile.css?body=1" for 127.0.0.1 at 2014-08-21 17:38:37 +0800
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-08-21 17:38:37 +0800
+
+
+Started GET "/assets/families.css?body=1" for 127.0.0.1 at 2014-08-21 17:38:37 +0800
+
+
+Started GET "/assets/genera.css?body=1" for 127.0.0.1 at 2014-08-21 17:38:37 +0800
+
+
+Started GET "/assets/flower_colours.css?body=1" for 127.0.0.1 at 2014-08-21 17:38:37 +0800
+
+
+Started GET "/assets/origins.css?body=1" for 127.0.0.1 at 2014-08-21 17:38:37 +0800
+
+
+Started GET "/assets/current_plant.css?body=1" for 127.0.0.1 at 2014-08-21 17:38:37 +0800
+
+
+Started GET "/assets/slideshow.css?body=1" for 127.0.0.1 at 2014-08-21 17:38:37 +0800
+
+
+Started GET "/assets/soil_types.css?body=1" for 127.0.0.1 at 2014-08-21 17:38:37 +0800
+
+
+Started GET "/assets/types.css?body=1" for 127.0.0.1 at 2014-08-21 17:38:37 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-21 17:38:37 +0800
+
+
+Started GET "/assets/leaf_colours.css?body=1" for 127.0.0.1 at 2014-08-21 17:38:37 +0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-21 17:38:37 +0800
+
+
+Started GET "/assets/sizes.css?body=1" for 127.0.0.1 at 2014-08-21 17:38:37 +0800
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-08-21 17:38:37 +0800
+
+
+Started GET "/assets/jquery.mCustomScrollbar.css?body=1" for 127.0.0.1 at 2014-08-21 17:38:37 +0800
+
+
+Started GET "/assets/current_plants.js?body=1" for 127.0.0.1 at 2014-08-21 17:38:37 +0800
+
+
+Started GET "/assets/climates.js?body=1" for 127.0.0.1 at 2014-08-21 17:38:37 +0800
+
+
+Started GET "/assets/leaf_colours.js?body=1" for 127.0.0.1 at 2014-08-21 17:38:37 +0800
+
+
+Started GET "/assets/flower_colours.js?body=1" for 127.0.0.1 at 2014-08-21 17:38:37 +0800
+
+
+Started GET "/assets/sizes.js?body=1" for 127.0.0.1 at 2014-08-21 17:38:37 +0800
+
+
+Started GET "/assets/genera.js?body=1" for 127.0.0.1 at 2014-08-21 17:38:37 +0800
+
+
+Started GET "/assets/origins.js?body=1" for 127.0.0.1 at 2014-08-21 17:38:37 +0800
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-21 17:38:37 +0800
+
+
+Started GET "/assets/soil_types.js?body=1" for 127.0.0.1 at 2014-08-21 17:38:37 +0800
+
+
+Started GET "/assets/types.js?body=1" for 127.0.0.1 at 2014-08-21 17:38:37 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-21 17:38:37 +0800
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-08-21 17:38:37 +0800
+
+
+Started GET "/assets/uwacrest-small.gif" for 127.0.0.1 at 2014-08-21 17:38:37 +0800
+
+
+Started GET "/current_plants" for 127.0.0.1 at 2014-08-21 17:38:42 +0800
+Processing by CurrentPlantsController#index as HTML
+  [1m[36mCurrentPlant Load (0.2ms)[0m  [1mSELECT "current_plants".* FROM "current_plants"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "current_plants"
+  Rendered current_plants/index.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_navbar.html.erb (0.2ms)
+Completed 200 OK in 18ms (Views: 16.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-21 17:38:42 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-21 17:38:42 +0800
+
+
+Started GET "/assets/current_plant.js?body=1" for 127.0.0.1 at 2014-08-21 17:38:42 +0800
+
+
+Started GET "/assets/current_plants.js?body=1" for 127.0.0.1 at 2014-08-21 17:38:42 +0800
+
+
+Started GET "/assets/climates.js?body=1" for 127.0.0.1 at 2014-08-21 17:38:42 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-21 17:38:42 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-21 17:38:42 +0800
+
+
+Started GET "/assets/custom-mobile.css?body=1" for 127.0.0.1 at 2014-08-21 17:38:42 +0800
+
+
+Started GET "/assets/climates.css?body=1" for 127.0.0.1 at 2014-08-21 17:38:42 +0800
+
+
+Started GET "/assets/current_plants.css?body=1" for 127.0.0.1 at 2014-08-21 17:38:42 +0800
+
+
+Started GET "/assets/current_plant.css?body=1" for 127.0.0.1 at 2014-08-21 17:38:42 +0800
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-08-21 17:38:42 +0800
+
+
+Started GET "/assets/families.css?body=1" for 127.0.0.1 at 2014-08-21 17:38:42 +0800
+
+
+Started GET "/assets/flower_colours.css?body=1" for 127.0.0.1 at 2014-08-21 17:38:42 +0800
+
+
+Started GET "/assets/genera.css?body=1" for 127.0.0.1 at 2014-08-21 17:38:42 +0800
+
+
+Started GET "/assets/jquery.mCustomScrollbar.css?body=1" for 127.0.0.1 at 2014-08-21 17:38:42 +0800
+
+
+Started GET "/assets/leaf_colours.css?body=1" for 127.0.0.1 at 2014-08-21 17:38:42 +0800
+
+
+Started GET "/assets/origins.css?body=1" for 127.0.0.1 at 2014-08-21 17:38:42 +0800
+
+
+Started GET "/assets/sizes.css?body=1" for 127.0.0.1 at 2014-08-21 17:38:42 +0800
+
+
+Started GET "/assets/slideshow.css?body=1" for 127.0.0.1 at 2014-08-21 17:38:42 +0800
+
+
+Started GET "/assets/soil_types.css?body=1" for 127.0.0.1 at 2014-08-21 17:38:42 +0800
+
+
+Started GET "/assets/types.css?body=1" for 127.0.0.1 at 2014-08-21 17:38:42 +0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-21 17:38:42 +0800
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-08-21 17:38:42 +0800
+
+
+Started GET "/assets/families.js?body=1" for 127.0.0.1 at 2014-08-21 17:38:42 +0800
+
+
+Started GET "/assets/flower_colours.js?body=1" for 127.0.0.1 at 2014-08-21 17:38:42 +0800
+
+
+Started GET "/assets/genera.js?body=1" for 127.0.0.1 at 2014-08-21 17:38:42 +0800
+
+
+Started GET "/assets/leaf_colours.js?body=1" for 127.0.0.1 at 2014-08-21 17:38:42 +0800
+
+
+Started GET "/assets/origins.js?body=1" for 127.0.0.1 at 2014-08-21 17:38:43 +0800
+
+
+Started GET "/assets/sizes.js?body=1" for 127.0.0.1 at 2014-08-21 17:38:43 +0800
+
+
+Started GET "/assets/soil_types.js?body=1" for 127.0.0.1 at 2014-08-21 17:38:43 +0800
+
+
+Started GET "/assets/types.js?body=1" for 127.0.0.1 at 2014-08-21 17:38:43 +0800
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-21 17:38:43 +0800
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-08-21 17:38:43 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-21 17:38:43 +0800
+
+
+Started GET "/js/jquery.mobile.custom.min.js" for 127.0.0.1 at 2014-08-21 17:38:43 +0800
+
+ActionController::RoutingError (No route matches [GET] "/js/jquery.mobile.custom.min.js"):
+  actionpack (4.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.3) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.3) lib/rails/engine.rb:511:in `call'
+  railties (4.0.3) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (7.8ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (56.5ms)
+
+
+Started GET "/assets/uwacrest-small.gif" for 127.0.0.1 at 2014-08-21 17:38:43 +0800
+
+
+Started GET "/current_plants/1" for 127.0.0.1 at 2014-08-21 17:39:02 +0800
+Processing by CurrentPlantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCurrentPlant Load (0.1ms)[0m  [1mSELECT "current_plants".* FROM "current_plants" WHERE "current_plants"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered current_plants/show.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_navbar.html.erb (0.4ms)
+Completed 200 OK in 22ms (Views: 19.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-21 17:39:02 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-21 17:39:02 +0800
+
+
+Started GET "/assets/current_plant.js?body=1" for 127.0.0.1 at 2014-08-21 17:39:02 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-21 17:39:02 +0800
+
+
+Started GET "/assets/climates.js?body=1" for 127.0.0.1 at 2014-08-21 17:39:02 +0800
+
+
+Started GET "/assets/current_plants.js?body=1" for 127.0.0.1 at 2014-08-21 17:39:02 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-21 17:39:02 +0800
+
+
+Started GET "/assets/current_plant.css?body=1" for 127.0.0.1 at 2014-08-21 17:39:02 +0800
+
+
+Started GET "/assets/climates.css?body=1" for 127.0.0.1 at 2014-08-21 17:39:02 +0800
+
+
+Started GET "/assets/custom-mobile.css?body=1" for 127.0.0.1 at 2014-08-21 17:39:02 +0800
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-08-21 17:39:02 +0800
+
+
+Started GET "/assets/current_plants.css?body=1" for 127.0.0.1 at 2014-08-21 17:39:02 +0800
+
+
+Started GET "/assets/families.css?body=1" for 127.0.0.1 at 2014-08-21 17:39:02 +0800
+
+
+Started GET "/assets/flower_colours.css?body=1" for 127.0.0.1 at 2014-08-21 17:39:02 +0800
+
+
+Started GET "/assets/genera.css?body=1" for 127.0.0.1 at 2014-08-21 17:39:02 +0800
+
+
+Started GET "/assets/jquery.mCustomScrollbar.css?body=1" for 127.0.0.1 at 2014-08-21 17:39:02 +0800
+
+
+Started GET "/assets/leaf_colours.css?body=1" for 127.0.0.1 at 2014-08-21 17:39:02 +0800
+
+
+Started GET "/assets/origins.css?body=1" for 127.0.0.1 at 2014-08-21 17:39:02 +0800
+
+
+Started GET "/assets/soil_types.css?body=1" for 127.0.0.1 at 2014-08-21 17:39:02 +0800
+
+
+Started GET "/assets/slideshow.css?body=1" for 127.0.0.1 at 2014-08-21 17:39:02 +0800
+
+
+Started GET "/assets/sizes.css?body=1" for 127.0.0.1 at 2014-08-21 17:39:02 +0800
+
+
+Started GET "/assets/types.css?body=1" for 127.0.0.1 at 2014-08-21 17:39:02 +0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-21 17:39:02 +0800
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-08-21 17:39:02 +0800
+
+
+Started GET "/assets/families.js?body=1" for 127.0.0.1 at 2014-08-21 17:39:02 +0800
+
+
+Started GET "/assets/flower_colours.js?body=1" for 127.0.0.1 at 2014-08-21 17:39:02 +0800
+
+
+Started GET "/assets/genera.js?body=1" for 127.0.0.1 at 2014-08-21 17:39:02 +0800
+
+
+Started GET "/assets/leaf_colours.js?body=1" for 127.0.0.1 at 2014-08-21 17:39:02 +0800
+
+
+Started GET "/assets/origins.js?body=1" for 127.0.0.1 at 2014-08-21 17:39:02 +0800
+
+
+Started GET "/assets/sizes.js?body=1" for 127.0.0.1 at 2014-08-21 17:39:02 +0800
+
+
+Started GET "/assets/soil_types.js?body=1" for 127.0.0.1 at 2014-08-21 17:39:02 +0800
+
+
+Started GET "/assets/types.js?body=1" for 127.0.0.1 at 2014-08-21 17:39:02 +0800
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-21 17:39:02 +0800
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-08-21 17:39:02 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-21 17:39:02 +0800
+
+
+Started GET "/current_plants/js/jquery.mobile.custom.min.js" for 127.0.0.1 at 2014-08-21 17:39:02 +0800
+
+ActionController::RoutingError (No route matches [GET] "/current_plants/js/jquery.mobile.custom.min.js"):
+  actionpack (4.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.3) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.3) lib/rails/engine.rb:511:in `call'
+  railties (4.0.3) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.0ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (52.2ms)
+
+
+Started GET "/assets/uwacrest-small.gif" for 127.0.0.1 at 2014-08-21 17:39:02 +0800
+
+
+Started GET "/climates" for 127.0.0.1 at 2014-08-21 17:39:07 +0800
+Processing by ClimatesController#index as HTML
+  [1m[35mClimate Load (0.3ms)[0m  SELECT "climates".* FROM "climates"
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "climates"[0m
+  Rendered climates/index.html.erb within layouts/application (60.9ms)
+  Rendered layouts/_navbar.html.erb (0.5ms)
+Completed 200 OK in 121ms (Views: 118.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-21 17:39:08 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-21 17:39:08 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-21 17:39:08 +0800
+
+
+Started GET "/assets/current_plant.js?body=1" for 127.0.0.1 at 2014-08-21 17:39:08 +0800
+
+
+Started GET "/assets/current_plants.js?body=1" for 127.0.0.1 at 2014-08-21 17:39:08 +0800
+
+
+Started GET "/assets/climates.js?body=1" for 127.0.0.1 at 2014-08-21 17:39:08 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-21 17:39:08 +0800
+
+
+Started GET "/assets/climates.css?body=1" for 127.0.0.1 at 2014-08-21 17:39:08 +0800
+
+
+Started GET "/assets/current_plant.css?body=1" for 127.0.0.1 at 2014-08-21 17:39:08 +0800
+
+
+Started GET "/assets/current_plants.css?body=1" for 127.0.0.1 at 2014-08-21 17:39:08 +0800
+
+
+Started GET "/assets/custom-mobile.css?body=1" for 127.0.0.1 at 2014-08-21 17:39:08 +0800
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-08-21 17:39:08 +0800
+
+
+Started GET "/assets/families.css?body=1" for 127.0.0.1 at 2014-08-21 17:39:08 +0800
+
+
+Started GET "/assets/genera.css?body=1" for 127.0.0.1 at 2014-08-21 17:39:08 +0800
+
+
+Started GET "/assets/flower_colours.css?body=1" for 127.0.0.1 at 2014-08-21 17:39:08 +0800
+
+
+Started GET "/assets/origins.css?body=1" for 127.0.0.1 at 2014-08-21 17:39:08 +0800
+
+
+Started GET "/assets/jquery.mCustomScrollbar.css?body=1" for 127.0.0.1 at 2014-08-21 17:39:08 +0800
+
+
+Started GET "/assets/leaf_colours.css?body=1" for 127.0.0.1 at 2014-08-21 17:39:08 +0800
+
+
+Started GET "/assets/sizes.css?body=1" for 127.0.0.1 at 2014-08-21 17:39:08 +0800
+
+
+Started GET "/assets/slideshow.css?body=1" for 127.0.0.1 at 2014-08-21 17:39:08 +0800
+
+
+Started GET "/assets/soil_types.css?body=1" for 127.0.0.1 at 2014-08-21 17:39:08 +0800
+
+
+Started GET "/assets/types.css?body=1" for 127.0.0.1 at 2014-08-21 17:39:08 +0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-21 17:39:08 +0800
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-08-21 17:39:08 +0800
+
+
+Started GET "/assets/families.js?body=1" for 127.0.0.1 at 2014-08-21 17:39:08 +0800
+
+
+Started GET "/assets/flower_colours.js?body=1" for 127.0.0.1 at 2014-08-21 17:39:08 +0800
+
+
+Started GET "/assets/genera.js?body=1" for 127.0.0.1 at 2014-08-21 17:39:08 +0800
+
+
+Started GET "/assets/leaf_colours.js?body=1" for 127.0.0.1 at 2014-08-21 17:39:08 +0800
+
+
+Started GET "/assets/origins.js?body=1" for 127.0.0.1 at 2014-08-21 17:39:08 +0800
+
+
+Started GET "/assets/sizes.js?body=1" for 127.0.0.1 at 2014-08-21 17:39:08 +0800
+
+
+Started GET "/assets/soil_types.js?body=1" for 127.0.0.1 at 2014-08-21 17:39:08 +0800
+
+
+Started GET "/assets/types.js?body=1" for 127.0.0.1 at 2014-08-21 17:39:08 +0800
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-21 17:39:08 +0800
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-08-21 17:39:08 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-21 17:39:08 +0800
+
+
+Started GET "/js/jquery.mobile.custom.min.js" for 127.0.0.1 at 2014-08-21 17:39:08 +0800
+
+ActionController::RoutingError (No route matches [GET] "/js/jquery.mobile.custom.min.js"):
+  actionpack (4.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.3) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.3) lib/rails/engine.rb:511:in `call'
+  railties (4.0.3) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (64.4ms)
+
+
+Started GET "/assets/uwacrest-small.gif" for 127.0.0.1 at 2014-08-21 17:39:08 +0800
+
+
+Started GET "/current_plants" for 127.0.0.1 at 2014-08-21 17:39:13 +0800
+Processing by CurrentPlantsController#index as HTML
+  [1m[35mCurrentPlant Load (0.2ms)[0m  SELECT "current_plants".* FROM "current_plants"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "current_plants"[0m
+  Rendered current_plants/index.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_navbar.html.erb (0.3ms)
+Completed 200 OK in 18ms (Views: 16.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-21 17:39:13 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-21 17:39:13 +0800
+
+
+Started GET "/assets/climates.js?body=1" for 127.0.0.1 at 2014-08-21 17:39:13 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-21 17:39:13 +0800
+
+
+Started GET "/assets/current_plants.js?body=1" for 127.0.0.1 at 2014-08-21 17:39:13 +0800
+
+
+Started GET "/assets/current_plant.js?body=1" for 127.0.0.1 at 2014-08-21 17:39:13 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-21 17:39:13 +0800
+
+
+Started GET "/assets/current_plant.css?body=1" for 127.0.0.1 at 2014-08-21 17:39:13 +0800
+
+
+Started GET "/assets/current_plants.css?body=1" for 127.0.0.1 at 2014-08-21 17:39:13 +0800
+
+
+Started GET "/assets/climates.css?body=1" for 127.0.0.1 at 2014-08-21 17:39:13 +0800
+
+
+Started GET "/assets/custom-mobile.css?body=1" for 127.0.0.1 at 2014-08-21 17:39:13 +0800
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-08-21 17:39:14 +0800
+
+
+Started GET "/assets/families.css?body=1" for 127.0.0.1 at 2014-08-21 17:39:14 +0800
+
+
+Started GET "/assets/flower_colours.css?body=1" for 127.0.0.1 at 2014-08-21 17:39:14 +0800
+
+
+Started GET "/assets/genera.css?body=1" for 127.0.0.1 at 2014-08-21 17:39:14 +0800
+
+
+Started GET "/assets/jquery.mCustomScrollbar.css?body=1" for 127.0.0.1 at 2014-08-21 17:39:14 +0800
+
+
+Started GET "/assets/leaf_colours.css?body=1" for 127.0.0.1 at 2014-08-21 17:39:14 +0800
+
+
+Started GET "/assets/origins.css?body=1" for 127.0.0.1 at 2014-08-21 17:39:14 +0800
+
+
+Started GET "/assets/sizes.css?body=1" for 127.0.0.1 at 2014-08-21 17:39:14 +0800
+
+
+Started GET "/assets/slideshow.css?body=1" for 127.0.0.1 at 2014-08-21 17:39:14 +0800
+
+
+Started GET "/assets/soil_types.css?body=1" for 127.0.0.1 at 2014-08-21 17:39:14 +0800
+
+
+Started GET "/assets/types.css?body=1" for 127.0.0.1 at 2014-08-21 17:39:14 +0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-21 17:39:14 +0800
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-08-21 17:39:14 +0800
+
+
+Started GET "/assets/families.js?body=1" for 127.0.0.1 at 2014-08-21 17:39:14 +0800
+
+
+Started GET "/assets/flower_colours.js?body=1" for 127.0.0.1 at 2014-08-21 17:39:14 +0800
+
+
+Started GET "/assets/genera.js?body=1" for 127.0.0.1 at 2014-08-21 17:39:14 +0800
+
+
+Started GET "/assets/leaf_colours.js?body=1" for 127.0.0.1 at 2014-08-21 17:39:14 +0800
+
+
+Started GET "/assets/origins.js?body=1" for 127.0.0.1 at 2014-08-21 17:39:14 +0800
+
+
+Started GET "/assets/sizes.js?body=1" for 127.0.0.1 at 2014-08-21 17:39:14 +0800
+
+
+Started GET "/assets/soil_types.js?body=1" for 127.0.0.1 at 2014-08-21 17:39:14 +0800
+
+
+Started GET "/assets/types.js?body=1" for 127.0.0.1 at 2014-08-21 17:39:14 +0800
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-21 17:39:14 +0800
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-08-21 17:39:14 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-21 17:39:14 +0800
+
+
+Started GET "/js/jquery.mobile.custom.min.js" for 127.0.0.1 at 2014-08-21 17:39:14 +0800
+
+ActionController::RoutingError (No route matches [GET] "/js/jquery.mobile.custom.min.js"):
+  actionpack (4.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.3) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.3) lib/rails/engine.rb:511:in `call'
+  railties (4.0.3) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (8.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (54.4ms)
+
+
+Started GET "/assets/uwacrest-small.gif" for 127.0.0.1 at 2014-08-21 17:39:14 +0800
