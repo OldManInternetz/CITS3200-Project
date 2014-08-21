@@ -36,7 +36,7 @@
 
   <fieldset>
 	  <legend>Architectural</legend>
-  	  <%= f.association :climates %>
+  	  <%= f.association :climates, :as => :check_boxes %>
 	    <%= f.input  :environment, hint: 'What sort of environment does this plant enjoy?' %>
   	  <%= f.input  :horticulture %>
   	  <%= f.input  :architectural_uses %>
