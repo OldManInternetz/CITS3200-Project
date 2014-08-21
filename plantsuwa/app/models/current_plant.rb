@@ -29,7 +29,7 @@ class CurrentPlant < ActiveRecord::Base
   has_many :types, through: :current_linking_types
 
 
-	has_many :photos, dependent: :destroy
+	has_many :current_photos, dependent: :destroy
 
 
 

@@ -1,9 +1,39 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/michael/rails_projects/CITS3200-Project/plantsuwa/app/controllers/current_plant_controller.rb": [
+      "/home/michael/rails_projects/CITS3200-Project/plantsuwa/app/controllers/current_plants_controller.rb": [
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
         1,
         1,
+        0,
+        null,
         null,
         null
       ],
@@ -54,12 +84,6 @@
         1,
         1,
         1,
-        null
-      ],
-      "/home/michael/rails_projects/CITS3200-Project/plantsuwa/app/models/attributes/photo.rb": [
-        1,
-        1,
-        null,
         null
       ],
       "/home/michael/rails_projects/CITS3200-Project/plantsuwa/app/models/attributes/size.rb": [
@@ -177,7 +201,28 @@
         1,
         null
       ],
-      "/home/michael/rails_projects/CITS3200-Project/plantsuwa/app/models/users/user.rb": [
+      "/home/michael/rails_projects/CITS3200-Project/plantsuwa/app/models/photos/current_photo.rb": [
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/michael/rails_projects/CITS3200-Project/plantsuwa/app/models/user.rb": [
         1,
         null,
         1,
@@ -222,6 +267,6 @@
         null
       ]
     },
-    "timestamp": 1408521834
+    "timestamp": 1408549118
   }
 }

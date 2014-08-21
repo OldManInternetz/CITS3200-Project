@@ -1,7 +1,13 @@
 FactoryGirl.define do
+
+  # Plants
+
   factory :current_plant do
     common_name "Rose"
   end
+
+  # Attributes
+
   factory :climate do
     name "Cool"
   end
@@ -20,9 +26,6 @@ FactoryGirl.define do
   factory :origin do
     name "Exotic"
   end
-  #factory :photo do
-  #  name "Cool"
-  #end
   factory :size do
     name "Small"
   end
@@ -32,4 +35,11 @@ FactoryGirl.define do
   factory :type do
     name "Climber"
   end
+
+  # Photos
+
+  factory :current_photo do
+    description "Cool"
+  end
+
 end
