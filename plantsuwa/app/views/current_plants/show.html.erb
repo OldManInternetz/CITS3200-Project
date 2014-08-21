@@ -2,43 +2,64 @@
 	<h2>Naming</h2>
 	<dl class="dl-horizontal">
 		<dt>Name</dt><dd><%= @current_plant.name %></dd>
-		<dt>Genus</dt>
-		<% if @current_plant.families[0] %>
-			<dd><%= @current_plant.genera[0].name %></dd>
+		<% if @current_plant.genera[0] %>
+			<dt>Genus</dt><dd><%= @current_plant.genera[0].name %></dd>
 		<% end %>
-		<dt>Family</dt>
 		<% if @current_plant.families[0] %>
-			<dd><%= @current_plant.families[0].name %></dd>
+			<dt>Family</dt><dd><%= @current_plant.families[0].name %></dd>
 		<% end %>
-		<dt>Species</dt><dd><%= @current_plant.species %></dd>
-		<dt>Common Name</dt><dd><%= @current_plant.common_name %></dd>
-		<dt>Scientific Name</dt><dd><%= @current_plant.scientific_name %></dd>
-		<dt>Synonym</dt><dd><%= @current_plant.synonym %></dd>
-		<dt>Subspecies</dt><dd><%= @current_plant.subspecies %></dd>
-		<dt>Type</dt>
+		<% if @current_plant.species %>
+			<dt>Species</dt><dd><%= @current_plant.species %></dd>
+		<% end %>
+		<% if @current_plant.common_name %>
+			<dt>Common Name</dt><dd><%= @current_plant.common_name %></dd>
+		<% end %>
+		<% if @current_plant.scientific_name.blank? %>
+			<dt>Scientific Name</dt><dd><%= @current_plant.scientific_name %></dd>
+		<% end %>
+		<% if @current_plant.synonym %>
+			<dt>Synonym</dt><dd><%= @current_plant.synonym %></dd>
+		<% end %>
+		<% if @current_plant.subspecies %>
+			<dt>Subspecies</dt><dd><%= @current_plant.subspecies %></dd>
+		<% end %>
 		<% if @current_plant.types[0] %>
-			<dd><%= @current_plant.types[0].name %></dd>
+			<dt>Type</dt><dd><%= @current_plant.types[0].name %></dd>
 		<% end %>
 	</dl>
 	
 	<h2>Descriptions</h2>
 	<dl class="dl-horizontal">
-		<dt>Description</dt><dd><%= @current_plant.description %></dd>
-		<dt>Characteristics</dt><dd><%= @current_plant.characteristics %></dd>
-		<dt>Identification</dt><dd><%= @current_plant.identification %></dd>
-		<dt>Physical</dt><dd><%= @current_plant.physical %></dd>
-		<dt>Size</dt>
-		<% for @size in @current_plant.sizes %>
-			<dd> <%= @size.name %> </dd>
+		<% if @current_plant.description %>
+			<dt>Description</dt><dd><%= @current_plant.description %></dd>
 		<% end %>
-		<dt>Flower Colour</dt>
-		<% for @flower_colour in @current_plant.flower_colours %>
-			<dd> <%= @flower_colour.name %> </dd>
+		<% if @current_plant.characteristics %>
+			<dt>Characteristics</dt><dd><%= @current_plant.characteristics %></dd>
 		<% end %>
-		<dt>Leaf Colour</dt>
-		<% for @leaf_colour in @current_plant.leaf_colours %>
-			<dd> <%= @leaf_colour.name %> </dd>
-		<% end %>		
+		<% if @current_plant.identification %>
+			<dt>Identification</dt><dd><%= @current_plant.identification %></dd>
+		<% end %>
+		<% if @current_plant.physical %>
+			<dt>Physical</dt><dd><%= @current_plant.physical %></dd>
+		<% end %>
+		<% if @current_plant.sizes %>
+			<dt>Size</dt>
+			<% for @size in @current_plant.sizes %>
+				<dd> <%= @size.name %> </dd>
+			<% end %>
+		<% end %>
+		<% if @current_plant.flower_colours %>
+			<dt>Flower Colour</dt>
+			<% for @flower_colour in @current_plant.flower_colours %>
+				<dd> <%= @flower_colour.name %> </dd>
+			<% end %>
+		<% end %>
+		<% if @current_plant.leaf_colours %>
+			<dt>Leaf Colour</dt>
+			<% for @leaf_colour in @current_plant.leaf_colours %>
+				<dd> <%= @leaf_colour.name %> </dd>
+			<% end %>		
+		<% end %>
 	</dl>
 	<br>
 	<h2>Architechural</h2>
@@ -80,10 +101,7 @@
 		<dt>Discovered By</dt><dd><%= @current_plant.discovered_by %></dd>
 		<dt>Named By</dt><dd><%= @current_plant.named_by %></dd>
 	</dl>
-	
-	
-	
-	
+
 </div>
 
 <%= link_to 'Back', current_plants_path, class: 'btn-primary' %>
