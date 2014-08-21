@@ -15,6 +15,10 @@
 		<dt>Characteristics</dt><dd><%= @current_plant.characteristics %></dd>
 		<dt>Identification</dt><dd><%= @current_plant.identification %></dd>
 		<dt>Physical</dt><dd><%= @current_plant.physical %></dd>
+		<dt>Size</dt>
+		<% for @size in @current_plant.sizes %>
+			<dd> <%= @size.name %> </dd>
+		<% end %>		
 	</dl>
 	
 	<h2>Architechural</h2>

@@ -30,6 +30,7 @@
     	<%= f.input  :characteristics, hint: 'List the typical characteristics of the plant.', as: :text  %> 
     	<%= f.input  :identification, hint: 'How is this plant identified in the field?', as: :text  %> 
     	<%= f.input  :physical, hint: 'What are the physical characteristics of the plant?', as: :text %>
+		<%= f.association :sizes, :as => :check_boxes %>
   </fieldset>
   
   <hr/>
