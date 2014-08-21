@@ -36816,3 +36816,1975 @@ Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-21 17:30:09
 
 
 Started GET "/assets/uwacrest-small.gif" for 127.0.0.1 at 2014-08-21 17:30:09 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/current_plants" for 127.0.0.1 at 2014-08-21 17:37:18 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CurrentPlantsController#index as HTML
+  [1m[35mCurrentPlant Load (0.2ms)[0m  SELECT "current_plants".* FROM "current_plants"
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "current_plants"[0m
+  Rendered current_plants/index.html.erb within layouts/application (22.2ms)
+  Rendered layouts/_navbar.html.erb (1.6ms)
+Completed 200 OK in 195ms (Views: 158.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-21 17:37:18 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-21 17:37:18 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-21 17:37:18 +0800
+
+
+Started GET "/assets/climates.js?body=1" for 127.0.0.1 at 2014-08-21 17:37:18 +0800
+
+
+Started GET "/assets/current_plant.js?body=1" for 127.0.0.1 at 2014-08-21 17:37:18 +0800
+
+
+Started GET "/assets/current_plants.js?body=1" for 127.0.0.1 at 2014-08-21 17:37:18 +0800
+
+
+Started GET "/assets/families.js?body=1" for 127.0.0.1 at 2014-08-21 17:37:18 +0800
+
+
+Started GET "/assets/flower_colours.js?body=1" for 127.0.0.1 at 2014-08-21 17:37:18 +0800
+
+
+Started GET "/assets/genera.js?body=1" for 127.0.0.1 at 2014-08-21 17:37:18 +0800
+
+
+Started GET "/assets/leaf_colours.js?body=1" for 127.0.0.1 at 2014-08-21 17:37:18 +0800
+
+
+Started GET "/assets/origins.js?body=1" for 127.0.0.1 at 2014-08-21 17:37:18 +0800
+
+
+Started GET "/assets/sizes.js?body=1" for 127.0.0.1 at 2014-08-21 17:37:18 +0800
+
+
+Started GET "/assets/soil_types.js?body=1" for 127.0.0.1 at 2014-08-21 17:37:18 +0800
+
+
+Started GET "/assets/types.js?body=1" for 127.0.0.1 at 2014-08-21 17:37:18 +0800
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-21 17:37:18 +0800
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-08-21 17:37:18 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-21 17:37:18 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-21 17:37:18 +0800
+
+
+Started GET "/assets/climates.css?body=1" for 127.0.0.1 at 2014-08-21 17:37:18 +0800
+
+
+Started GET "/assets/current_plants.css?body=1" for 127.0.0.1 at 2014-08-21 17:37:18 +0800
+
+
+Started GET "/assets/current_plant.css?body=1" for 127.0.0.1 at 2014-08-21 17:37:18 +0800
+
+
+Started GET "/assets/custom-mobile.css?body=1" for 127.0.0.1 at 2014-08-21 17:37:18 +0800
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-08-21 17:37:18 +0800
+
+
+Started GET "/assets/families.css?body=1" for 127.0.0.1 at 2014-08-21 17:37:18 +0800
+
+
+Started GET "/assets/flower_colours.css?body=1" for 127.0.0.1 at 2014-08-21 17:37:18 +0800
+
+
+Started GET "/assets/genera.css?body=1" for 127.0.0.1 at 2014-08-21 17:37:18 +0800
+
+
+Started GET "/assets/jquery.mCustomScrollbar.css?body=1" for 127.0.0.1 at 2014-08-21 17:37:18 +0800
+
+
+Started GET "/assets/leaf_colours.css?body=1" for 127.0.0.1 at 2014-08-21 17:37:18 +0800
+
+
+Started GET "/assets/origins.css?body=1" for 127.0.0.1 at 2014-08-21 17:37:18 +0800
+
+
+Started GET "/assets/sizes.css?body=1" for 127.0.0.1 at 2014-08-21 17:37:18 +0800
+
+
+Started GET "/assets/slideshow.css?body=1" for 127.0.0.1 at 2014-08-21 17:37:18 +0800
+
+
+Started GET "/assets/soil_types.css?body=1" for 127.0.0.1 at 2014-08-21 17:37:18 +0800
+
+
+Started GET "/assets/types.css?body=1" for 127.0.0.1 at 2014-08-21 17:37:18 +0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-21 17:37:18 +0800
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-08-21 17:37:18 +0800
+
+
+Started GET "/assets/uwacrest-small.gif" for 127.0.0.1 at 2014-08-21 17:37:18 +0800
+
+
+Started GET "/js/jquery.mobile.custom.min.js" for 127.0.0.1 at 2014-08-21 17:37:19 +0800
+
+ActionController::RoutingError (No route matches [GET] "/js/jquery.mobile.custom.min.js"):
+  actionpack (4.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.3) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.3) lib/rails/engine.rb:511:in `call'
+  railties (4.0.3) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.4ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.8ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (44.1ms)
+
+
+Started GET "/js/jquery.mobile.custom.min.js" for 127.0.0.1 at 2014-08-21 17:37:19 +0800
+
+ActionController::RoutingError (No route matches [GET] "/js/jquery.mobile.custom.min.js"):
+  actionpack (4.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.3) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.3) lib/rails/engine.rb:511:in `call'
+  railties (4.0.3) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.2ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (37.5ms)
+
+
+Started GET "/current_plants/new" for 127.0.0.1 at 2014-08-21 17:37:38 +0800
+Processing by CurrentPlantsController#new as HTML
+  [1m[35mClimate Load (0.2ms)[0m  SELECT "climates".* FROM "climates"
+  Rendered current_plants/_form.html.erb (353.0ms)
+  Rendered current_plants/new.html.erb within layouts/application (354.7ms)
+  Rendered layouts/_navbar.html.erb (1.0ms)
+Completed 200 OK in 376ms (Views: 373.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/current_plants/js/jquery.mobile.custom.min.js" for 127.0.0.1 at 2014-08-21 17:37:38 +0800
+
+ActionController::RoutingError (No route matches [GET] "/current_plants/js/jquery.mobile.custom.min.js"):
+  actionpack (4.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.3) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.3) lib/rails/engine.rb:511:in `call'
+  railties (4.0.3) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.8ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (40.5ms)
+
+
+Started GET "/current_plants/index.html" for 127.0.0.1 at 2014-08-21 17:38:16 +0800
+Processing by CurrentPlantsController#show as HTML
+  Parameters: {"id"=>"index"}
+  [1m[36mCurrentPlant Load (0.4ms)[0m  [1mSELECT "current_plants".* FROM "current_plants" WHERE "current_plants"."id" = ? LIMIT 1[0m  [["id", "index"]]
+Completed 404 Not Found in 4ms
+
+ActiveRecord::RecordNotFound (Couldn't find CurrentPlant with id=index):
+  app/controllers/current_plants_controller.rb:19:in `show'
+
+
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.4ms)
+
+
+Started GET "/current_plants/index.html" for 127.0.0.1 at 2014-08-21 17:38:17 +0800
+Processing by CurrentPlantsController#show as HTML
+  Parameters: {"id"=>"index"}
+  [1m[35mCurrentPlant Load (0.2ms)[0m  SELECT "current_plants".* FROM "current_plants" WHERE "current_plants"."id" = ? LIMIT 1  [["id", "index"]]
+Completed 404 Not Found in 2ms
+
+ActiveRecord::RecordNotFound (Couldn't find CurrentPlant with id=index):
+  app/controllers/current_plants_controller.rb:19:in `show'
+
+
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.3ms)
+
+
+Started GET "/current_plants/new" for 127.0.0.1 at 2014-08-21 17:38:18 +0800
+Processing by CurrentPlantsController#new as HTML
+  [1m[36mClimate Load (0.2ms)[0m  [1mSELECT "climates".* FROM "climates"[0m
+  Rendered current_plants/_form.html.erb (26.6ms)
+  Rendered current_plants/new.html.erb within layouts/application (27.7ms)
+  Rendered layouts/_navbar.html.erb (0.2ms)
+Completed 200 OK in 42ms (Views: 40.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-21 17:38:18 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-21 17:38:18 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-21 17:38:18 +0800
+
+
+Started GET "/assets/current_plant.js?body=1" for 127.0.0.1 at 2014-08-21 17:38:18 +0800
+
+
+Started GET "/assets/climates.js?body=1" for 127.0.0.1 at 2014-08-21 17:38:18 +0800
+
+
+Started GET "/assets/families.js?body=1" for 127.0.0.1 at 2014-08-21 17:38:18 +0800
+
+
+Started GET "/assets/current_plants.js?body=1" for 127.0.0.1 at 2014-08-21 17:38:18 +0800
+
+
+Started GET "/assets/genera.js?body=1" for 127.0.0.1 at 2014-08-21 17:38:18 +0800
+
+
+Started GET "/assets/leaf_colours.js?body=1" for 127.0.0.1 at 2014-08-21 17:38:18 +0800
+
+
+Started GET "/assets/flower_colours.js?body=1" for 127.0.0.1 at 2014-08-21 17:38:18 +0800
+
+
+Started GET "/assets/origins.js?body=1" for 127.0.0.1 at 2014-08-21 17:38:18 +0800
+
+
+Started GET "/assets/sizes.js?body=1" for 127.0.0.1 at 2014-08-21 17:38:18 +0800
+
+
+Started GET "/assets/soil_types.js?body=1" for 127.0.0.1 at 2014-08-21 17:38:18 +0800
+
+
+Started GET "/assets/types.js?body=1" for 127.0.0.1 at 2014-08-21 17:38:18 +0800
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-21 17:38:18 +0800
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-08-21 17:38:18 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-21 17:38:18 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-21 17:38:18 +0800
+
+
+Started GET "/assets/climates.css?body=1" for 127.0.0.1 at 2014-08-21 17:38:18 +0800
+
+
+Started GET "/assets/current_plant.css?body=1" for 127.0.0.1 at 2014-08-21 17:38:18 +0800
+
+
+Started GET "/assets/current_plants.css?body=1" for 127.0.0.1 at 2014-08-21 17:38:18 +0800
+
+
+Started GET "/assets/custom-mobile.css?body=1" for 127.0.0.1 at 2014-08-21 17:38:18 +0800
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-08-21 17:38:18 +0800
+
+
+Started GET "/assets/families.css?body=1" for 127.0.0.1 at 2014-08-21 17:38:18 +0800
+
+
+Started GET "/assets/flower_colours.css?body=1" for 127.0.0.1 at 2014-08-21 17:38:18 +0800
+
+
+Started GET "/assets/genera.css?body=1" for 127.0.0.1 at 2014-08-21 17:38:18 +0800
+
+
+Started GET "/assets/jquery.mCustomScrollbar.css?body=1" for 127.0.0.1 at 2014-08-21 17:38:18 +0800
+
+
+Started GET "/assets/leaf_colours.css?body=1" for 127.0.0.1 at 2014-08-21 17:38:18 +0800
+
+
+Started GET "/assets/origins.css?body=1" for 127.0.0.1 at 2014-08-21 17:38:18 +0800
+
+
+Started GET "/assets/sizes.css?body=1" for 127.0.0.1 at 2014-08-21 17:38:18 +0800
+
+
+Started GET "/assets/slideshow.css?body=1" for 127.0.0.1 at 2014-08-21 17:38:18 +0800
+
+
+Started GET "/assets/soil_types.css?body=1" for 127.0.0.1 at 2014-08-21 17:38:18 +0800
+
+
+Started GET "/assets/types.css?body=1" for 127.0.0.1 at 2014-08-21 17:38:18 +0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-21 17:38:18 +0800
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-08-21 17:38:18 +0800
+
+
+Started GET "/assets/uwacrest-small.gif" for 127.0.0.1 at 2014-08-21 17:38:18 +0800
+
+
+Started GET "/current_plants/js/jquery.mobile.custom.min.js" for 127.0.0.1 at 2014-08-21 17:38:18 +0800
+
+ActionController::RoutingError (No route matches [GET] "/current_plants/js/jquery.mobile.custom.min.js"):
+  actionpack (4.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.3) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.3) lib/rails/engine.rb:511:in `call'
+  railties (4.0.3) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.8ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (40.3ms)
+
+
+Started GET "/js/jquery.mobile.custom.min.js" for 127.0.0.1 at 2014-08-21 17:38:18 +0800
+
+ActionController::RoutingError (No route matches [GET] "/js/jquery.mobile.custom.min.js"):
+  actionpack (4.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.3) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.3) lib/rails/engine.rb:511:in `call'
+  railties (4.0.3) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (7.1ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (45.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-21 17:38:20 +0800
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_navbar.html.erb (0.2ms)
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/js/jquery.mobile.custom.min.js" for 127.0.0.1 at 2014-08-21 17:38:20 +0800
+
+ActionController::RoutingError (No route matches [GET] "/js/jquery.mobile.custom.min.js"):
+  actionpack (4.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.3) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.3) lib/rails/engine.rb:511:in `call'
+  railties (4.0.3) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.6ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (39.1ms)
+
+
+Started GET "/current_plants" for 127.0.0.1 at 2014-08-21 17:38:21 +0800
+Processing by CurrentPlantsController#index as HTML
+  [1m[35mCurrentPlant Load (0.3ms)[0m  SELECT "current_plants".* FROM "current_plants"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "current_plants"[0m
+  Rendered current_plants/index.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_navbar.html.erb (0.2ms)
+Completed 200 OK in 20ms (Views: 18.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/js/jquery.mobile.custom.min.js" for 127.0.0.1 at 2014-08-21 17:38:21 +0800
+
+ActionController::RoutingError (No route matches [GET] "/js/jquery.mobile.custom.min.js"):
+  actionpack (4.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.3) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.3) lib/rails/engine.rb:511:in `call'
+  railties (4.0.3) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.5ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (40.4ms)
+
+
+Started GET "/current_plants/1" for 127.0.0.1 at 2014-08-21 17:38:36 +0800
+Processing by CurrentPlantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCurrentPlant Load (0.1ms)[0m  SELECT "current_plants".* FROM "current_plants" WHERE "current_plants"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered current_plants/show.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_navbar.html.erb (0.2ms)
+Completed 200 OK in 23ms (Views: 21.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/current_plants/js/jquery.mobile.custom.min.js" for 127.0.0.1 at 2014-08-21 17:38:37 +0800
+
+ActionController::RoutingError (No route matches [GET] "/current_plants/js/jquery.mobile.custom.min.js"):
+  actionpack (4.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.3) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.3) lib/rails/engine.rb:511:in `call'
+  railties (4.0.3) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.4ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (38.2ms)
+
+
+Started GET "/current_plants/1/edit" for 127.0.0.1 at 2014-08-21 17:40:11 +0800
+Processing by CurrentPlantsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCurrentPlant Load (0.2ms)[0m  [1mSELECT "current_plants".* FROM "current_plants" WHERE "current_plants"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mClimate Load (24.0ms)[0m  SELECT "climates".* FROM "climates" INNER JOIN "current_linking_climates" ON "climates"."id" = "current_linking_climates"."climate_id" WHERE "current_linking_climates"."current_plant_id" = ?  [["current_plant_id", 1]]
+  [1m[36mClimate Load (0.1ms)[0m  [1mSELECT "climates".* FROM "climates"[0m
+  Rendered current_plants/_form.html.erb (222.9ms)
+  Rendered current_plants/edit.html.erb within layouts/application (224.5ms)
+  Rendered layouts/_navbar.html.erb (0.2ms)
+Completed 200 OK in 240ms (Views: 213.7ms | ActiveRecord: 24.3ms)
+
+
+Started GET "/current_plants/1/js/jquery.mobile.custom.min.js" for 127.0.0.1 at 2014-08-21 17:40:11 +0800
+
+ActionController::RoutingError (No route matches [GET] "/current_plants/1/js/jquery.mobile.custom.min.js"):
+  actionpack (4.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.3) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.3) lib/rails/engine.rb:511:in `call'
+  railties (4.0.3) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.2ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (38.9ms)
+
+
+Started PATCH "/current_plants/1" for 127.0.0.1 at 2014-08-21 17:41:05 +0800
+Processing by CurrentPlantsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ulZOaVzPvrvff1+jg6x+svax+AD79GaScwHzPR5Z2Aw=", "current_plant"=>{"name"=>"", "species"=>"", "common_name"=>"", "scientific_name"=>"", "synonym"=>"", "subspecies"=>"", "description"=>"", "characteristics"=>"", "identification"=>"", "physical"=>"", "climate_ids"=>["", "3"], "environment"=>"", "horticulture"=>"", "architectural_uses"=>"", "architectural_info"=>"", "culture"=>"", "conservation"=>"", "wildlife"=>"", "location_name"=>"", "general_info"=>"", "additional_info"=>"", "discovered_by"=>"", "named_by"=>""}, "commit"=>"Update Current plant", "id"=>"1"}
+  [1m[35mCurrentPlant Load (0.1ms)[0m  SELECT "current_plants".* FROM "current_plants" WHERE "current_plants"."id" = ? LIMIT 1  [["id", "1"]]
+Unpermitted parameters: climate_ids
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/current_plants/1
+Completed 302 Found in 6ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/current_plants/1" for 127.0.0.1 at 2014-08-21 17:41:05 +0800
+Processing by CurrentPlantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCurrentPlant Load (0.1ms)[0m  [1mSELECT "current_plants".* FROM "current_plants" WHERE "current_plants"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered current_plants/show.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_navbar.html.erb (0.2ms)
+Completed 200 OK in 17ms (Views: 15.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-21 17:41:05 +0800
+
+
+Started GET "/assets/climates.js?body=1" for 127.0.0.1 at 2014-08-21 17:41:05 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-21 17:41:05 +0800
+
+
+Started GET "/assets/current_plant.js?body=1" for 127.0.0.1 at 2014-08-21 17:41:05 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-21 17:41:05 +0800
+
+
+Started GET "/assets/current_plants.js?body=1" for 127.0.0.1 at 2014-08-21 17:41:05 +0800
+
+
+Started GET "/assets/families.js?body=1" for 127.0.0.1 at 2014-08-21 17:41:06 +0800
+
+
+Started GET "/assets/flower_colours.js?body=1" for 127.0.0.1 at 2014-08-21 17:41:06 +0800
+
+
+Started GET "/assets/genera.js?body=1" for 127.0.0.1 at 2014-08-21 17:41:06 +0800
+
+
+Started GET "/assets/leaf_colours.js?body=1" for 127.0.0.1 at 2014-08-21 17:41:06 +0800
+
+
+Started GET "/assets/origins.js?body=1" for 127.0.0.1 at 2014-08-21 17:41:06 +0800
+
+
+Started GET "/assets/sizes.js?body=1" for 127.0.0.1 at 2014-08-21 17:41:06 +0800
+
+
+Started GET "/assets/soil_types.js?body=1" for 127.0.0.1 at 2014-08-21 17:41:06 +0800
+
+
+Started GET "/assets/types.js?body=1" for 127.0.0.1 at 2014-08-21 17:41:06 +0800
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-21 17:41:06 +0800
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-08-21 17:41:06 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-21 17:41:06 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-21 17:41:06 +0800
+
+
+Started GET "/assets/climates.css?body=1" for 127.0.0.1 at 2014-08-21 17:41:06 +0800
+
+
+Started GET "/assets/current_plant.css?body=1" for 127.0.0.1 at 2014-08-21 17:41:06 +0800
+
+
+Started GET "/assets/current_plants.css?body=1" for 127.0.0.1 at 2014-08-21 17:41:06 +0800
+
+
+Started GET "/assets/custom-mobile.css?body=1" for 127.0.0.1 at 2014-08-21 17:41:06 +0800
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-08-21 17:41:06 +0800
+
+
+Started GET "/assets/families.css?body=1" for 127.0.0.1 at 2014-08-21 17:41:06 +0800
+
+
+Started GET "/assets/flower_colours.css?body=1" for 127.0.0.1 at 2014-08-21 17:41:06 +0800
+
+
+Started GET "/assets/genera.css?body=1" for 127.0.0.1 at 2014-08-21 17:41:06 +0800
+
+
+Started GET "/assets/jquery.mCustomScrollbar.css?body=1" for 127.0.0.1 at 2014-08-21 17:41:06 +0800
+
+
+Started GET "/assets/leaf_colours.css?body=1" for 127.0.0.1 at 2014-08-21 17:41:06 +0800
+
+
+Started GET "/assets/origins.css?body=1" for 127.0.0.1 at 2014-08-21 17:41:06 +0800
+
+
+Started GET "/assets/sizes.css?body=1" for 127.0.0.1 at 2014-08-21 17:41:06 +0800
+
+
+Started GET "/assets/slideshow.css?body=1" for 127.0.0.1 at 2014-08-21 17:41:06 +0800
+
+
+Started GET "/assets/soil_types.css?body=1" for 127.0.0.1 at 2014-08-21 17:41:06 +0800
+
+
+Started GET "/assets/types.css?body=1" for 127.0.0.1 at 2014-08-21 17:41:06 +0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-21 17:41:06 +0800
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-08-21 17:41:06 +0800
+
+
+Started GET "/assets/uwacrest-small.gif" for 127.0.0.1 at 2014-08-21 17:41:06 +0800
+
+
+Started GET "/current_plants/js/jquery.mobile.custom.min.js" for 127.0.0.1 at 2014-08-21 17:41:06 +0800
+
+ActionController::RoutingError (No route matches [GET] "/current_plants/js/jquery.mobile.custom.min.js"):
+  actionpack (4.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.3) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.3) lib/rails/engine.rb:511:in `call'
+  railties (4.0.3) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.9ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (38.5ms)
+  [1m[36m (117.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (114.1ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20140819070318)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "email" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (10.2ms)[0m  CREATE UNIQUE INDEX "index_users_on_username" ON "users" ("username")
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "users" ADD "password_digest" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD "remember_token" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mCREATE INDEX "index_users_on_remember_token" ON "users" ("remember_token")[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD "admin" integer DEFAULT 0
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819070318"]]
+  [1m[35m (141.9ms)[0m  commit transaction
+Migrating to CreateCurrentPlants (20140819091734)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "current_plants" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819091734"]]
+  [1m[35m (133.0ms)[0m  commit transaction
+Migrating to AddFieldsToCurrentPlant (20140819092419)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  ALTER TABLE "current_plants" ADD "species" varchar(255)
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "current_plants" ADD "common_name" varchar(255)[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "current_plants" ADD "scientific_name" varchar(255)
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "current_plants" ADD "synonym" varchar(255)[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "current_plants" ADD "subspecies" varchar(255)
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "current_plants" ADD "description" varchar(255)[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "current_plants" ADD "location_name" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "current_plants" ADD "characteristics" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "current_plants" ADD "additional_info" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "current_plants" ADD "identification" varchar(255)[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "current_plants" ADD "physical" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "current_plants" ADD "general_info" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "current_plants" ADD "environment" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "current_plants" ADD "horticulture" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "current_plants" ADD "architectural_uses" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "current_plants" ADD "culture" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "current_plants" ADD "conservation" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "current_plants" ADD "wildlife" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "current_plants" ADD "architectural_info" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "current_plants" ADD "discovered_by" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "current_plants" ADD "named_by" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "current_plants" ADD "approved" boolean[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "current_plants" ADD "version" integer
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819092419"]]
+  [1m[35m (114.4ms)[0m  commit transaction
+Migrating to CreateSizes (20140819115200)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "sizes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115200"]]
+  [1m[35m (115.5ms)[0m  commit transaction
+Migrating to CreateSoilTypes (20140819115340)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "soil_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115340"]]
+  [1m[35m (119.8ms)[0m  commit transaction
+Migrating to CreateLeafColours (20140819115354)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "leaf_colours" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115354"]]
+  [1m[35m (144.6ms)[0m  commit transaction
+Migrating to CreateFlowerColours (20140819115406)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "flower_colours" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115406"]]
+  [1m[35m (143.5ms)[0m  commit transaction
+Migrating to CreateCurrentPhotos (20140819115428)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "current_photos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115428"]]
+  [1m[35m (114.4ms)[0m  commit transaction
+Migrating to CreateFamilies (20140819115542)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "families" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115542"]]
+  [1m[35m (131.6ms)[0m  commit transaction
+Migrating to CreateGenera (20140819115549)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "genera" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115549"]]
+  [1m[35m (131.0ms)[0m  commit transaction
+Migrating to CreateOrigins (20140819115556)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "origins" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115556"]]
+  [1m[35m (126.2ms)[0m  commit transaction
+Migrating to CreateTypes (20140819115606)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115606"]]
+  [1m[35m (144.8ms)[0m  commit transaction
+Migrating to CreateClimates (20140819115611)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "climates" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115611"]]
+  [1m[35m (129.1ms)[0m  commit transaction
+Migrating to AddRemainingFieldsToCurrentPlant (20140819120817)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "current_plants" ADD "plant_id" integer
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "current_plants" ADD "submitted_by" integer[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "current_plants" ADD "edited_by" integer
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819120817"]]
+  [1m[35m (123.0ms)[0m  commit transaction
+Migrating to CreateCurrentLinkingClimates (20140819145441)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "current_linking_climates" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "current_plant_id" integer, "climate_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819145441"]]
+  [1m[35m (129.6ms)[0m  commit transaction
+Migrating to CreateCurrentLinkingFamilies (20140820070410)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "current_linking_families" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "current_plant_id" integer, "family_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140820070410"]]
+  [1m[35m (132.9ms)[0m  commit transaction
+Migrating to CreateCurrentLinkingFlowerColours (20140820070433)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "current_linking_flower_colours" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "current_plant_id" integer, "flower_colour_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140820070433"]]
+  [1m[35m (167.1ms)[0m  commit transaction
+Migrating to CreateCurrentLinkingGenera (20140820070454)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "current_linking_genera" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "current_plant_id" integer, "genus_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140820070454"]]
+  [1m[35m (133.7ms)[0m  commit transaction
+Migrating to CreateCurrentLinkingLeafColours (20140820070509)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "current_linking_leaf_colours" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "current_plant_id" integer, "leaf_colour_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140820070509"]]
+  [1m[35m (120.8ms)[0m  commit transaction
+Migrating to CreateCurrentLinkingOrigins (20140820070525)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "current_linking_origins" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "current_plant_id" integer, "origin_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140820070525"]]
+  [1m[35m (121.1ms)[0m  commit transaction
+Migrating to CreateCurrentLinkingSizes (20140820070542)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "current_linking_sizes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "current_plant_id" integer, "size_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140820070542"]]
+  [1m[35m (141.0ms)[0m  commit transaction
+Migrating to CreateCurrentLinkingTypes (20140820070552)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "current_linking_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "current_plant_id" integer, "type_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140820070552"]]
+  [1m[35m (145.1ms)[0m  commit transaction
+Migrating to CreateCurrentLinkingSoilTypes (20140820073028)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "current_linking_soil_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "current_plant_id" integer, "soil_type_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140820073028"]]
+  [1m[35m (134.7ms)[0m  commit transaction
+Migrating to AddAttachmentToCurrentPhotos (20140820151846)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "current_photos" ADD "has_attachment" boolean
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "current_photos" ADD "image_file_name" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "current_photos" ADD "image_content_type" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "current_photos" ADD "image_file_size" integer[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "current_photos" ADD "image_updated_at" datetime
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140820151846"]]
+  [1m[35m (282.1ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/current_plants/index.html" for 127.0.0.1 at 2014-08-21 17:53:23 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CurrentPlantsController#show as HTML
+  Parameters: {"id"=>"index"}
+  [1m[35mCurrentPlant Load (0.3ms)[0m  SELECT "current_plants".* FROM "current_plants" WHERE "current_plants"."id" = ? LIMIT 1  [["id", "index"]]
+Completed 404 Not Found in 63ms
+
+ActiveRecord::RecordNotFound (Couldn't find CurrentPlant with id=index):
+  app/controllers/current_plants_controller.rb:19:in `show'
+
+
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.0ms)
+
+
+Started GET "/current_plants/index.html" for 127.0.0.1 at 2014-08-21 17:53:24 +0800
+Processing by CurrentPlantsController#show as HTML
+  Parameters: {"id"=>"index"}
+  [1m[36mCurrentPlant Load (0.1ms)[0m  [1mSELECT "current_plants".* FROM "current_plants" WHERE "current_plants"."id" = ? LIMIT 1[0m  [["id", "index"]]
+Completed 404 Not Found in 1ms
+
+ActiveRecord::RecordNotFound (Couldn't find CurrentPlant with id=index):
+  app/controllers/current_plants_controller.rb:19:in `show'
+
+
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.1ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-21 17:53:26 +0800
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_navbar.html.erb (1.8ms)
+Completed 200 OK in 134ms (Views: 133.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-21 17:53:26 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-21 17:53:26 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-21 17:53:26 +0800
+
+
+Started GET "/assets/current_plant.js?body=1" for 127.0.0.1 at 2014-08-21 17:53:26 +0800
+
+
+Started GET "/assets/current_plants.js?body=1" for 127.0.0.1 at 2014-08-21 17:53:26 +0800
+
+
+Started GET "/assets/climates.js?body=1" for 127.0.0.1 at 2014-08-21 17:53:26 +0800
+
+
+Started GET "/assets/families.js?body=1" for 127.0.0.1 at 2014-08-21 17:53:26 +0800
+
+
+Started GET "/assets/flower_colours.js?body=1" for 127.0.0.1 at 2014-08-21 17:53:26 +0800
+
+
+Started GET "/assets/genera.js?body=1" for 127.0.0.1 at 2014-08-21 17:53:26 +0800
+
+
+Started GET "/assets/leaf_colours.js?body=1" for 127.0.0.1 at 2014-08-21 17:53:26 +0800
+
+
+Started GET "/assets/origins.js?body=1" for 127.0.0.1 at 2014-08-21 17:53:26 +0800
+
+
+Started GET "/assets/sizes.js?body=1" for 127.0.0.1 at 2014-08-21 17:53:26 +0800
+
+
+Started GET "/assets/soil_types.js?body=1" for 127.0.0.1 at 2014-08-21 17:53:26 +0800
+
+
+Started GET "/assets/types.js?body=1" for 127.0.0.1 at 2014-08-21 17:53:26 +0800
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-21 17:53:26 +0800
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-08-21 17:53:26 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-21 17:53:26 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-21 17:53:26 +0800
+
+
+Started GET "/assets/climates.css?body=1" for 127.0.0.1 at 2014-08-21 17:53:26 +0800
+
+
+Started GET "/assets/current_plant.css?body=1" for 127.0.0.1 at 2014-08-21 17:53:26 +0800
+
+
+Started GET "/assets/current_plants.css?body=1" for 127.0.0.1 at 2014-08-21 17:53:26 +0800
+
+
+Started GET "/assets/custom-mobile.css?body=1" for 127.0.0.1 at 2014-08-21 17:53:26 +0800
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-08-21 17:53:26 +0800
+
+
+Started GET "/assets/families.css?body=1" for 127.0.0.1 at 2014-08-21 17:53:26 +0800
+
+
+Started GET "/assets/flower_colours.css?body=1" for 127.0.0.1 at 2014-08-21 17:53:26 +0800
+
+
+Started GET "/assets/genera.css?body=1" for 127.0.0.1 at 2014-08-21 17:53:26 +0800
+
+
+Started GET "/assets/jquery.mCustomScrollbar.css?body=1" for 127.0.0.1 at 2014-08-21 17:53:26 +0800
+
+
+Started GET "/assets/origins.css?body=1" for 127.0.0.1 at 2014-08-21 17:53:26 +0800
+
+
+Started GET "/assets/leaf_colours.css?body=1" for 127.0.0.1 at 2014-08-21 17:53:26 +0800
+
+
+Started GET "/assets/sizes.css?body=1" for 127.0.0.1 at 2014-08-21 17:53:26 +0800
+
+
+Started GET "/assets/slideshow.css?body=1" for 127.0.0.1 at 2014-08-21 17:53:26 +0800
+
+
+Started GET "/assets/soil_types.css?body=1" for 127.0.0.1 at 2014-08-21 17:53:26 +0800
+
+
+Started GET "/assets/types.css?body=1" for 127.0.0.1 at 2014-08-21 17:53:26 +0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-21 17:53:26 +0800
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-08-21 17:53:26 +0800
+
+
+Started GET "/assets/uwacrest-small.gif" for 127.0.0.1 at 2014-08-21 17:53:26 +0800
+
+
+Started GET "/js/jquery.mobile.custom.min.js" for 127.0.0.1 at 2014-08-21 17:53:26 +0800
+
+ActionController::RoutingError (No route matches [GET] "/js/jquery.mobile.custom.min.js"):
+  actionpack (4.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.3) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.3) lib/rails/engine.rb:511:in `call'
+  railties (4.0.3) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.6ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.0ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (45.9ms)
+
+
+Started GET "/current_plants" for 127.0.0.1 at 2014-08-21 17:53:27 +0800
+Processing by CurrentPlantsController#index as HTML
+  [1m[35mCurrentPlant Load (0.2ms)[0m  SELECT "current_plants".* FROM "current_plants"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "current_plants"[0m
+  Rendered current_plants/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_navbar.html.erb (0.8ms)
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/js/jquery.mobile.custom.min.js" for 127.0.0.1 at 2014-08-21 17:53:27 +0800
+
+ActionController::RoutingError (No route matches [GET] "/js/jquery.mobile.custom.min.js"):
+  actionpack (4.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.3) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.3) lib/rails/engine.rb:511:in `call'
+  railties (4.0.3) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.3ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (44.8ms)
+
+
+Started GET "/current_plants/new" for 127.0.0.1 at 2014-08-21 17:53:29 +0800
+Processing by CurrentPlantsController#new as HTML
+  Rendered current_plants/_form.html.erb (282.0ms)
+  Rendered current_plants/new.html.erb within layouts/application (283.0ms)
+Completed 500 Internal Server Error in 285ms
+
+ActionView::Template::Error (Could not find table 'climates_current_plants'):
+    36: 
+    37:   <fieldset>
+    38: 	  <legend>Architectural</legend>
+    39:   	  <%= f.association :climates %>
+    40: 	    <%= f.input  :environment, hint: 'What sort of environment does this plant enjoy?' %>
+    41:   	  <%= f.input  :horticulture %>
+    42:   	  <%= f.input  :architectural_uses %>
+  app/views/current_plants/_form.html.erb:39:in `block in _app_views_current_plants__form_html_erb___3682720003158082116_42867400'
+  app/views/current_plants/_form.html.erb:1:in `_app_views_current_plants__form_html_erb___3682720003158082116_42867400'
+  app/views/current_plants/new.html.erb:3:in `_app_views_current_plants_new_html_erb__1643841250816836927_42943700'
+
+
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.7ms)
+
+
+Started GET "/current_plants/new" for 127.0.0.1 at 2014-08-21 17:53:29 +0800
+Processing by CurrentPlantsController#new as HTML
+  Rendered current_plants/_form.html.erb (13.4ms)
+  Rendered current_plants/new.html.erb within layouts/application (14.4ms)
+Completed 500 Internal Server Error in 16ms
+
+ActionView::Template::Error (Could not find table 'climates_current_plants'):
+    36: 
+    37:   <fieldset>
+    38: 	  <legend>Architectural</legend>
+    39:   	  <%= f.association :climates %>
+    40: 	    <%= f.input  :environment, hint: 'What sort of environment does this plant enjoy?' %>
+    41:   	  <%= f.input  :horticulture %>
+    42:   	  <%= f.input  :architectural_uses %>
+  app/views/current_plants/_form.html.erb:39:in `block in _app_views_current_plants__form_html_erb___3682720003158082116_25482600'
+  app/views/current_plants/_form.html.erb:1:in `_app_views_current_plants__form_html_erb___3682720003158082116_25482600'
+  app/views/current_plants/new.html.erb:3:in `_app_views_current_plants_new_html_erb__1643841250816836927_25602940'
+
+
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.6ms)
+  [1m[36m (122.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (144.2ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20140819070318)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "email" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.6ms)[0m  CREATE UNIQUE INDEX "index_users_on_username" ON "users" ("username")
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "users" ADD "password_digest" varchar(255)[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "users" ADD "remember_token" varchar(255)
+  [1m[36m (0.4ms)[0m  [1mCREATE INDEX "index_users_on_remember_token" ON "users" ("remember_token")[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "users" ADD "admin" integer DEFAULT 0
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819070318"]]
+  [1m[35m (108.3ms)[0m  commit transaction
+Migrating to CreateCurrentPlants (20140819091734)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "current_plants" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819091734"]]
+  [1m[35m (139.3ms)[0m  commit transaction
+Migrating to AddFieldsToCurrentPlant (20140819092419)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "current_plants" ADD "species" varchar(255)
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "current_plants" ADD "common_name" varchar(255)[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "current_plants" ADD "scientific_name" varchar(255)
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "current_plants" ADD "synonym" varchar(255)[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "current_plants" ADD "subspecies" varchar(255)
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "current_plants" ADD "description" varchar(255)[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "current_plants" ADD "location_name" varchar(255)
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "current_plants" ADD "characteristics" varchar(255)[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "current_plants" ADD "additional_info" varchar(255)
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "current_plants" ADD "identification" varchar(255)[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "current_plants" ADD "physical" varchar(255)
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "current_plants" ADD "general_info" varchar(255)[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "current_plants" ADD "environment" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "current_plants" ADD "horticulture" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "current_plants" ADD "architectural_uses" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "current_plants" ADD "culture" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "current_plants" ADD "conservation" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "current_plants" ADD "wildlife" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "current_plants" ADD "architectural_info" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "current_plants" ADD "discovered_by" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "current_plants" ADD "named_by" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "current_plants" ADD "approved" boolean[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "current_plants" ADD "version" integer
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819092419"]]
+  [1m[35m (112.7ms)[0m  commit transaction
+Migrating to CreateSizes (20140819115200)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "sizes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115200"]]
+  [1m[35m (118.9ms)[0m  commit transaction
+Migrating to CreateSoilTypes (20140819115340)
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "soil_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115340"]]
+  [1m[35m (151.2ms)[0m  commit transaction
+Migrating to CreateLeafColours (20140819115354)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "leaf_colours" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115354"]]
+  [1m[35m (149.5ms)[0m  commit transaction
+Migrating to CreateFlowerColours (20140819115406)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "flower_colours" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115406"]]
+  [1m[35m (139.7ms)[0m  commit transaction
+Migrating to CreateCurrentPhotos (20140819115428)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "current_photos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" varchar(255), "current_plant_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115428"]]
+  [1m[35m (152.8ms)[0m  commit transaction
+Migrating to CreateFamilies (20140819115542)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "families" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115542"]]
+  [1m[35m (119.2ms)[0m  commit transaction
+Migrating to CreateGenera (20140819115549)
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "genera" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115549"]]
+  [1m[35m (128.9ms)[0m  commit transaction
+Migrating to CreateOrigins (20140819115556)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "origins" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115556"]]
+  [1m[35m (140.9ms)[0m  commit transaction
+Migrating to CreateTypes (20140819115606)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115606"]]
+  [1m[35m (129.7ms)[0m  commit transaction
+Migrating to CreateClimates (20140819115611)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "climates" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819115611"]]
+  [1m[35m (128.9ms)[0m  commit transaction
+Migrating to AddRemainingFieldsToCurrentPlant (20140819120817)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.2ms)[0m  ALTER TABLE "current_plants" ADD "plant_id" integer
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "current_plants" ADD "submitted_by" integer[0m
+  [1m[35m (0.7ms)[0m  ALTER TABLE "current_plants" ADD "edited_by" integer
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819120817"]]
+  [1m[35m (116.4ms)[0m  commit transaction
+Migrating to CreateCurrentLinkingClimates (20140819145441)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "current_linking_climates" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "current_plant_id" integer, "climate_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140819145441"]]
+  [1m[35m (139.2ms)[0m  commit transaction
+Migrating to CreateCurrentLinkingFamilies (20140820070410)
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "current_linking_families" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "current_plant_id" integer, "family_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140820070410"]]
+  [1m[35m (141.1ms)[0m  commit transaction
+Migrating to CreateCurrentLinkingFlowerColours (20140820070433)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "current_linking_flower_colours" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "current_plant_id" integer, "flower_colour_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140820070433"]]
+  [1m[35m (129.3ms)[0m  commit transaction
+Migrating to CreateCurrentLinkingGenera (20140820070454)
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "current_linking_genera" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "current_plant_id" integer, "genus_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140820070454"]]
+  [1m[35m (118.6ms)[0m  commit transaction
+Migrating to CreateCurrentLinkingLeafColours (20140820070509)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "current_linking_leaf_colours" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "current_plant_id" integer, "leaf_colour_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140820070509"]]
+  [1m[35m (120.1ms)[0m  commit transaction
+Migrating to CreateCurrentLinkingOrigins (20140820070525)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "current_linking_origins" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "current_plant_id" integer, "origin_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140820070525"]]
+  [1m[35m (139.2ms)[0m  commit transaction
+Migrating to CreateCurrentLinkingSizes (20140820070542)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "current_linking_sizes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "current_plant_id" integer, "size_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140820070542"]]
+  [1m[35m (139.2ms)[0m  commit transaction
+Migrating to CreateCurrentLinkingTypes (20140820070552)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "current_linking_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "current_plant_id" integer, "type_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140820070552"]]
+  [1m[35m (151.1ms)[0m  commit transaction
+Migrating to CreateCurrentLinkingSoilTypes (20140820073028)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "current_linking_soil_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "current_plant_id" integer, "soil_type_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140820073028"]]
+  [1m[35m (128.9ms)[0m  commit transaction
+Migrating to AddAttachmentToCurrentPhotos (20140820151846)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  ALTER TABLE "current_photos" ADD "has_attachment" boolean
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "current_photos" ADD "image_file_name" varchar(255)[0m
+  [1m[35m (0.7ms)[0m  ALTER TABLE "current_photos" ADD "image_content_type" varchar(255)
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "current_photos" ADD "image_file_size" integer[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "current_photos" ADD "image_updated_at" datetime
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140820151846"]]
+  [1m[35m (134.9ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/current_plants/new" for 127.0.0.1 at 2014-08-21 18:02:34 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CurrentPlantsController#new as HTML
+  [1m[35mClimate Load (0.1ms)[0m  SELECT "climates".* FROM "climates"
+  Rendered current_plants/_form.html.erb (298.5ms)
+  Rendered current_plants/new.html.erb within layouts/application (301.8ms)
+  Rendered layouts/_navbar.html.erb (1.6ms)
+Completed 200 OK in 453ms (Views: 415.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-21 18:02:35 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-21 18:02:35 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-21 18:02:35 +0800
+
+
+Started GET "/assets/climates.js?body=1" for 127.0.0.1 at 2014-08-21 18:02:35 +0800
+
+
+Started GET "/assets/current_plant.js?body=1" for 127.0.0.1 at 2014-08-21 18:02:35 +0800
+
+
+Started GET "/assets/families.js?body=1" for 127.0.0.1 at 2014-08-21 18:02:35 +0800
+
+
+Started GET "/assets/current_plants.js?body=1" for 127.0.0.1 at 2014-08-21 18:02:35 +0800
+
+
+Started GET "/assets/flower_colours.js?body=1" for 127.0.0.1 at 2014-08-21 18:02:35 +0800
+
+
+Started GET "/assets/genera.js?body=1" for 127.0.0.1 at 2014-08-21 18:02:35 +0800
+
+
+Started GET "/assets/leaf_colours.js?body=1" for 127.0.0.1 at 2014-08-21 18:02:35 +0800
+
+
+Started GET "/assets/origins.js?body=1" for 127.0.0.1 at 2014-08-21 18:02:35 +0800
+
+
+Started GET "/assets/sizes.js?body=1" for 127.0.0.1 at 2014-08-21 18:02:35 +0800
+
+
+Started GET "/assets/soil_types.js?body=1" for 127.0.0.1 at 2014-08-21 18:02:35 +0800
+
+
+Started GET "/assets/types.js?body=1" for 127.0.0.1 at 2014-08-21 18:02:35 +0800
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-21 18:02:35 +0800
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-08-21 18:02:35 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-21 18:02:35 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-21 18:02:35 +0800
+
+
+Started GET "/assets/climates.css?body=1" for 127.0.0.1 at 2014-08-21 18:02:35 +0800
+
+
+Started GET "/assets/current_plant.css?body=1" for 127.0.0.1 at 2014-08-21 18:02:35 +0800
+
+
+Started GET "/assets/current_plants.css?body=1" for 127.0.0.1 at 2014-08-21 18:02:35 +0800
+
+
+Started GET "/assets/custom-mobile.css?body=1" for 127.0.0.1 at 2014-08-21 18:02:35 +0800
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-08-21 18:02:35 +0800
+
+
+Started GET "/assets/families.css?body=1" for 127.0.0.1 at 2014-08-21 18:02:35 +0800
+
+
+Started GET "/assets/flower_colours.css?body=1" for 127.0.0.1 at 2014-08-21 18:02:35 +0800
+
+
+Started GET "/assets/genera.css?body=1" for 127.0.0.1 at 2014-08-21 18:02:35 +0800
+
+
+Started GET "/assets/jquery.mCustomScrollbar.css?body=1" for 127.0.0.1 at 2014-08-21 18:02:35 +0800
+
+
+Started GET "/assets/leaf_colours.css?body=1" for 127.0.0.1 at 2014-08-21 18:02:35 +0800
+
+
+Started GET "/assets/origins.css?body=1" for 127.0.0.1 at 2014-08-21 18:02:35 +0800
+
+
+Started GET "/assets/sizes.css?body=1" for 127.0.0.1 at 2014-08-21 18:02:35 +0800
+
+
+Started GET "/assets/slideshow.css?body=1" for 127.0.0.1 at 2014-08-21 18:02:35 +0800
+
+
+Started GET "/assets/soil_types.css?body=1" for 127.0.0.1 at 2014-08-21 18:02:35 +0800
+
+
+Started GET "/assets/types.css?body=1" for 127.0.0.1 at 2014-08-21 18:02:35 +0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-21 18:02:35 +0800
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-08-21 18:02:35 +0800
+
+
+Started GET "/current_plants/js/jquery.mobile.custom.min.js" for 127.0.0.1 at 2014-08-21 18:02:35 +0800
+
+ActionController::RoutingError (No route matches [GET] "/current_plants/js/jquery.mobile.custom.min.js"):
+  actionpack (4.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.3) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.3) lib/rails/engine.rb:511:in `call'
+  railties (4.0.3) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.1ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.8ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (51.4ms)
+
+
+Started GET "/assets/uwacrest-small.gif" for 127.0.0.1 at 2014-08-21 18:02:36 +0800
+
+
+Started GET "/current_plants/js/jquery.mobile.custom.min.js" for 127.0.0.1 at 2014-08-21 18:02:36 +0800
+
+ActionController::RoutingError (No route matches [GET] "/current_plants/js/jquery.mobile.custom.min.js"):
+  actionpack (4.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.3) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.3) lib/rails/engine.rb:511:in `call'
+  railties (4.0.3) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.1ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (42.8ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (2.1ms)[0m  [1mINSERT INTO "climates" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 21 Aug 2014 18:05:35 AWST +08:00], ["name", "Hot"], ["updated_at", Thu, 21 Aug 2014 18:05:35 AWST +08:00]]
+  [1m[35m (128.2ms)[0m  commit transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "climates" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 21 Aug 2014 18:05:35 AWST +08:00], ["name", "Wet"], ["updated_at", Thu, 21 Aug 2014 18:05:35 AWST +08:00]]
+  [1m[36m (119.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "climates" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 21 Aug 2014 18:05:35 AWST +08:00], ["name", "Dry"], ["updated_at", Thu, 21 Aug 2014 18:05:35 AWST +08:00]]
+  [1m[35m (141.3ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "climates" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 21 Aug 2014 18:05:35 AWST +08:00], ["name", "Cold"], ["updated_at", Thu, 21 Aug 2014 18:05:35 AWST +08:00]]
+  [1m[36m (130.8ms)[0m  [1mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/current_plants/new" for 127.0.0.1 at 2014-08-21 18:06:08 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CurrentPlantsController#new as HTML
+  [1m[35mClimate Load (0.1ms)[0m  SELECT "climates".* FROM "climates"
+  Rendered current_plants/_form.html.erb (309.0ms)
+  Rendered current_plants/new.html.erb within layouts/application (312.6ms)
+  Rendered layouts/_navbar.html.erb (1.7ms)
+Completed 200 OK in 469ms (Views: 429.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-21 18:06:09 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-21 18:06:09 +0800
+
+
+Started GET "/assets/climates.js?body=1" for 127.0.0.1 at 2014-08-21 18:06:09 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-21 18:06:09 +0800
+
+
+Started GET "/assets/current_plant.js?body=1" for 127.0.0.1 at 2014-08-21 18:06:09 +0800
+
+
+Started GET "/assets/current_plants.js?body=1" for 127.0.0.1 at 2014-08-21 18:06:09 +0800
+
+
+Started GET "/assets/families.js?body=1" for 127.0.0.1 at 2014-08-21 18:06:09 +0800
+
+
+Started GET "/assets/flower_colours.js?body=1" for 127.0.0.1 at 2014-08-21 18:06:09 +0800
+
+
+Started GET "/assets/genera.js?body=1" for 127.0.0.1 at 2014-08-21 18:06:09 +0800
+
+
+Started GET "/assets/leaf_colours.js?body=1" for 127.0.0.1 at 2014-08-21 18:06:09 +0800
+
+
+Started GET "/assets/origins.js?body=1" for 127.0.0.1 at 2014-08-21 18:06:09 +0800
+
+
+Started GET "/assets/sizes.js?body=1" for 127.0.0.1 at 2014-08-21 18:06:09 +0800
+
+
+Started GET "/assets/soil_types.js?body=1" for 127.0.0.1 at 2014-08-21 18:06:09 +0800
+
+
+Started GET "/assets/types.js?body=1" for 127.0.0.1 at 2014-08-21 18:06:09 +0800
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-08-21 18:06:09 +0800
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-21 18:06:09 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-21 18:06:09 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-21 18:06:09 +0800
+
+
+Started GET "/assets/climates.css?body=1" for 127.0.0.1 at 2014-08-21 18:06:09 +0800
+
+
+Started GET "/assets/current_plant.css?body=1" for 127.0.0.1 at 2014-08-21 18:06:09 +0800
+
+
+Started GET "/assets/current_plants.css?body=1" for 127.0.0.1 at 2014-08-21 18:06:09 +0800
+
+
+Started GET "/assets/custom-mobile.css?body=1" for 127.0.0.1 at 2014-08-21 18:06:09 +0800
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-08-21 18:06:09 +0800
+
+
+Started GET "/assets/families.css?body=1" for 127.0.0.1 at 2014-08-21 18:06:09 +0800
+
+
+Started GET "/assets/flower_colours.css?body=1" for 127.0.0.1 at 2014-08-21 18:06:09 +0800
+
+
+Started GET "/assets/genera.css?body=1" for 127.0.0.1 at 2014-08-21 18:06:09 +0800
+
+
+Started GET "/assets/leaf_colours.css?body=1" for 127.0.0.1 at 2014-08-21 18:06:09 +0800
+
+
+Started GET "/assets/jquery.mCustomScrollbar.css?body=1" for 127.0.0.1 at 2014-08-21 18:06:09 +0800
+
+
+Started GET "/assets/origins.css?body=1" for 127.0.0.1 at 2014-08-21 18:06:09 +0800
+
+
+Started GET "/assets/sizes.css?body=1" for 127.0.0.1 at 2014-08-21 18:06:09 +0800
+
+
+Started GET "/assets/slideshow.css?body=1" for 127.0.0.1 at 2014-08-21 18:06:09 +0800
+
+
+Started GET "/assets/soil_types.css?body=1" for 127.0.0.1 at 2014-08-21 18:06:09 +0800
+
+
+Started GET "/assets/types.css?body=1" for 127.0.0.1 at 2014-08-21 18:06:09 +0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-21 18:06:09 +0800
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-08-21 18:06:09 +0800
+
+
+Started GET "/assets/uwacrest-small.gif" for 127.0.0.1 at 2014-08-21 18:06:09 +0800
+
+
+Started GET "/current_plants/js/jquery.mobile.custom.min.js" for 127.0.0.1 at 2014-08-21 18:06:09 +0800
+
+ActionController::RoutingError (No route matches [GET] "/current_plants/js/jquery.mobile.custom.min.js"):
+  actionpack (4.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.3) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.3) lib/rails/engine.rb:511:in `call'
+  railties (4.0.3) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.0ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.7ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (43.5ms)
+
+
+Started GET "/current_plants/js/jquery.mobile.custom.min.js" for 127.0.0.1 at 2014-08-21 18:06:09 +0800
+
+ActionController::RoutingError (No route matches [GET] "/current_plants/js/jquery.mobile.custom.min.js"):
+  actionpack (4.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.3) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.3) lib/rails/engine.rb:511:in `call'
+  railties (4.0.3) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.0ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (39.3ms)
+
+
+Started POST "/current_plants" for 127.0.0.1 at 2014-08-21 18:06:25 +0800
+Processing by CurrentPlantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ulZOaVzPvrvff1+jg6x+svax+AD79GaScwHzPR5Z2Aw=", "current_plant"=>{"name"=>"Special flower", "species"=>"", "common_name"=>"", "scientific_name"=>"", "synonym"=>"", "subspecies"=>"", "description"=>"", "characteristics"=>"", "identification"=>"", "physical"=>"", "climate_ids"=>["", "2", "3"], "environment"=>"", "horticulture"=>"", "architectural_uses"=>"", "architectural_info"=>"", "culture"=>"", "conservation"=>"", "wildlife"=>"", "location_name"=>"", "general_info"=>"", "additional_info"=>"", "discovered_by"=>"", "named_by"=>""}, "commit"=>"Create Current plant"}
+Unpermitted parameters: climate_ids
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.6ms)[0m  INSERT INTO "current_plants" ("additional_info", "architectural_info", "architectural_uses", "characteristics", "common_name", "conservation", "created_at", "culture", "description", "discovered_by", "environment", "general_info", "horticulture", "identification", "location_name", "name", "named_by", "physical", "scientific_name", "species", "subspecies", "synonym", "updated_at", "wildlife") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["additional_info", ""], ["architectural_info", ""], ["architectural_uses", ""], ["characteristics", ""], ["common_name", ""], ["conservation", ""], ["created_at", Thu, 21 Aug 2014 18:06:25 AWST +08:00], ["culture", ""], ["description", ""], ["discovered_by", ""], ["environment", ""], ["general_info", ""], ["horticulture", ""], ["identification", ""], ["location_name", ""], ["name", "Special flower"], ["named_by", ""], ["physical", ""], ["scientific_name", ""], ["species", ""], ["subspecies", ""], ["synonym", ""], ["updated_at", Thu, 21 Aug 2014 18:06:25 AWST +08:00], ["wildlife", ""]]
+  [1m[36m (162.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/current_plants/1
+Completed 302 Found in 172ms (ActiveRecord: 165.3ms)
+
+
+Started GET "/current_plants/1" for 127.0.0.1 at 2014-08-21 18:06:25 +0800
+Processing by CurrentPlantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCurrentPlant Load (0.4ms)[0m  SELECT "current_plants".* FROM "current_plants" WHERE "current_plants"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered current_plants/show.html.erb within layouts/application (3.1ms)
+  Rendered layouts/_navbar.html.erb (0.2ms)
+Completed 200 OK in 20ms (Views: 16.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-21 18:06:25 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-21 18:06:25 +0800
+
+
+Started GET "/assets/current_plant.js?body=1" for 127.0.0.1 at 2014-08-21 18:06:25 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-21 18:06:25 +0800
+
+
+Started GET "/assets/climates.js?body=1" for 127.0.0.1 at 2014-08-21 18:06:25 +0800
+
+
+Started GET "/assets/families.js?body=1" for 127.0.0.1 at 2014-08-21 18:06:25 +0800
+
+
+Started GET "/assets/current_plants.js?body=1" for 127.0.0.1 at 2014-08-21 18:06:25 +0800
+
+
+Started GET "/assets/flower_colours.js?body=1" for 127.0.0.1 at 2014-08-21 18:06:25 +0800
+
+
+Started GET "/assets/genera.js?body=1" for 127.0.0.1 at 2014-08-21 18:06:25 +0800
+
+
+Started GET "/assets/leaf_colours.js?body=1" for 127.0.0.1 at 2014-08-21 18:06:25 +0800
+
+
+Started GET "/assets/origins.js?body=1" for 127.0.0.1 at 2014-08-21 18:06:25 +0800
+
+
+Started GET "/assets/sizes.js?body=1" for 127.0.0.1 at 2014-08-21 18:06:25 +0800
+
+
+Started GET "/assets/soil_types.js?body=1" for 127.0.0.1 at 2014-08-21 18:06:25 +0800
+
+
+Started GET "/assets/types.js?body=1" for 127.0.0.1 at 2014-08-21 18:06:25 +0800
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-08-21 18:06:25 +0800
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-08-21 18:06:25 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-21 18:06:25 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-21 18:06:25 +0800
+
+
+Started GET "/assets/climates.css?body=1" for 127.0.0.1 at 2014-08-21 18:06:25 +0800
+
+
+Started GET "/assets/current_plant.css?body=1" for 127.0.0.1 at 2014-08-21 18:06:25 +0800
+
+
+Started GET "/assets/current_plants.css?body=1" for 127.0.0.1 at 2014-08-21 18:06:25 +0800
+
+
+Started GET "/assets/custom-mobile.css?body=1" for 127.0.0.1 at 2014-08-21 18:06:25 +0800
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-08-21 18:06:25 +0800
+
+
+Started GET "/assets/families.css?body=1" for 127.0.0.1 at 2014-08-21 18:06:25 +0800
+
+
+Started GET "/assets/flower_colours.css?body=1" for 127.0.0.1 at 2014-08-21 18:06:25 +0800
+
+
+Started GET "/assets/genera.css?body=1" for 127.0.0.1 at 2014-08-21 18:06:25 +0800
+
+
+Started GET "/assets/jquery.mCustomScrollbar.css?body=1" for 127.0.0.1 at 2014-08-21 18:06:25 +0800
+
+
+Started GET "/assets/leaf_colours.css?body=1" for 127.0.0.1 at 2014-08-21 18:06:25 +0800
+
+
+Started GET "/assets/origins.css?body=1" for 127.0.0.1 at 2014-08-21 18:06:25 +0800
+
+
+Started GET "/assets/sizes.css?body=1" for 127.0.0.1 at 2014-08-21 18:06:25 +0800
+
+
+Started GET "/assets/slideshow.css?body=1" for 127.0.0.1 at 2014-08-21 18:06:25 +0800
+
+
+Started GET "/assets/soil_types.css?body=1" for 127.0.0.1 at 2014-08-21 18:06:25 +0800
+
+
+Started GET "/assets/types.css?body=1" for 127.0.0.1 at 2014-08-21 18:06:25 +0800
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-08-21 18:06:25 +0800
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-08-21 18:06:25 +0800
+
+
+Started GET "/assets/uwacrest-small.gif" for 127.0.0.1 at 2014-08-21 18:06:25 +0800
+
+
+Started GET "/current_plants/js/jquery.mobile.custom.min.js" for 127.0.0.1 at 2014-08-21 18:06:25 +0800
+
+ActionController::RoutingError (No route matches [GET] "/current_plants/js/jquery.mobile.custom.min.js"):
+  actionpack (4.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.3) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.3) lib/rails/engine.rb:511:in `call'
+  railties (4.0.3) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.0ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (37.6ms)
+
+
+Started GET "/current_plants/js/jquery.mobile.custom.min.js" for 127.0.0.1 at 2014-08-21 18:06:25 +0800
+
+ActionController::RoutingError (No route matches [GET] "/current_plants/js/jquery.mobile.custom.min.js"):
+  actionpack (4.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.3) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.3) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.3) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.3) lib/rails/engine.rb:511:in `call'
+  railties (4.0.3) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/michael/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.6ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered /home/michael/.rvm/gems/ruby-2.1.1/gems/actionpack-4.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (38.4ms)
+  [1m[36mCurrentPlant Load (4.5ms)[0m  [1mSELECT "current_plants".* FROM "current_plants" WHERE "current_plants"."id" = 1[0m
+  [1m[35mClimate Load (0.5ms)[0m  SELECT "climates".* FROM "climates" WHERE "climates"."id" = 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.1ms)[0m  INSERT INTO "current_plants" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Thu, 21 Aug 2014 18:10:23 AWST +08:00], ["name", " pingu"], ["updated_at", Thu, 21 Aug 2014 18:10:23 AWST +08:00]]
+  [1m[36m (133.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "climates" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Thu, 21 Aug 2014 18:10:34 AWST +08:00], ["name", "windy"], ["updated_at", Thu, 21 Aug 2014 18:10:34 AWST +08:00]]
+  [1m[35m (132.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "current_linking_climates" ("climate_id", "created_at", "current_plant_id", "updated_at") VALUES (?, ?, ?, ?)  [["climate_id", 5], ["created_at", Thu, 21 Aug 2014 18:10:38 AWST +08:00], ["current_plant_id", 2], ["updated_at", Thu, 21 Aug 2014 18:10:38 AWST +08:00]]
+  [1m[36m (114.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mClimate Load (0.3ms)[0m  SELECT "climates".* FROM "climates" INNER JOIN "current_linking_climates" ON "climates"."id" = "current_linking_climates"."climate_id" WHERE "current_linking_climates"."current_plant_id" = ?  [["current_plant_id", 2]]
+  [1m[36mCurrentPlant Load (0.3ms)[0m  [1mSELECT "current_plants".* FROM "current_plants"[0m
+  [1m[35mCurrentPlant Load (0.7ms)[0m  SELECT "current_plants".* FROM "current_plants" WHERE "current_plants"."id" = 1
+  [1m[36mCurrentPlant Load (0.8ms)[0m  [1mSELECT "current_plants".* FROM "current_plants" WHERE "current_plants"."id" = 1 ORDER BY "current_plants"."id" ASC LIMIT 1[0m
+  [1m[35mClimate Load (0.4ms)[0m  SELECT "climates".* FROM "climates" INNER JOIN "current_linking_climates" ON "climates"."id" = "current_linking_climates"."climate_id" WHERE "current_linking_climates"."current_plant_id" = ?  [["current_plant_id", 1]]

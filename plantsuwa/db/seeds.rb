@@ -6,18 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Climate.create {
-  name: 'Hot'
-}
-
-Climate.create {
-  name: 'Wet'
-}
-
-Climate.create {
-  name: 'Dry'
-}
-
-Climate.create {
-  name: 'Cold'
-}
+Climate.create(name: 'Hot')
+Climate.create(name: 'Wet')
+Climate.create(name: 'Dry')
+Climate.create(name: 'Cold')

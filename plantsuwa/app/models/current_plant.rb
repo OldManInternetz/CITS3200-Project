@@ -29,6 +29,8 @@ class CurrentPlant < ActiveRecord::Base
   has_many :types, through: :current_linking_types
 
 
+  #has_and_belongs_to_many :climates
+
 	has_many :current_photos, dependent: :destroy
 
 
