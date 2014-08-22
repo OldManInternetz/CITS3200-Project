@@ -17,6 +17,10 @@ class CurrentPlantsController < ApplicationController
   
   def show
     @current_plant = CurrentPlant.find(params[:id])
+
+    @previous_plant = CurrentPlant.where("id < ?", params[:id]).last
+    @next_plant = CurrentPlant.where("id > ?", params[:id]).first
+
   end
   
   def edit

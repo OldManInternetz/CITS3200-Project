@@ -1,0 +1,72 @@
+<div id="bottom-nav-mobile">
+
+  <% if @previous_plant.present? %>
+
+    <%= link_to current_plant_path(:id => @previous_plant.id) do %>
+      <div class="bottom-nav-box" style="border-right: 1px solid gray;">  
+        <div class="center-wrapper">
+          <div style="display: inline-block;">
+            <div class="bottom-nav-box-content" style="float: left;">
+              <p><span class="glyphicon glyphicon-chevron-left"></span></p>
+            </div>
+            <div class="bottom-nav-box-content" style="float: left; margin-top: 0px">
+              <%= image_tag 'plants/rose_1_small.jpg', width:"30px", alt:"Rose", class: "img-circle" %>
+            </div>
+            <div class="bottom-nav-box-content" style="float: left">
+              <p><%= truncate(@previous_plant.name, length: 7) %></p>
+            </div> 
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+    <div class="bottom-nav-box">
+      <div class="center-wrapper">
+        <div style="display: inline-block;">
+          <p style="color: gray; margin-top: 4px;">(no prev. plant)</p>
+        </div>
+      </div>   
+    </div>
+  <% end %>
+
+  <%= link_to current_plants_path do %>
+    <div id="middle-box" class="bottom-nav-box" style="border-left: 1px solid #242424; border-right: 1px solid gray; padding-top: 10px;">
+      <div class="center-wrapper">
+        <div style="display: inline-block;">
+
+            <p><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;Plants List</p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <% if @next_plant.present? %>
+    <%= link_to current_plant_path(:id => @next_plant.id) do %>
+    <div class="bottom-nav-box" style="border-left: 1px solid #242424;">
+      <div class="center-wrapper">
+        <div style="display: inline-block;">
+          <div class="bottom-nav-box-content" style="float: right;">
+            <p><span class="glyphicon glyphicon-chevron-right"></span></p>
+          </div>
+          <div class="bottom-nav-box-content" style="float: right; margin-top: 0px">
+            <%= image_tag 'plants/rose_1_small.jpg', width:"30px", alt:"Rose", class: "img-circle" %>
+          </div>
+          <div class="bottom-nav-box-content" style="float: right">
+            <p><%= truncate(@next_plant.name, length: 7) %></p>
+          </div> 
+        </div>
+      </div>  
+    </div>
+    <% end %>
+  <% else %>
+    <div class="bottom-nav-box">
+      <div class="center-wrapper">
+        <div style="display: inline-block;">
+          <p style="color: gray; margin-top: 4px;">(no next plant)</p>
+        </div>
+      </div>   
+    </div>
+  <% end %>
+
+</div>
+

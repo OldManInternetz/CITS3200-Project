@@ -155,3 +155,8 @@ textarea {
 	color: gray;
 }
 
+.center-wrapper {
+  display: table;
+  margin: 0 auto;
+}
+
