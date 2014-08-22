@@ -1,84 +1,163 @@
-<%= simple_form_for(@current_plant, html: { class: 'form-horizontal' }, defaults: { input_html: { class: 'form-control' } }) do |f| %>
-  <% if @current_plant.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@current_plant.errors.count, "error") %> prohibited this plant from being saved:</h2>
-    <ul>
-    <% @current_plant.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-  	<% end %>
-    </ul>
-  </div>
+<%= render 'top_tabs' %>
+
+<div class="padding-mobile">
+
+  <%= simple_form_for(@current_plant, html: { class: 'form-horizontal' }, defaults: { input_html: { class: 'form-control' } }) do |f| %>
+    <% if @current_plant.errors.any? %>
+      <div class="alert alert-danger" role="alert">
+        <div id="error_explanation">
+          <p><%= pluralize(@current_plant.errors.count, "error") %> prohibited this plant from being saved:</p>
+          <ul>
+          <% @current_plant.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        	<% end %>
+          </ul>
+        </div>
+      </div>
+    <% end %>
+    
+
+    <div id="tab-naming" class="info-body">
+      <fieldset>
+	      <legend>Naming</legend>
+	      	<%= f.input  :name, hint: 'The display name of the Plant' %>
+	      	<%= f.association :genera, :as => :select %>
+		      <%= f.association :families, :as => :select %>
+	      	<%= f.input  :species %>
+      		<%= f.input  :common_name %> 
+      		<%= f.input  :scientific_name %> 
+      		<%= f.input  :synonym %> 
+      		<%= f.input  :subspecies %>
+		    <%= f.association :types, :as => :select %>
+      </fieldset> 
+    </div>
+
+    <div id="tab-descriptions" class="info-body" style="display: none">
+      <fieldset>
+	      	<legend>Descriptions</legend>
+		      <%= f.input  :description, hint: 'Describe the plant in a few lines.', as: :text %> 
+        	<%= f.input  :characteristics, hint: 'List the typical characteristics of the plant.', as: :text  %> 
+        	<%= f.input  :identification, hint: 'How is this plant identified in the field?', as: :text  %> 
+        	<%= f.input  :physical, hint: 'What are the physical characteristics of the plant?', as: :text %>
+		    <%= f.association :sizes, :as => :check_boxes %>
+		    <%= f.association :flower_colours, :as => :check_boxes %>
+		    <%= f.association :leaf_colours, :as => :check_boxes %>
+      </fieldset>
+    </div>
+    
+    
+    <div id="tab-architectural" class="info-body" style="display: none">
+      <fieldset>
+	      <legend>Architectural</legend>
+      	  <%= f.association :climates, :as => :check_boxes %>
+	        <%= f.input  :environment, hint: 'What sort of environment does this plant enjoy?' %>
+      	  <%= f.input  :horticulture %>
+      	  <%= f.input  :architectural_uses %>
+	        <%= f.input  :architectural_info %>
+		    <%= f.association :soil_types, :as => :check_boxes %>
+      </fieldset>
+    </div>
+    
+    
+    <div id="tab-cultural" class="info-body" style="display: none">
+      <fieldset>
+	      <legend>Cultural</legend>
+      	  <%= f.input  :culture, hint: 'What role does this plant play in different World cultures?', as: :text %> 
+      	  <%= f.input  :conservation %> 
+      	  <%= f.input  :wildlife, hint: 'Does this plant attract any fauna?' %>
+      </fieldset>
+    </div>
+     
+    
+    <div id="tab-other" class="info-body" style="display: none">
+      <fieldset>
+     	 <legend>Other</legend>
+	     <%= f.association :origins, :as => :radio_buttons %>
+      	 <%= f.input  :location_name, hint: 'Where can this plant be found locally?'%> 
+      	 <%= f.input  :general_info %>
+      	 <%= f.input  :additional_info %> 
+      </fieldset>
+    </div>
+    
+
+    <div id="tab-historical" class="info-body" style="display: none">
+      <fieldset>
+	      <legend>Historical</legend>
+      	  <%= f.input  :discovered_by, hint: 'Biologist credited with discovering this plant.' %>
+	        <%= f.input  :named_by, hint: 'Biologist credited with naming this plant'%>
+      </fieldset>
+    </div>
+
+    <div id="tab-photos" class="info-body" style="display: none">
+      <h2>Photos</h2>
+      <p>Nothing here yet, sorry!</p>
+    </div>
+
+    <hr/>
+
+    <p>
+      <%= f.button :submit, class: "button btn-primary" %>
+    </p>
   <% end %>
-  
-  <hr/>
 
-  <fieldset>
-	  <legend>Naming</legend>
-	  	<%= f.input  :name, hint: 'The display name of the Plant' %>
-	  	<%= f.association :genera, :as => :select %>
-		<%= f.association :families, :as => :select %>
-	  	<%= f.input  :species %>
-  		<%= f.input  :common_name %> 
-  		<%= f.input  :scientific_name %> 
-  		<%= f.input  :synonym %> 
-  		<%= f.input  :subspecies %>
-		<%= f.association :types, :as => :select %>
-  </fieldset> 
-  
-  <hr/>
+</div> <!-- padding-mobile -->
 
-  <fieldset>
-	  	<legend>Descriptions</legend>
-		  <%= f.input  :description, hint: 'Describe the plant in a few lines.', as: :text %> 
-    	<%= f.input  :characteristics, hint: 'List the typical characteristics of the plant.', as: :text  %> 
-    	<%= f.input  :identification, hint: 'How is this plant identified in the field?', as: :text  %> 
-    	<%= f.input  :physical, hint: 'What are the physical characteristics of the plant?', as: :text %>
-		<%= f.association :sizes, :as => :check_boxes %>
-		<%= f.association :flower_colours, :as => :check_boxes %>
-		<%= f.association :leaf_colours, :as => :check_boxes %>
-  </fieldset>
-  
-  <hr/>
 
-  <fieldset>
-	  <legend>Architectural</legend>
-  	  <%= f.association :climates, :as => :check_boxes %>
-	    <%= f.input  :environment, hint: 'What sort of environment does this plant enjoy?' %>
-  	  <%= f.input  :horticulture %>
-  	  <%= f.input  :architectural_uses %>
-	    <%= f.input  :architectural_info %>
-		<%= f.association :soil_types, :as => :check_boxes %>
-  </fieldset>
-  
-  <hr/>
 
-  <fieldset>
-	  <legend>Cultural</legend>
-  	  <%= f.input  :culture, hint: 'What role does this plant play in different World cultures?', as: :text %> 
-  	  <%= f.input  :conservation %> 
-  	  <%= f.input  :wildlife, hint: 'Does this plant attract any fauna?' %>
-  </fieldset>
-   
-  <hr/>
 
-  <fieldset>
- 	 <legend>Other</legend>
-	 <%= f.association :origins, :as => :radio_buttons %>
-  	 <%= f.input  :location_name, hint: 'Where can this plant be found locally?'%> 
-  	 <%= f.input  :general_info %>
-  	 <%= f.input  :additional_info %> 
-  </fieldset>
-  
-  <hr/>
+<script>
+  $('#btn-naming').on('click', function () {
+    $('.info-body').css({ display: 'none' });
+    $('#tab-naming').css({ display: '' });
+    $('.info-tab').removeClass("info-tab-current");
+    $('#btn-naming').addClass("info-tab-current");
+  });
 
-  <fieldset>
-	  <legend>Historical</legend>
-  	  <%= f.input  :discovered_by, hint: 'Biologist credited with discovering this plant.' %>
-	  <%= f.input  :named_by, hint: 'Biologist credited with naming this plant'%>
-  </fieldset>
-	  
- <br><br>
-  <p>
-    <%= f.button :submit, class: "button btn-primary" %>
-  </p>
-<% end %>
+  $('#btn-descriptions').on('click', function () {
+    $('.info-body').css({ display: 'none' });
+    $('#tab-descriptions').css({ display: '' });
+    $('.info-tab').removeClass("info-tab-current");
+    $('#btn-descriptions').addClass("info-tab-current");
+  });
+
+
+  $('#btn-architectural').on('click', function () {
+    $('.info-body').css({ display: 'none' });
+    $('#tab-architectural').css({ display: '' });
+    $('.info-tab').removeClass("info-tab-current");
+    $('#btn-architectural').addClass("info-tab-current");
+  });
+
+
+  $('#btn-cultural').on('click', function () {
+    $('.info-body').css({ display: 'none' });
+    $('#tab-cultural').css({ display: '' });
+    $('.info-tab').removeClass("info-tab-current");
+    $('#btn-cultural').addClass("info-tab-current");
+  });
+
+  $('#btn-other').on('click', function () {
+    $('.info-body').css({ display: 'none' });
+    $('#tab-other').css({ display: '' });
+    $('.info-tab').removeClass("info-tab-current");
+    $('#btn-other').addClass("info-tab-current");
+  });
+
+
+  $('#btn-historical').on('click', function () {
+    $('.info-body').css({ display: 'none' });
+    $('#tab-historical').css({ display: '' });
+    $('.info-tab').removeClass("info-tab-current");
+    $('#btn-historical').addClass("info-tab-current");
+  });
+
+
+  $('#btn-photos').on('click', function () {
+    $('.info-body').css({ display: 'none' });
+    $('#tab-photos').css({ display: '' });
+    $('.info-tab').removeClass("info-tab-current");
+    $('#btn-photos').addClass("info-tab-current");
+  });
+
+</script>
+

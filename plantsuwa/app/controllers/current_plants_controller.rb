@@ -11,8 +11,11 @@ class CurrentPlantsController < ApplicationController
   def create
     @current_plant = CurrentPlant.new(current_plant_params)
  
-    @current_plant.save
-    redirect_to @current_plant
+    if @current_plant.save
+      redirect_to @current_plant
+    else
+      render 'new'
+    end
   end
   
   def show

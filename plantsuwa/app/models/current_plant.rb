@@ -31,7 +31,7 @@ class CurrentPlant < ActiveRecord::Base
 	has_many :current_photos, dependent: :destroy
 
 
-
-
+  validates :name, presence: true, length: { maximum: 50 }
+  validates :common_name, presence: true, length: { maximum: 50 }
 
 end

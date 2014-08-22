@@ -188,4 +188,23 @@ textarea {
 }
 
 
+.padding-mobile {
+  padding: 0 10px;
+}
 
+.help-inline {
+  color: rgb(169, 68, 66);
+}
+
+.check_boxes > .controls {
+  padding: 0 30px;
+  padding-bottom: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  height: 120px;
+  overflow-y: scroll;
+}
+.check_boxes .checkbox {
+  font-size: small;
+	font-family: 'Oxygen', sans-serif;
+}
