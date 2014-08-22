@@ -95,12 +95,14 @@
 
     <hr/>
 
-    <p>
-      <%= f.button :submit, class: "button btn-primary" %>
-    </p>
+    <%= render :partial => 'bottom_nav_plants_form', :locals => { :f => f } %>
+
   <% end %>
 
+
+
 </div> <!-- padding-mobile -->
+
 
 
 
@@ -157,6 +159,11 @@
     $('#tab-photos').css({ display: '' });
     $('.info-tab').removeClass("info-tab-current");
     $('#btn-photos').addClass("info-tab-current");
+  });
+
+  $('submit-form').click(function(){
+      f.submit();
+      return false;
   });
 
 </script>
