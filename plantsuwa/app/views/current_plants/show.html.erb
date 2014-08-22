@@ -64,7 +64,6 @@
 	</dl>
 </div>
 
-
 <div id="tab-descriptions" class="info-body" style="display: none">	
 	<h2>Descriptions</h2>
 	<dl class="dl-horizontal">
@@ -100,6 +99,8 @@
 		<% end %>
 	</dl>
 </div>
+
+
 
 <div id="tab-architectural" class="info-body" style="display: none">
 	<h2>Architechural</h2>
@@ -195,6 +196,32 @@
   <p>Nothing here yet, sorry!</p>
 </div>
 
+<hr/>
+
+<%= link_to edit_current_plant_path(@current_plant) do %>
+<div class="action-tab">
+  <div class="center-wrapper">
+    <div style="display: inline-block;">
+      <p><span class="glyphicon glyphicon-edit"></span>&nbsp;&nbsp;Edit plant</p>
+    </div>
+  </div>
+</div>
+<% end %>
+<%= link_to new_current_plant_path do %>
+<div class="action-tab" style="left: 50%">
+  <div class="center-wrapper">
+    <div style="display: inline-block;">
+      <p><span class="glyphicon glyphicon-tree-deciduous"></span>&nbsp;&nbsp;New plant</p>
+    </div>
+  </div>
+</div>
+<% end %>
+
+
+
+
+<%= link_to 'Back', current_plants_path, class: 'btn-primary' %>
+<%= link_to 'Edit', edit_current_plant_path(@current_plant), class: 'btn-primary' %>
 
 <%= render 'bottom_nav_plants' %>
 
@@ -276,5 +303,3 @@
 </script>
 
 
-<%= link_to 'Back', current_plants_path, class: 'btn-primary' %>
-<%= link_to 'Edit', edit_current_plant_path(@current_plant), class: 'btn-primary' %>
