@@ -94,6 +94,22 @@ Family.create(name: 'XANTHORRHOEACEAE')
 
 
 # Lots of string manipulation to get this from the Bento data. Hope it works!
+CurrentPlant.create(name: '\'Honey Gem\'', common_name: '\'Honey Gem\'', description: 'Large hony gold flowers all year round.
+', synonym: '', subspecies: '', location_name: '', general_info: 'Prefers summer-wet conditions. Requires well drained soils but needs watering over summer in Perth. Do not overwater.', additional_info: 'pteridifolia refers to the divided fern-like leaves, Pteris = fern, folia= leaves', identification: 'Fine highly divided leaves 20-30 cm long with about 15 long thin leaflets. Large honey gold flowers, flowers all year long.', physical:'- Attractive, Large, divided, fern-like leaves. Silver under, light green foliage.
+- Showing a profuse display of large, 15 cm inflororescencecm wide, gold, Large inflorescence flowers. Flowers all year round.
+used for cut flowers or floral art', horticulture: '- Plant in full sun. Use Australian Plant fertilisers. Does not like high levels of phosphorous.
+- prune after flowering - Prune back after flowering by one third. Tip prune in summer.
+- insect attack - Grevillea Bud Drop Psyllid affects flowering and other mites sometimes cause foliage to shrivel in G. pteridifolia.', architectural_uses: 'fence screener
+hedge
+ornamental plant', culture: '', conservation: 'Bird attracting. Flowers all year round.', wildlife: 'Attracts:
+birds, honey-eaters 
+Large flowers are bird attracting. Flowers for most of the year.', architectural_info: 'Large woody shrub. Flowers all yar round. Good display of large honey gold flowers. Attractive, finely divided foliage, green upper and silver lower leaves. Bird attracting.', characteristics: 'large woody shrub, 2m, woody shrub >2m. With a dense canopy and vigorous growth rate.
+', environment: '- full sun  
+- two drop - water during establishment and may require summer watering.    
+- Prefers sand, well drained soils, with a acidic pH.', scientific_name: 'Grevillea pteridifolia hybrid')
+CurrentPlant.create(name: '\'Purple Fanfare\'', common_name: '\'Purple Fanfare\'', description: '', synonym: '', subspecies: '', location_name: '', general_info: '', additional_info: '', identification: '', physical:'- Attractive, dark green foliage.', horticulture: '- low maintenance required. Plants usually only last 1-3 years.
+- readily available.', architectural_uses: '', culture: '', conservation: '', wildlife: '', architectural_info: 'Spreading groundcover with profuse purple flowers spring/summer', characteristics: 'Small prostrate groundcover, >1 m, Perennial herbaceous shrub < 1m. With a dense canopy and vigorous growth rate.', environment: '- two drop
+- Prefers sand, well drained soils, with a neutral to acidic pH.', scientific_name: 'Scaevola \'Purple Fanfare\' (incomplete)')
 CurrentPlant.create(name: 'African daisy', common_name: 'African daisy, Aurora daisy', description: 'Profuse flowering over an extended period from late winter through late summer. Flowers available white, pink, red, yellow, orange.', synonym: '', subspecies: '', location_name: '', general_info: 'General Information: MInimum temperatures 1-5 C.', additional_info: '', identification: 'Daisy-like flowers in a range of colours. Attractive chrysanthemum-like leaves (lobed edges), grey above and green below.', physical:'Attractive, Chrysanthemum-like, grey above, green below, silver foliage.', horticulture: '- low maintenance required.
 - readily available.', architectural_uses: '', culture: '', conservation: '', wildlife: '', architectural_info: '', characteristics: 'Compact ground cover/herbaceous shrub, 40 cm, Perennial herbaceous shrub < 1m. With a dense canopy and vigorous growth rate.', environment: '- Two drop
 - Prefers all types soils, with a neutral to acidic pH.

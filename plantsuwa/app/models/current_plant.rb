@@ -61,5 +61,16 @@ class CurrentPlant < ActiveRecord::Base
   scoped_search on: :plant_id
   scoped_search on: :submitted_by
   scoped_search on: :edited_by
+  
+  scoped_search in: :types, on: :name
+  scoped_search in: :soil_types, on: :name
+  scoped_search in: :sizes, on: :name
+  scoped_search in: :origins, on: :name
+  scoped_search in: :current_photos, on: :description
+  scoped_search in: :leaf_colours, on: :name
+  scoped_search in: :flower_colours, on: :name
+  scoped_search in: :families, on: :name
+  scoped_search in: :genera, on: :name
+  scoped_search in: :climates, on: :name
 
 end
