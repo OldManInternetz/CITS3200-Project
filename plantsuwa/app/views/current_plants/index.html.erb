@@ -16,9 +16,8 @@
 <table class="table table-bordered">
 	<tr>
 		<th width="10%"></th>
-		<th width="20%">Name</th>
-		<th width="20%">Scientific name</th>
-		<th width="40%">Description</th>
+		<th width="40%">Name</th>
+		<th width="40%">Scientific name</th>
 		<th width="10%"></th>
 	</tr>
 	
@@ -30,7 +29,7 @@
     <td style="padding: 3px"><%= image_tag 'plants/rose_1_small.jpg', width:"30px", alt:"Rose", class: "img-circle" %></td>
 		<td><%= link_to truncate(plant.name, length: 20), current_plant_path(plant) %></td>
 		<td><%= truncate(plant.scientific_name, length: 20) %></td>
-		<td><%= truncate(plant.description, length: 50) %></td>
+    <td><td/>
 
 
     <!-- Not really necessary, I think. Not for users anyway

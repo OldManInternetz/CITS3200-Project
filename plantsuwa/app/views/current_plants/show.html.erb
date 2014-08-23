@@ -170,7 +170,9 @@
 
   <div id="tab-photos" class="info-body" style="display: none">
     <h2>Photos</h2>
-    <p>Nothing here yet, sorry!</p>
+	  <% for @photo in @current_plant.photos %>
+		  <dd> <%= @photo.description %> </dd>
+	  <% end %>
   </div>
 
   <hr/>

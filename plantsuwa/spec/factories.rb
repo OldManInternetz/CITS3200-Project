@@ -4,6 +4,7 @@ FactoryGirl.define do
 
   factory :current_plant do
     common_name "Rose"
+    name "Rose"
   end
 
   # Attributes
@@ -38,7 +39,7 @@ FactoryGirl.define do
 
   # Photos
 
-  factory :current_photo do
+  factory :photo do
     description "Cool"
   end
 

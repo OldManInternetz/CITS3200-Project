@@ -14,6 +14,7 @@ class CurrentPlantsController < ApplicationController
   
   def new
     @current_plant = CurrentPlant.new
+    @current_plant.photos.build
   end
   
   def create

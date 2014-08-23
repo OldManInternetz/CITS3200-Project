@@ -28,7 +28,9 @@ class CurrentPlant < ActiveRecord::Base
 	has_many :current_linking_types, dependent: :destroy
   has_many :types, through: :current_linking_types
 
-	has_many :current_photos, dependent: :destroy
+  has_many :current_linking_photos, dependent: :destroy
+	has_many :photos, through: :current_linking_photos
+  accepts_nested_attributes_for :photos
 
 
   #validates :name, presence: true, length: { maximum: 50 }
@@ -66,7 +68,7 @@ class CurrentPlant < ActiveRecord::Base
   scoped_search in: :soil_types, on: :name
   scoped_search in: :sizes, on: :name
   scoped_search in: :origins, on: :name
-  scoped_search in: :current_photos, on: :description
+  scoped_search in: :photos, on: :description
   scoped_search in: :leaf_colours, on: :name
   scoped_search in: :flower_colours, on: :name
   scoped_search in: :families, on: :name
