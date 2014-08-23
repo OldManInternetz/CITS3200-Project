@@ -1,8 +1,16 @@
 class CurrentPlantsController < ApplicationController
   
   def index
-    @current_plants = CurrentPlant.all
+    @current_plants = CurrentPlant.search_for(params[:search])
   end
+  
+	def auto_complete_search
+  	begin
+    	@items = CurrentPlant.complete_for(params[:search])
+  	rescue ScopedSearch::QueryNotSupported => e
+    	@items = [{:error =>e.to_s}]
+  	end
+	end
   
   def new
     @current_plant = CurrentPlant.new

@@ -2,7 +2,9 @@ Plantsuwa::Application.routes.draw do
 
   root 'welcome#index'
 
-  resources :current_plants, :path => 'plants'
+  resources :current_plants, :path => 'plants' do
+    get :auto_complete_search, :on => :collection
+  end
   resources :climates, :families, :flower_colours
   resources :genera, :leaf_colours, :origins, :sizes, :soil_types, :types
 

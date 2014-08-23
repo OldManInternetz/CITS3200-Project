@@ -4,6 +4,15 @@
 
 <%= link_to 'New Plant', new_current_plant_path %>
 
+<div id="plants_search">
+  <%= form_tag current_plants_path, :method => :get do %>
+    <%= auto_complete_field_tag_jquery(:search, params[:search], {:placeholder => "Search Plants"}) %>
+    <button id='submit_search' style="font-size: 12px;">Search</button>
+  <% end %>
+</div>
+
+<p>Displaying <%= @current_plants.count %> Results:</p>
+
 <table class="table table-bordered">
 	<tr>
 		<th width="10%"></th>
@@ -19,10 +28,9 @@
 	<tr>
 
     <td style="padding: 3px"><%= image_tag 'plants/rose_1_small.jpg', width:"30px", alt:"Rose", class: "img-circle" %></td>
-		<td><%= truncate(plant.name, length: 20) %></td>
+		<td><%= link_to truncate(plant.name, length: 20), current_plant_path(plant) %></td>
 		<td><%= truncate(plant.scientific_name, length: 20) %></td>
 		<td><%= truncate(plant.description, length: 50) %></td>
-		<td><%= link_to 'Show', current_plant_path(plant) %></td>
 
 
     <!-- Not really necessary, I think. Not for users anyway
@@ -37,5 +45,3 @@
   </tbody>
 
 </table>
-
-<p><strong>Total Number of Plants: </strong><%= @current_plants.count %></p>

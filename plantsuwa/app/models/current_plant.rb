@@ -31,7 +31,35 @@ class CurrentPlant < ActiveRecord::Base
 	has_many :current_photos, dependent: :destroy
 
 
-  validates :name, presence: true, length: { maximum: 50 }
-  validates :common_name, presence: true, length: { maximum: 50 }
+  #validates :name, presence: true, length: { maximum: 50 }
+  #validates :common_name, presence: true, length: { maximum: 50 }
+  
+  scoped_search on: :name
+  scoped_search on: :created_at
+  scoped_search on: :updated_at
+  scoped_search on: :species
+  scoped_search on: :common_name
+  scoped_search on: :scientific_name
+  scoped_search on: :synonym
+  scoped_search on: :subspecies
+  scoped_search on: :description
+  scoped_search on: :location_name
+  scoped_search on: :characteristics
+  scoped_search on: :additional_info
+  scoped_search on: :identification
+  scoped_search on: :physical
+  scoped_search on: :general_info
+  scoped_search on: :environment
+  scoped_search on: :horticulture
+  scoped_search on: :architectural_uses
+  scoped_search on: :culture
+  scoped_search on: :conservation
+  scoped_search on: :wildlife
+  scoped_search on: :architectural_info
+  scoped_search on: :discovered_by
+  scoped_search on: :named_by
+  scoped_search on: :plant_id
+  scoped_search on: :submitted_by
+  scoped_search on: :edited_by
 
 end

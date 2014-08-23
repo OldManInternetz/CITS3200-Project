@@ -19,6 +19,11 @@ ActiveRecord::Schema.define(version: 20140823073903) do
     t.datetime "updated_at"
   end
 
+  create_table "climates_current_plants", id: false, force: true do |t|
+    t.integer "climate_id",       null: false
+    t.integer "current_plant_id", null: false
+  end
+
   create_table "current_families", force: true do |t|
     t.string   "name"
     t.integer  "current_plant_id"
@@ -159,6 +164,13 @@ ActiveRecord::Schema.define(version: 20140823073903) do
     t.integer  "plant_id"
     t.integer  "submitted_by"
     t.integer  "edited_by"
+  end
+
+  create_table "current_plants_climates", force: true do |t|
+    t.integer  "current_plants_id"
+    t.integer  "climates_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "current_sizes", force: true do |t|
