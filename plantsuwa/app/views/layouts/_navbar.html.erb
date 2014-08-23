@@ -19,8 +19,20 @@
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		  <ul class="nav navbar-nav navbar-right">
-			<li><a href="#">Sign Up</a></li>
-			<li><a href="#">Login</a></li>
+
+			<% if signed_in? %>
+				<li><%= link_to log_out_path, method: "delete" do %>
+              Logged in as <%= current_user.username %> (Log out)
+            <% end %>
+        </li>
+      <% else %>
+        <li><%= link_to 'Sign up', sign_up_path %></li>
+      <% end %>
+
+			<% if not signed_in? %>
+			  <li><%= link_to 'Log in', log_in_path %></li>
+      <% end %>
+
 			<li><a href="#">Site Map</a></li>
 			<li><a href="#">Contact</a></li>
 		  </ul>  
