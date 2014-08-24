@@ -92,7 +92,7 @@
       <h2>Photos</h2>
 
       <%= f.simple_fields_for :photos, f.object.photos.build do |p| %>
-        <%= f.file_field :image %>
+        <%= p.file_field :image %>
         <%= p.input :description %>
       <% end %>
 
