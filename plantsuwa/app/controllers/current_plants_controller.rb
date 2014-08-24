@@ -37,6 +37,7 @@ class CurrentPlantsController < ApplicationController
   
   def edit
     @current_plant = CurrentPlant.find(params[:id])
+    @current_plant.photos
   end
   
   def update
@@ -58,7 +59,7 @@ class CurrentPlantsController < ApplicationController
   
   private
     def current_plant_params
-      params.require(:current_plant).permit(:name, :species, :common_name, :scientific_name, :synonym, :subspecies, :description, :location_name, :characteristics, :additional_info, :identification, :physical, :general_info, :environment, :horticulture, :architectural_uses, :culture, :conservation, :wildlife, :architectural_info, :discovered_by, :named_by, :climate_ids => [], :size_ids => [], :size_ids => [], :type_ids => [], :soil_type_ids => [], :origin_ids => [], :leaf_colour_ids => [], :genus_ids => [], :flower_colour_ids => [], :family_ids => [])
+      params.require(:current_plant).permit(:name, :species, :common_name, :scientific_name, :synonym, :subspecies, :description, :location_name, :characteristics, :additional_info, :identification, :physical, :general_info, :environment, :horticulture, :architectural_uses, :culture, :conservation, :wildlife, :architectural_info, :discovered_by, :named_by, :climate_ids => [], :size_ids => [], :size_ids => [], :type_ids => [], :soil_type_ids => [], :origin_ids => [], :leaf_colour_ids => [], :genus_ids => [], :flower_colour_ids => [], :family_ids => [], photos_attributes: [:description, :image_file_name, :image_content_type, :image_file_size, :image_updated_at])
     end
   
 end
