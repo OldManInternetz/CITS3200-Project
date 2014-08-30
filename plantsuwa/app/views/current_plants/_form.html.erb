@@ -91,13 +91,37 @@
     <div id="tab-photos" class="info-body" style="display: none">
       <h2>Photos</h2>
 
-      <%= f.simple_fields_for :photos, f.object.photos.build do |p| %>
-        <%= p.file_field :image %>
-        <%= p.input :description %>
-      <% end %>
 
 
-      <p>Nothing here yet, sorry!</p>
+        <%= f.simple_fields_for :current_photos do |builder| %>
+          <div class="form-photo-box" id="photo-box-0">
+
+            <% if builder.object.new_record? %>
+              <span style="float: left;">
+                <div style="width: 60px; height: 60px; float: left; margin-right: 10px;">
+
+                  <h5 style="text-align: center">NEW</h5>
+                  
+
+                </div>
+              </span>
+            <% else %>
+              <span style="float: left;">
+              <%= image_tag builder.object.image.url, style: "width: 60px; height: 60px; float: left; margin-right: 10px;", alt:"An image of a plant", class: "img-circle" %>
+              </span>
+            <% end %>
+
+
+            <%= builder.file_field :image %>
+            <%= builder.input :description %>
+          </div>
+        <% end %>
+
+
+
+
+
+
     </div>
 
     <hr/>
@@ -115,6 +139,16 @@
 
 
 <script>
+
+  $(document).ready(function() {
+  
+    $('#photo-box-1').css({ display: 'none' });    
+    $('#photo-box-2').css({ display: 'none' });    
+    $('#photo-box-3').css({ display: 'none' });    
+    $('#photo-box-4').css({ display: 'none' });    
+
+  });
+
   $('#btn-naming').on('click', function () {
     $('.info-body').css({ display: 'none' });
     $('#tab-naming').css({ display: '' });
@@ -172,6 +206,25 @@
       f.submit();
       return false;
   });
+
+
+  $('#current_plant_photos_attributes_0_image').change(function (){
+    $('#photo-box-1').css({ display: '' });
+  });
+
+  $('#current_plant_photos_attributes_1_image').change(function (){
+    $('#photo-box-2').css({ display: '' });
+  });
+
+  $('#current_plant_photos_attributes_2_image').change(function (){
+    $('#photo-box-3').css({ display: '' });
+  });
+
+  $('#current_plant_photos_attributes_3_image').change(function (){
+    $('#photo-box-4').css({ display: '' });
+  });
+
+
 
 </script>
 

@@ -28,9 +28,9 @@ class CurrentPlant < ActiveRecord::Base
 	has_many :current_linking_types, dependent: :destroy
   has_many :types, through: :current_linking_types
 
-  has_many :current_linking_photos, dependent: :destroy
-	has_many :photos, through: :current_linking_photos
-  accepts_nested_attributes_for :photos
+  #has_many :current_linking_photos, dependent: :destroy
+	has_many :current_photos    #, through: :current_linking_photos
+  accepts_nested_attributes_for :current_photos, :reject_if => lambda { |t| t['image'].nil? }, allow_destroy: true
 
 
   #validates :name, presence: true, length: { maximum: 50 }
@@ -74,5 +74,11 @@ class CurrentPlant < ActiveRecord::Base
   scoped_search in: :families, on: :name
   scoped_search in: :genera, on: :name
   scoped_search in: :climates, on: :name
+
+
+
+  def reject_photos(attribute)
+    attribute['image_file_name'].blank?
+  end
 
 end

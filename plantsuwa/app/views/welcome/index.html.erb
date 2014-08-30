@@ -1,6 +1,21 @@
-<h2><%= link_to 'Plants List', current_plants_path%></h2>
-<br><br>
-<h3>Other Tables</h3>
+<div class="padding-mobile">
+  <br/>
+  <h2 style="text-align: center; margin-bottom: 35px">Welcome!</h2>
+  <hr/>
+  <br/>
+
+
+      <%= link_to 'Browse Plants', current_plants_path, class: 'btn btn-default btn-welcome' %><br/><br/>
+      <%= link_to 'Search Plants', current_plants_path, class: 'btn btn-default btn-welcome' %><br/><br/>
+      <%= link_to 'Log in', log_in_path, class: 'btn btn-default btn-welcome' %><br/><br/>
+      <%= link_to 'Sign Up', sign_up_path, class: 'btn btn-default btn-welcome' %><br/><br/>
+
+</div>
+
+
+
+
+<!--
 <div main>
 <%= link_to 'Genera', genera_path%><br>
 <%= link_to 'Families', families_path%><br>
@@ -12,3 +27,4 @@
 <%= link_to 'Types', types_path%><br>
 <%= link_to 'Soil Types', soil_types_path%><br>
 </div>
+-->

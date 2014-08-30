@@ -1,4 +1,44 @@
-<% provide(:title, 'Plants List') %>
+<% provide(:title, 'List by Type') %>
+
+<% @current_plants.each do |plant| %>
+
+  <div class="plant-index-box">
+    <div class="plant-index-box-photo">
+      <% if plant.current_photos.any? %>
+		    <%= image_tag plant.current_photos.first.image.url, width:"63px", height:"63px", alt:"Plant photo" %>
+      <% else %>
+		    <%= image_tag 'no_photo.png', width:"63px", height:"63px", alt:"No photo" %>
+      <% end %>      
+    </div>
+    <div class="plant-index-box-content">
+      <div class="center-wrapper">
+        <div class="center-wrapper-inner">
+          <%= link_to current_plant_path(plant) do %>
+            <p style="text-align: center; margin-bottom: 0px; font-size: 120%"><strong><%= truncate(plant.name, length: 20) %></strong></p>
+          <% end %>
+
+          <% if !plant.scientific_name.blank? %>
+            <%= link_to current_plant_path(plant) do %>
+              <p style="text-align: center"><i><%= truncate(plant.scientific_name, length: 20) %></i></p>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <%= link_to current_plant_path(plant) do %>
+      <div class="plant-index-box-chevron">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </div>
+    <% end %>
+  </div>
+
+
+<% end %>
+
+
+<div style="height: 600px"></div>
+
+<p>Older things</p>
 
 <h1>Listing Plants</h1>
 
@@ -12,35 +52,3 @@
 </div>
 
 <p>Displaying <%= @current_plants.count %> Results:</p>
-
-<table class="table table-bordered">
-	<tr>
-		<th width="10%"></th>
-		<th width="40%">Name</th>
-		<th width="40%">Scientific name</th>
-		<th width="10%"></th>
-	</tr>
-	
-  <tbody>
-
-	<% @current_plants.each do |plant| %>
-	<tr>
-
-    <td style="padding: 3px"><%= image_tag 'plants/rose_1_small.jpg', width:"30px", alt:"Rose", class: "img-circle" %></td>
-		<td><%= link_to truncate(plant.name, length: 20), current_plant_path(plant) %></td>
-		<td><%= truncate(plant.scientific_name, length: 20) %></td>
-    <td><td/>
-
-
-    <!-- Not really necessary, I think. Not for users anyway
-
-		<td><%= link_to 'Edit', edit_current_plant_path(plant) %></td>
-		<td><%= link_to 'Delete', current_plant_path(plant), method: :delete, data: { confirm: 'Are you sure?'} %></td>
-
-    -->
-	</tr>
-	<% end %>
-
-  </tbody>
-
-</table>

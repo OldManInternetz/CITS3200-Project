@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140823143036) do
+ActiveRecord::Schema.define(version: 20140823073903) do
 
   create_table "climates", force: true do |t|
     t.string   "name"
@@ -61,13 +61,6 @@ ActiveRecord::Schema.define(version: 20140823143036) do
     t.datetime "updated_at"
   end
 
-  create_table "current_linking_photos", force: true do |t|
-    t.integer  "current_plant_id"
-    t.integer  "photo_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "current_linking_sizes", force: true do |t|
     t.integer  "current_plant_id"
     t.integer  "size_id"
@@ -87,6 +80,18 @@ ActiveRecord::Schema.define(version: 20140823143036) do
     t.integer  "type_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "current_photos", force: true do |t|
+    t.integer  "current_plant_id"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "has_attachment"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "current_plants", force: true do |t|
@@ -149,17 +154,6 @@ ActiveRecord::Schema.define(version: 20140823143036) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "photos", force: true do |t|
-    t.string   "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.boolean  "has_attachment"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
   end
 
   create_table "sizes", force: true do |t|

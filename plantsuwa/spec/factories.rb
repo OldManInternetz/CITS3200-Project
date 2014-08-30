@@ -39,7 +39,7 @@ FactoryGirl.define do
 
   # Photos
 
-  factory :photo do
+  factory :current_photo do
     description "Cool"
   end
 
