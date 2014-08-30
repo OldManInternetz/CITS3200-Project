@@ -30,7 +30,7 @@ class CurrentPlant < ActiveRecord::Base
 
   #has_many :current_linking_photos, dependent: :destroy
 	has_many :current_photos    #, through: :current_linking_photos
-  accepts_nested_attributes_for :current_photos, :reject_if => lambda { |t| t['image'].nil? }, allow_destroy: true
+  accepts_nested_attributes_for :current_photos, :reject_if => lambda { |t| t['description'].blank? and t['image'].nil? }, allow_destroy: true
 
 
   #validates :name, presence: true, length: { maximum: 50 }

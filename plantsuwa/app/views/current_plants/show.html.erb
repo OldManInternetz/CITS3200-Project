@@ -2,230 +2,205 @@
 <% provide(:prev_page, 'List') %>
 <% provide(:prev_link, current_plants_path) %>
 
-<%= render 'top_tabs' %>
-
 <div class="padding-mobile">
 
-  <div id="tab-naming" class="info-body">
-	  <h2>Naming</h2>
-	  <dl class="dl-horizontal">
-		  <dt>Name</dt><dd><%= @current_plant.name %></dd>
+
+
+  <div id="tab-descriptions" class="info-body">
+
+
+		  <dt>Name</dt>
+        <p><%= @current_plant.name %></p>
 		  <% if @current_plant.genera.any? %>
         <!-- CHANGE THIS TO ONE TO MANY !-->
-			  <dt>Genus</dt><dd><%= @current_plant.genera.first.name %></dd>
+			  <dt>Genus</dt><p><%= @current_plant.genera.first.name %></p>
 		  <% end %>
 		  <% if @current_plant.families.any? %>
         <!-- CHANGE THIS TO ONE TO MANY !-->
-			  <dt>Family</dt><dd><%= @current_plant.families.first.name %></dd>
+			  <dt>Family</dt><p><%= @current_plant.families.first.name %></p>
 		  <% end %>
 		  <% if not @current_plant.species.blank? %>
-			  <dt>Species</dt><dd><%= @current_plant.species %></dd>
+			  <dt>Species</dt><p><%= @current_plant.species %></p>
 		  <% end %>
 		  <% if not @current_plant.common_name.blank? %>
-			  <dt>Common Name</dt><dd><%= @current_plant.common_name %></dd>
+			  <dt>Common Name</dt><p><%= @current_plant.common_name %></p>
 		  <% end %>
 		  <% if not @current_plant.scientific_name.blank? %>
-			  <dt>Scientific Name</dt><dd><%= @current_plant.scientific_name %></dd>
+			  <dt>Scientific Name</dt><p><%= @current_plant.scientific_name %></p>
 		  <% end %>
 		  <% if not @current_plant.synonym.blank? %>
-			  <dt>Synonym</dt><dd><%= @current_plant.synonym %></dd>
+			  <dt>Synonym</dt><p><%= @current_plant.synonym %></p>
 		  <% end %>
 		  <% if not @current_plant.subspecies.blank? %>
-			  <dt>Subspecies</dt><dd><%= @current_plant.subspecies %></dd>
+			  <dt>Subspecies</dt><p><%= @current_plant.subspecies %></p>
 		  <% end %>
 		  <% if @current_plant.types.any? %>
         <!-- CHANGE THIS TO ONE TO MANY !-->
 			  <dt>Types</dt>
 			  <% for @type in @current_plant.types %>
-				  <dd> <%= @type.name %> </dd>
+				  <p> <%= @type.name %> </p>
 			  <% end %>
 		  <% end %>
-	  </dl>
-  </div>
 
-  <div id="tab-descriptions" class="info-body" style="display: none">	
-	  <h2>Descriptions</h2>
-	  <dl class="dl-horizontal">
       <% if not @current_plant.description.blank? %>
-			  <dt>Description</dt><dd><%= @current_plant.description %></dd>
+			  <dt>Description</dt><p><%= @current_plant.description %></p>
 		  <% end %>
 		  <% if not @current_plant.characteristics.blank? %>
-			  <dt>Characteristics</dt><dd><%= @current_plant.characteristics %></dd>
+			  <dt>Characteristics</dt><p><%= @current_plant.characteristics %></p>
 		  <% end %>
 		  <% if not @current_plant.identification.blank? %>
-			  <dt>Identification</dt><dd><%= @current_plant.identification %></dd>
+			  <dt>Identification</dt><p><%= @current_plant.identification %></p>
 		  <% end %>
 		  <% if not @current_plant.physical.blank? %>
-			  <dt>Physical</dt><dd><%= @current_plant.physical %></dd>
+			  <dt>Physical</dt><p><%= @current_plant.physical %></p>
 		  <% end %>
 		  <% if @current_plant.sizes.any? %>
 			  <dt>Size</dt>
+        <ul>
 			  <% for @size in @current_plant.sizes %>
-				  <dd> <%= @size.name %> </dd>
+				  <li> <%= @size.name %> </li>
 			  <% end %>
+        </ul>
 		  <% end %>
 		  <% if @current_plant.flower_colours.any? %>
 			  <dt>Flower Colour</dt>
+        <ul>
 			  <% for @flower_colour in @current_plant.flower_colours %>
-				  <dd> <%= @flower_colour.name %> </dd>
+				  <li> <%= @flower_colour.name %> </li>
 			  <% end %>
+        </ul>
 		  <% end %>
 		  <% if @current_plant.leaf_colours.any? %>
 			  <dt>Leaf Colour</dt>
+        <ul>
 			  <% for @leaf_colour in @current_plant.leaf_colours %>
-				  <dd> <%= @leaf_colour.name %> </dd>
-			  <% end %>		
+				  <li> <%= @leaf_colour.name %> </li>
+			  <% end %>
+        </ul>
 		  <% end %>
-	  </dl>
+
   </div>
+
 
 
 
   <div id="tab-architectural" class="info-body" style="display: none">
-	  <h2>Architechural</h2>
-	  <dl class="dl-horizontal">
 
       <% if @current_plant.climates.any? %>
 		    <dt>Climates</dt>		
+        <ul>
 		    <% for @climate in @current_plant.climates %>
-			    <dd> <%= @climate.name %></dd>
+			    <li> <%= @climate.name %></li>
 		    <% end %>
+        </ul>
       <% end %>
 
       <% if not @current_plant.environment.blank? %>
-		    <dt>Environment</dt><dd><%= @current_plant.environment %></dd>
+		    <dt>Environment</dt><p><%= @current_plant.environment %></p>
       <% end %>
 
       <% if not @current_plant.horticulture.blank? %>
-		    <dt>Horticulture</dt><dd><%= @current_plant.horticulture %></dd>
+		    <dt>Horticulture</dt><p><%= @current_plant.horticulture %></p>
       <% end %>
 
       <% if not @current_plant.architectural_uses.blank? %>
-		    <dt>Architectural Uses</dt><dd><%= @current_plant.architectural_uses %></dd>
+		    <dt>Architectural Uses</dt><p><%= @current_plant.architectural_uses %></p>
       <% end %>
 
       <% if not @current_plant.architectural_info.blank? %>
-		    <dt>Architectural Info</dt><dd><%= @current_plant.architectural_info %></dd>
+		    <dt>Architectural Info</dt><p><%= @current_plant.architectural_info %></p>
       <% end %>
 
       <% if @current_plant.soil_types.any? %>
 		    <dt>Soil Types</dt>		
+        <ul>
 		    <% for @soil_type in @current_plant.soil_types %>
-			    <dd> <%= @soil_type.name %></dd>
+			    <li> <%= @soil_type.name %></li>
 		    <% end %>
+        </ul>
       <% end %>
-	  </dl>
+
   </div>
 	
-  <div id="tab-cultural" class="info-body" style="display: none">
-	  <h2>Cultural</h2>
-	  <dl class="dl-horizontal">
+
+  <div id="tab-environmental" class="info-body" style="display: none">
+
       <% if not @current_plant.culture.blank? %>
-		    <dt>Culture</dt><dd><%= @current_plant.culture %></dd>
+		    <dt>Culture</dt><p><%= @current_plant.culture %></p>
       <% end %>
 
       <% if not @current_plant.conservation.blank? %>
-		    <dt>Conservation</dt><dd><%= @current_plant.conservation %></dd>
+		    <dt>Conservation</dt><p><%= @current_plant.conservation %></p>
       <% end %>
 
       <% if not @current_plant.wildlife.blank? %>
-		    <dt>Wildlife</dt><dd><%= @current_plant.wildlife %></dd>
+		    <dt>Wildlife</dt><p><%= @current_plant.wildlife %></p>
       <% end %>
-	  </dl>
-  </div>	
 
-  <div id="tab-other" class="info-body" style="display: none">
-	  <h2>Other</h2>
-	  <dl class="dl-horizontal">
       <% if @current_plant.origins.any? %>
 		    <dt>Origins</dt>		
+        <ul>
 		    <% for @origin in @current_plant.origins %>
-			    <dd> <%= @origin.name %></dd>
+			    <li> <%= @origin.name %></li>
 		    <% end %>
+        </ul>
       <% end %>
 
       <% if not @current_plant.location_name.blank? %>
-		    <dt>Location Name</dt><dd><%= @current_plant.location_name %></dd>
+		    <dt>Location Name</dt><p><%= @current_plant.location_name %></p>
       <% end %>
 
       <% if not @current_plant.general_info.blank? %>
-		    <dt>General Info</dt><dd><%= @current_plant.general_info %></dd>
+		    <dt>General Info</dt><p><%= @current_plant.general_info %></p>
       <% end %>
 
       <% if not @current_plant.additional_info.blank? %>
-		    <dt>Additional Info</dt><dd><%= @current_plant.additional_info %></dd>
+		    <dt>Additional Info</dt><p><%= @current_plant.additional_info %></p>
       <% end %>
-	  </dl>
-  </div>
-	
-  <div id="tab-historical" class="info-body" style="display: none">
-	  <h2>Historical</h2>
-	  <dl class="dl-horizontal">
+
       <% if not @current_plant.discovered_by.blank? %>
-		    <dt>Discovered By</dt><dd><%= @current_plant.discovered_by %></dd>
+		    <dt>Discovered By</dt><p><%= @current_plant.discovered_by %></p>
       <% end %>
       <% if not @current_plant.named_by.blank? %>
-		    <dt>Named By</dt><dd><%= @current_plant.named_by %></dd>
+		    <dt>Named By</dt><p><%= @current_plant.named_by %></p>
       <% end %>
-	  </dl>
+
   </div>
 
+
   <div id="tab-photos" class="info-body" style="display: none">
-    <h2>Photos</h2>
+
 	  <% for @photo in @current_plant.current_photos %>
 		  <%= image_tag @photo.image.url, style: "max-width: 100%; max-height: 400px;" %>
       <%= @photo.description %>
       <hr/>
 	  <% end %>
+
   </div>
 
-  <hr/>
-
-  <%= link_to edit_current_plant_path(@current_plant) do %>
-  <div class="action-tab">
-    <div class="center-wrapper">
-      <div style="display: inline-block;">
-        <p><span class="glyphicon glyphicon-edit"></span>&nbsp;&nbsp;Edit plant</p>
-      </div>
-    </div>
-  </div>
-  <% end %>
-  <%= link_to new_current_plant_path do %>
-  <div class="action-tab" style="left: 50%">
-    <div class="center-wrapper">
-      <div style="display: inline-block;">
-        <p><span class="glyphicon glyphicon-tree-deciduous"></span>&nbsp;&nbsp;New plant</p>
-      </div>
-    </div>
-  </div>
-  <% end %>
+  <div style="height: 40px"></div>
 
 </div> <!-- padding-mobile -->
-<div style="height: 60px"></div>
+
+<%= render 'action_tabs' %>
+<%= render 'bottom_tabs' %>
 
 
 
-<%= render 'bottom_nav_plants' %>
+
+
+
 
 
 <script>
-  $('#btn-naming').on('click', function () {
-    $('.info-body').css({ display: 'none' });
-    $('#tab-naming').css({ display: '' });
-    $('.info-tab').removeClass("info-tab-current");
-    $('#btn-naming').addClass("info-tab-current");
-  });
 
-  <% if has_descriptions(@current_plant) %>
-    $('#btn-descriptions').on('click', function () {
-      $('.info-body').css({ display: 'none' });
-      $('#tab-descriptions').css({ display: '' });
-      $('.info-tab').removeClass("info-tab-current");
-      $('#btn-descriptions').addClass("info-tab-current");
-    });
-  <% else %>
-    $('#btn-descriptions').addClass("info-tab-disabled");  
-  <% end %>
+
+  $('#btn-descriptions').on('click', function () {
+    $('.info-body').css({ display: 'none' });
+    $('#tab-descriptions').css({ display: '' });
+    $('.info-tab').removeClass("info-tab-current");
+    $('#btn-descriptions').addClass("info-tab-current");
+  });
 
   <% if has_architectural(@current_plant) %>
     $('#btn-architectural').on('click', function () {
@@ -238,38 +213,17 @@
     $('#btn-architectural').addClass("info-tab-disabled");
   <% end %>
 
-  <% if has_cultural(@current_plant) %>
-    $('#btn-cultural').on('click', function () {
+  <% if has_environmental(@current_plant) %>
+    $('#btn-environmental').on('click', function () {
       $('.info-body').css({ display: 'none' });
-      $('#tab-cultural').css({ display: '' });
+      $('#tab-environmental').css({ display: '' });
       $('.info-tab').removeClass("info-tab-current");
-      $('#btn-cultural').addClass("info-tab-current");
+      $('#btn-environmental').addClass("info-tab-current");
     });
   <% else %>
-    $('#btn-cultural').addClass("info-tab-disabled");
+    $('#btn-environmental').addClass("info-tab-disabled");
   <% end %>
 
-  <% if has_other(@current_plant) %>
-    $('#btn-other').on('click', function () {
-      $('.info-body').css({ display: 'none' });
-      $('#tab-other').css({ display: '' });
-      $('.info-tab').removeClass("info-tab-current");
-      $('#btn-other').addClass("info-tab-current");
-    });
-  <% else %>
-    $('#btn-other').addClass("info-tab-disabled");
-  <% end %>
-
-  <% if has_historical(@current_plant) %>
-    $('#btn-historical').on('click', function () {
-      $('.info-body').css({ display: 'none' });
-      $('#tab-historical').css({ display: '' });
-      $('.info-tab').removeClass("info-tab-current");
-      $('#btn-historical').addClass("info-tab-current");
-    });
-  <% else %>
-    $('#btn-historical').addClass("info-tab-disabled");
-  <% end %>
 
   <% if has_photos(@current_plant) %>
     $('#btn-photos').on('click', function () {

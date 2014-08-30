@@ -1,4 +1,4 @@
-<%= render 'top_tabs' %>
+<%= render 'bottom_tabs' %>
 
 <div class="padding-mobile">
 
@@ -17,9 +17,10 @@
     <% end %>
     
 
-    <div id="tab-naming" class="info-body">
+
+    <div id="tab-descriptions" class="info-body">
       <fieldset>
-	      <legend>Naming</legend>
+	      	<legend>Descriptions</legend>
 	      	<%= f.input  :name, hint: 'The display name of the Plant' %>
 	      	<%= f.association :genera, :as => :select %>
 		      <%= f.association :families, :as => :select %>
@@ -28,13 +29,7 @@
       		<%= f.input  :scientific_name %> 
       		<%= f.input  :synonym %> 
       		<%= f.input  :subspecies %>
-		    <%= f.association :types, :as => :select %>
-      </fieldset> 
-    </div>
-
-    <div id="tab-descriptions" class="info-body" style="display: none">
-      <fieldset>
-	      	<legend>Descriptions</legend>
+		      <%= f.association :types, :as => :select %>
 		      <%= f.input  :description, hint: 'Describe the plant in a few lines.', as: :text %> 
         	<%= f.input  :characteristics, hint: 'List the typical characteristics of the plant.', as: :text  %> 
         	<%= f.input  :identification, hint: 'How is this plant identified in the field?', as: :text  %> 
@@ -59,34 +54,24 @@
     </div>
     
     
-    <div id="tab-cultural" class="info-body" style="display: none">
+    <div id="tab-environmental" class="info-body" style="display: none">
       <fieldset>
-	      <legend>Cultural</legend>
+	      <legend>Environmental</legend>
       	  <%= f.input  :culture, hint: 'What role does this plant play in different World cultures?', as: :text %> 
       	  <%= f.input  :conservation %> 
       	  <%= f.input  :wildlife, hint: 'Does this plant attract any fauna?' %>
-      </fieldset>
-    </div>
-     
-    
-    <div id="tab-other" class="info-body" style="display: none">
-      <fieldset>
-     	 <legend>Other</legend>
-	     <%= f.association :origins, :as => :radio_buttons %>
-      	 <%= f.input  :location_name, hint: 'Where can this plant be found locally?'%> 
-      	 <%= f.input  :general_info %>
-      	 <%= f.input  :additional_info %> 
-      </fieldset>
-    </div>
-    
-
-    <div id="tab-historical" class="info-body" style="display: none">
-      <fieldset>
-	      <legend>Historical</legend>
+	        <%= f.association :origins, :as => :radio_buttons %>
+      	  <%= f.input  :location_name, hint: 'Where can this plant be found locally?'%> 
+      	  <%= f.input  :general_info %>
+      	  <%= f.input  :additional_info %> 
       	  <%= f.input  :discovered_by, hint: 'Biologist credited with discovering this plant.' %>
 	        <%= f.input  :named_by, hint: 'Biologist credited with naming this plant'%>
       </fieldset>
     </div>
+     
+    
+ 
+
 
     <div id="tab-photos" class="info-body" style="display: none">
       <h2>Photos</h2>
@@ -126,11 +111,11 @@
 
     <hr/>
 
-    <%= render :partial => 'bottom_nav_plants_form', :locals => { :f => f } %>
+    <%= render :partial => 'action_tabs_form', :locals => { :f => f } %>
 
   <% end %>
 
-
+  <div style="height: 40px"></div>
 
 </div> <!-- padding-mobile -->
 
@@ -149,13 +134,6 @@
 
   });
 
-  $('#btn-naming').on('click', function () {
-    $('.info-body').css({ display: 'none' });
-    $('#tab-naming').css({ display: '' });
-    $('.info-tab').removeClass("info-tab-current");
-    $('#btn-naming').addClass("info-tab-current");
-  });
-
   $('#btn-descriptions').on('click', function () {
     $('.info-body').css({ display: 'none' });
     $('#tab-descriptions').css({ display: '' });
@@ -172,26 +150,11 @@
   });
 
 
-  $('#btn-cultural').on('click', function () {
+  $('#btn-environmental').on('click', function () {
     $('.info-body').css({ display: 'none' });
-    $('#tab-cultural').css({ display: '' });
+    $('#tab-environmental').css({ display: '' });
     $('.info-tab').removeClass("info-tab-current");
-    $('#btn-cultural').addClass("info-tab-current");
-  });
-
-  $('#btn-other').on('click', function () {
-    $('.info-body').css({ display: 'none' });
-    $('#tab-other').css({ display: '' });
-    $('.info-tab').removeClass("info-tab-current");
-    $('#btn-other').addClass("info-tab-current");
-  });
-
-
-  $('#btn-historical').on('click', function () {
-    $('.info-body').css({ display: 'none' });
-    $('#tab-historical').css({ display: '' });
-    $('.info-tab').removeClass("info-tab-current");
-    $('#btn-historical').addClass("info-tab-current");
+    $('#btn-environmental').addClass("info-tab-current");
   });
 
 
@@ -205,23 +168,6 @@
   $('submit-form').click(function(){
       f.submit();
       return false;
-  });
-
-
-  $('#current_plant_photos_attributes_0_image').change(function (){
-    $('#photo-box-1').css({ display: '' });
-  });
-
-  $('#current_plant_photos_attributes_1_image').change(function (){
-    $('#photo-box-2').css({ display: '' });
-  });
-
-  $('#current_plant_photos_attributes_2_image').change(function (){
-    $('#photo-box-3').css({ display: '' });
-  });
-
-  $('#current_plant_photos_attributes_3_image').change(function (){
-    $('#photo-box-4').css({ display: '' });
   });
 
 
