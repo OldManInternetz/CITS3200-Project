@@ -1,5 +1,7 @@
 class SessionsController < ApplicationController
 
+  before_action :already_signed_in_user, only: [:new, :create]
+
   def new
   end
 
@@ -20,5 +22,15 @@ class SessionsController < ApplicationController
     sign_out
     redirect_to root_url
   end
+
+  private
+
+    # Before filters
+
+    def already_signed_in_user
+			if signed_in?
+				redirect_to root_path
+			end
+    end
 
 end

@@ -1,0 +1,17 @@
+@media (min-width: 300px) {
+  body {
+    overflow-x: hidden;
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar-right {
+    position: fixed;
+    right: 60px;
+  }
+
+  .navbar-title-block {
+    width: 66%;
+  }
+
+}

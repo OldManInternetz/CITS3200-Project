@@ -1,4 +1,14 @@
 <% provide(:title, 'List by Type') %>
+<% provide(:prev_page, 'Home') %>
+<% provide(:prev_link, root_path) %>
+
+
+<div class="plant-index-tab" style="background: #FFF8D9; position: fixed">
+  <p><strong>Climbers</strong></p>
+</div>
+
+<!-- To allow for space for the group headings -->
+<div style="height: 24px"></div>
 
 <% @current_plants.each do |plant| %>
 

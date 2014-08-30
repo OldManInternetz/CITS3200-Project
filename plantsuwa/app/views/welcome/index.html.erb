@@ -1,3 +1,5 @@
+
+
 <div class="padding-mobile">
   <br/>
   <h2 style="text-align: center; margin-bottom: 35px">Welcome!</h2>
@@ -7,8 +9,15 @@
 
       <%= link_to 'Browse Plants', current_plants_path, class: 'btn btn-default btn-welcome' %><br/><br/>
       <%= link_to 'Search Plants', current_plants_path, class: 'btn btn-default btn-welcome' %><br/><br/>
-      <%= link_to 'Log in', log_in_path, class: 'btn btn-default btn-welcome' %><br/><br/>
-      <%= link_to 'Sign Up', sign_up_path, class: 'btn btn-default btn-welcome' %><br/><br/>
+  
+			<% if signed_in? %>
+
+        <%= link_to 'Log out', log_out_path, method: "delete", class: 'btn btn-default btn-welcome' %> 
+
+      <% else %>
+        <%= link_to 'Log in', log_in_path, class: 'btn btn-default btn-welcome' %><br/><br/>
+        <%= link_to 'Sign Up', sign_up_path, class: 'btn btn-default btn-welcome' %><br/><br/>
+      <% end %>
 
 </div>
 
