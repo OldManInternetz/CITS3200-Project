@@ -68,7 +68,7 @@ class CurrentPlant < ActiveRecord::Base
   scoped_search in: :soil_types, on: :name
   scoped_search in: :sizes, on: :name
   scoped_search in: :origins, on: :name
-  scoped_search in: :photos, on: :description
+  scoped_search in: :current_photos, on: :description
   scoped_search in: :leaf_colours, on: :name
   scoped_search in: :flower_colours, on: :name
   scoped_search in: :families, on: :name
