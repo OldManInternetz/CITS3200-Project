@@ -40,19 +40,15 @@
 
 
 <% end %>
-<%= render 'action_tab_unknown' %>
-<%= render 'action_tab_new' %>
+
+<!-- To allow space for the bottom tabs -->
+<div style="height: 40px"></div>
+
+<% if signed_in? %>
+  <div style="height: 30px"></div>
+  <%= render 'action_tab_unknown' %>
+  <%= render 'action_tab_new' %>
+<% end %>
+
 <%= render 'bottom_tabs_index' %>
 
-
-<div style="height: 600px"></div>
-
-<p>Older things</p>
-
-<h1>Listing Plants</h1>
-
-<%= link_to 'New Plant', new_current_plant_path %>
-
-
-
-<p>Displaying <%= @current_plants.count %> Results:</p>

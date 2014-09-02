@@ -9,8 +9,9 @@
   <div id="tab-descriptions" class="info-body">
     <legend>Descriptions</legend>
 
-	  <dt>Name</dt>
-      <p><%= @current_plant.name %></p>
+    <% if not @current_plant.name.blank? %>
+	   <dt>Name</dt><p><%= @current_plant.name %></p>
+    <% end %>
 	  <% if not @current_plant.genus.blank? %>
 		  <dt>Genus</dt><p><%= @current_plant.genus %></p>
 	  <% end %>
@@ -184,13 +185,24 @@
 	  <% end %>
 
   </div>
-
-  <div style="height: 80px"></div>
+  <!-- To allow space for the bottom tabs -->
+  <% if signed_in? %>
+    <div style="height: 72px"></div>
+  <% else %>
+    <div style="height: 72px"></div>  
+  <% end %>
 
 </div> <!-- padding-mobile -->
 
-<%= render 'action_tab_edit' %>
-<%= render 'action_tab_new' %>
+<!-- To allow space for the bottom tabs -->
+<div style="height: 40px"></div>
+
+<% if signed_in? %>
+  <div style="height: 30px"></div>
+  <%= render 'action_tab_edit' %>
+  <%= render 'action_tab_new' %>
+<% end %>
+
 <%= render 'bottom_tabs_show' %>
 
 
