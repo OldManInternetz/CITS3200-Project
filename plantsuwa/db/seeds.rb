@@ -29,6 +29,7 @@ CurrentPlant.create(name: 'Test Plant', description: 'A test plant.')
 @p_2.climates << @c_3
 @p_2.climates << @c_4
 =end
+
 # Scanned the Bento data and manually wrote this
 soil_types = SoilType.create([
   {name: 'Quindalup'}, 
@@ -109,6 +110,8 @@ climtes = Climate.create([
   {name: 'Hot'}
 ])
 
+
+# Seed data from Bento -> Excel
 CurrentPlant.create(name: '\'Honey Gem\'', common_name: '\'Honey Gem\'', family: 'PROTEACEAE', description: 'Large hony gold flowers all year round.
 ', synonym: '', subspecies: '', location_name: '', general_info: 'Prefers summer-wet conditions. Requires well drained soils but needs watering over summer in Perth. Do not overwater.', additional_info: 'pteridifolia refers to the divided fern-like leaves, Pteris = fern, folia= leaves', identification: 'Fine highly divided leaves 20-30 cm long with about 15 long thin leaflets. Large honey gold flowers, flowers all year long.', physical:'- Attractive, Large, divided, fern-like leaves. Silver under, light green foliage.
 - Showing a profuse display of large, 15 cm inflororescencecm wide, gold, Large inflorescence flowers. Flowers all year round.
