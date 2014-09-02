@@ -8,9 +8,9 @@ class MergedMigration < ActiveRecord::Migration
     end
 
     """ Add fields to current_plants table """
-    add_column :current_plants, :family,			:string
-    add_column :current_plants, :genus,				:string
-	add_column :current_plants, :species,           :string
+    add_column :current_plants, :family,			      :string
+    add_column :current_plants, :genus,				      :string
+	  add_column :current_plants, :species,           :string
     add_column :current_plants, :common_name,       :string
     add_column :current_plants, :scientific_name,   :string
     add_column :current_plants, :synonym,           :string
@@ -33,8 +33,8 @@ class MergedMigration < ActiveRecord::Migration
     add_column :current_plants, :named_by,          :string
     add_column :current_plants, :approved,          :boolean
     add_column :current_plants, :version,           :integer
- 	add_column :current_plants, :plant_id,          :integer
-	add_column :current_plants, :submitted_by,      :integer
+ 	  add_column :current_plants, :plant_id,          :integer
+	  add_column :current_plants, :submitted_by,      :integer
     add_column :current_plants, :edited_by,         :integer
     """ Still need to add the following fields: """
     # my_notes (id)
