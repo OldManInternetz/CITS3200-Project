@@ -11,13 +11,11 @@
 
 		  <dt>Name</dt>
         <p><%= @current_plant.name %></p>
-		  <% if @current_plant.genera.any? %>
-        <!-- CHANGE THIS TO ONE TO MANY !-->
-			  <dt>Genus</dt><p><%= @current_plant.genera.first.name %></p>
+		  <% if not @current_plant.genus.blank? %>
+			  <dt>Genus</dt><p><%= @current_plant.genus %></p>
 		  <% end %>
-		  <% if @current_plant.families.any? %>
-        <!-- CHANGE THIS TO ONE TO MANY !-->
-			  <dt>Family</dt><p><%= @current_plant.families.first.name %></p>
+		  <% if @current_plant.family.blank? %>
+			  <dt>Family</dt><p><%= @current_plant.family %></p>
 		  <% end %>
 		  <% if not @current_plant.species.blank? %>
 			  <dt>Species</dt><p><%= @current_plant.species %></p>

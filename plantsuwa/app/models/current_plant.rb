@@ -4,14 +4,8 @@ class CurrentPlant < ActiveRecord::Base
 	has_many :current_linking_climates, dependent: :destroy
   has_many :climates, through: :current_linking_climates
 
-	has_many :current_linking_families, dependent: :destroy
-  has_many :families, through: :current_linking_families
-
 	has_many :current_linking_flower_colours, dependent: :destroy
   has_many :flower_colours, through: :current_linking_flower_colours
-
-	has_many :current_linking_genera, dependent: :destroy
-  has_many :genera, through: :current_linking_genera
 
 	has_many :current_linking_leaf_colours, dependent: :destroy
   has_many :leaf_colours, through: :current_linking_leaf_colours
@@ -28,8 +22,7 @@ class CurrentPlant < ActiveRecord::Base
 	has_many :current_linking_types, dependent: :destroy
   has_many :types, through: :current_linking_types
 
-  #has_many :current_linking_photos, dependent: :destroy
-	has_many :current_photos    #, through: :current_linking_photos
+	has_many :current_photos
   accepts_nested_attributes_for :current_photos, :reject_if => lambda { |t| t['description'].blank? and t['image'].nil? }, allow_destroy: true
 
 

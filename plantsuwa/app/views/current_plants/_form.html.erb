@@ -22,8 +22,8 @@
       <fieldset>
 	      	<legend>Descriptions</legend>
 	      	<%= f.input  :name, hint: 'The display name of the Plant' %>
-	      	<%= f.association :genera, :as => :select %>
-		      <%= f.association :families, :as => :select %>
+	      	<%= f.input  :genus %>
+		      <%= f.input  :family %>
 	      	<%= f.input  :species %>
       		<%= f.input  :common_name %> 
       		<%= f.input  :scientific_name %> 
@@ -34,9 +34,9 @@
         	<%= f.input  :characteristics, hint: 'List the typical characteristics of the plant.', as: :text  %> 
         	<%= f.input  :identification, hint: 'How is this plant identified in the field?', as: :text  %> 
         	<%= f.input  :physical, hint: 'What are the physical characteristics of the plant?', as: :text %>
-		    <%= f.association :sizes, :as => :check_boxes %>
-		    <%= f.association :flower_colours, :as => :check_boxes %>
-		    <%= f.association :leaf_colours, :as => :check_boxes %>
+		      <%= f.association :sizes, :as => :check_boxes %>
+		      <%= f.association :flower_colours, :as => :check_boxes %>
+		      <%= f.association :leaf_colours, :as => :check_boxes %>
       </fieldset>
     </div>
     
