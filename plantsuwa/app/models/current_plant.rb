@@ -69,6 +69,7 @@ class CurrentPlant < ActiveRecord::Base
   """ Search """
   
   scoped_search on: :name
+  scoped_search on: :family
   scoped_search on: :created_at
   scoped_search on: :updated_at
   scoped_search on: :species
@@ -103,8 +104,6 @@ class CurrentPlant < ActiveRecord::Base
   scoped_search in: :current_photos, on: :description
   scoped_search in: :leaf_colours, on: :name
   scoped_search in: :flower_colours, on: :name
-  scoped_search in: :families, on: :name
-  scoped_search in: :genera, on: :name
   scoped_search in: :climates, on: :name
 
 

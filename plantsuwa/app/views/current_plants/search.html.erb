@@ -1,4 +1,8 @@
-<h1>Search for a Plant</h1>
+<% provide(:title, 'Search') %>
+<% provide(:prev_page, 'List') %>
+<% provide(:prev_link, current_plants_path) %>
+
+<div class="padding-mobile">
 	
 	<div id="plants_search">
 	  <%= form_tag current_plants_path, :method => :get do %>
@@ -6,3 +10,5 @@
 	    <button id='submit_search' style="font-size: 12px;">Search</button>
 	  <% end %>
 	</div>
+	
+</div>
