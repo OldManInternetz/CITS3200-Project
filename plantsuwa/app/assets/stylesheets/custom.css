@@ -229,68 +229,24 @@ textarea {
   color: rgb(169, 68, 66);
 }
 
+
+
 .check_boxes > .controls {
   padding: 0 30px;
-  padding-bottom: 5px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  /*  padding-bottom: 5px; */
+  /* border: 1px solid #ccc; */
+  /* border-radius: 4px; */
   height: 120px;
   overflow-y: scroll;
 }
+
 .check_boxes .checkbox {
   font-size: small;
 	font-family: 'Oxygen', sans-serif;
 }
 
 
-/*
-#bottom-nav-mobile {
 
-  background: black;
-
-  background: -webkit-linear-gradient(#2E2E2E, black, black, #2E2E2E);
-	background: -o-linear-gradient(#2E2E2E, black, black, #2E2E2E);
-	background: -moz-linear-gradient(#2E2E2E, black, black, #2E2E2E);
-	background: linear-gradient(#2E2E2E, black, black, #2E2E2E);
-
-	
-	width: 100%;
-	position: fixed;
-  left: 0;
-	bottom: 0;
-	height: 50px;
-	padding: 4px 0px;
-	
-	
-}
-
-
-.bottom-nav-box {
-	height: 100%;
-	width: 33.3%;
-	display: table-cell;
-
-  float: left;
-  padding-top: 7px;
-}
-
-.bottom-nav-box p {
-	color: white;
-	font-size: small;
-}
-
-.bottom-nav-box:active {
-	background: rgba(255, 255, 255, 0.2);
-	
-}
-
-.bottom-nav-box-content {
-  width: auto;
-  height: 100%;
-  margin-top: 4px;
-  padding: 0 3px;
-}
-*/
 
 .form-photo-box {
   border: 1px solid #ccc;
