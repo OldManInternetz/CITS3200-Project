@@ -30,13 +30,84 @@ CurrentPlant.create(name: 'Test Plant', description: 'A test plant.')
 @p_2.climates << @c_4
 =end
 # Scanned the Bento data and manually wrote this
-soil_types = SoilType.create([{ name: 'Quindalup'}, {name: 'Cottesloe'}, {name: 'Karrakatta'}, {name: 'Guildford'}, {name: 'Bassendean'}, {name: 'Beermullah'}, {name: 'Forrestfield'}, {name: 'Herdsman'}, {name: 'Swan Vasse'}, {name: 'Dardanup Darling Plateau'}, {name: 'Granite Darling Plateau'}, {name: 'Laterite Dalring Plateau'}, {name: 'Scarp Darling Plateau'}, {name: 'Yanga'}, {name: 'Serpentine River'}])
-sizes = Size.create([{name: 'Small'}, {name: 'Medium'}, {name: 'Large'}, {name: 'Less than 1m'}, {name: 'Between 1m and 3m'}, {name: 'Greater than 3m'}])
-types = Type.create([{name: 'Climber'}, {name: 'Conifer'}, {name: 'Grass'}, {name: 'Fern'}, {name: 'Herbaceous Shrub'}, {name: 'Palm'}, {name: 'Sedge'}, {name: 'Succulent'}, {name: 'Tree'}, {name: 'Woody Shrub'}, {name: 'Tree'}])
-origins = Origin.create([{name: 'Western Australian'}, {name: 'Australian'}, {name: 'Exotic'}])
-flower_colours = FlowerColour.create([{name: 'Red'}, {name: 'Blue'}, {name: 'Green'}, {name: 'Purple'}, {name: 'Yellow'}, {name: 'Orange'}, {name: 'Pink'}, {name: 'White'}])
-leaf_colours = LeafColour.create([{name: 'Green'}, {name: 'Dark Green'}, {name: 'Grey-Green'}, {name: 'Grey'}, {name: 'Silver'}])
+soil_types = SoilType.create([
+  {name: 'Quindalup'}, 
+  {name: 'Cottesloe'}, 
+  {name: 'Karrakatta'}, 
+  {name: 'Guildford'}, 
+  {name: 'Bassendean'}, 
+  {name: 'Beermullah'}, 
+  {name: 'Forrestfield'}, 
+  {name: 'Herdsman'}, 
+  {name: 'Swan Vasse'}, 
+  {name: 'Dardanup Darling Plateau'}, 
+  {name: 'Granite Darling Plateau'}, 
+  {name: 'Laterite Dalring Plateau'}, 
+  {name: 'Scarp Darling Plateau'}, 
+  {name: 'Yanga'}, 
+  {name: 'Serpentine River'}
+])
 
+sizes = Size.create([
+  {name: 'Small'}, 
+  {name: 'Medium'}, 
+  {name: 'Large'}, 
+  {name: 'Less than 1m'}, 
+  {name: 'Between 1m and 3m'}, 
+  {name: 'Greater than 3m'}
+])
+
+types = Type.create([
+  {name: 'Climber'}, 
+  {name: 'Conifer'}, 
+  {name: 'Grass'}, 
+  {name: 'Fern'}, 
+  {name: 'Herbaceous Shrub'}, 
+  {name: 'Palm'}, 
+  {name: 'Sedge'}, 
+  {name: 'Succulent'}, 
+  {name: 'Tree'}, 
+  {name: 'Woody Shrub'}, 
+  {name: 'Tree'}
+])
+
+origins = Origin.create([
+  {name: 'Western Australian'}, 
+  {name: 'Australian'}, 
+  {name: 'Exotic'}
+])
+
+flower_colours = FlowerColour.create([
+  {name: 'Red'}, 
+  {name: 'Blue'}, 
+  {name: 'Green'}, 
+  {name: 'Purple'}, 
+  {name: 'Yellow'}, 
+  {name: 'Orange'}, 
+  {name: 'Pink'}, 
+  {name: 'White'}
+])
+
+leaf_colours = LeafColour.create([
+  {name: 'Green'}, 
+  {name: 'Dark Green'}, 
+  {name: 'Grey-Green'}, 
+  {name: 'Grey'}, 
+  {name: 'Silver'}
+])
+
+climtes = Climate.create([
+  {name: 'Cool'},
+  {name: 'Cold'},
+  {name: 'Tropical'},
+  {name: 'Warm'},
+  {name: 'Meditteranean'},
+  {name: 'Temperate'},
+  {name: 'Sub-Tropical'},
+  {name: 'Semi-Arid'},
+  {name: 'Arid'},
+  {name: 'Hot'}
+])
 
 CurrentPlant.create(name: '\'Honey Gem\'', common_name: '\'Honey Gem\'', family: 'PROTEACEAE', description: 'Large hony gold flowers all year round.
 ', synonym: '', subspecies: '', location_name: '', general_info: 'Prefers summer-wet conditions. Requires well drained soils but needs watering over summer in Perth. Do not overwater.', additional_info: 'pteridifolia refers to the divided fern-like leaves, Pteris = fern, folia= leaves', identification: 'Fine highly divided leaves 20-30 cm long with about 15 long thin leaflets. Large honey gold flowers, flowers all year long.', physical:'- Attractive, Large, divided, fern-like leaves. Silver under, light green foliage.
