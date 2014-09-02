@@ -1,14 +1,9 @@
 CITS3200-Project
 ================
 
-___Edit:___
-If you want to run the tests, navigate to the plantsuwa directory and use:
+# A guide to installing this to your computer using Git #
 
-    $ rspec spec/.*
-    
-...
-
-A place to work on our CITS3200 group project.
+Install Git, first, obviously. :)
 
 In order to clone this repository, open up a folder in your Terminal and type:
 
@@ -22,7 +17,27 @@ If you're going to work on something, it might be good to create a new branch.
     
 This will help us all work in parallel.
 
-Once you've done some work, you can commit your change using:
+## Adding files to be committed ##
+
+Once you've done some work, run the command:
+
+    $ git status
+
+This will show you all of the files that you have created, edited, and deleted.
+
+By running the command:
+
+    $ git add .
+
+... Git will know to sync all new and edited files when you run the 'commit' command.
+
+If you have deleted any files, you will need to run:
+
+    $ git add -u
+
+... in order for Git to sync deleted files (it won't do this unless you run this command).
+
+You can then commit your changes using:
 
     $ git commit -m "here is a message about what I did"
 
@@ -38,8 +53,26 @@ If you are working on things, and you want to make sure you have the most up-to-
     
 to pull the current version of the thing to your computer.
 
+The log files, and tmp files, won't be synced, nor will the development database.
 
+### More information ###
 
 There's a lot more information here:
 
 https://help.github.com/articles/creating-and-deleting-branches-within-your-repository
+
+# Running the server
+
+You can run the server with:
+
+    $ rails server
+
+Navigate to [localhost:3000](http://localhost:3000) in your browser to access it.
+
+# Running the tests using Rspec #
+
+I'm doing the tests with a Gem called "Rspec". You can run them by navigating to the plantsuwa folder and typing: 
+
+    $ rspec spec/.*
+
+This will execute all of the tests within the spec folder, and all subfolders. It will generate a coverage file, which shows how much of the source code is covered by testing. It can be found in the coverage folder.
