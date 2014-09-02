@@ -1,6 +1,12 @@
 CITS3200-Project
 ================
 
+___Edit:___
+If you want to run the tests, navigate to the plantsuwa directory and use:
+    $ rspec spec/.*
+    
+...
+
 A place to work on our CITS3200 group project.
 
 In order to clone this repository, open up a folder in your Terminal and type:
