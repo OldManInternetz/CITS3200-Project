@@ -27,6 +27,11 @@ class CurrentPlant < ActiveRecord::Base
 	has_many :current_photos
   accepts_nested_attributes_for :current_photos, :reject_if => lambda { |t| t['description'].blank? and t['image'].nil? }, allow_destroy: true
 
+  has_attached_file :display_photo
+  validates_attachment :display_photo, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
+  validates_attachment_size :display_photo, :less_than => 5.megabytes
+
+
   """ Validations """
 
   validates :name, length: { maximum: 100 }
@@ -53,6 +58,7 @@ class CurrentPlant < ActiveRecord::Base
   validates :architectural_info, length: { maximum: 2000 }
   validates :discovered_by, length: { maximum: 100 }
   validates :named_by, length: { maximum: 100 }
+  validates :display_photo_description, length: { maximum: 300 }
 
 
   """ Search """

@@ -31,10 +31,12 @@ class MergedMigration < ActiveRecord::Migration
     add_column :current_plants, :architectural_info,:string
     add_column :current_plants, :discovered_by,     :string
     add_column :current_plants, :named_by,          :string
-    add_column :current_plants, :version,           :integer, default: 0;
+    add_column :current_plants, :version,           :integer, default: 1;
  	  add_column :current_plants, :plant_id,          :integer
 	  add_column :current_plants, :submitted_by,      :integer
     add_column :current_plants, :edited_by,         :integer
+    add_attachment :current_plants, :display_photo
+    add_column :current_plants, :display_photo_description, :string
     """ Still need to add the following fields: """
     # my_notes (id)
     # location_coordinates (int)
@@ -172,7 +174,7 @@ class MergedMigration < ActiveRecord::Migration
     end
 
     """ Add attachment to current_photos """
-	add_attachment :current_photos, :image
+	  add_attachment :current_photos, :image
 
   	""" Create users table """
   	create_table :users do |t|
@@ -184,7 +186,7 @@ class MergedMigration < ActiveRecord::Migration
 	""" Add some more user fields """
     add_column :users, :password_digest, :string
     add_column :users, :remember_token, :string
-    add_column :users, :privileged, :boolean, default: 0;
+    add_column :users, :trusted, :boolean, default: 0;
     add_column :users, :admin, :boolean, default: 0;
 
     """ Add indexes to user fields """

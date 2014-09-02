@@ -14,11 +14,7 @@
 
   <div class="plant-index-box">
     <div class="plant-index-box-photo">
-      <% if plant.current_photos.any? %>
-		    <%= image_tag plant.current_photos.first.image.url, width:"63px", height:"63px", alt:"Plant photo" %>
-      <% else %>
-		    <%= image_tag 'no_photo.png', width:"63px", height:"63px", alt:"No photo" %>
-      <% end %>      
+	    <%= image_tag plant.display_photo.url, width:"63px", height:"63px", alt:"Plant photo" %>
     </div>
     <div class="plant-index-box-content">
       <div class="center-wrapper">

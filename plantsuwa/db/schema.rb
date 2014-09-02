@@ -106,10 +106,15 @@ ActiveRecord::Schema.define(version: 20140902070203) do
     t.string   "architectural_info"
     t.string   "discovered_by"
     t.string   "named_by"
-    t.integer  "version",            default: 0
+    t.integer  "version",                    default: 1
     t.integer  "plant_id"
     t.integer  "submitted_by"
     t.integer  "edited_by"
+    t.string   "display_photo_file_name"
+    t.string   "display_photo_content_type"
+    t.integer  "display_photo_file_size"
+    t.datetime "display_photo_updated_at"
+    t.string   "display_photo_description"
   end
 
   create_table "flower_colours", force: true do |t|
@@ -155,7 +160,7 @@ ActiveRecord::Schema.define(version: 20140902070203) do
     t.datetime "updated_at"
     t.string   "password_digest"
     t.string   "remember_token"
-    t.boolean  "privileged",      default: false
+    t.boolean  "trusted",         default: false
     t.boolean  "admin",           default: false
   end
 

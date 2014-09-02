@@ -74,9 +74,34 @@
 
 
     <div id="tab-photos" class="info-body" style="display: none">
-      <h2>Photos</h2>
+      <fieldset>
+        <legend>Photos</legend> 
 
 
+        <dt>Display photo:</dt>
+        <br/>
+        <div class="form-photo-box" style="border: 1px solid #268BFF">
+
+            <% if !@current_plant.display_photo.exists? %>
+              <span style="float: left;">
+                <div style="width: 60px; height: 60px; float: left; margin-right: 10px;">
+                  <h5 style="text-align: center">NEW</h5>
+                </div>
+              </span>
+            <% else %>
+              <span style="float: left;">
+              <%= image_tag @current_plant.display_photo.url, style: "width: 60px; height: 60px; float: left; margin-right: 10px;", alt:"An image of a plant", class: "img-circle" %>
+              </span>
+            <% end %>
+
+          <%= f.file_field  :display_photo %>
+          <%= f.input  :display_photo_description %>
+        </div>
+
+
+        <div style="height: 40px"></div>
+        <dt>Other photos:</dt>
+        <br/>
 
         <%= f.simple_fields_for :current_photos do |builder| %>
           <div class="form-photo-box" id="photo-box-0">
@@ -84,10 +109,7 @@
             <% if builder.object.new_record? %>
               <span style="float: left;">
                 <div style="width: 60px; height: 60px; float: left; margin-right: 10px;">
-
                   <h5 style="text-align: center">NEW</h5>
-                  
-
                 </div>
               </span>
             <% else %>
@@ -105,7 +127,7 @@
 
 
 
-
+      </fieldset>
 
     </div>
 

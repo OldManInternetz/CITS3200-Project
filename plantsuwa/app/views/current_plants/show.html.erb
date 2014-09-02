@@ -168,6 +168,14 @@
 
   <div id="tab-photos" class="info-body" style="display: none">
 
+    <dt>Display photo:</dt>
+    <% if !@current_plant.display_photo.exists? %>
+      <p>This plant has no display photo.</p>
+    <% else %>
+      <%= image_tag @current_plant.display_photo.url, style: "max-width: 100%; max-height: 400px;" %>
+    <% end %>
+    <br/>
+
 	  <% for @photo in @current_plant.current_photos %>
 		  <%= image_tag @photo.image.url, style: "max-width: 100%; max-height: 400px;" %>
       <%= @photo.description %>
@@ -223,16 +231,14 @@
   <% end %>
 
 
-  <% if has_photos(@current_plant) %>
-    $('#btn-photos').on('click', function () {
-      $('.info-body').css({ display: 'none' });
-      $('#tab-photos').css({ display: '' });
-      $('.info-tab').removeClass("info-tab-current");
-      $('#btn-photos').addClass("info-tab-current");
-    });
-  <% else %>
-    $('#btn-photos').addClass("info-tab-disabled");
-  <% end %>
+
+  $('#btn-photos').on('click', function () {
+    $('.info-body').css({ display: 'none' });
+    $('#tab-photos').css({ display: '' });
+    $('.info-tab').removeClass("info-tab-current");
+    $('#btn-photos').addClass("info-tab-current");
+  });
+
 
 </script>
 
