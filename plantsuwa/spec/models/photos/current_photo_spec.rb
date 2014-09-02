@@ -10,5 +10,6 @@ describe CurrentPhoto do
   subject { @photo }
 
   it { should respond_to(:description) }
+  its(:current_plant) { should eq @current_plant }
 
 end
