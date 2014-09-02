@@ -11,43 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140823143036) do
+ActiveRecord::Schema.define(version: 20140902070203) do
 
   create_table "climates", force: true do |t|
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "climates_current_plants", id: false, force: true do |t|
-    t.integer "climate_id",       null: false
-    t.integer "current_plant_id", null: false
-  end
-
-  create_table "current_families", force: true do |t|
-    t.string   "name"
-    t.integer  "current_plant_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "current_flower_colours", force: true do |t|
-    t.string   "name"
-    t.integer  "current_plant_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "current_genus", force: true do |t|
-    t.string   "name"
-    t.integer  "current_plant_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "current_leaf_colours", force: true do |t|
-    t.string   "name"
-    t.integer  "current_plant_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -59,23 +26,9 @@ ActiveRecord::Schema.define(version: 20140823143036) do
     t.datetime "updated_at"
   end
 
-  create_table "current_linking_families", force: true do |t|
-    t.integer  "current_plant_id"
-    t.integer  "family_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "current_linking_flower_colours", force: true do |t|
     t.integer  "current_plant_id"
     t.integer  "flower_colour_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "current_linking_genera", force: true do |t|
-    t.integer  "current_plant_id"
-    t.integer  "genus_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -90,13 +43,6 @@ ActiveRecord::Schema.define(version: 20140823143036) do
   create_table "current_linking_origins", force: true do |t|
     t.integer  "current_plant_id"
     t.integer  "origin_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "current_linking_photos", force: true do |t|
-    t.integer  "current_plant_id"
-    t.integer  "photo_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -122,19 +68,11 @@ ActiveRecord::Schema.define(version: 20140823143036) do
     t.datetime "updated_at"
   end
 
-  create_table "current_origins", force: true do |t|
-    t.string   "name"
-    t.integer  "current_plant_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "current_photos", force: true do |t|
     t.integer  "current_plant_id"
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "has_attachment"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
@@ -145,6 +83,8 @@ ActiveRecord::Schema.define(version: 20140823143036) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "family"
+    t.string   "genus"
     t.string   "species"
     t.string   "common_name"
     t.string   "scientific_name"
@@ -173,47 +113,7 @@ ActiveRecord::Schema.define(version: 20140823143036) do
     t.integer  "edited_by"
   end
 
-  create_table "current_plants_climates", force: true do |t|
-    t.integer  "current_plants_id"
-    t.integer  "climates_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "current_sizes", force: true do |t|
-    t.string   "name"
-    t.integer  "current_plant_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "current_soil_types", force: true do |t|
-    t.string   "name"
-    t.integer  "current_plant_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "current_types", force: true do |t|
-    t.string   "name"
-    t.integer  "current_plant_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "families", force: true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "flower_colours", force: true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "genera", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -229,17 +129,6 @@ ActiveRecord::Schema.define(version: 20140823143036) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "photos", force: true do |t|
-    t.string   "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.boolean  "has_attachment"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
   end
 
   create_table "sizes", force: true do |t|
@@ -267,7 +156,8 @@ ActiveRecord::Schema.define(version: 20140823143036) do
     t.datetime "updated_at"
     t.string   "password_digest"
     t.string   "remember_token"
-    t.integer  "admin",           default: 0
+    t.boolean  "privileged",      default: false
+    t.boolean  "admin",           default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
