@@ -1,3 +1,5 @@
+include ActionDispatch::TestProcess
+
 FactoryGirl.define do
 
   # Plants
@@ -12,14 +14,8 @@ FactoryGirl.define do
   factory :climate do
     name "Cool"
   end
-  factory :family do
-    name "Great family"
-  end
   factory :flower_colour do
     name "Red"
-  end
-  factory :genus do
-    name "Special one"
   end
   factory :leaf_colour do
     name "Fluorescent pink"
@@ -37,10 +33,11 @@ FactoryGirl.define do
     name "Climber"
   end
 
-  # Photos
 
-  factory :current_photo do
-    description "Cool"
-  end
+  """ Not using this, as it's easier to just build photos for plants inside the test files """
+  #factory :current_photo do
+    #description "Cool"
+    #image { fixture_file_upload(Rails.root.join('spec/fixtures/test_image.jpg'), 'image/jpg') }
+  #end
 
 end

@@ -4,8 +4,7 @@ describe CurrentPlant do
 
   before do
     @current_plant = FactoryGirl.create(:current_plant)
-    @photo = FactoryGirl.create(:current_photo)
-    @current_plant.current_photos << @photo
+		@photo = @current_plant.current_photos.build(description: "A photo of a bean", image: fixture_file_upload('test_image.jpg', 'image/jpg'))
   end
 
   subject { @current_plant }

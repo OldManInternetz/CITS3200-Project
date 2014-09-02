@@ -8,6 +8,8 @@ class CurrentPhoto < ActiveRecord::Base
 	validates_attachment :image, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
 	validates_attachment_size :image, :less_than => 5.megabytes
 
+  validate :current_plant_id_exists
+
 	def current_plant_id_exists
 		begin
 		  CurrentPlant.find(self.current_plant_id)

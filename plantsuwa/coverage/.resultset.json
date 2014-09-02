@@ -742,19 +742,7 @@
         1,
         null
       ],
-      "/home/michael/rails_projects/CITS3200-Project/plantsuwa/app/models/linking tables/current_linking_family.rb": [
-        1,
-        1,
-        1,
-        null
-      ],
       "/home/michael/rails_projects/CITS3200-Project/plantsuwa/app/models/linking tables/current_linking_flower_colour.rb": [
-        1,
-        1,
-        1,
-        null
-      ],
-      "/home/michael/rails_projects/CITS3200-Project/plantsuwa/app/models/linking tables/current_linking_genus.rb": [
         1,
         1,
         1,
@@ -802,11 +790,13 @@
         1,
         null,
         1,
-        0,
-        0,
-        0,
-        0,
-        0,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
         null,
         null,
         null
@@ -857,6 +847,6 @@
         null
       ]
     },
-    "timestamp": 1409650025
+    "timestamp": 1409652043
   }
 }
