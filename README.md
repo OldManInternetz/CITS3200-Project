@@ -3,6 +3,7 @@ CITS3200-Project
 
 ___Edit:___
 If you want to run the tests, navigate to the plantsuwa directory and use:
+
     $ rspec spec/.*
     
 ...
