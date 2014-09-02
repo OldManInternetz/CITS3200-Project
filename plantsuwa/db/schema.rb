@@ -106,8 +106,7 @@ ActiveRecord::Schema.define(version: 20140902070203) do
     t.string   "architectural_info"
     t.string   "discovered_by"
     t.string   "named_by"
-    t.boolean  "approved"
-    t.integer  "version"
+    t.integer  "version",            default: 0
     t.integer  "plant_id"
     t.integer  "submitted_by"
     t.integer  "edited_by"

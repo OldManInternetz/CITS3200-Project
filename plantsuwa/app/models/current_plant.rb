@@ -1,6 +1,8 @@
 class CurrentPlant < ActiveRecord::Base
 
 
+  """ Associations """
+
 	has_many :current_linking_climates, dependent: :destroy
   has_many :climates, through: :current_linking_climates
 
@@ -25,9 +27,35 @@ class CurrentPlant < ActiveRecord::Base
 	has_many :current_photos
   accepts_nested_attributes_for :current_photos, :reject_if => lambda { |t| t['description'].blank? and t['image'].nil? }, allow_destroy: true
 
+  """ Validations """
 
-  #validates :name, presence: true, length: { maximum: 50 }
-  #validates :common_name, presence: true, length: { maximum: 50 }
+  validates :name, length: { maximum: 100 }
+  validates :family, length: { maximum: 100 }
+  validates :genus, length: { maximum: 100 }
+  validates :species, length: { maximum: 100 }
+  validates :common_name, length: { maximum: 100 }
+  validates :scientific_name, length: { maximum: 100 }
+  validates :synonym, length: { maximum: 100 }  
+  validates :subspecies, length: { maximum: 100 }
+  validates :description, length: { maximum: 2000 }
+  validates :location_name, length: { maximum: 100 }
+  validates :characteristics, length: { maximum: 2000 }
+  validates :additional_info, length: { maximum: 2000 }
+  validates :identification, length: { maximum: 2000 }
+  validates :physical, length: { maximum: 2000 }
+  validates :general_info, length: { maximum: 2000 }
+  validates :environment, length: { maximum: 2000 }
+  validates :horticulture, length: { maximum: 2000 }
+  validates :architectural_uses, length: { maximum: 2000 }
+  validates :culture, length: { maximum: 2000 }
+  validates :conservation, length: { maximum: 2000 }
+  validates :wildlife, length: { maximum: 2000 }
+  validates :architectural_info, length: { maximum: 2000 }
+  validates :discovered_by, length: { maximum: 100 }
+  validates :named_by, length: { maximum: 100 }
+
+
+  """ Search """
   
   scoped_search on: :name
   scoped_search on: :created_at
@@ -69,9 +97,5 @@ class CurrentPlant < ActiveRecord::Base
   scoped_search in: :climates, on: :name
 
 
-
-  def reject_photos(attribute)
-    attribute['image_file_name'].blank?
-  end
 
 end

@@ -31,8 +31,7 @@ class MergedMigration < ActiveRecord::Migration
     add_column :current_plants, :architectural_info,:string
     add_column :current_plants, :discovered_by,     :string
     add_column :current_plants, :named_by,          :string
-    add_column :current_plants, :approved,          :boolean
-    add_column :current_plants, :version,           :integer
+    add_column :current_plants, :version,           :integer, default: 0;
  	  add_column :current_plants, :plant_id,          :integer
 	  add_column :current_plants, :submitted_by,      :integer
     add_column :current_plants, :edited_by,         :integer

@@ -1,7 +1,8 @@
 class CurrentPhoto < ActiveRecord::Base
 	belongs_to :current_plant
 
-  validates :current_plant_id, presence: true
+  	validates :current_plant_id, presence: true
+  	validates :description, length: { maximum: 300 }
 
 	has_attached_file :image
 	validates_attachment :image, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
@@ -15,5 +16,4 @@ class CurrentPhoto < ActiveRecord::Base
 		  false
 		end
 	end
-
 end
