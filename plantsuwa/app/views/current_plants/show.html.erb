@@ -173,6 +173,7 @@
       <p>This plant has no display photo.</p>
     <% else %>
       <%= image_tag @current_plant.display_photo.url, style: "max-width: 100%; max-height: 400px;" %>
+      <%= @current_plant.display_photo_description %>
     <% end %>
     <br/>
 

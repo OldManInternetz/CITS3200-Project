@@ -5,29 +5,24 @@
   <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
 
-
-            <% if !yield(:prev_page).blank? %>
-              <%= link_to yield(:prev_link) do %>
-                <p class="navbar-brand navbar-prev-page-block"><span class="glyphicon glyphicon-chevron-left" style="color: #aaa"></span>&nbsp;&nbsp;<%= truncate(yield(:prev_page), length: 15) %></p>
-              <% end %>
-            <% else %>
-              <%= link_to 'http://www.uwa.edu.au', target: '_blank' do %>
-                <div class="navbar-brand navbar-uwacrest-block">
-                      <%= image_tag 'uwacrest-small.gif', width:"30px", alt:"UWA Logo", style: 'margin-top: -10px; margin-left: 12px' %>
-                 </div>
-              <% end %>  
-            <% end %>
-
-
-              <div class="navbar-brand navbar-title-block">
-              <p style="text-align: center; color: white"><strong><%= truncate(small_title(yield(:title)), length: 18) %></strong></p>
-              </div>
+      <% if !yield(:prev_page).blank? %>
+        <%= link_to yield(:prev_link) do %>
+          <p class="navbar-brand navbar-prev-page-block"><span class="glyphicon glyphicon-chevron-left" style="color: #aaa"></span>&nbsp;&nbsp;<%= truncate(yield(:prev_page), length: 15) %></p>
+        <% end %>
+      <% else %>
+        <%= link_to 'http://www.uwa.edu.au', target: '_blank' do %>
+          <div class="navbar-brand navbar-uwacrest-block">
+                <%= image_tag 'uwacrest-small.gif', width:"30px", alt:"UWA Logo", style: 'margin-top: -10px; margin-left: 12px' %>
+           </div>
+        <% end %>  
+      <% end %>
 
 
-
+      <div class="navbar-brand navbar-title-block">
+        <p style="text-align: center; color: white"><strong><%= truncate(small_title(yield(:title)), length: 20) %></strong></p>
+      </div>
 
       <div style="width: 100px; position: absolute; right: 0;">
-
 
 		    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-navbar-collapse">
 			    <span class="sr-only">Toggle navigation</span>

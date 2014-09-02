@@ -27,7 +27,12 @@ class CurrentPlant < ActiveRecord::Base
 	has_many :current_photos
   accepts_nested_attributes_for :current_photos, :reject_if => lambda { |t| t['description'].blank? and t['image'].nil? }, allow_destroy: true
 
-  has_attached_file :display_photo
+  has_attached_file :display_photo, :default_url => "/images/missing.png",
+    :styles => {
+      :thumb    => ['100x100#'],
+      :medium  => ['300x300#'],
+      :large    => ['1000>']
+    }
   validates_attachment :display_photo, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
   validates_attachment_size :display_photo, :less_than => 5.megabytes
 
