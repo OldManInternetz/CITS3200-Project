@@ -7,75 +7,75 @@
 
 
   <div id="tab-descriptions" class="info-body">
+    <legend>Descriptions</legend>
 
+	  <dt>Name</dt>
+      <p><%= @current_plant.name %></p>
+	  <% if not @current_plant.genus.blank? %>
+		  <dt>Genus</dt><p><%= @current_plant.genus %></p>
+	  <% end %>
+	  <% if not @current_plant.family.blank? %>
+		  <dt>Family</dt><p><%= @current_plant.family %></p>
+	  <% end %>
+	  <% if not @current_plant.species.blank? %>
+		  <dt>Species</dt><p><%= @current_plant.species %></p>
+	  <% end %>
+	  <% if not @current_plant.common_name.blank? %>
+		  <dt>Common Name</dt><p><%= @current_plant.common_name %></p>
+	  <% end %>
+	  <% if not @current_plant.scientific_name.blank? %>
+		  <dt>Scientific Name</dt><p><%= @current_plant.scientific_name %></p>
+	  <% end %>
+	  <% if not @current_plant.synonym.blank? %>
+		  <dt>Synonym</dt><p><%= @current_plant.synonym %></p>
+	  <% end %>
+	  <% if not @current_plant.subspecies.blank? %>
+		  <dt>Subspecies</dt><p><%= @current_plant.subspecies %></p>
+	  <% end %>
+	  <% if @current_plant.types.any? %>
+      <!-- CHANGE THIS TO ONE TO MANY !-->
+		  <dt>Types</dt>
+		  <% for @type in @current_plant.types %>
+			  <p> <%= @type.name %> </p>
+		  <% end %>
+	  <% end %>
 
-		  <dt>Name</dt>
-        <p><%= @current_plant.name %></p>
-		  <% if not @current_plant.genus.blank? %>
-			  <dt>Genus</dt><p><%= @current_plant.genus %></p>
+    <% if not @current_plant.description.blank? %>
+		  <dt>Description</dt><p><%= @current_plant.description %></p>
+	  <% end %>
+	  <% if not @current_plant.characteristics.blank? %>
+		  <dt>Characteristics</dt><p><%= @current_plant.characteristics %></p>
+	  <% end %>
+	  <% if not @current_plant.identification.blank? %>
+		  <dt>Identification</dt><p><%= @current_plant.identification %></p>
+	  <% end %>
+	  <% if not @current_plant.physical.blank? %>
+		  <dt>Physical</dt><p><%= @current_plant.physical %></p>
+	  <% end %>
+	  <% if @current_plant.sizes.any? %>
+		  <dt>Size</dt>
+      <ul>
+		  <% for @size in @current_plant.sizes %>
+			  <li> <%= @size.name %> </li>
 		  <% end %>
-		  <% if not @current_plant.family.blank? %>
-			  <dt>Family</dt><p><%= @current_plant.family %></p>
+      </ul>
+	  <% end %>
+	  <% if @current_plant.flower_colours.any? %>
+		  <dt>Flower Colour</dt>
+      <ul>
+		  <% for @flower_colour in @current_plant.flower_colours %>
+			  <li> <%= @flower_colour.name %> </li>
 		  <% end %>
-		  <% if not @current_plant.species.blank? %>
-			  <dt>Species</dt><p><%= @current_plant.species %></p>
+      </ul>
+	  <% end %>
+	  <% if @current_plant.leaf_colours.any? %>
+		  <dt>Leaf Colour</dt>
+      <ul>
+		  <% for @leaf_colour in @current_plant.leaf_colours %>
+			  <li> <%= @leaf_colour.name %> </li>
 		  <% end %>
-		  <% if not @current_plant.common_name.blank? %>
-			  <dt>Common Name</dt><p><%= @current_plant.common_name %></p>
-		  <% end %>
-		  <% if not @current_plant.scientific_name.blank? %>
-			  <dt>Scientific Name</dt><p><%= @current_plant.scientific_name %></p>
-		  <% end %>
-		  <% if not @current_plant.synonym.blank? %>
-			  <dt>Synonym</dt><p><%= @current_plant.synonym %></p>
-		  <% end %>
-		  <% if not @current_plant.subspecies.blank? %>
-			  <dt>Subspecies</dt><p><%= @current_plant.subspecies %></p>
-		  <% end %>
-		  <% if @current_plant.types.any? %>
-        <!-- CHANGE THIS TO ONE TO MANY !-->
-			  <dt>Types</dt>
-			  <% for @type in @current_plant.types %>
-				  <p> <%= @type.name %> </p>
-			  <% end %>
-		  <% end %>
-
-      <% if not @current_plant.description.blank? %>
-			  <dt>Description</dt><p><%= @current_plant.description %></p>
-		  <% end %>
-		  <% if not @current_plant.characteristics.blank? %>
-			  <dt>Characteristics</dt><p><%= @current_plant.characteristics %></p>
-		  <% end %>
-		  <% if not @current_plant.identification.blank? %>
-			  <dt>Identification</dt><p><%= @current_plant.identification %></p>
-		  <% end %>
-		  <% if not @current_plant.physical.blank? %>
-			  <dt>Physical</dt><p><%= @current_plant.physical %></p>
-		  <% end %>
-		  <% if @current_plant.sizes.any? %>
-			  <dt>Size</dt>
-        <ul>
-			  <% for @size in @current_plant.sizes %>
-				  <li> <%= @size.name %> </li>
-			  <% end %>
-        </ul>
-		  <% end %>
-		  <% if @current_plant.flower_colours.any? %>
-			  <dt>Flower Colour</dt>
-        <ul>
-			  <% for @flower_colour in @current_plant.flower_colours %>
-				  <li> <%= @flower_colour.name %> </li>
-			  <% end %>
-        </ul>
-		  <% end %>
-		  <% if @current_plant.leaf_colours.any? %>
-			  <dt>Leaf Colour</dt>
-        <ul>
-			  <% for @leaf_colour in @current_plant.leaf_colours %>
-				  <li> <%= @leaf_colour.name %> </li>
-			  <% end %>
-        </ul>
-		  <% end %>
+      </ul>
+	  <% end %>
 
   </div>
 
@@ -83,91 +83,91 @@
 
 
   <div id="tab-architectural" class="info-body" style="display: none">
+    <legend>Architectural</legend>
+    <% if @current_plant.climates.any? %>
+	    <dt>Climates</dt>		
+      <ul>
+	    <% for @climate in @current_plant.climates %>
+		    <li> <%= @climate.name %></li>
+	    <% end %>
+      </ul>
+    <% end %>
 
-      <% if @current_plant.climates.any? %>
-		    <dt>Climates</dt>		
-        <ul>
-		    <% for @climate in @current_plant.climates %>
-			    <li> <%= @climate.name %></li>
-		    <% end %>
-        </ul>
-      <% end %>
+    <% if not @current_plant.environment.blank? %>
+	    <dt>Environment</dt><p><%= @current_plant.environment %></p>
+    <% end %>
 
-      <% if not @current_plant.environment.blank? %>
-		    <dt>Environment</dt><p><%= @current_plant.environment %></p>
-      <% end %>
+    <% if not @current_plant.horticulture.blank? %>
+	    <dt>Horticulture</dt><p><%= @current_plant.horticulture %></p>
+    <% end %>
 
-      <% if not @current_plant.horticulture.blank? %>
-		    <dt>Horticulture</dt><p><%= @current_plant.horticulture %></p>
-      <% end %>
+    <% if not @current_plant.architectural_uses.blank? %>
+	    <dt>Architectural Uses</dt><p><%= @current_plant.architectural_uses %></p>
+    <% end %>
 
-      <% if not @current_plant.architectural_uses.blank? %>
-		    <dt>Architectural Uses</dt><p><%= @current_plant.architectural_uses %></p>
-      <% end %>
+    <% if not @current_plant.architectural_info.blank? %>
+	    <dt>Architectural Info</dt><p><%= @current_plant.architectural_info %></p>
+    <% end %>
 
-      <% if not @current_plant.architectural_info.blank? %>
-		    <dt>Architectural Info</dt><p><%= @current_plant.architectural_info %></p>
-      <% end %>
-
-      <% if @current_plant.soil_types.any? %>
-		    <dt>Soil Types</dt>		
-        <ul>
-		    <% for @soil_type in @current_plant.soil_types %>
-			    <li> <%= @soil_type.name %></li>
-		    <% end %>
-        </ul>
-      <% end %>
+    <% if @current_plant.soil_types.any? %>
+	    <dt>Soil Types</dt>		
+      <ul>
+	    <% for @soil_type in @current_plant.soil_types %>
+		    <li> <%= @soil_type.name %></li>
+	    <% end %>
+      </ul>
+    <% end %>
 
   </div>
 	
 
   <div id="tab-environmental" class="info-body" style="display: none">
+    <legend>Environmental</legend>
+    <% if not @current_plant.culture.blank? %>
+	    <dt>Culture</dt><p><%= @current_plant.culture %></p>
+    <% end %>
 
-      <% if not @current_plant.culture.blank? %>
-		    <dt>Culture</dt><p><%= @current_plant.culture %></p>
-      <% end %>
+    <% if not @current_plant.conservation.blank? %>
+	    <dt>Conservation</dt><p><%= @current_plant.conservation %></p>
+    <% end %>
 
-      <% if not @current_plant.conservation.blank? %>
-		    <dt>Conservation</dt><p><%= @current_plant.conservation %></p>
-      <% end %>
+    <% if not @current_plant.wildlife.blank? %>
+	    <dt>Wildlife</dt><p><%= @current_plant.wildlife %></p>
+    <% end %>
 
-      <% if not @current_plant.wildlife.blank? %>
-		    <dt>Wildlife</dt><p><%= @current_plant.wildlife %></p>
-      <% end %>
+    <% if @current_plant.origins.any? %>
+	    <dt>Origins</dt>		
+      <ul>
+	    <% for @origin in @current_plant.origins %>
+		    <li> <%= @origin.name %></li>
+	    <% end %>
+      </ul>
+    <% end %>
 
-      <% if @current_plant.origins.any? %>
-		    <dt>Origins</dt>		
-        <ul>
-		    <% for @origin in @current_plant.origins %>
-			    <li> <%= @origin.name %></li>
-		    <% end %>
-        </ul>
-      <% end %>
+    <% if not @current_plant.location_name.blank? %>
+	    <dt>Location Name</dt><p><%= @current_plant.location_name %></p>
+    <% end %>
 
-      <% if not @current_plant.location_name.blank? %>
-		    <dt>Location Name</dt><p><%= @current_plant.location_name %></p>
-      <% end %>
+    <% if not @current_plant.general_info.blank? %>
+	    <dt>General Info</dt><p><%= @current_plant.general_info %></p>
+    <% end %>
 
-      <% if not @current_plant.general_info.blank? %>
-		    <dt>General Info</dt><p><%= @current_plant.general_info %></p>
-      <% end %>
+    <% if not @current_plant.additional_info.blank? %>
+	    <dt>Additional Info</dt><p><%= @current_plant.additional_info %></p>
+    <% end %>
 
-      <% if not @current_plant.additional_info.blank? %>
-		    <dt>Additional Info</dt><p><%= @current_plant.additional_info %></p>
-      <% end %>
-
-      <% if not @current_plant.discovered_by.blank? %>
-		    <dt>Discovered By</dt><p><%= @current_plant.discovered_by %></p>
-      <% end %>
-      <% if not @current_plant.named_by.blank? %>
-		    <dt>Named By</dt><p><%= @current_plant.named_by %></p>
-      <% end %>
+    <% if not @current_plant.discovered_by.blank? %>
+	    <dt>Discovered By</dt><p><%= @current_plant.discovered_by %></p>
+    <% end %>
+    <% if not @current_plant.named_by.blank? %>
+	    <dt>Named By</dt><p><%= @current_plant.named_by %></p>
+    <% end %>
 
   </div>
 
 
   <div id="tab-photos" class="info-body" style="display: none">
-
+    <legend>Photos</legend>
     <dt>Display photo:</dt>
     <% if !@current_plant.display_photo.exists? %>
       <p>This plant has no display photo.</p>
@@ -189,8 +189,9 @@
 
 </div> <!-- padding-mobile -->
 
-<%= render 'action_tabs' %>
-<%= render 'bottom_tabs' %>
+<%= render 'action_tab_edit' %>
+<%= render 'action_tab_new' %>
+<%= render 'bottom_tabs_show' %>
 
 
 
