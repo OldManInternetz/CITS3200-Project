@@ -4,11 +4,43 @@
 
 <div class="padding-mobile">
 	
+	<h4>Keyword Search </h4>
 	<div id="plants_search">
-	  <%= form_tag current_plants_path, :method => :get do %>
+	  <%= form_tag current_plants_path, :method => :get , class: 'search' do %>
 	    <%= auto_complete_field_tag_jquery(:search, params[:search], {:placeholder => "Search Plants"}) %>
-	    <button id='submit_search' style="font-size: 12px;">Search</button>
+	    <button id='submit_search' class="btn btn-default">Search</button>
 	  <% end %>
 	</div>
+	
+	<h4>Parameter Search</h4>
+	<table>
+		<tr>
+			<td>Type</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>Size</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>Leaf Colour</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>Flower Colour</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>Climate</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>Origin</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>Soil Type</td>
+			<td></td>
+		</tr>
 	
 </div>
