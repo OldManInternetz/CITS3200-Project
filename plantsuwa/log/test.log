@@ -24189,3 +24189,665 @@ Binary data inserted for `string` type on column `password_digest`
   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
   [1m[36mCurrentPlant Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "current_plants" INNER JOIN "current_linking_genera" ON "current_plants"."id" = "current_linking_genera"."current_plant_id" WHERE "current_linking_genera"."genus_id" = ? AND "current_plants"."id" = 1 LIMIT 1[0m  [["genus_id", 1]]
   [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (96.8ms)[0m  [1mCREATE TABLE "climates" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (91.4ms)[0m  CREATE TABLE "current_linking_climates" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "current_plant_id" integer, "climate_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (122.9ms)[0m  [1mCREATE TABLE "current_linking_flower_colours" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "current_plant_id" integer, "flower_colour_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (112.5ms)[0m  CREATE TABLE "current_linking_leaf_colours" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "current_plant_id" integer, "leaf_colour_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (101.8ms)[0m  [1mCREATE TABLE "current_linking_origins" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "current_plant_id" integer, "origin_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (103.2ms)[0m  CREATE TABLE "current_linking_sizes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "current_plant_id" integer, "size_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (132.7ms)[0m  [1mCREATE TABLE "current_linking_soil_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "current_plant_id" integer, "soil_type_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (111.7ms)[0m  CREATE TABLE "current_linking_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "current_plant_id" integer, "type_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (101.3ms)[0m  [1mCREATE TABLE "current_photos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "current_plant_id" integer, "description" varchar(255), "created_at" datetime, "updated_at" datetime, "image_file_name" varchar(255), "image_content_type" varchar(255), "image_file_size" integer, "image_updated_at" datetime) [0m
+  [1m[35m (99.4ms)[0m  CREATE TABLE "current_plants" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime, "family" varchar(255), "genus" varchar(255), "species" varchar(255), "common_name" varchar(255), "scientific_name" varchar(255), "synonym" varchar(255), "subspecies" varchar(255), "description" varchar(255), "location_name" varchar(255), "characteristics" varchar(255), "additional_info" varchar(255), "identification" varchar(255), "physical" varchar(255), "general_info" varchar(255), "environment" varchar(255), "horticulture" varchar(255), "architectural_uses" varchar(255), "culture" varchar(255), "conservation" varchar(255), "wildlife" varchar(255), "architectural_info" varchar(255), "discovered_by" varchar(255), "named_by" varchar(255), "approved" boolean, "version" integer, "plant_id" integer, "submitted_by" integer, "edited_by" integer) 
+  [1m[36m (112.6ms)[0m  [1mCREATE TABLE "flower_colours" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (101.8ms)[0m  CREATE TABLE "leaf_colours" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (102.0ms)[0m  [1mCREATE TABLE "origins" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (135.1ms)[0m  CREATE TABLE "sizes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (112.2ms)[0m  [1mCREATE TABLE "soil_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (122.5ms)[0m  CREATE TABLE "types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (137.4ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "email" varchar(255), "created_at" datetime, "updated_at" datetime, "password_digest" varchar(255), "remember_token" varchar(255), "privileged" boolean DEFAULT 'f', "admin" boolean DEFAULT 'f') [0m
+  [1m[35m (133.8ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (143.6ms)[0m  [1mCREATE INDEX "index_users_on_remember_token" ON "users" ("remember_token")[0m
+  [1m[35m (133.2ms)[0m  CREATE UNIQUE INDEX "index_users_on_username" ON "users" ("username")
+  [1m[36m (152.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (144.3ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (123.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140902070203')
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.3ms)[0m  INSERT INTO "current_plants" ("common_name", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)  [["common_name", "Rose"], ["created_at", Tue, 02 Sep 2014 15:33:28 AWST +08:00], ["name", "Rose"], ["updated_at", Tue, 02 Sep 2014 15:33:28 AWST +08:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "current_plants" ("common_name", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["common_name", "Rose"], ["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Rose"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "current_plants" ("common_name", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)  [["common_name", "Rose"], ["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Rose"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "current_plants" ("common_name", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["common_name", "Rose"], ["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Rose"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "current_plants" ("common_name", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)  [["common_name", "Rose"], ["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Rose"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "current_plants" ("common_name", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["common_name", "Rose"], ["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Rose"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "current_plants" ("common_name", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)  [["common_name", "Rose"], ["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Rose"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "sizes" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Small"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "current_linking_sizes" ("created_at", "current_plant_id", "size_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["current_plant_id", 1], ["size_id", 1], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "current_plants" ("common_name", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["common_name", "Rose"], ["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Rose"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "sizes" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Small"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "current_linking_sizes" ("created_at", "current_plant_id", "size_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["current_plant_id", 1], ["size_id", 1], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "current_plants" ("common_name", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)  [["common_name", "Rose"], ["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Rose"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "sizes" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Small"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "current_linking_sizes" ("created_at", "current_plant_id", "size_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["current_plant_id", 1], ["size_id", 1], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "current_plants" ("common_name", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["common_name", "Rose"], ["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Rose"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "sizes" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Small"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "current_linking_sizes" ("created_at", "current_plant_id", "size_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["current_plant_id", 1], ["size_id", 1], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "current_plants" ("common_name", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)  [["common_name", "Rose"], ["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Rose"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "sizes" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Small"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "current_linking_sizes" ("created_at", "current_plant_id", "size_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["current_plant_id", 1], ["size_id", 1], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "current_plants" ("common_name", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["common_name", "Rose"], ["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Rose"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "sizes" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Small"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "current_linking_sizes" ("created_at", "current_plant_id", "size_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["current_plant_id", 1], ["size_id", 1], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mCurrentPlant Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "current_plants" INNER JOIN "current_linking_sizes" ON "current_plants"."id" = "current_linking_sizes"."current_plant_id" WHERE "current_linking_sizes"."size_id" = ? AND "current_plants"."id" = 1 LIMIT 1[0m  [["size_id", 1]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "current_plants" ("common_name", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["common_name", "Rose"], ["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Rose"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "flower_colours" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Red"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "current_linking_flower_colours" ("created_at", "current_plant_id", "flower_colour_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["current_plant_id", 1], ["flower_colour_id", 1], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "current_plants" ("common_name", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)  [["common_name", "Rose"], ["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Rose"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "flower_colours" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Red"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "current_linking_flower_colours" ("created_at", "current_plant_id", "flower_colour_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["current_plant_id", 1], ["flower_colour_id", 1], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "current_plants" ("common_name", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["common_name", "Rose"], ["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Rose"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "flower_colours" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Red"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "current_linking_flower_colours" ("created_at", "current_plant_id", "flower_colour_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["current_plant_id", 1], ["flower_colour_id", 1], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "current_plants" ("common_name", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)  [["common_name", "Rose"], ["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Rose"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "flower_colours" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Red"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "current_linking_flower_colours" ("created_at", "current_plant_id", "flower_colour_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["current_plant_id", 1], ["flower_colour_id", 1], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "current_plants" ("common_name", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["common_name", "Rose"], ["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Rose"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "flower_colours" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Red"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "current_linking_flower_colours" ("created_at", "current_plant_id", "flower_colour_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["current_plant_id", 1], ["flower_colour_id", 1], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "current_plants" ("common_name", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)  [["common_name", "Rose"], ["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Rose"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "flower_colours" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Red"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "current_linking_flower_colours" ("created_at", "current_plant_id", "flower_colour_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["current_plant_id", 1], ["flower_colour_id", 1], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mCurrentPlant Exists (0.1ms)[0m  SELECT 1 AS one FROM "current_plants" INNER JOIN "current_linking_flower_colours" ON "current_plants"."id" = "current_linking_flower_colours"."current_plant_id" WHERE "current_linking_flower_colours"."flower_colour_id" = ? AND "current_plants"."id" = 1 LIMIT 1  [["flower_colour_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER('Example User') LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER('ccccccccccccccccccccccccc') LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(' ') LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER('Example User') LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1[0m
+Binary data inserted for `string` type on column `password_digest`
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "remember_token", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["email", "user@example.com"], ["password_digest", "$2a$04$/Klja0LaG8ti2bE4hcNg2uCicwDs.WM7eqFiKbLcUVjUFUEYFKFoa"], ["remember_token", "2ce1599b36cdc53dd67e0270873042748728919a"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["username", "example user"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'user@example.com' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER('Example User') LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1[0m
+Binary data inserted for `string` type on column `password_digest`
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "remember_token", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["email", "user@example.com"], ["password_digest", "$2a$04$X7hIonyhip4dmTIO0U24FO0zmtsskycqsdOMqH0IWz.WWx2bF8L12"], ["remember_token", "a51fb5d9790376a736f5eb520f1aae735939b72c"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["username", "example user"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'user@example.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER('Example User') LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1[0m
+Binary data inserted for `string` type on column `password_digest`
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "remember_token", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["email", "user@example.com"], ["password_digest", "$2a$04$agDvvpTXiEROHAJvsMl0x.BchzYFHo9AdIqeWObNTtGEgWPdVHnxG"], ["remember_token", "04ebff5b0b2f07fe987ac8da9c772eceb13764a9"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["username", "example user"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'user@example.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER('Example User') LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER('Example User') LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@foo.COM') LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER('Example User') LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('A_US-ER@f.b.org') LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER('Example User') LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('frst.lst@foo.jp') LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER('Example User') LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('a+b@baz.cn') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER('Example User') LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(' ') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER('Example User') LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER('Example User') LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('USER@EXAMPLE.COM') LIMIT 1[0m
+Binary data inserted for `string` type on column `password_digest`
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "remember_token", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["email", "user@example.com"], ["password_digest", "$2a$04$8zzKJJBbJPosy.CBf4/zwOmBh4Tj9reaZwVoSkAM3IcKmd9ZAQrDS"], ["remember_token", "2c75271366dbcd1238103c298e682d91a0625eaa"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["username", "example user"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER('Example User') LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER('Example User') LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER('Example User') LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('USER@EXAMPLE.COM') LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "password_digest", "remember_token", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["email", "user@example.com"], ["password_digest", "$2a$04$.RyOHh7sBn/qtg3mNvmlQuAy/jj1lf836Xiy0rVZmbPg6nf71J7sy"], ["remember_token", "007f26c1c8e0ab5a67734052a997bedbc8ba32f8"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["username", "example user"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER('Example User') LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER('Example User') LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER('Example User') LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@example.com') LIMIT 1[0m
+Binary data inserted for `string` type on column `password_digest`
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "remember_token", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["email", "user@example.com"], ["password_digest", "$2a$04$RioncbaHTTLyFXzbAtTwneZDwJpUbehVf0/XXmI8mOmAh5T4sPY/2"], ["remember_token", "c9f320aad5596d3dff2a861c4cbc3c5452203cff"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["username", "example user"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER('Example User') LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user@foo,com') LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER('Example User') LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('user_at_foo.org') LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER('Example User') LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example.user@foo.') LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER('Example User') LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('foo@bar_baz.com') LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER('Example User') LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('foo@bar+baz.com') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "current_plants" ("common_name", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["common_name", "Rose"], ["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Rose"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "climates" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Cool"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "current_linking_climates" ("climate_id", "created_at", "current_plant_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["climate_id", 1], ["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["current_plant_id", 1], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "current_plants" ("common_name", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)  [["common_name", "Rose"], ["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Rose"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "climates" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Cool"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "current_linking_climates" ("climate_id", "created_at", "current_plant_id", "updated_at") VALUES (?, ?, ?, ?)  [["climate_id", 1], ["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["current_plant_id", 1], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "current_plants" ("common_name", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["common_name", "Rose"], ["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Rose"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "climates" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Cool"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "current_linking_climates" ("climate_id", "created_at", "current_plant_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["climate_id", 1], ["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["current_plant_id", 1], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "current_plants" ("common_name", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)  [["common_name", "Rose"], ["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Rose"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "climates" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Cool"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "current_linking_climates" ("climate_id", "created_at", "current_plant_id", "updated_at") VALUES (?, ?, ?, ?)  [["climate_id", 1], ["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["current_plant_id", 1], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "current_plants" ("common_name", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["common_name", "Rose"], ["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Rose"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "climates" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Cool"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "current_linking_climates" ("climate_id", "created_at", "current_plant_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["climate_id", 1], ["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["current_plant_id", 1], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "current_plants" ("common_name", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)  [["common_name", "Rose"], ["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Rose"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "climates" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Cool"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "current_linking_climates" ("climate_id", "created_at", "current_plant_id", "updated_at") VALUES (?, ?, ?, ?)  [["climate_id", 1], ["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["current_plant_id", 1], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mCurrentPlant Exists (0.1ms)[0m  SELECT 1 AS one FROM "current_plants" INNER JOIN "current_linking_climates" ON "current_plants"."id" = "current_linking_climates"."current_plant_id" WHERE "current_linking_climates"."climate_id" = ? AND "current_plants"."id" = 1 LIMIT 1  [["climate_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "current_plants" ("common_name", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)  [["common_name", "Rose"], ["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Rose"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "soil_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Dry"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "current_linking_soil_types" ("created_at", "current_plant_id", "soil_type_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["current_plant_id", 1], ["soil_type_id", 1], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "current_plants" ("common_name", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["common_name", "Rose"], ["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Rose"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "soil_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Dry"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "current_linking_soil_types" ("created_at", "current_plant_id", "soil_type_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["current_plant_id", 1], ["soil_type_id", 1], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "current_plants" ("common_name", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)  [["common_name", "Rose"], ["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Rose"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "soil_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Dry"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "current_linking_soil_types" ("created_at", "current_plant_id", "soil_type_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["current_plant_id", 1], ["soil_type_id", 1], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "current_plants" ("common_name", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["common_name", "Rose"], ["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Rose"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "soil_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Dry"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "current_linking_soil_types" ("created_at", "current_plant_id", "soil_type_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["current_plant_id", 1], ["soil_type_id", 1], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "current_plants" ("common_name", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)  [["common_name", "Rose"], ["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Rose"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "soil_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Dry"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "current_linking_soil_types" ("created_at", "current_plant_id", "soil_type_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["current_plant_id", 1], ["soil_type_id", 1], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "current_plants" ("common_name", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["common_name", "Rose"], ["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Rose"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "soil_types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Dry"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "current_linking_soil_types" ("created_at", "current_plant_id", "soil_type_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["current_plant_id", 1], ["soil_type_id", 1], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mCurrentPlant Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "current_plants" INNER JOIN "current_linking_soil_types" ON "current_plants"."id" = "current_linking_soil_types"."current_plant_id" WHERE "current_linking_soil_types"."soil_type_id" = ? AND "current_plants"."id" = 1 LIMIT 1[0m  [["soil_type_id", 1]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "current_plants" ("common_name", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["common_name", "Rose"], ["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Rose"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "leaf_colours" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Fluorescent pink"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "current_linking_leaf_colours" ("created_at", "current_plant_id", "leaf_colour_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["current_plant_id", 1], ["leaf_colour_id", 1], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "current_plants" ("common_name", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)  [["common_name", "Rose"], ["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Rose"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "leaf_colours" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Fluorescent pink"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "current_linking_leaf_colours" ("created_at", "current_plant_id", "leaf_colour_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["current_plant_id", 1], ["leaf_colour_id", 1], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "current_plants" ("common_name", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["common_name", "Rose"], ["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Rose"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "leaf_colours" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Fluorescent pink"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "current_linking_leaf_colours" ("created_at", "current_plant_id", "leaf_colour_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["current_plant_id", 1], ["leaf_colour_id", 1], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "current_plants" ("common_name", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)  [["common_name", "Rose"], ["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Rose"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "leaf_colours" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Fluorescent pink"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "current_linking_leaf_colours" ("created_at", "current_plant_id", "leaf_colour_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["current_plant_id", 1], ["leaf_colour_id", 1], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "current_plants" ("common_name", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["common_name", "Rose"], ["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Rose"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "leaf_colours" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Fluorescent pink"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "current_linking_leaf_colours" ("created_at", "current_plant_id", "leaf_colour_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["current_plant_id", 1], ["leaf_colour_id", 1], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "current_plants" ("common_name", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)  [["common_name", "Rose"], ["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Rose"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "leaf_colours" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Fluorescent pink"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "current_linking_leaf_colours" ("created_at", "current_plant_id", "leaf_colour_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["current_plant_id", 1], ["leaf_colour_id", 1], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mCurrentPlant Exists (0.2ms)[0m  SELECT 1 AS one FROM "current_plants" INNER JOIN "current_linking_leaf_colours" ON "current_plants"."id" = "current_linking_leaf_colours"."current_plant_id" WHERE "current_linking_leaf_colours"."leaf_colour_id" = ? AND "current_plants"."id" = 1 LIMIT 1  [["leaf_colour_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "current_plants" ("common_name", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)  [["common_name", "Rose"], ["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Rose"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Climber"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "current_linking_types" ("created_at", "current_plant_id", "type_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["current_plant_id", 1], ["type_id", 1], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "current_plants" ("common_name", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["common_name", "Rose"], ["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Rose"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Climber"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "current_linking_types" ("created_at", "current_plant_id", "type_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["current_plant_id", 1], ["type_id", 1], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "current_plants" ("common_name", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)  [["common_name", "Rose"], ["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Rose"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Climber"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "current_linking_types" ("created_at", "current_plant_id", "type_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["current_plant_id", 1], ["type_id", 1], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "current_plants" ("common_name", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["common_name", "Rose"], ["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Rose"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Climber"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "current_linking_types" ("created_at", "current_plant_id", "type_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["current_plant_id", 1], ["type_id", 1], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "current_plants" ("common_name", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)  [["common_name", "Rose"], ["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Rose"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Climber"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "current_linking_types" ("created_at", "current_plant_id", "type_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["current_plant_id", 1], ["type_id", 1], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "current_plants" ("common_name", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["common_name", "Rose"], ["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Rose"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "types" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Climber"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "current_linking_types" ("created_at", "current_plant_id", "type_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["current_plant_id", 1], ["type_id", 1], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mCurrentPlant Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "current_plants" INNER JOIN "current_linking_types" ON "current_plants"."id" = "current_linking_types"."current_plant_id" WHERE "current_linking_types"."type_id" = ? AND "current_plants"."id" = 1 LIMIT 1[0m  [["type_id", 1]]
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "current_plants" ("common_name", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["common_name", "Rose"], ["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Rose"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "origins" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Exotic"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "current_linking_origins" ("created_at", "current_plant_id", "origin_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["current_plant_id", 1], ["origin_id", 1], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "current_plants" ("common_name", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)  [["common_name", "Rose"], ["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Rose"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "origins" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Exotic"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "current_linking_origins" ("created_at", "current_plant_id", "origin_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["current_plant_id", 1], ["origin_id", 1], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "current_plants" ("common_name", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["common_name", "Rose"], ["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Rose"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "origins" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Exotic"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "current_linking_origins" ("created_at", "current_plant_id", "origin_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["current_plant_id", 1], ["origin_id", 1], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "current_plants" ("common_name", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)  [["common_name", "Rose"], ["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Rose"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "origins" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Exotic"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "current_linking_origins" ("created_at", "current_plant_id", "origin_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["current_plant_id", 1], ["origin_id", 1], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "current_plants" ("common_name", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["common_name", "Rose"], ["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Rose"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "origins" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Exotic"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "current_linking_origins" ("created_at", "current_plant_id", "origin_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["current_plant_id", 1], ["origin_id", 1], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "current_plants" ("common_name", "created_at", "name", "updated_at") VALUES (?, ?, ?, ?)  [["common_name", "Rose"], ["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Rose"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "origins" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["name", "Exotic"], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "current_linking_origins" ("created_at", "current_plant_id", "origin_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00], ["current_plant_id", 1], ["origin_id", 1], ["updated_at", Tue, 02 Sep 2014 15:33:29 AWST +08:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mCurrentPlant Exists (0.2ms)[0m  SELECT 1 AS one FROM "current_plants" INNER JOIN "current_linking_origins" ON "current_plants"."id" = "current_linking_origins"."current_plant_id" WHERE "current_linking_origins"."origin_id" = ? AND "current_plants"."id" = 1 LIMIT 1  [["origin_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
