@@ -11,6 +11,9 @@ In order to clone this repository, open up a folder in your Terminal and type:
 
 old_html contains the html, css, js etc from the Prototypes. Plantsuwa is the rails application.
 
+You'll probably need to install ImageMagick, as it is a dependency for paperclip (a Gem used in the project):
+http://www.imagemagick.org/
+
 If you're going to work on something, it might be good to create a new branch.
 
     $ git checkout -b <name of branch>
