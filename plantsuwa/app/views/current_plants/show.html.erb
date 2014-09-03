@@ -14,44 +14,42 @@
 	   <dt>Name</dt><p><%= @current_plant.name %></p>
     <% end %>
     -->
-    <div class="row">
-      <div class="col-xs-5">
 
-        <% if not display_name(@current_plant).blank? %>
-          <dt>Name</dt><p><i><%= display_name(@current_plant) %></i></p>
-        <% end %>
-        <% if not @current_plant.subspecies.blank? %>
-          <dt>Subspecies</dt><p><%= @current_plant.subspecies %></p>
-        <% end %>
-    	  <% if not @current_plant.family.blank? %>
-    		  <dt>Family</dt><p><%= @current_plant.family %></p>
-    	  <% end %>
-    	  <% if not @current_plant.common_name.blank? %>
-    		  <dt>Common Name</dt><p><%= @current_plant.common_name %></p>
-    	  <% end %>
-        <% if not @current_plant.synonym.blank? %>
-          <dt>Synonym</dt><p><%= @current_plant.synonym %></p>
-        <% end %>
+    <%= image_tag @current_plant.display_photo.url(:medium), class: 'display-photo-right' %>
 
-        <% if @current_plant.type %>
-          <!-- CHANGE THIS TO ONE TO MANY !-->
-          <dt>Type</dt>
-            <p> <%= @current_plant.type.name %> </p>
-        <% end %>
+    <% if not display_name(@current_plant).blank? %>
+      <dt>Name</dt><p><i><%= display_name(@current_plant) %></i></p>
+    <% end %>
+    <% if not @current_plant.subspecies.blank? %>
+      <dt>Subspecies</dt><p><%= @current_plant.subspecies %></p>
+    <% end %>
+	  <% if not @current_plant.family.blank? %>
+		  <dt>Family</dt><p><%= @current_plant.family %></p>
+	  <% end %>
+	  <% if not @current_plant.common_name.blank? %>
+		  <dt>Common Name</dt><p><%= @current_plant.common_name %></p>
+	  <% end %>
+    <% if not @current_plant.synonym.blank? %>
+      <dt>Synonym</dt><p><%= @current_plant.synonym %></p>
+    <% end %>
 
-        <% if not @current_plant.description.blank? %>
-          <dt>Description</dt><p><%= nice_format(@current_plant.description) %></p>
-        <% end %>
+    <% if @current_plant.type %>
+      <!-- CHANGE THIS TO ONE TO MANY !-->
+      <dt>Type</dt>
+        <p> <%= @current_plant.type.name %> </p>
+    <% end %>
 
-      </div>
-      <div class="col-xs-7">
+    <% if not @current_plant.description.blank? %>
+      <dt>Description</dt><p><%= nice_format(@current_plant.description) %></p>
+    <% end %>
 
 
-          <%= image_tag @current_plant.display_photo.url, style: "border: 1px solid #ccc; max-width: 100%; max-height: 100%;" %>
 
 
-      </div>
-    </div>
+            
+
+
+  
 
 
 	  <% if not @current_plant.characteristics.blank? %>
