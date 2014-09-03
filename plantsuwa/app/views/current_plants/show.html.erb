@@ -9,49 +9,59 @@
   <div id="tab-descriptions" class="info-body">
     <legend>Descriptions</legend>
 
+    <!-- NO LONGER ANY NEED FOR A 'NAME' FIELD
     <% if not @current_plant.name.blank? %>
 	   <dt>Name</dt><p><%= @current_plant.name %></p>
     <% end %>
-	  <% if not @current_plant.genus.blank? %>
-		  <dt>Genus</dt><p><%= @current_plant.genus %></p>
-	  <% end %>
-	  <% if not @current_plant.family.blank? %>
-		  <dt>Family</dt><p><%= @current_plant.family %></p>
-	  <% end %>
-	  <% if not @current_plant.species.blank? %>
-		  <dt>Species</dt><p><%= @current_plant.species %></p>
-	  <% end %>
-	  <% if not @current_plant.common_name.blank? %>
-		  <dt>Common Name</dt><p><%= @current_plant.common_name %></p>
-	  <% end %>
-	  <% if not @current_plant.scientific_name.blank? %>
-		  <dt>Scientific Name</dt><p><%= @current_plant.scientific_name %></p>
-	  <% end %>
-	  <% if not @current_plant.synonym.blank? %>
-		  <dt>Synonym</dt><p><%= @current_plant.synonym %></p>
-	  <% end %>
-	  <% if not @current_plant.subspecies.blank? %>
-		  <dt>Subspecies</dt><p><%= @current_plant.subspecies %></p>
-	  <% end %>
-	  <% if @current_plant.types.any? %>
-      <!-- CHANGE THIS TO ONE TO MANY !-->
-		  <dt>Types</dt>
-		  <% for @type in @current_plant.types %>
-			  <p> <%= @type.name %> </p>
-		  <% end %>
-	  <% end %>
+    -->
+    <div class="row">
+      <div class="col-xs-5">
 
-    <% if not @current_plant.description.blank? %>
-		  <dt>Description</dt><p><%= @current_plant.description %></p>
-	  <% end %>
+        <% if not display_name(@current_plant).blank? %>
+          <dt>Name</dt><p><i><%= display_name(@current_plant) %></i></p>
+        <% end %>
+        <% if not @current_plant.subspecies.blank? %>
+          <dt>Subspecies</dt><p><%= @current_plant.subspecies %></p>
+        <% end %>
+    	  <% if not @current_plant.family.blank? %>
+    		  <dt>Family</dt><p><%= @current_plant.family %></p>
+    	  <% end %>
+    	  <% if not @current_plant.common_name.blank? %>
+    		  <dt>Common Name</dt><p><%= @current_plant.common_name %></p>
+    	  <% end %>
+        <% if not @current_plant.synonym.blank? %>
+          <dt>Synonym</dt><p><%= @current_plant.synonym %></p>
+        <% end %>
+
+        <% if @current_plant.type %>
+          <!-- CHANGE THIS TO ONE TO MANY !-->
+          <dt>Type</dt>
+            <p> <%= @current_plant.type.name %> </p>
+        <% end %>
+
+        <% if not @current_plant.description.blank? %>
+          <dt>Description</dt><p><%= nice_format(@current_plant.description) %></p>
+        <% end %>
+
+      </div>
+      <div class="col-xs-7">
+
+
+          <%= image_tag @current_plant.display_photo.url, style: "border: 1px solid #ccc; max-width: 100%; max-height: 100%;" %>
+
+
+      </div>
+    </div>
+
+
 	  <% if not @current_plant.characteristics.blank? %>
-		  <dt>Characteristics</dt><p><%= @current_plant.characteristics %></p>
+		  <dt>Characteristics</dt><p><%= nice_format(@current_plant.characteristics) %></p>
 	  <% end %>
 	  <% if not @current_plant.identification.blank? %>
-		  <dt>Identification</dt><p><%= @current_plant.identification %></p>
+		  <dt>Identification</dt><p><%= nice_format(@current_plant.identification) %></p>
 	  <% end %>
 	  <% if not @current_plant.physical.blank? %>
-		  <dt>Physical</dt><p><%= @current_plant.physical %></p>
+		  <dt>Physical</dt><p><%= nice_format(@current_plant.physical) %></p>
 	  <% end %>
 	  <% if @current_plant.sizes.any? %>
 		  <dt>Size</dt>
@@ -95,19 +105,19 @@
     <% end %>
 
     <% if not @current_plant.environment.blank? %>
-	    <dt>Environment</dt><p><%= @current_plant.environment %></p>
+	    <dt>Environment</dt><p><%= nice_format(@current_plant.environment) %></p>
     <% end %>
 
     <% if not @current_plant.horticulture.blank? %>
-	    <dt>Horticulture</dt><p><%= @current_plant.horticulture %></p>
+	    <dt>Horticulture</dt><p><%= nice_format(@current_plant.horticulture) %></p>
     <% end %>
 
     <% if not @current_plant.architectural_uses.blank? %>
-	    <dt>Architectural Uses</dt><p><%= @current_plant.architectural_uses %></p>
+	    <dt>Architectural Uses</dt><p><%= nice_format(@current_plant.architectural_uses) %></p>
     <% end %>
 
     <% if not @current_plant.architectural_info.blank? %>
-	    <dt>Architectural Info</dt><p><%= @current_plant.architectural_info %></p>
+	    <dt>Architectural Info</dt><p><%= nice_format(@current_plant.architectural_info) %></p>
     <% end %>
 
     <% if @current_plant.soil_types.any? %>
@@ -125,15 +135,15 @@
   <div id="tab-environmental" class="info-body" style="display: none">
     <legend>Environmental</legend>
     <% if not @current_plant.culture.blank? %>
-	    <dt>Culture</dt><p><%= @current_plant.culture %></p>
+	    <dt>Culture</dt><p><%= nice_format(@current_plant.culture) %></p>
     <% end %>
 
     <% if not @current_plant.conservation.blank? %>
-	    <dt>Conservation</dt><p><%= @current_plant.conservation %></p>
+	    <dt>Conservation</dt><p><%= nice_format(@current_plant.conservation) %></p>
     <% end %>
 
     <% if not @current_plant.wildlife.blank? %>
-	    <dt>Wildlife</dt><p><%= @current_plant.wildlife %></p>
+	    <dt>Wildlife</dt><p><%= nice_format(@current_plant.wildlife) %></p>
     <% end %>
 
     <% if @current_plant.origins.any? %>
@@ -146,22 +156,22 @@
     <% end %>
 
     <% if not @current_plant.location_name.blank? %>
-	    <dt>Location Name</dt><p><%= @current_plant.location_name %></p>
+	    <dt>Location Name</dt><p><%= nice_format(@current_plant.location_name) %></p>
     <% end %>
 
     <% if not @current_plant.general_info.blank? %>
-	    <dt>General Info</dt><p><%= @current_plant.general_info %></p>
+	    <dt>General Info</dt><p><%= nice_format(@current_plant.general_info) %></p>
     <% end %>
 
     <% if not @current_plant.additional_info.blank? %>
-	    <dt>Additional Info</dt><p><%= @current_plant.additional_info %></p>
+	    <dt>Additional Info</dt><p><%= nice_format(@current_plant.additional_info) %></p>
     <% end %>
 
     <% if not @current_plant.discovered_by.blank? %>
-	    <dt>Discovered By</dt><p><%= @current_plant.discovered_by %></p>
+	    <dt>Discovered By</dt><p><%= nice_format(@current_plant.discovered_by) %></p>
     <% end %>
     <% if not @current_plant.named_by.blank? %>
-	    <dt>Named By</dt><p><%= @current_plant.named_by %></p>
+	    <dt>Named By</dt><p><%= nice_format(@current_plant.named_by) %></p>
     <% end %>
 
   </div>

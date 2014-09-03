@@ -21,8 +21,8 @@ class CurrentPlant < ActiveRecord::Base
 	has_many :current_linking_soil_types, dependent: :destroy
   has_many :soil_types, through: :current_linking_soil_types
 
-	has_many :current_linking_types, dependent: :destroy
-  has_many :types, through: :current_linking_types
+  belongs_to :type
+
 
 	has_many :current_photos
   accepts_nested_attributes_for :current_photos, :reject_if => lambda { |t| t['description'].blank? and t['image'].nil? }, allow_destroy: true
@@ -105,6 +105,7 @@ class CurrentPlant < ActiveRecord::Base
   scoped_search in: :leaf_colours, on: :name
   scoped_search in: :flower_colours, on: :name
   scoped_search in: :climates, on: :name
+
 
 
 

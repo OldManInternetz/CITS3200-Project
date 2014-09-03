@@ -22,7 +22,7 @@
         <p style="text-align: center; color: white"><strong><%= truncate(small_title(yield(:title)), length: 20, escape: false) %></strong></p>
       </div>
 
-      <div style="width: 100px; position: absolute; right: 0;">
+      <div style="width: 200px; position: absolute; right: 0;">
 
 		    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-navbar-collapse">
 			    <span class="sr-only">Toggle navigation</span>
@@ -31,7 +31,12 @@
 			    <span class="icon-bar"></span>
 		    </button>
 
-		    <a class="navbar-brand" style="margin-right: 5px; float: right; padding-left: 5px; padding-right: 5px" href="/plants/search"><span class="glyphicon glyphicon-search"></span></a>
+        <%= link_to search_current_plants_path do %>
+          <p class="navbar-brand" style="margin-right: 5px; float: right; padding-left: 5px; padding-right: 5px"><span class="glyphicon glyphicon-search"></span></p>
+        <% end %>
+        <%= link_to root_path do %>
+          <p class="navbar-brand" style="margin-right: 5px; float: right; padding-left: 5px; padding-right: 5px"><span class="glyphicon glyphicon-home"></span></p>
+        <% end %>
 
       </div>
 

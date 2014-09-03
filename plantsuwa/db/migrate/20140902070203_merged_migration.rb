@@ -3,18 +3,17 @@ class MergedMigration < ActiveRecord::Migration
 
     """ Create current_plants table """
     create_table :current_plants do |t|
-      t.string :name
       t.timestamps
     end
 
     """ Add fields to current_plants table """
-    add_column :current_plants, :family,			      :string
     add_column :current_plants, :genus,				      :string
 	  add_column :current_plants, :species,           :string
-    add_column :current_plants, :common_name,       :string
-    add_column :current_plants, :scientific_name,   :string
-    add_column :current_plants, :synonym,           :string
     add_column :current_plants, :subspecies,        :string
+    add_column :current_plants, :family,            :string
+    add_column :current_plants, :common_name,       :string
+    add_column :current_plants, :scientific_name,   :string   # REMOVE THIS LATER
+    add_column :current_plants, :synonym,           :string
     add_column :current_plants, :description,       :string
     add_column :current_plants, :location_name,     :string
     add_column :current_plants, :characteristics,   :string
@@ -37,6 +36,9 @@ class MergedMigration < ActiveRecord::Migration
     add_column :current_plants, :edited_by,         :integer
     add_attachment :current_plants, :display_photo
     add_column :current_plants, :display_photo_description, :string
+    add_column :current_plants, :type_id,           :integer
+
+    add_column :current_plants, :name,              :string
     """ Still need to add the following fields: """
     # my_notes (id)
     # location_coordinates (int)
@@ -160,11 +162,13 @@ class MergedMigration < ActiveRecord::Migration
     end
 
 	""" Create current_linking_types table """
+  """ NOT USED ANYMORE - SHOULD BE ONE-MANY
     create_table :current_linking_types do |t|
       t.integer :current_plant_id
       t.integer :type_id
       t.timestamps
     end
+  """
 
 	""" Create current_linking_soil_types table """
     create_table :current_linking_soil_types do |t|

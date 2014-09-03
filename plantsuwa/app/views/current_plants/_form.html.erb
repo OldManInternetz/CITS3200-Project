@@ -19,15 +19,15 @@
     <div id="tab-descriptions" class="info-body">
       <fieldset>
 	      	<legend>Descriptions</legend>
-	      	<%= f.input  :name, hint: 'The display name of the Plant' %>
+
 	      	<%= f.input  :genus %>
+          <%= f.input  :species %>
+          <%= f.input  :subspecies %>
 		      <%= f.input  :family %>
-	      	<%= f.input  :species %>
       		<%= f.input  :common_name %> 
       		<%= f.input  :scientific_name %> 
       		<%= f.input  :synonym %> 
-      		<%= f.input  :subspecies %>
-		      <%= f.association :types, :as => :select %>
+		      <%= f.association :type, :as => :select %>
 		      <%= f.input  :description, hint: 'Describe the plant in a few lines.', as: :text %> 
         	<%= f.input  :characteristics, hint: 'List the typical characteristics of the plant.', as: :text  %> 
         	<%= f.input  :identification, hint: 'How is this plant identified in the field?', as: :text  %> 
