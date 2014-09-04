@@ -106,7 +106,4 @@ class CurrentPlant < ActiveRecord::Base
   scoped_search in: :flower_colours, on: :name
   scoped_search in: :climates, on: :name
 
-
-
-
 end

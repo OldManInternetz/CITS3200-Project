@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140902070203) do
+ActiveRecord::Schema.define(version: 20140903152859) do
 
   create_table "climates", force: true do |t|
     t.string   "name"
@@ -119,6 +119,15 @@ ActiveRecord::Schema.define(version: 20140902070203) do
 
   create_table "leaf_colours", force: true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "notifications", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "current_plant_id"
+    t.string   "action"
+    t.string   "changes_made"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

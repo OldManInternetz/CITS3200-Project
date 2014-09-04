@@ -1,5 +1,7 @@
 Plantsuwa::Application.routes.draw do
 
+  resources :notifications
+
   root 'welcome#index'
 
   resources :current_plants, :path => 'plants' do

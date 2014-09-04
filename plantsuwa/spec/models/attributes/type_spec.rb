@@ -5,7 +5,7 @@ describe Type do
   before do
     @current_plant = FactoryGirl.create(:current_plant)
     @type = FactoryGirl.create(:type)
-    @current_plant.types << @type
+    @type.current_plants << @current_plant
   end
 
   subject { @type }

@@ -17,5 +17,14 @@ module CurrentPlantHelper
     return @current_plant.current_photos.any?
   end
 
+  def nice_format(text)
+    h(text).gsub(/\n/, "<br/>").html_safe
+  end
+
+  def display_name(plant)
+    "#{plant.genus} #{plant.species}"
+  end
+
+
 
 end
