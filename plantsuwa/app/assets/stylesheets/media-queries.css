@@ -15,7 +15,13 @@
 @media (min-width: 768px) {
   .navbar-right {
     position: fixed;
-    right: 60px;
+    right: 90px;
+  }
+  .navbar-brand {
+    margin-left: -10px !important;
+  }
+  .navbar-brand-custom {
+    padding-left: 18px !important;    
   }
 
   .navbar-title-block {

@@ -14,27 +14,27 @@
       <img src="./assets/0.8.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2014-09-04T16:15:15+08:00">2014-09-04T16:15:15+08:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2014-09-04T17:53:03+08:00">2014-09-04T17:53:03+08:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">63.8%</span></span>
+    (<span class="covered_percent"><span class="red">63.93%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.76
+         0.77
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>29</b> files in total.
-    <b>442</b> relevant lines. 
-    <span class="green"><b>282</b> lines covered</span> and
-    <span class="red"><b>160</b> lines missed </span>
+    <b>438</b> relevant lines. 
+    <span class="green"><b>280</b> lines covered</span> and
+    <span class="red"><b>158</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -72,11 +72,11 @@
       
       <tr>
         <td class="strong"><a href="#6e92e00dbb1d2d73f48791a0e462ce596f4dbe8d" class="src_link" title="app/controllers/current_plants_controller.rb">app/controllers/current_plants_controller.rb</a></td>
-        <td class="red strong">32.61 %</td>
-        <td>103</td>
-        <td>46</td>
-        <td>15</td>
-        <td>31</td>
+        <td class="red strong">30.95 %</td>
+        <td>95</td>
+        <td>42</td>
+        <td>13</td>
+        <td>29</td>
         <td>0.3</td>
       </tr>
       
@@ -243,7 +243,7 @@
       <tr>
         <td class="strong"><a href="#4b515e0390fab6b3b4563014eccbebf11c32c7e3" class="src_link" title="app/models/current_plant.rb">app/models/current_plant.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>112</td>
+        <td>109</td>
         <td>82</td>
         <td>82</td>
         <td>0</td>
@@ -349,7 +349,7 @@
           <div class="file_list_container" id="Controllers">
   <h2>
     <span class="group_name">Controllers</span>
-    (<span class="covered_percent"><span class="red">42.03%</span></span>
+    (<span class="covered_percent"><span class="red">41.91%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
@@ -360,9 +360,9 @@
   <a name="Controllers"></a>
   <div>
     <b>12</b> files in total.
-    <b>276</b> relevant lines. 
-    <span class="green"><b>116</b> lines covered</span> and
-    <span class="red"><b>160</b> lines missed </span>
+    <b>272</b> relevant lines. 
+    <span class="green"><b>114</b> lines covered</span> and
+    <span class="red"><b>158</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -400,11 +400,11 @@
       
       <tr>
         <td class="strong"><a href="#6e92e00dbb1d2d73f48791a0e462ce596f4dbe8d" class="src_link" title="app/controllers/current_plants_controller.rb">app/controllers/current_plants_controller.rb</a></td>
-        <td class="red strong">32.61 %</td>
-        <td>103</td>
-        <td>46</td>
-        <td>15</td>
-        <td>31</td>
+        <td class="red strong">30.95 %</td>
+        <td>95</td>
+        <td>42</td>
+        <td>13</td>
+        <td>29</td>
         <td>0.3</td>
       </tr>
       
@@ -608,7 +608,7 @@
       <tr>
         <td class="strong"><a href="#4b515e0390fab6b3b4563014eccbebf11c32c7e3" class="src_link" title="app/models/current_plant.rb">app/models/current_plant.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>112</td>
+        <td>109</td>
         <td>82</td>
         <td>82</td>
         <td>0</td>
@@ -1188,11 +1188,11 @@
         <div class="source_table" id="6e92e00dbb1d2d73f48791a0e462ce596f4dbe8d">
   <div class="header">
     <h3>app/controllers/current_plants_controller.rb</h3>
-    <h4><span class="red">32.61 %</span> covered</h4>
+    <h4><span class="red">30.95 %</span> covered</h4>
     <div>
-      <b>46</b> relevant lines. 
-      <span class="green"><b>15</b> lines covered</span> and
-      <span class="red"><b>31</b> lines missed.</span>
+      <b>42</b> relevant lines. 
+      <span class="green"><b>13</b> lines covered</span> and
+      <span class="red"><b>29</b> lines missed.</span>
     </div>
   </div>
   
@@ -1241,8 +1241,8 @@
           <code class="ruby">  def index</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="8">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="8">
+          
           
           <code class="ruby">    @current_plants = CurrentPlant.search_for(params[:search])</code>
         </li>
@@ -1388,7 +1388,7 @@
         <li class="missed" data-hits="0" data-linenumber="32">
           
           
-          <code class="ruby">      @n = Notification.new(current_plant_id: @current_plant.id, user_id: current_user.id, action: &#39;Create&#39;, changes_made: &#39;Created a new plant&#39;)</code>
+          <code class="ruby">      @n = Notification.new(current_plant_id: @current_plant.id, user_id: current_user.id, action: &#39;created&#39;)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="33">
@@ -1532,229 +1532,229 @@
         <li class="never" data-hits="" data-linenumber="56">
           
           
-          <code class="ruby">    #Notification</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="57">
           
           
-          <code class="ruby">    @current_plant.attributes = current_plant_params_no_photo</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="58">
-          
-          
-          <code class="ruby">    changes_made = @current_plant.changes.to_s</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="59">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="60">
-          
-          
           <code class="ruby">    if @current_plant.update(current_plant_params)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="61">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="62">
+        <li class="never" data-hits="" data-linenumber="58">
           
           
           <code class="ruby">      </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="63">
+        <li class="never" data-hits="" data-linenumber="59">
           
           
           <code class="ruby">      &quot;&quot;&quot;Create a new notification, for the admins&quot;&quot;&quot; </code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="64">
+        <li class="missed" data-hits="0" data-linenumber="60">
           
           
-          <code class="ruby">      @n = Notification.new(current_plant_id: @current_plant.id, user_id: current_user.id, action: &#39;Edit&#39;, changes_made: changes_made)</code>
+          <code class="ruby">      @n = Notification.new(current_plant_id: @current_plant.id, user_id: current_user.id, action: &#39;edited&#39;)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="65">
+        <li class="missed" data-hits="0" data-linenumber="61">
           
           
           <code class="ruby">      @n.save!</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="66">
+        <li class="never" data-hits="" data-linenumber="62">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="67">
+        <li class="never" data-hits="" data-linenumber="63">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="68">
+        <li class="missed" data-hits="0" data-linenumber="64">
           
           
           <code class="ruby">      redirect_to @current_plant</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="69">
+        <li class="never" data-hits="" data-linenumber="65">
           
           
           <code class="ruby">    else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="70">
+        <li class="missed" data-hits="0" data-linenumber="66">
           
           
           <code class="ruby">      render &#39;edit&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="71">
+        <li class="never" data-hits="" data-linenumber="67">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="72">
+        <li class="never" data-hits="" data-linenumber="68">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="73">
+        <li class="never" data-hits="" data-linenumber="69">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="74">
+        <li class="never" data-hits="" data-linenumber="70">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="75">
+        <li class="covered" data-hits="1" data-linenumber="71">
           <span class="hits">1</span>
           
           <code class="ruby">  def destroy</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="76">
+        <li class="missed" data-hits="0" data-linenumber="72">
           
           
           <code class="ruby">    @current_plant = CurrentPlant.find(params[:id])</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="77">
+        <li class="missed" data-hits="0" data-linenumber="73">
           
           
           <code class="ruby">    @current_plant.destroy</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="78">
+        <li class="never" data-hits="" data-linenumber="74">
           
           
           <code class="ruby"> </code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="79">
+        <li class="missed" data-hits="0" data-linenumber="75">
           
           
           <code class="ruby">    redirect_to current_plants_path</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="80">
+        <li class="never" data-hits="" data-linenumber="76">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="81">
+        <li class="never" data-hits="" data-linenumber="77">
           
           
           <code class="ruby">  </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="82">
+        <li class="covered" data-hits="1" data-linenumber="78">
           <span class="hits">1</span>
           
           <code class="ruby">  private</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="83">
+        <li class="never" data-hits="" data-linenumber="79">
           
           
           <code class="ruby">    </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="84">
+        <li class="covered" data-hits="1" data-linenumber="80">
           <span class="hits">1</span>
           
           <code class="ruby">    def current_plant_params</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="85">
+        <li class="missed" data-hits="0" data-linenumber="81">
           
           
           <code class="ruby">      params.require(:current_plant).permit(:name, :family, :genus, :species, :common_name, :scientific_name, :synonym, :subspecies, :description, :location_name, :characteristics, :additional_info, :identification, :physical, :general_info, :environment, :horticulture, :architectural_uses, :culture, :conservation, :wildlife, :architectural_info, :discovered_by, :named_by, :display_photo, :display_photo_file_name, :display_photo_content_type, :display_photo_file_size, :display_photo_description, :type_id, :climate_ids =&gt; [], :size_ids =&gt; [], :soil_type_ids =&gt; [], :origin_ids =&gt; [], :leaf_colour_ids =&gt; [], :flower_colour_ids =&gt; [], current_photos_attributes: [:id, :current_plant_id, :description, :image, :image_file_name, :image_content_type, :image_file_size, :image_updated_at])</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="86">
+        <li class="never" data-hits="" data-linenumber="82">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="87">
+        <li class="never" data-hits="" data-linenumber="83">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="88">
+        <li class="never" data-hits="" data-linenumber="84">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="85">
+          
+          
+          <code class="ruby">    # Before filters</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="86">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="87">
           <span class="hits">1</span>
           
-          <code class="ruby">    def current_plant_params_no_photo</code>
+          <code class="ruby">    def signed_in_user</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="88">
+          
+          
+          <code class="ruby">			if !signed_in?</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="89">
           
           
-          <code class="ruby">      params.require(:current_plant).permit(:name, :family, :genus, :species, :common_name, :scientific_name, :synonym, :subspecies, :description, :location_name, :characteristics, :additional_info, :identification, :physical, :general_info, :environment, :horticulture, :architectural_uses, :culture, :conservation, :wildlife, :architectural_info, :discovered_by, :named_by, :display_photo, :display_photo_file_name, :display_photo_content_type, :display_photo_file_size, :display_photo_description, :type_id, :climate_ids =&gt; [], :size_ids =&gt; [], :soil_type_ids =&gt; [], :origin_ids =&gt; [], :leaf_colour_ids =&gt; [], :flower_colour_ids =&gt; [])</code>
+          <code class="ruby">				flash[:error] = &quot;Please log in to access this page.&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="90">
+        <li class="missed" data-hits="0" data-linenumber="90">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">				redirect_to log_in_path</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="91">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">			end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="92">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="93">
           
           
-          <code class="ruby">    # Before filters</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="94">
@@ -1763,55 +1763,7 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="95">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    def signed_in_user</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="96">
-          
-          
-          <code class="ruby">			if !signed_in?</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="97">
-          
-          
-          <code class="ruby">				flash[:error] = &quot;Please log in to access this page.&quot;</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="98">
-          
-          
-          <code class="ruby">				redirect_to log_in_path</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="99">
-          
-          
-          <code class="ruby">			end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="100">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="101">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="102">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="103">
+        <li class="never" data-hits="" data-linenumber="95">
           
           
           <code class="ruby">end</code>
@@ -5396,24 +5348,6 @@
         <li class="never" data-hits="" data-linenumber="109">
           
           
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="110">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="111">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="112">
-          
-          
           <code class="ruby">end</code>
         </li>
       
@@ -5726,13 +5660,13 @@
         <li class="covered" data-hits="1" data-linenumber="7">
           <span class="hits">1</span>
           
-          <code class="ruby">	validates :action, presence: true, length: { maximum: 6 }</code>
+          <code class="ruby">	validates :action, presence: true, length: { maximum: 7 }</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="8">
           <span class="hits">1</span>
           
-          <code class="ruby">	validates :changes, presence: true, length: { maximum: 1000 }</code>
+          <code class="ruby">	validates :changes, length: { maximum: 1000 }				# Currently not in use. Can expand in future?</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="9">

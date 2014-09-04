@@ -1,53 +1,51 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title><%= full_title(yield(:title)).html_safe %></title>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= full_title(yield(:title)).html_safe %></title>
 
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
 
-	<!-- Bootstrap -->
-  <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+  	<!-- Bootstrap -->
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <% if @admin_page %>
+      <%= stylesheet_link_tag    "admin-pages", media: "all", "data-turbolinks-track" => true %>
+    <% end %>
 
-	<!-- Google Fonts -->
-	<link href='http://fonts.googleapis.com/css?family=Montserrat|Oxygen|Noto+Sans|Nunito' rel='stylesheet' type='text/css'>
+  	<!-- Google Fonts -->
+  	<link href='http://fonts.googleapis.com/css?family=Montserrat|Oxygen|Noto+Sans|Nunito' rel='stylesheet' type='text/css'>
 
-</head>
-<body>
+  </head>
+  <body>
 
-	<%= render 'layouts/navbar' %>
+    <%= render 'layouts/navbar' %>  
 
-  <div style="height: 64px"></div>
+    <div style="height: 64px"></div>
 
-	<%= yield %>
-  <!-- Uncomment for Debug <%= debug(params) if Rails.env.development? %> -->
-
-
-
-
-
+  	  <%= yield %>
+      <!-- Uncomment for Debug <%= debug(params) if Rails.env.development? %> -->
 
 
-  <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+      <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
-	
+  	
 
 
 
 
 
-</body>
+  </body>
 </html>

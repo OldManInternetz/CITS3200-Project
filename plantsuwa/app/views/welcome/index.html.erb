@@ -2,6 +2,12 @@
 
 <div class="padding-mobile">
 
+  <% if flash[:error] %>
+    <div class="alert alert-info" style="margin-top: 20px">
+        <p><%= flash[:error] %></p>
+    </div>
+  <% end %>
+
   <h2 style="text-align: center; margin-bottom: 35px">Welcome!</h2>
   <hr/>
   <br/>

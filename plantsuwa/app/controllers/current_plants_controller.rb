@@ -1,7 +1,8 @@
 class CurrentPlantsController < ApplicationController
   
   before_action :signed_in_user, only: [:new, :edit, :update, :create]
-  # Make sure only admins can destroy!
+  before_action :user_is_admin, only: [:destroy]
+
 
 
   def index
@@ -18,20 +19,14 @@ class CurrentPlantsController < ApplicationController
   
   def new
     @current_plant = CurrentPlant.new
-
     5.times { @current_plant.current_photos.build }
-
   end
   
   def create
     @current_plant = CurrentPlant.new(current_plant_params)
  
     if @current_plant.save
-
-      """Create a new notification, for the admins""" 
-      @n = Notification.new(current_plant_id: @current_plant.id, user_id: current_user.id, action: 'created')
-      @n.save!
-
+      create_notification('created')
       redirect_to @current_plant
     else
       render 'new'
@@ -52,15 +47,8 @@ class CurrentPlantsController < ApplicationController
 
   def update
     @current_plant = CurrentPlant.find(params[:id])
-
-
     if @current_plant.update(current_plant_params)
-      
-      """Create a new notification, for the admins""" 
-      @n = Notification.new(current_plant_id: @current_plant.id, user_id: current_user.id, action: 'edited')
-      @n.save!
-
-
+      create_notification('edited')
       redirect_to @current_plant
     else
       render 'edit'
@@ -70,8 +58,7 @@ class CurrentPlantsController < ApplicationController
 
   def destroy
     @current_plant = CurrentPlant.find(params[:id])
-    @current_plant.destroy
- 
+    @current_plant.destroy 
     redirect_to current_plants_path
   end
   
@@ -79,6 +66,13 @@ class CurrentPlantsController < ApplicationController
     
     def current_plant_params
       params.require(:current_plant).permit(:name, :family, :genus, :species, :common_name, :scientific_name, :synonym, :subspecies, :description, :location_name, :characteristics, :additional_info, :identification, :physical, :general_info, :environment, :horticulture, :architectural_uses, :culture, :conservation, :wildlife, :architectural_info, :discovered_by, :named_by, :display_photo, :display_photo_file_name, :display_photo_content_type, :display_photo_file_size, :display_photo_description, :type_id, :climate_ids => [], :size_ids => [], :soil_type_ids => [], :origin_ids => [], :leaf_colour_ids => [], :flower_colour_ids => [], current_photos_attributes: [:id, :current_plant_id, :description, :image, :image_file_name, :image_content_type, :image_file_size, :image_updated_at])
+    end
+
+
+
+    def create_notification(action)
+      Notification.create(current_plant_id: @current_plant.id, user_id: current_user.id, action: action)
+      # Note: this can be expanded to specify what was changed, if anything, but it's a bit difficult to do at this stage.
     end
 
 
@@ -90,6 +84,9 @@ class CurrentPlantsController < ApplicationController
 				redirect_to log_in_path
 			end
     end
+
+
+
 
 
 end

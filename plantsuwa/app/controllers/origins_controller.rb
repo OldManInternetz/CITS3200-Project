@@ -1,5 +1,7 @@
 class OriginsController < ApplicationController
 
+  before_filter :this_is_an_admin_page
+
   def index
     @origins = Origin.all
   end
@@ -10,9 +12,11 @@ class OriginsController < ApplicationController
   
   def create
     @origin = Origin.new(origin_params)
- 
-    @origin.save
-    redirect_to origins_path
+    if @origin.save
+      redirect_to origins_path
+    else
+      render 'new'
+    end
   end
   
   def show

@@ -1,0 +1,44 @@
+
+body {
+  background: #111111;
+  color: white;
+}
+
+
+
+h1, h2, h3, h4, h5, h6, th, legend {
+	font-family: 'Montserrat', sans-serif;
+	color: white;
+}
+
+
+p, td, label, dd, dt, a, strong, ul, li {
+	font-family: 'Oxygen', sans-serif;
+	color: white;
+}
+
+input {
+	color: black;
+}
+
+.navbar {
+	background: white;
+	color: black;
+}
+
+.navbar-brand * {
+	color: black;
+}
+
+.navbar-toggle {
+	background: #222222;
+}
+
+.nav {
+	background: white;
+	color: black;
+}
+
+.nav li a:hover {
+	color: black !important;
+}

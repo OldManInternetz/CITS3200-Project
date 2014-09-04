@@ -1,5 +1,8 @@
 class ClimatesController < ApplicationController
   
+  # before: check if admin
+  before_filter :this_is_an_admin_page
+
   def index
     @climates = Climate.all
   end
@@ -10,9 +13,11 @@ class ClimatesController < ApplicationController
   
   def create
     @climate = Climate.new(climate_params)
- 
-    @climate.save
-    redirect_to climates_path
+    if @climate.save
+      redirect_to climates_path
+    else
+      render 'new'
+    end
   end
   
   def show
