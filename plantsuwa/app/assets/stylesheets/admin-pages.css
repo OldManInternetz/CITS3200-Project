@@ -1,7 +1,12 @@
 
 body {
+  background: black;
+}
+
+.container {
   background: #111111;
-  color: white;
+  color: white;	
+  box-shadow: 2px 0 7px #111111, -2px 0 7px #111111;
 }
 
 
@@ -21,9 +26,15 @@ input {
 	color: black;
 }
 
-.navbar {
+.navbar, .nav {
 	background: white;
 	color: black;
+
+  background: -webkit-linear-gradient(#DDDDDD, white, #DDDDDD); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#DDDDDD, white, #DDDDDD); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#DDDDDD, white, #DDDDDD); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#DDDDDD, white, #DDDDDD); /* Standard syntax */
+
 }
 
 .navbar-brand * {
@@ -34,10 +45,6 @@ input {
 	background: #222222;
 }
 
-.nav {
-	background: white;
-	color: black;
-}
 
 .nav li a:hover {
 	color: black !important;
