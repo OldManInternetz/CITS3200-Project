@@ -10,36 +10,7 @@
 <!-- To allow for space for the group headings -->
 <div style="height: 10px"></div>
 
-<% @current_plants.each do |plant| %>
-
-  <div class="plant-index-box">
-    <div class="plant-index-box-photo">
-	    <%= image_tag plant.display_photo.url(:thumb), width:"63px", height:"63px", alt:"Plant photo" %>
-    </div>
-    <div class="plant-index-box-content">
-      <div class="center-wrapper">
-        <div class="center-wrapper-inner">
-          <%= link_to current_plant_path(plant) do %>
-            <p style="text-align: center; margin-bottom: 0px; font-size: 120%"><strong><%= truncate(plant.name, length: 20) %></strong></p>
-          <% end %>
-
-          <% if !plant.scientific_name.blank? %>
-            <%= link_to current_plant_path(plant) do %>
-              <p style="text-align: center"><i><%= truncate(plant.scientific_name, length: 20) %></i></p>
-            <% end %>
-          <% end %>
-        </div>
-      </div>
-    </div>
-    <%= link_to current_plant_path(plant) do %>
-      <div class="plant-index-box-chevron">
-        <i class="fa fa-chevron-right"></i>
-      </div>
-    <% end %>
-  </div>
-
-
-<% end %>
+<%= render @current_plants %>
 
 <!-- To allow space for the bottom tabs -->
 <div style="height: 40px"></div>

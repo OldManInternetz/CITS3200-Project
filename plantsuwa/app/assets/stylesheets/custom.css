@@ -34,14 +34,14 @@ p {
 
 
 table td, th {
-  border-left: 0 !important;
-  border-right: 0 !important;
+  border-left: 0;
+  border-right: 0;
 }
 
 
 table th .bordered {
-  border-left: 1px solid gray !important;
-  border-right: 0 !important;
+  border-left: 1px solid gray;
+  border-right: 0;
 }
 
 table td span {
@@ -149,8 +149,8 @@ label {
   margin-top: 15px;
 }
 
-.help-block {
-  margin-bottom: 0px !important;
+.help-block p {
+  margin-bottom: 0px;
 }
 
 
@@ -220,12 +220,10 @@ textarea {
 .center-wrapper {
   display: table;
   margin: 0 auto;
-
 }
 
 .center-wrapper-inner {
-  display: inline-block;
- 
+  display: inline-block; 
 }
 
 
@@ -237,6 +235,10 @@ textarea {
 .info-body p {
   margin-left: 10px;
   margin-bottom: 20px;
+}
+
+.info-body .help-block {
+  margin-bottom: 0;
 }
 
 
@@ -372,7 +374,7 @@ textarea {
 } 
 
 .navbar-brand {
-  color: #bbb !important;
+  color: #bbb;
 }
 
 .navbar-collapse :hover {
@@ -389,11 +391,15 @@ textarea {
   margin-left: -10px;
   font-size: small;
   width: 100%;
+  left: 0;
 }
 
 .navbar-title-block p {
+  position: absolute;
+  right: 25px;
   text-align: center;
   color: white;
+  width: 100%;
 }
 
 .navbar-prev-page-block {
@@ -404,6 +410,7 @@ textarea {
   left: 0;
   width: auto;
   padding-right: 0;
+  z-index: 1100;
 }
 
 .navbar-uwacrest-block {
@@ -434,7 +441,7 @@ textarea {
 }
 
 .navbar-admin-tab p:hover {
-  color: #FFB300;
+  color: #268BFF;
   -webkit-transition: color 0.2s linear;
   -moz-transition: color 0.2s linear;
   -ms-transition: color 0.2s linear;

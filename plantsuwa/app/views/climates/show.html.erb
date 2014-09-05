@@ -1,0 +1,23 @@
+<% provide(:title, @climate.name) %>
+<% provide(:prev_page, 'Climates') %>
+<% provide(:prev_link, climates_path) %> <!-- Change later -->
+
+
+	<h1 class="h1-shrink"><span class="preceding-heading"><%= link_to 'Climates', climates_path %> <i class="fa fa-chevron-right"></i></span> <%= @climate.name %></h1>
+		<div class="btn-group">
+
+			<%= link_to edit_climate_path(@climate), class: 'btn-top btn btn-orange button-shrink', style: 'float: left;' do %>
+				<i class="fa fa-edit"></i><span class="over-500">&nbsp;&nbsp;Edit</span>
+			<% end %>
+			<%= link_to climate_path(@climate), method: :delete, data: { confirm: 'WARNING: Are you sure you want to DELETE this Climate? Doing so will affect all plants with this climate!'}, class: 'btn-top btn btn-orange button-shrink', style: 'float: right;' do %>
+				<i class="fa fa-trash-o"></i><span class="over-500">&nbsp;&nbsp;Delete</span>
+			<% end %>
+
+		</div>
+<hr/>
+
+
+
+
+
+<%= render 'layouts/bottom_tabs_admin' %>

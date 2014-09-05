@@ -1,7 +1,12 @@
-<h1> Edit Climate </h1>
+<% provide(:title, 'Edit Climate') %>
+<% provide(:prev_page, 'Climates') %>
+<% provide(:prev_link, climates_path) %>
+
+<h1 class="h1-shrink">Edit Climate</h1>
+<hr/>
 
 <strong>Note that these changes be applied to all plants with this climate.</strong>
 
 <%= render 'form' %>
  
-<%= link_to 'Back', climates_path, class: 'btn-primary' %>
+<%= link_to 'Back', climates_path, class: 'btn btn-primary' %>

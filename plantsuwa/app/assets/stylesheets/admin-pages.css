@@ -1,6 +1,6 @@
 
 body {
-  background: #0F0F0F;
+  background: #222222;
 }
 
 .container {
@@ -11,13 +11,18 @@ body {
 
 
 
-h1, h2, h3, h4, h5, h6, th, legend {
+h1, h2, h3, h4, h5, h6, legend {
+	font-family: 'Montserrat', sans-serif;
+	color: #FFB300;
+}
+
+th {
 	font-family: 'Montserrat', sans-serif;
 	color: white;
 }
 
 
-p, td, label, dd, dt, a, strong, ul, li {
+p, td, label, dd, dt, a, ul, li {
 	font-family: 'Oxygen', sans-serif;
 	color: white;
 }
@@ -37,12 +42,34 @@ input {
 
 }
 
-.navbar-brand * {
+.navbar-inverse .navbar-brand {
 	color: black;
 }
 
-.navbar-brand-custom:hover *, .navbar-prev-page-block:hover {
-  color: #268BFF !important;
+strong {
+	color: black;
+}
+
+.padding-mobile > strong {
+	color: white;
+}
+
+.admin-pages-tab li a {
+	color: #333;
+}
+
+
+.navbar-prev-page-block {
+	color: black;
+}
+
+.navbar-prev-page-block i {
+	color: #444444;
+}
+
+.navbar-brand-custom:hover *, .navbar-prev-page-block:hover, a:hover, .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .center-wrapper-inner > li > a:hover, a > p:hover, .preceding-heading > a:hover, .navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus, a:focus  {
+  color: #FFB300;
+  text-decoration: none;
 
   -webkit-transition: color 0.2s linear;
   -moz-transition: color 0.2s linear;
@@ -51,16 +78,6 @@ input {
   transition: color 0.2s linear;
 
 }
-
-.navbar-prev-page-block {
-	color: black !important;
-}
-
-.navbar-prev-page-block i {
-	color: #444444 !important;
-}
-
-
 
 
 
@@ -73,8 +90,8 @@ input {
 }
 
 
-.nav li a:hover {
-	color: black !important;
+.navbar-inverse .navbar-nav > li > a:focus, .navbar-inverse .navbar-nav > li > a:hover{
+	color: black;
 }
 
 .navbar-admin-tab {
@@ -86,7 +103,7 @@ input {
 }
 
 .navbar-admin-tab p:hover {
-  color: #268BFF;
+  color: #FFB300;
 }
 
 .navbar-admin-tab:before {
@@ -101,3 +118,122 @@ input {
   background-repeat: no-repeat;  
 }
 
+
+
+
+table, .table > tbody > tr > td, .table > thead > tr > th, .table-responsive {
+	border: 0;
+}
+
+.table-striped>tbody>tr:nth-child(even)>td, 
+.table-striped>tbody>tr:nth-child(even)>th {
+  background: none;
+ }
+
+.table-striped>tbody>tr:nth-child(odd)>td, 
+.table-striped>tbody>tr:nth-child(odd)>th {
+  background: #222;
+ }
+
+tr:nth-child(odd) td:first-child {
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+
+tr:nth-child(odd) td:last-child {
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+hr {
+	border-top: 1px solid #333;
+}
+
+.btn-orange {
+	border-color: #D6880B;
+	background: #EB9100;
+}
+
+.btn-orange:hover, .btn-orange:focus {
+	background: #FFA81C;
+	border-color: #EB9100;
+	color: white;
+}
+
+.btn-centered {
+	width: 120px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: -9px;
+	background: green !important;
+}
+
+.item-counter {
+	font-size: x-large;
+	color: #777;
+	margin-left: 10px;
+}
+
+
+.admin-pages-tab {
+	background: white;
+	color: black;
+  position: fixed;
+  bottom: 0;
+  height: 40px;
+  padding: 0 7px;
+  padding-top: 9px;
+
+  background: -webkit-linear-gradient(#DDDDDD, white, #DDDDDD); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#DDDDDD, white, #DDDDDD); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#DDDDDD, white, #DDDDDD); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#DDDDDD, white, #DDDDDD); /* Standard syntax */
+}
+
+.admin-pages-tab-left {
+	left: 0;
+	width: 25%;
+	min-width: 150px;
+	padding-top: 11px;
+}
+
+.admin-pages-tab-right {
+	left: 25%;
+	width: 75%;
+}
+
+.admin-pages-tab p {
+	color: black;
+	font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  font-size: small;
+}
+
+.center-wrapper >.center-wrapper-inner > li {
+	display: inline;
+	list-style-type: none;
+	padding-right: 25px;
+	font-size: small;
+}
+
+.centered {
+	display: inline-block;
+	background: green;
+	margin: 0 auto;
+}
+
+.preceding-heading, .preceding-heading > a {
+	color: #666;
+	font-size: large;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.padding-mobile > .btn-group {
+	width: auto;
+	float: right;
+	margin-top: -45px;
+}
+
+.btn-top {
+	width: 100px;
+}
