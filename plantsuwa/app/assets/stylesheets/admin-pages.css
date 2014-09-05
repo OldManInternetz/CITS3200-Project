@@ -1,12 +1,12 @@
 
 body {
-  background: black;
+  background: #0F0F0F;
 }
 
 .container {
-  background: #111111;
+  background: #0A0A0A;
   color: white;	
-  box-shadow: 2px 0 7px #111111, -2px 0 7px #111111;
+  box-shadow: 2px 0 3px #0A0A0A, -2px 0 3px #0A0A0A;
 }
 
 
@@ -26,7 +26,7 @@ input {
 	color: black;
 }
 
-.navbar, .nav {
+.navbar {
 	background: white;
 	color: black;
 
@@ -41,11 +41,63 @@ input {
 	color: black;
 }
 
+.navbar-brand-custom:hover *, .navbar-prev-page-block:hover {
+  color: #268BFF !important;
+
+  -webkit-transition: color 0.2s linear;
+  -moz-transition: color 0.2s linear;
+  -ms-transition: color 0.2s linear;
+  -o-transition: color 0.2s linear;
+  transition: color 0.2s linear;
+
+}
+
+.navbar-prev-page-block {
+	color: black !important;
+}
+
+.navbar-prev-page-block i {
+	color: #444444 !important;
+}
+
+
+
+
+
 .navbar-toggle {
 	background: #222222;
+}
+
+.navbar-collapse {
+	border: none;
 }
 
 
 .nav li a:hover {
 	color: black !important;
 }
+
+.navbar-admin-tab {
+	background: #DDDDDD;
+}
+
+.navbar-admin-tab p {
+	color: black;
+}
+
+.navbar-admin-tab p:hover {
+  color: #268BFF;
+}
+
+.navbar-admin-tab:before {
+  background: url('tab-corner-left-white-1.png');
+  background-size: 30px 30px;
+  background-repeat: no-repeat;  
+}
+
+.navbar-admin-tab:after {
+  background: url('tab-corner-right-white-1.png');
+  background-size: 30px 30px;
+  background-repeat: no-repeat;  
+}
+

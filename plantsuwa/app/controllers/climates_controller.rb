@@ -3,6 +3,8 @@ class ClimatesController < ApplicationController
   # before: check if admin
   before_filter :this_is_an_admin_page
 
+
+
   def index
     @climates = Climate.all
   end

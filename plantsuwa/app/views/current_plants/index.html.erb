@@ -33,7 +33,7 @@
     </div>
     <%= link_to current_plant_path(plant) do %>
       <div class="plant-index-box-chevron">
-        <span class="glyphicon glyphicon-chevron-right"></span>
+        <i class="fa fa-chevron-right"></i>
       </div>
     <% end %>
   </div>
@@ -46,7 +46,7 @@
 
 <% if signed_in? %>
   <div style="height: 30px"></div>
-  <%= render 'action_tab_unknown' %>
+  <%= render 'action_tab_favourites' %>
   <%= render 'action_tab_new' %>
 <% end %>
 

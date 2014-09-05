@@ -13,7 +13,7 @@ module SessionsHelper
 
   def is_trusted?
 		if signed_in?
-    	current_user.admin == 1
+    	current_user.trusted?
 		else
 			false
 		end
@@ -21,7 +21,7 @@ module SessionsHelper
 
   def is_admin?
 		if signed_in?
-    	current_user.admin == 2       # I guess '2' is admin for now. '1' is trusted user
+    	current_user.admin?
 		else
 			false
 		end

@@ -11,4 +11,5 @@
  *= require_self
  *= require custom.css
  *= require media-queries.css
+ *= require font-awesome
  */

@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   end
 
   def this_is_an_admin_page
-		#user_is_admin				# Check if the user is an admin
+		user_is_admin				# Check if the user is an admin
   	@admin_page = true	# Make sure Rails knows that the page is an admin page
   end
 
