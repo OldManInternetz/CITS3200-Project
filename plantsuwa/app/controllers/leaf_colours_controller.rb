@@ -1,5 +1,9 @@
 class LeafColoursController < ApplicationController
 
+  before_filter :user_is_admin
+  layout 'admin_layout'
+
+
   def index
     @leaf_colours = LeafColour.all
   end
@@ -10,13 +14,17 @@ class LeafColoursController < ApplicationController
   
   def create
     @leaf_colour = LeafColour.new(leaf_colour_params)
- 
-    @leaf_colour.save
-    redirect_to leaf_colours_path
+    if @leaf_colour.save
+      redirect_to leaf_colours_path
+    else
+      render 'new'
+    end
   end
   
   def show
     @leaf_colour = LeafColour.find(params[:id])
+
+    @current_plants = @leaf_colour.current_plants.all
   end
   
   def edit

@@ -39,7 +39,7 @@
 	            	<% if is_admin?%>
 	            		Logged in as <span style="color: #FFB300"><i class="fa fa-star"></i>&nbsp;<%= current_user.username %></span> (Log out)
 	            	<% elsif is_trusted? %>
-	            		Logged in as <span style="color: #268BFF"><i class="fa fa-star-o"></i>&nbsp;<%= current_user.username %></span> (Log out)
+	            		Logged in as <span style="color: #268BFF"><i class="fa fa-star-half"></i>&nbsp;<%= current_user.username %></span> (Log out)
 	            	<% else %>
 	            		Logged in as <%= current_user.username %></span> (Log out)
 	            	<% end %>

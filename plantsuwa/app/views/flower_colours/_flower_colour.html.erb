@@ -1,6 +1,6 @@
 <tr>
 	<td>#<%= flower_colour.id %></td>
-	<td><div class="colour-circle" id="circle-<%= flower_colour.id %>"></div><%= link_to flower_colour.name, flower_colour_path(flower_colour) %></td>
+	<td><div class="colour-circle" style="background: <%= (flower_colour.name).gsub(/\s+/, '') %>"></div><%= link_to flower_colour.name, flower_colour_path(flower_colour) %></td>
 	<td class="td-shrink">
 	<%= link_to edit_flower_colour_path(flower_colour) do %>
 		<i class="fa fa-edit"></i><span class="over-400">&nbsp;&nbsp;Edit</span>

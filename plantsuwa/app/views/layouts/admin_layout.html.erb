@@ -22,20 +22,21 @@
   </head>
   <body>
     <%= render 'layouts/navbar' %>
-      <div class="navbar-admin-tab">
-        <%= link_to current_plants_path do %>
+      <%= link_to current_plants_path do %>
+        <div class="navbar-admin-tab">
           <p><i class="fa fa-tree"></i>&nbsp;&nbsp;Plants List</p>
-        <%end%>
-      </div>
+        </div>
+      <% end %>
 
     <div class="container">
       <div style="height: 64px"></div>
         <div class="padding-mobile">
           <%= yield %>
+          <div style="height: 40px"></div>
         </div>
       </div>
     </div>
-    <div style="height: 30px"></div>
+
     <!-- Uncomment for Debug <%= debug(params) if Rails.env.development? %> -->
     <%= render 'admin_pages/bottom_tabs_admin' %>
 

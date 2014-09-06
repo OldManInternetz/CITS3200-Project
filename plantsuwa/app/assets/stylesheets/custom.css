@@ -440,7 +440,16 @@ textarea {
   font-family: 'Montserrat', sans-serif; 
 }
 
-.navbar-admin-tab p:hover {
+.navbar-admin-tab:hover p {
+  color: #268BFF;
+  -webkit-transition: color 0.2s linear;
+  -moz-transition: color 0.2s linear;
+  -ms-transition: color 0.2s linear;
+  -o-transition: color 0.2s linear;
+  transition: color 0.2s linear;
+}
+
+.navbar-admin-tab:active p {
   color: #268BFF;
   -webkit-transition: color 0.2s linear;
   -moz-transition: color 0.2s linear;
@@ -495,12 +504,6 @@ textarea {
   background: white;
 }
 
-.circle-large {
-  float: none;
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-}
 
 
 

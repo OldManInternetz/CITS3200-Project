@@ -1,21 +1,23 @@
-<h1>Listing Leaf Colours</h1>
+<% provide(:title, 'Leaf Colours List') %>
+<% provide(:prev_page, 'Admin') %>
+<% provide(:prev_link, admin_path) %>
 
-<%= link_to 'New Leaf Colour', new_leaf_colour_path %>
 
-<table>
-	<tr>
-		<th>ID</th>
-		<th>Name</th>
-	</tr>
+	<h1 class="h1-shrink">All Leaf Colours<span class="item-counter">(<%= @leaf_colours.count %>)</span></h1>
+		<%= link_to '<i class="fa fa-plus"></i>&nbsp;&nbsp;New Leaf Colour'.html_safe, new_leaf_colour_path, class: 'btn btn-orange button-shrink', style: 'float: right; margin-top: -45px'%>
+<hr/>
+
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th style="width: 5%">ID</th>
+			<th>Name</th>
+			<th style="width: 90px;" class="th-shrink"></th>
+			<th style="width: 90px;" class="th-shrink"></th>
+		</tr>
+	</thead>
 	
-	<% @leaf_colours.each do |leaf_colour| %>
-	<tr>
-		<td>#<%= leaf_colour.id %></td>
-		<td><%= leaf_colour.name %></td>
-		<td><%= link_to 'Edit', edit_leaf_colour_path(leaf_colour) %></td>
-		<td><%= link_to 'Delete', leaf_colour_path(leaf_colour), method: :delete, data: { confirm: 'WARNING: Are you sure you want to DELETE this Leaf Colour? Doing so will affect all plants with this leaf colour!'} %></td>
-	</tr>
-	<% end %>
+	<%= render @leaf_colours %>
 </table>
-<br>
-<strong>Total Number of Leaf Colours: </strong><%= @leaf_colours.count %>
+

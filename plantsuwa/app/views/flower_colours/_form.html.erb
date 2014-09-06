@@ -1,4 +1,4 @@
-<%= simple_form_for(@flower_colour, html: { class: 'form-horizontal' , :'accept-charset' => "UTF-8"}, defaults: { input_html: { class: 'form-control' } }) do |f| %>
+<%= simple_form_for(@flower_colour, html: { class: 'form-horizontal' , :'accept-charset' => "UTF-8"}, defaults: { input_html: { class: 'form-control form-control-90' } }) do |f| %>
   <% if @flower_colour.errors.any? %>
   <div id="error_explanation">
     <br/>
@@ -12,10 +12,31 @@
   <% end %>
   
   <fieldset>
-	  <%= f.input  :name, autofocus: true %>
+
+    <div style="width: 100%">
+      <% if @flower_colour.new_record? %>
+        <div class="colour-circle circle-xlarge" id="circle"></div>
+      <% else %>
+        <div class="colour-circle circle-xlarge" id="circle" style="background: <%= (@flower_colour.name).gsub(/\s+/, '') %>"></div>
+      <% end %>
+      <div class="form-control-wrapper">
+  	    <%= f.input  :name, autofocus: true %>
+      </div>
+    </div>
     <br/>
-    <p>Use any of the colours listed <a href="http://www.w3schools.com/cssref/css_colornames.asp" style="font-weight: 700" target="_blank">here</a> and the colour will be displayed whenever the name of the colour is mentioned.</p>
+    <p>Use any of the colours listed <a href="http://www.w3schools.com/cssref/css_colornames.asp" style="font-weight: 700;" target="_blank">here</a> and the colour will be displayed whenever the name of the colour is mentioned.</p>
   </fieldset> 
   <hr/>
   <%= f.submit class: 'btn btn-orange' %>
 <% end %>
+
+<script>
+  // Replaces the colour of the circle with the colour in the input, if any. If the colour is not a valid colour, it will show as white.
+
+  $('#flower_colour_name').keyup(function() {
+    var col = $('#flower_colour_name').val().replace(/ /g,'');
+    $('#circle').css('background', 'white');
+    $('#circle').css('background', col);
+  });
+</script>
+

@@ -1,2 +1,228 @@
-<h1>AdminPages#index</h1>
-<p>Find me in app/views/admin_pages/index.html.erb</p>
+<% provide(:title, 'Administration') %>
+<% provide(:prev_page, 'Home') %>
+<% provide(:prev_link, root_path) %>
+
+<h1 class="h1-shrink">Administration Dashboard</h1>
+<hr/>
+
+<div class="row admin-pages-row">
+
+	<%= link_to notifications_path do %>
+		<div class="admin-pages-column">
+			<div class="admin-pages-box apb-1">
+				<div class="admin-page-heading">
+					<i class="fa fa-bell"></i>&nbsp;&nbsp;Notifications&nbsp;&nbsp;<span style="color: #777">(<%= @notifications_count %>)
+				</div>			
+			</div>
+		</div>
+	<% end %>
+
+	<%= link_to users_path do %>
+		<div class="admin-pages-column">
+			<div class="admin-pages-box apb-2">
+
+				<div class="admin-page-heading">
+					<i class="fa fa-users"></i>&nbsp;&nbsp;Users&nbsp;&nbsp;<span style="color: #777">(<%= @users_count %>)
+				</div>
+				
+			</div>
+		</div>
+	<% end %>
+
+	<%= link_to current_plants_path do %>
+		<div class="admin-pages-column">
+			<div class="admin-pages-box apb-3">
+
+				<div class="admin-page-heading">
+					<i class="fa fa-users"></i>&nbsp;&nbsp;Plants&nbsp;&nbsp;<span style="color: #777">(<%= @current_plants_count %>)
+				</div>
+				
+			</div>
+		</div>
+	<% end %>
+
+	<%= link_to types_path do %>
+		<div class="admin-pages-column">
+			<div class="admin-pages-box apb-4">
+
+				<div class="admin-page-heading">
+					<i class="fa fa-photo"></i>&nbsp;&nbsp;Photos&nbsp;&nbsp;<span style="color: #777">(<%= @current_photos_count %>)
+				</div>
+				
+			</div>
+		</div>
+	<% end %>
+
+</div>
+<div class="row admin-pages-row">
+
+	<%= link_to climates_path do %>
+		<div class="admin-pages-column">
+			<div class="admin-pages-box apb-5">
+
+				<div class="admin-page-heading">
+					<i class="fa fa-cloud"></i>&nbsp;&nbsp;Climates&nbsp;&nbsp;<span style="color: #777">(<%= @climates_count %>)
+				</div>
+				
+			</div>
+		</div>
+	<% end %>
+
+
+	<%= link_to origins_path do %>
+		<div class="admin-pages-column">
+			<div class="admin-pages-box apb-6">
+
+				<div class="admin-page-heading">
+					<i class="fa fa-globe"></i>&nbsp;&nbsp;Origins&nbsp;&nbsp;<span style="color: #777">(<%= @origins_count %>)
+				</div>
+				
+			</div>
+		</div>
+	<% end %>
+
+	<%= link_to flower_colours_path do %>
+		<div class="admin-pages-column">
+			<div class="admin-pages-box apb-7">
+
+				<div class="admin-page-heading">
+					<i class="fa fa-adjust"></i>&nbsp;&nbsp;Flower Colours&nbsp;&nbsp;<span style="color: #777">(<%= @flower_colours_count %>)
+				</div>
+				
+			</div>
+		</div>
+	<% end %>
+
+	<%= link_to leaf_colours_path do %>
+		<div class="admin-pages-column">
+			<div class="admin-pages-box apb-8">
+
+				<div class="admin-page-heading">
+					<i class="fa fa-leaf"></i>&nbsp;&nbsp;Leaf Colours&nbsp;&nbsp;<span style="color: #777">(<%= @leaf_colours_count %>)
+				</div>
+				
+			</div>
+		</div>
+	<% end %>
+
+</div>
+<div class="row admin-pages-row">
+
+	<%= link_to sizes_path do %>
+		<div class="admin-pages-column">
+			<div class="admin-pages-box apb-9">
+
+				<div class="admin-page-heading">
+					<i class="fa fa-arrows-h"></i>&nbsp;&nbsp;Sizes&nbsp;&nbsp;<span style="color: #777">(<%= @sizes_count %>)
+				</div>
+				
+			</div>
+		</div>
+	<% end %>
+
+
+	<%= link_to soil_types_path do %>
+		<div class="admin-pages-column">
+			<div class="admin-pages-box apb-10">
+
+				<div class="admin-page-heading">
+					<i class="fa fa-tint"></i>&nbsp;&nbsp;Soil Types&nbsp;&nbsp;<span style="color: #777">(<%= @soil_types_count %>)
+				</div>
+				
+			</div>
+		</div>
+	<% end %>
+
+	<%= link_to types_path do %>
+		<div class="admin-pages-column">
+			<div class="admin-pages-box apb-11">
+
+				<div class="admin-page-heading">
+					<i class="fa fa-cubes"></i>&nbsp;&nbsp;Types&nbsp;&nbsp;<span style="color: #777">(<%= @types_count %>)
+				</div>
+				
+			</div>
+		</div>
+	<% end %>
+
+
+
+
+</div>
+
+
+
+
+
+
+	<div class="table-list-admin">
+		<table class="table table-striped">
+
+			<tr>
+				<td><i class="fa fa-bell"></i>
+				<td><%= link_to 'Notifications', notifications_path %></td>
+				<td><%= @notifications_count %></td>
+			</tr>
+			<tr>
+				<td><i class="fa fa-users"></i>
+				<td><%= link_to 'Users', users_path %></td>
+				<td><%= @users_count %></td>
+			</tr>
+		</table>
+
+		<hr/>
+
+		<table class="table table-striped table-responsive">
+
+
+			<tr>
+				<td><i class="fa fa-tree"></i>
+				<td><%= link_to 'Plants', current_plants_path %></td>
+				<td><%= @current_plants_count %></td>
+			</tr>
+			<tr>
+				<td><i class="fa fa-photo"></i>
+				<td><%= link_to 'Photos', types_path %></td>
+				<td><%= @current_photos_count %></td>
+			</tr>
+			<tr>
+				<td><i class="fa fa-cloud"></i>
+				<td><%= link_to 'Climates', climates_path %></td>
+				<td><%= @climates_count %></td>
+			</tr>
+			<tr>
+				<td><i class="fa fa-adjust"></i>
+				<td><%= link_to 'Flower Colours', flower_colours_path %></td>
+				<td><%= @flower_colours_count %></td>
+			</tr>
+			<tr>
+				<td><i class="fa fa-leaf"></i>
+				<td><%= link_to 'Leaf Colours', leaf_colours_path %></td>
+				<td><%= @leaf_colours_count %></td>
+			</tr>
+			<tr>
+				<td><i class="fa fa-globe"></i>
+				<td><%= link_to 'Origins', origins_path %></td>
+				<td><%= @origins_count %></td>
+			</tr>
+			<tr>
+				<td><i class="fa fa-arrows-h"></i>
+				<td><%= link_to 'Sizes', sizes_path %></td>
+				<td><%= @sizes_count %></td>
+			</tr>
+			<tr>
+				<td><i class="fa fa-tint"></i>
+				<td><%= link_to 'Soil Types', soil_types_path %></td>
+				<td><%= @soil_types_count %></td>
+			</tr>
+			<tr>
+				<td><i class="fa fa-cubes"></i>
+				<td><%= link_to 'Types', types_path %></td>
+				<td><%= @types_count %></td>
+			</tr>
+		</table>
+	</div>
+	<hr/>
+</div>
+
+
