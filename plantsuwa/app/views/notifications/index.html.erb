@@ -19,7 +19,7 @@
       <tr>
         <td><%= notification.user.username %></td>
         <td><%= notification.action %></td>
-        <td><%= link_to notification.current_plant.name, current_plant_path(id: notification.current_plant.id) %></td>
+        <td><%= link_to notification.current_plant.name, notification.current_plant %></td>
         <td><%= notification.created_at.to_s(:short) %></td>
         <td></td>
         <td><%= link_to 'Show', notification %></td>

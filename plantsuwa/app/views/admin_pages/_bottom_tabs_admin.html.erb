@@ -1,5 +1,5 @@
 <div class="admin-pages-tab admin-pages-tab-left">
-	<%= link_to current_plants_path do %>
+	<%= link_to admin_path do %>
  		<p><i class="fa fa-gavel"></i>&nbsp;&nbsp;Administration</p>
   <% end %>
 </div>
@@ -7,12 +7,12 @@
 	<div class="over-768">
 		<div class="center-wrapper">
 			<div class="center-wrapper-inner">
- 				<%= render 'layouts/other_tables_list' %>
+ 				<%= render 'admin_pages/other_tables_list' %>
  			</div>
  		</div>
  	</div>
 	<div class="under-768">
- 		<%= render 'layouts/other_tables_button' %> 
+ 		<%= render 'admin_pages/other_tables_button' %> 
  	</div>
 </div>
 

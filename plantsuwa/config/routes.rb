@@ -1,5 +1,7 @@
 Plantsuwa::Application.routes.draw do
 
+
+  match "/admin", to: 'admin_pages#index', via: 'get'
   resources :notifications
 
   root 'welcome#index'

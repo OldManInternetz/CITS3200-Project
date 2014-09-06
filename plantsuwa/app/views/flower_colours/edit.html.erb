@@ -1,7 +1,10 @@
-<h1> Edit Flower Colour </h1>
+<% provide(:title, 'Edit Flower Colour') %>
+<% provide(:prev_page, 'Flower Colour') %>
+<% provide(:prev_link, flower_colours_path) %>
+
+<h1 class="h1-shrink">Edit Flower Colour</h1>
+<hr/>
 
 <strong>Note that these changes be applied to all plants with this flower colour.</strong>
 
 <%= render 'form' %>
- 
-<%= link_to 'Back', flower_colours_path, class: 'btn-primary' %>

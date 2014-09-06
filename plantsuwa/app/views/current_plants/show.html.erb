@@ -70,18 +70,18 @@
       </ul>
 	  <% end %>
 	  <% if @current_plant.flower_colours.any? %>
-		  <dt>Flower Colour</dt>
+		  <dt>Flower Colours</dt>
       <ul>
 		  <% for @flower_colour in @current_plant.flower_colours %>
-			  <li> <%= @flower_colour.name %> </li>
+			  <li><div class="colour-circle" style="background: <%= (@flower_colour.name).gsub(/\s+/, '') %>"></div><%= @flower_colour.name %></li>
 		  <% end %>
       </ul>
 	  <% end %>
 	  <% if @current_plant.leaf_colours.any? %>
-		  <dt>Leaf Colour</dt>
+		  <dt>Leaf Colours</dt>
       <ul>
 		  <% for @leaf_colour in @current_plant.leaf_colours %>
-			  <li> <%= @leaf_colour.name %> </li>
+			  <li><div class="colour-circle" style="background: <%= (@leaf_colour.name).gsub(/\s+/, '') %>"></div><%= @leaf_colour.name %></li>
 		  <% end %>
       </ul>
 	  <% end %>
@@ -260,6 +260,7 @@
     $('.info-tab').removeClass("info-tab-current");
     $('#btn-photos').addClass("info-tab-current");
   });
+
 
 
 </script>

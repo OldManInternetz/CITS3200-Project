@@ -1,8 +1,7 @@
 class ClimatesController < ApplicationController
   
-  # before: check if admin
-  before_filter :this_is_an_admin_page
-
+  before_filter :user_is_admin
+  layout 'admin_layout'
 
 
   def index
@@ -24,6 +23,9 @@ class ClimatesController < ApplicationController
   
   def show
     @climate = Climate.find(params[:id])
+
+    @current_plants = @climate.current_plants.all
+
   end
   
   def edit

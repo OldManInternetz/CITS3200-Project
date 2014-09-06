@@ -9,15 +9,12 @@
 			<%= link_to edit_climate_path(@climate), class: 'btn-top btn btn-orange button-shrink', style: 'float: left;' do %>
 				<i class="fa fa-edit"></i><span class="over-500">&nbsp;&nbsp;Edit</span>
 			<% end %>
-			<%= link_to climate_path(@climate), method: :delete, data: { confirm: 'WARNING: Are you sure you want to DELETE this Climate? Doing so will affect all plants with this climate!'}, class: 'btn-top btn btn-orange button-shrink', style: 'float: right;' do %>
+			<%= link_to climate_path(@climate), method: :delete, data: { confirm: 'WARNING: Are you sure you want to DELETE this climate? Doing so will affect all plants with this climate!'}, class: 'btn-top btn btn-orange button-shrink', style: 'float: right;' do %>
 				<i class="fa fa-trash-o"></i><span class="over-500">&nbsp;&nbsp;Delete</span>
 			<% end %>
 
 		</div>
 <hr/>
 
-
-
-
-
-<%= render 'layouts/bottom_tabs_admin' %>
+<p>Plants that are '<%= @climate.name %>':</p>
+<%= render 'admin_pages/plants_table' %>

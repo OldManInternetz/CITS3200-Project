@@ -1,21 +1,30 @@
-<h1>Listing Flower Colours</h1>
+<% provide(:title, 'Flower Colours List') %>
+<% provide(:prev_page, 'Admin') %>
+<% provide(:prev_link, admin_path) %> <!-- Change later -->
 
-<%= link_to 'New Flower Colour', new_flower_colour_path %>
 
-<table>
-	<tr>
-		<th>ID</th>
-		<th>Name</th>
-	</tr>
+	<h1 class="h1-shrink">All Flower Colours<span class="item-counter">(<%= @flower_colours.count %>)</span></h1>
+		<%= link_to '<i class="fa fa-plus"></i>&nbsp;&nbsp;New Flower Colour'.html_safe, new_flower_colour_path, class: 'btn btn-orange button-shrink', style: 'float: right; margin-top: -45px'%>
+<hr/>
+
+
+<table class="table table-striped table-responsive">
+	<thead>
+		<tr>
+			<th style="width: 5%">ID</th>
+			<th>Name</th>
+			<th style="width: 90px;" class="th-shrink"></th>
+			<th style="width: 90px;" class="th-shrink"></th>
+		</tr>
+	</thead>
 	
-	<% @flower_colours.each do |flower_colour| %>
-	<tr>
-		<td>#<%= flower_colour.id %></td>
-		<td><%= flower_colour.name %></td>
-		<td><%= link_to 'Edit', edit_flower_colour_path(flower_colour) %></td>
-		<td><%= link_to 'Delete', flower_colour_path(flower_colour), method: :delete, data: { confirm: 'WARNING: Are you sure you want to DELETE this Flower Colour? Doing so will affect all plants with this flower colour!'} %></td>
-	</tr>
-	<% end %>
+	<%= render @flower_colours %>
 </table>
-<br>
-<strong>Total Number of Flower Colours: </strong><%= @flower_colours.count %>
+
+
+
+<script>
+	<% @flower_colours.each do |col| %>
+		$('#circle-<%= col.id %>').css('background', '<%= (col.name).gsub(/\s+/, '') %>');
+	<% end %>
+</script>

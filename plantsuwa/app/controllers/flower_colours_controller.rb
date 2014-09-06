@@ -1,5 +1,9 @@
 class FlowerColoursController < ApplicationController
 
+  before_filter :user_is_admin
+  layout 'admin_layout'
+
+
   def index
     @flower_colours = FlowerColour.all
   end
@@ -10,13 +14,17 @@ class FlowerColoursController < ApplicationController
   
   def create
     @flower_colour = FlowerColour.new(flower_colour_params)
- 
-    @flower_colour.save
-    redirect_to flower_colours_path
+    if @flower_colour.save
+      redirect_to flower_colours_path
+    else
+      render 'new'
+    end
   end
   
   def show
     @flower_colour = FlowerColour.find(params[:id])
+
+    @current_plants = @flower_colour.current_plants.all
   end
   
   def edit

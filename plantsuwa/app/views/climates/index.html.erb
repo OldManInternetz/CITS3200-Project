@@ -1,6 +1,6 @@
 <% provide(:title, 'Climates List') %>
 <% provide(:prev_page, 'Admin') %>
-<% provide(:prev_link, root_path) %> <!-- Change later -->
+<% provide(:prev_link, admin_path) %> <!-- Change later -->
 
 
 	<h1 class="h1-shrink">All Climates<span class="item-counter">(<%= @climates.count %>)</span></h1>
@@ -20,6 +20,3 @@
 	
 	<%= render @climates %>
 </table>
-
-
-<%= render 'layouts/bottom_tabs_admin' %>

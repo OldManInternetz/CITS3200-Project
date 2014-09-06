@@ -1,5 +1,8 @@
-<h1>New Flower Colour</h1>
+<% provide(:title, 'New Flower Colour') %>
+<% provide(:prev_page, 'Flower Colours') %>
+<% provide(:prev_link, flower_colours_path) %>
+
+<h1 class="h1-shrink">New Flower Colour</h1>
+<hr/>
  
 <%= render 'form' %>
- 
-<%= link_to 'Back', flower_colours_path %>

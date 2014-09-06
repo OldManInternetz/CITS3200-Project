@@ -1,0 +1,14 @@
+<tr>
+	<td>#<%= origin.id %></td>
+	<td><%= link_to origin.name, origin_path(origin) %></td>
+	<td class="td-shrink">
+	<%= link_to edit_origin_path(origin) do %>
+		<i class="fa fa-edit"></i><span class="over-400">&nbsp;&nbsp;Edit</span>
+	<% end %>
+
+	</td>
+	<td class="td-shrink"><%= link_to origin_path(origin), method: :delete, data: { confirm: 'WARNING: Are you sure you want to DELETE this origin? Doing so will affect all plants with this origin!'} do %>
+		<i class="fa fa-trash"></i><span class="over-400">&nbsp;&nbsp;Delete</span>
+	<% end %>
+	</td>
+</tr>

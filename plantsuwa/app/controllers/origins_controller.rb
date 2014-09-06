@@ -1,6 +1,7 @@
 class OriginsController < ApplicationController
 
-  before_filter :this_is_an_admin_page
+  before_filter :user_is_admin
+  layout 'admin_layout'
 
   def index
     @origins = Origin.all
@@ -21,6 +22,9 @@ class OriginsController < ApplicationController
   
   def show
     @origin = Origin.find(params[:id])
+
+    @current_plants = @origin.current_plants.all
+
   end
   
   def edit

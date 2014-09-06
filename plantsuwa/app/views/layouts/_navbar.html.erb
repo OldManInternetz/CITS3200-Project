@@ -59,21 +59,6 @@
 		</div><!-- /.navbar-collapse -->
 	</div>
 </nav>
-<% if is_admin? %>
-	<div class="navbar-admin-tab">
-		<% if @admin_page %>
-			<%= link_to current_plants_path do %>
-				<p><i class="fa fa-tree"></i>&nbsp;&nbsp;Plants List</p>
-			<%end%>
-		<% else %>
-			<%= link_to climates_path do %>
-				<p><i class="fa fa-gavel"></i>&nbsp;&nbsp;Administration</p>
-			<%end%>
-		<% end %>
-	</div>
-
-<% end %>
-
 
 
 

@@ -9,8 +9,6 @@ body {
   box-shadow: 2px 0 3px #0A0A0A, -2px 0 3px #0A0A0A;
 }
 
-
-
 h1, h2, h3, h4, h5, h6, legend {
 	font-family: 'Montserrat', sans-serif;
 	color: #FFB300;
@@ -152,6 +150,7 @@ hr {
 .btn-orange {
 	border-color: #D6880B;
 	background: #EB9100;
+	color: white;
 }
 
 .btn-orange:hover, .btn-orange:focus {
@@ -159,6 +158,7 @@ hr {
 	border-color: #EB9100;
 	color: white;
 }
+
 
 .btn-centered {
 	width: 120px;
@@ -237,3 +237,121 @@ hr {
 .btn-top {
 	width: 100px;
 }
+
+.form-control:focus {
+	box-shadow: 0px 1px 1px #FFB300 inset, 0px 0px 3px #FFB300;
+	border-color: #FFB300;
+}
+
+.dropdown-menu > .li-current {
+	padding: 3px 20px;
+}
+
+.li-current {
+	color: black;
+	font-weight: 700;
+}
+
+
+
+
+
+
+
+
+
+/* Media Queries */
+
+@media (max-width: 1280px) {
+  .center-wrapper >.center-wrapper-inner > li {
+    padding-right: 18px;
+  }
+}
+
+@media (max-width: 1160px) {
+  .center-wrapper >.center-wrapper-inner > li {
+    padding-right: 12px;
+  }
+}
+
+@media (max-width: 1060px) {
+  .center-wrapper >.center-wrapper-inner > li {
+    padding-right: 6px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 910px) {
+  .center-wrapper >.center-wrapper-inner > li {
+    padding-right: 2px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 850px) {
+  .center-wrapper >.center-wrapper-inner > li {
+    padding-right: 2px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-pages-tab-left, .admin-pages-tab-right {
+    width: 50%;
+  }
+  .admin-pages-tab-right {
+    left: 50%;
+  }
+  .btn-group > .btn-top {
+    width: 90px;
+  }
+}
+
+@media (max-width: 500px) {
+  .h1-shrink {
+    font-size: 150%;
+    margin-top: 30px;
+    margin-bottom: -5px;
+  }
+  .preceding-heading a, .preceding-heading i {
+    font-size: small;
+  }
+  .item-counter {
+    font-size: medium !important;
+  }
+  .button-shrink {
+    padding: 3px 4px;
+    font-size: 11px;
+    line-height: 1.5;
+    border-radius: 3px 3px 3px 3px;
+    margin-top: -20px !important;
+  }
+
+  .padding-mobile > .btn-group {
+    margin-top: 0px;
+  }
+
+  .btn-group > .btn-top {
+    width: 30px;
+  }
+
+  .over-500 {
+    display: none;
+  }
+  .circle-large {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+
+@media (max-width: 300px) {
+  .admin-pages-tab-left {
+    display: none;
+  }
+  .admin-pages-tab-right {
+    width: 100%;
+    left: 0;
+  }
+}
+
