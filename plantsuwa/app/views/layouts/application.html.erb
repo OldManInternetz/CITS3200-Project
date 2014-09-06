@@ -23,10 +23,9 @@
     <%= render 'layouts/navbar' %>
     <% if is_admin? %>
       <%= link_to admin_path do %>
-      <div class="navbar-admin-tab">        
-          <p><i class="fa fa-gavel"></i>&nbsp;&nbsp;Administration</p>
-      
-      </div>
+        <div class="navbar-admin-tab">        
+            <p><i class="fa fa-gavel"></i>&nbsp;&nbsp;Administration</p>    
+        </div>
       <%end%>
     <% end %>
     <div class="container">

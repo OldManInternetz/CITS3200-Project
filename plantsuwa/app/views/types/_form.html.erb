@@ -1,7 +1,8 @@
-<%= simple_form_for(@type, html: { class: 'form-horizontal' }) do |f| %>
+<%= simple_form_for(@type, html: { class: 'form-horizontal' , :'accept-charset' => "UTF-8"}, defaults: { input_html: { class: 'form-control' } }) do |f| %>
   <% if @type.errors.any? %>
   <div id="error_explanation">
-    <h2><%= pluralize(@type.errors.count, "error") %> prohibited this type from being saved:</h2>
+    <br/>
+    <h4><%= pluralize(@type.errors.count, "error") %> prohibited this type from being saved:</h4>
     <ul>
     <% @type.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
@@ -11,10 +12,8 @@
   <% end %>
   
   <fieldset>
-	  <%= f.input  :name, hint: 'Aim to capture all possible types in about 5-10 different categories.' %>
+	  <%= f.input  :name, hint: 'Aim to capture all possible types in about 5-10 different categories.', autofocus: true %>
   </fieldset> 
- <br>
-  <p>
-    <%= f.submit %>
-  </p>
+  <hr/>
+  <%= f.submit class: 'btn btn-orange' %>
 <% end %>

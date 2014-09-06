@@ -3,8 +3,10 @@
 <% provide(:prev_link, admin_path) %>
 
 
-	<h1 class="h1-shrink">All Climates<span class="item-counter">(<%= @climates.count %>)</span></h1>
-		<%= link_to '<i class="fa fa-plus"></i>&nbsp;&nbsp;New Climate'.html_safe, new_climate_path, class: 'btn btn-orange button-shrink', style: 'float: right; margin-top: -45px'%>
+	<h1 class="h1-shrink"><span class="preceding-heading"><%= link_to 'Admin', admin_path %> <i class="fa fa-chevron-right"></i></span> All Climates<span class="item-counter">(<%= @climates.count %>)</span></h1>
+		<%= link_to new_climate_path, class: 'btn btn-orange button-shrink', style: 'float: right; margin-top: -45px' do %>
+			<i class="fa fa-plus"></i>&nbsp;&nbsp;New<span class="over-350"> Climate</span>
+		<% end %>
 <hr/>
 
 

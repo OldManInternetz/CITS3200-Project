@@ -1,4 +1,8 @@
 class SoilTypesController < ApplicationController
+  
+  before_filter :user_is_admin
+  layout 'admin_layout'
+
 
   def index
     @soil_types = SoilType.all
@@ -10,13 +14,18 @@ class SoilTypesController < ApplicationController
   
   def create
     @soil_type = SoilType.new(soil_type_params)
- 
-    @soil_type.save
-    redirect_to soil_types_path
+    if @soil_type.save
+      redirect_to soil_types_path
+    else
+      render 'new'
+    end
   end
   
   def show
     @soil_type = SoilType.find(params[:id])
+
+    @current_plants = @soil_type.current_plants.all
+
   end
   
   def edit
@@ -44,5 +53,4 @@ class SoilTypesController < ApplicationController
     def soil_type_params
       params.require(:soil_type).permit(:name)
     end
-
 end

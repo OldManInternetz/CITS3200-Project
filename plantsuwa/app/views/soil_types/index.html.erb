@@ -1,21 +1,24 @@
-<h1>Listing Soil Types</h1>
+<% provide(:title, 'Soil Types List') %>
+<% provide(:prev_page, 'Admin') %>
+<% provide(:prev_link, admin_path) %>
 
-<%= link_to 'New Soil Type', new_soil_type_path %>
 
-<table>
-	<tr>
-		<th>ID</th>
-		<th>Name</th>
-	</tr>
+	<h1 class="h1-shrink"><span class="preceding-heading"><%= link_to 'Admin', admin_path %> <i class="fa fa-chevron-right"></i></span> All Soil Types<span class="item-counter">(<%= @soil_types.count %>)</span></h1>
+		<%= link_to new_soil_type_path, class: 'btn btn-orange button-shrink button-admin-new' do %>
+			<i class="fa fa-plus"></i>&nbsp;&nbsp;New<span class="over-350"> Soil Type</span>
+		<% end %>
+<hr/>
+
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th style="width: 5%">ID</th>
+			<th>Name</th>
+			<th style="width: 90px;" class="th-shrink"></th>
+			<th style="width: 90px;" class="th-shrink"></th>
+		</tr>
+	</thead>
 	
-	<% @soil_types.each do |soil_type| %>
-	<tr>
-		<td>#<%= soil_type.id %></td>
-		<td><%= soil_type.name %></td>
-		<td><%= link_to 'Edit', edit_soil_type_path(soil_type) %></td>
-		<td><%= link_to 'Delete', soil_type_path(soil_type), method: :delete, data: { confirm: 'WARNING: Are you sure you want to DELETE this Soil Type? Doing so will affect all plants with this soil type!'} %></td>
-	</tr>
-	<% end %>
+	<%= render @soil_types %>
 </table>
-<br>
-<strong>Total Number of Soil Types: </strong><%= @soil_types.count %>

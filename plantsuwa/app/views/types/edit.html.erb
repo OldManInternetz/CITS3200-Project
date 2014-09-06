@@ -1,7 +1,10 @@
-<h1> Edit Type </h1>
+<% provide(:title, 'Edit Type') %>
+<% provide(:prev_page, 'Types') %>
+<% provide(:prev_link, types_path) %>
 
-<strong>Note that these changes be applied to all plants with this type.</strong>
+<h1 class="h1-shrink"><span class="preceding-heading"><%= link_to 'Types', types_path %> <i class="fa fa-chevron-right"></i></span> Edit '<%= @type.name %>'</h1>
+<hr/>
+
+<strong>Note that these changes will be applied to all plants with this type.</strong>
 
 <%= render 'form' %>
- 
-<%= link_to 'Back', types_path, class: 'btn-primary' %>

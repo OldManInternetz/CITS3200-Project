@@ -1,0 +1,14 @@
+<tr>
+	<td>#<%= size.id %></td>
+	<td><%= link_to size.name, size_path(size) %></td>
+	<td class="td-shrink">
+	<%= link_to edit_size_path(size) do %>
+		<i class="fa fa-edit"></i><span class="over-400">&nbsp;&nbsp;Edit</span>
+	<% end %>
+
+	</td>
+	<td class="td-shrink"><%= link_to size_path(size), method: :delete, data: { confirm: 'WARNING: Are you sure you want to DELETE this size? Doing so will affect all plants with this size!'} do %>
+		<i class="fa fa-trash"></i><span class="over-400">&nbsp;&nbsp;Delete</span>
+	<% end %>
+	</td>
+</tr>

@@ -196,14 +196,14 @@ hr {
 
 .admin-pages-tab-left {
 	left: 0;
-	width: 25%;
+	width: 19%;
 	min-width: 150px;
 	padding-top: 11px;
 }
 
 .admin-pages-tab-right {
-	left: 25%;
-	width: 75%;
+	left: 19%;
+	width: 81%;
 }
 
 .admin-pages-tab p {
@@ -277,9 +277,10 @@ hr {
   margin-left: 42px;
 }
 
-.center-wrapper-inner > li > a {
+.center-wrapper-inner > li > a, .center-wrapper-inner > li.li-current {
   padding: 10px 15px;
 }
+
 
 .tables-list-wrapper {
   width: 100%;
@@ -329,16 +330,16 @@ hr {
   position: relative;
 }
 
-.apb-1 {  background: url('admin-box-notifications-2.jpg');  background-position: center; }
+.apb-1 {  background: url('admin-box-notifications-3.jpg');  background-position: center; }
 .apb-2 {  background: url('admin-box-users-2.jpg');  background-position: center; }
-.apb-3 {  background: url('admin-box-plants-1.jpg');  background-position: center; }
+.apb-3 {  background: url('admin-box-plants-2.jpg');  background-position: center; }
 .apb-4 {  background: url('admin-box-photos-3.jpg');  background-position: center; }
 .apb-5 {  background: url('admin-box-climates-2.jpg');  background-position: center; }
 .apb-6 {  background: url('admin-box-origins-3.jpg');  background-position: center; }
 .apb-7 {  background: url('admin-box-flower-colours-2.jpg');  background-position: center; }
 .apb-8 {  background: url('admin-box-leaf-colours-3.jpg');  background-position: center; }
 .apb-9 {  background: url('admin-box-sizes-1.jpg');  background-position: center; }
-.apb-10 {  background: url('admin-box-soil-types-1.jpg');  background-position: center; }
+.apb-10 {  background: url('admin-box-soil-types-3.jpg');  background-position: center; }
 .apb-11 {  background: url('admin-box-types-1.jpg');  background-position: center; }
 
 .admin-pages-box:after {
@@ -369,7 +370,10 @@ hr {
   padding: 4px 0;
 }
 
-
+.button-admin-new {
+  margin-top: -45px;
+  float: right;
+}
 
 
 
@@ -377,41 +381,65 @@ hr {
 
 /* Media Queries */
 
-@media (max-width: 1280px) {
-  .center-wrapper > .center-wrapper-inner > li > a{
+
+@media (max-width: 1380px) {
+  .center-wrapper > .center-wrapper-inner > li > a, .center-wrapper > .center-wrapper-inner > li.li-current {
     padding: 10px 10px;
   }
 }
 
-@media (max-width: 1160px) {
-  .center-wrapper > .center-wrapper-inner > li > a{
+/*
+@media (max-width: 1230px) {
+  .center-wrapper > .center-wrapper-inner > li > a, .center-wrapper > .center-wrapper-inner > li.li-current {
     padding: 10px 5px;
   }
 }
+*/
 
-@media (max-width: 1060px) {
-  .center-wrapper > .center-wrapper-inner > li > a {
-    padding: 10px 2px;
+
+@media (max-width: 1200px) {
+
+  /*
+  .center-wrapper > .center-wrapper-inner > li > a, .center-wrapper > .center-wrapper-inner > li.li-current {
+    padding: 10px 3px;
   }
   .center-wrapper > .center-wrapper-inner > li {
     font-size: 12px;
   }
-}
+  */
 
-@media (max-width: 910px) {
-  .center-wrapper > .center-wrapper-inner > li > a{
-    padding: 10px 0px;
+  .center-wrapper > .center-wrapper-inner > li > a, .center-wrapper > .center-wrapper-inner > li.li-current {
+    padding: 10px 13px;
+    font-size: 15px;
   }
+
+  .center-wrapper > .center-wrapper-inner > li > a > .admin-list-name {
+    display: none;
+  }
+
 }
 
-@media (max-width: 850px) {
-  .center-wrapper >.center-wrapper-inner > li > a {
-    padding: 10px -1px;
+/*
+@media (max-width: 990px) {
+  .center-wrapper > .center-wrapper-inner > li > a, .center-wrapper > .center-wrapper-inner > li.li-current {
+    padding: 10px 2px;
   }
   .center-wrapper > .center-wrapper-inner > li {
     font-size: 11px;
   }
+
 }
+
+@media (max-width: 850px) {
+  .center-wrapper >.center-wrapper-inner > li > a, .center-wrapper > .center-wrapper-inner > li.li-current {
+    padding: 10px 2px;
+  }
+  .center-wrapper > .center-wrapper-inner > li {
+    font-size: 10px;
+  }
+}
+
+*/
 
 @media (max-width: 768px) {
   .admin-pages-tab-left, .admin-pages-tab-right {
@@ -423,8 +451,15 @@ hr {
   .btn-group > .btn-top {
     width: 90px;
   }
+  .h1-shrink {
+    width: 500px;
+  }
+}
 
-
+@media (max-width: 650px) {
+  .h1-shrink {
+    width: 350px;
+  }
 }
 
 
@@ -450,17 +485,18 @@ hr {
   .item-counter {
     font-size: medium !important;
   }
-  .button-shrink {
-    padding: 3px 4px;
-    font-size: 11px;
-    line-height: 1.5;
-    border-radius: 3px 3px 3px 3px;
-    margin-top: -20px !important;
+
+  .btn-group > .button-shrink {
+    width: 35px !important;
+    margin-top: -20px;
+    padding: 4px;
   }
 
-  .padding-mobile > .btn-group {
-    margin-top: 0px;
+  .padding-mobile > .button-admin-new {
+    margin-top: -26px;
   }
+
+
 
   .btn-group > .btn-top {
     width: 30px;
@@ -473,8 +509,16 @@ hr {
     width: 15px;
     height: 15px;
   }
+  .h1-shrink {
+    width: 200px;
+  }
 }
 
+@media (max-width: 350px) {
+  .over-350 {
+    display: none;
+  }
+}
 
 @media (max-width: 300px) {
   .admin-pages-tab-left {
@@ -483,6 +527,9 @@ hr {
   .admin-pages-tab-right {
     width: 100%;
     left: 0;
+  }
+  .over-300 {
+    display: none;
   }
 }
 

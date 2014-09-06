@@ -1,0 +1,14 @@
+<tr>
+	<td>#<%= type.id %></td>
+	<td><%= link_to type.name, type_path(type) %></td>
+	<td class="td-shrink">
+	<%= link_to edit_type_path(type) do %>
+		<i class="fa fa-edit"></i><span class="over-400">&nbsp;&nbsp;Edit</span>
+	<% end %>
+
+	</td>
+	<td class="td-shrink"><%= link_to type_path(type), method: :delete, data: { confirm: 'WARNING: Are you sure you want to DELETE this type? Doing so will affect all plants with this type!'} do %>
+		<i class="fa fa-trash"></i><span class="over-400">&nbsp;&nbsp;Delete</span>
+	<% end %>
+	</td>
+</tr>

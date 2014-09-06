@@ -1,0 +1,14 @@
+<tr>
+	<td>#<%= leaf_colour.id %></td>
+	<td><div class="colour-circle" style="background: <%= (leaf_colour.name).gsub(/\s+/, '') %>"></div><%= link_to leaf_colour.name, leaf_colour_path(leaf_colour) %></td>
+	<td class="td-shrink">
+	<%= link_to edit_leaf_colour_path(leaf_colour) do %>
+		<i class="fa fa-edit"></i><span class="over-400">&nbsp;&nbsp;Edit</span>
+	<% end %>
+
+	</td>
+	<td class="td-shrink"><%= link_to leaf_colour_path(leaf_colour), method: :delete, data: { confirm: 'WARNING: Are you sure you want to DELETE this leaf colour? Doing so will affect all plants with this leaf colour!'} do %>
+		<i class="fa fa-trash"></i><span class="over-400">&nbsp;&nbsp;Delete</span>
+	<% end %>
+	</td>
+</tr>

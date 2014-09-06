@@ -1,4 +1,8 @@
 class SizesController < ApplicationController
+  
+  before_filter :user_is_admin
+  layout 'admin_layout'
+
 
   def index
     @sizes = Size.all
@@ -10,13 +14,18 @@ class SizesController < ApplicationController
   
   def create
     @size = Size.new(size_params)
- 
-    @size.save
-    redirect_to sizes_path
+    if @size.save
+      redirect_to sizes_path
+    else
+      render 'new'
+    end
   end
   
   def show
     @size = Size.find(params[:id])
+
+    @current_plants = @size.current_plants.all
+
   end
   
   def edit
@@ -44,5 +53,4 @@ class SizesController < ApplicationController
     def size_params
       params.require(:size).permit(:name)
     end
-
 end

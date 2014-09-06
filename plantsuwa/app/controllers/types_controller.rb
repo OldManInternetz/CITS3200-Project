@@ -1,4 +1,8 @@
 class TypesController < ApplicationController
+  
+  before_filter :user_is_admin
+  layout 'admin_layout'
+
 
   def index
     @types = Type.all
@@ -10,13 +14,18 @@ class TypesController < ApplicationController
   
   def create
     @type = Type.new(type_params)
- 
-    @type.save
-    redirect_to types_path
+    if @type.save
+      redirect_to types_path
+    else
+      render 'new'
+    end
   end
   
   def show
     @type = Type.find(params[:id])
+
+    @current_plants = @type.current_plants.all
+
   end
   
   def edit
@@ -44,5 +53,4 @@ class TypesController < ApplicationController
     def type_params
       params.require(:type).permit(:name)
     end
-
 end
