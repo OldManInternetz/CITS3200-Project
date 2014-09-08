@@ -18,4 +18,7 @@ class AdminPagesController < ApplicationController
   	@types_count = Type.count
 
   end
+
+  
+  
 end

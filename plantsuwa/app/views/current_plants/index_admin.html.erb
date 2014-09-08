@@ -1,0 +1,22 @@
+<% provide(:title, 'Plants List') %>
+
+<%= render partial: 'admin_pages/generic_admin_index_header', locals: {objects: @current_plants, new_object_path: new_current_plant_path, title_name: 'Plant', button_name: 'Plant'} %>
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th style="width: 40px">ID</th>
+			<th style="width: 40px">ID</th>
+			<th>Name</th>
+			<th style="width: 90px;" class="th-shrink"></th>
+			<th style="width: 90px;" class="th-shrink"></th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @current_plants.each do |p| %>
+			<%= render partial: 'current_plant_admin', locals: {current_plant: p} %>
+		<% end %>
+	</tbody>
+</table>
+<%= render partial: 'admin_pages/generic_admin_pagination', locals: {objects: @current_plants} %>
+

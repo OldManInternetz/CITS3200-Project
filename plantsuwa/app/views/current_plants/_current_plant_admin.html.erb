@@ -1,0 +1,17 @@
+<tr>
+	<td>#<%= current_plant.id %></td>
+	<td>
+   	<%= image_tag current_plant.display_photo.url(:thumb), width:"100%", height:"100%", alt:"Plant photo", class:"img-circle" %>
+  </td>
+	<td><%= link_to display_name(current_plant), current_plant_path(current_plant) %></td>
+	<td class="td-shrink">
+	<%= link_to edit_current_plant_path(current_plant) do %>
+		<i class="fa fa-edit"></i><span class="over-400">&nbsp;&nbsp;Edit</span>
+	<% end %>
+
+	</td>
+	<td class="td-shrink"><%= link_to current_plant_path(current_plant), method: :delete, data: { confirm: 'WARNING: Are you sure you want to DELETE this plant?'} do %>
+		<i class="fa fa-trash"></i><span class="over-400">&nbsp;&nbsp;Delete</span>
+	<% end %>
+	</td>
+</tr>

@@ -18,8 +18,10 @@ module CurrentPlantHelper
   end
 
   def display_name(plant)
-    "#{plant.genus} #{plant.species}"
+    plant.name
+    # CHANGE TO THIS LATER #{plant.genus} #{plant.species}"
   end
+
 
 
 

@@ -1,13 +1,22 @@
 class CurrentPlantsController < ApplicationController
   
   before_action :signed_in_user, only: [:new, :edit, :update, :create]
-  before_action :user_is_admin, only: [:destroy]
+  before_action :user_is_admin, only: [:index_admin, :destroy]
 
+  layout 'admin_layout', only: [:index_admin]
 
 
   def index
     @current_plants = CurrentPlant.search_for(params[:search])
   end
+
+  def index_admin
+    @current_plants = CurrentPlant.paginate(page: params[:page], per_page: 15) 
+  end
+
+
+
+
   
 	def auto_complete_search
   	begin

@@ -124,7 +124,11 @@ strong {
 
 
 table, .table > tbody > tr > td, .table > thead > tr > th, .table-responsive {
-	border: 0;
+	border: 0;  
+}
+
+.table > tbody > tr > td {
+  vertical-align: middle;
 }
 
 .table-striped>tbody>tr:nth-child(even)>td, 
