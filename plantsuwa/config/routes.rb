@@ -2,7 +2,6 @@ Plantsuwa::Application.routes.draw do
 
 
   match "/admin", to: 'admin_pages#index', via: 'get'
-  resources :notifications, :except => 'show'
 
   root 'welcome#index'
 
@@ -12,6 +11,8 @@ Plantsuwa::Application.routes.draw do
       get 'search'
     end
   end
+
+  resources :notifications, only: [:index, :destroy], path: 'admin/notifications'  
   resources :climates, path: 'admin/climates'
   resources :flower_colours, path: 'admin/flower_colours'
   resources :leaf_colours, path: 'admin/leaf_colours'

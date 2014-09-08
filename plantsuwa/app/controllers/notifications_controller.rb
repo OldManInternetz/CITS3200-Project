@@ -8,20 +8,6 @@ class NotificationsController < ApplicationController
     @notifications = Notification.paginate(page: params[:page], per_page: 15)
   end
   
-  def new
-    @notification = Notification.new
-  end
-  
-  def create
-    @notification = Notification.new(notification_params)
-    if @notification.save
-      redirect_to notifications_path
-    else
-      render 'new'
-    end
-  end
-  
-  
   def edit
     @notification = Notification.find(params[:id])
   end

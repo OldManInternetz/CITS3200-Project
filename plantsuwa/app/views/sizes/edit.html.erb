@@ -5,6 +5,4 @@
 <h1><span class="preceding-heading"><%= link_to 'Sizes', sizes_path %> <i class="fa fa-chevron-right"></i></span> Edit '<%= @size.name %>'</h1>
 <hr/>
 
-<strong>Note that these changes will be applied to all plants with this size.</strong>
-
-<%= render 'form' %>
+<%= render partial: 'admin_pages/generic_admin_form', locals: {object: @size, object_name: 'size'} %>

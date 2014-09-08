@@ -5,6 +5,4 @@
 <h1><span class="preceding-heading"><%= link_to 'Climates', climates_path %> <i class="fa fa-chevron-right"></i></span> Edit '<%= @climate.name %>'</h1>
 <hr/>
 
-<strong>Note that these changes will be applied to all plants with this climate.</strong>
-
-<%= render 'form' %>
+<%= render partial: 'admin_pages/generic_admin_form', locals: {object: @climate, object_name: 'climate'} %>

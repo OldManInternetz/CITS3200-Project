@@ -22,16 +22,14 @@
   </head>
   <body>
     <%= render 'layouts/navbar' %>
-      <%= link_to current_plants_path do %>
-        <div class="navbar-admin-tab">
-          <p><i class="fa fa-tree"></i>&nbsp;&nbsp;Plants List</p>
-        </div>
-      <% end %>
-
+    <%= link_to current_plants_path do %>
+      <div class="navbar-admin-tab">
+        <p><i class="fa fa-tree"></i>&nbsp;&nbsp;Plants List</p>
+      </div>
+    <% end %>
     <div class="container">
       <div style="height: 64px"></div>
         <div class="padding-mobile">
-
           <% if flash[:success] %>
             <div class="alert alert-orange" id="admin-alert-box">
                 <p style="display: inline">
@@ -41,17 +39,12 @@
                 
             </div>
           <% end %>
-
-
           <%= yield %>
           <div style="height: 42px"></div>
         </div>
       </div>
     </div>
-
-    <!-- Uncomment for Debug <%= debug(params) if Rails.env.development? %> -->
-    <%= render 'admin_pages/bottom_tabs_admin' %>
-
+    <%= render 'admin_pages/bottom_bar_admin' %>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   </body>

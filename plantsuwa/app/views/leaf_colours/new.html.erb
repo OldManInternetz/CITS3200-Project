@@ -5,4 +5,4 @@
 <h1><span class="preceding-heading"><%= link_to 'Leaf Colours', leaf_colours_path %> <i class="fa fa-chevron-right"></i></span> New Leaf Colour</h1>
 <hr/>
  
-<%= render 'form' %>
+<%= render partial: 'admin_pages/generic_admin_form_colour', locals: {object: @leaf_colour, object_name: 'leaf_colour', object_error_name: 'leaf colour'} %>

@@ -5,6 +5,4 @@
 <h1><span class="preceding-heading"><%= link_to 'Flower Colours', flower_colours_path %> <i class="fa fa-chevron-right"></i></span> Edit '<div class="colour-circle circle-large" style="background: <%= to_colour(@flower_colour) %>"></div> <%= @flower_colour.name %>'</h1>
 <hr/>
 
-<strong>Note that these changes will be applied to all plants with this flower colour.</strong>
-
-<%= render 'form' %>
+<%= render partial: 'admin_pages/generic_admin_form_colour', locals: {object: @flower_colour, object_name: 'flower_colour', object_error_name: 'flower colour'} %>

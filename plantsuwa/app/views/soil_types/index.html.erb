@@ -1,31 +1,3 @@
 <% provide(:title, 'Soil Types List') %>
-<% provide(:prev_page, 'Admin') %>
-<% provide(:prev_link, admin_path) %>
 
-
-	<h1 class="h1-shrink"><span class="preceding-heading"><%= link_to 'Admin', admin_path %> <i class="fa fa-chevron-right"></i></span> All Soil Types<span class="item-counter">(<%= @soil_types.count %>)</span></h1>
-		<%= link_to new_soil_type_path, class: 'btn btn-orange button-shrink button-admin-new' do %>
-			<i class="fa fa-plus"></i>&nbsp;&nbsp;New<span class="over-350"> Soil Type</span>
-		<% end %>
-<hr/>
-
-
-<table class="table table-striped">
-	<thead>
-		<tr>
-			<th style="width: 5%">ID</th>
-			<th>Name</th>
-			<th style="width: 90px;" class="th-shrink"></th>
-			<th style="width: 90px;" class="th-shrink"></th>
-		</tr>
-	</thead>
-	<tbody>
-		<%= render @soil_types %>
-	</tbody>
-</table>
-
-<div class="center-wrapper">
-	<div class="center-wrapper-inner">
-		<%= will_paginate @soil_types, :container => false, :previous_label => '<i class="fa fa-chevron-circle-left"></i>&nbsp;Previous'.html_safe, :next_label => 'Next&nbsp;<i class="fa fa-chevron-circle-right"></i>'.html_safe, renderer: BootstrapPagination::Rails %>
-	</div>
-</div>
+<%= render partial: 'admin_pages/generic_admin_index', locals: {objects: @soil_types, new_object_path: new_soil_type_path, title_name: 'Soil Type', button_name: 'Soil Type'} %>

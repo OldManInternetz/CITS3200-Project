@@ -1,31 +1,3 @@
 <% provide(:title, 'Leaf Colours List') %>
-<% provide(:prev_page, 'Admin') %>
-<% provide(:prev_link, admin_path) %>
 
-
-	<h1 class="h1-shrink"><span class="preceding-heading"><%= link_to 'Admin', admin_path %> <i class="fa fa-chevron-right"></i></span> All Leaf Colours<span class="item-counter">(<%= @leaf_colours.count %>)</span></h1>
-	<%= link_to new_leaf_colour_path, class: 'btn btn-orange button-shrink button-admin-new' do %>
-		<i class="fa fa-plus"></i>&nbsp;&nbsp;New<span class="over-350"> Colour</span>
-	<% end %>
-<hr/>
-
-
-<table class="table table-striped">
-	<thead>
-		<tr>
-			<th style="width: 5%">ID</th>
-			<th>Name</th>
-			<th style="width: 90px;" class="th-shrink"></th>
-			<th style="width: 90px;" class="th-shrink"></th>
-		</tr>
-	</thead>
-	<tbody>
-		<%= render @leaf_colours %>
-	</tbody>
-</table>
-
-<div class="center-wrapper">
-	<div class="center-wrapper-inner">
-		<%= will_paginate @leaf_colours, :container => false, :previous_label => '<i class="fa fa-chevron-circle-left"></i>&nbsp;Previous'.html_safe, :next_label => 'Next&nbsp;<i class="fa fa-chevron-circle-right"></i>'.html_safe, renderer: BootstrapPagination::Rails %>
-	</div>
-</div>
+<%= render partial: 'admin_pages/generic_admin_index', locals: {objects: @leaf_colours, new_object_path: new_leaf_colour_path, title_name: 'Leaf Colour', button_name: 'Colour'} %>

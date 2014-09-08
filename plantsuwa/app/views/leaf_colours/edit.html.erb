@@ -5,6 +5,5 @@
 <h1><span class="preceding-heading"><%= link_to 'Leaf Colours', leaf_colours_path %> <i class="fa fa-chevron-right"></i></span> Edit '<div class="colour-circle circle-large" style="background: <%= to_colour(@leaf_colour) %>"></div> <%= @leaf_colour.name %>'</h1>
 <hr/>
 
-<strong>Note that these changes will be applied to all plants with this leaf colour.</strong>
+<%= render partial: 'admin_pages/generic_admin_form_colour', locals: {object: @leaf_colour, object_name: 'leaf_colour', object_error_name: 'leaf colour'} %>
 
-<%= render 'form' %>

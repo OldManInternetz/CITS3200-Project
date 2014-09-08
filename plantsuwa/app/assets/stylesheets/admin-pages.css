@@ -396,8 +396,8 @@ hr {
 
 
 .pagination > .active > span, .pagination > .active > span:hover {
-  background: #FFA81C;
-  border-color: #FFB300;
+  background: #EB9100;
+  border-color: #EB9100;
 }
 
 .pagination > .disabled > span, .pagination > .disabled > span:hover, .pagination > li > a {

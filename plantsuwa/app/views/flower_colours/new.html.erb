@@ -5,4 +5,4 @@
 <h1><span class="preceding-heading"><%= link_to 'Flower Colours', flower_colours_path %> <i class="fa fa-chevron-right"></i></span> New Flower Colour</h1>
 <hr/>
  
-<%= render 'form' %>
+<%= render partial: 'admin_pages/generic_admin_form_colour', locals: {object: @flower_colour, object_name: 'flower_colour', object_error_name: 'flower colour'} %>

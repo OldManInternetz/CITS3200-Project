@@ -1,0 +1,5 @@
+<div class="center-wrapper">
+	<div class="center-wrapper-inner">
+		<%= will_paginate objects, :container => false, :previous_label => '<i class="fa fa-chevron-circle-left"></i>&nbsp;Previous'.html_safe, :next_label => 'Next&nbsp;<i class="fa fa-chevron-circle-right"></i>'.html_safe, renderer: BootstrapPagination::Rails %>
+	</div>
+</div>

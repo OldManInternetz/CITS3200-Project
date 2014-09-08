@@ -1,12 +1,15 @@
-<%= simple_form_for(@flower_colour, html: { class: 'form-horizontal' , :'accept-charset' => "UTF-8"}, defaults: { input_html: { class: 'form-control form-control-90' } }) do |f| %>
-  <% if @flower_colour.errors.any? %>
+<% if object.new_record? %>
+  <strong>Note that these changes will be applied to all plants with this climate.</strong>
+<% end %>
+<%= simple_form_for(object, html: { class: 'form-horizontal' , :'accept-charset' => "UTF-8"}, defaults: { input_html: { class: 'form-control form-control-90' } }) do |f| %>
+  <% if object.errors.any? %>
   <div id="error_explanation">
     <br/>
-    <h4><%= pluralize(@flower_colour.errors.count, "error") %> prohibited this flower colour from being saved:</h4>
+    <h4><%= pluralize(object.errors.count, "error") %> prohibited this <%= object_error_name %> from being saved:</h4>
     <ul>
-    <% @flower_colour.errors.full_messages.each do |msg| %>
+    <% object.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
-  	<% end %>
+    <% end %>
     </ul>
   </div>
   <% end %>
@@ -18,13 +21,13 @@
     <div class="col-lg-6">
 
     <div style="width: 100%">
-      <% if @flower_colour.new_record? %>
+      <% if object.new_record? %>
         <div class="colour-circle circle-xlarge" id="circle"></div>
       <% else %>
-        <div class="colour-circle circle-xlarge" id="circle" style="background: <%= to_colour(@flower_colour) %>"></div>
+        <div class="colour-circle circle-xlarge" id="circle" style="background: <%= to_colour(object) %>"></div>
       <% end %>
       <div class="form-control-wrapper">
-  	    <%= f.input  :name, autofocus: true %>
+        <%= f.input  :name, autofocus: true %>
       </div>
     </div>
     <br/>
@@ -53,22 +56,22 @@
 <script>
   // Replaces the colour of the circle with the colour in the input, if any. If the colour is not a valid colour, it will show as white.
   
-  $('#flower_colour_name').keyup(function() {
-    var col = $('#flower_colour_name').val().replace(/ /g,'');
+  $('#<%= object_name %>_name').keyup(function() {
+    var col = $('#<%= object_name %>_name').val().replace(/ /g,'');
 
-    if($.trim($('#flower_colour_alt_colour').val()).length == 0) {
+    if($.trim($('#<%= object_name %>_alt_colour').val()).length == 0) {
       $('#circle').css('background', 'white');
       $('#circle').css('background', col);
     }
   });
 
-  $('#flower_colour_alt_colour').keyup(function() {
-    var col2 = $('#flower_colour_alt_colour').val().replace(/ /g,'');
+  $('#<%= object_name %>_alt_colour').keyup(function() {
+    var col2 = $('#<%= object_name %>_alt_colour').val().replace(/ /g,'');
     $('#circle').css('background', 'white');
     $('#circle').css('background', col2);
 
-    if($.trim($('#flower_colour_alt_colour').val()).length == 0) {
-      var col = $('#flower_colour_name').val().replace(/ /g,'');
+    if($.trim($('#<%= object_name %>_alt_colour').val()).length == 0) {
+      var col = $('#<%= object_name %>_name').val().replace(/ /g,'');
       $('#circle').css('background', 'white');
       $('#circle').css('background', col);
     }
