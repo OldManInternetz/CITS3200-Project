@@ -2,7 +2,7 @@
 <% provide(:prev_page, 'Flower Colour') %>
 <% provide(:prev_link, flower_colours_path) %>
 
-<h1 class="h1-shrink"><span class="preceding-heading"><%= link_to 'Flower Colours', flower_colours_path %> <i class="fa fa-chevron-right"></i></span> Edit '<div class="colour-circle circle-large" style="background: <%= (@flower_colour.name).gsub(/\s+/, '') %>"></div> <%= @flower_colour.name %>'</h1>
+<h1><span class="preceding-heading"><%= link_to 'Flower Colours', flower_colours_path %> <i class="fa fa-chevron-right"></i></span> Edit '<div class="colour-circle circle-large" style="background: <%= to_colour(@flower_colour) %>"></div> <%= @flower_colour.name %>'</h1>
 <hr/>
 
 <strong>Note that these changes will be applied to all plants with this flower colour.</strong>

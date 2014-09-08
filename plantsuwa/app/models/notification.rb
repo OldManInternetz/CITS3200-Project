@@ -6,5 +6,6 @@ class Notification < ActiveRecord::Base
 	validates :current_plant_id, presence: true
 	validates :action, presence: true, length: { maximum: 7 }
 	validates :changes, length: { maximum: 1000 }				# Currently not in use. Can expand in future?
+	default_scope -> { order('created_at DESC') }
 
 end

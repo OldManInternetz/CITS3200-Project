@@ -4,27 +4,13 @@ module NotificationsHelper
 
 
 
-	def formatted_changes(text)
+	def formatted_action(text)
 
-		#new_text_array = text.split(',')
-
-
-		#for l in new_text_array
-		#	puts l
-		#end
-
-
-
-
-		#new_text = text.gsub(/"[a-z_]+"=>/) { |m| "\<br/><strong>#{m.tr('=>"', '')}</strong><br/>"}
-
-		#new_text.html_safe
-
-
-		#new_text = h(text).gsub(/\\r\\n/, "<br/>").html_safe
-		#new_text = h(new_text).gsub(/\\n/, "<br/>").html_safe
-
-		text
+		if text == "created"
+			'<span style="color: #26FF38">'.html_safe + text + '</span>'.html_safe
+		elsif text == "edited"
+			'<span style="color: #268BFF">'.html_safe + text + '</span>'.html_safe
+		end
 
 	end
 

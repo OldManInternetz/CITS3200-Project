@@ -5,7 +5,7 @@ class SoilTypesController < ApplicationController
 
 
   def index
-    @soil_types = SoilType.all
+    @soil_types = SoilType.paginate(page: params[:page], per_page: 15)
   end
   
   def new
@@ -15,6 +15,7 @@ class SoilTypesController < ApplicationController
   def create
     @soil_type = SoilType.new(soil_type_params)
     if @soil_type.save
+      flash[:success] = "\"#{@soil_type.name}\" was successfully created." 
       redirect_to soil_types_path
     else
       render 'new'
@@ -36,6 +37,7 @@ class SoilTypesController < ApplicationController
     @soil_type = SoilType.find(params[:id])
  
     if @soil_type.update(soil_type_params)
+      flash[:success] = "\"#{@soil_type.name}\" was successfully updated." 
       redirect_to soil_types_path
     else
       render 'edit'
@@ -45,7 +47,7 @@ class SoilTypesController < ApplicationController
   def destroy
     @soil_type = SoilType.find(params[:id])
     @soil_type.destroy
- 
+    flash[:success] = "\"#{@soil_type.name}\" was successfully destroyed." 
     redirect_to soil_types_path
   end
   

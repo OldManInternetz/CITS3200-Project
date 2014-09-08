@@ -5,7 +5,7 @@ class TypesController < ApplicationController
 
 
   def index
-    @types = Type.all
+    @types = Type.paginate(page: params[:page], per_page: 15)
   end
   
   def new
@@ -15,6 +15,7 @@ class TypesController < ApplicationController
   def create
     @type = Type.new(type_params)
     if @type.save
+      flash[:success] = "\"#{@type.name}\" was successfully created." 
       redirect_to types_path
     else
       render 'new'
@@ -36,6 +37,7 @@ class TypesController < ApplicationController
     @type = Type.find(params[:id])
  
     if @type.update(type_params)
+      flash[:success] = "\"#{@type.name}\" was successfully updated."
       redirect_to types_path
     else
       render 'edit'
@@ -45,7 +47,7 @@ class TypesController < ApplicationController
   def destroy
     @type = Type.find(params[:id])
     @type.destroy
- 
+    flash[:success] = "\"#{@type.name}\" was successfully destroyed." 
     redirect_to types_path
   end
   

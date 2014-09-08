@@ -287,6 +287,9 @@ textarea {
 	font-family: 'Oxygen', sans-serif;
 }
 
+.checkbox input[type="checkbox"] {
+  margin-left: 0;
+}
 
 
 

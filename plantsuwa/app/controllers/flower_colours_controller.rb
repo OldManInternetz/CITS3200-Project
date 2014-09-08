@@ -5,7 +5,7 @@ class FlowerColoursController < ApplicationController
 
 
   def index
-    @flower_colours = FlowerColour.all
+    @flower_colours = FlowerColour.paginate(page: params[:page], per_page: 15)
   end
   
   def new
@@ -15,6 +15,7 @@ class FlowerColoursController < ApplicationController
   def create
     @flower_colour = FlowerColour.new(flower_colour_params)
     if @flower_colour.save
+      flash[:success] = "\"#{@flower_colour.name}\" was successfully created." 
       redirect_to flower_colours_path
     else
       render 'new'
@@ -35,6 +36,7 @@ class FlowerColoursController < ApplicationController
     @flower_colour = FlowerColour.find(params[:id])
  
     if @flower_colour.update(flower_colour_params)
+      flash[:success] = "\"#{@flower_colour.name}\" was successfully updated." 
       redirect_to flower_colours_path
     else
       render 'edit'
@@ -44,13 +46,13 @@ class FlowerColoursController < ApplicationController
   def destroy
     @flower_colour = FlowerColour.find(params[:id])
     @flower_colour.destroy
- 
+    flash[:success] = "\"#{@flower_colour.name}\" was successfully destroyed." 
     redirect_to flower_colours_path
   end
   
   private
     def flower_colour_params
-      params.require(:flower_colour).permit(:name)
+      params.require(:flower_colour).permit(:name, :alt_colour)
     end
 
 end

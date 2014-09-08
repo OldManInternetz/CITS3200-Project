@@ -5,7 +5,7 @@ class ClimatesController < ApplicationController
 
 
   def index
-    @climates = Climate.all
+    @climates = Climate.paginate(page: params[:page], per_page: 15)
   end
   
   def new
@@ -15,6 +15,7 @@ class ClimatesController < ApplicationController
   def create
     @climate = Climate.new(climate_params)
     if @climate.save
+      flash[:success] = "\"#{@climate.name}\" was successfully created." 
       redirect_to climates_path
     else
       render 'new'
@@ -36,6 +37,7 @@ class ClimatesController < ApplicationController
     @climate = Climate.find(params[:id])
  
     if @climate.update(climate_params)
+      flash[:success] = "\"#{@climate.name}\" was successfully updated."
       redirect_to climates_path
     else
       render 'edit'
@@ -45,7 +47,7 @@ class ClimatesController < ApplicationController
   def destroy
     @climate = Climate.find(params[:id])
     @climate.destroy
- 
+    flash[:success] = "\"#{@climate.name}\" was successfully destroyed." 
     redirect_to climates_path
   end
   

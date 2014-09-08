@@ -113,12 +113,14 @@ ActiveRecord::Schema.define(version: 20140903152859) do
 
   create_table "flower_colours", force: true do |t|
     t.string   "name"
+    t.string   "alt_colour"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "leaf_colours", force: true do |t|
     t.string   "name"
+    t.string   "alt_colour"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,0 +1,45 @@
+<% provide(:title, @user.username.titleize) %>
+<% provide(:prev_page, 'Users') %>
+<% provide(:prev_link, users_path) %>
+
+
+	<h1 class="h1-shrink" style="color: white"><span class="preceding-heading"><%= link_to 'Users', users_path %> <i class="fa fa-chevron-right"></i></span> <%= formatted_username(@user) %></h1>
+		<div class="btn-group">
+
+			<%= link_to edit_user_path(@user), class: 'btn-top btn btn-orange button-shrink', style: 'float: left;' do %>
+				<i class="fa fa-edit"></i><span class="over-500">&nbsp;&nbsp;Edit</span>
+			<% end %>
+			<% if !@user.admin? %>
+				<%= link_to user_path(@user), method: :delete, data: { confirm: 'WARNING: Are you sure you want to DELETE this user? Doing so will affect all plants with this user!'}, class: 'btn-top btn btn-orange button-shrink', style: 'float: right;' do %>
+					<i class="fa fa-trash-o"></i><span class="over-500">&nbsp;&nbsp;Delete</span>
+				<% end %>
+			<% else %>
+				<a class="btn-top btn btn-orange button-shrink", style="float: right;" onclick="alert('You can\'t delete administrator accounts from here. If you really want to delete an administrator, please demote them (via edit) and then delete them.');"><i class="fa fa-ban"></i>&nbsp;(Admin)</a>
+			<% end %>
+
+		</div>
+<hr/>
+
+<dt>Email Address:</dt>
+<p>&nbsp;&nbsp;<%= @user.email %></p>
+<hr/>
+
+<dt><%= formatted_username(@user) %>'s activity:</dt>
+
+<% if !@notifications.any? %>
+	<p>... <%= formatted_username(@user) %> has not done anything yet.</p>
+<% else %>
+	<table class="table table-striped" style="margin-top: -30px">
+		<thead>
+			<tr>
+				<th style="width: 5%">ID</th>
+				<th>Info</th>
+			  <th>Time</th>
+				<th style="width: 90px;" class="th-shrink"></th>
+			</tr>
+		</thead>
+		<tbody>	
+			<%= render @notifications %>
+		</tbody>
+<% end %>
+

@@ -2,7 +2,7 @@ Plantsuwa::Application.routes.draw do
 
 
   match "/admin", to: 'admin_pages#index', via: 'get'
-  resources :notifications
+  resources :notifications, :except => 'show'
 
   root 'welcome#index'
 
@@ -22,7 +22,7 @@ Plantsuwa::Application.routes.draw do
   resources :current_photos, path: 'admin/current_photos'
 
 
-  resources :users, path: "sign_up", as: :users, only: [:create]
+  resources :users#, path: "sign_up", as: :users, only: [:create]
 	resources :sessions, path: "log_in", only: [:new, :create, :destroy]
 
   match '/sign_up', to: 'users#new',    via: 'get' 

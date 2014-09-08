@@ -22,8 +22,14 @@ class User < ActiveRecord::Base
 
   validates :password, length: { minimum: 6, maximum: 20 }, on: :create
 	validates :password, length: {minimum: 6, maximum: 20}, on: :update, allow_blank: true
+  validates :trusted, inclusion: {:in => [true, false]}
+  validates :admin, inclusion: {:in => [true, false]}
 
+  before_save :check_admin
 
+  def check_admin
+    self.trusted = true if self.admin?
+  end
 
 
   def User.new_remember_token

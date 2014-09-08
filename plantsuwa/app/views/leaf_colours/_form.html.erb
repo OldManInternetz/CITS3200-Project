@@ -6,28 +6,48 @@
     <ul>
     <% @leaf_colour.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
-  	<% end %>
+    <% end %>
     </ul>
   </div>
   <% end %>
   
   <fieldset>
 
+    <div class="row">
+
+    <div class="col-lg-6">
+
     <div style="width: 100%">
       <% if @leaf_colour.new_record? %>
         <div class="colour-circle circle-xlarge" id="circle"></div>
       <% else %>
-        <div class="colour-circle circle-xlarge" id="circle" style="background: <%= (@leaf_colour.name).gsub(/\s+/, '') %>"></div>
+        <div class="colour-circle circle-xlarge" id="circle" style="background: <%= to_colour(@leaf_colour) %>"></div>
       <% end %>
       <div class="form-control-wrapper">
-  	    <%= f.input  :name, autofocus: true %>
+        <%= f.input  :name, autofocus: true %>
       </div>
     </div>
     <br/>
     <p>Use any of the colours listed <a href="http://www.w3schools.com/cssref/css_colornames.asp" style="font-weight: 700;" target="_blank">here</a> and the colour will be displayed whenever the name of the colour is mentioned.</p>
+
+    </div>
+    <div class="col-lg-6">
+   
+
+
+
+    <%= f.input  :alt_colour %>
+    <br/>
+    <p>If the colour you entered doesn't appear as the right colour, type in the hex value (<span style="color: #FFB300">#FFB300</span>, for example) of the colour above. You can find out the hex value of a colour at <a href="http://colorpicker.com/" style="font-weight: 700;" target="_blank">this website</a>.</p>
+
+    </div>
+
+    </div>
+
   </fieldset> 
   <hr/>
   <%= f.submit class: 'btn btn-orange' %>
+
 <% end %>
 
 <script>
@@ -35,8 +55,25 @@
 
   $('#leaf_colour_name').keyup(function() {
     var col = $('#leaf_colour_name').val().replace(/ /g,'');
-    $('#circle').css('background', 'white');
-    $('#circle').css('background', col);
+
+    if($.trim($('#leaf_colour_alt_colour').val()).length == 0) {
+      $('#circle').css('background', 'white');
+      $('#circle').css('background', col);
+    }
   });
+
+  $('#leaf_colour_alt_colour').keyup(function() {
+    var col2 = $('#leaf_colour_alt_colour').val().replace(/ /g,'');
+    $('#circle').css('background', 'white');
+    $('#circle').css('background', col2);
+
+    if($.trim($('#leaf_colour_alt_colour').val()).length == 0) {
+      var col = $('#leaf_colour_name').val().replace(/ /g,'');
+      $('#circle').css('background', 'white');
+      $('#circle').css('background', col);
+    }
+
+  });
+
 </script>
 

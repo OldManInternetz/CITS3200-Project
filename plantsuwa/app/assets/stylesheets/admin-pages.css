@@ -187,6 +187,7 @@ hr {
   height: 40px;
   padding: 0 7px;
   padding-top: 9px;
+  z-index: 1000;
 
   background: -webkit-linear-gradient(#DDDDDD, white, #DDDDDD); /* For Safari 5.1 to 6.0 */
 	background: -o-linear-gradient(#DDDDDD, white, #DDDDDD); /* For Opera 11.1 to 12.0 */
@@ -333,7 +334,7 @@ hr {
 .apb-1 {  background: url('admin-box-notifications-3.jpg');  background-position: center; }
 .apb-2 {  background: url('admin-box-users-2.jpg');  background-position: center; }
 .apb-3 {  background: url('admin-box-plants-2.jpg');  background-position: center; }
-.apb-4 {  background: url('admin-box-photos-3.jpg');  background-position: center; }
+.apb-4 {  background: url('admin-box-photos-7.jpg');  background-position: center; }
 .apb-5 {  background: url('admin-box-climates-2.jpg');  background-position: center; }
 .apb-6 {  background: url('admin-box-origins-3.jpg');  background-position: center; }
 .apb-7 {  background: url('admin-box-flower-colours-2.jpg');  background-position: center; }
@@ -375,7 +376,41 @@ hr {
   float: right;
 }
 
+.alert-orange {
+  background: #FFB300;
+  border-color: #EB9100;
+  padding: 10px 12px;
+  margin-top: 20px;
+}
 
+.alert-orange > p {
+  color: black;
+}
+
+
+.alert-close-button:hover {
+  cursor: pointer;
+  color: white;
+}
+
+
+
+.pagination > .active > span, .pagination > .active > span:hover {
+  background: #FFA81C;
+  border-color: #FFB300;
+}
+
+.pagination > .disabled > span, .pagination > .disabled > span:hover, .pagination > li > a {
+  background: #444;
+  border-color: #333;
+  color: white;
+}
+
+.pagination > li > a:hover {
+  background: #555;
+  border-color: #444;
+  color: white;
+}
 
 
 

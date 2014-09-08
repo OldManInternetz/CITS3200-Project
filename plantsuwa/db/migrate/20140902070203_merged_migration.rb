@@ -58,12 +58,14 @@ class MergedMigration < ActiveRecord::Migration
     """ Create leaf_colours table """
     create_table :leaf_colours do |t|
       t.string :name
+      t.string :alt_colour
       t.timestamps
     end
 
  	""" Create flower_colours table """
     create_table :flower_colours do |t|
       t.string :name
+      t.string :alt_colour
       t.timestamps
     end
 

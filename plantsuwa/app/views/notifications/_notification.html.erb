@@ -1,0 +1,10 @@
+<tr>
+	<td>#<%= notification.id %></td>
+	<td><%= link_to notification.user.username, notification.user %> <%= formatted_action(notification.action) %>  <%= link_to notification.current_plant.name, notification.current_plant %></td>
+	<td><%= notification.created_at.to_s(:short) %></td>
+
+	<td class="td-shrink"><%= link_to notification_path(notification), method: :delete, data: { confirm: 'WARNING: Are you sure you want to DELETE this notification?'} do %>
+		<i class="fa fa-trash"></i><span class="over-400">&nbsp;&nbsp;Delete</span>
+	<% end %>
+	</td>
+</tr>

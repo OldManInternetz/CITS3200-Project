@@ -1,0 +1,10 @@
+<% provide(:title, 'Edit User') %>
+<% provide(:prev_page, 'User') %>
+<% provide(:prev_link, users_path) %>
+
+<h1><span class="preceding-heading"><%= link_to 'Users', users_path %> <i class="fa fa-chevron-right"></i></span> Edit '<%= formatted_username(@user) %>'</h1>
+<hr/>
+
+<strong>Note that you can leave the password field blank if you do not wish to change the user's password.</strong>
+
+<%= render 'form_admin' %>

@@ -1,10 +1,11 @@
 class OriginsController < ApplicationController
-
+  
   before_filter :user_is_admin
   layout 'admin_layout'
 
+
   def index
-    @origins = Origin.all
+    @origins = Origin.paginate(page: params[:page], per_page: 15)
   end
   
   def new
@@ -14,6 +15,7 @@ class OriginsController < ApplicationController
   def create
     @origin = Origin.new(origin_params)
     if @origin.save
+      flash[:success] = "\"#{@origin.name}\" was successfully created." 
       redirect_to origins_path
     else
       render 'new'
@@ -35,6 +37,7 @@ class OriginsController < ApplicationController
     @origin = Origin.find(params[:id])
  
     if @origin.update(origin_params)
+      flash[:success] = "\"#{@origin.name}\" was successfully updated."
       redirect_to origins_path
     else
       render 'edit'
@@ -44,7 +47,7 @@ class OriginsController < ApplicationController
   def destroy
     @origin = Origin.find(params[:id])
     @origin.destroy
- 
+    flash[:success] = "\"#{@origin.name}\" was successfully destroyed." 
     redirect_to origins_path
   end
   
@@ -52,5 +55,4 @@ class OriginsController < ApplicationController
     def origin_params
       params.require(:origin).permit(:name)
     end
-
 end

@@ -5,7 +5,7 @@ class SizesController < ApplicationController
 
 
   def index
-    @sizes = Size.all
+    @sizes = Size.paginate(page: params[:page], per_page: 15)
   end
   
   def new
@@ -15,6 +15,7 @@ class SizesController < ApplicationController
   def create
     @size = Size.new(size_params)
     if @size.save
+      flash[:success] = "\"#{@size.name}\" was successfully created." 
       redirect_to sizes_path
     else
       render 'new'
@@ -36,6 +37,7 @@ class SizesController < ApplicationController
     @size = Size.find(params[:id])
  
     if @size.update(size_params)
+      flash[:success] = "\"#{@size.name}\" was successfully updated."
       redirect_to sizes_path
     else
       render 'edit'
@@ -45,7 +47,7 @@ class SizesController < ApplicationController
   def destroy
     @size = Size.find(params[:id])
     @size.destroy
- 
+    flash[:success] = "\"#{@size.name}\" was successfully destroyed." 
     redirect_to sizes_path
   end
   

@@ -5,7 +5,7 @@ class LeafColoursController < ApplicationController
 
 
   def index
-    @leaf_colours = LeafColour.all
+    @leaf_colours = LeafColour.paginate(page: params[:page], per_page: 15)
   end
   
   def new
@@ -15,6 +15,7 @@ class LeafColoursController < ApplicationController
   def create
     @leaf_colour = LeafColour.new(leaf_colour_params)
     if @leaf_colour.save
+      flash[:success] = "\"#{@leaf_colour.name}\" was successfully created." 
       redirect_to leaf_colours_path
     else
       render 'new'
@@ -35,6 +36,7 @@ class LeafColoursController < ApplicationController
     @leaf_colour = LeafColour.find(params[:id])
  
     if @leaf_colour.update(leaf_colour_params)
+      flash[:success] = "\"#{@leaf_colour.name}\" was successfully updated." 
       redirect_to leaf_colours_path
     else
       render 'edit'
@@ -44,13 +46,13 @@ class LeafColoursController < ApplicationController
   def destroy
     @leaf_colour = LeafColour.find(params[:id])
     @leaf_colour.destroy
- 
+    flash[:success] = "\"#{@leaf_colour.name}\" was successfully destroyed." 
     redirect_to leaf_colours_path
   end
   
   private
     def leaf_colour_params
-      params.require(:leaf_colour).permit(:name)
+      params.require(:leaf_colour).permit(:name, :alt_colour)
     end
 
 end

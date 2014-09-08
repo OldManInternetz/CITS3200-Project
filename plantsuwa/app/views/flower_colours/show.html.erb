@@ -1,9 +1,9 @@
 <% provide(:title, @flower_colour.name) %>
 <% provide(:prev_page, 'Flower Colours') %>
-<% provide(:prev_link, flower_colours_path) %> <!-- Change later -->
+<% provide(:prev_link, flower_colours_path) %>
 
 
-	<h1 class="h1-shrink"><span class="preceding-heading"><%= link_to 'Flower Colours', flower_colours_path %> <i class="fa fa-chevron-right"></i></span> <div class="colour-circle circle-large" style="background: <%= (@flower_colour.name).gsub(/\s+/, '') %>"></div><%= @flower_colour.name %></h1>
+	<h1 class="h1-shrink"><span class="preceding-heading"><%= link_to 'Flower Colours', flower_colours_path %> <i class="fa fa-chevron-right"></i></span> <div class="colour-circle circle-large" style="background: <%= to_colour(@flower_colour) %>"></div><%= @flower_colour.name %></h1>
 		<div class="btn-group">
 
 			<%= link_to edit_flower_colour_path(@flower_colour), class: 'btn-top btn btn-orange button-shrink', style: 'float: left;' do %>

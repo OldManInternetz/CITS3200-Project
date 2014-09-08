@@ -1,0 +1,8 @@
+<% provide(:title, 'New User') %>
+<% provide(:prev_page, 'Users') %>
+<% provide(:prev_link, users_path) %>
+
+<h1 class="h1-shrink"><span class="preceding-heading"><%= link_to 'Users', users_path %> <i class="fa fa-chevron-right"></i></span> New User</h1>
+<hr/>
+ 
+<%= render 'form' %>

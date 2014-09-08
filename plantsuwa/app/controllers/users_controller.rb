@@ -1,26 +1,48 @@
 class UsersController < ApplicationController
 
 	
+  before_filter :user_is_admin, only: [:edit, :update, :destroy, :index, :show]
+  layout 'admin_layout', only: [:edit, :update, :destroy, :index, :show]
+
   # This line will cause only signed in users to be able to edit their information. Right now,
   # there is no edit page, and there may not even be one. We'll have to think about this later
   before_action :signed_in_user, except: [:new, :create]
 
-  """  
-  def edit
-    @user = User.find(current_user)
-  end
-  """
 
-  """
+
+  def index
+    @users = User.paginate(page: params[:page], per_page: 15)
+  end
+
+  def show
+    @user = User.find(params[:id])
+    @notifications = Notification.where('user_id = ?', @user.id)
+  end
+
+  def edit
+    @user = User.find(params[:id])
+  end
+
   def update
-    @user = User.find(current_user)
-   	if @user.update_attributes(user_params)
-      redirect_to root_path
+    @user = User.find(params[:id])
+ 
+    if @user.update(user_params_admin)
+      redirect_to users_path
     else
       render 'edit'
     end
   end
-  """
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+ 
+    redirect_to users_path
+  end
+
+
+
+  """ These can be viewed by anyone, not just admins """
 
   def new
 		if signed_in?
@@ -46,6 +68,10 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:username, :password, :password_confirmation, :email)
+    end
+
+    def user_params_admin
+      params.require(:user).permit(:username, :email, :password, :password_confirmation, :trusted, :admin)
     end
 
 

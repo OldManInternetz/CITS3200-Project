@@ -1,0 +1,30 @@
+<%= simple_form_for(@user, html: { class: 'form-horizontal' , :'accept-charset' => "UTF-8"}, defaults: { input_html: { class: 'form-control' } }) do |f| %>
+  <% if @user.errors.any? %>
+  <div id="error_explanation">
+    <br/>
+    <h4><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h4>
+    <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+  	<% end %>
+    </ul>
+  </div>
+  <% end %>
+  
+  <fieldset>
+    <div class="row">
+      <div class="col-lg-6">
+        <%= f.input  :username, autofocus: true %>
+        <%= f.input  :email %>
+        <%= f.input  :password %>
+        <%= f.input  :password_confirmation %>
+      </div>
+      <div class="col-lg-6">
+        <%= f.input  :trusted, as: :select, include_blank: false, hint: "Trusted users have the ability to create new plants, and edit existing plants." %>
+    	  <%= f.input  :admin, as: :select, include_blank: false, hint: "Administrators are able to access this interface, and have full control over the application. Be careful not to remove someone's administrator privileges by accident!" %>
+      </div>
+    </div>
+  </fieldset> 
+  <hr/>
+  <%= f.submit class: 'btn btn-orange' %>
+<% end %>
