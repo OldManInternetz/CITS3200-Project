@@ -3,9 +3,11 @@ class CurrentPlantsController < ApplicationController
   before_action :signed_in_user, only: [:new, :edit, :update, :create]
   # Make sure only admins can destroy!
 
-
+  respond_to :html, :json
+  
   def index
     @current_plants = CurrentPlant.search_for(params[:search])
+    respond_with(@current_plants)
   end
   
 	def auto_complete_search

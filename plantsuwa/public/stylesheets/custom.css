@@ -1,0 +1,367 @@
+body, .navbar {
+  min-width: 280px;
+}
+
+
+h1, h2, h3, h4, h5, h6, th, legend {
+	font-family: 'Montserrat', sans-serif;
+}
+
+
+p, div, td, label, dd, dt {
+	font-family: 'Oxygen', sans-serif;
+}
+
+.main { 
+	padding: 25px;
+}
+
+.well {
+	padding-top: 0px;
+}
+
+.img-rounded {
+	border-radius: 5px;
+}
+
+.img-padded {
+	margin: 5px 0px;
+}
+
+
+.scrollbar-area {
+	overflow-y: scroll;
+}
+
+th {
+	position: sticky;
+}
+
+tr {
+	height: 10px;
+	border-top: 2px;
+}
+
+td {
+	padding: 10px;
+}
+
+
+
+
+
+.navbar-inverse {
+	background: black;
+	border-radius: 0px;
+	border: 15px;
+}
+
+
+body {
+	height: 100%;
+}
+
+footer {
+	border-top: 5px solid gray;
+	background: #F5F5F5;
+	padding: 20px 5px;
+	height: 80px;
+	/* A sneaky way to ensure that the footer always goes to the bottom of the page. Haha. */
+	box-shadow: 0px 500px 0px 500px #F5F5F5;
+
+}
+
+footer p, a {
+	color: #474747;
+	
+}
+
+
+
+
+
+.bottom-nav-control p {
+	color: white;
+	opacity: 0.7;
+}
+
+.bottom-nav-control h3 {
+	color: white;
+}
+
+
+.img-trans {
+	opacity: 0.7;
+}
+
+.img-trans:hover, .bottom-nav-control p:hover {
+	opacity: 1;
+	transition: opacity 0.2s;
+}
+
+
+
+label {
+  margin-top: 15px;
+}
+
+.help-block {
+  margin-bottom: 0px !important;
+}
+
+
+textarea {
+  resize: vertical;
+}
+
+.info-tab {
+  width: 25%;
+
+  float: left;
+  padding: 0 7px;
+  padding-top: 9px;
+  border-right: 1px solid #222;
+  background: #eee;
+  position: fixed;
+  bottom: 0;
+  height: 40px;
+
+  background: black;
+
+  background: -webkit-linear-gradient(#2E2E2E, black, black, #2E2E2E); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#2E2E2E, black, black, #2E2E2E); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#2E2E2E, black, black, #2E2E2E); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#2E2E2E, black, black, #2E2E2E); /* Standard syntax */
+
+}
+
+.info-tab:hover {
+  cursor: pointer;
+}
+
+.info-tab-current {
+
+  background: #268BFF;
+
+  background: -webkit-linear-gradient(#5CA8FF, #268BFF, #268BFF, #5CA8FF); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#5CA8FF, #268BFF, #268BFF, #5CA8FF); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#5CA8FF, #268BFF, #268BFF, #5CA8FF); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#5CA8FF, #268BFF, #268BFF, #5CA8FF); /* Standard syntax */
+
+}
+
+.info-tab-current:hover {
+  cursor: auto;
+}
+
+.info-tab-disabled {
+
+}
+
+.info-tab-disabled:hover {
+  cursor: not-allowed;
+}
+
+.info-tab p {
+	font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  font-size: small;
+  color: white;
+}
+
+.info-tab-disabled p {
+	color: #333;
+}
+
+.center-wrapper {
+  display: table;
+  margin: 0 auto;
+
+}
+
+.center-wrapper-inner {
+  display: inline-block;
+ 
+}
+
+
+
+.info-body {
+  min-height: 100px;
+}
+
+.info-body p {
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+
+
+
+
+.action-tab {
+  width: 50%;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  float: left;
+  padding: 3px 5px;
+
+  border-right: 1px solid #ccc;
+  background: #eee;
+
+	/*box-shadow: 0 -2px 8px #ccc;  */
+ 
+  position: fixed;
+  height: 30px;
+  bottom: 40px;
+  left: 0;
+}
+
+.action-tab:hover {
+  cursor: pointer;
+}
+
+
+.padding-mobile {
+  padding: 0 10px;
+}
+
+.help-inline {
+  color: rgb(169, 68, 66);
+}
+
+
+
+.check_boxes > .controls {
+  padding: 0 30px;
+  /*  padding-bottom: 5px; */
+  /* border: 1px solid #ccc; */
+  /* border-radius: 4px; */
+  height: 120px;
+  overflow-y: scroll;
+}
+
+.check_boxes .checkbox {
+  font-size: small;
+	font-family: 'Oxygen', sans-serif;
+}
+
+
+
+
+.form-photo-box {
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.btn-welcome {
+  width: 80%;
+  margin: 0 10%;
+  padding: 20px 0;
+  font-size: medium;
+	font-family: 'Montserrat', sans-serif;
+  background: #eee;
+}
+
+.search {
+  width: 100%;
+  margin: 0 10%;
+  padding: 20px ;
+  font-size: medium;
+	font-family: 'Montserrat', sans-serif;
+  background: #eee;
+}
+
+
+
+.plant-index-box {
+  width: 100%;
+  height: 64px;
+  border-top: 1px solid #bbb;
+  border-right: 1px solid #bbb;
+  position: relative;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+}
+.plant-index-box-photo {
+  width: 64px;
+  height: 64px;
+  border-right: 1px solid #bbb;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+  position: absolute;
+  left: 0;
+  top: 0;
+
+}
+.plant-index-box-content {
+  padding-top: 6px;
+  height: 64px;
+  width: 100%;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.plant-index-box-chevron {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 64px;
+  width: 44px;
+  padding-top: 18px;
+  padding-left: 12px;
+  font-size: large;
+}
+
+.plant-index-tab {
+  width: 100%;
+  height: 24px;
+  padding: 4px 0;
+  z-index: 1000;
+  border-bottom: 1px solid #bbb;
+}
+
+.plant-index-tab p {
+	font-family: 'Montserrat', sans-serif;
+  font-size: small;
+} 
+
+.navbar-brand {
+  color: #bbb !important;
+}
+
+
+
+.navbar-title-block {
+  margin-bottom: 0px;
+  margin-left: -10px;
+  font-size: small;
+  width: 100%;
+}
+
+.navbar-prev-page-block {
+  margin-bottom: 0px;
+  font-size: small;
+  margin-left: -10px;
+  position: absolute;
+  left: 0;
+  width: auto;
+  padding-right: 0;
+}
+
+.navbar-uwacrest-block {
+  margin-left: -10px;
+  width: 80px;
+  position: absolute;
+  left: 0;
+}
+
+.display-photo-right {
+  float: right;
+  margin-left: 10px;
+  border: 1px solid #ccc;
+  max-width: 60%;
+  max-height: 60%;
+}
