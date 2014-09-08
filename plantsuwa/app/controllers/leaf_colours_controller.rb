@@ -5,7 +5,7 @@ class LeafColoursController < ApplicationController
 
 
   def index
-    @leaf_colours = LeafColour.paginate(page: params[:page], per_page: 15)
+    @leaf_colours = LeafColour.paginate(page: params[:page], per_page: 10)
   end
   
   def new

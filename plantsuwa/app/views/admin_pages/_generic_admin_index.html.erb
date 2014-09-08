@@ -1,15 +1,17 @@
 <%= render partial: 'admin_pages/generic_admin_index_header', locals: {objects: objects, new_object_path: new_object_path, title_name: title_name, button_name: button_name} %>
-<table class="table table-striped">
-	<thead>
-		<tr>
-			<th style="width: 40px">ID</th>
-			<th>Name</th>
-			<th style="width: 90px;" class="th-shrink"></th>
-			<th style="width: 90px;" class="th-shrink"></th>
-		</tr>
-	</thead>
-	<tbody>
-		<%= render objects %>
-	</tbody>
-</table>
+<div style="min-height: 400px">
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th style="width: 40px">ID</th>
+				<th>Name</th>
+				<th style="width: 90px;" class="th-shrink"></th>
+				<th style="width: 90px;" class="th-shrink"></th>
+			</tr>
+		</thead>
+		<tbody>
+			<%= render objects %>
+		</tbody>
+	</table>
+</div>
 <%= render partial: 'admin_pages/generic_admin_pagination', locals: {objects: objects} %>

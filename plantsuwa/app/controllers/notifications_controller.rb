@@ -5,7 +5,7 @@ class NotificationsController < ApplicationController
 
 
   def index
-    @notifications = Notification.paginate(page: params[:page], per_page: 15)
+    @notifications = Notification.paginate(page: params[:page], per_page: 10)
   end
   
   def edit

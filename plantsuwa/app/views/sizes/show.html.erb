@@ -1,20 +1,6 @@
 <% provide(:title, @size.name) %>
-<% provide(:prev_page, 'Sizes') %>
-<% provide(:prev_link, sizes_path) %>
 
-
-	<h1 class="h1-shrink"><span class="preceding-heading"><%= link_to 'Sizes', sizes_path %> <i class="fa fa-chevron-right"></i></span> <%= @size.name %></h1>
-		<div class="btn-group">
-
-			<%= link_to edit_size_path(@size), class: 'btn-top btn btn-orange button-shrink', style: 'float: left;' do %>
-				<i class="fa fa-edit"></i><span class="over-500">&nbsp;&nbsp;Edit</span>
-			<% end %>
-			<%= link_to size_path(@size), method: :delete, data: { confirm: 'WARNING: Are you sure you want to DELETE this size? Doing so will affect all plants with this size!'}, class: 'btn-top btn btn-orange button-shrink', style: 'float: right;' do %>
-				<i class="fa fa-trash-o"></i><span class="over-500">&nbsp;&nbsp;Delete</span>
-			<% end %>
-
-		</div>
-<hr/>
+<%= render partial: 'admin_pages/generic_admin_show', locals: {object: @size, objects_path: sizes_path, edit_object_path: edit_size_path(@size), object_path: size_path(@size), object_prevpage: 'Sizes', object_name: 'size', object_has_colour: false } %>
 
 <p>Plants that are '<%= @size.name %>':</p>
 <%= render 'admin_pages/plants_table' %>

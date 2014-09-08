@@ -5,7 +5,7 @@ class OriginsController < ApplicationController
 
 
   def index
-    @origins = Origin.paginate(page: params[:page], per_page: 15)
+    @origins = Origin.paginate(page: params[:page], per_page: 10)
   end
   
   def new

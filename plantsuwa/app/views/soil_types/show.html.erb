@@ -1,20 +1,6 @@
 <% provide(:title, @soil_type.name) %>
-<% provide(:prev_page, 'Soil Types') %>
-<% provide(:prev_link, soil_types_path) %>
 
+<%= render partial: 'admin_pages/generic_admin_show', locals: {object: @soil_type, objects_path: soil_types_path, edit_object_path: edit_soil_type_path(@soil_type), object_path: soil_type_path(@soil_type), object_prevpage: 'Soil Types', object_name: 'soil type', object_has_colour: false } %>
 
-	<h1 class="h1-shrink"><span class="preceding-heading"><%= link_to 'Soil Types', soil_types_path %> <i class="fa fa-chevron-right"></i></span> <%= @soil_type.name %></h1>
-		<div class="btn-group">
-
-			<%= link_to edit_soil_type_path(@soil_type), class: 'btn-top btn btn-orange button-shrink', style: 'float: left;' do %>
-				<i class="fa fa-edit"></i><span class="over-500">&nbsp;&nbsp;Edit</span>
-			<% end %>
-			<%= link_to soil_type_path(@soil_type), method: :delete, data: { confirm: 'WARNING: Are you sure you want to DELETE this soil type? Doing so will affect all plants with this soil type!'}, class: 'btn-top btn btn-orange button-shrink', style: 'float: right;' do %>
-				<i class="fa fa-trash-o"></i><span class="over-500">&nbsp;&nbsp;Delete</span>
-			<% end %>
-
-		</div>
-<hr/>
-
-<p>Plants that have the soil type '<%= @soil_type.name %>':</p>
+<p>Plants that have the soil type of '<%= @soil_type.name %>':</p>
 <%= render 'admin_pages/plants_table' %>

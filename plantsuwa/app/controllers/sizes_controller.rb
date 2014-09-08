@@ -5,7 +5,7 @@ class SizesController < ApplicationController
 
 
   def index
-    @sizes = Size.paginate(page: params[:page], per_page: 15)
+    @sizes = Size.paginate(page: params[:page], per_page: 10)
   end
   
   def new

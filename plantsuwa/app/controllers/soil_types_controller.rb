@@ -5,7 +5,7 @@ class SoilTypesController < ApplicationController
 
 
   def index
-    @soil_types = SoilType.paginate(page: params[:page], per_page: 15)
+    @soil_types = SoilType.paginate(page: params[:page], per_page: 10)
   end
   
   def new

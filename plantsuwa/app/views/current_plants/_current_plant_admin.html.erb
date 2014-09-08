@@ -1,7 +1,7 @@
 <tr>
 	<td>#<%= current_plant.id %></td>
-	<td>
-   	<%= image_tag current_plant.display_photo.url(:thumb), width:"100%", height:"100%", alt:"Plant photo", class:"img-circle" %>
+	<td style="height: 50px; width: 40px">
+   	<%= image_tag current_plant.display_photo.url(:thumb), height:"100%", alt:"Plant photo", class:"img-circle" %>
   </td>
 	<td><%= link_to display_name(current_plant), current_plant_path(current_plant) %></td>
 	<td class="td-shrink">

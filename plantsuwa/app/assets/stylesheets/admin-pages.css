@@ -3,6 +3,10 @@ body {
   background: #222222;
 }
 
+.padding-mobile {
+  position: relative;
+}
+
 .container {
   background: #0A0A0A;
   color: white;	
@@ -404,16 +408,37 @@ hr {
   border-color: #EB9100;
 }
 
-.pagination > .disabled > span, .pagination > .disabled > span:hover, .pagination > li > a {
+.pagination > li > a {
   background: #444;
   border-color: #333;
   color: white;
+}
+
+.pagination > .disabled > span, .pagination > .disabled > span:hover {
+  background: #333;
+  border-color: #222;
+  color: #ddd;  
 }
 
 .pagination > li > a:hover {
   background: #555;
   border-color: #444;
   color: white;
+}
+
+.pagination-info {
+  margin-bottom: -10px;
+}
+
+.pagination-info strong {
+  color: white;
+}
+
+
+
+
+.h1-shrink {
+  width: 75%;  
 }
 
 
@@ -490,15 +515,15 @@ hr {
   .btn-group > .btn-top {
     width: 90px;
   }
-  .h1-shrink {
+  /*.h1-shrink {
     width: 500px;
-  }
+  }*/
 }
 
 @media (max-width: 650px) {
-  .h1-shrink {
+  /*.h1-shrink {
     width: 350px;
-  }
+  }*/
 }
 
 
@@ -527,7 +552,6 @@ hr {
 
   .btn-group > .button-shrink {
     width: 35px !important;
-    margin-top: -20px;
     padding: 4px;
   }
 
@@ -548,9 +572,9 @@ hr {
     width: 15px;
     height: 15px;
   }
-  .h1-shrink {
+  /*.h1-shrink {
     width: 200px;
-  }
+  }*/
 }
 
 @media (max-width: 350px) {

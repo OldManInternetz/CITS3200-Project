@@ -1,20 +1,6 @@
 <% provide(:title, @type.name) %>
-<% provide(:prev_page, 'Types') %>
-<% provide(:prev_link, types_path) %>
 
-
-	<h1 class="h1-shrink"><span class="preceding-heading"><%= link_to 'Types', types_path %> <i class="fa fa-chevron-right"></i></span> <%= @type.name %></h1>
-		<div class="btn-group">
-
-			<%= link_to edit_type_path(@type), class: 'btn-top btn btn-orange button-shrink', style: 'float: left;' do %>
-				<i class="fa fa-edit"></i><span class="over-500">&nbsp;&nbsp;Edit</span>
-			<% end %>
-			<%= link_to type_path(@type), method: :delete, data: { confirm: 'WARNING: Are you sure you want to DELETE this type? Doing so will affect all plants with this type!'}, class: 'btn-top btn btn-orange button-shrink', style: 'float: right;' do %>
-				<i class="fa fa-trash-o"></i><span class="over-500">&nbsp;&nbsp;Delete</span>
-			<% end %>
-
-		</div>
-<hr/>
+<%= render partial: 'admin_pages/generic_admin_show', locals: {object: @type, objects_path: types_path, edit_object_path: edit_type_path(@type), object_path: type_path(@type), object_prevpage: 'Types', object_name: 'type', object_has_colour: false } %>
 
 <p>Plants that are '<%= @type.name.pluralize %>':</p>
 <%= render 'admin_pages/plants_table' %>

@@ -5,7 +5,7 @@ class FlowerColoursController < ApplicationController
 
 
   def index
-    @flower_colours = FlowerColour.paginate(page: params[:page], per_page: 15)
+    @flower_colours = FlowerColour.paginate(page: params[:page], per_page: 10)
   end
   
   def new

@@ -5,7 +5,7 @@ class TypesController < ApplicationController
 
 
   def index
-    @types = Type.paginate(page: params[:page], per_page: 15)
+    @types = Type.paginate(page: params[:page], per_page: 10)
   end
   
   def new
