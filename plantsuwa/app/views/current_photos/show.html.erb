@@ -1,0 +1,42 @@
+<% provide(:title, @current_photo.id) %>
+
+<%= render partial: 'admin_pages/generic_admin_show', locals: {object: @current_photo, objects_path: current_photos_path, edit_object_path: edit_current_photo_path(@current_photo), object_path: current_photo_path(@current_photo), object_prevpage: 'Photos', object_name: 'photo', object_has_colour: false } %>
+
+<div class="row">
+	<div class="col-md-4">
+		<% if @current_photo.image.exists? %>
+			<dt>Photo</dt>
+			<br/>		
+			<%= image_tag @current_photo.image.url(:medium), style: 'max-width: 100%; margin-bottom: 10px' %>
+		<% else %>
+			<dt class="no-description">Photo</dt>
+			<p class="no-description">(None)</p>
+		<% end %>
+	</div>
+	<div class="col-md-8">
+		<% if @current_photo.description.blank? %>
+			<dt class="no-description">Description:</dt>
+			<p class="no-description">(No description)</p>
+		<% else %>
+			<dt>Description</dt>
+			<p><%= @current_photo.description %></p>
+		<% end %>
+	</div>
+</div>
+
+<dt>Belongs to:</dt>
+
+<table class="table table-striped table-responsive">
+	<thead>
+		<tr>
+			<th style="width: 50px">ID</th>
+			<th style="width: 40px"></th>
+			<th>Name</th>
+			<th style="width: 90px;" class="th-shrink"></th>
+			<th style="width: 90px;" class="th-shrink"></th>
+		</tr>
+	</thead>
+	<tbody>
+	<%= render partial: "current_plants/current_plant_admin", locals: { current_plant: @current_plant } %>
+	</tbody>
+</table>

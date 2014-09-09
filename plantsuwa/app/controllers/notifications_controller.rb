@@ -7,23 +7,15 @@ class NotificationsController < ApplicationController
   def index
     @notifications = Notification.paginate(page: params[:page], per_page: 10)
   end
-  
-  def edit
+
+  def show
     @notification = Notification.find(params[:id])
   end
   
-  def update
-    @notification = Notification.find(params[:id])
  
-    if @notification.update(notification_params)
-      redirect_to notifications_path
-    else
-      render 'edit'
-    end
-  end
-  
   def destroy
     @notification = Notification.find(params[:id])
+    flash[:success] = "Notification \##{@notification.id} was successfully destroyed." 
     @notification.destroy
  
     redirect_to notifications_path

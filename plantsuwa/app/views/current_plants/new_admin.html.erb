@@ -1,0 +1,9 @@
+<% provide(:title, 'New Plant') %>
+<% provide(:prev_page, 'Plants') %>
+<% provide(:prev_link, admin_current_plants_path) %>
+
+<h1><span class="preceding-heading"><%= link_to 'Plants', admin_current_plants_path %> <i class="fa fa-chevron-right"></i></span> New Plant</h1>
+<hr/>
+
+
+<%= render partial: 'form_admin', locals: { form_action: 'create_admin' } %>

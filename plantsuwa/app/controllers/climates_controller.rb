@@ -3,7 +3,6 @@ class ClimatesController < ApplicationController
   before_filter :user_is_admin
   layout 'admin_layout'
 
-
   def index
     @climates = Climate.paginate(page: params[:page], per_page: 10)
   end

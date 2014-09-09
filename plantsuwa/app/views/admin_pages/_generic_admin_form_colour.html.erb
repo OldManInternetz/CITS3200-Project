@@ -1,5 +1,5 @@
-<% if object.new_record? %>
-  <strong>Note that these changes will be applied to all plants with this climate.</strong>
+<% if !object.new_record? %>
+  <strong>Note that these changes will be applied to all plants with this <%= object_error_name %>.</strong>
 <% end %>
 <%= simple_form_for(object, html: { class: 'form-horizontal' , :'accept-charset' => "UTF-8"}, defaults: { input_html: { class: 'form-control form-control-90' } }) do |f| %>
   <% if object.errors.any? %>
@@ -17,33 +17,31 @@
   <fieldset>
 
     <div class="row">
+      <div class="col-lg-6">
+        <div style="width: 100%">
+          <% if object.new_record? %>
+            <div class="colour-circle circle-xlarge" id="circle"></div>
+          <% else %>
+            <div class="colour-circle circle-xlarge" id="circle" style="background: <%= to_colour(object) %>"></div>
+          <% end %>
+          <div class="form-control-wrapper">
+            <%= f.input  :name, autofocus: true %>
+          </div>
+        </div>
+        <br/>
+        <p>Use any of the colours listed <a href="http://www.w3schools.com/cssref/css_colornames.asp" style="font-weight: 700;" target="_blank">here</a> and the colour will be displayed whenever the name of the colour is mentioned.</p>
 
-    <div class="col-lg-6">
-
-    <div style="width: 100%">
-      <% if object.new_record? %>
-        <div class="colour-circle circle-xlarge" id="circle"></div>
-      <% else %>
-        <div class="colour-circle circle-xlarge" id="circle" style="background: <%= to_colour(object) %>"></div>
-      <% end %>
-      <div class="form-control-wrapper">
-        <%= f.input  :name, autofocus: true %>
       </div>
-    </div>
-    <br/>
-    <p>Use any of the colours listed <a href="http://www.w3schools.com/cssref/css_colornames.asp" style="font-weight: 700;" target="_blank">here</a> and the colour will be displayed whenever the name of the colour is mentioned.</p>
-
-    </div>
-    <div class="col-lg-6">
-   
+      <div class="col-lg-6">
+     
 
 
 
-    <%= f.input  :alt_colour %>
-    <br/>
-    <p>If the colour you entered doesn't appear as the right colour, type in the hex value (<span style="color: ##FB300">#FFB300</span>, for example) of the colour above. You can find out the hex value of a colour at <a href="http://colorpicker.com/" style="font-weight: 700;" target="_blank">this website</a>.</p>
+      <%= f.input  :alt_colour %>
+      <br/>
+      <p>If the colour you entered doesn't appear as the right colour, type in the hex value (<span style="color: ##FB300">#FFB300</span>, for example) of the colour above. You can find out the hex value of a colour at <a href="http://colorpicker.com/" style="font-weight: 700;" target="_blank">this website</a>.</p>
 
-    </div>
+      </div>
 
     </div>
 

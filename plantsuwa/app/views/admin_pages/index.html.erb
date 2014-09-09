@@ -5,152 +5,154 @@
 <h1 class="h1-shrink">Administration Dashboard</h1>
 <hr/>
 
-<div class="row admin-pages-row">
+<div class="admin-pages-boxes-container">
 
-	<%= link_to notifications_path do %>
-		<div class="admin-pages-column">
-			<div class="admin-pages-box apb-1">
-				<div class="admin-page-heading">
-					<i class="fa fa-bell"></i>&nbsp;&nbsp;Notifications&nbsp;&nbsp;<span style="color: #777">(<%= @notifications_count %>)
-				</div>			
-			</div>
-		</div>
-	<% end %>
+	<div class="row admin-pages-row">
 
-	<%= link_to users_path do %>
-		<div class="admin-pages-column">
-			<div class="admin-pages-box apb-2">
-
-				<div class="admin-page-heading">
-					<i class="fa fa-users"></i>&nbsp;&nbsp;Users&nbsp;&nbsp;<span style="color: #777">(<%= @users_count %>)
+		<%= link_to notifications_path do %>
+			<div class="admin-pages-column">
+				<div class="admin-pages-box apb-1">
+					<div class="admin-page-heading">
+						<i class="fa fa-bell"></i>&nbsp;&nbsp;Notifications&nbsp;&nbsp;<span style="color: #777">(<%= @notifications_count %>)</span>
+					</div>			
 				</div>
-				
 			</div>
-		</div>
-	<% end %>
+		<% end %>
 
-	<%= link_to admin_plants_path do %>
-		<div class="admin-pages-column">
-			<div class="admin-pages-box apb-3">
+		<%= link_to users_path do %>
+			<div class="admin-pages-column">
+				<div class="admin-pages-box apb-2">
 
-				<div class="admin-page-heading">
-					<i class="fa fa-tree"></i>&nbsp;&nbsp;Plants&nbsp;&nbsp;<span style="color: #777">(<%= @current_plants_count %>)
+					<div class="admin-page-heading">
+						<i class="fa fa-users"></i>&nbsp;&nbsp;Users&nbsp;&nbsp;<span style="color: #777">(<%= @users_count %>)</span>
+					</div>
+					
 				</div>
-				
 			</div>
-		</div>
-	<% end %>
+		<% end %>
 
-	<%= link_to types_path do %>
-		<div class="admin-pages-column">
-			<div class="admin-pages-box apb-4">
+		<%= link_to admin_current_plants_path do %>
+			<div class="admin-pages-column">
+				<div class="admin-pages-box apb-3">
 
-				<div class="admin-page-heading">
-					<i class="fa fa-photo"></i>&nbsp;&nbsp;Photos&nbsp;&nbsp;<span style="color: #777">(<%= @current_photos_count %>)
+					<div class="admin-page-heading">
+						<i class="fa fa-tree"></i>&nbsp;&nbsp;Plants&nbsp;&nbsp;<span style="color: #777">(<%= @current_plants_count %>)</span>
+					</div>
+					
 				</div>
-				
 			</div>
-		</div>
-	<% end %>
+		<% end %>
+
+		<%= link_to current_photos_path do %>
+			<div class="admin-pages-column">
+				<div class="admin-pages-box apb-4">
+
+					<div class="admin-page-heading">
+						<i class="fa fa-photo"></i>&nbsp;&nbsp;Photos&nbsp;&nbsp;<span style="color: #777">(<%= @current_photos_count %>)</span>
+					</div>
+					
+				</div>
+			</div>
+		<% end %>
+
+	</div>
+	<div class="row admin-pages-row">
+
+		<%= link_to climates_path do %>
+			<div class="admin-pages-column">
+				<div class="admin-pages-box apb-5">
+
+					<div class="admin-page-heading">
+						<i class="fa fa-cloud"></i>&nbsp;&nbsp;Climates&nbsp;&nbsp;<span style="color: #777">(<%= @climates_count %>)</span>
+					</div>
+					
+				</div>
+			</div>
+		<% end %>
+
+
+		<%= link_to origins_path do %>
+			<div class="admin-pages-column">
+				<div class="admin-pages-box apb-6">
+
+					<div class="admin-page-heading">
+						<i class="fa fa-globe"></i>&nbsp;&nbsp;Origins&nbsp;&nbsp;<span style="color: #777">(<%= @origins_count %>)</span>
+					</div>
+					
+				</div>
+			</div>
+		<% end %>
+
+		<%= link_to flower_colours_path do %>
+			<div class="admin-pages-column">
+				<div class="admin-pages-box apb-7">
+
+					<div class="admin-page-heading">
+						<i class="fa fa-adjust"></i>&nbsp;&nbsp;Flower Colours&nbsp;&nbsp;<span style="color: #777">(<%= @flower_colours_count %>)</span>
+					</div>
+					
+				</div>
+			</div>
+		<% end %>
+
+		<%= link_to leaf_colours_path do %>
+			<div class="admin-pages-column">
+				<div class="admin-pages-box apb-8">
+
+					<div class="admin-page-heading">
+						<i class="fa fa-leaf"></i>&nbsp;&nbsp;Leaf Colours&nbsp;&nbsp;<span style="color: #777">(<%= @leaf_colours_count %>)</span>
+					</div>
+					
+				</div>
+			</div>
+		<% end %>
+
+	</div>
+	<div class="row admin-pages-row">
+
+		<%= link_to sizes_path do %>
+			<div class="admin-pages-column">
+				<div class="admin-pages-box apb-9">
+
+					<div class="admin-page-heading">
+						<i class="fa fa-arrows-h"></i>&nbsp;&nbsp;Sizes&nbsp;&nbsp;<span style="color: #777">(<%= @sizes_count %>)</span>
+					</div>
+					
+				</div>
+			</div>
+		<% end %>
+
+
+		<%= link_to soil_types_path do %>
+			<div class="admin-pages-column">
+				<div class="admin-pages-box apb-10">
+
+					<div class="admin-page-heading">
+						<i class="fa fa-tint"></i>&nbsp;&nbsp;Soil Types&nbsp;&nbsp;<span style="color: #777">(<%= @soil_types_count %>)</span>
+					</div>
+					
+				</div>
+			</div>
+		<% end %>
+
+		<%= link_to types_path do %>
+			<div class="admin-pages-column">
+				<div class="admin-pages-box apb-11">
+
+					<div class="admin-page-heading">
+						<i class="fa fa-cubes"></i>&nbsp;&nbsp;Types&nbsp;&nbsp;<span style="color: #777">(<%= @types_count %>)</span>
+					</div>
+					
+				</div>
+			</div>
+		<% end %>
+
+
+
+
+	</div>
 
 </div>
-<div class="row admin-pages-row">
-
-	<%= link_to climates_path do %>
-		<div class="admin-pages-column">
-			<div class="admin-pages-box apb-5">
-
-				<div class="admin-page-heading">
-					<i class="fa fa-cloud"></i>&nbsp;&nbsp;Climates&nbsp;&nbsp;<span style="color: #777">(<%= @climates_count %>)
-				</div>
-				
-			</div>
-		</div>
-	<% end %>
-
-
-	<%= link_to origins_path do %>
-		<div class="admin-pages-column">
-			<div class="admin-pages-box apb-6">
-
-				<div class="admin-page-heading">
-					<i class="fa fa-globe"></i>&nbsp;&nbsp;Origins&nbsp;&nbsp;<span style="color: #777">(<%= @origins_count %>)
-				</div>
-				
-			</div>
-		</div>
-	<% end %>
-
-	<%= link_to flower_colours_path do %>
-		<div class="admin-pages-column">
-			<div class="admin-pages-box apb-7">
-
-				<div class="admin-page-heading">
-					<i class="fa fa-adjust"></i>&nbsp;&nbsp;Flower Colours&nbsp;&nbsp;<span style="color: #777">(<%= @flower_colours_count %>)
-				</div>
-				
-			</div>
-		</div>
-	<% end %>
-
-	<%= link_to leaf_colours_path do %>
-		<div class="admin-pages-column">
-			<div class="admin-pages-box apb-8">
-
-				<div class="admin-page-heading">
-					<i class="fa fa-leaf"></i>&nbsp;&nbsp;Leaf Colours&nbsp;&nbsp;<span style="color: #777">(<%= @leaf_colours_count %>)
-				</div>
-				
-			</div>
-		</div>
-	<% end %>
-
-</div>
-<div class="row admin-pages-row">
-
-	<%= link_to sizes_path do %>
-		<div class="admin-pages-column">
-			<div class="admin-pages-box apb-9">
-
-				<div class="admin-page-heading">
-					<i class="fa fa-arrows-h"></i>&nbsp;&nbsp;Sizes&nbsp;&nbsp;<span style="color: #777">(<%= @sizes_count %>)
-				</div>
-				
-			</div>
-		</div>
-	<% end %>
-
-
-	<%= link_to soil_types_path do %>
-		<div class="admin-pages-column">
-			<div class="admin-pages-box apb-10">
-
-				<div class="admin-page-heading">
-					<i class="fa fa-tint"></i>&nbsp;&nbsp;Soil Types&nbsp;&nbsp;<span style="color: #777">(<%= @soil_types_count %>)
-				</div>
-				
-			</div>
-		</div>
-	<% end %>
-
-	<%= link_to types_path do %>
-		<div class="admin-pages-column">
-			<div class="admin-pages-box apb-11">
-
-				<div class="admin-page-heading">
-					<i class="fa fa-cubes"></i>&nbsp;&nbsp;Types&nbsp;&nbsp;<span style="color: #777">(<%= @types_count %>)
-				</div>
-				
-			</div>
-		</div>
-	<% end %>
-
-
-
-
-</div>
-
-
 
 
 
@@ -177,12 +179,12 @@
 
 			<tr>
 				<td><i class="fa fa-tree"></i>
-				<td><%= link_to 'Plants', admin_plants_path %></td>
+				<td><%= link_to 'Plants', admin_current_plants_path %></td>
 				<td><%= @current_plants_count %></td>
 			</tr>
 			<tr>
 				<td><i class="fa fa-photo"></i>
-				<td><%= link_to 'Photos', types_path %></td>
+				<td><%= link_to 'Photos', current_photos_path %></td>
 				<td><%= @current_photos_count %></td>
 			</tr>
 			<tr>

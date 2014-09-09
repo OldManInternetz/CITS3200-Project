@@ -287,9 +287,15 @@ textarea {
 	font-family: 'Oxygen', sans-serif;
 }
 
-.checkbox input[type="checkbox"] {
-  margin-left: 0;
+label.checkbox {
+  padding-left: 10px;
 }
+
+.checkbox input[type="checkbox"] {
+  margin-left: -18px;
+  margin-top: 0;
+}
+
 
 
 
@@ -297,6 +303,10 @@ textarea {
   border: 1px solid #ccc;
   padding: 5px;
   margin-bottom: 10px;
+}
+
+.photo-box-display {
+  border: 1px solid #268BFF;
 }
 
 .btn-welcome {

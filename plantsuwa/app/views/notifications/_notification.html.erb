@@ -1,10 +1,15 @@
 <tr>
 	<td>#<%= notification.id %></td>
-	<td><%= link_to notification.user.username, notification.user %> <%= formatted_action(notification.action) %>  <%= link_to notification.current_plant.name, notification.current_plant %></td>
-	<td style="width: 150px;"><%= notification.created_at.to_s(:short) %></td>
+	<td><%= link_to formatted_username(notification.user), notification.user %> <%= formatted_action(notification.action) %> 
 
-	<td class="td-shrink"><%= link_to notification_path(notification), method: :delete, data: { confirm: 'WARNING: Are you sure you want to DELETE this notification?'} do %>
-		<i class="fa fa-trash"></i><span class="over-400">&nbsp;&nbsp;Delete</span>
+		<% if controller_name == "notifications" or controller_name == "users" %>  
+			<%= link_to display_name(notification.current_plant), admin_current_plant_path(notification.current_plant) %>
+		<% end %>
+	</td>
+	<td style="width: 120px"><%= link_to notification_path(notification), style: 'float: right' do %>
+		<i class="fa fa-file-text-o"></i>&nbsp;&nbsp;Change Log
 	<% end %>
 	</td>
+	<td style="width: 120px"><span style="float: right"><%= notification.created_at.to_s(:short) %></span></td>
+
 </tr>

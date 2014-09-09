@@ -108,6 +108,7 @@ ActiveRecord::Schema.define(version: 20140903152859) do
     t.datetime "display_photo_updated_at"
     t.string   "display_photo_description"
     t.integer  "type_id"
+    t.string   "combined_name"
     t.string   "name"
   end
 

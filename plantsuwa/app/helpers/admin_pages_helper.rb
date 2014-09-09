@@ -21,7 +21,13 @@ module AdminPagesHelper
 
 	# Prints a confirmation message
 	def confirmation_message(object_name)
-		'WARNING: Are you sure you want to DELETE this ' + object_name + '? Doing so will affect all plants with this ' + object_name + '!'
+		if controller_name == "current_plants"
+			'WARNING: Are you sure you want to DELETE this ' + object_name + '? All notifications associated with this plant will be destroyed.'
+		elsif controller_name == "users"
+			'WARNING: Are you sure you want to DELETE this ' + object_name + '? All notifications by and favourites of this user will be destroyed.'
+		else
+			'WARNING: Are you sure you want to DELETE this ' + object_name + '? Doing so will affect all plants with this ' + object_name + '!'
+		end
 	end
 
 

@@ -1,0 +1,268 @@
+<% provide(:title, display_title(@current_plant)) %>
+
+<%= render partial: 'admin_pages/generic_admin_show', locals: {object: @current_plant, objects_path: admin_current_plants_path, edit_object_path: admin_edit_current_plant_path(@current_plant), object_path: admin_current_plant_path(@current_plant), object_prevpage: 'Plants', object_name: 'plant', object_has_colour: false } %>
+
+
+<div class="row">
+  <div class="col-md-6">
+    <legend>Descriptions</legend>
+
+    <% if not display_name(@current_plant).blank? %>
+      <dt>Name</dt><p><%= display_name(@current_plant) %></p>
+    <% else %>
+      <dt class="no-description">Name</dt><p class="no-description">(None)</p>
+    <% end %>
+    <% if not @current_plant.subspecies.blank? %>
+      <dt>Subspecies</dt><p><%= @current_plant.subspecies %></p>
+    <% else %>
+      <dt class="no-description">Subspecies</dt><p class="no-description">(None)</p>
+    <% end %>
+    <% if not @current_plant.family.blank? %>
+      <dt>Family</dt><p><%= @current_plant.family %></p>
+    <% else %>
+      <dt class="no-description">Family</dt><p class="no-description">(None)</p>
+    <% end %>
+    <% if not @current_plant.common_name.blank? %>
+      <dt>Common Name</dt><p><%= @current_plant.common_name %></p>
+    <% else %>
+      <dt class="no-description">Common Name</dt><p class="no-description">(None)</p>
+    <% end %>
+    <% if not @current_plant.scientific_name.blank? %>
+      <dt>Scientific Name</dt><p><%= @current_plant.scientific_name %></p>
+    <% else %>
+      <dt class="no-description">Scientific Name</dt><p class="no-description">(None)</p>
+    <% end %>
+    <% if not @current_plant.synonym.blank? %>
+      <dt>Synonym</dt><p><%= @current_plant.synonym %></p>
+    <% else %>
+      <dt class="no-description">Synonym</dt><p class="no-description">(None)</p>
+    <% end %>  <% if @current_plant.type %>
+      <dt>Type</dt><p> <%= @current_plant.type.name %> </p>
+    <% else %>
+      <dt class="no-description">Type</dt><p class="no-description">(None)</p>
+    <% end %>
+    <% if not @current_plant.description.blank? %>
+      <dt>Description</dt><p><%= nice_format(@current_plant.description) %></p>
+    <% else %>
+      <dt class="no-description">Description</dt><p class="no-description">(None)</p>
+    <% end %>
+    <% if not @current_plant.characteristics.blank? %>
+      <dt>Characteristics</dt><p><%= nice_format(@current_plant.characteristics) %></p>
+    <% else %>
+      <dt class="no-description">Characteristics</dt><p class="no-description">(None)</p>
+    <% end %>
+    <% if not @current_plant.identification.blank? %>
+      <dt>Identification</dt><p><%= nice_format(@current_plant.identification) %></p>
+    <% else %>
+      <dt class="no-description">Identification</dt><p class="no-description">(None)</p>
+    <% end %>
+    <% if not @current_plant.physical.blank? %>
+      <dt>Physical</dt><p><%= nice_format(@current_plant.physical) %></p>
+    <% else %>
+      <dt class="no-description">Physical</dt><p class="no-description">(None)</p>
+    <% end %>  <% if @current_plant.sizes.any? %>
+      <dt>Size</dt>
+      <ul>
+      <% for @size in @current_plant.sizes %>
+    	  <li> <%= @size.name %> </li>
+      <% end %>
+      </ul>
+    <% else %>
+      <dt class="no-description">Size</dt><p class="no-description">(None)</p>
+    <% end %>
+    <% if @current_plant.flower_colours.any? %>
+      <dt>Flower Colours</dt>
+      <ul>
+      <% for @flower_colour in @current_plant.flower_colours %>
+    	  <li><div class="colour-circle" style="background: <%= to_colour(@flower_colour) %>"></div><%= @flower_colour.name %></li>
+      <% end %>
+      </ul>
+    <% else %>
+      <dt class="no-description">Flower Colours</dt><p class="no-description">(None)</p>
+    <% end %>
+    <% if @current_plant.leaf_colours.any? %>
+      <dt>Leaf Colours</dt>
+      <ul>
+      <% for @leaf_colour in @current_plant.leaf_colours %>
+    	  <li><div class="colour-circle" style="background: <%= to_colour(@leaf_colour) %>"></div><%= @leaf_colour.name %></li>
+      <% end %>
+      </ul>
+    <% else %>
+      <dt class="no-description">Leaf Colours</dt><p class="no-description">(None)</p>
+    <% end %>
+  </div>
+  <div class="col-md-6">
+    <legend>Architectural</legend>
+    <% if @current_plant.climates.any? %>
+      <dt>Climates</dt>		
+      <ul>
+      <% for @climate in @current_plant.climates %>
+        <li> <%= @climate.name %></li>
+      <% end %>
+      </ul>
+    <% else %>
+      <dt class="no-description">Architectural</dt><p class="no-description">(None)</p>
+    <% end %>
+    <% if not @current_plant.environment.blank? %>
+      <dt>Environment</dt><p><%= nice_format(@current_plant.environment) %></p>
+    <% else %>
+      <dt class="no-description">Environment</dt><p class="no-description">(None)</p>
+    <% end %>
+    <% if not @current_plant.horticulture.blank? %>
+      <dt>Horticulture</dt><p><%= nice_format(@current_plant.horticulture) %></p>
+    <% else %>
+      <dt class="no-description">Horticulture</dt><p class="no-description">(None)</p>
+    <% end %>
+    <% if not @current_plant.architectural_uses.blank? %>
+      <dt>Architectural Uses</dt><p><%= nice_format(@current_plant.architectural_uses) %></p>
+    <% else %>
+      <dt class="no-description">Architectural Uses</dt><p class="no-description">(None)</p>
+    <% end %>
+    <% if not @current_plant.architectural_info.blank? %>
+      <dt>Architectural Info</dt><p><%= nice_format(@current_plant.architectural_info) %></p>
+    <% else %>
+      <dt class="no-description">Architectural Info</dt><p class="no-description">(None)</p>
+    <% end %>
+    <% if @current_plant.soil_types.any? %>
+      <dt>Soil Types</dt>		
+      <ul>
+      <% for @soil_type in @current_plant.soil_types %>
+        <li> <%= @soil_type.name %></li>
+      <% end %>
+      </ul>
+    <% else %>
+      <dt class="no-description">Soil Types</dt><p class="no-description">(None)</p>
+    <% end %>
+
+    <legend>Environmental</legend>
+
+    <% if not @current_plant.culture.blank? %>
+      <dt>Culture</dt><p><%= nice_format(@current_plant.culture) %></p>
+    <% else %>
+      <dt class="no-description">Culture</dt><p class="no-description">(None)</p>
+    <% end %>
+    <% if not @current_plant.conservation.blank? %>
+      <dt>Conservation</dt><p><%= nice_format(@current_plant.conservation) %></p>
+    <% else %>
+      <dt class="no-description">Conservation</dt><p class="no-description">(None)</p>
+    <% end %>
+    <% if not @current_plant.wildlife.blank? %>
+      <dt>Wildlife</dt><p><%= nice_format(@current_plant.wildlife) %></p>
+    <% else %>
+      <dt class="no-description">Wildlife</dt><p class="no-description">(None)</p>
+    <% end %>
+    <% if @current_plant.origins.any? %>
+      <dt>Origins</dt>		
+      <ul>
+      <% for @origin in @current_plant.origins %>
+        <li> <%= @origin.name %></li>
+      <% end %>
+      </ul>
+    <% else %>
+      <dt class="no-description">Origins</dt><p class="no-description">(None)</p>
+    <% end %>
+    <% if not @current_plant.location_name.blank? %>
+      <dt>Location Name</dt><p><%= nice_format(@current_plant.location_name) %></p>
+    <% else %>
+      <dt class="no-description">Location Name</dt><p class="no-description">(None)</p>
+    <% end %>
+    <% if not @current_plant.general_info.blank? %>
+      <dt>General Info</dt><p><%= nice_format(@current_plant.general_info) %></p>
+    <% else %>
+      <dt class="no-description">General Info</dt><p class="no-description">(None)</p>
+    <% end %>
+    <% if not @current_plant.additional_info.blank? %>
+      <dt>Additional Info</dt><p><%= nice_format(@current_plant.additional_info) %></p>
+    <% else %>
+      <dt class="no-description">Additional Info</dt><p class="no-description">(None)</p>
+    <% end %>
+    <% if not @current_plant.discovered_by.blank? %>
+      <dt>Discovered By</dt><p><%= nice_format(@current_plant.discovered_by) %></p>
+    <% else %>
+      <dt class="no-description">Discovered By</dt><p class="no-description">(None)</p>
+    <% end %>
+    <% if not @current_plant.named_by.blank? %>
+      <dt>Named By</dt><p><%= nice_format(@current_plant.named_by) %></p>
+    <% else %>
+      <dt class="no-description">Named By</dt><p class="no-description">(None)</p>
+    <% end %>
+  </div>
+</div>
+
+<br/>
+
+<div class="row">
+  <div class="col-md-6">
+
+    <legend>Photos</legend>
+    <% if !@current_plant.display_photo.exists? %>
+      <dt class="no-description">Display Photo</dt>
+      <p class="no-description">This plant has no display photo.</p>
+    <% else %>
+      <dt>Display Photo</dt>
+      <%= image_tag @current_plant.display_photo.url, style: "max-width: 100%; max-height: 400px; margin-bottom: 10px; margin-top: 10px" %>
+      <dt>Description</dt>
+      <p><%= @current_plant.display_photo_description %></p>
+      <hr/>
+    <% end %>
+    <br/>
+
+    <% if @current_plant.current_photos.any? %>
+      <dt>Other photos:</dt>
+      <% for photo in @current_plant.current_photos %>
+        <div class="photo-row">
+
+            <%= link_to current_photo_path(photo) do %>
+              <%= image_tag photo.image.url(:medium) %>
+            <% end %>
+            <% if photo.description.blank? %>
+              <dt class="no-description">Description</dt>
+              <p class="no-description">(No Description)</p>
+            <% else %>
+              <dt>Description</dt>
+              <p><%= photo.description %></p>
+            <% end %>
+
+        </div>
+        
+      <% end %>
+    <% else %>
+      <dt class="no-description">Other Photos</dt>
+      <p class="no-description">(None)</p>
+    <% end %>
+
+    
+  </div>
+  <div class="col-md-6">
+    <legend>Notifications</legend>
+
+    <% if @notifications.any? %>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th style="width: 40px">ID</th>
+          <th>Action</th>
+          <th style="width: 90px;" class="th-shrink"></th>
+          <th style="width: 90px;" class="th-shrink"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render partial: "notifications/notification", collection: @notifications, as: :notification, locals: { pagename: 'plant' } %>
+      </tbody>
+    </table>   
+    <% else %>
+      <p class="no-description">This plant has no notifications.</p>
+    <% end %>
+
+    <br/>
+
+    <legend>Favourites</legend>
+    <dt>This is the favourite plant of the following users:</dt>
+    <p>Favourites haven't been implemented yet, sorry!</p>
+
+
+  </div>
+
+</div>
+<br/>
+<hr/>

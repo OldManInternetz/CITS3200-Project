@@ -1,17 +1,23 @@
 <% provide(:prev_page, object_prevpage) %>
 <% provide(:prev_link, objects_path) %>
 
-<div class="row">
-	<div class="col-xs-7">
+
 		<h1 class="h1-shrink"><span class="preceding-heading"><%= link_to object_prevpage, objects_path %> <i class="fa fa-chevron-right"></i></span>
 			<% if object_has_colour %>
 				<div class="colour-circle circle-large" style="background: <%= to_colour(object) %>"></div>
 			<% end %>
-			<%= object.name %>
+			<% if controller_name == "current_plants" %>
+				<%= display_name(object) %>
+			<% elsif controller_name == "current_photos" %>
+				Photo #<%= object.id %>
+			<% else %>
+				<%= object.name %>
+			<% end %>
 		</h1>
-	</div>
-	<div class="col-xs-5">
-		<div class="btn-group" style="float: right; margin-top: 25px">
+	
+
+
+		<div class="btn-group" style="position: absolute; top: 50px; right: 20px">
 
 			<%= link_to edit_object_path, class: 'btn-top btn btn-orange button-shrink', style: 'float: left;' do %>
 				<i class="fa fa-edit"></i><span class="over-500">&nbsp;&nbsp;Edit</span>
@@ -21,6 +27,5 @@
 			<% end %>
 
 		</div>
-	</div>
-</div>
+
 <hr/>

@@ -1,0 +1,28 @@
+<tr>
+	<td>#<%= current_photo.id %></td>
+
+	<td style="height: 48px; width: 40px">
+		<%= link_to current_photo_path(current_photo) do %>
+   		<%= image_tag current_photo.image.url(:thumb), height:"100%", alt:"Plant photo", class:"img-circle" %>
+   	<% end %>
+  </td>
+
+  <td><%= link_to display_name(current_photo.current_plant), admin_current_plant_path(current_photo.current_plant) %></td>
+
+	<% if !current_photo.description.empty? %>
+		<td class="thd-disappear"><%= link_to current_photo.description, current_photo_path(current_photo) %></td>
+	<% else %>
+		<td class="no-description thd-disappear"><%= link_to '(no description)', current_photo_path(current_photo) %></td>
+	<% end %>
+
+	<td class="td-shrink">
+	<%= link_to edit_current_photo_path(current_photo) do %>
+		<i class="fa fa-edit"></i><span class="over-400">&nbsp;&nbsp;Edit</span>
+	<% end %>
+
+	</td>
+	<td class="td-shrink"><%= link_to current_photo_path(current_photo), method: :delete, data: { confirm: 'WARNING: Are you sure you want to DELETE this photo? Doing so will affect all plants with this current_photo!'} do %>
+		<i class="fa fa-trash"></i><span class="over-400">&nbsp;&nbsp;Delete</span>
+	<% end %>
+	</td>
+</tr>

@@ -1,0 +1,8 @@
+<% provide(:title, 'New Photo') %>
+<% provide(:prev_page, 'Photos') %>
+<% provide(:prev_link, current_photos_path) %>
+
+<h1><span class="preceding-heading"><%= link_to 'Photos', current_photos_path %> <i class="fa fa-chevron-right"></i></span> New Photo</h1>
+<hr/>
+
+<%= render 'form' %>

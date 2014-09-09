@@ -1,8 +1,17 @@
+<li class="admin-minibutton">
+  <%= link_to admin_path do %>
+    <i class="fa fa-gavel"></i>
+  <% end %>
+</li>
+<li class="admin-minibutton minidivider">|
+</li>
+
+
 <% if controller_name != "notifications" %>  
   <li>
-      <%= link_to notifications_path do %>
+    <%= link_to notifications_path do %>
       <i class="fa fa-bell"></i><span class="admin-list-name">&nbsp;Notifications</span>
-      <% end %>
+    <% end %>
   </li>
 <% else %>
   <li class="li-current"><i class="fa fa-bell"></i>&nbsp;Notifications</li>
@@ -10,9 +19,9 @@
 
 <% if controller_name != "users" %>
   <li>
-      <%= link_to users_path do %>
+    <%= link_to users_path do %>
       <i class="fa fa-users"></i><span class="admin-list-name">&nbsp;Users</span>
-      <% end %>
+    <% end %>
   </li>
 <% else %>
   <li class="li-current"><i class="fa fa-users"></i>&nbsp;Users</li>
@@ -20,9 +29,9 @@
 
 <% if controller_name != "current_plants" %>
   <li>
-      <%= link_to admin_plants_path do %>
+    <%= link_to admin_current_plants_path do %>
       <i class="fa fa-tree"></i><span class="admin-list-name">&nbsp;Plants</span>
-      <% end %>
+    <% end %>
   </li>
 <% else %>
   <li class="li-current"><i class="fa fa-tree"></i>&nbsp;Plants</li>
@@ -30,9 +39,9 @@
 
 <% if controller_name != "current_photos" %>
   <li>
-      <%= link_to types_path do %>
+    <%= link_to current_photos_path do %>
       <i class="fa fa-photo"></i><span class="admin-list-name">&nbsp;Photos</span>
-      <% end %>
+    <% end %>
   </li>
 <% else %>
   <li class="li-current"><i class="fa fa-photo"></i>&nbsp;Photos</li>
@@ -40,9 +49,9 @@
 
 <% if controller_name != "climates" %>
   <li>
-      <%= link_to climates_path do %>
+    <%= link_to climates_path do %>
       <i class="fa fa-cloud"></i><span class="admin-list-name">&nbsp;Climates</span>
-      <% end %>
+    <% end %>
   </li>
 <% else %>
   <li class="li-current"><i class="fa fa-cloud"></i>&nbsp;Climates</li>
@@ -50,9 +59,9 @@
 
 <% if controller_name != "flower_colours" %>
   <li>
-      <%= link_to flower_colours_path do %>
+    <%= link_to flower_colours_path do %>
       <i class="fa fa-adjust"></i><span class="admin-list-name">&nbsp;F. Colours</span>
-      <% end %>
+    <% end %>
   </li>
 <% else %>
   <li class="li-current"><i class="fa fa-adjust"></i>&nbsp;F. Colours</li>
@@ -60,9 +69,9 @@
 
 <% if controller_name != "leaf_colours" %>
   <li>
-      <%= link_to leaf_colours_path do %>
+    <%= link_to leaf_colours_path do %>
       <i class="fa fa-leaf"></i><span class="admin-list-name">&nbsp;L. Colours</span>
-      <% end %>
+    <% end %>
   </li>
 <% else %>
   <li class="li-current"><i class="fa fa-leaf"></i>&nbsp;L. Colours</li>
@@ -70,9 +79,9 @@
 
 <% if controller_name != "origins" %>
   <li>
-      <%= link_to origins_path do %>
+    <%= link_to origins_path do %>
       <i class="fa fa-globe"></i><span class="admin-list-name">&nbsp;Origins</span>
-      <% end %>
+    <% end %>
   </li>
 <% else %>
   <li class="li-current"><i class="fa fa-globe"></i>&nbsp;Origins</li>
@@ -80,9 +89,9 @@
 
 <% if controller_name != "sizes" %>
   <li>
-      <%= link_to sizes_path do %>
+    <%= link_to sizes_path do %>
       <i class="fa fa-arrows-h"></i><span class="admin-list-name">&nbsp;Sizes</span>
-      <% end %>
+    <% end %>
   </li>
 <% else %>
   <li class="li-current"><i class="fa fa-arrows-h"></i>&nbsp;Sizes</li>
@@ -90,9 +99,9 @@
 
 <% if controller_name != "soil_types" %>
   <li>
-      <%= link_to soil_types_path do %>
+    <%= link_to soil_types_path do %>
       <i class="fa fa-tint"></i><span class="admin-list-name">&nbsp;Soil Types</span>
-      <% end %>
+    <% end %>
   </li>
 <% else %>
   <li class="li-current"><i class="fa fa-tint"></i>&nbsp;Soil Types</li>
@@ -100,9 +109,9 @@
 
 <% if controller_name != "types" %>
   <li>
-      <%= link_to types_path do %>
+    <%= link_to types_path do %>
       <i class="fa fa-cubes"></i><span class="admin-list-name">&nbsp;Types</span>
-      <% end %>
+    <% end %>
   </li>
 <% else %>
   <li class="li-current"><i class="fa fa-cubes"></i>&nbsp;Types</li>

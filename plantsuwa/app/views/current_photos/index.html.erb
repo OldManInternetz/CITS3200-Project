@@ -1,0 +1,22 @@
+<% provide(:title, 'Photos List') %>
+
+<%= render partial: 'admin_pages/generic_admin_index_header', locals: {objects: @current_photos, new_object_path: new_current_photo_path, title_name: 'Photo', button_name: 'Photo'} %>
+
+<div style="min-height: 440px">
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th style="width: 50px">ID</th>
+				<th style="width: 40px"></th>
+				<th style="width: 200px">Plant</th>
+				<th class="thd-disappear">Description</th>				
+				<th style="width: 90px;" class="th-shrink"></th>
+				<th style="width: 90px;" class="th-shrink"></th>
+			</tr>
+		</thead>
+		<tbody>
+			<%= render partial: "current_photo", collection: @current_photos, as: :current_photo %>
+		</tbody>
+	</table>
+</div>
+<%= render partial: 'admin_pages/generic_admin_pagination', locals: {objects: @current_photos} %>

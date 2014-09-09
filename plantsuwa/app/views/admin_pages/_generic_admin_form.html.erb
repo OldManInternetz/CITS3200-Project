@@ -1,5 +1,5 @@
-<% if object.new_record? %>
-  <strong>Note that these changes will be applied to all plants with this climate.</strong>
+<% if !object.new_record? %>
+  <strong>Note that these changes will be applied to all plants with this <%= object_name %>.</strong>
 <% end %>
 <%= simple_form_for(object, html: { class: 'form-horizontal' , :'accept-charset' => "UTF-8"}, defaults: { input_html: { class: 'form-control' } }) do |f| %>
   <% if object.errors.any? %>

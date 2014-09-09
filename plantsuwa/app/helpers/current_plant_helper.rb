@@ -18,10 +18,24 @@ module CurrentPlantHelper
   end
 
   def display_name(plant)
-    plant.name
-    # CHANGE TO THIS LATER #{plant.genus} #{plant.species}"
+    if plant
+      if plant.combined_name.blank?
+        '<span class="no-description">(No Name)</span>'.html_safe
+      else
+        '<i>'.html_safe + plant.combined_name.html_safe + '</i>'.html_safe
+      end
+    else
+      '(Not a plant)'
+    end
   end
 
+  def display_title(plant)
+    if plant.combined_name.blank?
+      '(Nameless Plant)'
+    else
+      plant.combined_name
+    end
+  end
 
 
 

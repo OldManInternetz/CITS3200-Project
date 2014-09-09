@@ -24,7 +24,9 @@ class CurrentPlant < ActiveRecord::Base
   belongs_to :type
 
 
-	has_many :current_photos
+	has_many :current_photos, dependent: :destroy
+  has_many :notifications, dependent: :destroy
+
   accepts_nested_attributes_for :current_photos, :reject_if => lambda { |t| t['description'].blank? and t['image'].nil? }, allow_destroy: true
 
   has_attached_file :display_photo, :default_url => "/images/missing.png",
@@ -105,5 +107,12 @@ class CurrentPlant < ActiveRecord::Base
   scoped_search in: :leaf_colours, on: :name
   scoped_search in: :flower_colours, on: :name
   scoped_search in: :climates, on: :name
+
+
+  before_validation :generate_name
+
+  def generate_name
+    self.combined_name = "#{self.genus} #{self.species}"
+  end
 
 end

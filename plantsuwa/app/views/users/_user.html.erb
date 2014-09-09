@@ -10,7 +10,7 @@
 	<% if user.admin? %>
 		<td class="td-shrink" style="color: #444"><i class="fa fa-ban"></i><span class="over-400" style="color: #444">&nbsp;&nbsp;(Admin)</span></td>
 	<% else %>
-		<td class="td-shrink"><%= link_to user_path(user), method: :delete, data: { confirm: 'WARNING: Are you sure you want to DELETE this user? Doing so will affect all plants with this user!'} do %>
+		<td class="td-shrink"><%= link_to user_path(user), method: :delete, data: { confirm: confirmation_message('user') } do %>
 			<i class="fa fa-trash"></i><span class="over-400">&nbsp;&nbsp;Delete</span>
 		<% end %>
 	<% end %>	

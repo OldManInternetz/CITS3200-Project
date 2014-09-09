@@ -58,7 +58,7 @@
       	  <%= f.input  :culture, hint: 'What role does this plant play in different World cultures?', as: :text %> 
       	  <%= f.input  :conservation, as: :text %> 
       	  <%= f.input  :wildlife, hint: 'Does this plant attract any fauna?', as: :text %>
-	        <%= f.association :origins, :as => :radio_buttons %>
+	        <%= f.association :origins, :as => :check_boxes %>
       	  <%= f.input  :location_name, hint: 'Where can this plant be found locally?'%> 
       	  <%= f.input  :general_info, as: :text %>
       	  <%= f.input  :additional_info, as: :text %> 
@@ -78,7 +78,7 @@
 
         <dt>Display photo:</dt>
         <br/>
-        <div class="form-photo-box" style="border: 1px solid #268BFF">
+        <div class="form-photo-box photo-box-display">
 
             <% if !@current_plant.display_photo.exists? %>
               <span style="float: left;">
@@ -97,31 +97,38 @@
         </div>
 
 
-        <div style="height: 40px"></div>
-        <dt>Other photos:</dt>
-        <br/>
+        <% if !@current_plant.new_record? %>
 
-        <%= f.simple_fields_for :current_photos do |builder| %>
-          <div class="form-photo-box" id="photo-box-0">
+          <div style="height: 40px"></div>
+          <dt>Other photos:</dt>
+          <br/>
 
-            <% if builder.object.new_record? %>
-              <span style="float: left;">
-                <div style="width: 60px; height: 60px; float: left; margin-right: 10px;">
-                  <h5 style="text-align: center">NEW</h5>
-                </div>
-              </span>
-            <% else %>
-              <span style="float: left;">
-              <%= image_tag builder.object.image.url, style: "width: 60px; height: 60px; float: left; margin-right: 10px;", alt:"An image of a plant", class: "img-circle" %>
-              </span>
-            <% end %>
+          <%= f.simple_fields_for :current_photos do |builder| %>
+            <div class="form-photo-box">
+
+              <% if builder.object.new_record? %>
+                <span style="float: left;">
+                  <div style="width: 60px; height: 60px; float: left; margin-right: 10px;">
+                    <h5 style="text-align: center">NEW</h5>
+                  </div>
+                </span>
+              <% else %>
+                <span style="float: left;">
+                <%= image_tag builder.object.image.url, style: "width: 60px; height: 60px; float: left; margin-right: 10px;", alt:"An image of a plant", class: "img-circle" %>
+                </span>
+              <% end %>
 
 
-            <%= builder.file_field :image %>
-            <%= builder.input :description %>
-          </div>
+              <%= builder.file_field :image %>
+              <%= builder.input :description %>
+            </div>
+          <% end %>
+
+        <% else %>
+          <div style="height: 20px"></div>
+          <dt>Other photos:</dt>
+          <p>Edit the plant later to add more photos!</p>
         <% end %>
-
 
 
 
@@ -131,7 +138,7 @@
 
     <hr/>
 
-<%= render :partial => 'action_tabs_form', :locals => { :f => f } %>
+<%= render partial: 'action_tabs_form', locals: { f: f } %>
 
   <% end %>
 

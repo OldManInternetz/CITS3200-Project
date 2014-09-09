@@ -9,12 +9,6 @@
   <div id="tab-descriptions" class="info-body">
     <legend>Descriptions</legend>
 
-    <!-- NO LONGER ANY NEED FOR A 'NAME' FIELD
-    <% if not @current_plant.name.blank? %>
-	   <dt>Name</dt><p><%= @current_plant.name %></p>
-    <% end %>
-    -->
-
     <%= image_tag @current_plant.display_photo.url(:medium), class: 'display-photo-right' %>
 
     <% if not display_name(@current_plant).blank? %>
@@ -29,12 +23,14 @@
 	  <% if not @current_plant.common_name.blank? %>
 		  <dt>Common Name</dt><p><%= @current_plant.common_name %></p>
 	  <% end %>
+    <% if not @current_plant.scientific_name.blank? %>
+      <dt>Scientific Name</dt><p><i><%= @current_plant.scientific_name %></i></p>
+    <% end %>
     <% if not @current_plant.synonym.blank? %>
       <dt>Synonym</dt><p><%= @current_plant.synonym %></p>
     <% end %>
 
     <% if @current_plant.type %>
-      <!-- CHANGE THIS TO ONE TO MANY !-->
       <dt>Type</dt>
         <p> <%= @current_plant.type.name %> </p>
     <% end %>
@@ -62,7 +58,7 @@
 		  <dt>Physical</dt><p><%= nice_format(@current_plant.physical) %></p>
 	  <% end %>
 	  <% if @current_plant.sizes.any? %>
-		  <dt>Size</dt>
+		  <dt>Sizes</dt>
       <ul>
 		  <% for @size in @current_plant.sizes %>
 			  <li> <%= @size.name %> </li>

@@ -29,21 +29,20 @@
     <% end %>
     <div class="container">
       <div style="height: 64px"></div>
-        <div class="padding-mobile">
-          <% if flash[:success] %>
-            <div class="alert alert-orange" id="admin-alert-box">
-                <p style="display: inline">
-                  <i class="fa fa-info-circle"></i>&nbsp;&nbsp;&nbsp;<%= flash[:success] %>
-                  <span style="float: right" class="alert-close-button" onclick="document.getElementById('admin-alert-box').style.display='none'"><i class="fa fa-lg fa-times"></i></span>
-                </p>
-                
-            </div>
-          <% end %>
-          <%= yield %>
-          <div style="height: 42px"></div>
-        </div>
+      <div class="padding-mobile">
+        <% if flash[:success] %>
+          <div class="alert alert-orange" id="admin-alert-box">
+            <p style="display: inline">
+              <i class="fa fa-info-circle"></i>&nbsp;&nbsp;&nbsp;<%= flash[:success] %>
+              <span style="float: right" class="alert-close-button" onclick="document.getElementById('admin-alert-box').style.display='none'"><i class="fa fa-lg fa-times"></i></span>
+              </p>
+          </div>
+        <% end %>
+        <%= yield %>
+        <div style="height: 42px"></div>
       </div>
     </div>
+
     <%= render 'admin_pages/bottom_admin_bar' %>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>

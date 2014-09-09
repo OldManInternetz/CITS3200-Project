@@ -27,6 +27,8 @@ class User < ActiveRecord::Base
 
   before_save :check_admin
 
+  has_many :notifications, dependent: :destroy  
+
   def check_admin
     self.trusted = true if self.admin?
   end

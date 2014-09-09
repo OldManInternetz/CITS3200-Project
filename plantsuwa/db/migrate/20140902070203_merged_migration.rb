@@ -37,6 +37,8 @@ class MergedMigration < ActiveRecord::Migration
     add_attachment :current_plants, :display_photo
     add_column :current_plants, :display_photo_description, :string
     add_column :current_plants, :type_id,           :integer
+    
+    add_column :current_plants, :combined_name,     :string
 
     add_column :current_plants, :name,              :string
     """ Still need to add the following fields: """

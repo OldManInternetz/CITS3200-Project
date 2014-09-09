@@ -10,7 +10,7 @@
 				<i class="fa fa-edit"></i><span class="over-500">&nbsp;&nbsp;Edit</span>
 			<% end %>
 			<% if !@user.admin? %>
-				<%= link_to user_path(@user), method: :delete, data: { confirm: 'WARNING: Are you sure you want to DELETE this user? Doing so will affect all plants with this user!'}, class: 'btn-top btn btn-orange button-shrink', style: 'float: right;' do %>
+				<%= link_to user_path(@user), method: :delete, data: { confirm: confirmation_message('user') }, class: 'btn-top btn btn-orange button-shrink', style: 'float: right;' do %>
 					<i class="fa fa-trash-o"></i><span class="over-500">&nbsp;&nbsp;Delete</span>
 				<% end %>
 			<% else %>
@@ -21,7 +21,7 @@
 <hr/>
 
 <dt>Email Address:</dt>
-<p>&nbsp;&nbsp;<%= @user.email %></p>
+<p><%= @user.email %></p>
 <hr/>
 
 <dt><%= formatted_username(@user) %>'s activity:</dt>
