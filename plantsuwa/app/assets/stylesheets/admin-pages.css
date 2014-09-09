@@ -530,12 +530,9 @@ input {
     width: 100% !important;
     margin: 0 !important;
   } 
-  .admin-pages-box:after {
-    height: 90px;
-  } 
 }
 
-@media (max-width: 1380px) {
+@media (max-width: 1400px) {
   .center-wrapper > .center-wrapper-inner > li > a, .center-wrapper > .center-wrapper-inner > li.li-current {
     padding: 10px 9px;
   }
@@ -546,6 +543,9 @@ input {
   .admin-pages-row {
     height: 140px;
   }
+  .admin-pages-box:after {
+    height: 90px;
+  } 
 }
 
 /*

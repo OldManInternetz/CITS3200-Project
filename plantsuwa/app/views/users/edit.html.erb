@@ -7,4 +7,4 @@
 
 <strong>Note that you can leave the password field blank if you do not wish to change the user's password.</strong>
 
-<%= render 'form_admin' %>
+<%= render partial: 'form_admin', locals: { form_action: 'update' } %>

@@ -28,6 +28,10 @@ Plantsuwa::Application.routes.draw do
   match 'admin/plants/:id/edit',  to: 'current_plants#edit_admin',   via: 'get',                    as: 'admin_edit_current_plant'
   match 'admin/plants/:id/edit',  to: 'current_plants#update_admin', via: 'patch',                  as: 'admin_update_current_plant'
   match 'admin/plants/:id',       to: 'current_plants#destroy_admin',via: 'delete'
+  match 'admin/users/new',        to: 'users#new_admin',             via: 'get',                    as: 'admin_new_user'
+  match 'admin/users/new',        to: 'users#create_admin',          via: 'post',                   as: 'admin_create_user'
+
+
   resources :notifications,       path: 'admin/notifications',       only: [:index, :show]
   resources :climates,            path: 'admin/climates'
   resources :flower_colours,      path: 'admin/flower_colours'
@@ -40,7 +44,7 @@ Plantsuwa::Application.routes.draw do
 
   # User routes
 
-  resources :users
+  resources :users,               path: 'admin/users'
 	resources :sessions,            path: "log_in",                    only: [:new, :create, :destroy]
 
   match '/sign_up',               to: 'users#new',                   via: 'get' 

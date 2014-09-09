@@ -4,7 +4,7 @@ class CurrentPhotosController < ApplicationController
   layout 'admin_layout'
 
   def index
-    @current_photos = CurrentPhoto.paginate(page: params[:page], per_page: 8)
+    @current_photos = CurrentPhoto.paginate(page: params[:page], per_page: 7)
   end
 
   def show
