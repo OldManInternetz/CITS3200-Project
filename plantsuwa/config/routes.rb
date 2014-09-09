@@ -38,6 +38,7 @@ Plantsuwa::Application.routes.draw do
   resources :types,               path: 'admin/types'
   resources :current_photos,      path: 'admin/photos'
 
+<<<<<<< HEAD
   # User routes
 
   resources :users
@@ -46,5 +47,24 @@ Plantsuwa::Application.routes.draw do
   match '/sign_up',               to: 'users#new',                   via: 'get' 
   match '/log_in',                to: 'sessions#new',                via: 'get'
   match '/log_out',               to: 'sessions#destroy',            via: 'delete' 
+
+  match '/sign_up', to: 'users#new',    via: 'get' 
+  match '/log_in',  to: 'sessions#new', via: 'get'
+  match '/log_out', to: 'sessions#destroy',    via: 'delete' 
+  
+  offline = Rack::Offline.configure do
+    
+    cache "index.html"
+    cache "assets/images/uwacrest.gif"
+    cache "assets/images/uwacrest-small.gif"
+    cache "/app/assets/stylesheets/application.css"
+    cache "stylesheets/custom-mobile.css"
+    cache ActionController::Base.helpers.asset_path("application.js")
+    cache ActionController::Base.helpers.asset_path("application.css")
+    
+    network "/"
+  end
+  get "/application.manifest" => Rails::Offline
+
 
 end
