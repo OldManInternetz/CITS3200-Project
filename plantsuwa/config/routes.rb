@@ -38,7 +38,6 @@ Plantsuwa::Application.routes.draw do
   resources :types,               path: 'admin/types'
   resources :current_photos,      path: 'admin/photos'
 
-<<<<<<< HEAD
   # User routes
 
   resources :users
