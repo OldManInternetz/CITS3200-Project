@@ -23,7 +23,7 @@ Plantsuwa::Application.routes.draw do
   
   get "/application.manifest" => Rails::Offline
   
-  offline = Rails::Offline.configure do
+  offline = Rails::Offline.configure :cache_interval => 10 do
     network "/"
   end
   
