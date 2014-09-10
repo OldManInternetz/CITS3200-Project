@@ -61,13 +61,6 @@ ActiveRecord::Schema.define(version: 20140903152859) do
     t.datetime "updated_at"
   end
 
-  create_table "current_linking_types", force: true do |t|
-    t.integer  "current_plant_id"
-    t.integer  "type_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "current_photos", force: true do |t|
     t.integer  "current_plant_id"
     t.string   "description"
@@ -80,16 +73,15 @@ ActiveRecord::Schema.define(version: 20140903152859) do
   end
 
   create_table "current_plants", force: true do |t|
-    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "family"
     t.string   "genus"
     t.string   "species"
+    t.string   "subspecies"
+    t.string   "family"
     t.string   "common_name"
     t.string   "scientific_name"
     t.string   "synonym"
-    t.string   "subspecies"
     t.string   "description"
     t.string   "location_name"
     t.string   "characteristics"
@@ -118,7 +110,6 @@ ActiveRecord::Schema.define(version: 20140903152859) do
     t.integer  "type_id"
     t.string   "combined_name"
     t.string   "name"
-
   end
 
   create_table "flower_colours", force: true do |t|

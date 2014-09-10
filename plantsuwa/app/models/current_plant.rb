@@ -41,30 +41,30 @@ class CurrentPlant < ActiveRecord::Base
 
   """ Validations """
 
-  validates :name, length: { maximum: 100 }
-  validates :family, length: { maximum: 100 }
-  validates :genus, length: { maximum: 100 }
-  validates :species, length: { maximum: 100 }
-  validates :common_name, length: { maximum: 100 }
-  validates :scientific_name, length: { maximum: 100 }
-  validates :synonym, length: { maximum: 100 }  
-  validates :subspecies, length: { maximum: 100 }
-  validates :description, length: { maximum: 2000 }
-  validates :location_name, length: { maximum: 100 }
-  validates :characteristics, length: { maximum: 2000 }
-  validates :additional_info, length: { maximum: 2000 }
-  validates :identification, length: { maximum: 2000 }
-  validates :physical, length: { maximum: 2000 }
-  validates :general_info, length: { maximum: 2000 }
-  validates :environment, length: { maximum: 2000 }
-  validates :horticulture, length: { maximum: 2000 }
-  validates :architectural_uses, length: { maximum: 2000 }
-  validates :culture, length: { maximum: 2000 }
-  validates :conservation, length: { maximum: 2000 }
-  validates :wildlife, length: { maximum: 2000 }
-  validates :architectural_info, length: { maximum: 2000 }
-  validates :discovered_by, length: { maximum: 100 }
-  validates :named_by, length: { maximum: 100 }
+  validates :name, length: { maximum: 200 }
+  validates :family, length: { maximum: 200 }
+  validates :genus, length: { maximum: 200 }
+  validates :species, length: { maximum: 200 }
+  validates :common_name, length: { maximum: 200 }
+  validates :scientific_name, length: { maximum: 200 }
+  validates :synonym, length: { maximum: 200 }  
+  validates :subspecies, length: { maximum: 200 }
+  validates :description, length: { maximum: 10000 }
+  validates :location_name, length: { maximum: 200 }
+  validates :characteristics, length: { maximum: 10000 }
+  validates :additional_info, length: { maximum: 10000 }
+  validates :identification, length: { maximum: 10000 }
+  validates :physical, length: { maximum: 10000 }
+  validates :general_info, length: { maximum: 10000 }
+  validates :environment, length: { maximum: 10000 }
+  validates :horticulture, length: { maximum: 10000 }
+  validates :architectural_uses, length: { maximum: 10000 }
+  validates :culture, length: { maximum: 10000 }
+  validates :conservation, length: { maximum: 10000 }
+  validates :wildlife, length: { maximum: 10000 }
+  validates :architectural_info, length: { maximum: 10000 }
+  validates :discovered_by, length: { maximum: 200 }
+  validates :named_by, length: { maximum: 200 }
   validates :display_photo_description, length: { maximum: 300 }
 
 
