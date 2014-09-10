@@ -60,7 +60,7 @@ Plantsuwa::Application.routes.draw do
   match '/log_in',  to: 'sessions#new', via: 'get'
   match '/log_out', to: 'sessions#destroy',    via: 'delete' 
   
-  
+
   #offline = Rack::Offline.configure do
   #  
   #  cache "index.html"
@@ -74,7 +74,6 @@ Plantsuwa::Application.routes.draw do
   #  network "/"
   #end
   #get "/application.manifest" => Rails::Offline
-  
 
 
 end
