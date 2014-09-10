@@ -7,11 +7,9 @@ class CurrentPlantsController < ApplicationController
 
   layout 'admin_layout', only: [:index_admin, :show_admin, :edit_admin, :new_admin, :create_admin, :update_admin]
 
-  respond_to :html, :json
-  
+
   def index
     @current_plants = CurrentPlant.search_for(params[:search])
-    respond_with(@current_plants)
   end
 
   def index_admin
