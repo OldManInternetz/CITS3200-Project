@@ -16,6 +16,35 @@ class CurrentPlantsController < ApplicationController
     @current_plants = CurrentPlant.paginate(page: params[:page], per_page: 7) 
   end
 
+  def index_param_search
+    #@current_plants = CurrentPlant.where('id = ?', 4)
+
+    puts "#" * 3 + " Climates: " + params[:plants][:climate].to_s + " " + "#" * 3
+    puts "#" * 3 + " Origins: " + params[:plants][:origin].to_s + " " + "#" * 3
+    puts "#" * 3 + " Sizes: " + params[:plants][:size].to_s + " " + "#" * 3
+    puts "#" * 3 + " Flower Colours: " + params[:plants][:flower_colour].to_s + " " + "#" * 3
+    puts "#" * 3 + " Leaf Colours: " + params[:plants][:leaf_colour].to_s + " " + "#" * 3
+    puts "#" * 3 + " Soil Types: " + params[:plants][:soil_types].to_s + " " + "#" * 3
+    puts "#" * 3 + " Types: " + params[:plants][:types].to_s + " " + "#" * 3
+    @plants = params[:plants].to_s
+
+    params[:plants][:climate]
+
+    @current_plants = CurrentPlant.where(id: (CurrentLinkingClimate.where(climate_id: (Climate.where(id: params[:plants][:climate])))).select("current_plant_id"))
+
+    @current_plants += (CurrentPlant.where(id: (CurrentLinkingOrigin.where(origin_id: (Origin.where(id: params[:plants][:origin])))).select("current_plant_id")))
+
+
+    @current_plants.each do |f|
+      puts "*"* 10 + f.scientific_name + "*" * 5
+    end
+
+    #@current_plants = CurrentPlant.find_by(
+
+    #where(self.climates.map(&:id): [1, 3, 5])
+
+
+  end
 
 
 

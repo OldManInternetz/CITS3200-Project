@@ -87,7 +87,6 @@ GEM
       mime-types
     polyglot (0.3.5)
     rack (1.5.2)
-    rack-offline (0.6.4)
     rack-test (0.6.2)
       rack (>= 1.0)
     rails (4.0.3)
@@ -189,7 +188,6 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   paperclip (= 4.1)
-  rack-offline
   rails (= 4.0.3)
   redcarpet
   rspec-rails (= 2.13.1)

@@ -11,12 +11,17 @@ Plantsuwa::Application.routes.draw do
 
   root 'welcome#index'
 
+  match "/plants/index_param_search", to: 'current_plants#index_param_search', via: 'get', as: 'current_plants_index_param_search'
+
+
   resources :current_plants, except: [:destroy], :path => 'plants' do
     get :auto_complete_search, :on => :collection
     collection do
       get 'search'
     end
+
   end
+
 
   # Admin routes
 
@@ -55,19 +60,21 @@ Plantsuwa::Application.routes.draw do
   match '/log_in',  to: 'sessions#new', via: 'get'
   match '/log_out', to: 'sessions#destroy',    via: 'delete' 
   
-  offline = Rack::Offline.configure do
-    
-    cache "index.html"
-    cache "assets/images/uwacrest.gif"
-    cache "assets/images/uwacrest-small.gif"
-    cache "/app/assets/stylesheets/application.css"
-    cache "stylesheets/custom-mobile.css"
-    cache ActionController::Base.helpers.asset_path("application.js")
-    cache ActionController::Base.helpers.asset_path("application.css")
-    
-    network "/"
-  end
-  get "/application.manifest" => Rails::Offline
+  
+  #offline = Rack::Offline.configure do
+  #  
+  #  cache "index.html"
+  #  cache "assets/images/uwacrest.gif"
+  #  cache "assets/images/uwacrest-small.gif"
+  #  cache "/app/assets/stylesheets/application.css"
+  #  cache "stylesheets/custom-mobile.css"
+  #  cache ActionController::Base.helpers.asset_path("application.js")
+  #  cache ActionController::Base.helpers.asset_path("application.css")
+  #  
+  #  network "/"
+  #end
+  #get "/application.manifest" => Rails::Offline
+  
 
 
 end

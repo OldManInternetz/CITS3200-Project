@@ -158,6 +158,11 @@ textarea {
   resize: vertical;
 }
 
+.fieldset-search-form .check_boxes > .controls {
+  height: auto;
+  overflow: hidden;
+}
+
 .info-tab {
   width: 25%;
 

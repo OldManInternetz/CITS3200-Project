@@ -99,7 +99,7 @@ class CurrentPlant < ActiveRecord::Base
   scoped_search on: :submitted_by
   scoped_search on: :edited_by
   
-  scoped_search in: :types, on: :name
+  scoped_search in: :type, on: :name
   scoped_search in: :soil_types, on: :name
   scoped_search in: :sizes, on: :name
   scoped_search in: :origins, on: :name
