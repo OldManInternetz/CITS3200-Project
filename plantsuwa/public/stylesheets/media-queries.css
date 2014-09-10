@@ -1,0 +1,25 @@
+@media (min-width: 300px) {
+  body {
+    overflow-x: hidden;
+  }
+}
+
+@media (max-width: 400px) {
+  .navbar p {
+    font-size: 90%;
+
+  }
+
+}
+
+@media (min-width: 768px) {
+  .navbar-right {
+    position: fixed;
+    right: 60px;
+  }
+
+  .navbar-title-block {
+    width: 66%;
+  }
+
+}

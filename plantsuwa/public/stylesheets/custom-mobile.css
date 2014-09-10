@@ -1,0 +1,78 @@
+
+body {
+  /*padding: 10px;*/
+}
+
+/*
+body, html {
+	height: 100%;
+	overflow: hidden;
+}
+*/
+
+p {
+	text-align: justify;
+	text-justify: inter-word;
+}
+
+
+table td, th {
+	border-left: 0 !important;
+	border-right: 0 !important;
+}
+
+
+table th .bordered {
+	border-left: 1px solid gray !important;
+	border-right: 0 !important;
+}
+
+table td span {
+	color: #BFBFBF;
+	margin-top: 2px;
+}
+
+table td img {
+	width: 32px;
+}
+
+table th img {
+	width: 24px;
+}
+
+
+.table > tbody > tr.tr-climber {	
+    background: -webkit-linear-gradient(#FFE8D4, #FFF4EB, #FFE8D4); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#FFE8D4, #FFF4EB, #FFE8D4); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#FFE8D4, #FFF4EB, #FFE8D4); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#FFE8D4, #FFF4EB, #FFE8D4); /* Standard syntax */
+}
+
+.table > tbody > tr.tr-conifer {	
+    background: -webkit-linear-gradient(#FFFCE0, #FFFDF0, #FFFCE0); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#FFFCE0, #FFFDF0, #FFFCE0); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#FFFCE0, #FFFDF0, #FFFCE0); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#FFFCE0, #FFFDF0, #FFFCE0); /* Standard syntax */
+}
+
+.table > tbody > tr.tr-fern {	
+    background: -webkit-linear-gradient(#E3FFE8, #F0FFF2, #E3FFE8); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#E3FFE8, #F0FFF2, #E3FFE8); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#E3FFE8, #F0FFF2, #E3FFE8); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#E3FFE8, #F0FFF2, #E3FFE8); /* Standard syntax */
+}
+
+.table > tbody > tr.tr-grass {	
+    background: -webkit-linear-gradient(#E7FFD6, #F1FFE8, #E7FFD6); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#E7FFD6, #F1FFE8, #E7FFD6); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#E7FFD6, #F1FFE8, #E7FFD6); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#E7FFD6, #F1FFE8, #E7FFD6); /* Standard syntax */
+}
+
+
+
+
+
+
+
+

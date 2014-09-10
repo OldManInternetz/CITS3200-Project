@@ -1,5 +1,6 @@
 body, .navbar {
   min-width: 280px;
+<<<<<<< HEAD
   background: #ddd;  
 }
 
@@ -15,6 +16,8 @@ body {
   height: 100%;
   box-shadow: 4px 0 10px #ccc, -4px 0 10px #ccc;
   min-height: 100vh;
+=======
+>>>>>>> offline
 }
 
 
@@ -27,6 +30,7 @@ p, div, td, label, dd, dt {
 	font-family: 'Oxygen', sans-serif;
 }
 
+<<<<<<< HEAD
 p {
   text-align: justify;
   text-justify: inter-word;
@@ -57,6 +61,8 @@ table th img {
   width: 24px;
 }
 
+=======
+>>>>>>> offline
 .main { 
 	padding: 25px;
 }
@@ -97,16 +103,20 @@ td {
 
 .navbar-inverse {
 	background: black;
+<<<<<<< HEAD
 
   background: -moz-linear-gradient(top, #2E2E2E 0%, black);
   background: -webkit-gradient(linear, left top, left bottom, from(#2E2E2E), to(black));
   background: -o-linear-gradient(top, #2E2E2E 0%, black);
   background: -linear-gradient(top, #2E2E2E 0%, black);
 
+=======
+>>>>>>> offline
 	border-radius: 0px;
 	border: 15px;
 }
 
+<<<<<<< HEAD
 .navbar-brand-custom {
   margin-right: 5px;
   float: right;
@@ -118,6 +128,26 @@ td {
 
 a {
 	color: #474747;
+=======
+
+body {
+	height: 100%;
+}
+
+footer {
+	border-top: 5px solid gray;
+	background: #F5F5F5;
+	padding: 20px 5px;
+	height: 80px;
+	/* A sneaky way to ensure that the footer always goes to the bottom of the page. Haha. */
+	box-shadow: 0px 500px 0px 500px #F5F5F5;
+
+}
+
+footer p, a {
+	color: #474747;
+	
+>>>>>>> offline
 }
 
 
@@ -149,8 +179,13 @@ label {
   margin-top: 15px;
 }
 
+<<<<<<< HEAD
 .help-block p {
   margin-bottom: 0px;
+=======
+.help-block {
+  margin-bottom: 0px !important;
+>>>>>>> offline
 }
 
 
@@ -220,10 +255,19 @@ textarea {
 .center-wrapper {
   display: table;
   margin: 0 auto;
+<<<<<<< HEAD
 }
 
 .center-wrapper-inner {
   display: inline-block; 
+=======
+
+}
+
+.center-wrapper-inner {
+  display: inline-block;
+ 
+>>>>>>> offline
 }
 
 
@@ -237,10 +281,13 @@ textarea {
   margin-bottom: 20px;
 }
 
+<<<<<<< HEAD
 .info-body .help-block {
   margin-bottom: 0;
 }
 
+=======
+>>>>>>> offline
 
 
 
@@ -250,8 +297,17 @@ textarea {
   border-bottom: 1px solid #ccc;
   float: left;
   padding: 3px 5px;
+<<<<<<< HEAD
   border-right: 1px solid #ccc;
   background: #eee;
+=======
+
+  border-right: 1px solid #ccc;
+  background: #eee;
+
+	/*box-shadow: 0 -2px 8px #ccc;  */
+ 
+>>>>>>> offline
   position: fixed;
   height: 30px;
   bottom: 40px;
@@ -287,6 +343,7 @@ textarea {
 	font-family: 'Oxygen', sans-serif;
 }
 
+<<<<<<< HEAD
 label.checkbox {
   padding-left: 10px;
 }
@@ -296,6 +353,8 @@ label.checkbox {
   margin-top: 0;
 }
 
+=======
+>>>>>>> offline
 
 
 
@@ -305,10 +364,13 @@ label.checkbox {
   margin-bottom: 10px;
 }
 
+<<<<<<< HEAD
 .photo-box-display {
   border: 1px solid #268BFF;
 }
 
+=======
+>>>>>>> offline
 .btn-welcome {
   width: 80%;
   margin: 0 10%;
@@ -332,7 +394,12 @@ label.checkbox {
 .plant-index-box {
   width: 100%;
   height: 64px;
+<<<<<<< HEAD
   border-top: 1px solid #ccc;
+=======
+  border-top: 1px solid #bbb;
+  border-right: 1px solid #bbb;
+>>>>>>> offline
   position: relative;
 	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
 	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
@@ -341,7 +408,11 @@ label.checkbox {
 .plant-index-box-photo {
   width: 64px;
   height: 64px;
+<<<<<<< HEAD
   border-right: 1px solid #ccc;
+=======
+  border-right: 1px solid #bbb;
+>>>>>>> offline
 	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
 	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
 	box-sizing: border-box;         /* Opera/IE 8+ */
@@ -374,11 +445,15 @@ label.checkbox {
   height: 24px;
   padding: 4px 0;
   z-index: 1000;
+<<<<<<< HEAD
   border-bottom: 1px solid #ccc;
   background: #FFF8D9;
   position: fixed;
   top: 50px;
   overflow: hidden;
+=======
+  border-bottom: 1px solid #bbb;
+>>>>>>> offline
 }
 
 .plant-index-tab p {
@@ -387,6 +462,7 @@ label.checkbox {
 } 
 
 .navbar-brand {
+<<<<<<< HEAD
   color: #bbb;
 }
 
@@ -397,6 +473,11 @@ label.checkbox {
   -o-transition: color 0.2s linear;
   transition: color 0.2s linear;
 }
+=======
+  color: #bbb !important;
+}
+
+>>>>>>> offline
 
 
 .navbar-title-block {
@@ -404,6 +485,7 @@ label.checkbox {
   margin-left: -10px;
   font-size: small;
   width: 100%;
+<<<<<<< HEAD
   left: 0;
 }
 
@@ -413,6 +495,8 @@ label.checkbox {
   text-align: center;
   color: white;
   width: 100%;
+=======
+>>>>>>> offline
 }
 
 .navbar-prev-page-block {
@@ -423,7 +507,10 @@ label.checkbox {
   left: 0;
   width: auto;
   padding-right: 0;
+<<<<<<< HEAD
   z-index: 1100;
+=======
+>>>>>>> offline
 }
 
 .navbar-uwacrest-block {
@@ -433,6 +520,7 @@ label.checkbox {
   left: 0;
 }
 
+<<<<<<< HEAD
 .navbar-admin-tab {
   width: 120px;
   height: 30px;
@@ -499,10 +587,13 @@ label.checkbox {
   text-decoration: none; 
 }
 
+=======
+>>>>>>> offline
 .display-photo-right {
   float: right;
   margin-left: 10px;
   border: 1px solid #ccc;
+<<<<<<< HEAD
   max-width: 50%;
   max-height: 50%;
 }
@@ -570,4 +661,8 @@ label.checkbox {
   .under-768 {
     display: none;
   }
+=======
+  max-width: 60%;
+  max-height: 60%;
+>>>>>>> offline
 }
