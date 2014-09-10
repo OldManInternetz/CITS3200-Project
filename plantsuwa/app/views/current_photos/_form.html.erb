@@ -12,7 +12,7 @@
   <% end %>
 
   <label>Plant</label>
-  <%= f.collection_select(:current_plant_id, CurrentPlant.all, :id, :combined_name, {}, { class: 'form-control' }) %>
+  <%= f.collection_select(:current_plant_id, CurrentPlant.all, :id, :scientific_name, {}, { class: 'form-control' }) %>
   <br/>
 
   <div class="form-photo-box">

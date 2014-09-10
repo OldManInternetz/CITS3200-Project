@@ -19,10 +19,10 @@ module CurrentPlantHelper
 
   def display_name(plant)
     if plant
-      if plant.combined_name.blank?
+      if plant.scientific_name.blank?
         '<span class="no-description">(No Name)</span>'.html_safe
       else
-        '<i>'.html_safe + plant.combined_name.html_safe + '</i>'.html_safe
+        '<i>'.html_safe + plant.scientific_name.html_safe + '</i>'.html_safe
       end
     else
       '(Not a plant)'
