@@ -7,7 +7,9 @@ body {
   height: 100%;
 }
 
-
+hr {
+  border-color: #ddd;
+}
 
 .container {
   background: white;
