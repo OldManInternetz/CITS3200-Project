@@ -423,7 +423,6 @@ legend {
   transition: color 0.2s linear;
 }
 
-
 .navbar-title-block {
   margin-bottom: 0px;
   margin-left: -10px;
@@ -522,6 +521,19 @@ legend {
 
 .navbar-admin-tab a {
   text-decoration: none; 
+}
+
+.navbar-nav > li.logout {
+  padding: 15px;
+}
+
+.navbar-nav > li > a.logout {
+  display: inline;
+  padding: 15px 0;
+}
+
+.navbar-inverse .navbar-nav > li  {
+  color: rgb(119, 119, 119);
 }
 
 .display-photo-right {

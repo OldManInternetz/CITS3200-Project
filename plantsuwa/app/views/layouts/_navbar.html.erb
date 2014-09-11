@@ -35,9 +35,17 @@
 		  <ul class="nav navbar-nav navbar-right">
 
 			  <% if signed_in? %>
-				  <li>
-				  	<%= link_to log_out_path, method: "delete" do %>
-         			Logged in as <%= formatted_username(current_user) %></span> (Log out)
+				  <li class="logout">
+				  	Logged in as 
+				  	<% if is_admin? %>
+					  	<%= link_to user_path(current_user), class: 'logout' do %>
+					  		<%= formatted_username(current_user) %>
+					  	<% end %>
+					  <% else %>
+					  	<%= formatted_username(current_user) %>
+				  	<% end %>
+				  	<%= link_to log_out_path, method: "delete", class: 'logout' do %>
+         			 (Log out)
          		<% end %>
 	        </li>
 	      <% else %>
