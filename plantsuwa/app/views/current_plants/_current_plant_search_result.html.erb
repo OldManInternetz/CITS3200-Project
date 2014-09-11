@@ -1,0 +1,8 @@
+<tr>
+  <td style="height: 48px; width: 40px">
+    <%= link_to current_plant_path(current_plant) do %>
+      <%= image_tag current_plant.display_photo.url(:thumb), height:"100%", alt:"Plant photo", class:"img-circle" %>
+    <% end %>
+  </td>
+  <td><%= link_to display_name(current_plant), current_plant_path(current_plant) %></td>
+</tr>

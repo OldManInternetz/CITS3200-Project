@@ -126,34 +126,10 @@ strong {
 
 
 
-
-table, .table > tbody > tr > td, .table > thead > tr > th, .table-responsive {
-	border: 0;  
-}
-
-.table > tbody > tr > td {
-  vertical-align: middle;
-}
-
-.table-striped>tbody>tr:nth-child(even)>td, 
-.table-striped>tbody>tr:nth-child(even)>th {
-  background: none;
- }
-
 .table-striped>tbody>tr:nth-child(odd)>td, 
 .table-striped>tbody>tr:nth-child(odd)>th {
   background: #222;
  }
-
-tr:nth-child(odd) td:first-child {
-	border-top-left-radius: 10px;
-	border-bottom-left-radius: 10px;
-}
-
-tr:nth-child(odd) td:last-child {
-	border-top-right-radius: 10px;
-	border-bottom-right-radius: 10px;
-}
 
 .no-description > a {
   color: #aaa;
