@@ -1,6 +1,6 @@
 <% provide(:title, 'Search') %>
-<% provide(:prev_page, 'List') %>
-<% provide(:prev_link, current_plants_path) %>
+<% provide(:prev_page, 'Home') %>
+<% provide(:prev_link, root_path) %>
 
 <div class="padding-mobile">
 	
@@ -48,6 +48,15 @@
 	<%= render 'search_form' %>
 
 </div>
+
+<% if signed_in? %>
+  <div style="height: 30px"></div>
+  <%= render 'layouts/ui/action_tab_favourites' %>
+  <%= render 'layouts/ui/action_tab_new' %>
+<% end %>
+
+<%= render 'layouts/ui/bottom_tabs_default' %>
+
 
 <script type="text/javascript">
 	<% if @searched %>

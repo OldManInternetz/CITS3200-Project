@@ -174,11 +174,30 @@ textarea {
 
 .info-tab:hover {
   cursor: pointer;
+
+  background: #2E2E2E;
+
+  -webkit-transition: background 0.2s linear;
+  -moz-transition: background 0.2s linear;
+  -ms-transition: background 0.2s linear;
+  -o-transition: background 0.2s linear;
+  transition: background 0.2s linear;
+
+  background: -webkit-linear-gradient(#363636, #111111, #111111, #363636); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#363636, #111111, #111111, #363636); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#363636, #111111, #111111, #363636); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#363636, #111111, #111111, #363636); /* Standard syntax */
+
 }
 
-.info-tab-current {
+.info-tab-current, .info-tab-current:hover {
 
   background: #268BFF;
+
+  -moz-transition: none;
+  -webkit-transition: none;
+  -o-transition: color 0 ease-in;
+  transition: none;
 
   background: -webkit-linear-gradient(#5CA8FF, #268BFF, #268BFF, #5CA8FF); /* For Safari 5.1 to 6.0 */
 	background: -o-linear-gradient(#5CA8FF, #268BFF, #268BFF, #5CA8FF); /* For Opera 11.1 to 12.0 */
@@ -187,8 +206,14 @@ textarea {
 
 }
 
+
 .info-tab-current:hover {
   cursor: auto;
+}
+
+.info-tab-33 {
+  width: 33.3333333%;
+  min-width: 93.333333333px;
 }
 
 .info-tab-disabled {

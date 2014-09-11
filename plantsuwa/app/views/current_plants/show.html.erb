@@ -190,24 +190,18 @@
 
   </div>
   <!-- To allow space for the bottom tabs -->
-  <% if signed_in? %>
-    <div style="height: 72px"></div>
-  <% else %>
-    <div style="height: 72px"></div>  
-  <% end %>
+  <div style="height: 72px"></div>
 
 </div> <!-- padding-mobile -->
 
-<!-- To allow space for the bottom tabs -->
-<div style="height: 40px"></div>
 
 <% if signed_in? %>
   <div style="height: 30px"></div>
-  <%= render 'action_tab_edit' %>
-  <%= render 'action_tab_new' %>
+  <%= render 'layouts/ui/action_tab_edit' %>
+  <%= render 'layouts/ui/action_tab_new' %>
 <% end %>
 
-<%= render 'bottom_tabs_show' %>
+<%= render 'layouts/ui/bottom_tabs_show' %>
 
 
 

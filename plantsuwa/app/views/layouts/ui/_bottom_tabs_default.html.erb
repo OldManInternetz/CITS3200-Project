@@ -1,0 +1,37 @@
+<%= link_to search_current_plants_path do %>
+	<% if controller_name == "current_plants" and action_name == "search" %>
+		<div class="info-tab info-tab-current info-tab-33" style="left: 0;">
+		  <p><i class="fa fa-lg fa-search"></i>&nbsp;&nbsp;Search</p>
+		</div>
+	<% else %>
+	<div class="info-tab info-tab-33" style="left: 0;">
+		  <p><i class="fa fa-lg fa-search"></i>&nbsp;&nbsp;Search</p>
+		</div>
+	<% end %>
+<% end %>
+
+<%= link_to root_path do %>
+	<% if controller_name == "welcome" %>
+		<div class="info-tab info-tab-current info-tab-33" style="left: 33.3333333%;">
+		  <p><i class="fa fa-lg fa-home"></i>&nbsp;&nbsp;Home</p>
+		</div>
+	<% else %>
+	<div class="info-tab info-tab-33" style="left: 33.3333333%;">
+		  <p><i class="fa fa-lg fa-home"></i>&nbsp;&nbsp;Home</p>
+		</div>
+	<% end %>
+<% end %>
+
+<%= link_to current_plants_path do %>
+	<% if controller_name == "current_plants" and action_name == "index" %>
+		<div class="info-tab info-tab-current info-tab-33" style="left: 66.66666667%">
+		  <p><i class="fa fa-lg fa-tree"></i>&nbsp;&nbsp;Plants</p>
+		</div>
+	<% else %>
+		<div class="info-tab info-tab-33" style="left: 66.66666667%">
+		  <p><i class="fa fa-lg fa-tree"></i>&nbsp;&nbsp;Plants</p>
+		</div>
+	<% end %>
+<% end %>
+
+

@@ -9,9 +9,9 @@
           <p style="text-align: center; margin-bottom: 0px; font-size: 120%"><strong><%= display_name(current_plant) %></strong></p>
         <% end %>
 
-        <% if !current_plant.scientific_name.blank? %>
+        <% if !current_plant.common_name.blank? %>
           <%= link_to current_plant_path(current_plant) do %>
-            <p style="text-align: center"><i><%= truncate(current_plant.scientific_name, length: 20) %></i></p>
+            <p style="text-align: center"><%= current_plant.common_name %></p>
           <% end %>
         <% end %>
       </div>

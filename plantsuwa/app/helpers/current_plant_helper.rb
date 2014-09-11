@@ -48,6 +48,7 @@ module CurrentPlantHelper
     @current_plants += CurrentPlant.where(id: (CurrentLinkingSoilType.where(soil_type_id: (SoilType.where(id: params[:soil_type])))).select("current_plant_id"))
     @current_plants += CurrentPlant.where(id: (CurrentLinkingFlowerColour.where(flower_colour_id: (FlowerColour.where(id: params[:flower_colour])))).select("current_plant_id"))
     @current_plants += CurrentPlant.where(id: (CurrentLinkingLeafColour.where(leaf_colour_id: (LeafColour.where(id: params[:leaf_colour])))).select("current_plant_id"))
+    @current_plants += CurrentPlant.where(type_id: (Type.where(id: params[:type])))
 
     return @current_plants
 
