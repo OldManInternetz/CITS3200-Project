@@ -4,7 +4,7 @@
 
 <div class="padding-mobile">
 	
-	<div style="height: 20px"></div>
+
 
 	<% if @searched %>
 		<div class="center-wrapper">
@@ -127,7 +127,7 @@
 	<% end %>
 	$("#search-another-button").click(function(){
   	$("#search-form-hidden").slideDown();
-  	$('html').animate({scrollTop : $(document).height() - 100 },500);
+  	$('html').animate({scrollTop : $('#search-form-hidden').offset().top - 70 },500);
   	$("#search-another-button").hide();
 	}); 
 </script>
