@@ -38,5 +38,22 @@ module CurrentPlantHelper
   end
 
 
+  """ Finds all relevant plants based on the parameters passed by the controller. """
+
+  def find_relevant_plants(params)
+
+    @current_plants =  CurrentPlant.where(id: (CurrentLinkingClimate.where(climate_id: (Climate.where(id: params[:climate])))).select("current_plant_id")) 
+    @current_plants += CurrentPlant.where(id: (CurrentLinkingOrigin.where(origin_id: (Origin.where(id: params[:origin])))).select("current_plant_id"))
+    @current_plants += CurrentPlant.where(id: (CurrentLinkingSize.where(size_id: (Size.where(id: params[:size])))).select("current_plant_id"))
+    @current_plants += CurrentPlant.where(id: (CurrentLinkingSoilType.where(soil_type_id: (SoilType.where(id: params[:soil_type])))).select("current_plant_id"))
+    @current_plants += CurrentPlant.where(id: (CurrentLinkingFlowerColour.where(flower_colour_id: (FlowerColour.where(id: params[:flower_colour])))).select("current_plant_id"))
+    @current_plants += CurrentPlant.where(id: (CurrentLinkingLeafColour.where(leaf_colour_id: (LeafColour.where(id: params[:leaf_colour])))).select("current_plant_id"))
+
+    return @current_plants
+
+
+  end
+
+
 
 end

@@ -9,42 +9,27 @@ class CurrentPlantsController < ApplicationController
 
 
   def index
-    @current_plants = CurrentPlant.search_for(params[:search])
+    @current_plants = CurrentPlant.all
   end
 
   def index_admin
     @current_plants = CurrentPlant.paginate(page: params[:page], per_page: 7) 
   end
 
-  def index_param_search
-    #@current_plants = CurrentPlant.where('id = ?', 4)
-    if !params.has_key?(:plants)
-      redirect_to search_current_plants_path
+  def search
+
+    if params.has_key?(:search)
+      @searched = true
+      @current_plants = CurrentPlant.search_for(params[:search])
+      @results_count = @current_plants.count
+    elsif params.has_key?(:plants)
+      @searched = true
+      @parameters = params[:plants]
+      @current_plants = find_relevant_plants(params[:plants])
+      @results_count = @current_plants.count
     else
-
-    puts "#" * 3 + " Climates: " + params[:plants][:climate].to_s + " " + "#" * 3
-    puts "#" * 3 + " Origins: " + params[:plants][:origin].to_s + " " + "#" * 3
-    puts "#" * 3 + " Sizes: " + params[:plants][:size].to_s + " " + "#" * 3
-    puts "#" * 3 + " Flower Colours: " + params[:plants][:flower_colour].to_s + " " + "#" * 3
-    puts "#" * 3 + " Leaf Colours: " + params[:plants][:leaf_colour].to_s + " " + "#" * 3
-    puts "#" * 3 + " Soil Types: " + params[:plants][:soil_type].to_s + " " + "#" * 3
-    puts "#" * 3 + " Types: " + params[:plants][:type].to_s + " " + "#" * 3
-    @plants = params[:plants].to_s
-
-    params[:plants][:climate]
-
-    @current_plants = CurrentPlant.where(id: (CurrentLinkingClimate.where(climate_id: (Climate.where(id: params[:plants][:climate])))).select("current_plant_id")) + CurrentPlant.where(id: (CurrentLinkingOrigin.where(origin_id: (Origin.where(id: params[:plants][:origin])))).select("current_plant_id")) + CurrentPlant.where(id: (CurrentLinkingSize.where(size_id: (Size.where(id: params[:plants][:size])))).select("current_plant_id")) + CurrentPlant.where(id: (CurrentLinkingSoilType.where(soil_type_id: (SoilType.where(id: params[:plants][:soil_type])))).select("current_plant_id"))
-
-
-    @current_plants.each do |f|
-      puts "*"* 10 + f.scientific_name + "*" * 5
+      @searched = false
     end
-
-    #@current_plants = CurrentPlant.find_by(
-
-    #where(self.climates.map(&:id): [1, 3, 5])
-
-  end
   end
 
 

@@ -11,14 +11,14 @@ Plantsuwa::Application.routes.draw do
 
   root 'welcome#index'
 
-  match "/plants/index_param_search", to: 'current_plants#index_param_search', via: 'get', as: 'current_plants_index_param_search'
+  match "/plants/search", to: 'current_plants#search', via: 'get', as: 'search_current_plants'
 
 
   resources :current_plants, except: [:destroy], :path => 'plants' do
     get :auto_complete_search, :on => :collection
-    collection do
-      get 'search'
-    end
+    #collection do
+    #  get 'search'
+    #end
 
   end
 

@@ -34,29 +34,6 @@ p {
 }
 
 
-table td, th {
-  border-left: 0;
-  border-right: 0;
-}
-
-
-table th .bordered {
-  border-left: 1px solid gray;
-  border-right: 0;
-}
-
-table td span {
-  color: #BFBFBF;
-  margin-top: 2px;
-}
-
-table td img {
-  width: 32px;
-}
-
-table th img {
-  width: 24px;
-}
 
 .main { 
 	padding: 25px;
