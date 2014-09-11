@@ -8,6 +8,7 @@ body {
 }
 
 
+
 .container {
   background: white;
   height: 100%;
@@ -161,6 +162,14 @@ textarea {
 .fieldset-search-form .check_boxes > .controls {
   height: auto;
   overflow: hidden;
+}
+
+.fieldset-search-form {
+  background: #eee;
+  border-radius: 10px;
+  width: 90%;
+  margin: 0 5%;
+  padding: 20px;
 }
 
 .info-tab {
@@ -332,7 +341,18 @@ label.checkbox {
   background: #eee;
 }
 
+.search-bar-container {
+  width: 100%;
+  margin: 0;
+}
 
+.legend-center-aligned {
+  text-align: center;
+}
+
+legend {
+  border-color: #ddd;
+}
 
 .plant-index-box {
   width: 100%;

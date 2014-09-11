@@ -4,17 +4,35 @@
 
 <div class="padding-mobile">
 	
-	<h4>Keyword Search </h4>
-	<div id="plants_search">
-	  <%= form_tag current_plants_path, :method => :get do %>
-	    <%= auto_complete_field_tag_jquery(:search, params[:search], {:placeholder => "Search Plants", class: 'form-control' }) %>
-	    <button id='submit_search' class="btn btn-default">Search</button>
-	  <% end %>
-	</div>
-	
-	<br/><br/>
+	<div style="height: 40px"></div>
 
-	<h4>Parameter Search</h4>
+	<div class="center-wrapper">
+	  <div class="center-wrapper-inner">
+			<h2>Keyword Search</h2>
+		</div>
+	</div>
+	<br/>
+	<fieldset class="fieldset-search-form">
+	  <%= form_tag current_plants_path, :method => :get do %>
+		  	<div class="search-bar-container">
+		  		<div style="width: 70%; float: left">
+		    		<%= auto_complete_field_tag_jquery(:search, params[:search], {:placeholder => "Search Plants", class: 'form-control' }) %>
+		    	</div>
+		    	<button id='submit_search' class="btn btn-primary" style="width: 30%; float: right"><i class="fa fa-search"></i>&nbsp;Search</button>
+			  </div>
+		  </div>
+	  <% end %>
+	</fieldset>
+	
+	<div style="height: 70px"></div>
+	<hr/>
+	<div style="height: 10px"></div>
+
+	<div class="center-wrapper">
+	  <div class="center-wrapper-inner">
+			<h2>Parameter Search</h2>
+		</div>
+	</div>
 	<br/>
 	<%= simple_form_for('plants', :method => :get, :url => url_for(:action => 'index_param_search'), html: { class: 'form-horizontal' , :'accept-charset' => "UTF-8"}, defaults: { input_html: { class: 'form-control' } }) do |f| %>
 
@@ -22,24 +40,35 @@
 
 
 			<div class="row">
-				<div class="col-sm-6">				
-					<legend>Descriptions</legend>
-				  <%= f.input :type, collection: Type.all, label_method: :name, value_method: :id, label: 'Type', as: :check_boxes, required: false %>
-				 	<%= f.input :size, collection: Size.all, label_method: :name, value_method: :id, label: 'Size', as: :check_boxes, required: false %>
-				  <%= f.input :flower_colour, collection: FlowerColour.all, label_method: :name, value_method: :id, label: 'Flower Colour', as: :check_boxes, required: false %>
-				  <%= f.input :leaf_colour, collection: LeafColour.all, label_method: :name, value_method: :id, label: 'Leaf Colour', as: :check_boxes, required: false %>
-				  <br/>
+				<div class="col-sm-6">	
+	
+					<legend class="legend-center-aligned">Descriptions</legend>
+
+					<div class="center-wrapper">
+	  				<div class="center-wrapper-inner">		
+						  <%= f.input :type, collection: Type.all, label_method: :name, value_method: :id, label: 'Type', as: :check_boxes, required: false %>
+						 	<%= f.input :size, collection: Size.all, label_method: :name, value_method: :id, label: 'Size', as: :check_boxes, required: false %>
+						  <%= f.input :flower_colour, collection: FlowerColour.all, label_method: :name, value_method: :id, label: 'Flower Colour', as: :check_boxes, required: false %>
+						  <%= f.input :leaf_colour, collection: LeafColour.all, label_method: :name, value_method: :id, label: 'Leaf Colour', as: :check_boxes, required: false %>
+						  <br/>
+						 </div>
+					</div>
 				</div>
 				<div class="col-sm-6">
-					<legend>Architectural</legend>
-					<%= f.input :climate, collection: Climate.all, label_method: :name, value_method: :id, label: 'Climate', as: :check_boxes, required: false %>
-					<%= f.input :soil_type, collection: SoilType.all, label_method: :name, value_method: :id, label: 'Soil Type', as: :check_boxes, required: false %>
-
+					<legend class="legend-center-aligned">Architectural</legend>
+					<div class="center-wrapper">
+			  		<div class="center-wrapper-inner">
+							<%= f.input :climate, collection: Climate.all, label_method: :name, value_method: :id, label: 'Climate', as: :check_boxes, required: false %>
+							<%= f.input :soil_type, collection: SoilType.all, label_method: :name, value_method: :id, label: 'Soil Type', as: :check_boxes, required: false %>
+						</div>
+					</div>
 					<br/>
-					<legend>Environmental</legend>
-				  <%= f.input :origin, collection: Origin.all, label_method: :name, value_method: :id, label: 'Origin', as: :check_boxes, required: false %>
-
-
+					<legend class="legend-center-aligned">Environmental</legend>
+					<div class="center-wrapper">
+	  				<div class="center-wrapper-inner">
+				 			<%= f.input :origin, collection: Origin.all, label_method: :name, value_method: :id, label: 'Origin', as: :check_boxes, required: false %>
+				  	</div>
+				  </div>
 				</div>
 			</div>
 
@@ -48,12 +77,12 @@
 	  </fieldset>
 
 	  <br/>
-	  <hr/>
 
 	  <div class="center-wrapper">
 	  	<div class="center-wrapper-inner">
 	  		<%= link_to_submit do %>
-				<button class="btn btn-default"><i class="fa fa-search"></i>&nbsp;&nbsp;Search by Parameters</button>
+
+				<button class="btn btn-primary"><i class="fa fa-search"></i>&nbsp;&nbsp;Search by Parameters</button>
 				<% end %>
 			</div>
 		</div>
