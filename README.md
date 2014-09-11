@@ -64,6 +64,13 @@ There's a lot more information here:
 
 https://help.github.com/articles/creating-and-deleting-branches-within-your-repository
 
+# Seeding the data
+
+You first have to seed all the data using the following:
+
+    $ rake db:migrate
+    $ rake db:seed
+
 # Running the server
 
 You can run the server with:
