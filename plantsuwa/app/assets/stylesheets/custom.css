@@ -402,6 +402,7 @@ legend {
 	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
 	box-sizing: border-box;         /* Opera/IE 8+ */
 }
+
 .plant-index-box-photo {
   width: 64px;
   height: 64px;
@@ -415,11 +416,20 @@ legend {
 
 }
 .plant-index-box-content {
-  padding-top: 6px;
-  height: 64px;
+  height: 44px;
   width: 100%;
   margin-left: 20px;
   margin-right: 20px;
+  margin-top: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.plant-index-box-content-wrapper {
+  width: 100%;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 .plant-index-box-chevron {
@@ -449,6 +459,12 @@ legend {
 	font-family: 'Montserrat', sans-serif;
   font-size: small;
 } 
+
+.plant-text-container {
+  text-align: center;
+  margin-bottom: 0px;
+  font-size: 120%;
+}
 
 .navbar-brand {
   color: #bbb;

@@ -29,7 +29,7 @@ class CurrentPlant < ActiveRecord::Base
 
   accepts_nested_attributes_for :current_photos, :reject_if => lambda { |t| t['description'].blank? and t['image'].nil? }, allow_destroy: true
 
-  has_attached_file :display_photo, :default_url => "/images/missing.png",
+  has_attached_file :display_photo, :default_url => "/images/missing_2.png",
     :styles => {
       :thumb    => ['100x100#'],
       :medium  => ['300x300#'],
@@ -114,5 +114,7 @@ class CurrentPlant < ActiveRecord::Base
   def generate_name
     self.combined_name = "#{self.genus} #{self.species}"
   end
+
+  default_scope -> { order('scientific_name ASC') }
 
 end

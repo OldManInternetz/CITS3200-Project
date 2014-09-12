@@ -2,19 +2,17 @@
   <div class="plant-index-box-photo">
     <%= image_tag current_plant.display_photo.url(:thumb), width:"63px", height:"63px", alt:"Plant photo" %>
   </div>
-  <div class="plant-index-box-content">
-    <div class="center-wrapper">
-      <div class="center-wrapper-inner">
-        <%= link_to current_plant_path(current_plant) do %>
-          <p style="text-align: center; margin-bottom: 0px; font-size: 120%"><strong><%= display_name(current_plant) %></strong></p>
-        <% end %>
+  <div class="plant-index-box-content-wrapper">
+    <div class="plant-index-box-content">
+      <%= link_to current_plant_path(current_plant) do %>
+        <p class="plant-text-container"><strong><%= display_name(current_plant) %></strong></p>
+      <% end %>
 
-        <% if !current_plant.common_name.blank? %>
-          <%= link_to current_plant_path(current_plant) do %>
-            <p style="text-align: center"><%= current_plant.common_name %></p>
-          <% end %>
+      <% if !current_plant.common_name.blank? %>
+        <%= link_to current_plant_path(current_plant) do %>
+          <p style="text-align: center"><%= current_plant.common_name %></p>
         <% end %>
-      </div>
+      <% end %>
     </div>
   </div>
   <%= link_to current_plant_path(current_plant) do %>

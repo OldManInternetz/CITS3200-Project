@@ -4,7 +4,7 @@ class CurrentPhoto < ActiveRecord::Base
   validates :current_plant_id, presence: true
   validates :description, length: { maximum: 300 }
 
-	has_attached_file :image, :default_url => "/images/missing.png",
+	has_attached_file :image, :default_url => "/images/missing_2.png",
     :styles => {
       :thumb    => ['100x100#'],
       :medium  => ['300x300#'],
