@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
 			#session[:id] = @user.id
       sign_in user
-			redirect_to root_path
+      redirect_user_to_correct_path
     else
       flash.now[:error] = 'You\'ve entered an invalid username/password combination. Please try again.'
       render 'new'
@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
 
   def destroy
     sign_out
-    redirect_to root_url
+    redirect_to root_path
   end
 
   private

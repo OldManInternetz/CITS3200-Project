@@ -57,11 +57,11 @@
          		<% end %>
 	        </li>
 	      <% else %>
-	        <li><%= link_to 'Sign up', sign_up_path %></li>
+	        <li><%= link_to 'Sign up', sign_up_path(pp_name: yield(:title), pp_path: request.path) %></li>
 	      <% end %>
 
 			  <% if not signed_in? %>
-			    <li><%= link_to 'Log in', log_in_path %></li>
+			    <li><%= link_to 'Log in', log_in_path(pp_name: yield(:title), pp_path: request.path) %></li>
 	      <% end %>
 
 			  <li><a href="#">Site Map</a></li>

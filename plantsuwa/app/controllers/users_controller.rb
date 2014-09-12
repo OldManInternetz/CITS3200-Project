@@ -1,8 +1,7 @@
 class UsersController < ApplicationController
 
-	
-  before_filter :user_is_admin, only: [:edit, :update, :destroy, :index, :show, :new_admin, :create_admin]
-  layout 'admin_layout', only: [:edit, :update, :destroy, :index, :show, :new_admin, :create_admin]
+  before_filter :user_is_admin, except: [:new, :create]
+  layout 'admin_layout', except: [:new, :create]
 
   # This line will cause only signed in users to be able to edit their information. Right now,
   # there is no edit page, and there may not even be one. We'll have to think about this later
@@ -58,7 +57,7 @@ class UsersController < ApplicationController
     if @user.save
       sign_in @user
       flash[:successful_signup] = "Thanks for signing up!"
-      redirect_to root_path
+      redirect_user_to_correct_path
     else
       render 'new'
     end

@@ -12,4 +12,14 @@ class ApplicationController < ActionController::Base
 		end
   end
 
+  """ Redirects the user to the root path, or the previous page they visited, depending on params. """
+  def redirect_user_to_correct_path
+    if params.has_key?(:pp_path)
+      redirect_to params[:pp_path]
+    else
+      redirect_to root_path
+    end
+  end
+
+
 end
