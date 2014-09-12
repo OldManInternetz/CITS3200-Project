@@ -1,4 +1,4 @@
-<%= link_to search_current_plants_path do %>
+<%= link_to search_current_plants_path(pp_name: yield(:title), pp_path: request.path) do %>
 	<% if controller_name == "current_plants" and action_name == "search" %>
 		<div class="info-tab info-tab-current info-tab-33" style="left: 0;">
 		  <p><i class="fa fa-lg fa-search"></i>&nbsp;&nbsp;Search</p>
@@ -22,7 +22,7 @@
 	<% end %>
 <% end %>
 
-<%= link_to current_plants_path do %>
+<%= link_to current_plants_path(pp_name: yield(:title), pp_path: request.path) do %>
 	<% if controller_name == "current_plants" and action_name == "index" %>
 		<div class="info-tab info-tab-current info-tab-33" style="left: 66.66666667%">
 		  <p><i class="fa fa-lg fa-tree"></i>&nbsp;&nbsp;Plants</p>

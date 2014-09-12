@@ -292,7 +292,7 @@ textarea {
 
 
 .check_boxes > .controls {
-  padding: 0 30px;
+  padding: 0 15px;
   /*  padding-bottom: 5px; */
   /* border: 1px solid #ccc; */
   /* border-radius: 4px; */
@@ -302,6 +302,7 @@ textarea {
 
 .check_boxes .checkbox {
   font-size: small;
+  font-weight: 400;
 	font-family: 'Oxygen', sans-serif;
 }
 
@@ -349,6 +350,43 @@ label.checkbox {
   width: 100%;
   margin: 0;
 }
+
+.dropdown-checkboxes {
+  display: none;
+  border: 1px solid #ccc;
+  background: white;
+  border-top: 0;
+}
+
+.btn-searchlist {
+  border-radius: 0;
+  margin-top: 5px;
+  position: relative;
+  background: #D1E7FF;
+  border-color: #BADAFF;
+}
+
+.btn-searchlist:hover, .btn-searchlist:active {
+  background: #BADAFF;
+  border-color: #B3D6FF;  
+}
+
+.btn-searchlist-down:after, .btn-searchlist-up:after {
+  font-family: FontAwesome;
+  font-size: 12px;
+  position: absolute;
+  right: 6px;
+  top: 7px; 
+}
+
+.btn-searchlist-down:after {
+  content: "\f078";
+}
+
+.btn-searchlist-up:after {
+  content: "\f077";
+}
+
 
 .legend-center-aligned {
   text-align: center;

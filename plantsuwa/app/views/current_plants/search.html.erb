@@ -13,17 +13,22 @@
 			</div>
 		</div>
 
-		<table class="table table-striped">
-			<thead>
-				<tr>
-					<th style="width: 40px"></th>
-					<th>Name</th>
-				</tr>
-			</thead>
-			<tbody>
-				<%= render partial: 'current_plant_search_result', collection: @current_plants, as: 'current_plant' %>
-			</tbody>
-		</table>
+		<% if @results_count > 0 %>
+
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th style="width: 40px"></th>
+						<th>Name</th>
+						<th style="width: 40px"></th>
+					</tr>
+				</thead>
+				<tbody>
+					<%= render partial: 'current_plant_search_result', collection: @current_plants, as: 'current_plant' %>
+				</tbody>
+			</table>
+
+		<% end %>
 
 		<div class="center-wrapper">
 	  	<div class="center-wrapper-inner">

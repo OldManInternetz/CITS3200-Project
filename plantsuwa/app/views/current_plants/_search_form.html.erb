@@ -1,6 +1,77 @@
 <div id="search-form-hidden">
 
 
+	
+
+	<div class="center-wrapper">
+	  <div class="center-wrapper-inner">
+			<h2>Parameter Search</h2>
+		</div>
+	</div>
+	<br/>
+	<%= simple_form_for('plants', :method => :get, :url => url_for(:action => 'search'), html: { class: 'form-horizontal' , :'accept-charset' => "UTF-8"}, defaults: { input_html: { class: 'form-control' } }) do |f| %>
+
+		<fieldset class="fieldset-search-form">
+
+
+			<div class="row">
+				<div class="col-sm-4">	
+					<a class="btn btn-default btn-searchlist btn-searchlist-down" style="width: 100%" id="show-type">Type</a>
+					<div class="dropdown-checkboxes" id="type-list">
+				  	<%= f.input :type, collection: Type.all, label_method: :name, value_method: :id, as: :check_boxes, required: false, label: false %>
+				  </div>
+
+					<a class="btn btn-default btn-searchlist btn-searchlist-down" style="width: 100%" id="show-size">Size</a>
+					<div class="dropdown-checkboxes" id="size-list">
+				 	<%= f.input :size, collection: Size.all, label_method: :name, value_method: :id, as: :check_boxes, required: false, label: false %>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<a class="btn btn-default btn-searchlist btn-searchlist-down" style="width: 100%" id="show-climate">Climate</a>
+					<div class="dropdown-checkboxes" id="climate-list">
+				 	<%= f.input :climate, collection: Climate.all, label_method: :name, value_method: :id, as: :check_boxes, required: false, label: false %>
+					</div>
+
+					<a class="btn btn-default btn-searchlist btn-searchlist-down" style="width: 100%" id="show-flower-colour">Flower Colour</a>
+					<div class="dropdown-checkboxes" id="flower-colour-list">
+				  <%= f.input :flower_colour, collection: FlowerColour.all, label_method: :name, value_method: :id, as: :check_boxes, required: false, label: false %>
+				  </div>
+
+					<a class="btn btn-default btn-searchlist btn-searchlist-down" style="width: 100%" id="show-leaf-colour">Leaf Colour</a>
+					<div class="dropdown-checkboxes" id="leaf-colour-list">
+				  <%= f.input :leaf_colour, collection: LeafColour.all, label_method: :name, value_method: :id, as: :check_boxes, required: false, label: false %>
+				  </div>
+				</div>
+				<div class="col-sm-4">
+					<a class="btn btn-default btn-searchlist btn-searchlist-down" style="width: 100%" id="show-origin">Origin</a>
+					<div class="dropdown-checkboxes" id="origin-list">
+				 	<%= f.input :origin, collection: Origin.all, label_method: :name, value_method: :id, as: :check_boxes, required: false, label: false %>
+					</div>
+
+					<a class="btn btn-default btn-searchlist btn-searchlist-down" style="width: 100%" id="show-soil-type">Soil Type</a>
+					<div class="dropdown-checkboxes" id="soil-type-list">
+				 	<%= f.input :soil_type, collection: SoilType.all, label_method: :name, value_method: :id, as: :check_boxes, required: false, label: false %>
+					</div>
+				</div>
+			</div>
+	  </fieldset>
+
+	  <br/>
+		<div class="center-wrapper">
+	  	<div class="center-wrapper-inner">
+				<%= link_to_submit do %>
+					<button class="btn btn-primary"><i class="fa fa-search"></i>&nbsp;&nbsp;Search by Parameters</button>
+				<% end %>
+			</div>
+		</div>
+
+	<% end %>
+	<br/>
+
+
+	<div style="height: 20px"></div>
+	<hr/>
+
 	<div class="center-wrapper">
 	  <div class="center-wrapper-inner">
 			<h2>Keyword Search</h2>
@@ -17,69 +88,47 @@
 		  </div>
 	  <% end %>
 	</fieldset>
-	
-	<div style="height: 20px"></div>
-	<hr/>
-
-	<div class="center-wrapper">
-	  <div class="center-wrapper-inner">
-			<h2>Parameter Search</h2>
-		</div>
-	</div>
-	<br/>
-	<%= simple_form_for('plants', :method => :get, :url => url_for(:action => 'search'), html: { class: 'form-horizontal' , :'accept-charset' => "UTF-8"}, defaults: { input_html: { class: 'form-control' } }) do |f| %>
-
-		<fieldset class="fieldset-search-form">
-
-
-			<div class="row">
-				<div class="col-sm-6">	
-	
-					<legend class="legend-center-aligned">Descriptions</legend>
-
-					<div class="center-wrapper">
-	  				<div class="center-wrapper-inner">		
-						  <%= f.input :type, collection: Type.all, label_method: :name, value_method: :id, label: 'Type', as: :check_boxes, required: false %>
-						 	<%= f.input :size, collection: Size.all, label_method: :name, value_method: :id, label: 'Size', as: :check_boxes, required: false %>
-						  <%= f.input :flower_colour, collection: FlowerColour.all, label_method: :name, value_method: :id, label: 'Flower Colour', as: :check_boxes, required: false %>
-						  <%= f.input :leaf_colour, collection: LeafColour.all, label_method: :name, value_method: :id, label: 'Leaf Colour', as: :check_boxes, required: false %>
-						  <br/>
-						 </div>
-					</div>
-				</div>
-				<div class="col-sm-6">
-					<legend class="legend-center-aligned">Architectural</legend>
-					<div class="center-wrapper">
-			  		<div class="center-wrapper-inner">
-							<%= f.input :climate, collection: Climate.all, label_method: :name, value_method: :id, label: 'Climate', as: :check_boxes, required: false %>
-							<%= f.input :soil_type, collection: SoilType.all, label_method: :name, value_method: :id, label: 'Soil Type', as: :check_boxes, required: false %>
-						</div>
-					</div>
-					<br/>
-					<legend class="legend-center-aligned">Environmental</legend>
-					<div class="center-wrapper">
-	  				<div class="center-wrapper-inner">
-				 			<%= f.input :origin, collection: Origin.all, label_method: :name, value_method: :id, label: 'Origin', as: :check_boxes, required: false %>
-				  	</div>
-				  </div>
-				</div>
-			</div>
-
-
-
-	  </fieldset>
-
-	  <br/>
-
-	  <div class="center-wrapper">
-	  	<div class="center-wrapper-inner">
-	  		<%= link_to_submit do %>
-
-				<button class="btn btn-primary"><i class="fa fa-search"></i>&nbsp;&nbsp;Search by Parameters</button>
-				<% end %>
-			</div>
-		</div>
-	<% end %>
-	<br/>
 
 </div>
+
+
+<script type="text/javascript">
+	$("#show-type").click(function(){
+  	$("#type-list").slideToggle();
+  	swapArrows($(this));
+	}); 
+	$("#show-size").click(function(){
+  	$("#size-list").slideToggle();
+  	swapArrows($(this));
+	}); 
+	$("#show-flower-colour").click(function(){
+  	$("#flower-colour-list").slideToggle();
+  	swapArrows($(this));
+	}); 
+	$("#show-leaf-colour").click(function(){
+  	$("#leaf-colour-list").slideToggle();
+  	swapArrows($(this));
+	}); 
+	$("#show-soil-type").click(function(){
+  	$("#soil-type-list").slideToggle();
+  	swapArrows($(this));
+	}); 
+	$("#show-origin").click(function(){
+  	$("#origin-list").slideToggle();
+  	swapArrows($(this));
+	}); 
+	$("#show-climate").click(function(){
+  	$("#climate-list").slideToggle();
+  	swapArrows($(this));
+	}); 
+
+	function swapArrows(element) {
+		if(element.hasClass("btn-searchlist-down")) {
+  		element.addClass("btn-searchlist-up");
+  		element.removeClass("btn-searchlist-down");
+  	} else {
+  		element.addClass("btn-searchlist-down");
+  		element.removeClass("btn-searchlist-up");  		
+  	}
+	}
+</script>
