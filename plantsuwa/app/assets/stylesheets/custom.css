@@ -35,6 +35,11 @@ p {
   text-justify: inter-word;
 }
 
+b {
+	font-family: "Courier";
+	#font-size: 1.2em;
+}
+
 
 
 .main { 

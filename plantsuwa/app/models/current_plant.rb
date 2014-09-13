@@ -76,12 +76,12 @@ class CurrentPlant < ActiveRecord::Base
   scoped_search on: :created_at
   scoped_search on: :updated_at
   scoped_search on: :species
-  scoped_search on: :common_name
-  scoped_search on: :scientific_name
+  scoped_search on: :common_name, :alias => :common
+  scoped_search on: :scientific_name, :alias => :scientific
   scoped_search on: :synonym
   scoped_search on: :subspecies
   scoped_search on: :description
-  scoped_search on: :location_name
+  scoped_search on: :location_name, :alias => :location
   scoped_search on: :characteristics
   scoped_search on: :additional_info
   scoped_search on: :identification
@@ -95,10 +95,10 @@ class CurrentPlant < ActiveRecord::Base
   scoped_search on: :wildlife
   scoped_search on: :architectural_info
   scoped_search on: :discovered_by
-  scoped_search on: :named_by
+  scoped_search on: :named_by, :alias => :named
   scoped_search on: :plant_id
-  scoped_search on: :submitted_by
-  scoped_search on: :edited_by
+  scoped_search on: :submitted_by, :alias => :submitted
+  scoped_search on: :edited_by, :alias => :edited
   
   scoped_search in: :type, on: :name
   scoped_search in: :soil_types, on: :name

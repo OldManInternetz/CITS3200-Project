@@ -77,6 +77,13 @@
 			<h2>Keyword Search</h2>
 		</div>
 	</div>
+	
+    <% if flash[:error] %>
+      <div class="alert alert-info" style="margin-top: 20px">
+          <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+	
 	<br/>
 	<fieldset class="fieldset-search-form">
 	  <%= form_tag search_current_plants_path, :method => :get do %>

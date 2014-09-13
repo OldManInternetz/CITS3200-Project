@@ -6,6 +6,8 @@ class CurrentPlantsController < ApplicationController
   before_action :user_is_admin, only: [:index_admin, :destroy_admin, :edit_admin, :show_admin, :update_admin, :new_admin, :create_admin]
 
   layout 'admin_layout', only: [:index_admin, :show_admin, :edit_admin, :new_admin, :create_admin, :update_admin]
+  
+  rescue_from ScopedSearch::QueryNotSupported, with: :query_not_supported
 
 
   def index
@@ -162,6 +164,11 @@ class CurrentPlantsController < ApplicationController
 				flash[:error] = "Please log in to access this page."
 				redirect_to log_in_path
 			end
+    end
+    
+    def query_not_supported
+      flash[:error] = "Sorry, that search query is not supported. See Help for search tips :)"
+      redirect_to search_current_plants_path
     end
 
 

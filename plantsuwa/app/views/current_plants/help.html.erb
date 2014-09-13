@@ -1,0 +1,58 @@
+<% provide(:title, 'Search Help') %>
+<% provide(:prev_page, 'Home') %>
+<% provide(:prev_link, root_path) %>
+
+<div class="padding-mobile">
+	
+	<div class="center-wrapper">
+  	<div class="center-wrapper-inner">
+			<h2>Keyword Search </h2>
+		</div>
+	</div>
+	
+	<div class="info-body">
+		<h3> Searching by Field </h3>
+		<p> 
+			By default, keyword search will scan the entire plant's informations for the words you're searching for. To be more precise, you can specify the exact field you want to search on, by including a "<b>~</b>" in your search. 
+		</p>
+		<p>
+			For example, <b>location ~ sunken garden</b> will only search the UWA Location field in all the plants, and return only the plants who are listed as being located in the Sunken Garden.
+		<h3> Keywords and Phrases </h3>
+		<p> 
+			The search engine will split up search terms into words separated by spaces. 
+		</p>
+		<p>
+			For example, searching for <b>large green leaves</b> will be interpretted as searching for <b>large</b>,   <b>green</b> and <b>leaves</b> seperately. This produces far too many results.
+		</p>
+		<p>
+			To make it a single phrase, use double quotes: <b>"large green leaves"</b>. This only produces plants with the exact phrase "large green leaves" included.
+		</p>
+
+		<h3> Logical Operators </h3>
+		<p>
+			To reduce the number of plants, you can use logical operators - AND, OR and NOT. By default, AND is used to join words, so <b> large green leaves </b> is equivalent to searching <b> large AND green AND leaves </b>.
+		</p>
+		<p>
+			For example, searching for <b> sunken garden </b> produces mainly plants that can be found in UWA's Sunken Garden. Searching for <b> sunken OR garden </b> would increase this to any plant with the word "sunken" or "garden" anywhere in their info.
+		</p>
+		<p>
+			If you prefer, you can replace AND with & or &&; you can replace OR with | or ||, and you can replace NOT with - or !.
+		</p>
+		<p>
+			You can get really creative and combine all of these with brackets: <b>(wind | salt) tolerant, NOT ("frost tolerant")</b> will give you all plants that are list as either wind OR salt tolerant, but are not listed as frost tolerant.
+		</p>
+			
+		<h3> More Info </h3>	
+		<p> 
+			For more detailed information on the search query language, <a href="https://github.com/wvanbergen/scoped_search/wiki/query-language">click here to see the scoped_search wiki</a>
+		</p>
+		<div class="center-wrapper">
+	  		<div class="center-wrapper-inner">
+			<%= link_to search_current_plants_path do %>
+				<button class="btn btn-primary" >Back To Search</button>
+			<% end %>
+			</div>
+		</div>
+	</div>
+	
+</div>
