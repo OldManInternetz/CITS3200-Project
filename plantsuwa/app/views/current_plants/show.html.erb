@@ -1,4 +1,4 @@
-<% provide(:title, @current_plant.name) %>
+<% provide(:title, display_title(@current_plant)) %>
 <% provide(:prev_page, 'List') %>
 <% provide(:prev_link, current_plants_path) %>
 
@@ -8,11 +8,11 @@
 
   <div id="tab-descriptions" class="info-body">
     <legend>Descriptions</legend>
-
-    <%= image_tag @current_plant.display_photo.url(:medium), class: 'display-photo-right' %>
-
+    <% if @current_plant.display_photo.exists? %>
+      <%= image_tag @current_plant.display_photo.url(:medium), class: 'display-photo-right' %>
+    <% end %>
     <% if not display_name(@current_plant).blank? %>
-      <dt>Name</dt><p><i><%= display_name(@current_plant) %></i></p>
+      <dt>Scientific Name</dt><p><i><%= display_name(@current_plant) %></i></p>
     <% end %>
     <% if not @current_plant.subspecies.blank? %>
       <dt>Subspecies</dt><p><%= @current_plant.subspecies %></p>
@@ -23,9 +23,6 @@
 	  <% if not @current_plant.common_name.blank? %>
 		  <dt>Common Name</dt><p><%= @current_plant.common_name %></p>
 	  <% end %>
-    <% if not @current_plant.scientific_name.blank? %>
-      <dt>Scientific Name</dt><p><i><%= @current_plant.scientific_name %></i></p>
-    <% end %>
     <% if not @current_plant.synonym.blank? %>
       <dt>Synonym</dt><p><%= @current_plant.synonym %></p>
     <% end %>
@@ -180,10 +177,11 @@
       <%= image_tag @current_plant.display_photo.url, style: "max-width: 100%; max-height: 400px;" %>
       <%= @current_plant.display_photo_description %>
     <% end %>
-    <br/>
+    
+    <br/><br/>
 
 	  <% for @photo in @current_plant.current_photos %>
-		  <%= image_tag @photo.image.url, style: "max-width: 100%; max-height: 400px;" %>
+		  <%= image_tag @photo.image.url(:medium), style: "max-width: 100%; max-height: 400px;" %>
       <%= @photo.description %>
       <hr/>
 	  <% end %>

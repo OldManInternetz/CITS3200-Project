@@ -1,11 +1,33 @@
-<% provide(:title, 'List by Type') %>
+<% provide(:title, 'List by A-Z') %>
 <% provide(:prev_page, 'Home') %>
 <% provide(:prev_link, root_path) %>
 
+<% link_to current_plants_path(sortby: 'a-z') do %>
+      
+	    <p><i class="fa fa-sort-alpha-asc"></i>&nbsp;&nbsp;A-Z</p>    
 
-<div style="margin-top: -15px"></div>
+<% end %>
 
-<%= render @current_plants %>
+<% link_to current_plants_path(sortby: 'type') do %>
+  
+	    <p><i class="fa fa-cubes"></i>&nbsp;&nbsp;Type</p>    
+
+<% end %>
+
+<div class="index-banner"></div>
+<div style="margin-top: 15px"></div>
+
+<div id="plants-list">
+	<%= render @current_plants %>
+</div>
+
+<div class="center-wrapper">
+	<div class="center-wrapper-inner">
+		<div id="infinite-scrolling">
+		  <%= will_paginate %>
+		</div>
+	</div>
+</div>
 
 <% if signed_in? %>
   <div style="height: 30px"></div>
@@ -14,4 +36,3 @@
 <% end %>
 
 <%= render 'layouts/ui/bottom_tabs_default' %> <!-- render 'index' instead of 'default' for the types, etc -->
-

@@ -20,7 +20,7 @@
 	    <% end %>  
 	  <% end %>
 	  <div class="navbar-brand navbar-title-block">
-	    <p><strong><%= truncate(small_title(yield(:title)), length: 20, escape: false) %></strong></p>
+	    <p><strong><%= truncate(small_title(yield(:title)), length: 20) %></strong></p>
 	  </div>
 	  <div style="width: 200px; position: absolute; right: 0;">
 	    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-navbar-collapse">
@@ -30,7 +30,7 @@
 		    <span class="icon-bar"></span>
 	    </button>
 
-		    <%= link_to search_current_plants_path(pp_name: yield(:title), pp_path: request.original_url) do %>
+		    <%= link_to search_current_plants_path do %>
 		      <p class="navbar-brand navbar-brand-custom" style="padding-right: 9px"><i class="fa fa-search"></i></p>
 		    <% end %>
 		    <%= link_to root_path do %>

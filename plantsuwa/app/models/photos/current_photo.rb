@@ -6,7 +6,7 @@ class CurrentPhoto < ActiveRecord::Base
 
 	has_attached_file :image, :default_url => "/images/missing_2.png",
     :styles => {
-      :thumb    => ['100x100#'],
+      :thumb    => ['70x70#'],
       :medium  => ['300x300#'],
       :large    => ['1000>']
     }

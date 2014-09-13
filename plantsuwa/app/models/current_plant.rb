@@ -23,6 +23,7 @@ class CurrentPlant < ActiveRecord::Base
 
   belongs_to :type
 
+  """ Photos """
 
 	has_many :current_photos, dependent: :destroy
   has_many :notifications, dependent: :destroy
@@ -31,7 +32,7 @@ class CurrentPlant < ActiveRecord::Base
 
   has_attached_file :display_photo, :default_url => "/images/missing_2.png",
     :styles => {
-      :thumb    => ['100x100#'],
+      :thumb    => ['70x70#'],
       :medium  => ['300x300#'],
       :large    => ['1000>']
     }
@@ -46,7 +47,7 @@ class CurrentPlant < ActiveRecord::Base
   validates :genus, length: { maximum: 200 }
   validates :species, length: { maximum: 200 }
   validates :common_name, length: { maximum: 200 }
-  validates :scientific_name, length: { maximum: 200 }
+  validates :scientific_name, length: { maximum: 400 }
   validates :synonym, length: { maximum: 200 }  
   validates :subspecies, length: { maximum: 200 }
   validates :description, length: { maximum: 10000 }
@@ -112,7 +113,9 @@ class CurrentPlant < ActiveRecord::Base
   before_validation :generate_name
 
   def generate_name
-    self.combined_name = "#{self.genus} #{self.species}"
+    if self.scientific_name.blank?
+      self.scientific_name = "#{self.genus} #{self.species}"
+    end
   end
 
   default_scope -> { order('scientific_name ASC') }

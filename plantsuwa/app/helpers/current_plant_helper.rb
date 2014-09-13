@@ -17,6 +17,8 @@ module CurrentPlantHelper
     return @current_plant.current_photos.any?
   end
 
+  """ Displays the name of the plant, for use in things other than titles """
+
   def display_name(plant)
     if plant
       if plant.scientific_name.blank?
@@ -29,11 +31,13 @@ module CurrentPlantHelper
     end
   end
 
+  """ Displays the name of the plant, for use in a title """
+
   def display_title(plant)
-    if plant.combined_name.blank?
+    if plant.scientific_name.blank?
       '(Nameless Plant)'
     else
-      plant.combined_name
+      plant.scientific_name
     end
   end
 

@@ -524,7 +524,7 @@ legend {
   border-bottom-right-radius: 8px;
   z-index: 1050;
 }
-.navbar-admin-tab p {
+.navbar-admin-tab p, .sort-by-tab p {
   color: white;
   text-align: center;
   font-size: x-small;
@@ -532,7 +532,7 @@ legend {
   font-family: 'Montserrat', sans-serif; 
 }
 
-.navbar-admin-tab:hover p {
+.navbar-admin-tab:hover p, .sort-by-tab:hover p {
   color: #268BFF;
   -webkit-transition: color 0.2s linear;
   -moz-transition: color 0.2s linear;
@@ -541,7 +541,7 @@ legend {
   transition: color 0.2s linear;
 }
 
-.navbar-admin-tab:active p {
+.navbar-admin-tab:active p, .sort-by-tab:active p {
   color: #268BFF;
   -webkit-transition: color 0.2s linear;
   -moz-transition: color 0.2s linear;
@@ -639,6 +639,97 @@ tr:nth-child(odd) td:first-child {
 tr:nth-child(odd) td:last-child {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
+}
+
+
+
+
+/* Sort tab */
+
+/*
+
+.sort-by-tab {
+  width: 70px;
+  height: 30px;
+  background: black;
+  color: white;
+  position: fixed;
+  left: 10px;
+  top: 50px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  z-index: 1050;
+}
+
+.sort-by-tab p {
+  color: white;
+  text-align: center;
+  font-size: small;
+  margin-top: 6px;
+  font-family: 'Montserrat', sans-serif; 
+}
+
+.sort-by-tab-current {
+  background: #ccc;
+  z-index: 1060;  
+}
+
+.sort-by-tab-current p {
+  color: black;
+}
+
+
+.sort-by-tab:before {
+  left: -30px;
+  background: url('tab-corner-left-2.png');
+}
+
+.sort-by-tab:after {
+  right: -30px;
+  top: 0;
+  background: url('tab-corner-right-4.png');
+}
+
+.sort-by-tab-current:before {
+  left: -30px;
+  background: url('tab-corner-left-2.png');
+}
+
+.sort-by-tab-current:after {
+  right: -30px;
+  top: 0;
+  background: url('tab-corner-right-4.png');
+}
+
+
+
+.sort-by-tab:before, .sort-by-tab:after {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 30px;
+  height: 30px;  
+  background-size: 30px 30px;
+  background-repeat: no-repeat;  
+}
+
+
+.sort-by-tab a {
+  text-decoration: none; 
+}
+
+*/
+
+
+.index-banner {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 50px;
+  height: 30px;
+  background: #ddd;
+  z-index: 1002;
+  border-bottom: 1px solid #ccc;
 }
 
 

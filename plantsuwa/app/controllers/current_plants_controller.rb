@@ -9,7 +9,7 @@ class CurrentPlantsController < ApplicationController
 
 
   def index
-    @current_plants = CurrentPlant.all
+    @current_plants = CurrentPlant.paginate(page: params[:page], per_page: 15)
   end
 
   def index_admin
@@ -73,7 +73,7 @@ class CurrentPlantsController < ApplicationController
 
     if @current_plant.save
       create_notification('created', changes)
-      flash[:success] = "\"#{display_title(@current_plant)}\" was successfully created."
+      flash[:success] = "\"#{display_name(@current_plant)}\" was successfully created."
       redirect_to admin_current_plant_path(@current_plant)
     else
       render 'new_admin'
@@ -121,7 +121,7 @@ class CurrentPlantsController < ApplicationController
 
     if @current_plant.update(current_plant_params)
       create_notification('edited', changes)
-      flash[:success] = "\"#{display_title(@current_plant)}\" was successfully updated."
+      flash[:success] = "\"#{display_name(@current_plant)}\" was successfully updated."
       redirect_to admin_current_plant_path(@current_plant)
     else
       render 'edit_admin'
@@ -131,7 +131,7 @@ class CurrentPlantsController < ApplicationController
 
   def destroy_admin
     @current_plant = CurrentPlant.find(params[:id])
-    flash[:success] = "\"#{display_title(@current_plant)}\" was successfully destroyed."
+    flash[:success] = "\"#{display_name(@current_plant)}\" was successfully destroyed."
     @current_plant.destroy 
     redirect_to admin_current_plants_path
   end

@@ -8,7 +8,7 @@
     <legend>Descriptions</legend>
 
     <% if not display_name(@current_plant).blank? %>
-      <dt>Name</dt><p><%= display_name(@current_plant) %></p>
+      <dt>Scientific Name</dt><p><%= display_name(@current_plant) %></p>
     <% else %>
       <dt class="no-description">Name</dt><p class="no-description">(None)</p>
     <% end %>
@@ -26,11 +26,6 @@
       <dt>Common Name</dt><p><%= @current_plant.common_name %></p>
     <% else %>
       <dt class="no-description">Common Name</dt><p class="no-description">(None)</p>
-    <% end %>
-    <% if not @current_plant.scientific_name.blank? %>
-      <dt>Scientific Name</dt><p><%= @current_plant.scientific_name %></p>
-    <% else %>
-      <dt class="no-description">Scientific Name</dt><p class="no-description">(None)</p>
     <% end %>
     <% if not @current_plant.synonym.blank? %>
       <dt>Synonym</dt><p><%= @current_plant.synonym %></p>

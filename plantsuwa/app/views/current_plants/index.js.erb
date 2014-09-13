@@ -1,0 +1,6 @@
+$('#plants-list').append('<%= j render(@current_plants) %>');
+<% if @current_plants.next_page %>
+	$('.pagination').replaceWith('<%= j will_paginate(@current_plants) %>');
+<% else %>
+	$('.pagination').remove();
+<% end %>

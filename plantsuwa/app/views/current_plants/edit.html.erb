@@ -1,5 +1,5 @@
 <% provide(:title, 'Edit Plant') %>
-<% provide(:prev_page, @current_plant.name) %>
+<% provide(:prev_page, @current_plant.scientific_name) %>
 <% provide(:prev_link, current_plant_path(:id => @current_plant.id)) %>
 
 <%= render 'form' %>
