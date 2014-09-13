@@ -2,6 +2,7 @@ puts "Seeding additional photos..."
 
 # 441 more photos
 
+puts "  0/441"
 CurrentPlant.find_by_scientific_name('?').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/FDB655E8-FA14-491E-8738-9C062CA54FF6.jpg")).save
 CurrentPlant.find_by_scientific_name('A').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/48573529-D56C-49F4-95DB-1CF9D6E5F6A2.jpg")).save
 CurrentPlant.find_by_scientific_name('Acacia iteaphylla').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/acacia_iteaphylla_distance.1.jpg")).save
@@ -48,6 +49,7 @@ CurrentPlant.find_by_scientific_name('Corymbia calophylla').current_photos.build
 CurrentPlant.find_by_scientific_name('Corymbia citriodora').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/corymbia_citriodora_nut.0.0.jpg")).save
 CurrentPlant.find_by_scientific_name('Corymbia ficifolia').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/corymbia_ficifolia_bark.0.0.jpg")).save
 CurrentPlant.find_by_scientific_name('Corymbia maculata').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/corymbia_maculata_nut.0.0.jpg")).save
+puts "  50/441"
 CurrentPlant.find_by_scientific_name('Crinum pedunculatum').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/crinum_pedunculatum_flower2.0.0.jpg")).save
 CurrentPlant.find_by_scientific_name('Cyathea cooperi').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/cyathea_cooperi_stem.0.0.jpg")).save
 CurrentPlant.find_by_scientific_name('Delonix regia').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/delonix_regia_flower.0.0.jpg")).save
@@ -99,6 +101,7 @@ CurrentPlant.find_by_scientific_name('Zamia furfuracea').current_photos.build(im
 CurrentPlant.find_by_scientific_name('?').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/419B4001-1B68-4E39-8F47-2D6A4B0071E1.jpg")).save
 CurrentPlant.find_by_scientific_name('Acmena smithii').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/acmena_smithii_bark.0.0.jpg")).save
 CurrentPlant.find_by_scientific_name('Adenanthos cygnorum').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/adenanthos_cygnorum_youngfoliage.0.jpg")).save
+puts "  100/441"
 CurrentPlant.find_by_scientific_name('Agapanthus praecox').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/agapanthus_praecox_subsporientalis_closeup.0.0.jpg")).save
 CurrentPlant.find_by_scientific_name('Agonis flexuosa').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/agonis_flexuosa_flower2.0.0.jpg")).save
 CurrentPlant.find_by_scientific_name('Agonis flexuosa \'nana\'').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/agonis_flexuosa_nana_youngfoliage2.0.jpg")).save
@@ -149,6 +152,7 @@ CurrentPlant.find_by_scientific_name('Leucophyta brownii').current_photos.build(
 CurrentPlant.find_by_scientific_name('Lomandra longifolia').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/lomandra_longifolia_oldseed.0.0.jpg")).save
 CurrentPlant.find_by_scientific_name('Melaleuca huegelii').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/3909ABB4-2329-4B29-AD89-4812F798E103.jpg")).save
 CurrentPlant.find_by_scientific_name('Melaleuca nesophila').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/281B8632-5F48-49DC-A6E9-ED679B333E50.jpg")).save
+puts "  150/441"
 CurrentPlant.find_by_scientific_name('Phoenix roebelenii').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/phoenix_roebelenii_spines.0.0.jpg")).save
 CurrentPlant.find_by_scientific_name('Pimelea').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/9A49C467-ACE3-49FE-B084-047FF8FC8C00.jpg")).save
 CurrentPlant.find_by_scientific_name('Plantanus x acerfolia').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/B605DA14-8A62-4522-B716-54B237A55759.jpg")).save
@@ -199,6 +203,7 @@ CurrentPlant.find_by_scientific_name('Calodendron capense').current_photos.build
 CurrentPlant.find_by_scientific_name('Calothamnus quadrifidus').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/calothamnus_quadrifidus_closeup.0.jpg")).save
 CurrentPlant.find_by_scientific_name('Carpobrotus glaucescens').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/carpobrotus_glaucescens_distance2.0.0.jpg")).save
 CurrentPlant.find_by_scientific_name('Casuarina cunninghamiana').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/casuarina_cunninghamiana_trunk.0.0.jpg")).save
+puts "  200/441"
 CurrentPlant.find_by_scientific_name('Casuarina equisetifolia').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/casuarina_equisetifolia_subspincana_bark.1.0.jpg")).save
 CurrentPlant.find_by_scientific_name('Casuarina obesa').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/casuarina_obesa_distance2.0.0.jpg")).save
 CurrentPlant.find_by_scientific_name('Chlorophytum comosum').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/chlorophytum_comosum_distance2.0.0.jpg")).save
@@ -249,6 +254,7 @@ CurrentPlant.find_by_scientific_name('Ficus macrophylla').current_photos.build(i
 CurrentPlant.find_by_scientific_name('Ficus pumila').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/ficus_pumila_closeup2.0.0.jpg")).save
 CurrentPlant.find_by_scientific_name('Gazania sp.').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/gazania_distance.0.0.jpg")).save
 CurrentPlant.find_by_scientific_name('Ginkgo biloba').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/ginkgo_biloba_distance2.0.0.jpg")).save
+puts "  250/441"
 CurrentPlant.find_by_scientific_name('Gleditsia tricanthos').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/268AB484-9042-409F-80DB-A24EADC452F5.jpg")).save
 CurrentPlant.find_by_scientific_name('Grevillea').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/34487D55-C287-42DA-9D9A-4D25AFE2C4DF.jpg")).save
 CurrentPlant.find_by_scientific_name('Grevillea crithmifolia').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/grevillea_crithmifolia_fl.0.jpg")).save
@@ -298,6 +304,7 @@ CurrentPlant.find_by_scientific_name('Zamia furfuracea').current_photos.build(im
 CurrentPlant.find_by_scientific_name('Acacia rostellifera').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/226CC946-A527-44F4-8B4B-961EBCBEA119.jpg")).save
 CurrentPlant.find_by_scientific_name('Acmena smithii').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/acmena_smithii_youngfoliage.0.0.jpg")).save
 CurrentPlant.find_by_scientific_name('Adenanthos cygnorum').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/adenanthos_cygnorum_bark.0.jpg")).save
+puts "  300/441"
 CurrentPlant.find_by_scientific_name('Agapanthus praecox').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/agapanthus_praecox_subsporientalis_spentflower.0.0.jpg")).save
 CurrentPlant.find_by_scientific_name('Agonis flexuosa').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/agonis_flexuosa_nana_distance.0.0.jpg")).save
 CurrentPlant.find_by_scientific_name('Agonis flexuosa \'nana\'').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/agonis_flexuosa_nana_youngfoliage.0.jpg")).save
@@ -342,6 +349,7 @@ CurrentPlant.find_by_scientific_name('Unknown 2').current_photos.build(image: Fi
 CurrentPlant.find_by_scientific_name('Viburnum?').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/C7A7E329-248D-4D67-B131-590544A05432.jpg")).save
 CurrentPlant.find_by_scientific_name('Yellow Broome').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/12061461-74EE-4F42-BE14-69CB09B8ED89.jpg")).save
 CurrentPlant.find_by_scientific_name('Acacia iteaphylla').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/acacia_iteaphylla_closeup.0.jpg")).save
+puts "  350/441"
 CurrentPlant.find_by_scientific_name('Acacia pulchella').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/7AA1F466-F280-4BD3-82EC-797539EF242E.jpg")).save
 CurrentPlant.find_by_scientific_name('Acanthus mollis').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/acanthus_mollis_flower.0.0.JPG")).save
 CurrentPlant.find_by_scientific_name('Acmena smithii').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/acmena_smithii_semicloseup.0.0.jpg")).save
@@ -392,6 +400,7 @@ CurrentPlant.find_by_scientific_name('Coprosma repens').current_photos.build(ima
 CurrentPlant.find_by_scientific_name('Correa alba').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/4DC4F757-30DE-4404-8781-FE1396691095.jpg")).save
 CurrentPlant.find_by_scientific_name('Corymbia calophylla').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/corymbia_calophylla_flower.0.0.jpg")).save
 CurrentPlant.find_by_scientific_name('Corymbia citriodora').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/corymbia_citriodora_closeup.0.0.jpg")).save
+puts "  400/441"
 CurrentPlant.find_by_scientific_name('Corymbia ficifolia').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/corymbia_ficifolia_flower.0.0.jpg")).save
 CurrentPlant.find_by_scientific_name('Corymbia maculata').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/corymbia_maculata_flower.0.0.jpg")).save
 CurrentPlant.find_by_scientific_name('Crinum pedunculatum').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/crinum_pedunculatum_stem.0.0.jpg")).save

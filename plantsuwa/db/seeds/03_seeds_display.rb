@@ -1,6 +1,7 @@
 puts "Seeding display photos..."
 
 # 187 display photos
+puts "  0/187"
 CurrentPlant.find_by_scientific_name('?').update(display_photo: File.open("#{Rails.root}/lib/tasks/sample_photos/65D32C0D-28DD-41DA-BFD8-B984AE29F802.jpg"))
 CurrentPlant.find_by_scientific_name('A').update(display_photo: File.open("#{Rails.root}/lib/tasks/sample_photos/5B7B8AC9-7924-4F5C-84AF-9C9095FC20EE.jpg"))
 CurrentPlant.find_by_scientific_name('Acacia cyclops').update(display_photo: File.open("#{Rails.root}/lib/tasks/sample_photos/acacia_cyclops_closeup.0.jpg"))
@@ -23,6 +24,7 @@ CurrentPlant.find_by_scientific_name('Angophora costata').update(display_photo: 
 CurrentPlant.find_by_scientific_name('Anigozanthos flavidus').update(display_photo: File.open("#{Rails.root}/lib/tasks/sample_photos/anigozanthos_flavidus_distance.0.0.jpg"))
 CurrentPlant.find_by_scientific_name('Anigozanthos manglesii').update(display_photo: File.open("#{Rails.root}/lib/tasks/sample_photos/anigozanthos_manglesii_youngflower.0.0.jpg"))
 CurrentPlant.find_by_scientific_name('Anigozanthos viridus').update(display_photo: File.open("#{Rails.root}/lib/tasks/sample_photos/anigozanthos_viridus_closeup.0.0.jpg"))
+puts "  25/187"
 CurrentPlant.find_by_scientific_name('Aptenia cordifolia').update(display_photo: File.open("#{Rails.root}/lib/tasks/sample_photos/aptenia_cordifolia_closeup.0.0.jpg"))
 CurrentPlant.find_by_scientific_name('Araucaria heterophylla').update(display_photo: File.open("#{Rails.root}/lib/tasks/sample_photos/araucaria_heterophylla_distance.1.0.jpg"))
 CurrentPlant.find_by_scientific_name('Arctotis x hybrida').update(display_photo: File.open("#{Rails.root}/lib/tasks/sample_photos/arctotis_x-hybrida_flower.0.0.jpg"))
@@ -48,6 +50,7 @@ CurrentPlant.find_by_scientific_name('Callistemon Little John').update(display_p
 CurrentPlant.find_by_scientific_name('Callistemon viminalis').update(display_photo: File.open("#{Rails.root}/lib/tasks/sample_photos/callistemon_viminalis_distance.0.0.jpg"))
 CurrentPlant.find_by_scientific_name('Callitris preissii').update(display_photo: File.open("#{Rails.root}/lib/tasks/sample_photos/callitris_preissii_closeup.0.0.jpg"))
 CurrentPlant.find_by_scientific_name('Calodendron capense').update(display_photo: File.open("#{Rails.root}/lib/tasks/sample_photos/59089DF4-1AC2-467B-B055-CAC0FF0D76BD.jpg"))
+puts "  50/187"
 CurrentPlant.find_by_scientific_name('Calothamnus hirsutus').update(display_photo: File.open("#{Rails.root}/lib/tasks/sample_photos/ED2E0B91-3ECB-4243-9570-CF2163F4AC13.jpg"))
 CurrentPlant.find_by_scientific_name('Calothamnus quadrifidus').update(display_photo: File.open("#{Rails.root}/lib/tasks/sample_photos/calothamnus_quadrifidus_flower.0.jpg"))
 CurrentPlant.find_by_scientific_name('Carpobrotus').update(display_photo: File.open("#{Rails.root}/lib/tasks/sample_photos/688CB303-CA96-40DC-A621-AB5D343EEBBA.jpg"))
@@ -73,6 +76,7 @@ CurrentPlant.find_by_scientific_name('Correa alba').update(display_photo: File.o
 CurrentPlant.find_by_scientific_name('Correa reflexa').update(display_photo: File.open("#{Rails.root}/lib/tasks/sample_photos/correa_reflexa_flower.0.jpg"))
 CurrentPlant.find_by_scientific_name('Corymbia calophylla').update(display_photo: File.open("#{Rails.root}/lib/tasks/sample_photos/corymbia_calophylla_distance.0.0.jpg"))
 CurrentPlant.find_by_scientific_name('Corymbia citriodora').update(display_photo: File.open("#{Rails.root}/lib/tasks/sample_photos/corymbia_citriodora_distance.0.0.jpg"))
+puts "  75/187"
 CurrentPlant.find_by_scientific_name('Corymbia ficifolia').update(display_photo: File.open("#{Rails.root}/lib/tasks/sample_photos/corymbia_ficifolia_distance.0.0.jpg"))
 CurrentPlant.find_by_scientific_name('Corymbia maculata').update(display_photo: File.open("#{Rails.root}/lib/tasks/sample_photos/corymbia_maculata_distance.0.0.jpg"))
 CurrentPlant.find_by_scientific_name('Crinum pedunculatum').update(display_photo: File.open("#{Rails.root}/lib/tasks/sample_photos/crinum_pedunculatum_distance.0.0.jpg"))
@@ -98,6 +102,7 @@ CurrentPlant.find_by_scientific_name('Eucalyptus camaldulensis').update(display_
 CurrentPlant.find_by_scientific_name('Eucalyptus cladocalyx').update(display_photo: File.open("#{Rails.root}/lib/tasks/sample_photos/eucalyptus_cladocalyx_distance.0.0.jpg"))
 CurrentPlant.find_by_scientific_name('Eucalyptus erythrocorys').update(display_photo: File.open("#{Rails.root}/lib/tasks/sample_photos/eucalyptus_erythrocorys_distance.0.0.jpg"))
 CurrentPlant.find_by_scientific_name('Eucalyptus foecunda').update(display_photo: File.open("#{Rails.root}/lib/tasks/sample_photos/eucalyptus_foecunda_distanc.0.0.jpg"))
+puts "  100/187"
 CurrentPlant.find_by_scientific_name('Eucalyptus gomphocephala').update(display_photo: File.open("#{Rails.root}/lib/tasks/sample_photos/eucalyptus_gomphocephala_semidistance.0.0.jpg"))
 CurrentPlant.find_by_scientific_name('Eucalyptus Lemanii').update(display_photo: File.open("#{Rails.root}/lib/tasks/sample_photos/3497A4E1-3F4E-46C4-801A-9703676BB66B.jpg"))
 CurrentPlant.find_by_scientific_name('Eucalyptus leucoxylon').update(display_photo: File.open("#{Rails.root}/lib/tasks/sample_photos/eucalyptus_leucoxylon_sspleucoxylon_distance.0.0.jpg"))
@@ -123,6 +128,7 @@ CurrentPlant.find_by_scientific_name('Hake 2').update(display_photo: File.open("
 CurrentPlant.find_by_scientific_name('Hake 1').update(display_photo: File.open("#{Rails.root}/lib/tasks/sample_photos/D6BDB035-07D1-4D60-8548-C651766F6F8E.jpg"))
 CurrentPlant.find_by_scientific_name('Hakea laurina').update(display_photo: File.open("#{Rails.root}/lib/tasks/sample_photos/AE14C109-A290-4D08-8FFD-AD32D3839D83.jpg"))
 CurrentPlant.find_by_scientific_name('Hardenbergia comptoniana').update(display_photo: File.open("#{Rails.root}/lib/tasks/sample_photos/C5755620-5C71-49FE-98BE-38CBDAC472A6.jpg"))
+puts "  125/187"
 CurrentPlant.find_by_scientific_name('Hedera canariensis').update(display_photo: File.open("#{Rails.root}/lib/tasks/sample_photos/hedera_canariensis_climbing.0.0.jpg"))
 CurrentPlant.find_by_scientific_name('Hemiandra pungens').update(display_photo: File.open("#{Rails.root}/lib/tasks/sample_photos/hemiandra_pungens_flower.0.jpg"))
 CurrentPlant.find_by_scientific_name('Hibbertia cuneiformis').update(display_photo: File.open("#{Rails.root}/lib/tasks/sample_photos/299BAB7A-83C8-4797-8DF9-6AF7BD1003F6.jpg"))
@@ -148,6 +154,7 @@ CurrentPlant.find_by_scientific_name('Melaleuca huegelii').update(display_photo:
 CurrentPlant.find_by_scientific_name('Melaleuca nesophila').update(display_photo: File.open("#{Rails.root}/lib/tasks/sample_photos/melaleuca_nesophilla_flower.0.jpg"))
 CurrentPlant.find_by_scientific_name('Melia azedarach var. australasica (incomplete)').update(display_photo: File.open("#{Rails.root}/lib/tasks/sample_photos/DAEC4D55-CB93-4EC9-A68E-F4E701481A59.jpg"))
 CurrentPlant.find_by_scientific_name('Myoporum parvifolium').update(display_photo: File.open("#{Rails.root}/lib/tasks/sample_photos/Myoporum parvifolium  WP.0.0.JPG"))
+puts "  150/187"
 CurrentPlant.find_by_scientific_name('Nerium oleander cv pink Surprise').update(display_photo: File.open("#{Rails.root}/lib/tasks/sample_photos/AEA93828-4273-4150-8776-836F3DF0399D.jpg"))
 CurrentPlant.find_by_scientific_name('Olearia axillaris').update(display_photo: File.open("#{Rails.root}/lib/tasks/sample_photos/olearia_axillaris_distance3.0.jpg"))
 CurrentPlant.find_by_scientific_name('Pandanas').update(display_photo: File.open("#{Rails.root}/lib/tasks/sample_photos/B3903FF1-0B97-4F6F-B461-DA61A60B348F.jpg"))
@@ -173,6 +180,7 @@ CurrentPlant.find_by_scientific_name('Scaffold aneura').update(display_photo: Fi
 CurrentPlant.find_by_scientific_name('Spinifex longifolia').update(display_photo: File.open("#{Rails.root}/lib/tasks/sample_photos/BEDD9C20-0DDD-4801-AD94-2DCFFE36CB6E.jpg"))
 CurrentPlant.find_by_scientific_name('Swainsona').update(display_photo: File.open("#{Rails.root}/lib/tasks/sample_photos/2FD3FF72-927D-4AAE-9414-A5A2EEA56E2C.jpg"))
 CurrentPlant.find_by_scientific_name('Tecoma alata').update(display_photo: File.open("#{Rails.root}/lib/tasks/sample_photos/AAD1382C-FE37-4DB2-8CC1-F44019623A4E.jpg"))
+puts "  175/187"
 CurrentPlant.find_by_scientific_name('Templetonia retusa').update(display_photo: File.open("#{Rails.root}/lib/tasks/sample_photos/templetonia_retusa_WP.0.jpg"))
 CurrentPlant.find_by_scientific_name('Tetragona decumbens').update(display_photo: File.open("#{Rails.root}/lib/tasks/sample_photos/3119E737-A323-4E69-9DAB-6103FC4D6746.jpg"))
 CurrentPlant.find_by_scientific_name('Thryptomene saxicola (incomplete)').update(display_photo: File.open("#{Rails.root}/lib/tasks/sample_photos/thryptomene_saxicola_flower.0.jpg"))

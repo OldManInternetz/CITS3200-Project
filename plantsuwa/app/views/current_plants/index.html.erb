@@ -2,10 +2,12 @@
 <% provide(:prev_page, 'Home') %>
 <% provide(:prev_link, root_path) %>
 
+<% javascript :defaults, 'endless_page'%>
 
 <div style="margin-top: -15px"></div>
 
-<%= render @current_plants %>
+<%= render :partial => @current_plants %>
+<%= will_paginate @current_plants %>
 
 <% if signed_in? %>
   <div style="height: 30px"></div>
