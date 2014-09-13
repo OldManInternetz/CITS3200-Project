@@ -3,15 +3,11 @@
 <% provide(:prev_link, root_path) %>
 
 <% link_to current_plants_path(sortby: 'a-z') do %>
-      
-	    <p><i class="fa fa-sort-alpha-asc"></i>&nbsp;&nbsp;A-Z</p>    
-
+	<p><i class="fa fa-sort-alpha-asc"></i>&nbsp;&nbsp;A-Z</p>    
 <% end %>
 
-<% link_to current_plants_path(sortby: 'type') do %>
-  
-	    <p><i class="fa fa-cubes"></i>&nbsp;&nbsp;Type</p>    
-
+<% link_to current_plants_path(sortby: 'type') do %>  
+	<p><i class="fa fa-cubes"></i>&nbsp;&nbsp;Type</p>    
 <% end %>
 
 <div class="index-banner"></div>

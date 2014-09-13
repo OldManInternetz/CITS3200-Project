@@ -1,0 +1,6 @@
+page.insert_html :bottom, :current_plants, :partial => @current_plants
+if @current_plants.total_pages > @current_plants.current_page
+  page.call 'checkScroll'
+else
+  page[:loading].hide
+end
