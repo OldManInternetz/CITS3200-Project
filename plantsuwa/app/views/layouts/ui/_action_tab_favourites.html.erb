@@ -1,4 +1,6 @@
-<%= link_to current_plants_path do %>
+<% if signed_in? %>
+
+<%= link_to user_favourites_path(current_user) do %>
 	<div class="action-tab">
 	  <div class="center-wrapper">
 	    <div style="display: inline-block;">
@@ -6,4 +8,6 @@
 	    </div>
 	  </div>
 	</div>
+<% end %>
+
 <% end %>

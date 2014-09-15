@@ -1,3 +1,5 @@
+<% if signed_in? %>
+
 <%= link_to new_current_plant_path(pp_name: yield(:title), pp_path: request.path) do %>
   <div class="action-tab" style="left: 50%">
     <div class="center-wrapper">
@@ -6,4 +8,6 @@
       </div>
     </div>
   </div>
+<% end %>
+
 <% end %>

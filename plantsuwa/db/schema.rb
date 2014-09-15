@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140903152859) do
+ActiveRecord::Schema.define(version: 20140915084949) do
 
   create_table "climates", force: true do |t|
     t.string   "name"
@@ -108,20 +108,28 @@ ActiveRecord::Schema.define(version: 20140903152859) do
     t.datetime "display_photo_updated_at"
     t.string   "display_photo_description"
     t.integer  "type_id"
-    t.string   "combined_name"
     t.string   "name"
   end
 
+  create_table "favourites", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "current_plant_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "favourites", ["current_plant_id"], name: "index_favourites_on_current_plant_id"
+  add_index "favourites", ["user_id", "current_plant_id"], name: "index_favourites_on_user_id_and_current_plant_id", unique: true
+  add_index "favourites", ["user_id"], name: "index_favourites_on_user_id"
+
   create_table "flower_colours", force: true do |t|
     t.string   "name"
-    t.string   "alt_colour"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "leaf_colours", force: true do |t|
     t.string   "name"
-    t.string   "alt_colour"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

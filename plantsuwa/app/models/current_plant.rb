@@ -20,6 +20,9 @@ class CurrentPlant < ActiveRecord::Base
 
 	has_many :current_linking_soil_types, dependent: :destroy
   has_many :soil_types, through: :current_linking_soil_types
+  
+  has_many :favourites, dependent: :destroy
+  has_many :users, through: :favourites, source: :favourite
 
   belongs_to :type
 

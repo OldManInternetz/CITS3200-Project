@@ -7,7 +7,15 @@
 
 
   <div id="tab-descriptions" class="info-body">
-    <legend>Descriptions</legend>
+    <legend>Descriptions
+	<% if signed_in? %>
+	<a onClick="add()" style="cursor:pointer">
+		<div class="pull-right" style="margin-right: 50%" id="fav">
+			<p><i class="fa fa-star" style="color: #FF9100"></i>&nbsp;Add</p>
+		</div>
+	</a>
+	<% end %>
+	</legend>
     <% if @current_plant.display_photo.exists? %>
       <%= image_tag @current_plant.display_photo.url(:medium), class: 'display-photo-right' %>
     <% end %>
@@ -239,6 +247,11 @@
     $('#btn-environmental').addClass("info-tab-disabled");
   <% end %>
 
+  <% if signed_in? %>
+  function add() {
+	  @favourite = Favourite.new()
+  }
+  <% end %>
 
 
   $('#btn-photos').on('click', function () {

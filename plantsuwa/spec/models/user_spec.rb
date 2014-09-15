@@ -16,6 +16,28 @@ describe User do
   it { should respond_to(:password_confirmation) }
 	it { should respond_to(:remember_token) }
   it { should respond_to(:admin) }
+  it { should respond_to(:favourites)}
+  it { should respond_to(:current_plant_users)}
+  it { should respond_to(:favourite?)}
+  it { should respond_to(:favourite!)}
+  
+  describe "favourite" do
+    let(:plant) { FactoryGirl.create(:current_plant)}
+    before do
+      @user.save
+      @user.favourite!(:plant)
+    end
+    
+    it { should be_favourite(:plant)}
+    its(:favourites) {should include(:plant)}
+    
+    describe "and unfavourite" do
+      before { @user.unfollow!(:plant)}
+      
+      it {should_not be_favourite(:plant)}
+      its(:current_plant_users) {should_not include(:plant)}
+    end
+  end
 
   describe "when the username is blank" do
     before { @user.username = " " }

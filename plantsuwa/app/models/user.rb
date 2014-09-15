@@ -28,6 +28,8 @@ class User < ActiveRecord::Base
   before_save :check_admin
 
   has_many :notifications, dependent: :destroy  
+  has_many :favourites, dependent: :destroy
+  has_many :current_plants, through: :favourites, source: :favourite
 
   def check_admin
     self.trusted = true if self.admin?
@@ -41,6 +43,17 @@ class User < ActiveRecord::Base
   def User.hash(token)
     Digest::SHA1.hexdigest(token.to_s)
   end
+  
+  def favourite?(plant)
+    favourites.find_by(current_plant_id: plant.id)
+  end
+  
+  def favourite!(plant)
+    favourite.create!(current_plant_id: plant.id)
+  end
+  
+  def unfavourite!(plant)
+    favourite.find_by(current_plant_id: plant.id).destroy
 
 
   private
