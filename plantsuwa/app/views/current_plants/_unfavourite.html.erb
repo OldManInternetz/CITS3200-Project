@@ -1,5 +1,1 @@
-<%= form_for(current_user.favourites.find_by(user_id: @user.id),
-             remote: true,
-             html: { method: :delete }) do |f| %>
-  <%= f.submit "Delete From Favourites", class: "btn btn-large" %>
-<% end %>
+<%= link_to '<i class="fa fa-minus" style="color: #690000" title="Unfavourite"></i>&nbsp;&nbsp;Unfavourite'.html_safe, destroy_favourite_path(id: @current_plant.id), method: :delete %>

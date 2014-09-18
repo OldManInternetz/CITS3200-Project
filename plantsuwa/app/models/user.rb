@@ -45,15 +45,15 @@ class User < ActiveRecord::Base
   end
   
   def favourite?(plant)
-    favourites.find_by(current_plant_id: plant.id)
+    self.favourites.find_by(current_plant_id: plant.id)
   end
   
   def favourite!(plant)
-    favourite.create!(current_plant_id: plant.id)
+    self.favourites.create!(current_plant_id: plant.id)
   end
   
   def unfavourite!(plant)
-    favourite.find_by(current_plant_id: plant.id).destroy
+    favourites.find_by(current_plant_id: plant.id).destroy
   end
 
 

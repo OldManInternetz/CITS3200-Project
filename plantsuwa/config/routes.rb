@@ -24,6 +24,9 @@ Plantsuwa::Application.routes.draw do
   end
 
 
+  match '/plants/:id',  to: 'favourites#create',    as: 'create_favourite', via: 'post'
+  match '/plants/:id',  to: 'favourites#destroy',    as: 'destroy_favourite', via: 'delete'
+
   # Admin routes
 
   match "/admin",                 to: 'admin_pages#index',           via: 'get'

@@ -108,6 +108,7 @@ ActiveRecord::Schema.define(version: 20140915084949) do
     t.datetime "display_photo_updated_at"
     t.string   "display_photo_description"
     t.integer  "type_id"
+    t.string   "combined_name"
     t.string   "name"
   end
 
@@ -124,12 +125,14 @@ ActiveRecord::Schema.define(version: 20140915084949) do
 
   create_table "flower_colours", force: true do |t|
     t.string   "name"
+    t.string   "alt_colour"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "leaf_colours", force: true do |t|
     t.string   "name"
+    t.string   "alt_colour"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
