@@ -9,6 +9,9 @@
   <div id="tab-descriptions" class="info-body">
     <legend>Descriptions
 	<% if signed_in? %>
+	<div>
+		<%= render 'favourite_form' if signed_in? %>
+	</div>
 	<a onClick="add()" style="cursor:pointer">
 		<div class="pull-right" style="margin-right: 50%" id="fav">
 			<p><i class="fa fa-star" style="color: #FF9100"></i>&nbsp;Add</p>
@@ -245,12 +248,6 @@
     });
   <% else %>
     $('#btn-environmental').addClass("info-tab-disabled");
-  <% end %>
-
-  <% if signed_in? %>
-  function add() {
-	  @favourite = Favourite.new()
-  }
   <% end %>
 
 

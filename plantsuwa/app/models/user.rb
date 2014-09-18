@@ -54,6 +54,7 @@ class User < ActiveRecord::Base
   
   def unfavourite!(plant)
     favourite.find_by(current_plant_id: plant.id).destroy
+  end
 
 
   private

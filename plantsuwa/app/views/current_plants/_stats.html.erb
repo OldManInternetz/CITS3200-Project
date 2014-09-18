@@ -1,11 +1,9 @@
-<h1> PAGE UNDER CONSTRUCTION </h1>
-
 <% @user ||= current_user %>
 <div class="stats">
   <a href="<%= user_favourites_path(@user) %>">
     <strong id="favourites" class="stat">
-      <%= @user.favourites.count %>
+      <%= @user.favourite_current_plants.count %>
     </strong>
-    favourites
+    following
   </a>
 </div>
