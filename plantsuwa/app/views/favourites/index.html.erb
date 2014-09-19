@@ -1,3 +1,7 @@
+<% provide(:title, 'Favourites') %>
+<% provide(:prev_page, 'Home') %>
+<% provide(:prev_link, root_path) %>
+
 <h1> PAGE UNDER CONSTRUCTION </h1>
 
 <% @user ||= current_user %>
@@ -9,3 +13,11 @@
     favourites
   </a>
 </div>
+
+<div id="plants-list">
+	<%  @user.favourites.each do |fav| %>
+	<p><%= link_to  fav.current_plant.scientific_name, current_plant_path(fav.current_plant) %> &nbsp;&nbsp; <%= link_to '<i class="fa fa-star-o" style="color: rgb(255, 145, 0)" title="Unfavourite"></i>&nbsp;&nbsp;Remove Fav'.html_safe, destroy_favourite_path(id: fav.current_plant.id), method: :delete %></p>
+	<% end %>
+</div>
+
+<%= render 'layouts/ui/bottom_tabs_default' %>

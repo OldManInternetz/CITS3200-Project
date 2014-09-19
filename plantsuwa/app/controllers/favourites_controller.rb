@@ -27,4 +27,9 @@ class FavouritesController < ApplicationController
         end
       end
     end
+    
+    def index
+      @current_plants = CurrentPlant.all
+    end
+    
 end

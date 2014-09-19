@@ -7,13 +7,12 @@
 
 
   <div id="tab-descriptions" class="info-body">
-    <legend>Descriptions
+    <legend>Descriptions</legend>
 	<% if signed_in? %>
 	<div>
 		<%= render 'favourite_form' if signed_in? %>
 	</div>
 	<% end %>
-	</legend>
     <% if @current_plant.display_photo.exists? %>
       <%= image_tag @current_plant.display_photo.url(:medium), class: 'display-photo-right' %>
     <% end %>
