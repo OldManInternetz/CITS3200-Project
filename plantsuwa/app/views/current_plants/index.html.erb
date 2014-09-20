@@ -17,13 +17,6 @@
 	<%= render @current_plants %>
 </div>
 
-<div class="center-wrapper">
-	<div class="center-wrapper-inner">
-		<div id="infinite-scrolling">
-		  <%= will_paginate %>
-		</div>
-	</div>
-</div>
 
 <% if signed_in? %>
   <div style="height: 30px"></div>
@@ -32,3 +25,9 @@
 <% end %>
 
 <%= render 'layouts/ui/bottom_tabs_default' %> <!-- render 'index' instead of 'default' for the types, etc -->
+
+<script type="text/javascript">
+	$("img").lazyload({
+     effect : "fadeIn"
+});
+</script>

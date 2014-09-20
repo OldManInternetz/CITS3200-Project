@@ -11,7 +11,7 @@ class CurrentPlantsController < ApplicationController
 
 
   def index
-    @current_plants = CurrentPlant.paginate(page: params[:page], per_page: 15)
+    @current_plants = CurrentPlant.all
   end
   
   def index_admin
