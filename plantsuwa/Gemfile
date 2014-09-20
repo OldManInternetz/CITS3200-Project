@@ -18,7 +18,7 @@ gem 'simple_form'             # Forms
 gem 'scoped_search'           # Search
 #gem 'rack-offline'
 
-gem 'lazyload-rails'					# To make images only load when scrolled to
+#gem 'lazyload-rails'					# To make images only load when scrolled to
 
 group :development, :test do
   gem 'rspec-rails', '2.13.1'

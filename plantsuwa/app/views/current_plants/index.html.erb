@@ -2,6 +2,8 @@
 <% provide(:prev_page, 'Home') %>
 <% provide(:prev_link, root_path) %>
 
+<%= javascript_include_tag "lazyload", "data-turbolinks-track" => false %>
+
 <% link_to current_plants_path(sortby: 'a-z') do %>
 	<p><i class="fa fa-sort-alpha-asc"></i>&nbsp;&nbsp;A-Z</p>    
 <% end %>
@@ -27,7 +29,8 @@
 <%= render 'layouts/ui/bottom_tabs_default' %> <!-- render 'index' instead of 'default' for the types, etc -->
 
 <script type="text/javascript">
-	$("img").lazyload({
-     effect : "fadeIn"
+	$("img.img-lazy").lazyload({
+     effect : "fadeIn",
+     threshold: 00
 });
 </script>
