@@ -180,6 +180,34 @@
 
   <div id="tab-photos" class="info-body" style="display: none">
     <legend>Photos</legend>
+
+    <div class="center-wrapper">    
+      <div class="center-wrapper-inner">
+        <div class="fig-item-number"><strong id="viewed_photo">1</strong> of <strong><%= @photos_count %></strong></div>
+
+        <div class="slideshow">          
+          <figure class="show">
+            <%= image_tag @current_plant.display_photo.url(:medium), style: "width: 100%; max-width: 600px" %>
+            <figcaption>Hello, I am a description that is very long and will probably break the box<%= @current_plant.display_photo_description %></figcaption> 
+          </figure>
+
+          <% for photo in @current_plant.current_photos %>
+            <figure>
+              <%= image_tag photo.image.url(:medium), style: "width: 100%; max-width: 600px" %>
+              <% if photo.description %>
+                <figcaption><%= @current_plant.display_photo_description %></figcaption> 
+              <% end %>
+            </figure>
+          <% end %>
+
+          <span class="ss-prev"><i class="fa fa-chevron-left"></i></span>
+          <span class="ss-next"><i class="fa fa-chevron-right"></i></span>  
+        </div>
+      </div>
+    </div>
+
+    <div style="height: 400px"></div>
+
     <dt>Display photo:</dt>
     <% if !@current_plant.display_photo.exists? %>
       <p>This plant has no display photo.</p>
@@ -257,6 +285,58 @@
     $('.info-tab').removeClass("info-tab-current");
     $('#btn-photos').addClass("info-tab-current");
   });  
+
+
+
+  // Slideshow
+  // Found at: http://themarklee.com/2013/12/26/simple-diy-responsive-slideshow-made-html5-css3-javascript/
+
+  var counter = 0, // to keep track of current slide
+  $items = $('.slideshow figure'), // a collection of all of the slides, caching for performance
+  numItems = $items.length; // total number of slides
+
+  // this function is what cycles the slides, showing the next or previous slide and hiding all the others
+  var showCurrent = function(){
+    var itemToShow = Math.abs(counter%numItems);// uses remainder (aka modulo) operator to get the actual index of the element to show  
+     
+    $items.removeClass('show'); // remove .show from whichever element currently has it
+    $items.eq(itemToShow).addClass('show'); 
+
+    var currently_viewed = counter % numItems + 1;
+    $("#viewed_photo").html(currently_viewed); 
+  };
+
+  // add click events to prev & next buttons 
+  $('.ss-next').on('click', function(){
+      counter++;
+      showCurrent(); 
+  });
+  $('.ss-prev').on('click', function(){
+      counter--;
+      showCurrent(); 
+  });
+
+  // if touch events are supported then add swipe interactions using TouchSwipe https://github.com/mattbryson/TouchSwipe-Jquery-Plugin
+  if('ontouchstart' in window){
+    $('.diy-slideshow').swipe({
+      swipeLeft:function() {
+        counter++;
+        showCurrent(); 
+      },
+      swipeRight:function() {
+        counter--;
+        showCurrent(); 
+      }
+    });
+  }
+
+
+  //window.setInterval(function(){
+  //counter++;
+  //showCurrent();
+  //}, 5000);
+
+
 
 </script>
 

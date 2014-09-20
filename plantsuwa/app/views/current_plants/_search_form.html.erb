@@ -5,6 +5,34 @@
 
 	<div class="center-wrapper">
 	  <div class="center-wrapper-inner">
+			<h2>Keyword Search</h2>
+		</div>
+	</div>
+	
+    <% if flash[:error] %>
+      <div class="alert alert-info" style="margin-top: 20px">
+          <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+	
+	<br/>
+	<fieldset class="fieldset-search-form">
+	  <%= form_tag search_current_plants_path, :method => :get do %>
+		  <div class="search-bar-container">
+		  	<div style="width: 70%; float: left">
+		   		<%= auto_complete_field_tag_jquery(:search, params[:search], {:placeholder => "Search Plants", class: 'form-control' }) %>
+		   	</div>
+		   	<button id='submit_search' class="btn btn-primary" style="width: 30%; float: right"><i class="fa fa-search"></i>&nbsp;Search</button>
+		  </div>
+	  <% end %>
+	</fieldset>
+
+
+	<div style="height: 20px"></div>
+	<hr/>	
+
+	<div class="center-wrapper">
+	  <div class="center-wrapper-inner">
 			<h2>Parameter Search</h2>
 		</div>
 	</div>
@@ -69,32 +97,6 @@
 	<br/>
 
 
-	<div style="height: 20px"></div>
-	<hr/>
-
-	<div class="center-wrapper">
-	  <div class="center-wrapper-inner">
-			<h2>Keyword Search</h2>
-		</div>
-	</div>
-	
-    <% if flash[:error] %>
-      <div class="alert alert-info" style="margin-top: 20px">
-          <p><%= flash[:error] %></p>
-      </div>
-    <% end %>
-	
-	<br/>
-	<fieldset class="fieldset-search-form">
-	  <%= form_tag search_current_plants_path, :method => :get do %>
-		  <div class="search-bar-container">
-		  	<div style="width: 70%; float: left">
-		   		<%= auto_complete_field_tag_jquery(:search, params[:search], {:placeholder => "Search Plants", class: 'form-control' }) %>
-		   	</div>
-		   	<button id='submit_search' class="btn btn-primary" style="width: 30%; float: right"><i class="fa fa-search"></i>&nbsp;Search</button>
-		  </div>
-	  <% end %>
-	</fieldset>
 
 </div>
 

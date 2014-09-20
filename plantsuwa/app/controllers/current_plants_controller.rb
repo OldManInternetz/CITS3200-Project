@@ -84,6 +84,7 @@ class CurrentPlantsController < ApplicationController
   
   def show
     @current_plant = CurrentPlant.find(params[:id])
+    @photos_count = @current_plant.current_photos.count + 1
   end
 
   def show_admin

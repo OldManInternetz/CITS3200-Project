@@ -246,6 +246,9 @@ textarea {
   display: inline-block; 
 }
 
+.center-wrapper-inner > * {
+  text-align: center;
+}
 
 
 .info-body {
@@ -313,12 +316,29 @@ label.checkbox {
 }
 
 .checkbox input[type="checkbox"] {
-  margin-left: -18px;
+  /*margin-left: -18px;*/
   margin-top: 0;
+  /*float: left;*/
 }
 
 
 
+/*
+.checkbox-container {
+  display: inline-block;
+  background: red;
+  vertical-align: -1px;
+  margin: 5px;
+}
+
+.checkbox-container input {
+  display: inline;
+}
+
+.checkbox-container .collection_checkboxes {
+  display: inline;
+}
+*/
 
 .form-photo-box {
   border: 1px solid #ccc;
@@ -747,6 +767,88 @@ tr:nth-child(odd) td:last-child {
 .favourite-form a, a:hover {
   text-decoration: none;
 }
+
+
+
+.slideshow{
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+figure{
+  position: absolute;
+  opacity: 0;
+  transition: 0.4s opacity;
+}
+
+figcaption{
+  position: absolute;
+  font-family: font-family: 'Oxygen', sans-serif;
+  font-size: .8em;
+  left: 0;
+  bottom: 0;
+  padding: .25em;
+  color: white;
+  background: rgba(0,0,0, .7);
+  width: 100%;
+}
+
+
+.fig-item-number {
+  color: white;
+  background: black;
+  padding: .25em 15px;
+
+
+}
+
+figcaption a{
+  color: #fff;
+}
+
+figure.show {
+  opacity: 1;
+  position: static;
+  transition: 0.4s opacity;
+}
+
+
+.ss-next, .ss-prev{
+  color: #fff;
+  position: absolute;
+  background: rgba(0,0,0, 0);
+  top: 50%;
+  z-index: 1;
+  font-size: 40px;
+  margin-top: -.75em;
+  opacity: .75;
+  user-select: none;
+}
+
+.ss-next:hover, .ss-prev:hover{
+  cursor: pointer;
+  opacity: 1;
+}
+
+.ss-next{
+  right: 0;
+  padding: 10px 5px 15px 10px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.ss-prev{
+  left: 0;
+  padding: 10px 10px 15px 5px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  top: 100;
+}
+
+
+
+
+
 
 
 
