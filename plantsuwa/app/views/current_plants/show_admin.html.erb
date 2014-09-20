@@ -252,9 +252,24 @@
     <br/>
 
     <legend>Favourites</legend>
-    <dt>This is the favourite plant of the following users:</dt>
-    <p>Favourites haven't been implemented yet, sorry!</p>
 
+    <% if @favourites.any? %>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th style="width: 40px">ID</th>
+            <th>Action</th>
+            <th style="width: 90px;" class="th-shrink"></th>
+            <th style="width: 90px;" class="th-shrink"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render partial: "users/user", collection: @favourites, as: :user %>
+        </tbody>
+      </table>   
+    <% else %>
+      <p class="no-description">This plant has not been favourited by anyone.</p>
+    <% end %>
 
   </div>
 

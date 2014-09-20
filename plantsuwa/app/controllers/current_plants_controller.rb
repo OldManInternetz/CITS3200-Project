@@ -95,6 +95,7 @@ class CurrentPlantsController < ApplicationController
   def show_admin
     @current_plant = CurrentPlant.find(params[:id])
     @notifications = Notification.where('current_plant_id = ?', params[:id])
+    @favourites = User.where(id: (@current_plant.favourites).select('user_id'))
   end  
   
   def edit

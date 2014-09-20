@@ -817,7 +817,6 @@ figure.show {
 .ss-next, .ss-prev{
   color: #fff;
   position: absolute;
-  background: rgba(0,0,0, 0);
   top: 50%;
   z-index: 1;
   font-size: 40px;
