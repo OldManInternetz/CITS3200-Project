@@ -1,6 +1,6 @@
 class FavouritesController < ApplicationController
   
-    #before_action :signed_in_user
+    before_action :user_is_signed_in
 
     def create
       if !current_user.nil?   # Security precautions

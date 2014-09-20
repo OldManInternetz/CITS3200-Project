@@ -53,9 +53,10 @@ Plantsuwa::Application.routes.draw do
 
   # User routes
 
-  resources :users,               path: 'admin/users' do
-    resources :favourites, :only => [:index, :create, :destroy]
-  end
+  resources :users,               path: 'admin/users'    
+
+  resources :favourites,          path: 'favourites',                only: [:index, :create, :destroy]
+
 	resources :sessions,            path: "log_in",                    only: [:new, :create, :destroy]
 
   match '/sign_up',               to: 'users#new',                   via: 'get' 
