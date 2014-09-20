@@ -181,21 +181,31 @@
   <div id="tab-photos" class="info-body" style="display: none">
     <legend>Photos</legend>
 
-    <div class="center-wrapper">    
+    <div class="center-wrapper">
       <div class="center-wrapper-inner">
+
+        <% if @photos_count == 0 %>
+          <br/><br/>
+          <dt>This plant has no photos yet.</dt>
+       <% else %>
         <div class="fig-item-number"><strong id="viewed_photo">1</strong> of <strong><%= @photos_count %></strong></div>
 
-        <div class="slideshow">          
-          <figure class="show">
-            <%= image_tag @current_plant.display_photo.url(:medium), style: "width: 100%; max-width: 600px" %>
-            <figcaption>Hello, I am a description that is very long and will probably break the box<%= @current_plant.display_photo_description %></figcaption> 
-          </figure>
+        <div class="slideshow"> 
+
+          <% if @current_plant.display_photo.exists? %>       
+            <figure>
+              <%= image_tag @current_plant.display_photo.url(:medium), style: "width: 100%; max-width: 600px" %>
+              <% if !@current_plant.display_photo_description.blank? %>
+                <figcaption><%= @current_plant.display_photo_description %></figcaption> 
+              <% end %>
+            </figure>
+          <% end %>
 
           <% for photo in @current_plant.current_photos %>
             <figure>
               <%= image_tag photo.image.url(:medium), style: "width: 100%; max-width: 600px" %>
-              <% if photo.description %>
-                <figcaption><%= @current_plant.display_photo_description %></figcaption> 
+              <% if !photo.description.blank? %>
+                <figcaption><%= photo.description %></figcaption> 
               <% end %>
             </figure>
           <% end %>
@@ -203,6 +213,8 @@
           <span class="ss-prev"><i class="fa fa-chevron-left"></i></span>
           <span class="ss-next"><i class="fa fa-chevron-right"></i></span>  
         </div>
+       <% end %>
+
       </div>
     </div>
 
@@ -291,9 +303,12 @@
   // Slideshow
   // Found at: http://themarklee.com/2013/12/26/simple-diy-responsive-slideshow-made-html5-css3-javascript/
 
+
+
   var counter = 0, // to keep track of current slide
   $items = $('.slideshow figure'), // a collection of all of the slides, caching for performance
   numItems = $items.length; // total number of slides
+  $('.slideshow figure:first').addClass('show');
 
   // this function is what cycles the slides, showing the next or previous slide and hiding all the others
   var showCurrent = function(){

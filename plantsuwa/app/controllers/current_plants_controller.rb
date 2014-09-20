@@ -84,7 +84,12 @@ class CurrentPlantsController < ApplicationController
   
   def show
     @current_plant = CurrentPlant.find(params[:id])
-    @photos_count = @current_plant.current_photos.count + 1
+    #@photos = @current_plant.current_photos
+    if @current_plant.display_photo.exists?      
+      @photos_count = @current_plant.current_photos.count + 1
+    else
+       @photos_count = @current_plant.current_photos.count
+    end
   end
 
   def show_admin
