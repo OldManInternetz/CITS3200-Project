@@ -1,7 +1,7 @@
-  <div id="favourite_form">
-  <% if current_user.favourite?(@current_plant) %>
-    <%= render 'unfavourite' %>
-  <% else %>
-    <%= render 'favourite' %>
-  <% end %>
-  </div>
+<div class="favourite-form">
+<% if current_user.favourite?(@current_plant) %>
+  <%= link_to '<i class="fa fa-star-o" style="color: rgb(255, 145, 0)" title="Unfavourite"></i>&nbsp;&nbsp;Unfavourite'.html_safe, destroy_favourite_path(id: @current_plant.id), method: :delete, class: "btn btn-primary" %>
+<% else %>
+  <%= link_to '<i class="fa fa-star" style="color: rgb(255, 145, 0)" title="Favourite"></i>&nbsp;&nbsp;Add  Favourite'.html_safe, create_favourite_path(id: @current_plant.id), method: :new, class: "btn btn-primary" %>
+<% end %>
+</div>

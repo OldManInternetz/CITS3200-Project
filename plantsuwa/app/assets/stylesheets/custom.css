@@ -738,7 +738,15 @@ tr:nth-child(odd) td:last-child {
 }
 
 
+.favourite-form {
+  position: absolute;
+  right: 60px;
+  margin-top: -8px;
+}
 
+.favourite-form a {
+  text-decoration: none;
+}
 
 
 

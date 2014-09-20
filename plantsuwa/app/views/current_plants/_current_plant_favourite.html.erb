@@ -1,12 +1,12 @@
 <tr>
   <td style="height: 48px; width: 40px">
-    <%= link_to current_plant_path(current_plant, pp_name: 'Favourites', pp_path: user_favourites_path(current_user)) do %>
+    <%= link_to current_plant_path(current_plant, pp_name: 'Favourites', pp_path: favourites_path) do %>
       <%= image_tag current_plant.display_photo.url(:thumb), height:"100%", alt:"Plant photo", class:"img-circle" %>
     <% end %>
   </td>
-  <td><%= link_to display_name(current_plant), current_plant_path(current_plant, pp_name: 'Favourites', pp_path: user_favourites_path(current_user)) %></td>
+  <td><%= link_to display_name(current_plant), current_plant_path(current_plant, pp_name: 'Favourites', pp_path: favourites_path) %></td>
   <td><%= link_to destroy_favourite_path(id: current_plant.id), method: :delete do %>
  		<i class="fa fa-star-o" style="color: rgb(255, 145, 0)" title="Unfavourite"></i>&nbsp;&nbsp;Unfavourite
   <% end %></td>
-  <td><%= link_to current_plant_path(current_plant, pp_name: 'Favourites', pp_path: user_favourites_path(current_user)) do %><i class="fa fa-chevron-right"></i><% end %></td>
+  <td><%= link_to current_plant_path(current_plant, pp_name: 'Favourites', pp_path: favourites_path) do %><i class="fa fa-chevron-right"></i><% end %></td>
 </tr>

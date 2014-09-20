@@ -1,6 +1,6 @@
 <% if signed_in? %>
-	<%= link_to favourites_path do %>
-		<div class="action-tab">
+	<%= link_to favourites_path(pp_name: yield(:title), pp_path: request.path) do %>
+		<div class="action-tab" style="width: 33.333333%">
 		  <div class="center-wrapper">
 		    <div style="display: inline-block;">
 		      <p><i class="fa fa-star" style="color: #FF9100"></i></span>&nbsp;&nbsp;Favourites</p>
