@@ -28,6 +28,7 @@ class User < ActiveRecord::Base
   before_save :check_admin
 
   has_many :notifications, dependent: :destroy  
+
   has_many :favourites, dependent: :destroy
   has_many :current_plants, through: :favourites, source: :favourite
 

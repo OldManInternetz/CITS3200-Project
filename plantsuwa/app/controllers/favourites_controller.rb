@@ -20,7 +20,9 @@ class FavouritesController < ApplicationController
         @current_plant = CurrentPlant.find(params[:id])
 
         current_user.unfavourite!(@current_plant)
-        
+        flash[:success] = "You have removed <i>#{@current_plant.scientific_name}</i> from your favourites.".html_safe
+ 
+
         respond_to do |format|
           format.html { redirect_to(:back) }
           format.js
@@ -29,7 +31,9 @@ class FavouritesController < ApplicationController
     end
     
     def index
-      @current_plants = CurrentPlant.all
+      @user = current_user
+      @favourites = @user.favourites 
+      @favourites_count = @user.favourites.count     
     end
     
 end

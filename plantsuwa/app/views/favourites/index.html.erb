@@ -1,23 +1,48 @@
 <% provide(:title, 'Favourites') %>
-<% provide(:prev_page, 'Home') %>
-<% provide(:prev_link, root_path) %>
+<% provide(:prev_page, 'List') %>
+<% provide(:prev_link, current_plants_path) %>
 
-<h1> PAGE UNDER CONSTRUCTION </h1>
+<div class="padding-mobile">
 
-<% @user ||= current_user %>
-<div class="stats">
-  <a href="<%= user_favourites_path(@user) %>">
-    <strong id="favourites" class="stat">
-      <%= @user.favourites.count %>
-    </strong>
-    favourites
-  </a>
-</div>
+  <% if flash[:success] %>
+    <div class="alert alert-info" style="margin-top: 20px">
+        <p><%= flash[:success] %></p>
+    </div>
+  <% end %>
 
-<div id="plants-list">
-	<%  @user.favourites.each do |fav| %>
-	<p><%= link_to  fav.current_plant.scientific_name, current_plant_path(fav.current_plant) %> &nbsp;&nbsp; <%= link_to '<i class="fa fa-star-o" style="color: rgb(255, 145, 0)" title="Unfavourite"></i>&nbsp;&nbsp;Remove Fav'.html_safe, destroy_favourite_path(id: fav.current_plant.id), method: :delete %></p>
+	<h1> Favourites </h1>
+
+	<% if @favourites_count > 0 %>
+
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th style="width: 40px"></th>
+					<th>Name</th>
+					<th style="width: 150px"></th>
+					<th style="width: 40px"></th>
+				</tr>
+			</thead>
+			<tbody>
+				<%  @favourites.each do |fav| %>
+					<%= render partial: 'current_plants/current_plant_favourite', locals: { current_plant: fav.current_plant } %>
+				<% end %>
+			</tbody>
+		</table>
+
 	<% end %>
+
+
+		<div class="center-wrapper">
+	  	<div class="center-wrapper-inner">
+	  		<hr/>
+				<dt>You have <%= pluralize(@favourites_count, 'favourite') %>.</dt>
+			</div>
+		</div>
+
+
 </div>
+
+
 
 <%= render 'layouts/ui/bottom_tabs_default' %>
