@@ -1,7 +1,11 @@
 <div class="favourite-form">
 <% if current_user.favourite?(@current_plant) %>
-  <%= link_to '<i class="fa fa-star-o" style="color: rgb(255, 145, 0)" title="Unfavourite"></i>&nbsp;&nbsp;Unfavourite'.html_safe, destroy_favourite_path(id: @current_plant.id), method: :delete, class: "btn btn-primary" %>
+  <%= link_to destroy_favourite_path(id: @current_plant.id), method: :delete, class: "btn btn-primary btn-shrink" do %>
+  	<i class="fa fa-star-o fa-lg" style="color: rgb(255, 145, 0)" title="Unfavourite"></i><span class="over-400">&nbsp;&nbsp;Unfavourite</span>
+  <% end %>
 <% else %>
-  <%= link_to '<i class="fa fa-star" style="color: rgb(255, 145, 0)" title="Favourite"></i>&nbsp;&nbsp;Add  Favourite'.html_safe, create_favourite_path(id: @current_plant.id), method: :new, class: "btn btn-primary" %>
+  <%= link_to create_favourite_path(id: @current_plant.id), method: :new, class: "btn btn-primary btn-shrink" do %>
+  	<i class="fa fa-star fa-lg" style="color: rgb(255, 145, 0)" title="Favourite"></i><span class="over-400">&nbsp;&nbsp;Add Favourite</span>
+  <% end %>
 <% end %>
 </div>

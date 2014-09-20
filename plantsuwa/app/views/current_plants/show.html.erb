@@ -4,8 +4,12 @@
 
 <div class="padding-mobile">
 
-  <% if is_admin? %>
-  <div style="height: 30px"></div>
+  <% if flash[:success] %>
+    <div class="alert alert-info" style="margin-top: 20px">
+        <p><%= flash[:success] %></p>
+    </div>
+  <% elsif is_admin? %>
+    <div style="height: 30px"></div>
   <% end %>
 
   <%= render 'favourite_form' if signed_in? %>
