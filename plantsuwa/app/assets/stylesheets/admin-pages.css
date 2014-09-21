@@ -1,6 +1,6 @@
 
 body {
-  background: #222222;
+  background: #ddd;
 }
 
 .padding-mobile {
@@ -8,25 +8,25 @@ body {
 }
 
 .container {
-  background: #0A0A0A;
-  color: white;	
-  box-shadow: 2px 0 3px #0A0A0A, -2px 0 3px #0A0A0A;
+  background: white;
+  color: black;	
+  box-shadow: 4px 0 10px #ccc, -4px 0 10px #ccc;
 }
 
 h1, h2, h3, h4, h5, h6, legend {
 	font-family: 'Montserrat', sans-serif;
-	color: #FFB300;
+	color: #004CFF;
 }
 
 th {
 	font-family: 'Montserrat', sans-serif;
-	color: white;
+	color: black;
 }
 
 
 p, td, label, dd, dt, a, ul, li {
 	font-family: 'Oxygen', sans-serif;
-	color: white;
+	color: black;
 }
 
 input {
@@ -34,18 +34,39 @@ input {
 }
 
 .navbar {
-	background: white;
-	color: black;
+  background: black;
+  color: white;
 
-  background: -webkit-linear-gradient(#DDDDDD, white, #DDDDDD); /* For Safari 5.1 to 6.0 */
-	background: -o-linear-gradient(#DDDDDD, white, #DDDDDD); /* For Opera 11.1 to 12.0 */
-	background: -moz-linear-gradient(#DDDDDD, white, #DDDDDD); /* For Firefox 3.6 to 15 */
-	background: linear-gradient(#DDDDDD, white, #DDDDDD); /* Standard syntax */
-
+  background: -moz-linear-gradient(top, #2E2E2E 0%, black);
+  background: -webkit-gradient(linear, left top, left bottom, from(#2E2E2E), to(black));
+  background: -o-linear-gradient(top, #2E2E2E 0%, black);
+  background: -linear-gradient(top, #2E2E2E 0%, black);
 }
 
+.navbar-title-block > p > strong {
+  color: white;
+}
+
+a {
+  color: black;
+}
+
+td > a {
+  color: #222;
+}
+
+.bottom-nav-control p {
+  color: white;
+  opacity: 0.7;
+}
+
+.bottom-nav-control h3 {
+  color: white;
+}
+
+
 .navbar-inverse .navbar-brand {
-	color: black;
+	color: white;
 }
 
 strong {
@@ -57,9 +78,16 @@ strong {
 }
 
 .admin-pages-tab li a {
-	color: #333;
+	color: #ccc;
 }
 
+ul.dropdown-menu {
+  background: #222;
+}
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+  background: #222;
+}
 
 .navbar-prev-page-block {
 	color: black;
@@ -70,7 +98,7 @@ strong {
 }
 
 .navbar-brand-custom:hover *, .navbar-prev-page-block:hover, a:hover, .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .center-wrapper-inner > li > a:hover, a > p:hover, .preceding-heading > a:hover, .navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus, a:focus, .no-description > a:hover, td> a > span.no-description:hover  {
-  color: #FFB300;
+  color: #004CFF;
   text-decoration: none;
 
   -webkit-transition: color 0.2s linear;
@@ -93,33 +121,33 @@ strong {
 
 
 .navbar-inverse .navbar-nav > li > a:focus, .navbar-inverse .navbar-nav > li > a:hover{
-	color: black;
+	color: white;
 }
 
 .navbar-admin-tab {
-	background: #DDDDDD;
+	background: black;
 }
 
 .navbar-admin-tab p {
-	color: black;
+	color: white;
 }
 
 .navbar-admin-tab:hover p {
-  color: #FFB300;
+  color: #004CFF;
 }
 
 .navbar-admin-tab:active p {
-  color: #FFB300;
+  color: #004CFF;
 }
 
 .navbar-admin-tab:before {
-  background: url('tab-corner-left-white-1.png');
+  background: url('tab-corner-left-2.png');
   background-size: 30px 30px;
   background-repeat: no-repeat;  
 }
 
 .navbar-admin-tab:after {
-  background: url('tab-corner-right-white-1.png');
+  background: url('tab-corner-right-4.png');
   background-size: 30px 30px;
   background-repeat: no-repeat;  
 }
@@ -128,15 +156,19 @@ strong {
 
 .table-striped>tbody>tr:nth-child(odd)>td, 
 .table-striped>tbody>tr:nth-child(odd)>th {
-  background: #222;
+  background: #ddd;
+ }
+
+ td {
+  color: #222;
  }
 
 .no-description > a {
-  color: #aaa;
+  color: #666;
 }
 
 p.no-description {
-  color: #333;
+  color: #aaa;
 }
 
 dt.no-description {
@@ -148,22 +180,22 @@ dt + p {
 }
 
 hr {
-	border-top: 1px solid #333;
+	border-top: 1px solid #ccc;
 }
 
 legend {
-  border-color: #888;
+  border-color: #bbb;
 }
 
 .btn-orange {
-	border-color: #D6880B;
-	background: #EB9100;
+	border-color: #0B59D6;
+	background: #005AEB;
 	color: white;
 }
 
 .btn-orange:hover, .btn-orange:focus {
-	background: #FFA81C;
-	border-color: #EB9100;
+	background: #1C73FF;
+	border-color: #005AEB;
 	color: white;
 }
 
@@ -183,7 +215,7 @@ legend {
 
 
 .admin-pages-tab {
-	background: white;
+	background: black;
 	color: black;
   position: fixed;
   bottom: 0;
@@ -192,10 +224,12 @@ legend {
   padding-top: 9px;
   z-index: 1000;
 
-  background: -webkit-linear-gradient(#DDDDDD, white, #DDDDDD); /* For Safari 5.1 to 6.0 */
-	background: -o-linear-gradient(#DDDDDD, white, #DDDDDD); /* For Opera 11.1 to 12.0 */
-	background: -moz-linear-gradient(#DDDDDD, white, #DDDDDD); /* For Firefox 3.6 to 15 */
-	background: linear-gradient(#DDDDDD, white, #DDDDDD); /* Standard syntax */
+
+  background: -webkit-linear-gradient(#2E2E2E, black, black, #2E2E2E); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#2E2E2E, black, black, #2E2E2E); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#2E2E2E, black, black, #2E2E2E); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#2E2E2E, black, black, #2E2E2E); /* Standard syntax */
+
 }
 
 .admin-pages-tab-left {
@@ -211,7 +245,7 @@ legend {
 }
 
 .admin-pages-tab p {
-	color: black;
+	color: white;
 	font-family: 'Montserrat', sans-serif;
   text-align: center;
   font-size: small;
@@ -246,8 +280,8 @@ legend {
 }
 
 .form-control:focus {
-	box-shadow: 0px 1px 1px #FFB300 inset, 0px 0px 3px #FFB300;
-	border-color: #FFB300;
+	box-shadow: 0px 1px 1px #004CFF inset, 0px 0px 3px #004CFF;
+	border-color: #004CFF;
 }
 
 .dropdown-menu > .li-current {
@@ -255,7 +289,7 @@ legend {
 }
 
 .li-current {
-	color: black;
+	color: white;
 	font-weight: 700;
 }
 
@@ -375,6 +409,7 @@ legend {
   width: 100%;
   text-align: center;
   padding: 4px 0;
+  color: white;
 }
 
 .button-admin-new {
@@ -383,14 +418,14 @@ legend {
 }
 
 .alert-orange {
-  background: #FFB300;
-  border-color: #EB9100;
+  background: #004CFF;
+  border-color: #005AEB;
   padding: 10px 12px;
   margin-top: 20px;
 }
 
 .alert-orange > p {
-  color: black;
+  color: white;
 }
 
 
@@ -412,8 +447,8 @@ li.minidivider {
 }
 
 .pagination > .active > span, .pagination > .active > span:hover {
-  background: #EB9100;
-  border-color: #EB9100;
+  background: #005AEB;
+  border-color: #005AEB;
 }
 
 .pagination > li > a {
@@ -439,7 +474,7 @@ li.minidivider {
 }
 
 .pagination-info strong {
-  color: white;
+  color: black;
 }
 
 .photo-row {
@@ -471,11 +506,11 @@ li.minidivider {
 }
 
 input {
-  color: white;
+  color: black;
 }
 
 .photo-box-display {
-  border-color: #FFA81C;
+  border-color: #1C73FF;
 }
 
 .check_boxes > .controls {
@@ -484,9 +519,9 @@ input {
 }
 
 .controls > input, .controls > textarea, .controls > select, select.form-control {
-  background: #222;
-  border-color: #111;
-  color: white;
+  background: white;
+  border-color: #aaa;
+  color: black;
 }
 
 .alert.alert-danger {

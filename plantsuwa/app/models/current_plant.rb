@@ -36,8 +36,7 @@ class CurrentPlant < ActiveRecord::Base
   has_attached_file :display_photo, :default_url => "/images/missing_2.png",
     :styles => {
       :thumb    => ['70x70#'],
-      :medium  => ['300x300#'],
-      :large    => ['1000>']
+      :medium  => ['400x400#']
     }
   validates_attachment :display_photo, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
   validates_attachment_size :display_photo, :less_than => 5.megabytes

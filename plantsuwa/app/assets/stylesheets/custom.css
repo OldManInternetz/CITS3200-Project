@@ -1,6 +1,6 @@
 body, .navbar {
   min-width: 280px;
-  background: #ddd;  
+  background: #222222;  
 }
 
 body {
@@ -8,15 +8,16 @@ body {
 }
 
 hr {
-  border-color: #ddd;
+  border-color: #222;
 }
 
 .container {
-  background: white;
+  background: #0A0A0A;
+  color: white;
   height: 100%;
   padding: 0;
   height: 100%;
-  box-shadow: 4px 0 10px #ccc, -4px 0 10px #ccc;
+  box-shadow: 2px 0 3px #0A0A0A, -2px 0 3px #0A0A0A;
   min-height: 100vh;
 }
 
@@ -81,15 +82,19 @@ td {
 
 
 .navbar-inverse {
-	background: black;
-
-  background: -moz-linear-gradient(top, #2E2E2E 0%, black);
-  background: -webkit-gradient(linear, left top, left bottom, from(#2E2E2E), to(black));
-  background: -o-linear-gradient(top, #2E2E2E 0%, black);
-  background: -linear-gradient(top, #2E2E2E 0%, black);
-
 	border-radius: 0px;
 	border: 15px;
+
+  background: white;
+  color: black;
+
+  background: -webkit-linear-gradient(#DDDDDD, white, #DDDDDD); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#DDDDDD, white, #DDDDDD); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#DDDDDD, white, #DDDDDD); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#DDDDDD, white, #DDDDDD); /* Standard syntax */
+
+
+
 }
 
 .navbar-brand-custom {
@@ -102,7 +107,11 @@ td {
 
 
 a {
-	color: #474747;
+	color: #9E9E9E;
+}
+
+td > a {
+  color: white;
 }
 
 
@@ -110,12 +119,12 @@ a {
 
 
 .bottom-nav-control p {
-	color: white;
+	color: black;
 	opacity: 0.7;
 }
 
 .bottom-nav-control h3 {
-	color: white;
+	color: black;
 }
 
 
@@ -149,7 +158,7 @@ textarea {
 }
 
 .fieldset-search-form {
-  background: #eee;
+  background: #111;
   border-radius: 10px;
   width: 90%;
   margin: 0 5%;
@@ -162,25 +171,25 @@ textarea {
   float: left;
   padding: 0 7px;
   padding-top: 9px;
-  border-right: 1px solid #222;
-  background: #eee;
+  border-right: 1px solid #ccc;
+  background: #111;
   position: fixed;
   bottom: 0;
   height: 40px;
 
-  background: black;
+  background: #DDDDDD;
 
-  background: -webkit-linear-gradient(#2E2E2E, black, black, #2E2E2E); /* For Safari 5.1 to 6.0 */
-	background: -o-linear-gradient(#2E2E2E, black, black, #2E2E2E); /* For Opera 11.1 to 12.0 */
-	background: -moz-linear-gradient(#2E2E2E, black, black, #2E2E2E); /* For Firefox 3.6 to 15 */
-	background: linear-gradient(#2E2E2E, black, black, #2E2E2E); /* Standard syntax */
+  background: -webkit-linear-gradient(#DDDDDD, white, #DDDDDD); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#DDDDDD, white, #DDDDDD); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#DDDDDD, white, #DDDDDD); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#DDDDDD, white, #DDDDDD); /* Standard syntax */
 
 }
 
 .info-tab:hover {
   cursor: pointer;
 
-  background: #2E2E2E;
+  background: white;
 
   -webkit-transition: background 0.2s linear;
   -moz-transition: background 0.2s linear;
@@ -188,26 +197,26 @@ textarea {
   -o-transition: background 0.2s linear;
   transition: background 0.2s linear;
 
-  background: -webkit-linear-gradient(#363636, #111111, #111111, #363636); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(#363636, #111111, #111111, #363636); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(#363636, #111111, #111111, #363636); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(#363636, #111111, #111111, #363636); /* Standard syntax */
+  background: -webkit-linear-gradient(#EEEEEE, white, #EEEEEE); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#EEEEEE, white, #EEEEEE); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#EEEEEE, white, #EEEEEE); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#EEEEEE, white, #EEEEEE); /* Standard syntax */
 
 }
 
 .info-tab-current, .info-tab-current:hover {
 
-  background: #268BFF;
+  background: #FF9112;
 
   -moz-transition: none;
   -webkit-transition: none;
   -o-transition: color 0 ease-in;
   transition: none;
 
-  background: -webkit-linear-gradient(#5CA8FF, #268BFF, #268BFF, #5CA8FF); /* For Safari 5.1 to 6.0 */
-	background: -o-linear-gradient(#5CA8FF, #268BFF, #268BFF, #5CA8FF); /* For Opera 11.1 to 12.0 */
-	background: -moz-linear-gradient(#5CA8FF, #268BFF, #268BFF, #5CA8FF); /* For Firefox 3.6 to 15 */
-	background: linear-gradient(#5CA8FF, #268BFF, #268BFF, #5CA8FF); /* Standard syntax */
+  background: -webkit-linear-gradient(#FFA238, #FF9112, #FF9112, #FFA238); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#FFA238, #FF9112, #FF9112, #FFA238); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#FFA238, #FF9112, #FF9112, #FFA238); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#FFA238, #FF9112, #FF9112, #FFA238); /* Standard syntax */
 
 }
 
@@ -230,11 +239,11 @@ textarea {
 	font-family: 'Montserrat', sans-serif;
   text-align: center;
   font-size: small;
-  color: white;
+  color: black;
 }
 
 .info-tab-disabled p {
-	color: #333;
+	color: #ccc;
 }
 
 .center-wrapper {
@@ -269,12 +278,12 @@ textarea {
 
 .action-tab {
   width: 50%;
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #444;
+  border-bottom: 1px solid #444;
   float: left;
   padding: 3px 5px;
-  border-right: 1px solid #ccc;
-  background: #eee;
+  border-right: 1px solid #444;
+  background: #333;
   position: fixed;
   height: 30px;
   bottom: 40px;
@@ -285,6 +294,9 @@ textarea {
   cursor: pointer;
 }
 
+.action-tab p {
+  color: white;
+}
 
 .padding-mobile {
   padding: 0 10px;
@@ -321,6 +333,52 @@ label.checkbox {
   /*float: left;*/
 }
 
+input {
+  color: white;
+}
+
+.controls > input, .controls > textarea, .controls > select, select.form-control {
+  background: #222;
+  border-color: #111;
+  color: white;
+}
+
+.form-control:focus {
+  box-shadow: 0px 1px 1px #FFB300 inset, 0px 0px 3px #FFB300;
+  border-color: #FFB300;
+}
+
+.navbar-brand-custom:hover *, .navbar-prev-page-block:hover, a:hover, .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .center-wrapper-inner > li > a:hover, a > p:hover, .preceding-heading > a:hover, .navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus, a:focus, .navbar-inverse .navbar-nav > li > a:focus, .navbar-inverse .navbar-nav > li > a:hover  {
+  color: #FFB300;
+  text-decoration: none;
+
+  -webkit-transition: color 0.2s linear;
+  -moz-transition: color 0.2s linear;
+  -ms-transition: color 0.2s linear;
+  -o-transition: color 0.2s linear;
+  transition: color 0.2s linear;
+
+}
+
+.navbar-toggle {
+  background: #222222;
+}
+
+.navbar-collapse {
+  border: none;
+}
+
+.btn-orange {
+  border-color: #D6880B;
+  background: #EB9100;
+  color: white;
+}
+
+.btn-orange:hover, .btn-orange:focus {
+  background: #FFA81C;
+  border-color: #EB9100;
+  color: white;
+}
 
 
 /*
@@ -341,13 +399,13 @@ label.checkbox {
 */
 
 .form-photo-box {
-  border: 1px solid #ccc;
+  border: 1px solid #333;
   padding: 5px;
   margin-bottom: 10px;
 }
 
 .photo-box-display {
-  border: 1px solid #268BFF;
+  border: 1px solid #FF9A26;
 }
 
 .btn-welcome {
@@ -356,8 +414,10 @@ label.checkbox {
   padding: 20px 0;
   font-size: medium;
 	font-family: 'Montserrat', sans-serif;
-  background: #eee;
+
 }
+
+
 
 .search {
   width: 100%;
@@ -365,7 +425,7 @@ label.checkbox {
   padding: 20px ;
   font-size: medium;
 	font-family: 'Montserrat', sans-serif;
-  background: #eee;
+  background: #111;
 }
 
 .search-bar-container {
@@ -375,7 +435,7 @@ label.checkbox {
 
 .dropdown-checkboxes {
   display: none;
-  border: 1px solid #ccc;
+  border: 1px solid #333;
   background: white;
   border-top: 0;
 }
@@ -384,13 +444,13 @@ label.checkbox {
   border-radius: 0;
   margin-top: 5px;
   position: relative;
-  background: #D1E7FF;
-  border-color: #BADAFF;
+  background: #FFE9D1;
+  border-color: #FFDFBA;
 }
 
 .btn-searchlist:hover, .btn-searchlist:active {
-  background: #BADAFF;
-  border-color: #B3D6FF;  
+  background: #FFDFBA;
+  border-color: #FFDCB3;  
 }
 
 .btn-searchlist-down:after, .btn-searchlist-up:after {
@@ -415,23 +475,32 @@ label.checkbox {
 }
 
 legend {
-  border-color: #ddd;
+  border-color: #222;
+  color: white;
 }
 
 .plant-index-box {
   width: 100%;
   height: 64px;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #222;
   position: relative;
 	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
 	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
 	box-sizing: border-box;         /* Opera/IE 8+ */
 }
 
+.plant-index-box p, .plant-index-box-chevron {
+  color: #bbb;
+}
+
+p.plant-text-container {
+  color: white;
+}
+
 .plant-index-box-photo {
   width: 64px;
   height: 64px;
-  border-right: 1px solid #ccc;
+  border-right: 1px solid #333;
 	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
 	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
 	box-sizing: border-box;         /* Opera/IE 8+ */
@@ -489,10 +558,11 @@ legend {
   text-align: center;
   margin-bottom: 0px;
   font-size: 120%;
+  color: white;
 }
 
 .navbar-brand {
-  color: #bbb;
+  color: #555;
 }
 
 .navbar-collapse :hover {
@@ -515,7 +585,7 @@ legend {
   position: absolute;
   right: 25px;
   text-align: center;
-  color: white;
+  color: black;
   width: 100%;
 }
 
@@ -540,8 +610,8 @@ legend {
 .navbar-admin-tab {
   width: 120px;
   height: 30px;
-  background: black;
-  color: white;
+  background: #DDDDDD;
+  color: black;
   position: fixed;
   right: 2%;
   top: 50px;
@@ -550,7 +620,7 @@ legend {
   z-index: 1050;
 }
 .navbar-admin-tab p, .sort-by-tab p {
-  color: white;
+  color: black;
   text-align: center;
   font-size: x-small;
   margin-top: 6px;
@@ -558,7 +628,7 @@ legend {
 }
 
 .navbar-admin-tab:hover p, .sort-by-tab:hover p {
-  color: #268BFF;
+  color: #FF9A26;
   -webkit-transition: color 0.2s linear;
   -moz-transition: color 0.2s linear;
   -ms-transition: color 0.2s linear;
@@ -567,7 +637,7 @@ legend {
 }
 
 .navbar-admin-tab:active p, .sort-by-tab:active p {
-  color: #268BFF;
+  color: #FF9A26;
   -webkit-transition: color 0.2s linear;
   -moz-transition: color 0.2s linear;
   -ms-transition: color 0.2s linear;
@@ -579,13 +649,13 @@ legend {
 
 .navbar-admin-tab:before {
   left: -30px;
-  background: url('tab-corner-left-2.png');
+  background: url('tab-corner-left-white-1.png');
 }
 
 .navbar-admin-tab:after {
   right: -30px;
   top: 0;
-  background: url('tab-corner-right-4.png');
+  background: url('tab-corner-right-white-1.png');
 }
 
 .navbar-admin-tab:before, .navbar-admin-tab:after {
@@ -619,7 +689,7 @@ legend {
 .display-photo-right {
   float: right;
   margin-left: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #222;
   max-width: 50%;
   max-height: 50%;
 }
@@ -640,6 +710,7 @@ legend {
 
 table, .table > tbody > tr > td, .table > thead > tr > th, .table-responsive {
   border: 0;  
+
 }
 
 .table > tbody > tr > td {
@@ -651,9 +722,11 @@ table, .table > tbody > tr > td, .table > thead > tr > th, .table-responsive {
   background: none;
  }
 
-.table-striped>tbody>tr:nth-child(odd)>td, 
+
+
+ .table-striped>tbody>tr:nth-child(odd)>td, 
 .table-striped>tbody>tr:nth-child(odd)>th {
-  background: #eee;
+  background: #222;
  }
 
 tr:nth-child(odd) td:first-child {
@@ -752,9 +825,9 @@ tr:nth-child(odd) td:last-child {
   left: 0;
   top: 50px;
   height: 30px;
-  background: #ddd;
+  background: #222;
   z-index: 1002;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #333;
 }
 
 
@@ -846,11 +919,24 @@ figure.show {
 
 
 
+.kw-search-box {
+  width: 70%;
+  float: left;
+}
 
+.kw-search-box-inner {
+  border-bottom-right-radius: 0px;
+  border-top-right-radius: 0px;
+}
 
+.kw-search-button {
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
+}
 
-
-
+.dropdown-checkboxes {
+  border: 1px solid white;
+}
 
 
 

@@ -7,8 +7,7 @@ class CurrentPhoto < ActiveRecord::Base
 	has_attached_file :image, :default_url => "/images/missing_2.png",
     :styles => {
       :thumb    => ['70x70#'],
-      :medium  => ['300x300#'],
-      :large    => ['1000>']
+      :medium  => ['400x400#']
     }
 	validates_attachment :image, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
 	validates_attachment_size :image, :less_than => 5.megabytes
