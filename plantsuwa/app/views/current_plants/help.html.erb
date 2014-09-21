@@ -1,6 +1,6 @@
 <% provide(:title, 'Search Help') %>
-<% provide(:prev_page, 'Home') %>
-<% provide(:prev_link, root_path) %>
+<% provide(:prev_page, 'Search') %>
+<% provide(:prev_link, search_current_plants_path) %>
 
 <div class="padding-mobile">
 	
@@ -49,10 +49,20 @@
 		<div class="center-wrapper">
 	  		<div class="center-wrapper-inner">
 			<%= link_to search_current_plants_path do %>
-				<button class="btn btn-primary" >Back To Search</button>
+				<button class="btn btn-orange" >Back To Search</button>
 			<% end %>
 			</div>
 		</div>
 	</div>
 	
 </div>
+
+<div style="height: 40px"></div>
+
+<% if signed_in? %>
+  <div style="height: 30px"></div>
+  <%= render 'layouts/ui/action_tab_favourites' %>
+  <%= render 'layouts/ui/action_tab_new' %>
+<% end %>
+
+<%= render 'layouts/ui/bottom_tabs_default' %>

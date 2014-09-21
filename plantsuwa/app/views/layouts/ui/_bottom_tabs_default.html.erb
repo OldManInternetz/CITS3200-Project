@@ -1,5 +1,5 @@
 <%= link_to search_current_plants_path do %>
-	<% if controller_name == "current_plants" and action_name == "search" %>
+	<% if controller_name == "current_plants" and (action_name == "search" or action_name == "help") %>
 		<div class="info-tab info-tab-current info-tab-33" style="left: 0;">
 		  <p><i class="fa fa-lg fa-search"></i>&nbsp;&nbsp;Search</p>
 		</div>
