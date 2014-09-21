@@ -43,6 +43,7 @@ class CurrentPlantsController < ApplicationController
   	rescue ScopedSearch::QueryNotSupported => e
     	@items = [{:error =>e.to_s}]
   	end
+     render :json => @items
 	end
   
   def new
