@@ -224,9 +224,13 @@
 
 <% if signed_in? %>
   <div style="height: 30px"></div>
-  <%= render 'layouts/ui/action_tab_favourites_small' %>
-  <%= render 'layouts/ui/action_tab_edit_small' %>
-  <%= render 'layouts/ui/action_tab_new_small' %>
+  <% if is_trusted? %>
+    <%= render 'layouts/ui/action_tab_favourites_small' %>
+    <%= render 'layouts/ui/action_tab_edit_small' %>
+    <%= render 'layouts/ui/action_tab_new_small' %>
+  <% else %>
+    <%= render 'layouts/ui/action_tab_favourites_large' %>
+  <% end %>
 <% end %>
 
 <%= render 'layouts/ui/bottom_tabs_show' %>
@@ -313,18 +317,18 @@
   });
 
   // if touch events are supported then add swipe interactions using TouchSwipe https://github.com/mattbryson/TouchSwipe-Jquery-Plugin
-  if('ontouchstart' in window){
-    $('.diy-slideshow').swipe({
-      swipeLeft:function() {
+
+    $('.slideshow').on(swipeleft, function() {
         counter++;
         showCurrent(); 
-      },
-      swipeRight:function() {
-        counter--;
+      });
+
+    $('.slideshow').on(swiperight, function() {
+        counter++;
         showCurrent(); 
-      }
-    });
-  }
+      });
+
+  
 
 
   //window.setInterval(function(){

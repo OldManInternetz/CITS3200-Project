@@ -2,8 +2,9 @@ class CurrentPlantsController < ApplicationController
   
   include CurrentPlantHelper
 
-  before_action :signed_in_user, only: [:new, :edit, :update, :create]
+  before_action :user_is_trusted, only: [:new, :edit, :update, :create]
   before_action :user_is_admin, only: [:index_admin, :destroy_admin, :edit_admin, :show_admin, :update_admin, :new_admin, :create_admin]
+
 
   layout 'admin_layout', only: [:index_admin, :show_admin, :edit_admin, :new_admin, :create_admin, :update_admin]
   

@@ -21,8 +21,12 @@
 
 <% if signed_in? %>
   <div style="height: 30px"></div>
-  <%= render 'layouts/ui/action_tab_favourites' %>
-  <%= render 'layouts/ui/action_tab_new' %>
+  <% if is_trusted? %>
+    <%= render 'layouts/ui/action_tab_favourites' %>
+    <%= render 'layouts/ui/action_tab_new' %>
+  <% else %>
+    <%= render 'layouts/ui/action_tab_favourites_large' %>
+  <% end %>
 <% end %>
 
 <%= render 'layouts/ui/bottom_tabs_default' %> <!-- render 'index' instead of 'default' for the types, etc -->

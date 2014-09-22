@@ -19,6 +19,14 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def user_is_trusted
+    if !is_trusted?
+      flash[:error] = "Sorry, you must be a trusted user to do that."
+      redirect_to root_path
+    end
+  end
+
+
   """ Redirects the user to the root path, or the previous page they visited, depending on params. """
   def redirect_user_to_correct_path
     if params.has_key?(:pp_path)

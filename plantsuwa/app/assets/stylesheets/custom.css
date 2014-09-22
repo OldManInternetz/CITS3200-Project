@@ -152,6 +152,12 @@ textarea {
   resize: vertical;
 }
 
+.alert.alert-info {
+  background: #FFA81C;
+  border-color: #E8991A;
+  color: black;
+}
+
 .fieldset-search-form .check_boxes > .controls {
   height: auto;
   overflow: hidden;
@@ -989,4 +995,16 @@ figure.show {
   .under-768 {
     display: none;
   }
+}
+
+
+
+
+
+
+
+/* NEW THINGS, AFTER THE STYLE CHANGE */
+
+.action-tab-100 {
+  width: 100%;
 }

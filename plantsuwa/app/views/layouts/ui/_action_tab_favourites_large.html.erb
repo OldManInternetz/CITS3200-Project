@@ -1,0 +1,11 @@
+<% if signed_in? %>
+	<%= link_to favourites_path do %>
+		<div class="action-tab action-tab-100">
+		  <div class="center-wrapper">
+		    <div style="display: inline-block;">
+		      <p><i class="fa fa-star" style="color: #FF9100"></i></span>&nbsp;&nbsp;Favourites</p>
+		    </div>
+		  </div>
+		</div>
+	<% end %>
+<% end %>
