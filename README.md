@@ -87,7 +87,7 @@ I'm doing the tests with a Gem called "Rspec". You can run them by navigating to
 
 This will execute all of the tests within the spec folder, and all subfolders. It will generate a coverage file, which shows how much of the source code is covered by testing. It can be found in the coverage folder.
 
-== ALVA Server ==
+## ALVA Server ##
 
 Navigate to the project directory
 
