@@ -86,3 +86,23 @@ I'm doing the tests with a Gem called "Rspec". You can run them by navigating to
     $ rspec spec/.*
 
 This will execute all of the tests within the spec folder, and all subfolders. It will generate a coverage file, which shows how much of the source code is covered by testing. It can be found in the coverage folder.
+
+== ALVA Server ==
+
+Navigate to the project directory
+
+    $ cd ~/CITS3200-Project/plantsuwa
+
+Pull the latest from git 
+
+    $ git pull
+    
+Start the server (indefinitely)
+
+    $ rails s -d
+    
+You can now access the server from http://alva-nix-002.alva.uwa.edu.au:3000/ (alias to be changed)
+    
+To quit the server:
+
+    $ kill -9 $(cat tmp/pids/server.pid)
