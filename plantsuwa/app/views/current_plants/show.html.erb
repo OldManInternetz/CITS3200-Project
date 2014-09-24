@@ -297,22 +297,28 @@
 
   // this function is what cycles the slides, showing the next or previous slide and hiding all the others
   var showCurrent = function(){
-    var itemToShow = Math.abs(counter%numItems);// uses remainder (aka modulo) operator to get the actual index of the element to show  
+    var itemToShow = counter;// uses remainder (aka modulo) operator to get the actual index of the element to show  
      
     $items.removeClass('show'); // remove .show from whichever element currently has it
     $items.eq(itemToShow).addClass('show'); 
 
-    var currently_viewed = counter % numItems + 1;
+    var currently_viewed = counter + 1;
     $("#viewed_photo").html(currently_viewed); 
   };
 
   // add click events to prev & next buttons 
   $('.ss-next').on('click', function(){
       counter++;
+      if(counter >= numItems) {
+        counter = 0;
+      }
       showCurrent(); 
   });
   $('.ss-prev').on('click', function(){
       counter--;
+      if(counter < 0) {
+        counter = numItems-1;
+      }
       showCurrent(); 
   });
 
