@@ -165,6 +165,17 @@ a {
 }
 
 
+.navbar-brand-custom:hover *, .navbar-prev-page-block:hover, a:hover, .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .center-wrapper-inner > li > a:hover, a > p:hover, .preceding-heading > a:hover, .navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus, a:focus, .navbar-inverse .navbar-nav > li > a:focus, .navbar-inverse .navbar-nav > li > a:hover  {
+  color: #004CFF;
+  text-decoration: none;
+
+  -webkit-transition: color 0.2s linear;
+  -moz-transition: color 0.2s linear;
+  -ms-transition: color 0.2s linear;
+  -o-transition: color 0.2s linear;
+  transition: color 0.2s linear;
+
+}
 
 
 
@@ -445,4 +456,8 @@ legend {
 
 .navbar-inverse .navbar-brand {
   color: white;
+}
+
+h3.or-block {
+  background: white;
 }
