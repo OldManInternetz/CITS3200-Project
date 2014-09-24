@@ -10,6 +10,8 @@ Plantsuwa::Application.routes.draw do
   # Public routes
 
   root 'welcome#index'
+  
+  match "/contact", to: 'welcome#contact', via: 'get', as: 'contact'
 
   match "/plants/search", to: 'current_plants#search', via: 'get', as: 'search_current_plants'
   match "/plants/search/help", to: 'current_plants#help', via: 'get', as: 'help_search'
