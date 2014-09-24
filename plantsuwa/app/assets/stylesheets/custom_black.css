@@ -153,31 +153,16 @@ td > a {
 	color: #ccc;
 }
 
-
-
-
-
-
 .action-tab {
-  width: 50%;
   border-top: 1px solid #444;
   border-bottom: 1px solid #444;
-  float: left;
-  padding: 3px 5px;
   border-right: 1px solid #444;
   background: #333;
-  position: fixed;
-  height: 30px;
-  bottom: 40px;
-  left: 0;
 }
-
-
 
 .action-tab p {
   color: white;
 }
-
 
 .help-inline {
   color: rgb(169, 68, 66);
