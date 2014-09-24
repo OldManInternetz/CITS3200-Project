@@ -98,7 +98,7 @@ CurrentPlant.find_by_scientific_name('Verticordia').current_photos.build(image: 
 CurrentPlant.find_by_scientific_name('Water hyacinth').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/F1EF414C-CFF6-447E-B095-59F75BC60AB6.jpg")).save
 CurrentPlant.find_by_scientific_name('Yellow Broome').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/614D066E-7929-42E5-ACEC-49124EFC538E.jpg")).save
 CurrentPlant.find_by_scientific_name('Zamia furfuracea').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/A0E96D42-7400-4592-B06F-4240778B2002.jpg")).save
-CurrentPlant.find_by_scientific_name('?').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/419B4001-1B68-4E39-8F47-2D6A4B0071E1.jpg")).save
+CurrentPlant.find_by_scientific_name('zzz?').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/419B4001-1B68-4E39-8F47-2D6A4B0071E1.jpg")).save
 CurrentPlant.find_by_scientific_name('Acmena smithii').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/acmena_smithii_bark.0.0.jpg")).save
 CurrentPlant.find_by_scientific_name('Adenanthos cygnorum').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/adenanthos_cygnorum_youngfoliage.0.jpg")).save
 puts "  100/441"
@@ -162,7 +162,7 @@ CurrentPlant.find_by_scientific_name('Tetragona decumbens').current_photos.build
 CurrentPlant.find_by_scientific_name('Tipuana tipu').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/tipuana_tipu_seeds.0.0.jpg")).save
 CurrentPlant.find_by_scientific_name('Unknown 2').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/568AA0C9-1232-462D-A8C3-F68EBD73A2DF.jpg")).save
 CurrentPlant.find_by_scientific_name('Zamia furfuracea').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/E89A3B17-D7E1-4262-A82F-EE90393DC23E.jpg")).save
-CurrentPlant.find_by_scientific_name('?').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/82748493-86C5-4C3C-BFC5-1E72D4BE0128.jpg")).save
+CurrentPlant.find_by_scientific_name('zzz?').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/82748493-86C5-4C3C-BFC5-1E72D4BE0128.jpg")).save
 CurrentPlant.find_by_scientific_name('Acacia cyclops').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/acacia_cyclops_seed.0.jpg")).save
 CurrentPlant.find_by_scientific_name('Acacia iteaphylla').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/acacia_iteaphylla_flower.0.jpg")).save
 CurrentPlant.find_by_scientific_name('Acacia lasiocarpa').current_photos.build(image: File.open("#{Rails.root}/lib/tasks/sample_photos/acacia_lasiocarpa_distance.0.jpg")).save
