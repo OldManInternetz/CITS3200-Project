@@ -101,6 +101,8 @@ class CurrentPlant < ActiveRecord::Base
   scoped_search on: :plant_id
   scoped_search on: :submitted_by, :alias => :submitted
   scoped_search on: :edited_by, :alias => :edited
+  scoped_search on: :scientific_name, alias: :scientific
+  scoped_search on: :genus
   
   scoped_search in: :type, on: :name
   scoped_search in: :soil_types, on: :name
