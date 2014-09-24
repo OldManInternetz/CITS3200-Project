@@ -12,7 +12,7 @@ class CurrentPlantsController < ApplicationController
 
 
   def index
-    @current_plants = CurrentPlant.joins(:type).order('types.name asc')
+    @current_plants = CurrentPlant.all
   end
   
   def index_admin
