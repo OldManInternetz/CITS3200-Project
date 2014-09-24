@@ -968,7 +968,7 @@ figure.show {
 }
 
 @media (max-width: 400px) {
-  .navbar p {
+  .navbar p > strong {
     font-size: 90%;
   }
 
@@ -1015,3 +1015,4 @@ figure.show {
   width: 100%;
 }
 
+/* In media queries, navbar p should be navbar p>strong */
