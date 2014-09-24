@@ -139,6 +139,16 @@ textarea {
   cursor: pointer;
 }
 
+.action-tab {
+  width: 50%;
+  float: left;
+  padding: 3px 5px;
+  position: fixed;
+  height: 30px;
+  bottom: 40px;
+  left: 0;
+}
+
 
 .padding-mobile {
   padding: 0 10px;

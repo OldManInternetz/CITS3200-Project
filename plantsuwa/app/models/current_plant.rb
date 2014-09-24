@@ -117,9 +117,12 @@ class CurrentPlant < ActiveRecord::Base
   before_validation :generate_name
 
   def generate_name
-    #if self.scientific_name.blank?
-    self.scientific_name = "#{self.genus} #{self.species}"
+    if self.scientific_name.blank?
+
+    #if !self.genus.blank? and !self.species.blank? and !self.genus.nil? and !self.species.nil?
+      self.scientific_name = "#{self.genus} #{self.species}"
     #end
+    end
   end
 
   default_scope -> { order('scientific_name ASC') }
