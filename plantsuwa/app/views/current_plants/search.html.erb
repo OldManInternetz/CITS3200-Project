@@ -12,7 +12,11 @@
 	label.checkbox {
 		color: white;
 	}
-
+	.dropdown-checkboxes {
+		border-color: #111;
+		background: #111;
+		border-radius: 0;
+	}
 </style>
 
 <div class="padding-mobile">
@@ -23,7 +27,7 @@
 	
 	<div class="center-wrapper">
   	<div class="center-wrapper-inner">
-  		<hr/>
+  		<br/>
 			<dt><%= pluralize(@results_count, 'plant') %> found.</dt>
 		</div>
 	</div>
@@ -97,7 +101,7 @@
 <%= render 'layouts/ui/bottom_tabs_default' %>
 
 
-<script type="text/javascript">
+<!--<script type="text/javascript">
 	<% if @searched %>
 		$("#search-form-hidden").hide();
 	<% end %>
@@ -106,4 +110,4 @@
   	$('html').animate({scrollTop : $('#search-form-hidden').offset().top - 70 },500);
   	$("#search-another-button").hide();
 	}); 
-</script>
+</script>-->

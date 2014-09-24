@@ -516,6 +516,7 @@ input {
 .check_boxes > .controls {
   height: auto;
   overflow: hidden;
+  background: white;
 }
 
 .controls > input, .controls > textarea, .controls > select, select.form-control {
