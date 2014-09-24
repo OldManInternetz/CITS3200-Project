@@ -1007,3 +1007,8 @@ h3.or-block {
 .action-tab .fa.fa-tree {
   color: #007308;
 }
+
+.navbar-inverse .navbar-brand {
+  color: white;
+  font-weight: 700;
+}

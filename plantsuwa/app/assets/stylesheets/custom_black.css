@@ -1083,3 +1083,9 @@ label.checkbox {
 .action-tab .fa.fa-tree {
   color: #00FF2F;
 }
+
+
+.navbar-inverse .navbar-brand {
+  color: black;
+  font-weight: 700;
+}

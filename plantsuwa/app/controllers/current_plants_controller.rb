@@ -12,7 +12,7 @@ class CurrentPlantsController < ApplicationController
 
 
   def index
-    @current_plants = CurrentPlant.all
+    @current_plants = CurrentPlant.joins(:type).order('types.name asc')
   end
   
   def index_admin
@@ -151,11 +151,11 @@ class CurrentPlantsController < ApplicationController
   private
     
     def current_plant_params
-      params.require(:current_plant).permit(:name, :family, :genus, :species, :common_name, :scientific_name, :synonym, :subspecies, :description, :location_name, :characteristics, :additional_info, :identification, :physical, :general_info, :environment, :horticulture, :architectural_uses, :culture, :conservation, :wildlife, :architectural_info, :discovered_by, :named_by, :display_photo, :display_photo_file_name, :display_photo_content_type, :display_photo_file_size, :display_photo_description, :type_id, :climate_ids => [], :size_ids => [], :soil_type_ids => [], :origin_ids => [], :leaf_colour_ids => [], :flower_colour_ids => [], current_photos_attributes: [:id, :current_plant_id, :description, :image, :image_file_name, :image_content_type, :image_file_size, :image_updated_at])
+      params.require(:current_plant).permit(:name, :family, :genus, :species, :common_name, :synonym, :subspecies, :description, :location_name, :characteristics, :additional_info, :identification, :physical, :general_info, :environment, :horticulture, :architectural_uses, :culture, :conservation, :wildlife, :architectural_info, :discovered_by, :named_by, :display_photo, :display_photo_file_name, :display_photo_content_type, :display_photo_file_size, :display_photo_description, :type_id, :climate_ids => [], :size_ids => [], :soil_type_ids => [], :origin_ids => [], :leaf_colour_ids => [], :flower_colour_ids => [], current_photos_attributes: [:id, :current_plant_id, :description, :image, :image_file_name, :image_content_type, :image_file_size, :image_updated_at])
     end
 
     def current_plant_params_no_photo
-      params.require(:current_plant).permit(:name, :family, :genus, :species, :common_name, :scientific_name, :synonym, :subspecies, :description, :location_name, :characteristics, :additional_info, :identification, :physical, :general_info, :environment, :horticulture, :architectural_uses, :culture, :conservation, :wildlife, :architectural_info, :discovered_by, :named_by, :display_photo, :display_photo_file_name, :display_photo_content_type, :display_photo_file_size, :display_photo_description, :type_id, :climate_ids => [], :size_ids => [], :soil_type_ids => [], :origin_ids => [], :leaf_colour_ids => [], :flower_colour_ids => [])
+      params.require(:current_plant).permit(:name, :family, :genus, :species, :common_name, :synonym, :subspecies, :description, :location_name, :characteristics, :additional_info, :identification, :physical, :general_info, :environment, :horticulture, :architectural_uses, :culture, :conservation, :wildlife, :architectural_info, :discovered_by, :named_by, :display_photo, :display_photo_file_name, :display_photo_content_type, :display_photo_file_size, :display_photo_description, :type_id, :climate_ids => [], :size_ids => [], :soil_type_ids => [], :origin_ids => [], :leaf_colour_ids => [], :flower_colour_ids => [])
     end
 
 
