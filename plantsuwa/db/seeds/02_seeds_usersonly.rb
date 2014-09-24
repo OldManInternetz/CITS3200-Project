@@ -12,6 +12,8 @@ User.create(username: 'Legitimate', password: 'password', password_confirmation:
 
 # Regular Users
 
+"""
+
 User.create(username: 'Don', password: 'password', password_confirmation: 'password', email: 'don@madmen.com', admin: 'false', trusted: 'false')
 User.create(username: 'Sally', password: 'password', password_confirmation: 'password', email: 'sally@madmen.com', admin: 'false', trusted: 'false')
 User.create(username: 'Bobby', password: 'password', password_confirmation: 'password', email: 'bobby@madmen.com', admin: 'false', trusted: 'false')
@@ -28,6 +30,6 @@ User.create(username: 'Trudy', password: 'password', password_confirmation: 'pas
 
 
 
-
+"""
 
 

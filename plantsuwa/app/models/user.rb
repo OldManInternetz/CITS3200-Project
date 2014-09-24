@@ -20,8 +20,8 @@ class User < ActiveRecord::Base
 										uniqueness: { case_sensitive: false }
   has_secure_password
 
-  validates :password, length: { minimum: 6, maximum: 20 }, on: :create
-	validates :password, length: {minimum: 6, maximum: 20}, on: :update, allow_blank: true
+  validates :password, length: { minimum: 1, maximum: 20 }, on: :create
+	validates :password, length: {minimum: 1, maximum: 20}, on: :update, allow_blank: true
   validates :trusted, inclusion: {:in => [true, false]}
   validates :admin, inclusion: {:in => [true, false]}
 

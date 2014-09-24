@@ -37,9 +37,6 @@ class MergedMigration < ActiveRecord::Migration
     add_attachment :current_plants, :display_photo
     add_column :current_plants, :display_photo_description, :string
     add_column :current_plants, :type_id,           :integer
-    
-    add_column :current_plants, :combined_name,     :string
-
     add_column :current_plants, :name,              :string
     """ Still need to add the following fields: """
     # my_notes (id)
@@ -199,7 +196,7 @@ class MergedMigration < ActiveRecord::Migration
 
     """ Add indexes to user fields """
     add_index  :users, :username, unique: true
-    add_index  :users, :email, unique: true
+    #add_index  :users, :email, unique: true
     add_index  :users, :remember_token
   end
 end

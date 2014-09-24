@@ -108,7 +108,6 @@ ActiveRecord::Schema.define(version: 20140915084949) do
     t.datetime "display_photo_updated_at"
     t.string   "display_photo_description"
     t.integer  "type_id"
-    t.string   "combined_name"
     t.string   "name"
   end
 
@@ -181,7 +180,6 @@ ActiveRecord::Schema.define(version: 20140915084949) do
     t.boolean  "admin",           default: false
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["remember_token"], name: "index_users_on_remember_token"
   add_index "users", ["username"], name: "index_users_on_username", unique: true
 
