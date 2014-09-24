@@ -1,6 +1,8 @@
 <div class="plant-index-box">
   <div class="plant-index-box-photo">
-    <%= image_tag '', data: { original: current_plant.display_photo.url(:thumb) }, width:"63px", height:"63px", alt:"", class: "img-lazy" %>
+    <%= link_to current_plant_path(current_plant) do %>
+      <%= image_tag '', data: { original: current_plant.display_photo.url(:thumb) }, width:"63px", height:"63px", alt:"", class: "img-lazy" %>
+    <% end %>
   </div>
   <div class="plant-index-box-content-wrapper">
     <div class="plant-index-box-content">
