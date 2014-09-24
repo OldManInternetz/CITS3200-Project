@@ -1016,3 +1016,40 @@ figure.show {
 }
 
 /* In media queries, navbar p should be navbar p>strong */
+
+.feedback-welcome {
+  max-width: 400px;
+  margin: 0 auto;
+  padding-bottom: 15px;
+}
+
+.feedback-welcome p {
+  text-align: center;
+}
+
+.feedback-welcome-heading {
+  text-align: center;
+  color: #FFA81C;
+}
+
+.contact-us-heading {
+  margin-bottom: 35px;
+}
+
+.feedback-welcome-container {
+  background: #111;
+  margin-top: -20px;
+  padding-top: 20px;
+  margin-bottom: 50px;
+}
+
+.thanks-for-visiting-container {
+  background: #111;
+  margin-top: -40px;
+  padding-top: 40px;
+}
+
+ul.sources-list > li {
+  display: inline-block;
+  margin-right: 20px;
+}
