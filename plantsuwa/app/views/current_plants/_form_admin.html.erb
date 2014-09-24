@@ -37,7 +37,7 @@
         	<%= f.input  :identification, hint: 'How is this plant identified in the field?', as: :text  %> 
         	<%= f.input  :physical, hint: 'What are the physical characteristics of the plant?', as: :text %>
   	      <%= f.association :sizes, :as => :check_boxes %>
-  	      <%= f.association :flower_colours, :as => :check_boxes %>
+  	      <!--<%= f.association :flower_colours, :as => :check_boxes %>-->
   	      <%= f.association :leaf_colours, :as => :check_boxes %>
       </fieldset>
       <br/>
@@ -52,7 +52,7 @@
       	  <%= f.input  :horticulture, as: :text %>
       	  <%= f.input  :architectural_uses, as: :text %>
           <%= f.input  :architectural_info, as: :text %>
-  	      <%= f.association :soil_types, :as => :check_boxes %>
+  	      <!--<%= f.association :soil_types, :as => :check_boxes %>-->
       </fieldset>
 
       <br/>
