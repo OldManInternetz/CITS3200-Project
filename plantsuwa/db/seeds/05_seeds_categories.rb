@@ -1,0 +1,72 @@
+# Scanned the Bento data and made these up. Subject to change after input from Tinka.
+# Take note of variable names @quin, etc...
+
+puts('Creating Types...')
+  @quin = SoilType.create(name: 'Quindalup') 
+  @cott = SoilType.create(name: 'Cottesloe') 
+  @karr = SoilType.create(name: 'Karrakatta') 
+  @guil = SoilType.create(name: 'Guildford') 
+  @bass = SoilType.create(name: 'Bassendean') 
+  @beer = SoilType.create(name: 'Beermullah') 
+  @forr = SoilType.create(name: 'Forrestfield') 
+  @herd = SoilType.create(name: 'Herdsman') 
+  @swan = SoilType.create(name: 'Swan Vasse') 
+  @dard = SoilType.create(name: 'Dardanup Darling Plateau') 
+  @gran = SoilType.create(name: 'Granite Darling Plateau') 
+  @late = SoilType.create(name: 'Laterite Dalring Plateau') 
+  @scar = SoilType.create(name: 'Scarp Darling Plateau') 
+  @yang = SoilType.create(name: 'Yanga') 
+  @serp = SoilType.create(name: 'Serpentine River')
+
+  @sml = Size.create(name: 'Small') 
+  @med = Size.create(name: 'Medium') 
+  @lar = Size.create(name: 'Large') 
+  @les = Size.create(name: 'Less than 1m') 
+  @bet = Size.create(name: 'Between 1m and 3m') 
+  @grt = Size.create(name: 'Greater than 3m')
+
+  @climber = Type.create(name: 'Climber') 
+  @conifer = Type.create(name: 'Conifer') 
+  @grass = Type.create(name: 'Grass') 
+  @fern = Type.create(name: 'Fern') 
+  @herb = Type.create(name: 'Herbaceous Shrub') 
+  @palm = Type.create(name: 'Palm') 
+  @sedge = Type.create(name: 'Sedge') 
+  @succ = Type.create(name: 'Succulent') 
+  @tree = Type.create(name: 'Tree') 
+  @woody = Type.create(name: 'Woody Shrub') 
+
+  @wa = Origin.create(name: 'Western Australian')
+  @aus = Origin.create(name: 'Australian')
+  @exotic = Origin.create(name: 'Exotic')
+
+  @red = FlowerColour.create(name: 'Red')
+  @blue = FlowerColour.create(name: 'Blue')
+  @green = FlowerColour.create(name: 'Green')
+  @purple = FlowerColour.create(name: 'Purple')
+  @yellow = FlowerColour.create(name: 'Yellow')
+  @orange = FlowerColour.create(name: 'Orange')
+  @pink = FlowerColour.create(name: 'Pink')
+  @white = FlowerColour.create(name: 'White')
+
+  @leaf_green = LeafColour.create(name: 'Green') 
+  @dark_grey = LeafColour.create(name: 'Dark Green') 
+  @grey_green = LeafColour.create(name: 'Grey-Green', alt_colour: '#486649') 
+  @grey = LeafColour.create(name: 'Grey') 
+  @silver = LeafColour.create(name: 'Silver')
+
+  @cool = Climate.create(name: 'Cool')
+  @cold = Climate.create(name: 'Cold')
+  @tropical = Climate.create(name: 'Tropical')
+  @warm = Climate.create(name: 'Warm')
+  @med = Climate.create(name: 'Meditteranean')
+  @temp = Climate.create(name: 'Temperate')
+  @subt = Climate.create(name: 'Sub-Tropical')
+  @semia = Climate.create(name: 'Semi-Arid')
+  @arid = Climate.create(name: 'Arid')
+  @hot = Climate.create(name: 'Hot')
+  
+  
+  
+### Add Categorites to Plants here.
+puts('Adding Categories to Plants...')

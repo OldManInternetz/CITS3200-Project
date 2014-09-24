@@ -78,8 +78,8 @@ class CurrentPlant < ActiveRecord::Base
   scoped_search on: :created_at
   scoped_search on: :updated_at
   scoped_search on: :species
-  scoped_search on: :common_name, :alias => :common
-  scoped_search on: :scientific_name, :alias => :scientific
+  scoped_search on: :common_name, :alias => :common, :complete_value => true
+  scoped_search on: :scientific_name, :alias => :scientific, :complete_value => true
   scoped_search on: :synonym
   scoped_search on: :subspecies
   scoped_search on: :description

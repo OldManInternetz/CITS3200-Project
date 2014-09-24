@@ -321,12 +321,18 @@ textarea {
   /* border-radius: 4px; */
   height: 120px;
   overflow-y: scroll;
+  background-color: #222;
+  border-radius: 3px;
 }
 
 .check_boxes .checkbox {
   font-size: small;
   font-weight: 400;
-	font-family: 'Oxygen', sans-serif;
+  font-family: 'Oxygen', sans-serif;
+}
+
+.check_boxes.optional.form-control {
+	height: 15px;
 }
 
 label.checkbox {
