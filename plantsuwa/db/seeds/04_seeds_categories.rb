@@ -1053,38 +1053,38 @@ CurrentPlant.find_by_scientific_name('Anigozanthos flavidus').climates << @arid
 CurrentPlant.find_by_scientific_name('Brunfelsia pauciflora').climates << @arid
 CurrentPlant.find_by_scientific_name('Grevillea \'Poorinda Royal Mantle\' (incomplete)').climates << @arid
 CurrentPlant.find_by_scientific_name('Grevillea nudiflora').climates << @arid
-CurrentPlant.find_by_scientific_name('Cynodon dactylon').climate << @semi_arid
-CurrentPlant.find_by_scientific_name('Ficus pumila').climate << @semi_arid
-CurrentPlant.find_by_scientific_name('Brachyscome multifida').climate << @semi_arid
-CurrentPlant.find_by_scientific_name('Coleonema pulchrum').climate << @semi_arid
-CurrentPlant.find_by_scientific_name('Eucalyptus rudis').climate << @semi_arid
-CurrentPlant.find_by_scientific_name('Grevillea obtusifolia').climate << @semi_arid
-CurrentPlant.find_by_scientific_name('Eucalyptus caesia').climate << @semi_arid
-CurrentPlant.find_by_scientific_name('Doryanthes excelsa(inc)').climate << @semi_arid
-CurrentPlant.find_by_scientific_name('Casuarina equisetifolia').climate << @semi_arid
-CurrentPlant.find_by_scientific_name('Parthenocissus tricuspidata (incomplete)').climate << @semi_arid
-CurrentPlant.find_by_scientific_name('Acacia aneura').climate << @semi_arid
-CurrentPlant.find_by_scientific_name('Pilots exaltatus').climate << @semi_arid
-CurrentPlant.find_by_scientific_name('Grevillea leucopteris [incomplete]').climate << @semi_arid
-CurrentPlant.find_by_scientific_name('Murraya paniculata').climate << @semi_arid
-CurrentPlant.find_by_scientific_name('Agonis flexuosa').climate << @semi_arid
-CurrentPlant.find_by_scientific_name('Carpobrotus glaucescens').climate << @semi_arid
-CurrentPlant.find_by_scientific_name('Podocarpus elatus (incomplete)').climate << @semi_arid
-CurrentPlant.find_by_scientific_name('Anigozanthos manglesii').climate << @semi_arid
-CurrentPlant.find_by_scientific_name('Grevillea rosmarinifolia').climate << @semi_arid
-CurrentPlant.find_by_scientific_name('Eremophila nivea').climate << @semi_arid
-CurrentPlant.find_by_scientific_name('Cymbopogon obtectus').climate << @semi_arid
-CurrentPlant.find_by_scientific_name('Angophora costata').climate << @semi_arid
-CurrentPlant.find_by_scientific_name('Grevillea thelemanniana').climate << @semi_arid
-CurrentPlant.find_by_scientific_name('Corymbia maculata').climate << @semi_arid
-CurrentPlant.find_by_scientific_name('Eucalyptus cladocalyx').climate << @semi_arid
-CurrentPlant.find_by_scientific_name('Hypocalymma robustum').climate << @semi_arid
-CurrentPlant.find_by_scientific_name('Coprosma repens').climate << @semi_arid
-CurrentPlant.find_by_scientific_name('Ricinocarpus tuberculatus x cyanescens').climate << @semi_arid
-CurrentPlant.find_by_scientific_name('Helichrysum ramosissimum (incomplete)').climate << @semi_arid
-CurrentPlant.find_by_scientific_name('Anigozanthos flavidus').climate << @semi_arid
-CurrentPlant.find_by_scientific_name('Brunfelsia pauciflora').climate << @semi_arid
-CurrentPlant.find_by_scientific_name('Grevillea \'Poorinda Royal Mantle\' (incomplete)').climate << @semi_arid
-CurrentPlant.find_by_scientific_name('Grevillea nudiflora').climate << @semi_arid
+CurrentPlant.find_by_scientific_name('Cynodon dactylon').climates << @semi_arid
+CurrentPlant.find_by_scientific_name('Ficus pumila').climates << @semi_arid
+CurrentPlant.find_by_scientific_name('Brachyscome multifida').climates << @semi_arid
+CurrentPlant.find_by_scientific_name('Coleonema pulchrum').climates << @semi_arid
+CurrentPlant.find_by_scientific_name('Eucalyptus rudis').climates << @semi_arid
+CurrentPlant.find_by_scientific_name('Grevillea obtusifolia').climates << @semi_arid
+CurrentPlant.find_by_scientific_name('Eucalyptus caesia').climates << @semi_arid
+CurrentPlant.find_by_scientific_name('Doryanthes excelsa(inc)').climates << @semi_arid
+CurrentPlant.find_by_scientific_name('Casuarina equisetifolia').climates << @semi_arid
+CurrentPlant.find_by_scientific_name('Parthenocissus tricuspidata (incomplete)').climates << @semi_arid
+CurrentPlant.find_by_scientific_name('Acacia aneura').climates << @semi_arid
+CurrentPlant.find_by_scientific_name('Pilots exaltatus').climates << @semi_arid
+CurrentPlant.find_by_scientific_name('Grevillea leucopteris [incomplete]').climates << @semi_arid
+CurrentPlant.find_by_scientific_name('Murraya paniculata').climates << @semi_arid
+CurrentPlant.find_by_scientific_name('Agonis flexuosa').climates << @semi_arid
+CurrentPlant.find_by_scientific_name('Carpobrotus glaucescens').climates << @semi_arid
+CurrentPlant.find_by_scientific_name('Podocarpus elatus (incomplete)').climates << @semi_arid
+CurrentPlant.find_by_scientific_name('Anigozanthos manglesii').climates << @semi_arid
+CurrentPlant.find_by_scientific_name('Grevillea rosmarinifolia').climates << @semi_arid
+CurrentPlant.find_by_scientific_name('Eremophila nivea').climates << @semi_arid
+CurrentPlant.find_by_scientific_name('Cymbopogon obtectus').climates << @semi_arid
+CurrentPlant.find_by_scientific_name('Angophora costata').climates << @semi_arid
+CurrentPlant.find_by_scientific_name('Grevillea thelemanniana').climates << @semi_arid
+CurrentPlant.find_by_scientific_name('Corymbia maculata').climates << @semi_arid
+CurrentPlant.find_by_scientific_name('Eucalyptus cladocalyx').climates << @semi_arid
+CurrentPlant.find_by_scientific_name('Hypocalymma robustum').climates << @semi_arid
+CurrentPlant.find_by_scientific_name('Coprosma repens').climates << @semi_arid
+CurrentPlant.find_by_scientific_name('Ricinocarpus tuberculatus x cyanescens').climates << @semi_arid
+CurrentPlant.find_by_scientific_name('Helichrysum ramosissimum (incomplete)').climates << @semi_arid
+CurrentPlant.find_by_scientific_name('Anigozanthos flavidus').climates << @semi_arid
+CurrentPlant.find_by_scientific_name('Brunfelsia pauciflora').climates << @semi_arid
+CurrentPlant.find_by_scientific_name('Grevillea \'Poorinda Royal Mantle\' (incomplete)').climates << @semi_arid
+CurrentPlant.find_by_scientific_name('Grevillea nudiflora').climates << @semi_arid
 
 puts('Done Climates...')

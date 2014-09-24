@@ -3558,4 +3558,3 @@ CurrentPlant.create(name: '', common_name: '', family: '', description: '', syno
 CurrentPlant.create(name: '', common_name: '', family: '', description: '', synonym: '', subspecies: '', location_name: '', general_info: '', additional_info: '', identification: '', physical:'', horticulture: '', architectural_uses: '', culture: '', conservation: '', wildlife: '', architectural_info: '', characteristics: '', environment: '', scientific_name: 'Water hyacinth')
 CurrentPlant.create(name: '', common_name: '', family: '', description: '', synonym: '', subspecies: '', location_name: '', general_info: '', additional_info: '', identification: '', physical:'', horticulture: '', architectural_uses: '', culture: '', conservation: '', wildlife: '', architectural_info: '', characteristics: '', environment: '', scientific_name: 'Yellow Broome')
 
-
