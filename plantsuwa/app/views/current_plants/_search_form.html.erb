@@ -60,10 +60,14 @@
 				 	<%= f.input :climate, collection: Climate.all, label_method: :name, value_method: :id, as: :check_boxes, required: false, label: false %>
 					</div>
 
+					<!--
+
 					<a class="btn btn-default btn-searchlist btn-searchlist-down" style="width: 100%" id="show-flower-colour">Flower Colour</a>
 					<div class="dropdown-checkboxes" id="flower-colour-list">
 				  <%= f.input :flower_colour, collection: FlowerColour.all, label_method: :name, value_method: :id, as: :check_boxes, required: false, label: false %>
 				  </div>
+
+				  -->
 
 					<a class="btn btn-default btn-searchlist btn-searchlist-down" style="width: 100%" id="show-leaf-colour">Leaf Colour</a>
 					<div class="dropdown-checkboxes" id="leaf-colour-list">
@@ -76,10 +80,12 @@
 				 	<%= f.input :origin, collection: Origin.all, label_method: :name, value_method: :id, as: :check_boxes, required: false, label: false %>
 					</div>
 
+					<!--
 					<a class="btn btn-default btn-searchlist btn-searchlist-down" style="width: 100%" id="show-soil-type">Soil Type</a>
 					<div class="dropdown-checkboxes" id="soil-type-list">
 				 	<%= f.input :soil_type, collection: SoilType.all, label_method: :name, value_method: :id, as: :check_boxes, required: false, label: false %>
 					</div>
+					-->
 				</div>
 			</div>
 		  <br/>

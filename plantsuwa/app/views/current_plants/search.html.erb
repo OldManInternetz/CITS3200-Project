@@ -1,6 +1,12 @@
-<% provide(:title, 'Search') %>
-<% provide(:prev_page, 'Home') %>
-<% provide(:prev_link, root_path) %>
+<% if @searched %>
+	<% provide(:title, 'Results') %>
+	<% provide(:prev_page, 'Search') %>
+	<% provide(:prev_link, search_current_plants_path) %>
+<% else %>
+	<% provide(:title, 'Search') %>
+	<% provide(:prev_page, 'Home') %>
+	<% provide(:prev_link, root_path) %>
+<% end %>
 
 <style type="text/css">
 	label.checkbox {
@@ -23,11 +29,13 @@
 	</div>
 	<div style="height: 10px"></div>
 	
+	<!--
 	<div class="center-wrapper">
 	 	<div class="center-wrapper-inner">
 			<button class="btn btn-orange" id="search-another-button" style="padding-left: 50px; padding-right: 50px"><i class="fa fa-search-plus"></i>&nbsp;&nbsp;Search Again?</button>
 		</div>
 	</div>
+	-->
 	
 		<div class="center-wrapper">
 	  	<div class="center-wrapper-inner">
@@ -55,12 +63,14 @@
 		
 
 	<hr/>	
+	<!--
 	<div class="center-wrapper">
 	 	<div class="center-wrapper-inner">
 			<button class="btn btn-orange" id="search-another-button" style="padding-left: 50px; padding-right: 50px"><i class="fa fa-search-plus"></i>&nbsp;&nbsp;Search Again!</button>
 		</div>
 	</div>
 	<br/>
+	-->
 
 	<% end %>
 
