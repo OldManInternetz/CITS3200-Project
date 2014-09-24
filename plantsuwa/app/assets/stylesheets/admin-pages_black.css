@@ -1,6 +1,6 @@
 
 body {
-  background: #ddd;
+  background: #222222;
 }
 
 .padding-mobile {
@@ -8,25 +8,25 @@ body {
 }
 
 .container {
-  background: white;
-  color: black;	
-  box-shadow: 4px 0 10px #ccc, -4px 0 10px #ccc;
+  background: #0A0A0A;
+  color: white;	
+  box-shadow: 2px 0 3px #0A0A0A, -2px 0 3px #0A0A0A;
 }
 
 h1, h2, h3, h4, h5, h6, legend {
 	font-family: 'Montserrat', sans-serif;
-	color: #004CFF;
+	color: #FFB300;
 }
 
 th {
 	font-family: 'Montserrat', sans-serif;
-	color: black;
+	color: white;
 }
 
 
 p, td, label, dd, dt, a, ul, li {
 	font-family: 'Oxygen', sans-serif;
-	color: black;
+	color: white;
 }
 
 input {
@@ -34,39 +34,18 @@ input {
 }
 
 .navbar {
-  background: black;
-  color: white;
+	background: white;
+	color: black;
 
-  background: -moz-linear-gradient(top, #2E2E2E 0%, black);
-  background: -webkit-gradient(linear, left top, left bottom, from(#2E2E2E), to(black));
-  background: -o-linear-gradient(top, #2E2E2E 0%, black);
-  background: -linear-gradient(top, #2E2E2E 0%, black);
+  background: -webkit-linear-gradient(#DDDDDD, white, #DDDDDD); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#DDDDDD, white, #DDDDDD); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#DDDDDD, white, #DDDDDD); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#DDDDDD, white, #DDDDDD); /* Standard syntax */
+
 }
-
-.navbar-title-block > p > strong {
-  color: white;
-}
-
-a {
-  color: black;
-}
-
-td > a {
-  color: #222;
-}
-
-.bottom-nav-control p {
-  color: white;
-  opacity: 0.7;
-}
-
-.bottom-nav-control h3 {
-  color: white;
-}
-
 
 .navbar-inverse .navbar-brand {
-	color: white;
+	color: black;
 }
 
 strong {
@@ -78,16 +57,9 @@ strong {
 }
 
 .admin-pages-tab li a {
-	color: #ccc;
+	color: #333;
 }
 
-ul.dropdown-menu {
-  background: #222;
-}
-
-.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
-  background: #222;
-}
 
 .navbar-prev-page-block {
 	color: black;
@@ -98,7 +70,7 @@ ul.dropdown-menu {
 }
 
 .navbar-brand-custom:hover *, .navbar-prev-page-block:hover, a:hover, .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .center-wrapper-inner > li > a:hover, a > p:hover, .preceding-heading > a:hover, .navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus, a:focus, .no-description > a:hover, td> a > span.no-description:hover  {
-  color: #004CFF;
+  color: #FFB300;
   text-decoration: none;
 
   -webkit-transition: color 0.2s linear;
@@ -121,33 +93,33 @@ ul.dropdown-menu {
 
 
 .navbar-inverse .navbar-nav > li > a:focus, .navbar-inverse .navbar-nav > li > a:hover{
-	color: white;
+	color: black;
 }
 
 .navbar-admin-tab {
-	background: black;
+	background: #DDDDDD;
 }
 
 .navbar-admin-tab p {
-	color: white;
+	color: black;
 }
 
 .navbar-admin-tab:hover p {
-  color: #004CFF;
+  color: #FFB300;
 }
 
 .navbar-admin-tab:active p {
-  color: #004CFF;
+  color: #FFB300;
 }
 
 .navbar-admin-tab:before {
-  background: url('tab-corner-left-2.png');
+  background: url('tab-corner-left-white-1.png');
   background-size: 30px 30px;
   background-repeat: no-repeat;  
 }
 
 .navbar-admin-tab:after {
-  background: url('tab-corner-right-4.png');
+  background: url('tab-corner-right-white-1.png');
   background-size: 30px 30px;
   background-repeat: no-repeat;  
 }
@@ -156,19 +128,15 @@ ul.dropdown-menu {
 
 .table-striped>tbody>tr:nth-child(odd)>td, 
 .table-striped>tbody>tr:nth-child(odd)>th {
-  background: #ddd;
- }
-
- td {
-  color: #222;
+  background: #222;
  }
 
 .no-description > a {
-  color: #666;
+  color: #aaa;
 }
 
 p.no-description {
-  color: #aaa;
+  color: #333;
 }
 
 dt.no-description {
@@ -180,22 +148,22 @@ dt + p {
 }
 
 hr {
-	border-top: 1px solid #ccc;
+	border-top: 1px solid #333;
 }
 
 legend {
-  border-color: #bbb;
+  border-color: #888;
 }
 
 .btn-orange {
-	border-color: #0B59D6;
-	background: #005AEB;
+	border-color: #D6880B;
+	background: #EB9100;
 	color: white;
 }
 
 .btn-orange:hover, .btn-orange:focus {
-	background: #1C73FF;
-	border-color: #005AEB;
+	background: #FFA81C;
+	border-color: #EB9100;
 	color: white;
 }
 
@@ -215,7 +183,7 @@ legend {
 
 
 .admin-pages-tab {
-	background: black;
+	background: white;
 	color: black;
   position: fixed;
   bottom: 0;
@@ -224,12 +192,10 @@ legend {
   padding-top: 9px;
   z-index: 1000;
 
-
-  background: -webkit-linear-gradient(#2E2E2E, black, black, #2E2E2E); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(#2E2E2E, black, black, #2E2E2E); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(#2E2E2E, black, black, #2E2E2E); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(#2E2E2E, black, black, #2E2E2E); /* Standard syntax */
-
+  background: -webkit-linear-gradient(#DDDDDD, white, #DDDDDD); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#DDDDDD, white, #DDDDDD); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#DDDDDD, white, #DDDDDD); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#DDDDDD, white, #DDDDDD); /* Standard syntax */
 }
 
 .admin-pages-tab-left {
@@ -245,7 +211,7 @@ legend {
 }
 
 .admin-pages-tab p {
-	color: white;
+	color: black;
 	font-family: 'Montserrat', sans-serif;
   text-align: center;
   font-size: small;
@@ -280,8 +246,8 @@ legend {
 }
 
 .form-control:focus {
-	box-shadow: 0px 1px 1px #004CFF inset, 0px 0px 3px #004CFF;
-	border-color: #004CFF;
+	box-shadow: 0px 1px 1px #FFB300 inset, 0px 0px 3px #FFB300;
+	border-color: #FFB300;
 }
 
 .dropdown-menu > .li-current {
@@ -289,7 +255,7 @@ legend {
 }
 
 .li-current {
-	color: white;
+	color: black;
 	font-weight: 700;
 }
 
@@ -409,7 +375,6 @@ legend {
   width: 100%;
   text-align: center;
   padding: 4px 0;
-  color: white;
 }
 
 .button-admin-new {
@@ -418,14 +383,14 @@ legend {
 }
 
 .alert-orange {
-  background: #004CFF;
-  border-color: #005AEB;
+  background: #FFB300;
+  border-color: #EB9100;
   padding: 10px 12px;
   margin-top: 20px;
 }
 
 .alert-orange > p {
-  color: white;
+  color: black;
 }
 
 
@@ -447,8 +412,8 @@ li.minidivider {
 }
 
 .pagination > .active > span, .pagination > .active > span:hover {
-  background: #005AEB;
-  border-color: #005AEB;
+  background: #EB9100;
+  border-color: #EB9100;
 }
 
 .pagination > li > a {
@@ -474,7 +439,7 @@ li.minidivider {
 }
 
 .pagination-info strong {
-  color: black;
+  color: white;
 }
 
 .photo-row {
@@ -506,23 +471,22 @@ li.minidivider {
 }
 
 input {
-  color: black;
+  color: white;
 }
 
 .photo-box-display {
-  border-color: #1C73FF;
+  border-color: #FFA81C;
 }
 
 .check_boxes > .controls {
   height: auto;
   overflow: hidden;
-  background: white;
 }
 
 .controls > input, .controls > textarea, .controls > select, select.form-control {
-  background: white;
-  border-color: #aaa;
-  color: black;
+  background: #222;
+  border-color: #111;
+  color: white;
 }
 
 .alert.alert-danger {
@@ -740,3 +704,10 @@ input {
   }
 }
 
+
+
+
+
+.h1-username {
+  color: white;
+}
