@@ -20,7 +20,7 @@
 	  <%= form_tag search_current_plants_path, :method => :get do %>
 		  <div class="search-bar-container">
 		  	<div class="kw-search-box">
-		   		<%= auto_complete_field_tag_jquery(:search, params[:search], {:placeholder => "Search Plants", class: 'form-control kw-search-box-inner' }) %>
+		   		<%= auto_complete_field_tag_jquery(:search, params[:search], {autofocus: true, placeholder: "Search Plants", class: 'form-control kw-search-box-inner' }) %>
 		   	</div>
 		   	<button id='submit_search' class="btn btn-orange kw-search-button" style="width: 33%; float: right"><i class="fa fa-search"></i>&nbsp;Search</button>		   	
 		  </div>
