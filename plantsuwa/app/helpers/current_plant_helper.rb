@@ -46,15 +46,71 @@ module CurrentPlantHelper
 
   def find_relevant_plants(params)
 
-    @current_plants =  CurrentPlant.where(id: (CurrentLinkingClimate.where(climate_id: (Climate.where(id: params[:climate])))).select("current_plant_id")) 
-    @current_plants += CurrentPlant.where(id: (CurrentLinkingOrigin.where(origin_id: (Origin.where(id: params[:origin])))).select("current_plant_id"))
-    @current_plants += CurrentPlant.where(id: (CurrentLinkingSize.where(size_id: (Size.where(id: params[:size])))).select("current_plant_id"))
-    @current_plants += CurrentPlant.where(id: (CurrentLinkingSoilType.where(soil_type_id: (SoilType.where(id: params[:soil_type])))).select("current_plant_id"))
-    @current_plants += CurrentPlant.where(id: (CurrentLinkingFlowerColour.where(flower_colour_id: (FlowerColour.where(id: params[:flower_colour])))).select("current_plant_id"))
-    @current_plants += CurrentPlant.where(id: (CurrentLinkingLeafColour.where(leaf_colour_id: (LeafColour.where(id: params[:leaf_colour])))).select("current_plant_id"))
-    @current_plants += CurrentPlant.where(type_id: (Type.where(id: params[:type])))
+    # Determine which parameters have actually been entered
+    num_params = 4
 
-    return @current_plants
+    # A list of parameters
+    params_list = [params[:climate], params[:origin], params[:size], params[:leaf_colour], params[:type]]
+
+    # params[:soil_type] and params[:flower_colour] not in use at the moment
+
+    # Set up results lists
+
+    results_list = Array.new
+    temporary_results_list = Array.new
+
+    first_round = true
+
+    for i in 0..num_params
+      if params_list[i].length > 1 # Make sure we're not searching an empty query
+
+        #puts "Climate[0]: #{params_list[i].}"
+
+        for item_id in 0..(params_list[i].length-2)
+
+          #puts "Doing #{item_id} of #{params_list[i].length - 2}"
+
+
+          # Obtain all plants with the relevant query
+
+          if i == 0
+            temporary_results_list = (CurrentPlant.where(id: (CurrentLinkingClimate.where(climate_id: (Climate.where(id: params_list[i][item_id])))).select("current_plant_id"))).load
+          elsif i == 1
+            temporary_results_list = CurrentPlant.where(id: (CurrentLinkingOrigin.where(origin_id: (Origin.where(id: params_list[i][item_id])))).select("current_plant_id")).load
+          elsif i == 2
+            temporary_results_list = CurrentPlant.where(id: (CurrentLinkingSize.where(size_id: (Size.where(id: params_list[i][item_id])))).select("current_plant_id")).load
+          #elsif i == 3
+            #temporary_results_list = CurrentPlant.where(id: (CurrentLinkingSoilType.where(soil_type_id: (SoilType.where(id: params_list[i][item_id])))).select("current_plant_id")).all
+          #elsif i == 4
+            #temporary_results_list = CurrentPlant.where(id: (CurrentLinkingFlowerColour.where(flower_colour_id: (FlowerColour.where(id: params[i][item_id])))).select("current_plant_id")).all
+          elsif i == 3
+            temporary_results_list = CurrentPlant.where(id: (CurrentLinkingLeafColour.where(leaf_colour_id: (LeafColour.where(id: params_list[i][item_id])))).select("current_plant_id")).load
+          elsif i == 4
+            temporary_results_list = CurrentPlant.where(type_id: (Type.where(id: params_list[i][item_id]))).load
+          end
+
+
+          # If this is the first thing being looked at, add all relevant plants to the array
+          if first_round
+            for p in temporary_results_list
+              results_list.push(p)
+            end
+            first_round = false
+          # If there are plants already in the results array, we need to check whether they feature this associated item. If they don't, they need to be removed
+          else
+            results_list.delete_if { |obj| !temporary_results_list.include?(obj)}
+          end
+
+          # Clear the temporary result list
+          temporary_results_list.clear
+
+        end
+      end
+    end
+
+    #puts "*" * 10 + "Number of results: #{results_list.length}" + "*" * 10
+
+    return results_list
 
 
   end
