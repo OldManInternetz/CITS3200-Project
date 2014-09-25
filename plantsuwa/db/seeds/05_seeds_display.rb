@@ -1,3 +1,5 @@
+#encoding: utf-8 
+
 puts "Seeding display photos..."
 
 # 187 display photos

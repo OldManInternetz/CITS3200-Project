@@ -1,3 +1,5 @@
+#encoding: utf-8 
+
 puts "Seeding main users..."
 
 # Admins

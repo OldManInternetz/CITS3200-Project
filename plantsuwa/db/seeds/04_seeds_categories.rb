@@ -1,3 +1,5 @@
+#encoding: utf-8 
+
 # Scanned the Bento data and made these up. Subject to change after input from Tinka.
 # Take note of variable names @quin, etc...
 

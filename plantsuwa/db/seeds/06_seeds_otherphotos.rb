@@ -1,3 +1,5 @@
+#encoding: utf-8 
+
 puts "Seeding additional photos..."
 
 # 441 more photos

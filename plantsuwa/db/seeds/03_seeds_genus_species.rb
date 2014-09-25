@@ -1,3 +1,5 @@
+#encoding: utf-8 
+
 puts('Seeding Genus and Species...')
 CurrentPlant.find_by_scientific_name('Grevillea pteridifolia hybrid').update(genus: 'Grevillea')
 CurrentPlant.find_by_scientific_name('Scaevola \'Purple Fanfare\' (incomplete)').update(genus: 'Scaevola')
