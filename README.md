@@ -78,7 +78,7 @@ to pull the current version of the thing to your computer.
 
 The log files, and tmp files, won't be synced, nor will the development database.
 
-### Branching ###
+## Branching ##
 
 If you're going to work on something, it might be good to create a new branch.
 
@@ -86,7 +86,7 @@ If you're going to work on something, it might be good to create a new branch.
     
 This will help us all work in parallel.
 
-### More information ###
+## More information ##
 
 There's a lot more information here:
 
