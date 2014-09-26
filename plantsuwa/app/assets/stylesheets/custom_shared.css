@@ -167,11 +167,13 @@ textarea {
 
 
 
-.check_boxes .checkbox {
+.check_boxes .checkbox .radio{
   font-size: small;
   font-weight: 400;
   font-family: 'Oxygen', sans-serif;
 }
+
+
 
 .check_boxes.optional.form-control {
 	height: 15px;
@@ -217,6 +219,11 @@ label.checkbox {
 .dropdown-checkboxes {
   display: none;
   border-top: 0;
+}
+
+.dropdown-radiobuttons {
+    display: none;
+    border-top: 0;
 }
 
 

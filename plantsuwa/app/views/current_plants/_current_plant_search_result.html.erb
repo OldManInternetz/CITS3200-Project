@@ -1,9 +1,11 @@
 <tr>
-  <td style="height: 48px; width: 40px">
+  <td style="height: 60px; width: 40px">
     <%= link_to current_plant_path(current_plant, pp_name: 'Results', pp_path: request.original_url) do %>
       <%= image_tag current_plant.display_photo.url(:thumb), height:"100%", alt:"Plant photo", class:"img-circle" %>
     <% end %>
   </td>
-  <td><%= link_to display_name(current_plant), current_plant_path(current_plant, pp_name: 'Results', pp_path: request.original_url) %></td>
+  <td><lu><%= link_to display_name(current_plant), current_plant_path(current_plant, pp_name: 'Results', pp_path: request.original_url) %></lu>
+	  <br>
+  <lu style="padding-left:10px;"><%= link_to truncate(current_plant.common_name, length: 50), current_plant_path(current_plant, pp_name: 'Results', pp_path: request.original_url) %></lu></td>
   <td><%= link_to current_plant_path(current_plant, pp_name: 'Results', pp_path: request.original_url) do %><i class="fa fa-chevron-right"></i><% end %></td>
 </tr>
