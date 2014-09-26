@@ -1,56 +1,16 @@
 <div id="search-form-hidden">
 
-
-	
-
-	<div class="center-wrapper">
-	  <div class="center-wrapper-inner">
-			<h2>Keyword Search</h2>
-		</div>
-	</div>
-	
-    <% if flash[:error] %>
-      <div class="alert alert-info" style="margin-top: 20px">
-          <p><%= flash[:error] %></p>
-      </div>
-    <% end %>
-	
-	<br/>
-	<fieldset class="fieldset-search-form">
-	  <%= form_tag search_current_plants_path, :method => :get do %>
-		  <div class="search-bar-container">
-		  	<div class="kw-search-box">
-		   		<%= auto_complete_field_tag_jquery(:search, params[:search], {autofocus: true, placeholder: "Search Plants", class: 'form-control kw-search-box-inner' }) %>
-		   	</div>
-		   	<button id='submit_search' class="btn btn-orange kw-search-button" style="width: 33%; float: right"><i class="fa fa-search"></i>&nbsp;Search</button>		   	
-		  </div>
-	  <% end %>
-		<p class="help-block kwsearch" style="margin-top: 50px;">Hint: wrap search terms in double quotes (" ") to search for plants that contain those terms together. E.g. &nbsp;&nbsp;<b>"large green leaves"</b></p>
-		<p class="help-block kwsearch" style="margin-top: 5px;">Hint: You can specify exactly which field to search over with '~'. E.g. &nbsp;&nbsp;<b>genus ~ banksia</b>&nbsp; or&nbsp; <b>description ~ bushy</b></p>
-		<p class="help-block kwsearch" style="margin-top: 5px; font-weight: 700"><%= link_to help_search_path do %><i class="fa fa-info-circle"></i>&nbsp;More Hints<% end %></p>
-	</fieldset>
-
-
-
-	<div style="height: 50px"></div>
-
-	<hr style="margin-top: 20px"/>
-	<h3 class="or-block">OR</h3>
-
-	<div style="height: 20px"></div>
-
-
 	<div class="center-wrapper">
 	  <div class="center-wrapper-inner">
 			<h2>Parameter Search</h2>
 		</div>
 	</div>
-	<br/>
 	<%= simple_form_for('plants', :method => :get, :url => url_for(:action => 'search'), html: { class: 'form-horizontal' , :'accept-charset' => "UTF-8"}, defaults: { input_html: { class: 'form-control' } }) do |f| %>
-
 		<fieldset class="fieldset-search-form">
-
-
+			
+			<p class="help-block kwsearch"> Hint: Begin your search with only one or two parameters, and slowly refine it over a few iterations. E.g. search for <b>All Trees</b>, then <b>Trees from Western Australia,</b> and so on.</p>
+			<p class="help-block kwsearch" style="margin-bottom: 15px"> Note: Not many plants are indexed by <b>Size</b>,&nbsp; <b>Leaf Colour</b>&nbsp; or <b>Climate</b>&nbsp; just yet. Please <a href="/contact">contact us</a> if you would like to help make this app better :)</p>
+			
 			<div class="row">
 				<div class="col-sm-4">	
 					<a class="btn btn-default btn-searchlist btn-searchlist-down" style="width: 100%" id="show-type">Type</a>
@@ -111,6 +71,40 @@
 
 	<% end %>
 	<br/>
+	
+	<div style="height: 50px"></div>
+
+	<hr style="margin-top: 20px"/>
+	<h3 class="or-block">OR</h3>
+
+	<div style="height: 20px"></div>
+	
+	<div class="center-wrapper">
+	  <div class="center-wrapper-inner">
+			<h2>Keyword Search</h2>
+		</div>
+	</div>
+	
+    <% if flash[:error] %>
+      <div class="alert alert-info" style="margin-top: 20px">
+          <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+	
+	<br/>
+	<fieldset class="fieldset-search-form">
+	  <%= form_tag search_current_plants_path, :method => :get do %>
+		  <div class="search-bar-container">
+		  	<div class="kw-search-box">
+		   		<%= auto_complete_field_tag_jquery(:search, params[:search], {autofocus: true, placeholder: "Search Plants", class: 'form-control kw-search-box-inner' }) %>
+		   	</div>
+		   	<button id='submit_search' class="btn btn-orange kw-search-button" style="width: 33%; float: right"><i class="fa fa-search"></i>&nbsp;Search</button>		   	
+		  </div>
+	  <% end %>
+		<p class="help-block kwsearch" style="margin-top: 50px;">Hint: wrap search terms in double quotes (" ") to search for plants that contain those terms together. E.g. &nbsp;&nbsp;<b>"large green leaves"</b></p>
+		<p class="help-block kwsearch" style="margin-top: 5px;">Hint: You can specify exactly which field to search over with '~'. E.g. &nbsp;&nbsp;<b>genus ~ banksia</b>&nbsp; or&nbsp; <b>description ~ bushy</b></p>
+		<p class="help-block kwsearch" style="margin-top: 5px; font-weight: 700"><%= link_to help_search_path do %><i class="fa fa-info-circle"></i>&nbsp;More Hints<% end %></p>
+	</fieldset>
 
 
 
