@@ -27,9 +27,11 @@
     <% if not @current_plant.subspecies.blank? %>
       <dt>Subspecies</dt><p><%= @current_plant.subspecies %></p>
     <% end %>
+	
+	
 	  <% if not @current_plant.family.blank? %>
 		  <dt>Family</dt><p><%= @current_plant.family %></p>
-	  <% end %>
+	  <% end %>	  
 	  <% if not @current_plant.common_name.blank? %>
 		  <dt>Common Name</dt><p><%= @current_plant.common_name %></p>
 	  <% end %>
@@ -58,6 +60,9 @@
 	  <% if not @current_plant.characteristics.blank? %>
 		  <dt>Characteristics</dt><p><%= nice_format(@current_plant.characteristics) %></p>
 	  <% end %>
+	  
+    	<div class="display-photo-right" id="map-canvas" style="width:300px;height:300px;"></div>
+	  
 	  <% if not @current_plant.identification.blank? %>
 		  <dt>Identification</dt><p><%= nice_format(@current_plant.identification) %></p>
 	  <% end %>
@@ -159,6 +164,7 @@
     <% if not @current_plant.location_name.blank? %>
 	    <dt>UWA Location</dt><p><%= nice_format(@current_plant.location_name) %></p>
     <% end %>
+	
 
     <% if not @current_plant.general_info.blank? %>
 	    <dt>General Info</dt><p><%= nice_format(@current_plant.general_info) %></p>
@@ -240,6 +246,44 @@
 
 
 
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3key={AIzaSyAlFdDKUoiH9BBWXsP3jphe1XhzeBde9IM}&sensor=true">
+</script>
+
+<script>
+	var map;
+	var geocoder;
+
+      function initialize() {
+        var mapOptions = {
+          center: new google.maps.LatLng(-31.9784021, 115.8178379),
+          zoom: 15
+        };
+        map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+		google.maps.event.trigger(map, 'resize');
+		
+		
+		addMarker(map, -31.9784021, 115.8178379);
+		
+			
+	}
+	  
+      function addMarker(map, lat, lng) {
+		  var latlng = new google.maps.LatLng(lat, lng);
+		  var marker = new google.maps.Marker({
+              map: map,
+              title : "Centre",
+              position: latlng
+		  });
+          //Bouncy bounce
+          marker.setAnimation(google.maps.Animation.BOUNCE);
+          setTimeout(function() { marker.setAnimation(null); }, 2500);
+          google.maps.event.addListener(marker, 'click', function() { 			infoWindow.open(map, marker);
+          });
+	  }
+	 
+      google.maps.event.addDomListener(window, 'load', initialize);
+	  google.maps.event.trigger(map, 'resize');
+</script>
 
 
 <script>
