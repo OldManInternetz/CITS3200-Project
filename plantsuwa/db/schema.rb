@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140915084949) do
+ActiveRecord::Schema.define(version: 20141009120338) do
 
   create_table "climates", force: true do |t|
     t.string   "name"
@@ -83,7 +83,7 @@ ActiveRecord::Schema.define(version: 20140915084949) do
     t.string   "scientific_name"
     t.string   "synonym"
     t.string   "description"
-    t.string   "location_name"
+    t.string   "location_1"
     t.string   "characteristics"
     t.string   "additional_info"
     t.string   "identification"
@@ -109,6 +109,23 @@ ActiveRecord::Schema.define(version: 20140915084949) do
     t.string   "display_photo_description"
     t.integer  "type_id"
     t.string   "name"
+    t.float    "lat1"
+    t.float    "lng1"
+    t.float    "lat2"
+    t.float    "lng2"
+    t.float    "lat3"
+    t.float    "lng3"
+    t.float    "lat4"
+    t.float    "lng4"
+    t.float    "lat5"
+    t.float    "lng5"
+    t.float    "lat6"
+    t.float    "lng6"
+    t.string   "location_2"
+    t.string   "location_3"
+    t.string   "location_4"
+    t.string   "location_5"
+    t.string   "location_6"
   end
 
   create_table "favourites", force: true do |t|

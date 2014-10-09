@@ -58,7 +58,12 @@
       	  <%= f.input  :conservation, as: :text %> 
       	  <%= f.input  :wildlife, hint: 'Does this plant attract any fauna?', as: :text %>
 	        <%= f.association :origins, :as => :check_boxes %>
-      	  <%= f.input  :location_name, hint: 'Where can this plant be found locally?'%> 
+      	  <%= f.input  :location_1, hint: 'Where can this plant be found locally? Note: Fill Location 1 first.'%> 
+		  <%= f.input  :location_2, hint: 'Where can this plant be found locally?'%> 
+		  <%= f.input  :location_3, hint: 'Where can this plant be found locally?'%> 
+		  <%= f.input  :location_4, hint: 'Where can this plant be found locally?'%> 
+		  <%= f.input  :location_5, hint: 'Where can this plant be found locally?'%> 
+		  <%= f.input  :location_6, hint: 'Where can this plant be found locally?'%> 		  
       	  <%= f.input  :general_info, as: :text %>
       	  <%= f.input  :additional_info, as: :text %> 
       	  <%= f.input  :discovered_by, hint: 'Biologist credited with discovering this plant.' %>

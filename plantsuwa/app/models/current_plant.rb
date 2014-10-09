@@ -53,7 +53,12 @@ class CurrentPlant < ActiveRecord::Base
   validates :synonym, length: { maximum: 200 }  
   validates :subspecies, length: { maximum: 200 }
   validates :description, length: { maximum: 10000 }
-  validates :location_name, length: { maximum: 200 }
+  validates :location_1, length: { maximum: 200 }
+  validates :location_2, length: { maximum: 200 }
+  validates :location_3, length: { maximum: 200 }
+  validates :location_4, length: { maximum: 200 }
+  validates :location_5, length: { maximum: 200 }
+  validates :location_6, length: { maximum: 200 }
   validates :characteristics, length: { maximum: 10000 }
   validates :additional_info, length: { maximum: 10000 }
   validates :identification, length: { maximum: 10000 }
@@ -83,7 +88,12 @@ class CurrentPlant < ActiveRecord::Base
   scoped_search on: :synonym
   scoped_search on: :subspecies
   scoped_search on: :description
-  scoped_search on: :location_name, :alias => :location
+  scoped_search on: :location_1, :alias => :location
+  scoped_search on: :location_2, :alias => :location
+  scoped_search on: :location_3, :alias => :location
+  scoped_search on: :location_4, :alias => :location
+  scoped_search on: :location_5, :alias => :location
+  scoped_search on: :location_6, :alias => :location
   scoped_search on: :characteristics
   scoped_search on: :additional_info
   scoped_search on: :identification
