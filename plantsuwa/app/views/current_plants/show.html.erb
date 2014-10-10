@@ -163,21 +163,21 @@
 
     <% if not @current_plant.location_1.blank? %>
 	    <dt>UWA Location</dt>
-		<p><%= nice_format(@current_plant.location_1) %></p>
+		<p style="margin-bottom: 0px;"><%= @current_plant.location_1 %></p>
 		<% if not @current_plant.location_2.blank? %>
-			<p><%= nice_format(@current_plant.location_2) %></p>
+			<p style="margin-bottom: 0px;"><%= @current_plant.location_2 %></p>
 		<% end %>
 		<% if not @current_plant.location_3.blank? %>
-			<p><%= nice_format(@current_plant.location_3) %></p>
+			<p style="margin-bottom: 0px;"><%= @current_plant.location_3 %></p>
 		<% end %>
 		<% if not @current_plant.location_4.blank? %>
-			<p><%= nice_format(@current_plant.location_4) %></p>
+			<p style="margin-bottom: 0px;"><%= @current_plant.location_4 %></p>
 		<% end %>
 		<% if not @current_plant.location_5.blank? %>
-			<p><%= nice_format(@current_plant.location_5) %></p>
+			<p style="margin-bottom: 0px;"><%= @current_plant.location_5 %></p>
 		<% end %>
 		<% if not @current_plant.location_6.blank? %>
-			<p><%= nice_format(@current_plant.location_6) %></p>
+			<p style="margin-bottom: 0px;"><%= @current_plant.location_6 %></p>
 		<% end %>
     <% end %>
 	
