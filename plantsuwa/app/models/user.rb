@@ -14,14 +14,14 @@ class User < ActiveRecord::Base
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
-  validates :email, allow_blank: true, #presence: true,
+  validates :email, allow_blank: false, presence: true,
 										format: { with: VALID_EMAIL_REGEX, message: "- Please ensure your email address is valid"	 },
 										length: { maximum: 254 },
 										uniqueness: { case_sensitive: false }
   has_secure_password
 
-  validates :password, length: { minimum: 1, maximum: 20 }, on: :create
-	validates :password, length: {minimum: 1, maximum: 20}, on: :update, allow_blank: true
+  validates :password, length: { minimum: 6, maximum: 20 }, on: :create
+	validates :password, length: {minimum: 6, maximum: 20}, on: :update, allow_blank: true
   validates :trusted, inclusion: {:in => [true, false]}
   validates :admin, inclusion: {:in => [true, false]}
 
@@ -30,7 +30,7 @@ class User < ActiveRecord::Base
   has_many :notifications, dependent: :destroy  
 
   has_many :favourites, dependent: :destroy
-  has_many :current_plants, through: :favourites, source: :favourite
+  has_many :current_plants, through: :favourites#, source: :favourite_plants#, source: :favourite
 
   def check_admin
     self.trusted = true if self.admin?

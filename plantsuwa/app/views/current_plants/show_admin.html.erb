@@ -156,11 +156,57 @@
     <% else %>
       <dt class="no-description">Origins</dt><p class="no-description">(None)</p>
     <% end %>
-    <% if not @current_plant.location_name.blank? %>
-      <dt>Location Name</dt><p><%= nice_format(@current_plant.location_name) %></p>
+
+
+    <% if not @current_plant.location_1.blank? %>
+      <dt>Location Name</dt><p><%= nice_format(@current_plant.location_1) %></p>
     <% else %>
       <dt class="no-description">Location Name</dt><p class="no-description">(None)</p>
     <% end %>
+
+    <% if not @current_plant.location_1.blank? %>
+      <dt>UWA Location</dt>
+    <% else %>
+      <dt class="no-description">UWA Location</dt>
+    <% end %>    
+    <% if not @current_plant.location_1.blank? %>    
+      <p style="margin-bottom: 0px;"><%= @current_plant.location_1 %></p>
+    <% else %>
+      <p class="no-description" style="margin-bottom: 0px;">(None)</p>
+    <% end %>
+    <% if not @current_plant.location_2.blank? %>    
+      <p style="margin-bottom: 0px; margin-left: 8px"><%= @current_plant.location_2 %></p>
+    <% else %>
+      <p class="no-description" style="margin-bottom: 0px; margin-left: 8px">(None)</p>
+    <% end %>
+    <% if not @current_plant.location_3.blank? %>    
+      <p style="margin-bottom: 0px; margin-left: 8px"><%= @current_plant.location_3 %></p>
+    <% else %>
+      <p class="no-description" style="margin-bottom: 0px; margin-left: 8px">(None)</p>
+    <% end %>
+    <% if not @current_plant.location_4.blank? %>    
+      <p style="margin-bottom: 0px; margin-left: 8px"><%= @current_plant.location_4 %></p>
+    <% else %>
+      <p class="no-description" style="margin-bottom: 0px; margin-left: 8px">(None)</p>
+    <% end %>
+    <% if not @current_plant.location_5.blank? %>    
+      <p style="margin-bottom: 0px; margin-left: 8px"><%= @current_plant.location_5 %></p>
+    <% else %>
+      <p class="no-description" style="margin-bottom: 0px; margin-left: 8px">(None)</p>
+    <% end %>
+    <% if not @current_plant.location_6.blank? %>    
+      <p style="margin-bottom: 0px; margin-left: 8px"><%= @current_plant.location_6 %></p>
+    <% else %>
+      <p class="no-description" style="margin-bottom: 0px; margin-left: 8px">(None)</p>
+    <% end %>
+
+
+
+    <br/>
+
+
+
+
     <% if not @current_plant.general_info.blank? %>
       <dt>General Info</dt><p><%= nice_format(@current_plant.general_info) %></p>
     <% else %>

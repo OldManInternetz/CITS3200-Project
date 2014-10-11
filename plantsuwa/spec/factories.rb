@@ -33,6 +33,15 @@ FactoryGirl.define do
     name "Climber"
   end
 
+  # Users
+
+  factory :user do
+    username "Test User"
+    password "qwijibo"
+    password_confirmation "qwijibo"
+    email "test@test.com"
+  end
+
 
   """ Not using this, as it's easier to just build photos for plants inside the test files """
   #factory :current_photo do
