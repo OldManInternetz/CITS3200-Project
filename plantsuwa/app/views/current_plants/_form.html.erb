@@ -20,12 +20,29 @@
       <fieldset>
 	      	<legend>Descriptions</legend>
 
-	      	<%= f.input  :genus %>
-          <%= f.input  :species %>
-          <%= f.input  :subspecies %>
-		      <%= f.input  :family %>
-      		<%= f.input  :common_name %> 
-      		<%= f.input  :synonym %> 
+          <div class="row">
+            <div class="col-md-3">
+              <%= f.input  :family %>
+            </div>
+            <div class="col-md-3">
+  	      	  <%= f.input  :genus %>
+            </div>
+            <div class="col-md-3">        
+              <%= f.input  :species %>
+            </div>
+            <div class="col-md-3">   
+              <%= f.input  :subspecies %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+        		  <%= f.input  :common_name %> 
+            </div>
+            <div class="col-md-6">
+        		  <%= f.input  :synonym %> 
+            </div>
+          </div>
 		      <%= f.association :type, :as => :select %>
 		      <%= f.input  :description, hint: 'Describe the plant in a few lines.', as: :text %> 
         	<%= f.input  :characteristics, hint: 'List the typical characteristics of the plant.', as: :text  %> 
@@ -59,15 +76,21 @@
       	  <%= f.input  :wildlife, hint: 'Does this plant attract any fauna?', as: :text %>
 	        <%= f.association :origins, :as => :check_boxes %>
       	  <%= f.input  :location_1, hint: 'Where can this plant be found locally? Note: Fill Location 1 first.'%> 
-		  <%= f.input  :location_2, hint: 'Where can this plant be found locally?'%> 
-		  <%= f.input  :location_3, hint: 'Where can this plant be found locally?'%> 
-		  <%= f.input  :location_4, hint: 'Where can this plant be found locally?'%> 
-		  <%= f.input  :location_5, hint: 'Where can this plant be found locally?'%> 
-		  <%= f.input  :location_6, hint: 'Where can this plant be found locally?'%> 		  
+    		  <%= f.input  :location_2, hint: 'Where can this plant be found locally?'%> 
+    		  <%= f.input  :location_3, hint: 'Where can this plant be found locally?'%> 
+    		  <%= f.input  :location_4, hint: 'Where can this plant be found locally?'%> 
+    		  <%= f.input  :location_5, hint: 'Where can this plant be found locally?'%> 
+    		  <%= f.input  :location_6, hint: 'Where can this plant be found locally?'%> 		  
       	  <%= f.input  :general_info, as: :text %>
       	  <%= f.input  :additional_info, as: :text %> 
-      	  <%= f.input  :discovered_by, hint: 'Biologist credited with discovering this plant.' %>
-	        <%= f.input  :named_by, hint: 'Biologist credited with naming this plant'%>
+          <div class="row">
+            <div class="col-md-6">
+        	    <%= f.input  :discovered_by, hint: 'Biologist credited with discovering this plant.' %>
+            </div>
+            <div class="col-md-6">
+  	          <%= f.input  :named_by, hint: 'Biologist credited with naming this plant'%>
+            </div>
+          </div>
       </fieldset>
     </div>
      

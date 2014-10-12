@@ -11,12 +11,41 @@
 	<p><i class="fa fa-cubes"></i>&nbsp;&nbsp;Type</p>    
 <% end %>
 
-<div class="index-banner"></div>
+<div class="index-banner">
+		<ul>
+			<li>View:</li>
+			<% if @view == "grid" %>
+				<%= link_to controller: 'current_plants', action: 'change_view', view: "list", id: 'list-button' do %>
+					<li><i class="fa fa-list"></i>&nbsp;List</li>
+				<% end %>
+			<% else %>
+				<li><i class="fa fa-list"></i>&nbsp;List</li>
+			<% end %>
+
+			<% if @view == "list" %>
+				<%= link_to controller: 'current_plants', action: 'change_view', view: "grid", id: 'grid-button' do %>
+					<li><i class="fa fa-th"></i>&nbsp;Grid</li>
+				<% end %>
+			<% else %>
+				<li><i class="fa fa-th"></i>&nbsp;Grid</li>
+			<% end %>
+
+		</ul>
+		
+
+
+</div>
 <div style="margin-top: 15px"></div>
 
-<div id="plants-list">
-	<%= render @current_plants %>
-</div>
+<% if @view == "list" %>
+	<div id="plants-list">
+		<%= render @current_plants %>
+	</div>
+<% else %>
+	<div id="plants-list">
+		<%= render partial: "current_plant_grid", collection: @current_plants, as: :current_plant %>
+	</div>
+<% end %>
 
 
 <% if signed_in? %>
@@ -280,6 +309,7 @@
 </script>
 
 <script type="text/javascript">
+
 	$("img.img-lazy").lazyload({
      effect : "fadeIn",
      threshold: 00

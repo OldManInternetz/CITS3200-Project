@@ -107,7 +107,7 @@ td > a {
 .info-tab:hover {
   cursor: pointer;
 
-  background: white;
+  background: #dddddd;
 
   -webkit-transition: background 0.2s linear;
   -moz-transition: background 0.2s linear;
@@ -115,14 +115,14 @@ td > a {
   -o-transition: background 0.2s linear;
   transition: background 0.2s linear;
 
-  background: -webkit-linear-gradient(#EEEEEE, white, #EEEEEE); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(#EEEEEE, white, #EEEEEE); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(#EEEEEE, white, #EEEEEE); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(#EEEEEE, white, #EEEEEE); /* Standard syntax */
+  background: -webkit-linear-gradient(#bbbbbb, #dddddd, #bbbbbb); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#bbbbbb, #dddddd, #bbbbbb); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#bbbbbb, #dddddd, #bbbbbb); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#bbbbbb, #dddddd, #bbbbbb); /* Standard syntax */
 
 }
 
-.info-tab-current, .info-tab-current:hover {
+.info-tab-current, .info-tab-current:hover, .info-tab:active {
 
   background: #FF9112;
 

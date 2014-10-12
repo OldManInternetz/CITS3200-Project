@@ -10,8 +10,19 @@ class CurrentPlantsController < ApplicationController
   
   rescue_from ScopedSearch::QueryNotSupported, with: :query_not_supported
 
+  def change_view
+    cookies[:view] = params[:view]
+    redirect_to current_plants_path
+  end
+
 
   def index
+    if cookies[:view] == "grid"
+      @view = "grid"
+    else
+      @view = "list"
+    end
+
     @current_plants = CurrentPlant.all
   end
   

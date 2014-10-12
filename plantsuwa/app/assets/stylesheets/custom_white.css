@@ -110,7 +110,7 @@ a {
 
 }
 
-.info-tab-current, .info-tab-current:hover {
+.info-tab-current, .info-tab-current:hover, .info-tab:active {
 
   background: #268BFF;
 

@@ -1,0 +1,10 @@
+  <% if current_plant.display_photo.exists? %>
+<div class="grid-photo-container">
+  <%= link_to current_plant_path(current_plant) do %>
+    <%= image_tag '', data: { original: current_plant.display_photo.url(:grid) }, width: "100%", height: "100%", alt:"", class: "img-lazy" %>
+    <div class="grid-photo-container-text">
+      <%= display_name(current_plant) %>
+    </div>
+  <% end %>
+</div>
+  <% end %>

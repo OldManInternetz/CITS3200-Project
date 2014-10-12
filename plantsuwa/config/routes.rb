@@ -7,6 +7,7 @@ Plantsuwa::Application.routes.draw do
   get "current_photos/update"
   get "current_photos/destroy"
   get "current_photos/new"
+
   # Public routes
 
   root 'welcome#index'
@@ -14,7 +15,7 @@ Plantsuwa::Application.routes.draw do
   match "/contact", to: 'welcome#contact', via: 'get', as: 'contact'
 
   match "/plants/search", to: 'current_plants#search', via: 'get', as: 'search_current_plants'
-  match "/plants/search/help", to: 'current_plants#help', via: 'get', as: 'help_search'
+  #match "/plants/search/help", to: 'current_plants#help', via: 'get', as: 'help_search'
 
 
   resources :current_plants, except: [:destroy], :path => 'plants' do
@@ -28,6 +29,7 @@ Plantsuwa::Application.routes.draw do
 
   match '/plants/:id',  to: 'favourites#create',    as: 'create_favourite', via: 'post'
   match '/plants/:id',  to: 'favourites#destroy',    as: 'destroy_favourite', via: 'delete'
+  match "/plants_change_view", to: 'current_plants#change_view', as: 'change_view', via: 'get'
 
   # Admin routes
 
