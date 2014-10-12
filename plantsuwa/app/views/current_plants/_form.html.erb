@@ -58,13 +58,26 @@
       	  <%= f.input  :conservation, as: :text %> 
       	  <%= f.input  :wildlife, hint: 'Does this plant attract any fauna?', as: :text %>
 	        <%= f.association :origins, :as => :check_boxes %>
-      	  <%= f.input  :location_1, hint: 'Where can this plant be found locally? Note: Fill Location 1 first.'%> 
-		  <%= f.input  :location_2, hint: 'Where can this plant be found locally?'%> 
-		  <%= f.input  :location_3, hint: 'Where can this plant be found locally?'%> 
-		  <%= f.input  :location_4, hint: 'Where can this plant be found locally?'%> 
-		  <%= f.input  :location_5, hint: 'Where can this plant be found locally?'%> 
-		  <%= f.input  :location_6, hint: 'Where can this plant be found locally?'%> 		  
-      	  <%= f.input  :general_info, as: :text %>
+      	  <%= f.input  :location_1, label: 'Primary Location Name', hint: 'Where can this plant be found locally? Note: Fill Location 1 first.'%> 
+		  <table style="width: 100%"><tr>
+			  <td class="lat"><%= f.input :lat1, label: 'Latitude', hint: 'Get the lat and long from the URL of google maps.'%></td>
+			  <td class="lng"><%= f.input :lng1, label: 'Longitude'%></td>
+		  </tr></table>
+		  <a id="show_more" onClick="show_more()" style="cursor: pointer; font-weight: bold;"><i>Show More Locations</i></a>
+ 		  <a id="show_less" onClick="show_less()" style="cursor: pointer; font-weight: bold;" class="invisible"><i>Show Less Locations</i></a>
+		  <div id="more_locations" class="invisible">
+			  <%= f.input  :location_2, label: 'Location Name 2'%> 
+			  <table style="width: 100%"><tr><td class="lat"><%= f.input :lat2 %></td><td class="lng"><%= f.input :lng2 %></td></tr></table>
+			  <%= f.input  :location_3, label: 'Location Name 3'%>
+			  <table style="width: 100%"><tr><td class="lat"><%= f.input :lat3 %></td><td class="lng"><%= f.input :lng3 %></td></tr></table> 
+			  <%= f.input  :location_4, label: 'Location Name 4'%>
+			  <table style="width: 100%"><tr><td class="lat"><%= f.input :lat4 %></td><td class="lng"><%= f.input :lng4 %></td></tr></table> 
+			  <%= f.input  :location_5, label: 'Location Name 5'%> 
+			  <table style="width: 100%"><tr><td class="lat"><%= f.input :lat5 %></td><td class="lng"><%= f.input :lng5 %></td></tr></table>
+			  <%= f.input  :location_6, label: 'Location Name 6'%> 		  
+			  <table style="width: 100%"><tr><td class="lat"><%= f.input :lat6 %></td><td class="lng"><%= f.input :lng6 %></td></tr></table>
+      	 </div>
+		  <%= f.input  :general_info, as: :text %>
       	  <%= f.input  :additional_info, as: :text %> 
       	  <%= f.input  :discovered_by, hint: 'Biologist credited with discovering this plant.' %>
 	        <%= f.input  :named_by, hint: 'Biologist credited with naming this plant'%>
@@ -152,9 +165,18 @@
 </div> <!-- padding-mobile -->
 <%= render 'layouts/ui/bottom_tabs_show' %>
 
+<style>
+	.lat {
+		padding: 0px 10px 10px 0px;
+	}
+	.lng {
+		padding: 0px 0px 10px 10px;
+	}
+</style>
 
 
 <script>
+
 
   $(document).ready(function() {
   
