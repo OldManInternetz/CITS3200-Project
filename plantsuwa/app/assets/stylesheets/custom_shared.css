@@ -715,3 +715,12 @@ h3.or-block {
     display: none;
   }
 }
+
+
+.visible {
+	display: block !important;
+}
+
+.invisible {	
+	display: none !important;
+}

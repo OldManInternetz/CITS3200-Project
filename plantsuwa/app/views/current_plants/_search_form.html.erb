@@ -8,9 +8,6 @@
 	<%= simple_form_for('plants', :method => :get, :url => url_for(:action => 'search'), html: { class: 'form-horizontal' , :'accept-charset' => "UTF-8"}, defaults: { input_html: { class: 'form-control' } }) do |f| %>
 		<fieldset class="fieldset-search-form">
 			
-			<p class="help-block kwsearch"> Hint: Begin your search with only one or two parameters, and slowly refine it over a few iterations. E.g. search for <b>All Trees</b>, then <b>Trees from Western Australia,</b> and so on.</p>
-			<p class="help-block kwsearch" style="margin-bottom: 15px"> Note: Not many plants are indexed by <b>Size</b>,&nbsp; <b>Leaf Colour</b>&nbsp; or <b>Climate</b>&nbsp; just yet. Please <a href="/contact">contact us</a> if you would like to help make this app better :)</p>
-			
 			<div class="row">
 				<div class="col-sm-4">	
 					<a class="btn btn-default btn-searchlist btn-searchlist-down" style="width: 100%" id="show-type">Type</a>
@@ -65,14 +62,19 @@
 					<% end %>
 				</div>
 			</div>
+	  
+		<div id="param_help" style="border: 1px solid grey; border-radius: 5px; margin-top: 15px; padding: 8px;">
+			<a class="help-block kwsearch" style="margin-top: 0px; margin-bottom: 10px; font-weight: 700; cursor: pointer;" onClick="param_help_click()"><i class="fa fa-close"></i>&nbsp;Close Help</a>
+			<p class="help-block kwsearch"><i class="fa fa-info-circle"></i> Hint: Begin your search with only one or two parameters, and slowly refine it over a few iterations. E.g. search for <b>All Trees</b>, then <b>Trees from Western Australia,</b> and so on.</p>
+			<p class="help-block kwsearch" style="margin-bottom: 0px"> Note: Not many plants are indexed by <b>Size</b>,&nbsp; <b>Leaf Colour</b>&nbsp; or <b>Climate</b>&nbsp; just yet. Please <a href="/contact">contact us</a> if you would like to help make this app better :)</p>
+		</div>
+		<a id="show_param_help" class="help-block kwsearch invisible" style="border: 1px solid grey; border-radius: 5px; margin-top: 15px; padding: 8px; cursor: pointer; font-weight: 700;" onClick="show_param_help()"><i class="fa fa-info-circle"></i>&nbsp;Show Help</a>
+
 	  </fieldset>
-
-
 
 	<% end %>
 	<br/>
 	
-	<div style="height: 50px"></div>
 
 	<hr style="margin-top: 20px"/>
 	<h3 class="or-block">OR</h3>
@@ -101,9 +103,13 @@
 		   	<button id='submit_search' class="btn btn-orange kw-search-button" style="width: 33%; float: right"><i class="fa fa-search"></i>&nbsp;Search</button>		   	
 		  </div>
 	  <% end %>
-		<p class="help-block kwsearch" style="margin-top: 50px;">Hint: wrap search terms in double quotes (" ") to search for plants that contain those terms together. E.g. &nbsp;&nbsp;<b>"large green leaves"</b></p>
+	<div id="key_help" style="border: 1px solid grey; border-radius: 5px; margin-top: 50px; padding: 8px;">
+		<a class="help-block kwsearch" style="margin-top: 0px; margin-bottom: 10px; font-weight: 700; cursor: pointer;" onClick="key_help_click()"><i class="fa fa-close"></i>&nbsp;Close Help</a>
+		<p class="help-block kwsearch" style="margin-top: 0px;">Hint: wrap search terms in double quotes (" ") to search for plants that contain those terms together. E.g. &nbsp;&nbsp;<b>"large green leaves"</b></p>
 		<p class="help-block kwsearch" style="margin-top: 5px;">Hint: You can specify exactly which field to search over with '~'. E.g. &nbsp;&nbsp;<b>genus ~ banksia</b>&nbsp; or&nbsp; <b>description ~ bushy</b></p>
 		<p class="help-block kwsearch" style="margin-top: 5px; font-weight: 700"><%= link_to help_search_path do %><i class="fa fa-info-circle"></i>&nbsp;More Hints<% end %></p>
+	</div>
+		<a id="show_key_help" class="help-block kwsearch invisible" style="border: 1px solid grey; border-radius: 5px; margin-top: 50px; padding: 8px; cursor: pointer; font-weight: 700;" onClick="show_key_help()"><i class="fa fa-info-circle"></i>&nbsp;Show Help</a>
 	</fieldset>
 
 
@@ -149,6 +155,38 @@
   		element.addClass("btn-searchlist-down");
   		element.removeClass("btn-searchlist-up");  		
   	}
+	}
+	
+	function param_help_click() {
+		document.getElementById('param_help').classList.add('invisible');
+	}
+	
+	function key_help_click() {
+		document.getElementById('key_help').classList.remove('visible');
+		document.getElementById('key_help').classList.add('invisible');
+		document.getElementById('show_key_help').classList.remove('invisible');
+		document.getElementById('show_key_help').classList.add('visible');
+	}
+	
+	function show_key_help() {
+		document.getElementById('show_key_help').classList.add('visible');
+		document.getElementById('show_key_help').classList.add('invisible');
+		document.getElementById('key_help').classList.remove('invisible');
+		document.getElementById('key_help').classList.remove('visible');	
+	}
+	
+	function param_help_click() {
+		document.getElementById('param_help').classList.remove('visible');
+		document.getElementById('param_help').classList.add('invisible');
+		document.getElementById('show_param_help').classList.remove('invisible');
+		document.getElementById('show_param_help').classList.add('visible');
+	}
+	
+	function show_param_help() {
+		document.getElementById('show_param_help').classList.add('visible');
+		document.getElementById('show_param_help').classList.add('invisible');
+		document.getElementById('param_help').classList.remove('invisible');
+		document.getElementById('param_help').classList.remove('visible');	
 	}
 
 
