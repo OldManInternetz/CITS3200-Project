@@ -156,34 +156,11 @@
     <% else %>
       <dt class="no-description">Origins</dt><p class="no-description">(None)</p>
     <% end %>
-<<<<<<< HEAD
-    <% if not @current_plant.location_1.blank? %>
-	    <dt>UWA Location</dt>
-		<p style="margin-bottom: 0px;"><%= @current_plant.location_1 %> (<%= @current_plant.lat1%>, <%= @current_plant.lng1 %>)</p>
-		<% if not @current_plant.location_2.blank? %>
-			<p style="margin-bottom: 0px;"><%= @current_plant.location_2 %></p>
-		<% end %>
-		<% if not @current_plant.location_3.blank? %>
-			<p style="margin-bottom: 0px;"><%= @current_plant.location_3 %></p>
-		<% end %>
-		<% if not @current_plant.location_4.blank? %>
-			<p style="margin-bottom: 0px;"><%= @current_plant.location_4 %></p>
-		<% end %>
-		<% if not @current_plant.location_5.blank? %>
-			<p style="margin-bottom: 0px;"><%= @current_plant.location_5 %></p>
-		<% end %>
-		<% if not @current_plant.location_6.blank? %>
-			<p style="margin-bottom: 0px;"><%= @current_plant.location_6 %></p>
-		<% end %>
-    <% end %>
-	<p></p>
-=======
 
 
     <% if not @current_plant.location_1.blank? %>
       <dt>Location Name</dt><p><%= nice_format(@current_plant.location_1) %></p>
     <% else %>
->>>>>>> FETCH_HEAD
       <dt class="no-description">Location Name</dt><p class="no-description">(None)</p>
     <% end %>
 

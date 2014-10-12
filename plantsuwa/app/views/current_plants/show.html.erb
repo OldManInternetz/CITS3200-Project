@@ -19,11 +19,7 @@
     
 
     <% if @current_plant.display_photo.exists? %>
-<<<<<<< HEAD
-      <%= image_tag @current_plant.display_photo.url(:medium), class: 'display-photo-right', id:'btn-display' %>
-=======
-      <%= image_tag @current_plant.display_photo.url(:medium), class: 'display-photo-right', style: "max-width: 350px" %>
->>>>>>> FETCH_HEAD
+      <%= image_tag @current_plant.display_photo.url(:medium), class: 'display-photo-right', style: "max-width: 350px; cursor: pointer", id:'btn-display' %>
     <% end %>
     <% if not display_name(@current_plant).blank? %>
       <dt>Scientific Name</dt><p><i><%= display_name(@current_plant) %></i></p>
@@ -272,11 +268,16 @@
       function initialize() {
 		  var bounds = new google.maps.LatLngBounds();
 		  var location1 = new google.maps.LatLng(<%= @current_plant.lat1.to_json %> , <%= @current_plant.lng1.to_json %>);
+		  var location2 = new google.maps.LatLng(<%= @current_plant.lat2.to_json %> , <%= @current_plant.lng2.to_json %>);
+		  var location3 = new google.maps.LatLng(<%= @current_plant.lat3.to_json %> , <%= @current_plant.lng3.to_json %>);
+		  var location4 = new google.maps.LatLng(<%= @current_plant.lat4.to_json %> , <%= @current_plant.lng4.to_json %>);
+		  var location5 = new google.maps.LatLng(<%= @current_plant.lat5.to_json %> , <%= @current_plant.lng5.to_json %>);
+		  var location6 = new google.maps.LatLng(<%= @current_plant.lat6.to_json %> , <%= @current_plant.lng6.to_json %>);
 		  
         var mapOptions = {
           center: location1,
-          zoom: 15,
-		  mapTypeId: google.maps.MapTypeId.HYBRID	
+		  mapTypeId: google.maps.MapTypeId.HYBRID,
+		  maxZoom: 16	
         };
 		
         map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
@@ -296,7 +297,7 @@
 		<% end %>
 		<% if not @current_plant.lat2.blank? and not @current_plant.lng2.blank? %>
 		marker = new google.maps.Marker({
-			position: new google.maps.LatLng(<%= @current_plant.lat2.to_json %>, <%= @current_plant.lng2.to_json %>),
+			position: location2,
 			map: map,
 			animation: google.maps.Animation.DROP
 		})
@@ -305,38 +306,50 @@
 		bounds.extend(marker.getPosition());
 		<% end %>
 		<% if not @current_plant.lat3.blank? and not @current_plant.lng3.blank? %>
-			addMarker(map, <%= @current_plant.lat3.to_json %>, <%= @current_plant.lng3.to_json %>);
+		marker = new google.maps.Marker({
+			position: location3,
+			map: map,
+			animation: google.maps.Animation.DROP
+		})
+		
+		marker.setMap(map);
+		bounds.extend(marker.getPosition());
 		<% end %>
 		<% if not @current_plant.lat4.blank? and not @current_plant.lng4.blank? %>
-			addMarker(map, <%= @current_plant.lat4.to_json %>, <%= @current_plant.lng4.to_json %>);
+		marker = new google.maps.Marker({
+			position: location4,
+			map: map,
+			animation: google.maps.Animation.DROP
+		})
+		
+		marker.setMap(map);
+		bounds.extend(marker.getPosition());
 		<% end %>
 		<% if not @current_plant.lat5.blank? and not @current_plant.lng5.blank? %>
-			addMarker(map, <%= @current_plant.lat5.to_json %>, <%= @current_plant.lng5.to_json %>);
+		marker = new google.maps.Marker({
+			position: location5,
+			map: map,
+			animation: google.maps.Animation.DROP
+		})
+		
+		marker.setMap(map);
+		bounds.extend(marker.getPosition());
 		<% end %>
 		<% if not @current_plant.lat6.blank? and not @current_plant.lng6.blank? %>
-			addMarker(map, <%= @current_plant.lat6.to_json %>, <%= @current_plant.lng6.to_json %>);
+		marker = new google.maps.Marker({
+			position: location6,
+			map: map,
+			animation: google.maps.Animation.DROP
+		})
+		
+		marker.setMap(map);
+		bounds.extend(marker.getPosition());
 		<% end %>
 		
 		map.fitBounds(bounds);
 		
 	}
-	
- 
-      function addMarker(map, lat, lng) {
-		  var latlng = new google.maps.LatLng(lat, lng);
-		  var marker = new google.maps.Marker({
-              map: map,
-              title : "Centre",
-              position: latlng
-		  });
-		  
-      
-          //Bouncy bounce
-          marker.setAnimation(google.maps.Animation.DROP);
-          google.maps.event.addListener(marker, 'click', function() { 
-			  infoWindow.open(map, marker);
-          });
-	  }
+          
 	 
       google.maps.event.addDomListener(window, 'load', initialize);
 	  google.maps.event.trigger(map, 'resize');
