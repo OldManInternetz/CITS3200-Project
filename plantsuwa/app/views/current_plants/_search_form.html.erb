@@ -57,9 +57,7 @@
 		  <br/>
 			<div class="center-wrapper">
 		  	<div class="center-wrapper-inner">
-					<%= link_to_submit do %>
-						<button class="btn btn-orange"><i class="fa fa-search"></i>&nbsp;&nbsp;Search by Parameters</button>
-					<% end %>
+					<button id="submit-param-search" class="btn btn-orange" onclick="$(this).closest('form').submit(); return false;"><i class="fa fa-search"></i>&nbsp;&nbsp;Search by Parameters</button>
 				</div>
 			</div>
 	  

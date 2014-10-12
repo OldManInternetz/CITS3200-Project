@@ -24,7 +24,7 @@ class ClimatesController < ApplicationController
   def show
     @climate = Climate.find(params[:id])
 
-    @current_plants = @climate.current_plants.all
+    @current_plants = @climate.current_plants.load
 
   end
   

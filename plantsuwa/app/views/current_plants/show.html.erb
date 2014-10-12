@@ -19,7 +19,11 @@
     
 
     <% if @current_plant.display_photo.exists? %>
+<<<<<<< HEAD
       <%= image_tag @current_plant.display_photo.url(:medium), class: 'display-photo-right', id:'btn-display' %>
+=======
+      <%= image_tag @current_plant.display_photo.url(:medium), class: 'display-photo-right', style: "max-width: 350px" %>
+>>>>>>> FETCH_HEAD
     <% end %>
     <% if not display_name(@current_plant).blank? %>
       <dt>Scientific Name</dt><p><i><%= display_name(@current_plant) %></i></p>
@@ -173,6 +177,7 @@
 		<% if not @current_plant.location_6.blank? %>
 			<p style="margin-bottom: 0px;"><%= @current_plant.location_6 %></p>
 		<% end %>
+    <br/>
     <% end %>
 	<p></p>
 	

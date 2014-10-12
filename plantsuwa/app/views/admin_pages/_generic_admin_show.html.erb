@@ -22,7 +22,7 @@
 			<%= link_to edit_object_path, class: 'btn-top btn btn-orange button-shrink', style: 'float: left;' do %>
 				<i class="fa fa-edit"></i><span class="over-500">&nbsp;&nbsp;Edit</span>
 			<% end %>
-			<%= link_to object_path, method: :delete, data: { confirm: confirmation_message(object_name) }, class: 'btn-top btn btn-orange button-shrink', style: 'float: right;' do %>
+			<%= link_to object_path, method: :delete, data: { confirm: confirmation_message(object_name) }, class: 'btn-top btn btn-orange button-shrink', style: 'float: right;', id: "delete-button" do %>
 				<i class="fa fa-trash-o"></i><span class="over-500">&nbsp;&nbsp;Delete</span>
 			<% end %>
 

@@ -25,7 +25,7 @@ class LeafColoursController < ApplicationController
   def show
     @leaf_colour = LeafColour.find(params[:id])
 
-    @current_plants = @leaf_colour.current_plants.all
+    @current_plants = @leaf_colour.current_plants.load
   end
   
   def edit

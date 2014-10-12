@@ -1,5 +1,5 @@
 <% if signed_in? %>
-	<%= link_to favourites_path(pp_name: yield(:title), pp_path: request.path) do %>
+	<%= link_to favourites_path(pp_name: yield(:title), pp_path: request.path), id: "favourites-button" do %>
 		<div class="action-tab" style="width: 33.333333%">
 		  <div class="center-wrapper">
 		    <div style="display: inline-block;">

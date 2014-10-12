@@ -10,7 +10,6 @@ class FavouritesController < ApplicationController
 
         flash[:success] = "You have added <i>#{@current_plant.scientific_name}</i> to your favourites.".html_safe
 
-
         respond_to do |format|
           format.html { redirect_to(:back) }
           format.js
@@ -25,7 +24,6 @@ class FavouritesController < ApplicationController
         current_user.unfavourite!(@current_plant)
         flash[:success] = "You have removed <i>#{@current_plant.scientific_name}</i> from your favourites.".html_safe
  
-
         respond_to do |format|
           format.html { redirect_to(:back) }
           format.js

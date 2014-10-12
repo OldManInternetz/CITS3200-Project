@@ -25,7 +25,7 @@ class TypesController < ApplicationController
   def show
     @type = Type.find(params[:id])
 
-    @current_plants = @type.current_plants.all
+    @current_plants = @type.current_plants.load
 
   end
   

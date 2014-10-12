@@ -14,7 +14,7 @@ p {
 
 b {
 	font-family: "Courier";
-	#font-size: 1.2em;
+	font-size: 1.2em;
 }
 
 
@@ -522,7 +522,7 @@ figure{
 
 figcaption{
   position: absolute;
-  font-family: font-family: 'Oxygen', sans-serif;
+  font-family: 'Oxygen', sans-serif;
   font-size: .8em;
   left: 0;
   bottom: 0;
