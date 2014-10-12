@@ -1,6 +1,6 @@
 <div class="padding-mobile">
 
-  <%= simple_form_for(@current_plant, html: { class: 'form-horizontal' , :'accept-charset' => "UTF-8"}, defaults: { input_html: { class: 'form-control' } }) do |f| %>
+  <%= simple_form_for(@current_plant, html: { id: 'plant-form', class: 'form-horizontal' , :'accept-charset' => "UTF-8"}, defaults: { input_html: { class: 'form-control' } }) do |f| %>
     <% if @current_plant.errors.any? %>
       <div class="alert alert-danger" role="alert">
         <div id="error_explanation">
@@ -141,6 +141,7 @@
     </div>
 
     <hr/>
+    <%= f.submit id: 'submit-button-hidden', style: 'visibility: hidden' %>
 
     <%= render partial: 'layouts/ui/action_tabs_form', locals: { f: f } %>
 

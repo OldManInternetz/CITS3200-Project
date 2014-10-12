@@ -24,7 +24,7 @@ class OriginsController < ApplicationController
   
   def show
     @origin = Origin.find(params[:id])
-    @current_plants = @origin.current_plants.all
+    @current_plants = @origin.current_plants.load
   end
   
   def edit

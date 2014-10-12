@@ -25,7 +25,7 @@ class SoilTypesController < ApplicationController
   def show
     @soil_type = SoilType.find(params[:id])
 
-    @current_plants = @soil_type.current_plants.all
+    @current_plants = @soil_type.current_plants.load
 
   end
   

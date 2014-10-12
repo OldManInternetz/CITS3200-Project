@@ -26,15 +26,20 @@ describe User do
     before do
       @user.save
       @user.favourite!(plant)
+      @user.favourite?(plant)
     end
     
     its(:current_plants) {should include(plant)}
     
+
+
     describe "and unfavourite" do
       before { @user.unfavourite!(plant)}
 
       its(:current_plants) {should_not include(plant)}
     end
+
+
   end
 
   describe "when the username is blank" do

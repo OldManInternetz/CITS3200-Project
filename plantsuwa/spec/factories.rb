@@ -44,9 +44,12 @@ FactoryGirl.define do
 
 
   """ Not using this, as it's easier to just build photos for plants inside the test files """
-  #factory :current_photo do
-    #description "Cool"
-    #image { fixture_file_upload(Rails.root.join('spec/fixtures/test_image.jpg'), 'image/jpg') }
-  #end
+  
+  factory :current_photo do
+    current_plant_id 1
+    description "Cool"
+    image { fixture_file_upload(Rails.root.join('spec/fixtures/test_image.jpg'), 'image/jpg') }
+  end
+  
 
 end

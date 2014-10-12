@@ -7,7 +7,7 @@
 	      </div>
 	    <% end %>
 	  <% elsif !yield(:prev_page).blank? %>
-	    <%= link_to yield(:prev_link) do %>
+	    <%= link_to yield(:prev_link), id: 'back-button' do %>
 	    	<div class="navbar-brand navbar-prev-page-block">
 	     		<i class="fa fa-chevron-left"></i>&nbsp;&nbsp;<%= truncate(yield(:prev_page), length: 20, escape: false) %>
 	      </div>
@@ -30,12 +30,12 @@
 		    <span class="icon-bar"></span>
 	    </button>
 
-		    <%= link_to search_current_plants_path do %>
-		      <p class="navbar-brand navbar-brand-custom" style="padding-right: 9px"><i class="fa fa-search"></i></p>
-		    <% end %>
-		    <%= link_to root_path do %>
-		      <p class="navbar-brand navbar-brand-custom"><i class="fa fa-home fa-lg"></i></p>
-	    	<% end %>
+	    <%= link_to search_current_plants_path do %>
+	      <p class="navbar-brand navbar-brand-custom" style="padding-right: 9px"><i class="fa fa-search"></i></p>
+	    <% end %>
+	    <%= link_to root_path do %>
+	      <p class="navbar-brand navbar-brand-custom"><i class="fa fa-home fa-lg"></i></p>
+    	<% end %>
 
 	  </div>
 		<!-- Collect the nav links, forms, and other content for toggling -->
@@ -52,7 +52,7 @@
 					  <% else %>
 					  	<%= formatted_username(current_user) %>
 				  	<% end %>
-				  	<%= link_to log_out_path, method: "delete", class: 'logout' do %>
+				  	<%= link_to log_out_path, method: "delete", class: 'logout' , id: 'log-out-button' do %>
          			 (Log out)
          		<% end %>
 	        </li>

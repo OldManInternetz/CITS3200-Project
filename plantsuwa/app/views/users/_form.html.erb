@@ -3,7 +3,7 @@
 	<div class="row">
 		<div class="col-sm-6">
   		<%= f.input  :username, autofocus: true %>
-  		<%= f.input  :email, label: "Email (optional)" %>
+  		<%= f.input  :email %>
   	</div>
   	<div class="col-sm-6">
 		  <%= f.input  :password %>
@@ -16,7 +16,7 @@
 
   <div class="center-wrapper">
   	<div class="center-wrapper-inner">
-  		<%= f.button :submit, 'Sign Up', class: "button btn-success", style: "min-width: 200px"%>
+  		<%= f.button :submit, 'Sign Up', id: 'submit-sign-up', class: "button btn-success", style: "min-width: 200px"%>
   	</div>
   </div>
 

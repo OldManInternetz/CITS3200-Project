@@ -12,7 +12,7 @@ class NotificationsController < ApplicationController
     @notification = Notification.find(params[:id])
   end
   
- 
+  '''
   def destroy
     @notification = Notification.find(params[:id])
     flash[:success] = "Notification \##{@notification.id} was successfully destroyed." 
@@ -20,9 +20,10 @@ class NotificationsController < ApplicationController
  
     redirect_to notifications_path
   end
-  
+
   private
     def notification_params
       params.require(:notification).permit(:name)
     end
+  '''
 end

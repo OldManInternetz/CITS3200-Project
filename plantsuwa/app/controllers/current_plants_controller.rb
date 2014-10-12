@@ -37,7 +37,7 @@ class CurrentPlantsController < ApplicationController
 
 
 
-  
+  '''
 	def auto_complete_search
   	begin
     	@items = CurrentPlant.complete_for(params[:search])
@@ -46,7 +46,7 @@ class CurrentPlantsController < ApplicationController
   	end
      render :json => @items
 	end
-  
+  '''
   def new
     @current_plant = CurrentPlant.new
     #5.times { @current_plant.current_photos.build }
@@ -167,19 +167,12 @@ class CurrentPlantsController < ApplicationController
 
 
     # Before filters
-
-    def signed_in_user
-			if !signed_in?
-				flash[:error] = "Please log in to access this page."
-				redirect_to log_in_path
-			end
-    end
-    
+    '''
     def query_not_supported
       flash[:error] = "Sorry, that search query is not supported. See Help for search tips :)"
       redirect_to search_current_plants_path
     end
-
+    '''
 
 
 

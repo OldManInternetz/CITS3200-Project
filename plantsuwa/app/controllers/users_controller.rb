@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   # This line will cause only signed in users to be able to edit their information. Right now,
   # there is no edit page, and there may not even be one. We'll have to think about this later
-  before_action :signed_in_user, except: [:new, :create]
+  #before_action :signed_in_user, except: [:new, :create]
 
 
 
@@ -96,12 +96,12 @@ class UsersController < ApplicationController
 
     # Before filters
 
-    def signed_in_user
-			if !signed_in?
-				flash[:error] = "Please log in to access this page."
-				redirect_to log_in_path
-			end
-    end
+    #def signed_in_user
+		#	if !signed_in?
+		#		flash[:error] = "Please log in to access this page."
+		#		redirect_to log_in_path
+		#	end
+    #end
 
 end
 

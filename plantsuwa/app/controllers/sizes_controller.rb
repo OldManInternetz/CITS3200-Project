@@ -25,7 +25,7 @@ class SizesController < ApplicationController
   def show
     @size = Size.find(params[:id])
 
-    @current_plants = @size.current_plants.all
+    @current_plants = @size.current_plants.load
 
   end
   
