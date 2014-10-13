@@ -34,8 +34,24 @@ class CurrentPlantsController < ApplicationController
 
     if params.has_key?(:search)
       @searched = true
-      @current_plants = CurrentPlant.search_for(params[:search])
+
+      search_string = ""
+
+      if not params[:search][:family].empty?
+        search_string += "family ~ " + params[:search][:family] + ", "
+      end
+      if not params[:search][:genus].empty?
+        search_string += "genus ~ " + params[:search][:genus] + ", "
+      end
+      if not params[:search][:species].empty?
+        search_string += "species ~ " + params[:search][:species] + ", "
+      end
+      search_string += params[:search][:all]
+
+
+      @current_plants = CurrentPlant.search_for(search_string)
       @results_count = @current_plants.count
+
     elsif params.has_key?(:plants)
       @searched = true
       @parameters = params[:plants]

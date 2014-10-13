@@ -220,6 +220,7 @@ input {
 }
 
 
+
 /*
 .checkbox-container {
   display: inline-block;
@@ -253,7 +254,7 @@ input {
   background: white;
 }
 
-.btn-searchlist {
+.btn-searchlist, .kw-search-name {
   background: #FFE9D1;
   border-color: #FFDFBA;
 }

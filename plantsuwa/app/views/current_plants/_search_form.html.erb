@@ -93,15 +93,35 @@
 	
 	<br/>
 	<fieldset class="fieldset-search-form">
-	  <%= form_tag search_current_plants_path, :method => :get do %>
-		  <div class="search-bar-container">
-		  	<div class="kw-search-box">
-		   		<%= auto_complete_field_tag_jquery(:search, params[:search], {autofocus: true, placeholder: "Search Plants", class: 'form-control kw-search-box-inner' }) %>
+	<%= simple_form_for('search', :method => :get, :url => url_for(:action => 'search'), html: { class: 'form-horizontal' , :'accept-charset' => "UTF-8"}, defaults: { input_html: { class: 'form-control' } }) do |f| %>
+
+		   		<div class="row">		 
+			   		<div class="col-md-4"> 
+				   		<%= f.input :family, label: false, placeholder: "Search Family", input_html: { class: 'form-control kw-search-box'} %>
+				   		<div class="kw-search-name">Family</div>
+				   	</div>
+			   		<div class="col-md-4"> 
+			   			<%= f.input :genus, label: false, placeholder: "Search Genus", input_html: { class: 'form-control kw-search-box'} %>
+			   			<div class="kw-search-name">Genus</div>
+			   		</div>
+			   		<div class="col-md-4"> 
+			   			<%= f.input :species, label: false, placeholder: "Search Species", input_html: { class: 'form-control kw-search-box'} %>
+			   			<div class="kw-search-name">Species</div>
+			   		</div>
+		   		</div>
+		   		<%= f.input :all, label: false, placeholder: "Search All", input_html: { class: 'form-control kw-search-box'} %>
+		   		<div class="kw-search-name">All</div>
+
+
+		   <div style="height: 10px"></div>
+			<div class="center-wrapper">
+		  	<div class="center-wrapper-inner">
+		   	<button id='submit_search' class="btn btn-orange btn-nohover"><i class="fa fa-search"></i>&nbsp;Search by Keywords</button>		  
 		   	</div>
-		   	<button id='submit_search' class="btn btn-orange kw-search-button" style="width: 33%; float: right"><i class="fa fa-search"></i>&nbsp;Search</button>		   	
-		  </div>
+		  </div> 	
+
 	  <% end %>
-	<div id="key_help" style="border: 1px solid grey; border-radius: 5px; margin-top: 50px; padding: 8px;">
+	<div id="key_help" style="border: 1px solid grey; border-radius: 5px; margin-top: 15px; padding: 8px;">
 		<a class="help-block kwsearch" style="margin-top: 0px; margin-bottom: 10px; font-weight: 700; cursor: pointer;" onClick="key_help_click()"><i class="fa fa-close"></i>&nbsp;Close Help</a>
 		<p class="help-block kwsearch" style="margin-top: 0px;">Hint: wrap search terms in double quotes (" ") to search for plants that contain those terms together. E.g. &nbsp;&nbsp;<b>"large green leaves"</b></p>
 		<p class="help-block kwsearch" style="margin-top: 5px;">Hint: You can specify exactly which field to search over with '~'. E.g. &nbsp;&nbsp;<b>genus ~ banksia</b>&nbsp; or&nbsp; <b>description ~ bushy</b></p>

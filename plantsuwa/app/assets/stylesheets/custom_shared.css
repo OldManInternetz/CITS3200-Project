@@ -667,17 +667,31 @@ figure.show {
 
 .kw-search-box {
   width: 67%;
-  float: left;
-}
-
-.kw-search-box-inner {
-  border-bottom-right-radius: 0px;
-  border-top-right-radius: 0px;
-}
-
-.kw-search-button {
+  float: right;
+  margin-bottom: 4px;
   border-bottom-left-radius: 0px;
   border-top-left-radius: 0px;
+}
+
+.kw-search-name {
+  width: 33%;
+  border-bottom-right-radius: 0px;
+  border-top-right-radius: 0px;
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  border: 1px solid #FFDFBA;
+  border-radius: 4px 4px 4px 4px;
+  color: black;
+  border-bottom-right-radius: 0px;
+  border-top-right-radius: 0px;
+  margin-bottom: 4px;
 }
 
 .dropdown-checkboxes {

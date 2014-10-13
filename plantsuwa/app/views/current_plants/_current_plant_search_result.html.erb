@@ -6,6 +6,6 @@
   </td>
   <td><lu><%= link_to display_name(current_plant), current_plant_path(current_plant, pp_name: 'Results', pp_path: request.original_url) %></lu>
 	  <br>
-  <lu style="padding-left:10px;"><%= link_to truncate(current_plant.common_name, length: 25), current_plant_path(current_plant, pp_name: 'Results', pp_path: request.original_url) %></lu></td>
+  <lu style="padding-left:10px;"><%= link_to current_plant.common_name, current_plant_path(current_plant, pp_name: 'Results', pp_path: request.original_url) %></lu></td>
   <td><%= link_to current_plant_path(current_plant, pp_name: 'Results', pp_path: request.original_url) do %><i class="fa fa-chevron-right"></i><% end %></td>
 </tr>
