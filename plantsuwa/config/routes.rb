@@ -15,7 +15,7 @@ Plantsuwa::Application.routes.draw do
   match "/contact", to: 'welcome#contact', via: 'get', as: 'contact'
 
   match "/plants/search", to: 'current_plants#search', via: 'get', as: 'search_current_plants'
-  #match "/plants/search/help", to: 'current_plants#help', via: 'get', as: 'help_search'
+  match "/plants/search/help", to: 'current_plants#help', via: 'get', as: 'help_search'
 
 
   resources :current_plants, except: [:destroy], :path => 'plants' do

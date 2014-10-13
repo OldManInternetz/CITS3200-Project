@@ -21,6 +21,9 @@
     <% if @current_plant.display_photo.exists? %>
       <%= image_tag @current_plant.display_photo.url(:medium), id: 'display-photo-main', class: 'display-photo-right', style: "max-width: 350px" %>
     <% end %>
+	<% if not @current_plant.lat1.blank? and not @current_plant.lng1.blank? %>
+		<div class="display-photo-right" id="map-canvas" style="width:350px; height:350px;"></div>
+	<% end %>
     <% if not display_name(@current_plant).blank? %>
       <dt>Scientific Name</dt><p><i><%= display_name(@current_plant) %></i></p>
     <% end %>
@@ -28,9 +31,7 @@
       <dt>Subspecies</dt><p><%= @current_plant.subspecies %></p>
     <% end %>
 	
-	<% if not @current_plant.lat1.blank? and not @current_plant.lng1.blank? %>
-		<div class="display-photo-right" id="map-canvas" style="width:300px;height:300px;"></div>
-	<% end %>
+	
 	
 	  <% if not @current_plant.family.blank? %>
 		  <dt>Family</dt><p><%= @current_plant.family %></p>

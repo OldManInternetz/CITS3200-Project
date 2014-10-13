@@ -21,10 +21,12 @@
 					</div>
 				</div>
 				<div class="col-sm-4">
+					<!--
 					<a class="btn btn-default btn-searchlist btn-searchlist-down" style="width: 100%" id="show-climate">Climate</a>
 					<div class="dropdown-checkboxes" id="climate-list">
 				 	<%= f.input :climate, collection: Climate.all, label_method: :name, value_method: :id, as: :check_boxes, required: false, label: false %>
 					</div>
+						-->
 
 					<!--
 
@@ -101,6 +103,7 @@
 		   	<button id='submit_search' class="btn btn-orange kw-search-button" style="width: 33%; float: right"><i class="fa fa-search"></i>&nbsp;Search</button>		   	
 		  </div>
 	  <% end %>
+	  
 	<div id="key_help" style="border: 1px solid grey; border-radius: 5px; margin-top: 50px; padding: 8px;">
 		<a class="help-block kwsearch" style="margin-top: 0px; margin-bottom: 10px; font-weight: 700; cursor: pointer;" onClick="key_help_click()"><i class="fa fa-close"></i>&nbsp;Close Help</a>
 		<p class="help-block kwsearch" style="margin-top: 0px;">Hint: wrap search terms in double quotes (" ") to search for plants that contain those terms together. E.g. &nbsp;&nbsp;<b>"large green leaves"</b></p>
