@@ -18,12 +18,16 @@
     <legend>Descriptions</legend>
     
 
-    <% if @current_plant.display_photo.exists? %>
-      <%= image_tag @current_plant.display_photo.url(:medium), id: 'display-photo-main', class: 'display-photo-right', style: "max-width: 350px" %>
-    <% end %>
-	<% if not @current_plant.lat1.blank? and not @current_plant.lng1.blank? %>
-		<div class="display-photo-right" id="map-canvas" style="width:350px; height:350px;"></div>
-	<% end %>
+    <div class="display-photo-right-container">
+      <% if @current_plant.display_photo.exists? %>
+        <%= image_tag @current_plant.display_photo.url(:medium), id: 'display-photo-main', class: 'display-photo-right', style: "margin-bottom: 10px" %>
+      <% end %>
+
+    	<% if not @current_plant.lat1.blank? and not @current_plant.lng1.blank? %>
+    		<div class="display-photo-right" id="map-canvas" style="height: 300px"></div>
+    	<% end %>
+    </div>
+
     <% if not display_name(@current_plant).blank? %>
       <dt>Scientific Name</dt><p><i><%= display_name(@current_plant) %></i></p>
     <% end %>
@@ -57,12 +61,11 @@
 		  <dt>Characteristics</dt><p><%= nice_format(@current_plant.characteristics) %></p>
 	  <% end %>
 	  
-	  
+    <% if not @current_plant.physical.blank? %>
+      <dt>Physical</dt><p><%= nice_format(@current_plant.physical) %></p>
+    <% end %>	  
 	  <% if not @current_plant.identification.blank? %>
 		  <dt>Identification</dt><p><%= nice_format(@current_plant.identification) %></p>
-	  <% end %>
-	  <% if not @current_plant.physical.blank? %>
-		  <dt>Physical</dt><p><%= nice_format(@current_plant.physical) %></p>
 	  <% end %>
 	  <% if @current_plant.sizes.any? %>
 		  <dt>Sizes</dt>
@@ -160,19 +163,19 @@
 	    <dt>UWA Location</dt>
 		<p style="margin-bottom: 0px;"><%= @current_plant.location_1 %> (<%= @current_plant.lat1%>, <%= @current_plant.lng1 %>)</p>
 		<% if not @current_plant.location_2.blank? %>
-			<p style="margin-bottom: 0px;"><%= @current_plant.location_2 %></p>
+			<p style="margin-bottom: 0px;"><%= @current_plant.location_2 %> (<%= @current_plant.lat2%>, <%= @current_plant.lng2 %>)</p>
 		<% end %>
 		<% if not @current_plant.location_3.blank? %>
-			<p style="margin-bottom: 0px;"><%= @current_plant.location_3 %></p>
+			<p style="margin-bottom: 0px;"><%= @current_plant.location_3 %> (<%= @current_plant.lat3%>, <%= @current_plant.lng3 %>)</p>
 		<% end %>
 		<% if not @current_plant.location_4.blank? %>
-			<p style="margin-bottom: 0px;"><%= @current_plant.location_4 %></p>
+			<p style="margin-bottom: 0px;"><%= @current_plant.location_4 %> (<%= @current_plant.lat4%>, <%= @current_plant.lng4 %>)</p>
 		<% end %>
 		<% if not @current_plant.location_5.blank? %>
-			<p style="margin-bottom: 0px;"><%= @current_plant.location_5 %></p>
+			<p style="margin-bottom: 0px;"><%= @current_plant.location_5 %> (<%= @current_plant.lat5%>, <%= @current_plant.lng5 %>)</p>
 		<% end %>
 		<% if not @current_plant.location_6.blank? %>
-			<p style="margin-bottom: 0px;"><%= @current_plant.location_6 %></p>
+			<p style="margin-bottom: 0px;"><%= @current_plant.location_6 %> (<%= @current_plant.lat6%>, <%= @current_plant.lng6 %>)</p>
 		<% end %>
     <br/>
     <% end %>

@@ -441,12 +441,19 @@ label.checkbox {
   padding: 15px 0;
 }
 
+.display-photo-right-container {
+  float: right;
+  margin-left: 10px;
+  max-width: 360px;
+  width: 50%;
+  height: auto;
+}
 
 .display-photo-right {
   float: right;
   margin-left: 10px;
-  max-width: 50%;
-  max-height: 50%;
+  width: 100%;
+  height: auto;
 }
 
 #display-photo-main:hover {
