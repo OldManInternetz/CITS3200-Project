@@ -390,7 +390,15 @@ legend {
   border-bottom: 1px solid #ccc;
 }
 
+.index-banner > ul > a > li {
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  background: #ccc;
+}
 
+.index-banner > ul > a > li:hover, .index-banner > ul > a > li:active {
+  background: #eee;
+}
 
 
 

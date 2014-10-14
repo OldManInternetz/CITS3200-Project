@@ -4,6 +4,11 @@ h1, h2, h3, h4, h5, h6, th, legend {
 
 body {
   height: 100%;
+  min-width: 280px;
+}
+
+.index-banner {
+  min-width: 280px;
 }
 
 p, div, td, label, dd, dt, .ui-menu .ui-menu-item {
@@ -519,7 +524,7 @@ tr:nth-child(odd) td:last-child {
 	width: 100%;
 	left: 0;
 	top: 50px;
-	height: 30px;
+	height: 34px;
 	z-index: 1002;
   padding-left: 0;
   padding-top: 4px;
@@ -527,12 +532,21 @@ tr:nth-child(odd) td:last-child {
 
 .index-banner ul {
   padding-left: 0;
+  display: inline-block;
 }
 
 .index-banner li {
-  padding-left: 10px;
+  padding: 0 5px;
   display: inline-block;
   list-style: none;
+}
+
+.index-banner > ul > a > li {
+  -webkit-transition: background 0.2s linear;
+  -moz-transition: background 0.2s linear;
+  -ms-transition: background 0.2s linear;
+  -o-transition: background 0.2s linear;
+  transition: background 0.2s linear;
 }
 
 .grid-photo-container {
@@ -784,8 +798,23 @@ h3.or-block {
 
 
 
-
 /* Media Queries */
+
+@media (max-width: 992px) {
+  ul.over-992 {
+    display: none;
+  }
+}
+
+.under-992 {
+  display: inline-block;
+}
+
+@media (min-width: 992px) {
+  .under-992 {
+    display: none;
+  }
+}
 
 @media (max-width: 768px) {
   .over-768 {
@@ -793,6 +822,11 @@ h3.or-block {
   }
 }
 
+@media(max-width: 600px) {
+  .over-600 {
+    display: none;
+  }
+}
 
 @media (min-width: 300px) {
   body {
@@ -814,7 +848,6 @@ h3.or-block {
   }
 
 }
-
 
 @media (min-width: 768px) {
   .navbar-right {

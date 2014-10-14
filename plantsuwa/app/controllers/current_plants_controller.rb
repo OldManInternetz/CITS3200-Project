@@ -25,12 +25,24 @@ class CurrentPlantsController < ApplicationController
     redirect_to current_plants_path
   end
 
+  def change_sort_by
+    cookies[:sort_by] = params[:sort_by]
+    redirect_to current_plants_path
+  end
+
   def index
+
     if cookies[:view] == "grid"
       @view = "grid"
     else
       @view = "list"
     end
+
+    # The different paths the plants can be sorted through
+    @sort_paths = { "Scientific Name" => change_sort_by_path(sort_by: 'scientific_name'), "Common Name" => change_sort_by_path(sort_by: 'common_name'), "Family" => change_sort_by_path(sort_by: 'family'), "Genus" => change_sort_by_path(sort_by: 'genus'), "Species" => change_sort_by_path(sort_by: 'species'), "Type" => change_sort_by_path(sort_by: 'type') }
+
+
+    @sort_by = @sort_paths[cookies[:sort_by].titleize]
 
     @current_plants = CurrentPlant.all
   end

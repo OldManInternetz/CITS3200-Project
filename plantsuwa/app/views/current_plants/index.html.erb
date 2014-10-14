@@ -12,8 +12,10 @@
 <% end %>
 
 <div class="index-banner">
-		<ul>
-			<li>View:</li>
+		<ul style="margin-top: 2px">
+			<span class="over-600">
+				<li style="font-weight: 700">View:</li>
+			</span>
 			<% if @view == "grid" %>
 				<%= link_to controller: 'current_plants', action: 'change_view', view: "list", id: 'list-button' do %>
 					<li><i class="fa fa-list"></i>&nbsp;List</li>
@@ -24,18 +26,44 @@
 
 			<% if @view == "list" %>
 				<%= link_to controller: 'current_plants', action: 'change_view', view: "grid", id: 'grid-button' do %>
-					<li><i class="fa fa-th"></i>&nbsp;Grid</li>
+					<li style="margin-right: 5px"><i class="fa fa-th"></i>&nbsp;Grid</li>
 				<% end %>
 			<% else %>
-				<li class="list-active"><i class="fa fa-th"></i>&nbsp;Grid</li>
+				<li style="margin-right: 5px" class="list-active"><i class="fa fa-th"></i>&nbsp;Grid</li>
 			<% end %>
 
 		</ul>
+	
+		<div style="float: right; margin-right: 5px">
+
+			<ul>
+				<span class="over-600">
+				<li style="margin-left: 20px; font-weight: 700; display: initial">Sort by:</li>
+				</span>
+
+			<li>
+
+			
+   		<%= select_tag 'sort_select', options_for_select(@sort_paths, selected: @sort_by) %>
+
+			 <!-- <select onchange="location = this.options[this.selectedIndex].value;">
+				 <option value="current_plants_path(sort_by: 'scientific_name')">Scientific name</option>
+			 	 <option value="common_name">Common name</option>
+			   <option value="family">Family</option>
+				 <option value="genus">Genus</option>
+				 <option value="species">Species</option>
+				 <option value="type">Type</option>
+			 </select> -->
+
+			 </li>
+			 </ul>
+		</div>
+
 		
 
 
 </div>
-<div style="margin-top: 15px"></div>
+<div style="margin-top: 19px"></div>
 
 <% if @view == "list" %>
 	<div id="plants-list">
@@ -314,5 +342,34 @@
      effect : "fadeIn",
      threshold: 00
 });
+
+  $('#sort_select').change(function() {
+    window.location = $(this).find('option:selected').val();
+    });
+
+	$( document ).ready(function() {
+
+		/*
+		<% if cookies[:sort_by] == "scientific_name" %>
+			$('#sort_select').val('<%= @sort_paths["Scientific name"] %>');
+		<% end %>
+		<% if cookies[:sort_by] == "common_name" %>
+			$('#sort_select').val('<%= @sort_paths["Common name"] %>');
+		<% end %>
+		<% if cookies[:sort_by] == "family" %>
+			$('#sort_select').val('<%= @sort_paths["Family"] %>');
+		<% end %>
+		<% if cookies[:sort_by] == "genus" %>
+			$('#sort_select').val('<%= @sort_paths["Genus"] %>');
+		<% end %>
+		<% if cookies[:sort_by] == "species" %>
+			$('#sort_select').val('<%= @sort_paths["Species"] %>');
+		<% end %>
+		<% if cookies[:sort_by] == "type" %>
+			$('#sort_select').val('<%= @sort_paths["Type"] %>');
+		<% end %> 
+		*/
+  
+	});
 </script>
 
