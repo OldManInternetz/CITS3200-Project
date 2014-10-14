@@ -16,6 +16,7 @@ hr {
 
 .list-active {
   font-weight: 700;
+  color: black;
 }
 
 
@@ -203,9 +204,9 @@ a {
   background: white;
 }
 
-.btn-searchlist {
+.btn-searchlist, .kw-search-name {
   background: #D1E7FF;
-  border-color: #BADAFF;
+  border: 1px solid #BADAFF;
 }
 
 .btn-searchlist:hover, .btn-searchlist:active {

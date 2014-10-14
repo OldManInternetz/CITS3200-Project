@@ -248,7 +248,7 @@ input {
 
 .btn-searchlist, .kw-search-name {
   background: #FFE9D1;
-  border-color: #FFDFBA;
+  border: 1px solid #FFDFBA;
 }
 
 .btn-searchlist:hover, .btn-searchlist:active {
