@@ -106,6 +106,13 @@ textarea.form-control {
   overflow: hidden;
 }
 
+.search-help-box {
+  border: 1px solid gray;
+  border-radius: 5px;
+  margin-top: 15px;
+  padding: 8px;
+}
+
 .info-tab-33 {
   width: 33.3333333%;
   min-width: 93.333333333px;
@@ -477,7 +484,9 @@ label.checkbox {
   border-radius: 50%;
 }
 
-
+.smaller-span {
+  font-size: 18px;
+}
 
 table, .table > tbody > tr > td, .table > thead > tr > th, .table-responsive {
   border: 0;  

@@ -21,19 +21,16 @@
 					</div>
 				</div>
 				<div class="col-sm-4">
+				  <!--
 					<a class="btn btn-default btn-searchlist btn-searchlist-down" style="width: 100%" id="show-climate">Climate</a>
 					<div class="dropdown-checkboxes" id="climate-list">
 				 	<%= f.input :climate, collection: Climate.all, label_method: :name, value_method: :id, as: :check_boxes, required: false, label: false %>
 					</div>
-
-					<!--
-
+					-->
 					<a class="btn btn-default btn-searchlist btn-searchlist-down" style="width: 100%" id="show-flower-colour">Flower Colour</a>
 					<div class="dropdown-checkboxes" id="flower-colour-list">
 				  <%= f.input :flower_colour, collection: FlowerColour.all, label_method: :name, value_method: :id, as: :check_boxes, required: false, label: false %>
 				  </div>
-
-				  -->
 
 					<a class="btn btn-default btn-searchlist btn-searchlist-down" style="width: 100%" id="show-leaf-colour">Leaf Colour</a>
 					<div class="dropdown-checkboxes" id="leaf-colour-list">
@@ -45,13 +42,12 @@
 					<div class="dropdown-checkboxes" id="origin-list">
 				 	<%= f.input :origin, collection: Origin.all, label_method: :name, value_method: :id, as: :check_boxes, required: false, label: false %>
 					</div>
-
-					<!--
+					
 					<a class="btn btn-default btn-searchlist btn-searchlist-down" style="width: 100%" id="show-soil-type">Soil Type</a>
 					<div class="dropdown-checkboxes" id="soil-type-list">
 				 	<%= f.input :soil_type, collection: SoilType.all, label_method: :name, value_method: :id, as: :check_boxes, required: false, label: false %>
 					</div>
-					-->
+					
 				</div>
 			</div>
 		  <br/>
@@ -61,7 +57,7 @@
 				</div>
 			</div>
 	  
-		<div id="param_help" style="border: 1px solid grey; border-radius: 5px; margin-top: 15px; padding: 8px;">
+		<div id="param_help" class="search-help-box">
 			<a class="help-block kwsearch" style="margin-top: 0px; margin-bottom: 10px; font-weight: 700; cursor: pointer;" onClick="param_help_click()"><i class="fa fa-close"></i>&nbsp;Close Help</a>
 			<p class="help-block kwsearch"><i class="fa fa-info-circle"></i> Hint: Begin your search with only one or two parameters, and slowly refine it over a few iterations. E.g. search for <b>All Trees</b>, then <b>Trees from Western Australia,</b> and so on.</p>
 			<p class="help-block kwsearch" style="margin-bottom: 0px"> Note: Not many plants are indexed by <b>Size</b>,&nbsp; <b>Leaf Colour</b>&nbsp; or <b>Climate</b>&nbsp; just yet. Please <a href="/contact">contact us</a> if you would like to help make this app better :)</p>
@@ -97,7 +93,7 @@
 
 		   		<div class="row">		 
 			   		<div class="col-md-4"> 
-				   		<%= f.autocomplete_field :family, autocomplete_current_plant_family_current_plants_path, label: false, placeholder: "Search Family", class: 'form-control kw-search-box' %>
+				   		<%= f.autocomplete_field :family, autocomplete_current_plant_family_current_plants_path, label: false, placeholder: "Search Family", minLength: 0, class: 'form-control kw-search-box' %>
 				   		<div class="kw-search-name">Family</div>
 				   	</div>
 			   		<div class="col-md-4"> 
@@ -121,13 +117,13 @@
 		  </div> 	
 
 	  <% end %>
-	<div id="key_help" style="border: 1px solid grey; border-radius: 5px; margin-top: 15px; padding: 8px;">
+	<div id="key_help" class="search-help-box">
 		<a class="help-block kwsearch" style="margin-top: 0px; margin-bottom: 10px; font-weight: 700; cursor: pointer;" onClick="key_help_click()"><i class="fa fa-close"></i>&nbsp;Close Help</a>
-		<p class="help-block kwsearch" style="margin-top: 0px;">Hint: wrap search terms in double quotes (" ") to search for plants that contain those terms together. E.g. &nbsp;&nbsp;<b>"large green leaves"</b></p>
+		<p class="help-block kwsearch" style="margin-top: 0px;">Hint: When searching in the 'all' field, wrap search terms in double quotes (" ") to search for plants that contain those terms together. E.g. &nbsp;&nbsp;<b>"large green leaves"</b></p>
 		<p class="help-block kwsearch" style="margin-top: 5px;">Hint: You can specify exactly which field to search over with '~'. E.g. &nbsp;&nbsp;<b>genus ~ banksia</b>&nbsp; or&nbsp; <b>description ~ bushy</b></p>
 		<p class="help-block kwsearch" style="margin-top: 5px; font-weight: 700"><%= link_to help_search_path do %><i class="fa fa-info-circle"></i>&nbsp;More Hints<% end %></p>
 	</div>
-		<a id="show_key_help" class="help-block kwsearch invisible" style="border: 1px solid grey; border-radius: 5px; margin-top: 50px; padding: 8px; cursor: pointer; font-weight: 700;" onClick="show_key_help()"><i class="fa fa-info-circle"></i>&nbsp;Show Help</a>
+		<a id="show_key_help" class="help-block kwsearch invisible" style="border: 1px solid grey; border-radius: 5px; margin-top: 15px; padding: 8px; cursor: pointer; font-weight: 700;" onClick="show_key_help()"><i class="fa fa-info-circle"></i>&nbsp;Show Help</a>
 	</fieldset>
 
 
@@ -206,6 +202,9 @@
 		document.getElementById('param_help').classList.remove('invisible');
 		document.getElementById('param_help').classList.remove('visible');	
 	}
+
+	param_help_click();
+	key_help_click();
 
 
 

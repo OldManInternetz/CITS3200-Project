@@ -44,28 +44,18 @@ class CurrentPlantsController < ApplicationController
     if params.has_key?(:search)
       @searched = true
 
-      search_string = ""
+      @search_string = create_keyword_search_string(params[:search])
 
-      if not params[:search][:family].empty?
-        search_string += "family ~ " + params[:search][:family] + ", "
-      end
-      if not params[:search][:genus].empty?
-        search_string += "genus ~ " + params[:search][:genus] + ", "
-      end
-      if not params[:search][:species].empty?
-        search_string += "species ~ " + params[:search][:species] + ", "
-      end
-      search_string += params[:search][:all]
-
-
-      @current_plants = CurrentPlant.search_for(search_string)
+      @current_plants = CurrentPlant.search_for(@search_string)
       @results_count = @current_plants.count
+
 
     elsif params.has_key?(:plants)
       @searched = true
       @parameters = params[:plants]
       @current_plants = find_relevant_plants(params[:plants])
       @results_count = @current_plants.count
+      @search_string = create_param_search_string(params[:plants])
     else
       @searched = false
     end
@@ -203,12 +193,12 @@ class CurrentPlantsController < ApplicationController
 
 
     # Before filters
-    '''
+    
     def query_not_supported
       flash[:error] = "Sorry, that search query is not supported. See Help for search tips :)"
       redirect_to search_current_plants_path
     end
-    '''
+    
 
 
 

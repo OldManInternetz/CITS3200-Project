@@ -50,7 +50,7 @@ module CurrentPlantHelper
     num_params = 4
 
     # A list of parameters
-    params_list = [params[:climate], params[:origin], params[:size], params[:leaf_colour], params[:type]]
+    params_list = [params[:origin], params[:size], params[:flower_colour], params[:leaf_colour], params[:soil_type], params[:type]]
 
     # params[:soil_type] and params[:flower_colour] not in use at the moment
 
@@ -64,12 +64,7 @@ module CurrentPlantHelper
     for i in 0..num_params
       if params_list[i].length > 1 # Make sure we're not searching an empty query
 
-        #puts "Climate[0]: #{params_list[i].}"
-
         for item_id in 0..(params_list[i].length-2)
-
-          #puts "Doing #{item_id} of #{params_list[i].length - 2}"
-
 
           # Obtain all plants with the relevant query
 
@@ -115,6 +110,79 @@ module CurrentPlantHelper
 
   end
 
+  """ Creates the keyword search string based on parameters """
 
+  def create_keyword_search_string(params)
+
+    search_string = ""
+
+    pf = params[:family]
+    pg = params[:genus]
+    ps = params[:species]
+    pa = params[:all]
+
+    if not pf.empty?
+      search_string += "family ~ " + pf + ", "
+    end
+    if not pg.empty?
+      search_string += "genus ~ " + pg + ", "
+    end
+    if not ps.empty?
+      search_string += "species ~ " + ps + ", "
+    end
+    search_string += pa
+
+    search_string = fix_up_string(search_string)
+
+    return search_string
+
+  end
+
+  """ Creates the parameter search string based on parameters """
+
+  def create_param_search_string(params)
+
+    search_string = ""
+
+    # A list of parameter names
+    param_names = ["Origin", "Size", "Flower Colour", "Leaf Colour", "Soil Type", "Type"]
+
+    # A list of parameters
+    params_list = [params[:origin], params[:size], params[:flower_colour], params[:leaf_colour], params[:soil_type], params[:type]]
+
+    # A list of the objects in the params
+    param_objects = [Origin, Size, FlowerColour, LeafColour, SoilType, Type]
+
+    for i in 0..params_list.length
+
+
+      if not params_list[i].blank?
+        if params_list[i].length > 1
+          search_string += param_names[i] + ": "     
+          for j in 0..params_list[i].length
+            if not params_list[i][j].blank?
+              search_string += param_objects[i].find_by_id(params_list[i][j]).name + ", "
+            end
+          end
+        end
+      end
+
+    end
+
+    search_string = fix_up_string(search_string)
+
+    return search_string
+
+  end
+
+
+  """ Fixes up the search string by removing a trailing ', '' """
+  def fix_up_string(search_string)
+    if search_string[-1] == " " and search_string[-2] == ","
+      search_string = search_string[0..-3]
+    else
+      search_string
+    end
+  end
 
 end

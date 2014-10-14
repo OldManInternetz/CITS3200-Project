@@ -20,7 +20,8 @@
 	<div class="center-wrapper">
   	<div class="center-wrapper-inner">
   		<br/>
-			<span><%= pluralize(@results_count, 'plant') %> found.</span>
+  		<h3 style="margin-top: 0">You searched for: "<span class="coloured-text smaller-span"><%= @search_string %></span>".</h3>
+			<p><%= pluralize(@results_count, 'plant') %> found.</p>
 			
 		</div>
 	</div>
@@ -34,12 +35,12 @@
 		</div>
 	</div>
 	-->
-	
+		<!--
 		<div class="center-wrapper">
 	  	<div class="center-wrapper-inner">
 				<h2>Search Results: </h2>
 			</div>
-		</div>
+		</div>-->
 
 		<% if @results_count > 0 %>
 

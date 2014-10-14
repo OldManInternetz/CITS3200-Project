@@ -63,6 +63,9 @@ p > a {
   background: white;
 }
 
+.coloured-text {
+  color: #268BFF;
+}
 
 
 .fieldset-search-form {

@@ -61,7 +61,9 @@ td > a {
   background: #222;
 }
 
-
+.coloured-text {
+  color: #FFA81C;
+}
 
 .alert.alert-info {
   background: #FFA81C;

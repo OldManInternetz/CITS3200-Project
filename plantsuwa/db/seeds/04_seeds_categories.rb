@@ -4,7 +4,7 @@
 # Take note of variable names @quin, etc...
 
 puts('Creating Categorised Data...')
-=begin
+
   @quin = SoilType.create(name: 'Quindalup') 
   @cott = SoilType.create(name: 'Cottesloe') 
   @karr = SoilType.create(name: 'Karrakatta') 
@@ -30,7 +30,7 @@ puts('Creating Categorised Data...')
   @pink = FlowerColour.create(name: 'Pink')
   @white = FlowerColour.create(name: 'White')
 
-=end
+
   
 @wa = Origin.create(name: 'Western Australian')
 @aus = Origin.create(name: 'Australian')
