@@ -30,6 +30,7 @@ Plantsuwa::Application.routes.draw do
   match '/plants/:id',  to: 'favourites#create',    as: 'create_favourite', via: 'post'
   match '/plants/:id',  to: 'favourites#destroy',    as: 'destroy_favourite', via: 'delete'
   match "/plants_change_view", to: 'current_plants#change_view', as: 'change_view', via: 'get'
+  match "/change_colour_scheme", to: 'application#change_colour_scheme', as: 'change_colour_scheme', via: 'get'
 
   # Admin routes
 

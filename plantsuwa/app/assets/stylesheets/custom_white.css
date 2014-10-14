@@ -20,7 +20,9 @@ hr {
   min-height: 100vh;
 }
 
-
+.list-active {
+  font-weight: 700;
+}
 
 
 

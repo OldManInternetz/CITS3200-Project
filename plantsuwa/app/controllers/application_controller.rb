@@ -36,5 +36,13 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def change_colour_scheme
+    if(cookies[:style] == "white")
+      cookies[:style] = "black"
+    else
+      cookies[:style] = "white"
+    end
+    redirect_to :back
+  end
 
 end

@@ -64,8 +64,9 @@
 			    <li><%= link_to 'Log in', log_in_path(pp_name: yield(:title), pp_path: request.path) %></li>
 	      <% end %>
 
-			  <!--<li><a href="#">Site Map</a></li>-->
-			  <li><a href="/contact">Contact</a></li>
+
+			  <li><%= link_to change_colour_scheme_path do %><i class="fa fa-adjust"></i>&nbsp;Colour Scheme<% end %></li>
+			  <li><%= link_to contact_path do %>Contact<% end %></li>
 		  </ul>  
 		</div><!-- /.navbar-collapse -->
 	</div>
