@@ -188,20 +188,52 @@ module CurrentPlantHelper
   """ Yields an ordered list of plants, based on the sort parameters. """
   def yield_ordered_plants(sort_by)
 
-    if sort_by == "Scientific Name"
-      plants = CurrentPlant.order('scientific_name asc')
-    elsif sort_by == "Common Name"
-      plants = CurrentPlant.order('common_name asc, scientific_name asc')
-    elsif sort_by == "Family"
-      plants = CurrentPlant.order('family asc, scientific_name asc')
-    elsif sort_by == "Genus"
+    if sort_by == "Genus"
       plants = CurrentPlant.order('genus asc, scientific_name asc')
     elsif sort_by == "Species"
       plants = CurrentPlant.order('species asc, scientific_name asc')
+    elsif sort_by == "Family"
+      plants = CurrentPlant.order('family asc, scientific_name asc')
+    elsif sort_by == "Common Name"
+      plants = CurrentPlant.order('common_name asc, scientific_name asc')
     elsif sort_by == "Type"
       plants = CurrentPlant.joins(:type).order('types.name asc, scientific_name asc')
     else
-      plants = CurrentPlant.order('scientific_name asc')
+      plants = CurrentPlant.order('genus asc')
+    end
+
+    return plants
+  end
+
+  """ Yields an ordered list of plants, based on the sort parameters, and the first letter 'letter'. """
+  def yield_ordered_plants_letter(sort_by, letter)
+
+    if(letter == "(none)")
+
+      if sort_by == "Genus"
+        plants = CurrentPlant.where("genus IS ?", nil).order('genus asc, scientific_name asc')
+      elsif sort_by == "Species"
+        plants = CurrentPlant.where("species IS ?", nil).order('species asc, scientific_name asc')
+      elsif sort_by == "Family"
+        plants = CurrentPlant.where("family IS ?", nil).order('family asc, scientific_name asc')
+      elsif sort_by == "Common Name"
+        plants = CurrentPlant.where("common_name IS ?", nil).order('common_name asc, scientific_name asc')
+      end
+
+
+    else      
+      letter = [letter, letter.downcase]
+
+      if sort_by == "Genus"
+        plants = CurrentPlant.where("substr(genus, 1, 1) IN (?)", letter).order('genus asc, scientific_name asc')
+      elsif sort_by == "Species"
+        plants = CurrentPlant.where("substr(species, 1, 1) IN (?)", letter).order('species asc, scientific_name asc')
+      elsif sort_by == "Family"
+        plants = CurrentPlant.where("substr(family, 1, 1) IN (?)", letter).order('family asc, scientific_name asc')
+      elsif sort_by == "Common Name"
+        plants = CurrentPlant.where("substr(common_name, 1, 1) IN (?)", letter).order('common_name asc, scientific_name asc')
+      end
+
     end
 
     return plants

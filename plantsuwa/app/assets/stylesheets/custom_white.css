@@ -400,6 +400,11 @@ legend {
   background: #eee;
 }
 
+.list-header {
+  border-top: 1px solid #94BDFF;
+  border-bottom: 1px solid #94BDFF;
+  background: #D1E7FF;
+}
 
 
 

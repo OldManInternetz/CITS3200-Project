@@ -493,6 +493,12 @@ p.plant-text-container {
   background: #444;
 }
 
+.list-header {
+  border-top: 1px solid #E3961B;
+  border-bottom: 1px solid #E3961B;
+  background: #FFA81C;
+  color: black;
+}
 
 
 div.dropdown-checkboxes {

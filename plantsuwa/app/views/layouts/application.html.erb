@@ -10,8 +10,9 @@
     <%= csrf_meta_tags %>
   	<!-- Bootstrap -->
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-	<%= javascript_include_tag "addtohomescreen" %>
-	<%= stylesheet_link_tag "addtohomescreen", media: "all" %>
+	  <%= javascript_include_tag "addtohomescreen" %>
+	  <%= stylesheet_link_tag "addtohomescreen", media: "all" %>
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -31,8 +32,8 @@
     <%= render 'layouts/navbar' %>
 
     <noscript>
-      <div class="index-banner">Please enable javascript to make full use of this application.</div>
-      <div style="height: 30px">
+      <div class="index-banner no-javascript-ohdear"><i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;Please enable javascript to make full use of this application.</div>
+      <div style="height: 30px"></div>
     </noscript>
 
     <% if is_admin? %>

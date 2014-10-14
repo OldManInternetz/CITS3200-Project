@@ -39,18 +39,38 @@ class CurrentPlantsController < ApplicationController
     end
 
     # The different paths the plants can be sorted through
-    @sort_paths = { "Scientific Name" => change_sort_by_path(sort_by: 'scientific_name'), "Common Name" => change_sort_by_path(sort_by: 'common_name'), "Family" => change_sort_by_path(sort_by: 'family'), "Genus" => change_sort_by_path(sort_by: 'genus'), "Species" => change_sort_by_path(sort_by: 'species'), "Type" => change_sort_by_path(sort_by: 'type') }
+    @sort_paths = { "Genus" => change_sort_by_path(sort_by: 'genus'), "Species" => change_sort_by_path(sort_by: 'species'), "Family" => change_sort_by_path(sort_by: 'family'), "Common Name" => change_sort_by_path(sort_by: 'common_name'), "Type" => change_sort_by_path(sort_by: 'type') }
 
 
     if cookies[:sort_by].blank?
-      @sort_by_select_option = @sort_paths["Scientific Name"]
-      @sort_by = "Scientific Name"
+      @sort_by_select_option = @sort_paths["Genus"]
+      @sort_by = "Genus"
     else 
       @sort_by_select_option = @sort_paths[cookies[:sort_by].titleize]
       @sort_by = cookies[:sort_by].titleize
     end
 
-    @current_plants = yield_ordered_plants(@sort_by)
+    #@current_plants = yield_ordered_plants(@sort_by)
+
+    if @sort_by == "Genus" or @sort_by == "Species" or @sort_by == "Family" or @sort_by == "Common Name"
+      list_of_headings = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "(none)"]
+      hash_of_headings = Hash.new
+      for i in list_of_headings
+        relevant_plants = yield_ordered_plants_letter(@sort_by, i)
+        hash_of_headings[i] = relevant_plants
+      end
+      @grouped_plants = hash_of_headings
+    elsif @sort_by == "Type"
+      temp = Hash.new
+      temp["All"] = yield_ordered_plants(@sort_by)  
+      @grouped_plants = temp    
+    else
+      temp = Hash.new
+      temp["All"] = yield_ordered_plants(@sort_by)  
+      @grouped_plants = temp      
+    end
+
+
 
   end
   
