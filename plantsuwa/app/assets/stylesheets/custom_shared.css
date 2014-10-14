@@ -2,6 +2,9 @@ h1, h2, h3, h4, h5, h6, th, legend {
 	font-family: 'Montserrat', sans-serif;
 }
 
+body {
+  height: 100%;
+}
 
 p, div, td, label, dd, dt {
 	font-family: 'Oxygen', sans-serif;
@@ -17,7 +20,11 @@ b {
 	font-size: 1.2em;
 }
 
-
+.container {
+  padding: 0;
+  height: 100%;
+  min-height: 100vh;
+}
 
 .main { 
 	padding: 25px;

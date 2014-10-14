@@ -16,7 +16,13 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <%= stylesheet_link_tag  "application", media: "all" %>
-    <%= stylesheet_link_tag  "admin-pages_white", media: "all" %>
+    <%= stylesheet_link_tag    "custom_black", media: "all" %>
+
+    <% if cookies[:style] == "black" %>
+      <%= stylesheet_link_tag  "admin-pages_white", media: "all" %>
+    <% else %>
+      <%= stylesheet_link_tag  "admin-pages_black", media: "all" %>
+    <% end %>
   	<!-- Google Fonts -->
   	<link href='http://fonts.googleapis.com/css?family=Montserrat|Oxygen|Noto+Sans|Nunito' rel='stylesheet' type='text/css'>
   </head>

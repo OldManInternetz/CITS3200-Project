@@ -3,10 +3,6 @@ body, .navbar {
   background: #222222;  
 }
 
-body {
-  height: 100%;
-}
-
 hr {
   border-color: #222;
 }
@@ -14,11 +10,7 @@ hr {
 .container {
   background: #0A0A0A;
   color: white;
-  height: 100%;
-  padding: 0;
-  height: 100%;
   box-shadow: 2px 0 3px #0A0A0A, -2px 0 3px #0A0A0A;
-  min-height: 100vh;
 }
 
 
