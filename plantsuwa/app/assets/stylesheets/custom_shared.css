@@ -6,7 +6,7 @@ body {
   height: 100%;
 }
 
-p, div, td, label, dd, dt {
+p, div, td, label, dd, dt, .ui-menu .ui-menu-item {
 	font-family: 'Oxygen', sans-serif;
 }
 

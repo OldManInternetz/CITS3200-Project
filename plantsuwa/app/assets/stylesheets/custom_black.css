@@ -79,6 +79,17 @@ td > a {
   padding: 20px;
 }
 
+.controls > input#search_all {
+  background: white;
+  border-color: #ccc;
+  color: rgb(85, 85, 85);
+}
+
+.controls > input#search_all:focus {
+  box-shadow: 0px 1px 1px rgb(255, 179, 0) inset, 0px 0px 3px rgb(255, 179, 0);
+  border-color: rgb(255, 179, 0);
+}
+
 .info-tab {
   width: 25%;
 
