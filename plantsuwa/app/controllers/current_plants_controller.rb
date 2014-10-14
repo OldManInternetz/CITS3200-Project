@@ -43,7 +43,13 @@ class CurrentPlantsController < ApplicationController
 
 
     @sort_by_select_option = @sort_paths[cookies[:sort_by].titleize]
-    @sort_by = cookies[:sort_by].titleize
+    if cookies[:sort_by].blank?
+      @sort_by_select_option = @sort_paths["Scientific Name"]
+      @sort_by = "Scientific Name"
+    else 
+      @sort_by_select_option = @sort_paths[cookies[:sort_by].titleize]
+      @sort_by = cookies[:sort_by].titleize
+    end
 
     if @sort_by == "Scientific Name"
       @current_plants = CurrentPlant.order('scientific_name asc')
