@@ -11,7 +11,10 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery-ui/autocomplete
 //= require jquery_ujs
+//= require autocomplete-rails
+
 
 function show_more() {
 	document.getElementById('show_more').classList.remove('visible');

@@ -20,6 +20,9 @@ Plantsuwa::Application.routes.draw do
 
   resources :current_plants, except: [:destroy], :path => 'plants' do
     get :auto_complete_search, :on => :collection
+    get :autocomplete_current_plant_family, :on => :collection
+    get :autocomplete_current_plant_genus, :on => :collection
+    get :autocomplete_current_plant_species, :on => :collection
     #collection do
     #  get 'search'
     #end

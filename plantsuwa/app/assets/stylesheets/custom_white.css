@@ -42,6 +42,9 @@ a {
 	color: #474747;
 }
 
+p > a {
+  font-weight: 700;
+}
 
 
 

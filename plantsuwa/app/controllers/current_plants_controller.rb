@@ -10,11 +10,20 @@ class CurrentPlantsController < ApplicationController
   
   rescue_from ScopedSearch::QueryNotSupported, with: :query_not_supported
 
+
+
+  # Autocomplete functions
+  autocomplete :current_plant, :family, scopes: [:unique_families]
+  autocomplete :current_plant, :genus, scopes: [:unique_genera]
+  autocomplete :current_plant, :species, scopes: [:unique_species]
+
+
+
+
   def change_view
     cookies[:view] = params[:view]
     redirect_to current_plants_path
   end
-
 
   def index
     if cookies[:view] == "grid"

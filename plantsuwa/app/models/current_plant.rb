@@ -124,6 +124,11 @@ class CurrentPlant < ActiveRecord::Base
   scoped_search in: :flower_colours, on: :name
   scoped_search in: :climates, on: :name
 
+  # For the autocomplete search
+  scope :unique_families, group(:family)
+  scope :unique_genera, group(:genus)
+  scope :unique_species, group(:species)
+
 
   before_validation :generate_name
 

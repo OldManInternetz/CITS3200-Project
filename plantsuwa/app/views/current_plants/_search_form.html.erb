@@ -93,19 +93,19 @@
 	
 	<br/>
 	<fieldset class="fieldset-search-form">
-	<%= simple_form_for('search', :method => :get, :url => url_for(:action => 'search'), html: { class: 'form-horizontal' , :'accept-charset' => "UTF-8"}, defaults: { input_html: { class: 'form-control' } }) do |f| %>
+	<%= simple_form_for('search', :method => :get, :url => url_for(:action => 'search'), html: { class: 'form-horizontal' , :'accept-charset' => "UTF-8"}) do |f| %>
 
 		   		<div class="row">		 
 			   		<div class="col-md-4"> 
-				   		<%= f.input :family, label: false, placeholder: "Search Family", input_html: { class: 'form-control kw-search-box'} %>
+				   		<%= f.autocomplete_field :current_plant_family, autocomplete_current_plant_family_current_plants_path, label: false, placeholder: "Search Family", class: 'form-control kw-search-box' %>
 				   		<div class="kw-search-name">Family</div>
 				   	</div>
 			   		<div class="col-md-4"> 
-			   			<%= f.input :genus, label: false, placeholder: "Search Genus", input_html: { class: 'form-control kw-search-box'} %>
+			   			<%= f.autocomplete_field :current_plant_genus, autocomplete_current_plant_genus_current_plants_path, label: false, placeholder: "Search Genus", class: 'form-control kw-search-box' %>
 			   			<div class="kw-search-name">Genus</div>
 			   		</div>
 			   		<div class="col-md-4"> 
-			   			<%= f.input :species, label: false, placeholder: "Search Species", input_html: { class: 'form-control kw-search-box'} %>
+			   			<%= f.autocomplete_field :current_plant_species, autocomplete_current_plant_species_current_plants_path, label: false, placeholder: "Search Species", class: 'form-control kw-search-box' %>
 			   			<div class="kw-search-name">Species</div>
 			   		</div>
 		   		</div>
