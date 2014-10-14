@@ -68,7 +68,12 @@
 
 <% if @view == "grid" %>
 	<div id="plants-list">
-		<%= render partial: "current_plant_grid", collection: @current_plants, as: :current_plant %>
+	<% @grouped_plants.each do |h| %>
+		<% if !h.last.empty? %>
+			<div class="list-header" id="header-<%= h.first %>"><%= h.first %></div>
+			<%= render partial: "current_plant_grid", collection: h.last, as: :current_plant, locals: { sort_by: @sort_by } %>
+		<% end %>
+	<% end %>
 	</div>
 <% else %>
 	<div id="plants-list">
@@ -76,7 +81,7 @@
 	<% @grouped_plants.each do |h| %>
 		<% if !h.last.empty? %>
 			<div class="list-header" id="header-<%= h.first %>"><%= h.first %></div>
-			<%= render partial: "current_plant", collection: h.last, as: :current_plant %>
+			<%= render partial: "current_plant", collection: h.last, as: :current_plant, locals: { sort_by: @sort_by } %>
 		<% end %>
 	<% end %>
 

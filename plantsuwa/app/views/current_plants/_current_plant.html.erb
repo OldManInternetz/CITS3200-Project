@@ -7,12 +7,21 @@
   <div class="plant-index-box-content-wrapper">
     <div class="plant-index-box-content">
       <%= link_to current_plant_path(current_plant) do %>
-        <p class="plant-text-container"><strong><%= display_name(current_plant) %></strong></p>
+
+        <% if sort_by == "Family" %>
+          <p class="plant-text-container"><strong><%= current_plant.family.upcase %></strong></p>
+        <% else %>
+          <p class="plant-text-container"><strong><%= display_name(current_plant) %></strong></p>
+        <% end %>
       <% end %>
 
       <% if !current_plant.common_name.blank? %>
         <%= link_to current_plant_path(current_plant) do %>
-          <p style="text-align: center"><%= current_plant.common_name %></p>
+          <% if sort_by == "Family" %>
+            <p style="text-align: center"><%= display_name(current_plant) %></p>
+          <% else %>
+            <p style="text-align: center"><%= current_plant.common_name %></p>
+          <% end %>
         <% end %>
       <% end %>
     </div>

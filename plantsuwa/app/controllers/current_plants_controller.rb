@@ -41,7 +41,6 @@ class CurrentPlantsController < ApplicationController
     # The different paths the plants can be sorted through
     @sort_paths = { "Genus" => change_sort_by_path(sort_by: 'genus'), "Species" => change_sort_by_path(sort_by: 'species'), "Family" => change_sort_by_path(sort_by: 'family'), "Common Name" => change_sort_by_path(sort_by: 'common_name'), "Type" => change_sort_by_path(sort_by: 'type') }
 
-
     if cookies[:sort_by].blank?
       @sort_by_select_option = @sort_paths["Genus"]
       @sort_by = "Genus"
