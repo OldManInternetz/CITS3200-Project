@@ -10,11 +10,8 @@
 	<% provide(:prev_link, root_path) %>
 <% end %>
 
-
 <div class="padding-mobile">
 	
-
-
 	<% if @searched %>
 	
 	<div class="center-wrapper">
@@ -26,21 +23,6 @@
 		</div>
 	</div>
 	<div style="height: 10px"></div>
-	
-	
-	<!--
-	<div class="center-wrapper">
-	 	<div class="center-wrapper-inner">
-			<button class="btn btn-orange" id="search-another-button" style="padding-left: 50px; padding-right: 50px"><i class="fa fa-search-plus"></i>&nbsp;&nbsp;Search Again?</button>
-		</div>
-	</div>
-	-->
-		<!--
-		<div class="center-wrapper">
-	  	<div class="center-wrapper-inner">
-				<h2>Search Results: </h2>
-			</div>
-		</div>-->
 
 		<% if @results_count > 0 %>
 
@@ -57,19 +39,9 @@
 				</tbody>
 			</table>
 
-		<% end %>
-
-		
+		<% end %>		
 
 	<hr/>	
-	<!--
-	<div class="center-wrapper">
-	 	<div class="center-wrapper-inner">
-			<button class="btn btn-orange" id="search-another-button" style="padding-left: 50px; padding-right: 50px"><i class="fa fa-search-plus"></i>&nbsp;&nbsp;Search Again!</button>
-		</div>
-	</div>
-	<br/>
-	-->
 
 	<% end %>
 

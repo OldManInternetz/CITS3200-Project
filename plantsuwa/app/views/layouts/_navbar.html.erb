@@ -20,7 +20,7 @@
 	    <% end %>  
 	  <% end %>
 	  <div class="navbar-brand navbar-title-block">
-	    <p><strong><%= truncate(small_title(yield(:title)), length: 20) %></strong></p>
+	    <p><strong><%= small_title(yield(:title)) %></strong></p>
 	  </div>
 	  <div style="width: 200px; position: absolute; right: 0;">
 	    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-navbar-collapse">
@@ -65,7 +65,7 @@
 	      <% end %>
 
 
-			  <li><%= link_to change_colour_scheme_path do %><i class="fa fa-adjust"></i>&nbsp;Switch colour scheme<% end %></li>
+			  <li><%= link_to change_colour_scheme_path do %><i class="fa fa-adjust"></i>&nbsp;<span class="over-992">Switch colour scheme</span><% end %></li>
 			  <li><%= link_to contact_path do %>Contact<% end %></li>
 		  </ul>  
 		</div><!-- /.navbar-collapse -->

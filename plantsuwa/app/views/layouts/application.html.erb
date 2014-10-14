@@ -29,6 +29,12 @@
   </head>
   <body>
     <%= render 'layouts/navbar' %>
+
+    <noscript>
+      <div class="index-banner">Please enable javascript to make full use of this application.</div>
+      <div style="height: 30px">
+    </noscript>
+
     <% if is_admin? %>
       <%= link_to admin_path do %>
         <div class="navbar-admin-tab">        

@@ -138,6 +138,6 @@ class CurrentPlant < ActiveRecord::Base
     end
   end
 
-  default_scope -> { order('scientific_name ASC') }
+  #default_scope -> { order('scientific_name ASC') }
 
 end

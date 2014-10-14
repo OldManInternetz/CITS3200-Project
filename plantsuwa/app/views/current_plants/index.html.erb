@@ -1,4 +1,4 @@
-<% provide(:title, 'List by A-Z') %>
+<% provide(:title, "List by #{@sort_by}") %>
 <% provide(:prev_page, 'Home') %>
 <% provide(:prev_link, root_path) %>
 
@@ -11,7 +11,11 @@
 	<p><i class="fa fa-cubes"></i>&nbsp;&nbsp;Type</p>    
 <% end %>
 
-<div class="index-banner">
+<% if is_admin? %>
+<div class="index-banner"></div>
+<% end %>
+
+<div class="index-banner" style="<% if is_admin? %>top: 80px<% end %>">
 		<ul style="margin-top: 2px">
 			<span class="over-600">
 				<li style="font-weight: 700">View:</li>
@@ -34,7 +38,7 @@
 
 		</ul>
 	
-		<div style="float: right; margin-right: 5px">
+		<div style="margin-left: 10px; display: inline-block">
 
 			<ul>
 				<span class="over-600">
@@ -44,16 +48,7 @@
 			<li>
 
 			
-   		<%= select_tag 'sort_select', options_for_select(@sort_paths, selected: @sort_by) %>
-
-			 <!-- <select onchange="location = this.options[this.selectedIndex].value;">
-				 <option value="current_plants_path(sort_by: 'scientific_name')">Scientific name</option>
-			 	 <option value="common_name">Common name</option>
-			   <option value="family">Family</option>
-				 <option value="genus">Genus</option>
-				 <option value="species">Species</option>
-				 <option value="type">Type</option>
-			 </select> -->
+   		<%= select_tag 'sort_select', options_for_select(@sort_paths, selected: @sort_by_select_option) %>
 
 			 </li>
 			 </ul>
@@ -64,6 +59,10 @@
 
 </div>
 <div style="margin-top: 19px"></div>
+
+<% if is_admin? %>
+	<div style="height: 30px"></div>
+<% end %>
 
 <% if @view == "list" %>
 	<div id="plants-list">
@@ -345,31 +344,7 @@
 
   $('#sort_select').change(function() {
     window.location = $(this).find('option:selected').val();
-    });
+  });
 
-	$( document ).ready(function() {
-
-		/*
-		<% if cookies[:sort_by] == "scientific_name" %>
-			$('#sort_select').val('<%= @sort_paths["Scientific name"] %>');
-		<% end %>
-		<% if cookies[:sort_by] == "common_name" %>
-			$('#sort_select').val('<%= @sort_paths["Common name"] %>');
-		<% end %>
-		<% if cookies[:sort_by] == "family" %>
-			$('#sort_select').val('<%= @sort_paths["Family"] %>');
-		<% end %>
-		<% if cookies[:sort_by] == "genus" %>
-			$('#sort_select').val('<%= @sort_paths["Genus"] %>');
-		<% end %>
-		<% if cookies[:sort_by] == "species" %>
-			$('#sort_select').val('<%= @sort_paths["Species"] %>');
-		<% end %>
-		<% if cookies[:sort_by] == "type" %>
-			$('#sort_select').val('<%= @sort_paths["Type"] %>');
-		<% end %> 
-		*/
-  
-	});
 </script>
 

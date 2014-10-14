@@ -360,16 +360,19 @@ label.checkbox {
   margin-bottom: 0px;
   margin-left: -10px;
   font-size: small;
-  width: 100%;
-  left: 0;
+  margin-left: 30px;
+  position: absolute;
+  left: 100px;
+  right: 580px;
 }
 
 
 .navbar-title-block p {
-  position: absolute;
-  right: 25px;
   text-align: center;
   width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .navbar-prev-page-block {
@@ -804,6 +807,12 @@ h3.or-block {
   ul.over-992 {
     display: none;
   }
+  .over-992 {
+    display: none;
+  }
+  .navbar-title-block {
+    right: 450px;
+  }
 }
 
 .under-992 {
@@ -819,6 +828,10 @@ h3.or-block {
 @media (max-width: 768px) {
   .over-768 {
     display: none;  
+  }
+  .navbar-title-block {
+    right: 150px;
+    left: 50px;
   }
 }
 
