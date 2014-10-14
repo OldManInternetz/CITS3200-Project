@@ -42,7 +42,6 @@ class CurrentPlantsController < ApplicationController
     @sort_paths = { "Scientific Name" => change_sort_by_path(sort_by: 'scientific_name'), "Common Name" => change_sort_by_path(sort_by: 'common_name'), "Family" => change_sort_by_path(sort_by: 'family'), "Genus" => change_sort_by_path(sort_by: 'genus'), "Species" => change_sort_by_path(sort_by: 'species'), "Type" => change_sort_by_path(sort_by: 'type') }
 
 
-    @sort_by_select_option = @sort_paths[cookies[:sort_by].titleize]
     if cookies[:sort_by].blank?
       @sort_by_select_option = @sort_paths["Scientific Name"]
       @sort_by = "Scientific Name"
@@ -51,21 +50,7 @@ class CurrentPlantsController < ApplicationController
       @sort_by = cookies[:sort_by].titleize
     end
 
-    if @sort_by == "Scientific Name"
-      @current_plants = CurrentPlant.order('scientific_name asc')
-    elsif @sort_by == "Common Name"
-      @current_plants = CurrentPlant.order('common_name asc, scientific_name asc')
-    elsif @sort_by == "Family"
-      @current_plants = CurrentPlant.order('family asc, scientific_name asc')
-    elsif @sort_by == "Genus"
-      @current_plants = CurrentPlant.order('genus asc, scientific_name asc')
-    elsif @sort_by == "Species"
-      @current_plants = CurrentPlant.order('species asc, scientific_name asc')
-    elsif @sort_by == "Type"
-      @current_plants = CurrentPlant.joins(:type).order('types.name asc, scientific_name asc')
-    else
-      @current_plants = CurrentPlant.order('scientific_name asc')
-    end
+    @current_plants = yield_ordered_plants(@sort_by)
 
   end
   

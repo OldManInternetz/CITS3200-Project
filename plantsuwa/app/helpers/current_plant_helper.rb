@@ -185,4 +185,26 @@ module CurrentPlantHelper
     end
   end
 
+  """ Yields an ordered list of plants, based on the sort parameters. """
+  def yield_ordered_plants(sort_by)
+
+    if sort_by == "Scientific Name"
+      plants = CurrentPlant.order('scientific_name asc')
+    elsif sort_by == "Common Name"
+      plants = CurrentPlant.order('common_name asc, scientific_name asc')
+    elsif sort_by == "Family"
+      plants = CurrentPlant.order('family asc, scientific_name asc')
+    elsif sort_by == "Genus"
+      plants = CurrentPlant.order('genus asc, scientific_name asc')
+    elsif sort_by == "Species"
+      plants = CurrentPlant.order('species asc, scientific_name asc')
+    elsif sort_by == "Type"
+      plants = CurrentPlant.joins(:type).order('types.name asc, scientific_name asc')
+    else
+      plants = CurrentPlant.order('scientific_name asc')
+    end
+
+    return plants
+  end
+
 end
