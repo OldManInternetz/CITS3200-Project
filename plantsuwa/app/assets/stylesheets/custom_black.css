@@ -57,6 +57,10 @@ td > a {
 }
 
 
+.check_boxes > .controls {
+  background: #222;
+}
+
 
 
 .alert.alert-info {

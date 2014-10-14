@@ -59,7 +59,9 @@ p > a {
 }
 
 
-
+.check_boxes > .controls {
+  background: white;
+}
 
 
 
