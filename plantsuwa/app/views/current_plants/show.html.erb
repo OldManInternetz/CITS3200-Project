@@ -166,21 +166,21 @@
 
     <% if not @current_plant.location_1.blank? %>
 	    <dt>UWA Location</dt>
-		<p style="margin-bottom: 0px;"><%= @current_plant.location_1 %> (<%= @current_plant.lat1%>, <%= @current_plant.lng1 %>)</p>
+		<p style="margin-bottom: 0px;"><%= @current_plant.location_1 %> </p>
 		<% if not @current_plant.location_2.blank? %>
-			<p style="margin-bottom: 0px;"><%= @current_plant.location_2 %> (<%= @current_plant.lat2%>, <%= @current_plant.lng2 %>)</p>
+			<p style="margin-bottom: 0px;"><%= @current_plant.location_2 %> </p>
 		<% end %>
 		<% if not @current_plant.location_3.blank? %>
-			<p style="margin-bottom: 0px;"><%= @current_plant.location_3 %> (<%= @current_plant.lat3%>, <%= @current_plant.lng3 %>)</p>
+			<p style="margin-bottom: 0px;"><%= @current_plant.location_3 %> </p>
 		<% end %>
 		<% if not @current_plant.location_4.blank? %>
-			<p style="margin-bottom: 0px;"><%= @current_plant.location_4 %> (<%= @current_plant.lat4%>, <%= @current_plant.lng4 %>)</p>
+			<p style="margin-bottom: 0px;"><%= @current_plant.location_4 %> </p>
 		<% end %>
 		<% if not @current_plant.location_5.blank? %>
-			<p style="margin-bottom: 0px;"><%= @current_plant.location_5 %> (<%= @current_plant.lat5%>, <%= @current_plant.lng5 %>)</p>
+			<p style="margin-bottom: 0px;"><%= @current_plant.location_5 %> </p>
 		<% end %>
 		<% if not @current_plant.location_6.blank? %>
-			<p style="margin-bottom: 0px;"><%= @current_plant.location_6 %> (<%= @current_plant.lat6%>, <%= @current_plant.lng6 %>)</p>
+			<p style="margin-bottom: 0px;"><%= @current_plant.location_6 %> </p>
 		<% end %>
     <br/>
     <% end %>
@@ -376,6 +376,7 @@
       google.maps.event.addDomListener(envTab, 'click', initialize);
 	  
 	  
+	  
 
 </script>
 
@@ -411,6 +412,12 @@
       $('.info-tab').removeClass("info-tab-current");
       $('#btn-environmental').addClass("info-tab-current");
       $(window).scrollTop(0);
+	  var lastCenter=map.getCenter();
+	  var lastZoom=map.getZoom();
+	  google.maps.event.trigger(map, 'resize');
+	  map.setCenter(lastCenter);
+	  map.setZoom(lastZoom);
+	  
     });
   <% else %>
     $('#btn-environmental').addClass("info-tab-disabled");
