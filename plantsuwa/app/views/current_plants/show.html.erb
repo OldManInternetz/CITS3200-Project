@@ -293,80 +293,89 @@
         map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 		google.maps.event.trigger(map, 'resize');
 		
-		var marker;
+		var marker1, marker2, marker3, marker4, marker5, marker6;
 		
 		<% if not @current_plant.lat1.blank? and not @current_plant.lng1.blank? %>
-		marker = new google.maps.Marker({
+		marker1 = new google.maps.Marker({
 			position: location1,
 			map: map,
+			title: '' + <%=  @current_plant.lat1.to_json %>,
 			animation: google.maps.Animation.DROP
 		})
 		
-		marker.setMap(map);
-		bounds.extend(marker.getPosition());
+    	var info = "<div style='color: black'>Location:" + <%=  @current_plant.lat1.to_json %> + " </div>" ;
+
+  		var infowindow = new google.maps.InfoWindow({
+  			content: info
+  		});
+		google.maps.event.addDomListener(marker1, 'click', function() {
+			infowindow.open(map,marker1);
+		});
+		
+		marker1.setMap(map);
+		bounds.extend(marker1.getPosition());
 		<% end %>
 		<% if not @current_plant.lat2.blank? and not @current_plant.lng2.blank? %>
-		marker = new google.maps.Marker({
+		marker2 = new google.maps.Marker({
 			position: location2,
 			map: map,
 			animation: google.maps.Animation.DROP
 		})
 		
-		marker.setMap(map);
-		bounds.extend(marker.getPosition());
+		marker2.setMap(map);
+		bounds.extend(marker2.getPosition());
 		<% end %>
 		<% if not @current_plant.lat3.blank? and not @current_plant.lng3.blank? %>
-		marker = new google.maps.Marker({
+		marker3 = new google.maps.Marker({
 			position: location3,
 			map: map,
 			animation: google.maps.Animation.DROP
 		})
 		
-		marker.setMap(map);
-		bounds.extend(marker.getPosition());
+		marker3.setMap(map);
+		bounds.extend(marker3.getPosition());
 		<% end %>
 		<% if not @current_plant.lat4.blank? and not @current_plant.lng4.blank? %>
-		marker = new google.maps.Marker({
+		marker4 = new google.maps.Marker({
 			position: location4,
 			map: map,
 			animation: google.maps.Animation.DROP
 		})
 		
-		marker.setMap(map);
-		bounds.extend(marker.getPosition());
+		marker4.setMap(map);
+		bounds.extend(marker4.getPosition());
 		<% end %>
 		<% if not @current_plant.lat5.blank? and not @current_plant.lng5.blank? %>
-		marker = new google.maps.Marker({
+		marker5 = new google.maps.Marker({
 			position: location5,
 			map: map,
 			animation: google.maps.Animation.DROP
 		})
 		
-		marker.setMap(map);
-		bounds.extend(marker.getPosition());
+		marker5.setMap(map);
+		bounds.extend(marker5.getPosition());
 		<% end %>
 		<% if not @current_plant.lat6.blank? and not @current_plant.lng6.blank? %>
-		marker = new google.maps.Marker({
+		marke6 = new google.maps.Marker({
 			position: location6,
 			map: map,
 			animation: google.maps.Animation.DROP
 		})
 		
-		marker.setMap(map);
-		bounds.extend(marker.getPosition());
+		marker6.setMap(map);
+		bounds.extend(marker6.getPosition());
 		<% end %>
 		
 		map.fitBounds(bounds);
-		
+	
+	  
 	}
           
 	 
 	  var envTab = document.getElementById('btn-environmental');
       google.maps.event.addDomListener(envTab, 'click', initialize);
 	  
-	  google.maps.event.addListener(map, 'click', function( event ){
-	    alert( "Latitude: "+event.latLng.lat()+" "+", longitude: "+event.latLng.lng() ); 
-	  });
+	  
 
 </script>
 
