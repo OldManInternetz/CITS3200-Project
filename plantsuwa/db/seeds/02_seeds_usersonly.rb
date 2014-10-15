@@ -3,14 +3,11 @@
 puts "Seeding main users..."
 
 # Admins
-User.create(username: 'Mr Test', password: 'password', password_confirmation: 'password', email: 'mrtest@test.com', admin: 'true', trusted: 'true')
-User.create(username: 'Michael', password: 'password', password_confirmation: 'password', email: 'michael@michael.com', admin: 'true', trusted: 'true')
-User.create(username: 'Duncan', password: 'duncan', password_confirmation: 'duncan', email: 'duncan@duncan.com', admin: 'true', trusted: 'true')
+User.create(username: 'Michael', password: 'password', password_confirmation: 'MiChAeL', email: 'michael@michael.com', admin: 'true', trusted: 'true')
+User.create(username: 'Duncan', password: 'duncan', password_confirmation: 'DuNcAn', email: 'duncan@duncan.com', admin: 'true', trusted: 'true')
 
 # Trusted Users
-User.create(username: 'Trustworthy', password: 'password', password_confirmation: 'password', email: 'trustme@really.com', admin: 'false', trusted: 'true')
-User.create(username: 'Worthy User', password: 'password', password_confirmation: 'password', email: 'worthy@great.com', admin: 'false', trusted: 'true')
-User.create(username: 'Legitimate', password: 'password', password_confirmation: 'password', email: 'imlegit@hotmail.com', admin: 'false', trusted: 'true')
+User.create(username: 'Trusted', password: 'password', password_confirmation: 'TrUsTeD', email: 'trustme@really.com', admin: 'false', trusted: 'true')
 
 # Regular Users
 
