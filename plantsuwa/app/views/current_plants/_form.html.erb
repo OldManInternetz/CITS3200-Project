@@ -226,17 +226,19 @@
 		  var location6 = new google.maps.LatLng(<%= @current_plant.lat6.to_json %> , <%= @current_plant.lng6.to_json %>);
 		  
         var mapOptions = {
-          center: location1,
+			center: new google.maps.LatLng(-31,115),
 		  mapTypeId: google.maps.MapTypeId.HYBRID,
 		  maxZoom: 16	
         };
 		
+			
+		
         map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-		google.maps.event.trigger(map, 'resize');
 		
 		var marker1, marker2, marker3, marker4, marker5, marker6;
 		
 		<% if not @current_plant.lat1.blank? and not @current_plant.lng1.blank? %>
+		map.setCenter(location1);
 		marker1 = new google.maps.Marker({
 			position: location1,
 			map: map,
