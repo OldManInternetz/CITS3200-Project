@@ -64,7 +64,7 @@
 		<% @grouped_plants.each do |h| %>
 			<% if !h.first.empty? and !h.last.empty? %>	
 				<% if h.first == "(none)" %>
-					<a onclick="jump_to('#header-<%= h.first.gsub(/[^a-zA-Z0-9]/, '') %>')"><li>...</li></a>
+					<a onclick="jump_to('#header-none')"><li>...</li></a>
 				<% else %>
 					<a onclick="jump_to('#header-<%= h.first.gsub(/[^a-zA-Z0-9]/, '') %>')"><li><%= h.first[0..1] %></li></a>
 				<% end %>
@@ -84,9 +84,9 @@
 			<% end %>
 			<% if !h.first.empty? and !h.last.empty? and ((counter - 1) % 2 == 0) %>	
 				<% if h.first == "(none)" %>
-					<a href="#header-<%= h.first %>" onclick="jump_to(#header-<%= h.first.gsub(/[^a-zA-Z0-9]/, '') %>)"><li>...</li></a>
+					<a onclick="jump_to(#header-none)"><li>...</li></a>
 				<% else %>
-					<a href="#header-<%= h.first %>" onclick="jump_to(#header-<%= h.first.gsub(/[^a-zA-Z0-9]/, '') %>)"><li><%= h.first[0..1] %></li></a>
+					<a onclick="jump_to('#header-<%= h.first.gsub(/[^a-zA-Z0-9]/, '') %>')"><li><%= h.first[0..1] %></li></a>
 				<% end %>
 			<% end %>
 		<% end %>

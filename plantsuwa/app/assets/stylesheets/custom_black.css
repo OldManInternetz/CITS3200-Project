@@ -571,3 +571,7 @@ label.checkbox {
   border: 1px solid rgb(68, 68, 68);
   background: rgb(51, 51, 51);
 }
+
+.side-nav > ul > a > li:active {
+  background: #D98600;
+}
