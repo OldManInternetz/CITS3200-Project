@@ -71,6 +71,7 @@
     <div id="tab-environmental" class="info-body" style="display: none">
       <fieldset>
 	      <legend>Environmental</legend>
+	  	
     	  <%= f.input  :culture, hint: 'What role does this plant play in different World cultures?', as: :text %> 
     	  <%= f.input  :conservation, as: :text %> 
     	  <%= f.input  :wildlife, hint: 'Does this plant attract any fauna?', as: :text %>
@@ -78,10 +79,15 @@
     	  <%= f.input  :location_1, label: 'Primary Location Name', hint: 'Where can this plant be found locally? Note: Fill Location 1 first.'%> 
   		  <table style="width: 100%">
           <tr>
-    			  <td class="lat"><%= f.input :lat1, label: 'Latitude', hint: 'Get the lat and long from the URL of google maps.'%></td>
-    			  <td class="lng"><%= f.input :lng1, label: 'Longitude'%></td>
+    			  <td class="lat"><%= f.input :lat1, label: 'Latitude', hint: 'Hint: Click the map below to get accurate coordinates.'%></td>
+    			  <td class="lng"><%= f.input :lng1, label: 'Longitude', hint: '  '%></td>
   		    </tr>
         </table>
+  		  
+		<div id="map-hide">
+		  		<div  id="map-canvas" style="height: 300px; width: 500px; margin: 10px"></div>
+		</div>
+		
   		  <a id="show_more" onClick="show_more()" style="cursor: pointer; font-weight: bold;"><i>Show More Locations</i></a>
    		  <a id="show_less" onClick="show_less()" style="cursor: pointer; font-weight: bold;" class="invisible"><i>Show Less Locations</i></a>
   		  <div id="more_locations" class="invisible">
@@ -96,6 +102,7 @@
   			  <%= f.input  :location_6, label: 'Location Name 6'%> 		  
   			  <table style="width: 100%"><tr><td class="lat"><%= f.input :lat6 %></td><td class="lng"><%= f.input :lng6 %></td></tr></table>
         </div>
+		
   		  <%= f.input  :general_info, as: :text %>
         <%= f.input  :additional_info, as: :text %> 
             <div class="row">
@@ -193,11 +200,141 @@
 <style>
 	.lat {
 		padding: 0px 10px 10px 0px;
+		width: 50%;
 	}
 	.lng {
 		padding: 0px 0px 10px 10px;
+		width: 50%;
 	}
 </style>
+
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3key={AIzaSyAlFdDKUoiH9BBWXsP3jphe1XhzeBde9IM}&sensor=true">
+</script>
+
+<script>
+	var map;
+	var geocoder;
+
+      function initialize() {
+		  var bounds = new google.maps.LatLngBounds();
+		  var location1 = new google.maps.LatLng(<%= @current_plant.lat1.to_json %> , <%= @current_plant.lng1.to_json %>);
+		  var location2 = new google.maps.LatLng(<%= @current_plant.lat2.to_json %> , <%= @current_plant.lng2.to_json %>);
+		  var location3 = new google.maps.LatLng(<%= @current_plant.lat3.to_json %> , <%= @current_plant.lng3.to_json %>);
+		  var location4 = new google.maps.LatLng(<%= @current_plant.lat4.to_json %> , <%= @current_plant.lng4.to_json %>);
+		  var location5 = new google.maps.LatLng(<%= @current_plant.lat5.to_json %> , <%= @current_plant.lng5.to_json %>);
+		  var location6 = new google.maps.LatLng(<%= @current_plant.lat6.to_json %> , <%= @current_plant.lng6.to_json %>);
+		  
+        var mapOptions = {
+          center: location1,
+		  mapTypeId: google.maps.MapTypeId.HYBRID,
+		  maxZoom: 16	
+        };
+		
+        map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+		google.maps.event.trigger(map, 'resize');
+		
+		var marker1, marker2, marker3, marker4, marker5, marker6;
+		
+		<% if not @current_plant.lat1.blank? and not @current_plant.lng1.blank? %>
+		marker1 = new google.maps.Marker({
+			position: location1,
+			map: map,
+			title: '' + <%=  @current_plant.lat1.to_json %>,
+			animation: google.maps.Animation.DROP
+		})
+		
+    	var info = "<div style='color: black'>Location:" + <%=  @current_plant.lat1.to_json %> + " </div>" ;
+
+  		var infowindow = new google.maps.InfoWindow({
+  			content: info
+  		});
+		google.maps.event.addDomListener(marker1, 'click', function() {
+			infowindow.open(map,marker1);
+		});
+		
+		marker1.setMap(map);
+		bounds.extend(marker1.getPosition());
+		<% end %>
+		<% if not @current_plant.lat2.blank? and not @current_plant.lng2.blank? %>
+		marker2 = new google.maps.Marker({
+			position: location2,
+			map: map,
+			animation: google.maps.Animation.DROP
+		})
+		
+		marker2.setMap(map);
+		bounds.extend(marker2.getPosition());
+		<% end %>
+		<% if not @current_plant.lat3.blank? and not @current_plant.lng3.blank? %>
+		marker3 = new google.maps.Marker({
+			position: location3,
+			map: map,
+			animation: google.maps.Animation.DROP
+		})
+		
+		marker3.setMap(map);
+		bounds.extend(marker3.getPosition());
+		<% end %>
+		<% if not @current_plant.lat4.blank? and not @current_plant.lng4.blank? %>
+		marker4 = new google.maps.Marker({
+			position: location4,
+			map: map,
+			animation: google.maps.Animation.DROP
+		})
+		
+		marker4.setMap(map);
+		bounds.extend(marker4.getPosition());
+		<% end %>
+		<% if not @current_plant.lat5.blank? and not @current_plant.lng5.blank? %>
+		marker5 = new google.maps.Marker({
+			position: location5,
+			map: map,
+			animation: google.maps.Animation.DROP
+		})
+		
+		marker5.setMap(map);
+		bounds.extend(marker5.getPosition());
+		<% end %>
+		<% if not @current_plant.lat6.blank? and not @current_plant.lng6.blank? %>
+		marke6 = new google.maps.Marker({
+			position: location6,
+			map: map,
+			animation: google.maps.Animation.DROP
+		})
+		
+		marker6.setMap(map);
+		bounds.extend(marker6.getPosition());
+		<% end %>
+		
+		map.fitBounds(bounds);
+	
+	  google.maps.event.addListener(map, 'click', function (event) {
+		  placeMarker(event.latLng);
+	  });
+	  
+	}
+          
+	  var envTab = document.getElementById('btn-environmental');
+      google.maps.event.addDomListener(envTab, 'click', initialize);
+	  
+		  
+		  
+		  function placeMarker(location) {
+		    var marker = new google.maps.Marker({
+		      position: location,
+		      map: map,
+		    });
+		    var infowindow = new google.maps.InfoWindow({
+		      content: '<div style='+'color:black;'+'> Latitude: ' + location.lat() + '<br>Longitude: ' + location.lng() + '</div>'
+		    });
+		    infowindow.open(map,marker);
+		  }
+
+	  
+	  
+</script>
+
 
 
 <script>
@@ -251,4 +388,5 @@
 
 
 </script>
+
 
