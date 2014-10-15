@@ -51,31 +51,20 @@ class CurrentPlantsController < ApplicationController
 
     #@current_plants = yield_ordered_plants(@sort_by)
 
-    if @sort_by == "Genus" or @sort_by == "Species" or @sort_by == "Family" or @sort_by == "Common Name"
-      list_of_headings = ["*", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "(none)"]
-      hash_of_headings = Hash.new
+    @grouped_plants = yield_grouped_plants(@sort_by)
+
+    """ Debug stuff """
+
+    list_of_headings = ["#", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "(none)"]
+
+      count = 0
       for i in list_of_headings
-        relevant_plants = yield_ordered_plants_letter(@sort_by, i)
-        hash_of_headings[i] = relevant_plants
+       count += @grouped_plants[i].count
       end
-      @grouped_plants = hash_of_headings
-    elsif @sort_by == "Type"
-      temp = Hash.new
-      temp["All"] = yield_ordered_plants(@sort_by)  
-      @grouped_plants = temp    
-    else
-      temp = Hash.new
-      temp["All"] = yield_ordered_plants(@sort_by)  
-      @grouped_plants = temp      
-    end
 
-    count = 0
-    for i in list_of_headings
-      count += @grouped_plants[i].count
-    end
+      puts "*" * 50 + "#{count}" + "*" * 50
 
-    puts "***********" * 5 + "  #{count}  " + "*********"
-
+    """ End debug """
 
   end
   

@@ -186,6 +186,7 @@ module CurrentPlantHelper
   end
 
   """ Yields an ordered list of plants, based on the sort parameters. """
+  """ It's used when the sort_by parameter is not one of the recognised ones, for whatever reason. """
   def yield_ordered_plants(sort_by)
 
     if sort_by == "Genus"
@@ -208,21 +209,22 @@ module CurrentPlantHelper
   """ Yields an ordered list of plants, based on the sort parameters, and the first letter 'letter'. """
   def yield_ordered_plants_letter(sort_by, letter)
 
-    if(letter == "*")     
+    # This letter deals with all plants that have names starting with anything that isn't an alphabetical character
+    if(letter == "#")     
 
-      #letter_wildcards = [',', '`', '*', '~', '']
+      alphabet = ('a'..'z').to_a + ('A'..'Z').to_a
       
-      #if sort_by == "Genus"
-      #  plants = CurrentPlant.where(genus: [nil, ""]).order('genus asc, scientific_name asc')
-      #elsif sort_by == "Species"
-      #  plants = CurrentPlant.where(species: [nil, ""]).order('species asc, scientific_name asc')
-      #elsif sort_by == "Family"
-      #  plants = CurrentPlant.where(family: [nil, ""]).order('family asc, scientific_name asc')
-      #elsif sort_by == "Common Name"
-      #  plants = CurrentPlant.where(common_name: [nil, ""]).order('common_name asc, scientific_name asc')
-      #end
+      if sort_by == "Genus"
+        plants = CurrentPlant.where("substr(genus, 1, 1) NOT IN (?)", alphabet).where.not(genus: [nil, ""]).order('genus asc, scientific_name asc')
+      elsif sort_by == "Species"
+        plants = CurrentPlant.where("substr(species, 1, 1) NOT IN (?)", alphabet).where.not(species: [nil, ""]).order('species asc, scientific_name asc')
+      elsif sort_by == "Family"
+        plants = CurrentPlant.where("substr(family, 1, 1) NOT IN (?)", alphabet).where.not(family: [nil, ""]).order('family asc, scientific_name asc')
+      elsif sort_by == "Common Name"
+        plants = CurrentPlant.where("substr(common_name, 1, 1) NOT IN (?)", alphabet).where.not(common_name: [nil, ""]).order('common_name asc, scientific_name asc')
+      end
 
-
+    # This letter deals with all plants that have no [name], nil or empty
     elsif(letter == "(none)")
 
       if sort_by == "Genus"
@@ -235,7 +237,7 @@ module CurrentPlantHelper
         plants = CurrentPlant.where(common_name: [nil, ""]).order('common_name asc, scientific_name asc')
       end
 
-
+    # This letter accounts for every alphabetically-starting plant
     else      
       letter_both_cases = [letter, letter.downcase]
 
@@ -252,6 +254,32 @@ module CurrentPlantHelper
     end
 
     return plants
+  end
+
+
+
+
+  def yield_grouped_plants(sort_by)
+    if sort_by == "Genus" or sort_by == "Species" or sort_by == "Family" or sort_by == "Common Name"
+      list_of_headings = ["#", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "(none)"]
+      hash_of_headings = Hash.new
+      for i in list_of_headings
+        relevant_plants = yield_ordered_plants_letter(sort_by, i)
+        hash_of_headings[i] = relevant_plants
+      end
+      grouped_plants = hash_of_headings
+    elsif sort_by == "Type"
+      temp = Hash.new
+      temp["All"] = yield_ordered_plants(sort_by)  
+      grouped_plants = temp    
+    else
+      temp = Hash.new
+      temp["All"] = yield_ordered_plants(sort_by)  
+      grouped_plants = temp      
+    end
+
+    return grouped_plants
+
   end
 
 end
