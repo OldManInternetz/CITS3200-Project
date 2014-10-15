@@ -39,7 +39,7 @@ class CurrentPlantsController < ApplicationController
     end
 
     # The different paths the plants can be sorted through
-    @sort_paths = { "Genus" => change_sort_by_path(sort_by: 'genus'), "Species" => change_sort_by_path(sort_by: 'species'), "Family" => change_sort_by_path(sort_by: 'family'), "Common Name" => change_sort_by_path(sort_by: 'common_name'), "Type" => change_sort_by_path(sort_by: 'type') }
+    @sort_paths = { "Genus" => change_sort_by_path(sort_by: 'genus'), "Family" => change_sort_by_path(sort_by: 'family'), "Common Name" => change_sort_by_path(sort_by: 'common_name'), "Type" => change_sort_by_path(sort_by: 'type') }
 
     if cookies[:sort_by].blank?
       @sort_by_select_option = @sort_paths["Genus"]
@@ -52,24 +52,6 @@ class CurrentPlantsController < ApplicationController
     #@current_plants = yield_ordered_plants(@sort_by)
 
     @grouped_plants = yield_grouped_plants(@sort_by)
-
-    """ Debug stuff """
-
-      if(@sort_by != "Type")
-
-        list_of_headings = ["#", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "(none)"]
-
-        count = 0
-        for i in list_of_headings
-         count += @grouped_plants[i].count
-        end
-    
-        puts "*" * 50 + "#{count}" + "*" * 50
-    
-      end
-
-    """ End debug """ 
-
 
   end
   
@@ -86,7 +68,6 @@ class CurrentPlantsController < ApplicationController
 
       @current_plants = CurrentPlant.search_for(@search_string)
       @results_count = @current_plants.count
-
 
     elsif params.has_key?(:plants)
       @searched = true

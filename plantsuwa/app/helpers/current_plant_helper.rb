@@ -105,7 +105,6 @@ module CurrentPlantHelper
 
     return results_list
 
-
   end
 
 
@@ -202,7 +201,8 @@ module CurrentPlantHelper
     return plants
   end
 
-  """ Yields an ordered list of plants, based on the sort parameters, and the first letter 'letter'.
+
+  """ Yields an ordered list of plants, based on the sort parameters, and the first letter 'letter'. This function will take a header letter and return all relevant plants that belong to that header letter.
       Plants that start with a non-alphabetic character (including a space) are placed under the '#' header.
       Plants that start with alphabetic characters are placed under the A-Z headers.
       Plants that do not have a Genus, Family, or whatever field is being looked at, are placed under the '(none)' header.
@@ -216,8 +216,8 @@ module CurrentPlantHelper
       
       if sort_by == "Genus"
         plants = CurrentPlant.where("substr(genus, 1, 1) NOT IN (?)", alphabet).where.not(genus: [nil, ""]).order('genus asc, scientific_name asc')
-      elsif sort_by == "Species"
-        plants = CurrentPlant.where("substr(species, 1, 1) NOT IN (?)", alphabet).where.not(species: [nil, ""]).order('species asc, scientific_name asc')
+      #elsif sort_by == "Species"
+      #  plants = CurrentPlant.where("substr(species, 1, 1) NOT IN (?)", alphabet).where.not(species: [nil, ""]).order('species asc, scientific_name asc')
       elsif sort_by == "Family"
         plants = CurrentPlant.where("substr(family, 1, 1) NOT IN (?)", alphabet).where.not(family: [nil, ""]).order('family asc, scientific_name asc')
       elsif sort_by == "Common Name"
@@ -229,8 +229,8 @@ module CurrentPlantHelper
 
       if sort_by == "Genus"
         plants = CurrentPlant.where(genus: [nil, ""]).order('genus asc, scientific_name asc')
-      elsif sort_by == "Species"
-        plants = CurrentPlant.where(species: [nil, ""]).order('species asc, scientific_name asc')
+      #elsif sort_by == "Species"
+      #  plants = CurrentPlant.where(species: [nil, ""]).order('species asc, scientific_name asc')
       elsif sort_by == "Family"
         plants = CurrentPlant.where(family: [nil, ""]).order('family asc, scientific_name asc')
       elsif sort_by == "Common Name"
@@ -243,8 +243,8 @@ module CurrentPlantHelper
 
       if sort_by == "Genus"
         plants = CurrentPlant.where("substr(genus, 1, 1) IN (?)", letter_both_cases).order('genus asc, scientific_name asc')
-      elsif sort_by == "Species"
-        plants = CurrentPlant.where("substr(species, 1, 1) IN (?)", letter_both_cases).order('species asc, scientific_name asc')
+      #elsif sort_by == "Species"
+      #  plants = CurrentPlant.where("substr(species, 1, 1) IN (?)", letter_both_cases).order('species asc, scientific_name asc')
       elsif sort_by == "Family"
         plants = CurrentPlant.where("substr(family, 1, 1) IN (?)", letter_both_cases).order('family asc, scientific_name asc')
       elsif sort_by == "Common Name"
@@ -254,6 +254,24 @@ module CurrentPlantHelper
     end
 
     return plants
+  end
+
+
+
+  """ Yields an ordered list of plants, based on the sort parameters. This places them into headers representing associated objects, e.g. Types.
+      Plants that are 'Climbers' will be placed under the 'Climbers' header.
+      Plants that are 'Trees' will be placed under the 'Trees' header.
+      Plants that have no type will be placed under the '(none)' header. etc.
+  """
+
+  def yield_ordered_plants_associated_model(sort_by, object)
+
+    if sort_by == "Type"
+      plants = CurrentPlant.where(type_id: object)
+    end
+
+    return plants
+
   end
 
 
@@ -274,9 +292,28 @@ module CurrentPlantHelper
       end
       grouped_plants = hash_of_headings
     elsif sort_by == "Type"
-      temp = Hash.new
-      temp["All"] = yield_ordered_plants(sort_by)  
-      grouped_plants = temp    
+
+      list_of_headings = Array.new
+      count = 0
+
+      hash_of_headings = Hash.new
+
+      for t in Type.all
+
+        heading_name = t.name.titleize
+        relevant_plants = yield_ordered_plants_associated_model(sort_by, t)
+        hash_of_headings[heading_name] = relevant_plants
+
+      end
+
+      # Account for plants with no type
+
+      heading_name = "(none)"
+      relevant_plants = yield_ordered_plants_associated_model(sort_by, nil)
+      hash_of_headings[heading_name] = relevant_plants
+
+      #hash_of_headings["All"] = yield_ordered_plants(sort_by)  
+      grouped_plants = hash_of_headings    
     else
       temp = Hash.new
       temp["All"] = yield_ordered_plants(sort_by)  
