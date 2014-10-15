@@ -372,6 +372,7 @@ label.checkbox {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  text-align: center;
 }
 
 .navbar-prev-page-block {
@@ -847,6 +848,13 @@ h3.or-block {
   display: none;
 }
 
+.plants-grid-container {
+  margin-right: 30px;
+}
+.plants-grid-container > .list-header {
+  margin-right: 0;
+}
+
 
 @media(max-height: 600px) {
   .side-nav {
@@ -859,6 +867,9 @@ h3.or-block {
 
 @media (min-width: 768px) {
   .plant-index-box {
+    margin-right: 0;
+  }
+  .plants-grid-container {
     margin-right: 0;
   }
   .list-header {
