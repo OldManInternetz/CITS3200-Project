@@ -8,24 +8,31 @@
     <div class="plant-index-box-content">
       <%= link_to current_plant_path(current_plant) do %>
         <% if sort_by == "Common Name" %>
-          <p class="plant-text-container"><strong><%= current_plant.common_name %></strong></p>
+          <% if !current_plant.common_name.blank? %>
+            <p class="plant-text-container"><strong><%= current_plant.common_name %></strong></p>
+          <% else %>
+            <p></p>
+          <% end %>
         <% elsif sort_by == "Family" %>
-          <p class="plant-text-container"><strong><%= current_plant.family.upcase %></strong></p>
+          <% if !current_plant.family.blank? %>
+            <p class="plant-text-container"><strong><%= current_plant.family.upcase %></strong></p>
+          <% else %>
+            <p></p>
+          <% end %>
         <% else %>
           <p class="plant-text-container"><strong><%= display_name(current_plant) %></strong></p>
         <% end %>
       <% end %>
 
-      <% if !current_plant.common_name.blank? %>
-        <%= link_to current_plant_path(current_plant) do %>
-          <% if sort_by == "Common Name" %>
-            <p style="text-align: center"><%= display_name(current_plant) %></p>
-          <% elsif sort_by == "Family" %>
-            <p style="text-align: center"><%= display_name(current_plant) %></p>
-          <% else %>
-            <p style="text-align: center"><%= current_plant.common_name %></p>
-          <% end %>
-        <% end %>
+      <%= link_to current_plant_path(current_plant) do %>
+        <% if sort_by == "Common Name" %>
+          <p style="text-align: center"><%= display_name(current_plant) %></p>
+        <% elsif sort_by == "Family" %>
+          <p style="text-align: center"><%= display_name(current_plant) %></p>
+        <% else %>
+          <p style="text-align: center"><%= current_plant.common_name %></p>
+        <% end %>          
+
       <% end %>
     </div>
   </div>
