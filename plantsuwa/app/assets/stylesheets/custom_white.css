@@ -230,6 +230,7 @@ legend {
 
 .plant-index-box {
   border-top: 1px solid #ccc;
+  border-right: 1px solid #ccc;
 }
 
 .plant-index-box-photo {
@@ -471,4 +472,9 @@ legend {
 
 h3.or-block {
   background: white;
+}
+
+.side-nav > ul > a > li {
+  border: 1px solid rgb(170, 170, 170);
+  background: rgb(204, 204, 204);
 }

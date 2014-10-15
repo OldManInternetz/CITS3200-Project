@@ -59,6 +59,40 @@
 	<div style="height: 30px"></div>
 <% end %>
 
+<div class="side-nav">
+	<ul>
+		<% @grouped_plants.each do |h| %>
+			<% if !h.first.empty? and !h.last.empty? %>	
+				<% if h.first == "(none)" %>
+					<a href="#header-<%= h.first %>"><li>...</li></a>
+				<% else %>
+					<a href="#header-<%= h.first %>"><li><%= h.first[0..1] %></li></a>
+				<% end %>
+			<% end %>
+		<% end %>
+	</ul>
+</div>
+
+<div class="side-nav side-nav-tiny">
+	<ul>
+		<% counter = 0 %>
+		<% @grouped_plants.each do |h| %>
+			<% if @grouped_plants.length > 20 %>
+				<% counter += 1 %>
+			<% else %>
+				<% counter = 1 %>
+			<% end %>
+			<% if !h.first.empty? and !h.last.empty? and ((counter - 1) % 2 == 0) %>	
+				<% if h.first == "(none)" %>
+					<a href="#header-<%= h.first %>"><li>...</li></a>
+				<% else %>
+					<a href="#header-<%= h.first %>"><li><%= h.first[0..1] %></li></a>
+				<% end %>
+			<% end %>
+		<% end %>
+	</ul>
+</div>
+
 <% if @view == "grid" %>
 	<div id="plants-list">
 		<% @grouped_plants.each do |h| %>

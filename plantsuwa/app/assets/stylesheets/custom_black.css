@@ -308,6 +308,7 @@ legend {
 
 .plant-index-box {
   border-top: 1px solid #222;
+  border-right: 1px solid #222;
 }
 
 .plant-index-box p, .plant-index-box-chevron {
@@ -562,4 +563,11 @@ label.checkbox {
 
 .navbar-inverse .navbar-brand {
   color: black;
+}
+
+
+
+.side-nav > ul > a > li {
+  border: 1px solid rgb(68, 68, 68);
+  background: rgb(51, 51, 51);
 }
