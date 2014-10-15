@@ -69,18 +69,16 @@ module CurrentPlantHelper
           # Obtain all plants with the relevant query
 
           if i == 0
-            temporary_results_list = (CurrentPlant.where(id: (CurrentLinkingClimate.where(climate_id: (Climate.where(id: params_list[i][item_id])))).select("current_plant_id"))).load
-          elsif i == 1
             temporary_results_list = CurrentPlant.where(id: (CurrentLinkingOrigin.where(origin_id: (Origin.where(id: params_list[i][item_id])))).select("current_plant_id")).load
-          elsif i == 2
+          elsif i == 1
             temporary_results_list = CurrentPlant.where(id: (CurrentLinkingSize.where(size_id: (Size.where(id: params_list[i][item_id])))).select("current_plant_id")).load
-          #elsif i == 3
-            #temporary_results_list = CurrentPlant.where(id: (CurrentLinkingSoilType.where(soil_type_id: (SoilType.where(id: params_list[i][item_id])))).select("current_plant_id")).all
-          #elsif i == 4
-            #temporary_results_list = CurrentPlant.where(id: (CurrentLinkingFlowerColour.where(flower_colour_id: (FlowerColour.where(id: params[i][item_id])))).select("current_plant_id")).all
+          elsif i == 2
+            temporary_results_list = CurrentPlant.where(id: (CurrentLinkingFlowerColour.where(flower_colour_id: (FlowerColour.where(id: params[i][item_id])))).select("current_plant_id")).all
           elsif i == 3
             temporary_results_list = CurrentPlant.where(id: (CurrentLinkingLeafColour.where(leaf_colour_id: (LeafColour.where(id: params_list[i][item_id])))).select("current_plant_id")).load
           elsif i == 4
+            temporary_results_list = CurrentPlant.where(id: (CurrentLinkingSoilType.where(soil_type_id: (SoilType.where(id: params_list[i][item_id])))).select("current_plant_id")).all
+          elsif i == 5
             temporary_results_list = CurrentPlant.where(type_id: (Type.where(id: params_list[i][item_id]))).load
           end
 
@@ -110,6 +108,7 @@ module CurrentPlantHelper
 
   end
 
+
   """ Creates the keyword search string based on parameters """
 
   def create_keyword_search_string(params)
@@ -138,6 +137,7 @@ module CurrentPlantHelper
 
   end
 
+
   """ Creates the parameter search string based on parameters """
 
   def create_param_search_string(params)
@@ -154,8 +154,6 @@ module CurrentPlantHelper
     param_objects = [Origin, Size, FlowerColour, LeafColour, SoilType, Type]
 
     for i in 0..params_list.length
-
-
       if not params_list[i].blank?
         if params_list[i].length > 1
           search_string += param_names[i] + ": "     
@@ -166,17 +164,14 @@ module CurrentPlantHelper
           end
         end
       end
-
     end
-
     search_string = fix_up_string(search_string)
-
     return search_string
-
   end
 
 
   """ Fixes up the search string by removing a trailing ', '' """
+
   def fix_up_string(search_string)
     if search_string[-1] == " " and search_string[-2] == ","
       search_string = search_string[0..-3]
@@ -187,6 +182,7 @@ module CurrentPlantHelper
 
   """ Yields an ordered list of plants, based on the sort parameters. """
   """ It's used when the sort_by parameter is not one of the recognised ones, for whatever reason. """
+
   def yield_ordered_plants(sort_by)
 
     if sort_by == "Genus"
@@ -206,7 +202,11 @@ module CurrentPlantHelper
     return plants
   end
 
-  """ Yields an ordered list of plants, based on the sort parameters, and the first letter 'letter'. """
+  """ Yields an ordered list of plants, based on the sort parameters, and the first letter 'letter'.
+      Plants that start with a non-alphabetic character (including a space) are placed under the '#' header.
+      Plants that start with alphabetic characters are placed under the A-Z headers.
+      Plants that do not have a Genus, Family, or whatever field is being looked at, are placed under the '(none)' header.
+  """
   def yield_ordered_plants_letter(sort_by, letter)
 
     # This letter deals with all plants that have names starting with anything that isn't an alphabetical character
@@ -258,6 +258,11 @@ module CurrentPlantHelper
 
 
 
+  """ Yields a hash of header names, along with all plants belonging to those headers... e.g.
+        grouped_plants['a'] = Acacia, Another, Australian
+        grouped_plants['#'] = 'Hello', #hashtag, 0plant
+        grouped_plants['none'] = <plants with no genus/species/whatever>
+  """
 
   def yield_grouped_plants(sort_by)
     if sort_by == "Genus" or sort_by == "Species" or sort_by == "Family" or sort_by == "Common Name"
@@ -281,5 +286,8 @@ module CurrentPlantHelper
     return grouped_plants
 
   end
+
+
+
 
 end
