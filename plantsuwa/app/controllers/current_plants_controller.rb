@@ -53,7 +53,22 @@ class CurrentPlantsController < ApplicationController
 
     @grouped_plants = yield_grouped_plants(@sort_by)
 
-    
+    """ Debug stuff """
+
+    #  if(@sort_by != "Type")
+
+    #  list_of_headings = ["#", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "(none)"]
+
+    #    count = 0
+    #    for i in list_of_headings
+    #     count += @grouped_plants[i].count
+    #    end
+    #
+    #    puts "*" * 50 + "#{count}" + "*" * 50
+    #
+    #  end
+
+    """ End debug """    
 
   end
   

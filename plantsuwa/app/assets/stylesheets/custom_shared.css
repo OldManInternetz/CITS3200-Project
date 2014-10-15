@@ -836,7 +836,7 @@ h3.or-block {
   }
 }
 
-@media(max-width: 992px, min-width: 768px) {
+@media(max-width: 992px) and (min-width: 768px) {
   .colour-scheme-992 {
     display: none;
   }
