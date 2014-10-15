@@ -10,7 +10,7 @@ module CurrentPlantHelper
   end
 
   def has_environmental(current_plant)
-    return !(@current_plant.culture.blank? and @current_plant.conservation.blank? and @current_plant.wildlife.blank? and not @current_plant.origins.any? and @current_plant.location_1.blank? and @current_plant.general_info.blank? and @current_plant.additional_info.blank? and @current_plant.discovered_by.blank? and @current_plant.named_by.blank?)
+    return !(@current_plant.culture.blank? and @current_plant.conservation.blank? and @current_plant.wildlife.blank? and not @current_plant.origins.any? and @current_plant.location_1.blank? and @current_plant.location_2.blank? and @current_plant.location_3.blank? and @current_plant.location_4.blank? and @current_plant.location_5.blank? and @current_plant.location_6.blank? and @current_plant.general_info.blank? and @current_plant.additional_info.blank? and @current_plant.discovered_by.blank? and @current_plant.named_by.blank? and (@current_plant.lat1.blank? and @current_plant.lng1.blank?) and (@current_plant.lat2.blank? and @current_plant.lng2.blank?) and (@current_plant.lat3.blank? and @current_plant.lng3.blank?) and (@current_plant.lat4.blank? and @current_plant.lng4.blank?) and (@current_plant.lat5.blank? and @current_plant.lng5.blank?) and (@current_plant.lat6.blank? and @current_plant.lng6.blank?))
   end
 
   def has_photos(current_plant)
