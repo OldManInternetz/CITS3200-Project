@@ -64,9 +64,9 @@
 		<% @grouped_plants.each do |h| %>
 			<% if !h.first.empty? and !h.last.empty? %>	
 				<% if h.first == "(none)" %>
-					<a href="#header-<%= h.first %>"><li>...</li></a>
+					<a onclick="jump_to('#header-<%= h.first.gsub(/[^a-zA-Z0-9]/, '') %>')"><li>...</li></a>
 				<% else %>
-					<a href="#header-<%= h.first %>"><li><%= h.first[0..1] %></li></a>
+					<a onclick="jump_to('#header-<%= h.first.gsub(/[^a-zA-Z0-9]/, '') %>')"><li><%= h.first[0..1] %></li></a>
 				<% end %>
 			<% end %>
 		<% end %>
@@ -84,9 +84,9 @@
 			<% end %>
 			<% if !h.first.empty? and !h.last.empty? and ((counter - 1) % 2 == 0) %>	
 				<% if h.first == "(none)" %>
-					<a href="#header-<%= h.first %>"><li>...</li></a>
+					<a href="#header-<%= h.first %>" onclick="jump_to(#header-<%= h.first.gsub(/[^a-zA-Z0-9]/, '') %>)"><li>...</li></a>
 				<% else %>
-					<a href="#header-<%= h.first %>"><li><%= h.first[0..1] %></li></a>
+					<a href="#header-<%= h.first %>" onclick="jump_to(#header-<%= h.first.gsub(/[^a-zA-Z0-9]/, '') %>)"><li><%= h.first[0..1] %></li></a>
 				<% end %>
 			<% end %>
 		<% end %>
@@ -97,7 +97,7 @@
 	<div id="plants-list">
 		<% @grouped_plants.each do |h| %>
 			<% if !h.last.empty? %>
-				<div class="list-header" id="header-<%= h.first %>"><%= h.first %></div>
+				<div class="list-header" id="header-<%= h.first.gsub(/[^a-zA-Z0-9]/, '') %>"><%= h.first %></div>
 				<%= render partial: "current_plant_grid", collection: h.last, as: :current_plant, locals: { sort_by: @sort_by } %>
 			<% end %>
 		<% end %>
@@ -106,7 +106,7 @@
 	<div id="plants-list">
 		<% @grouped_plants.each do |h| %>
 			<% if !h.last.empty? %>
-				<div class="list-header" id="header-<%= h.first %>"><%= h.first %></div>
+				<div class="list-header" id="header-<%= h.first.gsub(/[^a-zA-Z0-9]/, '') %>"><%= h.first %></div>
 				<%= render partial: "current_plant", collection: h.last, as: :current_plant, locals: { sort_by: @sort_by } %>
 			<% end %>
 		<% end %>
@@ -138,6 +138,12 @@
   $('#sort_select').change(function() {
     window.location = $(this).find('option:selected').val();
   });
+
+  function jump_to(element) {
+  	var element = $(element);
+  	$('html,body').animate({ scrollTop: element.offset().top - 82 }, 500);
+  };
+
 
 </script>
 

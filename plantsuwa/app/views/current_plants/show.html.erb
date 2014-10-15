@@ -372,6 +372,7 @@
     $('#tab-descriptions').css({ display: '' });
     $('.info-tab').removeClass("info-tab-current");
     $('#btn-descriptions').addClass("info-tab-current");
+    $(window).scrollTop(0);
   });
 
   <% if has_architectural(@current_plant) %>
@@ -380,6 +381,7 @@
       $('#tab-architectural').css({ display: '' });
       $('.info-tab').removeClass("info-tab-current");
       $('#btn-architectural').addClass("info-tab-current");
+      $(window).scrollTop(0);
     });
   <% else %>
     $('#btn-architectural').addClass("info-tab-disabled");
@@ -391,6 +393,7 @@
       $('#tab-environmental').css({ display: '' });
       $('.info-tab').removeClass("info-tab-current");
       $('#btn-environmental').addClass("info-tab-current");
+      $(window).scrollTop(0);
     });
   <% else %>
     $('#btn-environmental').addClass("info-tab-disabled");
@@ -402,6 +405,7 @@
     $('#tab-photos').css({ display: '' });
     $('.info-tab').removeClass("info-tab-current");
     $('#btn-photos').addClass("info-tab-current");
+    $(window).scrollTop(0);
   });
   
   $('#display-photo-main').on('click', function () {
@@ -409,6 +413,7 @@
     $('#tab-photos').css({ display: '' });
     $('.info-tab').removeClass("info-tab-current");
     $('#btn-photos').addClass("info-tab-current");
+    $(window).scrollTop(0);
   }); 
 
 
