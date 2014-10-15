@@ -877,6 +877,12 @@ h3.or-block {
   }
 }
 
+@media (min-width: 992px) {
+  .side-nav {
+    right: 20px;
+  }
+}
+
 
 
 
