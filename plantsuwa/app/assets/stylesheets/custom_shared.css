@@ -199,8 +199,10 @@ textarea.form-control {
 
 
 
+
 .check_boxes.optional.form-control {
 	height: 15px;
+	width: 15px;
 }
 
 label.checkbox {

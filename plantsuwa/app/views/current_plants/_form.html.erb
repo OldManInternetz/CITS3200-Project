@@ -141,7 +141,8 @@
               </span>
             <% end %>
 
-          <%= f.file_field  :display_photo %>
+          <%= f.file_field  :display_photo, style:"float: left;" %>
+		  <br>
           <%= f.input  :display_photo_description %>
         </div>
 
@@ -168,7 +169,8 @@
               <% end %>
 
 
-              <%= builder.file_field :image %>
+              <%= builder.file_field :image , style:"float: left;" %>
+			  <br>
               <%= builder.input :description %>
             </div>
           <% end %>
