@@ -383,7 +383,8 @@
 
 <script>
 
-  
+  var lastCenter;
+  var lastZoom;
 
   $('#btn-descriptions').on('click', function () {
     $('.info-body').css({ display: 'none' });
@@ -391,6 +392,8 @@
     $('.info-tab').removeClass("info-tab-current");
     $('#btn-descriptions').addClass("info-tab-current");
     $(window).scrollTop(0);
+    lastCenter = map.getCenter();
+    lastZoom = map.getZoom();
   });
 
   <% if has_architectural(@current_plant) %>
@@ -400,6 +403,8 @@
       $('.info-tab').removeClass("info-tab-current");
       $('#btn-architectural').addClass("info-tab-current");
       $(window).scrollTop(0);
+      lastCenter = map.getCenter();
+      lastZoom = map.getZoom();
     });
   <% else %>
     $('#btn-architectural').addClass("info-tab-disabled");
@@ -412,11 +417,10 @@
       $('.info-tab').removeClass("info-tab-current");
       $('#btn-environmental').addClass("info-tab-current");
       $(window).scrollTop(0);
-	  var lastCenter=map.getCenter();
-	  var lastZoom=map.getZoom();
-	  google.maps.event.trigger(map, 'resize');
-	  map.setCenter(lastCenter);
-	  map.setZoom(lastZoom);
+
+  	  google.maps.event.trigger(map, 'resize');
+  	  map.setCenter(lastCenter);
+  	  map.setZoom(lastZoom);
 	  
     });
   <% else %>
@@ -430,6 +434,8 @@
     $('.info-tab').removeClass("info-tab-current");
     $('#btn-photos').addClass("info-tab-current");
     $(window).scrollTop(0);
+    lastCenter = map.getCenter();
+    lastZoom = map.getZoom();
   });
   
   $('#display-photo-main').on('click', function () {
@@ -438,6 +444,8 @@
     $('.info-tab').removeClass("info-tab-current");
     $('#btn-photos').addClass("info-tab-current");
     $(window).scrollTop(0);
+    lastCenter = map.getCenter();
+    lastZoom = map.getZoom();
   }); 
 
 
