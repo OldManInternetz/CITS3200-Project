@@ -575,3 +575,7 @@ label.checkbox {
 .side-nav > ul > a > li:active {
   background: #D98600;
 }
+
+.plants-grid-container {
+  border-right: 1px solid #222;
+}

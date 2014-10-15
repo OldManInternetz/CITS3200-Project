@@ -482,3 +482,7 @@ h3.or-block {
 .side-nav > ul > a > li:active {
   background: #268BFF;
 }
+
+.plants-grid-container {
+  border-right: 1px solid #ccc;
+}

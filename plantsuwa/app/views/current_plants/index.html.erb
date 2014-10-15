@@ -94,10 +94,10 @@
 </div>
 
 <% if @view == "grid" %>
-	<div id="plants-list">
+	<div id="plants-list" class="plants-grid-container" style="margin-right: 30px">
 		<% @grouped_plants.each do |h| %>
 			<% if !h.last.empty? %>
-				<div class="list-header" id="header-<%= h.first.gsub(/[^a-zA-Z0-9]/, '') %>"><%= h.first %></div>
+				<div class="list-header" style="margin-right: 0" id="header-<%= h.first.gsub(/[^a-zA-Z0-9]/, '') %>"><%= h.first %></div>
 				<%= render partial: "current_plant_grid", collection: h.last, as: :current_plant, locals: { sort_by: @sort_by } %>
 			<% end %>
 		<% end %>

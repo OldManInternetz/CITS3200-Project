@@ -368,7 +368,7 @@ label.checkbox {
 
 .navbar-title-block p {
   width: 43%;
-  margin-left: 90px;
+  margin-left: 70px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -383,7 +383,7 @@ label.checkbox {
   width: auto;
   padding-right: 0;
   z-index: 1100;
-  width: 120px;
+  width: 80px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -918,6 +918,9 @@ h3.or-block {
 @media(max-width: 600px) {
   .over-600 {
     display: none;
+  }
+  .navbar-title-block p {
+    width: 30%;
   }
 }
 
