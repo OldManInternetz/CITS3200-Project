@@ -47,7 +47,7 @@ module CurrentPlantHelper
   def find_relevant_plants(params)
 
     # Determine which parameters have actually been entered
-    num_params = 4
+    num_params = 5
 
     # A list of parameters
     params_list = [params[:origin], params[:size], params[:flower_colour], params[:leaf_colour], params[:soil_type], params[:type]]
@@ -73,11 +73,11 @@ module CurrentPlantHelper
           elsif i == 1
             temporary_results_list = CurrentPlant.where(id: (CurrentLinkingSize.where(size_id: (Size.where(id: params_list[i][item_id])))).select("current_plant_id")).load
           elsif i == 2
-            temporary_results_list = CurrentPlant.where(id: (CurrentLinkingFlowerColour.where(flower_colour_id: (FlowerColour.where(id: params[i][item_id])))).select("current_plant_id")).all
+            temporary_results_list = CurrentPlant.where(id: (CurrentLinkingFlowerColour.where(flower_colour_id: (FlowerColour.where(id: params_list[i][item_id])))).select("current_plant_id")).load
           elsif i == 3
             temporary_results_list = CurrentPlant.where(id: (CurrentLinkingLeafColour.where(leaf_colour_id: (LeafColour.where(id: params_list[i][item_id])))).select("current_plant_id")).load
           elsif i == 4
-            temporary_results_list = CurrentPlant.where(id: (CurrentLinkingSoilType.where(soil_type_id: (SoilType.where(id: params_list[i][item_id])))).select("current_plant_id")).all
+            temporary_results_list = CurrentPlant.where(id: (CurrentLinkingSoilType.where(soil_type_id: (SoilType.where(id: params_list[i][item_id])))).select("current_plant_id")).load
           elsif i == 5
             temporary_results_list = CurrentPlant.where(type_id: (Type.where(id: params_list[i][item_id]))).load
           end

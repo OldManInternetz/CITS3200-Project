@@ -20,17 +20,17 @@ Plantsuwa::Application.configure do
   # config.action_dispatch.rack_cache = true
 
   # Disable Rails's static asset server (Apache or nginx will already do this).
-  config.serve_static_assets = false
+  config.serve_static_assets = true
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
+  config.assets.compile = true
 
   # Generate digests for assets URLs.
-  config.assets.digest = true
+  config.assets.digest = false
 
   # Version of your assets, change this if you want to expire all your assets.
   config.assets.version = '1.0'
@@ -78,6 +78,16 @@ Plantsuwa::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
-  config.assets.precompile += %w( admin-pages.css custom.css media-queries.css font-awesome.css)
+  #config.assets.precompile += %w( admin-pages.css custom.css media-queries.css font-awesome.css)
+  config.assets.precompile += %w( addtohomescreen.css)
+  config.assets.precompile += %w( admin-pages_black.css)
+  config.assets.precompile += %w( admin-pages_white.css)
+  config.assets.precompile += %w( application.css)
+  config.assets.precompile += %w( custom_black.css)
+  config.assets.precompile += %w( custom_shared.css) 
+  config.assets.precompile += %w( custom_white.css)
+  config.assets.precompile += %w( addtohomescreen.js)
+  config.assets.precompile += %w( application.js)
+  config.assets.precompile += %w( jazyload.js)
 
 end
