@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="UWAPlantsGuide">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String">ID</Data></Cell>
+        <Cell><Data ss:Type="String">Genus</Data></Cell>
+        <Cell><Data ss:Type="String">Species</Data></Cell>
+        <Cell><Data ss:Type="String">Scientific Name</Data></Cell>
+		<Cell><Data ss:Type="String">Common Names</Data></Cell>
+		<Cell><Data ss:Type="String">Subspecies</Data></Cell>
+		<Cell><Data ss:Type="String">Family</Data></Cell>
+		<Cell><Data ss:Type="String">Synonym</Data></Cell>
+		<Cell><Data ss:Type="String">Description</Data></Cell>
+		<Cell><Data ss:Type="String">Characteristics</Data></Cell>
+		<Cell><Data ss:Type="String">Additional Info</Data></Cell>
+		<Cell><Data ss:Type="String">Identification</Data></Cell>
+		<Cell><Data ss:Type="String">Physical</Data></Cell>
+		<Cell><Data ss:Type="String">General Info</Data></Cell>
+		<Cell><Data ss:Type="String">Environment</Data></Cell>
+		<Cell><Data ss:Type="String">Horticulture</Data></Cell>
+		<Cell><Data ss:Type="String">Architectural</Data></Cell>
+		<Cell><Data ss:Type="String">Culture</Data></Cell>
+		<Cell><Data ss:Type="String">Conservation</Data></Cell>
+		<Cell><Data ss:Type="String">Wildlife</Data></Cell>
+		<Cell><Data ss:Type="String">Architectural Uses</Data></Cell>
+		<Cell><Data ss:Type="String">Discovered By</Data></Cell>
+		<Cell><Data ss:Type="String">Named By</Data></Cell>
+		<Cell><Data ss:Type="String">Submitted By</Data></Cell>
+		<Cell><Data ss:Type="String">Edited By</Data></Cell>
+		<Cell><Data ss:Type="String">Display Photo</Data></Cell>
+		<Cell><Data ss:Type="String">Plant Type</Data></Cell>
+		<Cell><Data ss:Type="String">Soil Type</Data></Cell>
+		<Cell><Data ss:Type="String">Climates</Data></Cell>
+		<Cell><Data ss:Type="String">Flower Colours</Data></Cell>
+		<Cell><Data ss:Type="String">Leaf Colours</Data></Cell>
+		<Cell><Data ss:Type="String">Origin</Data></Cell>
+		<Cell><Data ss:Type="String">Size</Data></Cell>
+		<Cell><Data ss:Type="String">Location 1</Data></Cell>
+		<Cell><Data ss:Type="String">Lat 1</Data></Cell>
+		<Cell><Data ss:Type="String">Lng 1</Data></Cell>
+		<Cell><Data ss:Type="String">Location 2</Data></Cell>
+		<Cell><Data ss:Type="String">Lat 2</Data></Cell>
+		<Cell><Data ss:Type="String">Lng 2</Data></Cell>
+		<Cell><Data ss:Type="String">Location 3</Data></Cell>
+		<Cell><Data ss:Type="String">Lat 3</Data></Cell>
+		<Cell><Data ss:Type="String">Lng 3</Data></Cell>
+		<Cell><Data ss:Type="String">Location 4</Data></Cell>
+		<Cell><Data ss:Type="String">Lat 4</Data></Cell>
+		<Cell><Data ss:Type="String">Lng 4</Data></Cell>
+		<Cell><Data ss:Type="String">Location 5</Data></Cell>
+		<Cell><Data ss:Type="String">Lat 5</Data></Cell>
+		<Cell><Data ss:Type="String">Lng 5</Data></Cell>
+		<Cell><Data ss:Type="String">Location 6</Data></Cell>
+		<Cell><Data ss:Type="String">Lat 6</Data></Cell>
+		<Cell><Data ss:Type="String">Lng 6</Data></Cell>
+		<Cell><Data ss:Type="String">Created At</Data></Cell>
+		<Cell><Data ss:Type="String">Updated At</Data></Cell>
+      </Row>
+      	<% @current_plants.each do |current_plant| %>
+        <Row>
+          <Cell><Data ss:Type="Number"><%= current_plant.id %></Data></Cell>
+		  <Cell><Data ss:Type="String"><%= current_plant.genus %></Data></Cell>
+		  <Cell><Data ss:Type="String"><%= current_plant.species %></Data></Cell>
+          <Cell><Data ss:Type="String"><%= current_plant.scientific_name %></Data></Cell>
+        </Row>
+      	<% end %>
+    </Table>
+  </Worksheet>
+</Workbook>

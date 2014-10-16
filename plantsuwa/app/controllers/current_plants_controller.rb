@@ -31,6 +31,13 @@ class CurrentPlantsController < ApplicationController
   end
 
   def index
+    
+    @current_plants = CurrentPlant.all
+    respond_to do |format|
+        format.html
+        format.csv { send_data @current_plants.to_csv }
+        format.xls #{ send_data @current_plants.to_csv(col_sep: "\t") }
+    end
 
     if cookies[:view] == "grid"
       @view = "grid"

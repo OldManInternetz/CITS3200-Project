@@ -41,6 +41,17 @@ class CurrentPlant < ActiveRecord::Base
     }
   validates_attachment :display_photo, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png"] }
   validates_attachment_size :display_photo, :less_than => 5.megabytes
+  
+  
+  """ CSV """
+  def self.to_csv(options = {})
+    CSV.generate(options) do |csv|
+      csv << column_names
+      all.each do |plant|
+        csv << plant.attributes.values_at(*column_names)
+      end
+    end
+  end
 
 
   """ Validations """
