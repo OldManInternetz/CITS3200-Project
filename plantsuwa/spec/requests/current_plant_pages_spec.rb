@@ -20,7 +20,7 @@ describe "Current Plants Pages" do
 	end
 
 	describe "visiting the plant index page" do
-		it { should have_title(full_title("List by A-Z")) }
+		it { should have_title(full_title("List by Genus")) }
 	end
 
 	describe "visiting a plant's page" do
@@ -155,7 +155,7 @@ describe "Current Plants Pages" do
 		describe "using the keyword search" do
 
 			before do
-				fill_in "search", with: "Rose"
+				fill_in "search_all", with: "Rose"
 				page.find_by_id("submit_search").click
 			end
 

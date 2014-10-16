@@ -3,14 +3,6 @@
 <% provide(:prev_link, root_path) %>
 
 
-<% link_to current_plants_path(sortby: 'a-z') do %>
-	<p><i class="fa fa-sort-alpha-asc"></i>&nbsp;&nbsp;A-Z</p>    
-<% end %>
-
-<% link_to current_plants_path(sortby: 'type') do %>  
-	<p><i class="fa fa-cubes"></i>&nbsp;&nbsp;Type</p>    
-<% end %>
-
 	<div class="index-banner" id="index-banner-controls">
 		<ul style="margin-top: 2px">
 			<span class="over-600">
@@ -72,7 +64,7 @@
 			<% if @grouped_plants.length > 20 %>
 				<% counter += 1 %>
 			<% else %>
-				<% counter = 1 %>
+				<% counter = 2 %>
 			<% end %>
 			<% if !h.first.empty? and !h.last.empty? and ((counter - 1) % 2 == 1) %>	
 				<% if h.first == "(none)" %>
