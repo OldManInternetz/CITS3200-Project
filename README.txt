@@ -27,7 +27,7 @@ Please send us your feedback :)
 
 If you find any bugs or would like to see us add some more features, please email us at [our-student-number]@student.uwa.edu.au, or our client, Tinka.
 
-# Directory Structre #
+# Directory Structure #
 
 ./old_html contains the html, css, js etc from the initial prototypes. 
 
