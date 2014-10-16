@@ -1,5 +1,6 @@
 class CurrentPlant < ActiveRecord::Base
-
+  require 'date'
+  require 'csv'
 
   """ Associations """
 
@@ -46,11 +47,17 @@ class CurrentPlant < ActiveRecord::Base
   """ CSV """
   def self.to_csv(options = {})
     CSV.generate(options) do |csv|
+      csv << ['This report dispalys all plants in the UWA Plant Guide.']
+      csv << ['Created on ' + Time.now.strftime("%d/%m/%Y") + ' at ' + Time.now.strftime("%H:%M:%S") + '.' ]
+      csv << ['To import data back into the database, create changes in new columns, and seek help (see Contact page) to get it into the database.']
+      csv << ['Hint: Do a Find (Ctrl-F) and replace to change all occurrences of "=-" to "-" to remove the #NAME? errors.']
+      csv << []
       csv << column_names
       all.each do |plant|
         csv << plant.attributes.values_at(*column_names)
       end
     end
+    
   end
 
 

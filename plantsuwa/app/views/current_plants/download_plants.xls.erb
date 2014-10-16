@@ -14,6 +14,7 @@
 		<Cell><Data ss:Type="String">Common Names</Data></Cell>
 		<Cell><Data ss:Type="String">Subspecies</Data></Cell>
 		<Cell><Data ss:Type="String">Family</Data></Cell>
+		<Cell><Data ss:Type="String">Plant Type</Data></Cell>
 		<Cell><Data ss:Type="String">Synonym</Data></Cell>
 		<Cell><Data ss:Type="String">Description</Data></Cell>
 		<Cell><Data ss:Type="String">Characteristics</Data></Cell>
@@ -33,7 +34,6 @@
 		<Cell><Data ss:Type="String">Submitted By</Data></Cell>
 		<Cell><Data ss:Type="String">Edited By</Data></Cell>
 		<Cell><Data ss:Type="String">Display Photo</Data></Cell>
-		<Cell><Data ss:Type="String">Plant Type</Data></Cell>
 		<Cell><Data ss:Type="String">Soil Type</Data></Cell>
 		<Cell><Data ss:Type="String">Climates</Data></Cell>
 		<Cell><Data ss:Type="String">Flower Colours</Data></Cell>
@@ -67,6 +67,16 @@
 		  <Cell><Data ss:Type="String"><%= current_plant.genus %></Data></Cell>
 		  <Cell><Data ss:Type="String"><%= current_plant.species %></Data></Cell>
           <Cell><Data ss:Type="String"><%= current_plant.scientific_name %></Data></Cell>
+		  <Cell><Data ss:Type="String"><%= current_plant.common_name %></Data></Cell>
+		  <Cell><Data ss:Type="String"><%= current_plant.subspecies %></Data></Cell>
+		  <Cell><Data ss:Type="String"><%= current_plant.family %></Data></Cell>
+		  <Cell><Data ss:Type="String"><%= current_plant.scientific_name %></Data></Cell>
+		  <Cell><Data ss:Type="String"><%= current_plant.type.name %></Data></Cell>
+		  <Cell><Data ss:Type="String">
+			  <% for @size in current_plant.sizes %>
+			  	<%= @size.name %> 
+		  	  <% end %>
+		  </Data></Cell>
         </Row>
       	<% end %>
     </Table>
