@@ -36,7 +36,7 @@ class CurrentPlantsController < ApplicationController
     respond_to do |format|
       format.html
       format.csv { send_data @current_plants.to_csv }
-      format.xls #{ send_data @current_plants.to_csv(col_sep: "\t") }      
+      #format.xls { send_data @current_plants.to_csv(col_sep: "\t") }      
     end
 
   end

@@ -1,6 +1,7 @@
 {
   "RSpec": {
     "coverage": {
+<<<<<<< HEAD
       "/home/michael/rails_projects/CITS3200-Project/plantsuwa/app/controllers/admin_pages_controller.rb": [
         1,
         null,
@@ -1381,5 +1382,9 @@
       ]
     },
     "timestamp": 1413459318
+=======
+    },
+    "timestamp": 1413459323
+>>>>>>> 249af80e369ef8215cf898c0f1357f0d7a0cf97e
   }
 }

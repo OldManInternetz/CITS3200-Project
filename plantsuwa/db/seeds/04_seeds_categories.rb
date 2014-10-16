@@ -659,53 +659,7 @@ CurrentPlant.find_by_scientific_name('Anigozanthos flavidus').climates << @cold
 CurrentPlant.find_by_scientific_name('Astartea fascicularis').climates << @cold
 CurrentPlant.find_by_scientific_name('Cordyline indivisa').climates << @cold
 CurrentPlant.find_by_scientific_name('Juncus pallidus').climates << @cold
-CurrentPlant.find_by_scientific_name('Grevillea pteridifolia hybrid').climates << @tropical
-CurrentPlant.find_by_scientific_name('Asplenium australasicum').climates << @tropical
-CurrentPlant.find_by_scientific_name('Melaleuca viridiflora (incomplete)').climates << @tropical
-CurrentPlant.find_by_scientific_name('Lophostemon confertus').climates << @tropical
-CurrentPlant.find_by_scientific_name('Livistonia australis (incomplete)').climates << @tropical
-CurrentPlant.find_by_scientific_name('Correa reflexa').climates << @tropical
-CurrentPlant.find_by_scientific_name('Acacia saligna').climates << @tropical
-CurrentPlant.find_by_scientific_name('Leucophyta brownii').climates << @tropical
-CurrentPlant.find_by_scientific_name('Brachyscome multifida').climates << @tropical
-CurrentPlant.find_by_scientific_name('Brachychiton acerifolius').climates << @tropical
-CurrentPlant.find_by_scientific_name('Chamelaucium uncinatum').climates << @tropical
-CurrentPlant.find_by_scientific_name('Hibbertia scandens').climates << @tropical
-CurrentPlant.find_by_scientific_name('Ficus microcarpa var. hillii (incomplete)').climates << @tropical
-CurrentPlant.find_by_scientific_name('Casuarina equisetifolia').climates << @tropical
-CurrentPlant.find_by_scientific_name('Cyathea cooperi').climates << @tropical
-CurrentPlant.find_by_scientific_name('Corymbia citriodora').climates << @tropical
-CurrentPlant.find_by_scientific_name('Acmena smithii').climates << @tropical
-CurrentPlant.find_by_scientific_name('Macadamia tetraphylla (incomplete)').climates << @tropical
-CurrentPlant.find_by_scientific_name('Ficus macrophylla').climates << @tropical
-CurrentPlant.find_by_scientific_name('Hymenosporum flavum').climates << @tropical
-CurrentPlant.find_by_scientific_name('Clematis microphylla').climates << @tropical
-CurrentPlant.find_by_scientific_name('Murraya paniculata').climates << @tropical
-CurrentPlant.find_by_scientific_name('Agonis flexuosa').climates << @tropical
-CurrentPlant.find_by_scientific_name('Carpobrotus glaucescens').climates << @tropical
-CurrentPlant.find_by_scientific_name('Podocarpus elatus (incomplete)').climates << @tropical
-CurrentPlant.find_by_scientific_name('Delonix regia').climates << @tropical
-CurrentPlant.find_by_scientific_name('Tipuana tipu').climates << @tropical
-CurrentPlant.find_by_scientific_name('Pittosporum rhombifolium (incomplete)').climates << @tropical
-CurrentPlant.find_by_scientific_name('Syncarpia glomifera').climates << @tropical
-CurrentPlant.find_by_scientific_name('Casuarina cunninghamiana').climates << @tropical
-CurrentPlant.find_by_scientific_name('Juncus karusii (incomplete)').climates << @tropical
-CurrentPlant.find_by_scientific_name('Melaleuca nesophila').climates << @tropical
-CurrentPlant.find_by_scientific_name('Grevillea robusta').climates << @tropical
-CurrentPlant.find_by_scientific_name('Senna artemisioides').climates << @tropical
-CurrentPlant.find_by_scientific_name('Angophora costata').climates << @tropical
-CurrentPlant.find_by_scientific_name('Grevillea thelemanniana').climates << @tropical
-CurrentPlant.find_by_scientific_name('Lomandra longifolia').climates << @tropical
-CurrentPlant.find_by_scientific_name('Corymbia maculata').climates << @tropical
-CurrentPlant.find_by_scientific_name('Dianella revoluta').climates << @tropical
-CurrentPlant.find_by_scientific_name('Crinum pedunculatum').climates << @tropical
-CurrentPlant.find_by_scientific_name('Agonis linearifolia').climates << @tropical
-CurrentPlant.find_by_scientific_name('Chamelaucium ciliatum').climates << @tropical
-CurrentPlant.find_by_scientific_name('Callistemon viminalis').climates << @tropical
-CurrentPlant.find_by_scientific_name('Melaleuca leucadendra').climates << @tropical
-CurrentPlant.find_by_scientific_name('Anigozanthos flavidus').climates << @tropical
-CurrentPlant.find_by_scientific_name('Astartea fascicularis').climates << @tropical
-CurrentPlant.find_by_scientific_name('Juncus pallidus').climates << @tropical
+
 CurrentPlant.find_by_scientific_name('Grevillea pteridifolia hybrid').climates << @tropical
 CurrentPlant.find_by_scientific_name('Asplenium australasicum').climates << @tropical
 CurrentPlant.find_by_scientific_name('Melaleuca viridiflora (incomplete)').climates << @tropical
