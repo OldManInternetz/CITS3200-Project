@@ -121,13 +121,3 @@ You can now access the server from http://alva-nix-002.alva.uwa.edu.au:3000/ (al
 To quit the server:
 
     $ kill -9 $(cat tmp/pids/server.pid)
-
-
-# Changing the colour scheme #
-
-To change the colour scheme, you need to do the following:
-
-    - Change 'custom_black.css' to 'custom_white.css' in plantsuwa/app/assets/stylesheets/application.css
-    - Change 'admin-pages_white.css' to 'admin-pages_black' in plantsuwa/app/views/layouts/admin_layout.html.erb
-
-Save those files and it should be done. To swap back, just reverse 'white' and 'black'.
