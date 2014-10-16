@@ -35,6 +35,7 @@ Plantsuwa::Application.routes.draw do
   match "/plants_change_view", to: 'current_plants#change_view', as: 'change_view', via: 'get'
   match "/plants_change_sort_by", to: 'current_plants#change_sort_by', as: 'change_sort_by', via: 'get'
   match "/change_colour_scheme", to: 'application#change_colour_scheme', as: 'change_colour_scheme', via: 'get'
+  match "/download", to: 'current_plants#download_plants', as: 'download_plants', via: 'get'
 
   # Admin routes
 

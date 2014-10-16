@@ -1,7 +1,7 @@
 module ApplicationHelper
 
   def base_title
-    "Plants UWA"
+    "UWA Plant Guide"
   end
 
   """ Returns the full title on a per-page basis. """

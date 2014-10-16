@@ -66,6 +66,9 @@
 
 
 			  <li><%= link_to change_colour_scheme_path do %><i class="fa fa-adjust"></i>&nbsp;<span class="colour-scheme-992">Switch colour scheme</span><% end %></li>
+			  <% if is_trusted? %>
+			  	<li><%= link_to download_plants_path(format: :csv) do %><i class="fa fa-download"></i>&nbsp;<span class="colour-scheme-992">Download .csv</span><% end %></li>
+			  <% end %>
 			  <li><%= link_to contact_path do %>Contact<% end %></li>
 		  </ul>  
 		</div><!-- /.navbar-collapse -->
