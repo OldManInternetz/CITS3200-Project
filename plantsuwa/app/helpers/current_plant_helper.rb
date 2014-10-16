@@ -267,7 +267,7 @@ module CurrentPlantHelper
   def yield_ordered_plants_associated_model(sort_by, object)
 
     if sort_by == "Type"
-      plants = CurrentPlant.where(type_id: object)
+      plants = CurrentPlant.where(type_id: object).order('scientific_name asc')
     end
 
     return plants
