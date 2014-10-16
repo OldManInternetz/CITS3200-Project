@@ -3,11 +3,11 @@
 puts "Seeding main users..."
 
 # Admins
-User.create(username: 'Michael', password: 'password', password_confirmation: 'MiChAeL', email: 'michael@michael.com', admin: 'true', trusted: 'true')
-User.create(username: 'Duncan', password: 'duncan', password_confirmation: 'DuNcAn', email: 'duncan@duncan.com', admin: 'true', trusted: 'true')
+User.create(username: 'Michael', password: 'MiChAeL', password_confirmation: 'MiChAeL', email: 'michael@michael.com', admin: 'true', trusted: 'true')
+User.create(username: 'Duncan', password: 'DuNcAn', password_confirmation: 'DuNcAn', email: 'duncan@duncan.com', admin: 'true', trusted: 'true')
 
 # Trusted Users
-User.create(username: 'Trusted', password: 'password', password_confirmation: 'TrUsTeD', email: 'trustme@really.com', admin: 'false', trusted: 'true')
+User.create(username: 'Trusted', password: 'TrUsTeD', password_confirmation: 'TrUsTeD', email: 'trustme@really.com', admin: 'false', trusted: 'true')
 
 # Regular Users
 
