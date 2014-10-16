@@ -42,61 +42,6 @@ You can run the server with:
 Navigate to [localhost:3000](http://localhost:3000) in your browser to access it.
 
 
-# Working with git #
-
-## Adding files to be committed ##
-
-Once you've done some work, run the command:
-
-    $ git status
-
-This will show you all of the files that you have created, edited, and deleted.
-
-By running the command:
-
-    $ git add .
-
-... Git will know to sync all new and edited files when you run the 'commit' command.
-
-If you have deleted any files, you will need to run:
-
-    $ git add -u
-
-... in order for Git to sync deleted files (it won't do this unless you run this command).
-
-You can then commit your changes using:
-
-    $ git commit -m "here is a message about what I did"
-
-and finally push it to the server:
-
-    $ git push
-    
-Then hopefully the update will be pushed to the github server and the thing will be updated.
-
-If you are working on things, and you want to make sure you have the most up-to-date version of the files, you can use the command:
-
-    $ git pull
-    
-to pull the current version of the thing to your computer.
-
-The log files, and tmp files, won't be synced, nor will the development database.
-
-## Branching ##
-
-If you're going to work on something, it might be good to create a new branch.
-
-    $ git checkout -b <name of branch>
-    
-This will help us all work in parallel.
-
-## More information ##
-
-There's a lot more information here:
-
-https://help.github.com/articles/creating-and-deleting-branches-within-your-repository
-
-
 # Running the tests using Rspec #
 
 I'm doing the tests with a Gem called "Rspec". You can run them by navigating to the plantsuwa folder and typing: 
@@ -125,4 +70,18 @@ You can now access the server from http://uwaplantguide.alva.uwa.edu.au:3000/ (p
 To quit the server:
 
     $ kill -9 $(cat tmp/pids/server.pid)
+
+# Test Users #
+
+It’s *hugely important* to the client that the data be preserved in a *correct* state. Only trusted users or administrators can modify the database. 
+While we have incorporated change logs for administrators to see what changes have been made to the database, we ask the marker to please not change the live data. Small edits that are immediately reversed are welcome.
+
+Having said that, there are some 
+You can play with these users if you like, or create your own.
+
+| Username	|	Password	|	   Status		|
+|===============================================|
+| Duncan	|	 DuNcAn		|	Administrator	|
+| Michael	|	 MiChAeL	|	Administrator	|
+| Trusted	|	 TrUsTeD	| 	Trusted User	|
 
