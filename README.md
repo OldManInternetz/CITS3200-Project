@@ -33,20 +33,20 @@ If you find any bugs or would like to see us add some more features, please emai
 
 ./plantsuwa is the rails application. This follows a standard Ruby on Rails directory structure, outlined breifly below.
 
-app/			Contains the controllers, models, views, helpers, mailers and assets for the application. 
-bin/			Contains the rails script that starts the app.
-config/			Configure the application's routes, database, and more. 
-config.ru		Rack configuration for Rack based servers used to start the application.
-db/			Contains the current database schema, as well as the database migrations.
-Gemfile
-Gemfile.lock		These files specify what gem dependencies are needed for the Rails application. 
-lib/			Extended modules for the application.
-log/			Application log files.
-public/			The only folder seen by the world as-is. Contains static files and compiled assets.
-Rakefile		This file locates and loads tasks that can be run from the command line. 
-test/			Unit tests, fixtures, and other test apparatus. 
-tmp/			Temporary files (like cache, pid, and session files).
-vendor/			A place for all third-party code. In a typical Rails application this includes vendored gems.
+	app/			Contains the controllers, models, views, helpers, mailers and assets for the application. 
+	bin/			Contains the rails script that starts the app.
+	config/			Configure the application's routes, database, and more. 
+	config.ru		Rack configuration for Rack based servers used to start the application.
+	db/			    Contains the current database schema, as well as the database migrations.
+	Gemfile
+	Gemfile.lock	These files specify what gem dependencies are needed for the Rails application. 
+	lib/			Extended modules for the application.
+	log/			Application log files.
+	public/			The only folder seen by the world as-is. Contains static files and compiled assets.
+	Rakefile		This file locates and loads tasks that can be run from the command line. 
+	test/			Unit tests, fixtures, and other test apparatus. 
+	tmp/			Temporary files (like cache, pid, and session files).
+	vendor/			A place for all third-party code. In a typical Rails application this includes vendored gems.
 
 # Running the Server #
 
