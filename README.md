@@ -27,7 +27,7 @@ Please send us your feedback :)
 
 If you find any bugs or would like to see us add some more features, please email us at [our-student-number]@student.uwa.edu.au, or our client, Tinka.
 
-# Directory Structre #
+# Directory Structure #
 
 ./old_html contains the html, css, js etc from the initial prototypes. 
 
@@ -37,9 +37,9 @@ app/			Contains the controllers, models, views, helpers, mailers and assets for 
 bin/			Contains the rails script that starts the app.
 config/			Configure the application's routes, database, and more. 
 config.ru		Rack configuration for Rack based servers used to start the application.
-db/				Contains the current database schema, as well as the database migrations.
+db/			Contains the current database schema, as well as the database migrations.
 Gemfile
-Gemfile.lock	These files specify what gem dependencies are needed for the Rails application. 
+Gemfile.lock		These files specify what gem dependencies are needed for the Rails application. 
 lib/			Extended modules for the application.
 log/			Application log files.
 public/			The only folder seen by the world as-is. Contains static files and compiled assets.
@@ -48,9 +48,10 @@ test/			Unit tests, fixtures, and other test apparatus.
 tmp/			Temporary files (like cache, pid, and session files).
 vendor/			A place for all third-party code. In a typical Rails application this includes vendored gems.
 
+# Running the Server #
 
-<<<<<<< HEAD
-=======
+You can run the server with:
+
     $ rails server
 
 Navigate to [localhost:3000](http://localhost:3000) in your browser to access it.
@@ -139,4 +140,3 @@ You can now access the server from http://alva-nix-002.alva.uwa.edu.au:3000/ (al
 To quit the server:
 
     $ kill -9 $(cat tmp/pids/server.pid)
->>>>>>> FETCH_HEAD
