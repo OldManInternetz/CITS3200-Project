@@ -17,6 +17,7 @@ can monitor their activity. Guest users can browse and search plants.
 Please, check out our application by browsing to our homepage:
 
 http://uwaplantguide.alva.uwa.edu.au (failing that,
+
 http://uwaplantguide.alva.uwa.edu.au:3000)
 
 A visually appealing database listing a variety of plants native to Perth; more specifically UWA.
